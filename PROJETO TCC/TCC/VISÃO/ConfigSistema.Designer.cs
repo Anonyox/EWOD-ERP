@@ -50,10 +50,6 @@ namespace TCC.VISÃO
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.btnSair = new System.Windows.Forms.PictureBox();
-            this.tccDataSet = new TCC.tccDataSet();
-            this.logsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.logsTableAdapter = new TCC.tccDataSetTableAdapters.logsTableAdapter();
-            this.tccDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -63,17 +59,21 @@ namespace TCC.VISÃO
             this.panel5 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.tccDataSet = new TCC.tccDataSet();
+            this.logsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.logsTableAdapter = new TCC.tccDataSetTableAdapters.logsTableAdapter();
+            this.tccDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dtgLogs)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSair)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tccDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.logsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tccDataSetBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tccDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tccDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dtgLogs
@@ -302,25 +302,6 @@ namespace TCC.VISÃO
             this.btnSair.TabStop = false;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
-            // tccDataSet
-            // 
-            this.tccDataSet.DataSetName = "tccDataSet";
-            this.tccDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // logsBindingSource
-            // 
-            this.logsBindingSource.DataMember = "logs";
-            this.logsBindingSource.DataSource = this.tccDataSet;
-            // 
-            // logsTableAdapter
-            // 
-            this.logsTableAdapter.ClearBeforeFill = true;
-            // 
-            // tccDataSetBindingSource
-            // 
-            this.tccDataSetBindingSource.DataSource = this.tccDataSet;
-            this.tccDataSetBindingSource.Position = 0;
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(209)))), ((int)(((byte)(178)))));
@@ -390,9 +371,9 @@ namespace TCC.VISÃO
             this.label2.Location = new System.Drawing.Point(103, 39);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(101, 18);
+            this.label2.Size = new System.Drawing.Size(133, 18);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Edições feitas";
+            this.label2.Text = "Edições feitasssss";
             // 
             // panel5
             // 
@@ -423,6 +404,25 @@ namespace TCC.VISÃO
             this.timer1.Interval = 10000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // tccDataSet
+            // 
+            this.tccDataSet.DataSetName = "tccDataSet";
+            this.tccDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // logsBindingSource
+            // 
+            this.logsBindingSource.DataMember = "logs";
+            this.logsBindingSource.DataSource = this.tccDataSet;
+            // 
+            // logsTableAdapter
+            // 
+            this.logsTableAdapter.ClearBeforeFill = true;
+            // 
+            // tccDataSetBindingSource
+            // 
+            this.tccDataSetBindingSource.DataSource = this.tccDataSet;
+            this.tccDataSetBindingSource.Position = 0;
+            // 
             // ConfigSistema
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -451,9 +451,6 @@ namespace TCC.VISÃO
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSair)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tccDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.logsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tccDataSetBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -462,6 +459,9 @@ namespace TCC.VISÃO
             this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tccDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tccDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
