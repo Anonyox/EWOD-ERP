@@ -1,0 +1,330 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{05E84BE6-9935-40B3-80CB-779A7FB23786}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>TCC</RootNamespace>
+    <AssemblyName>TCC</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CONTROLE\Conexao.cs" />
+    <Compile Include="CONTROLE\loginDaoComandos.cs" />
+    <Compile Include="CONTROLE\vendaDaoComandos.cs" />
+    <Compile Include="MODELO\Controle.cs" />
+    <Compile Include="MODELO\VCEP.cs" />
+    <Compile Include="MODELO\VCPF.cs" />
+    <Compile Include="MODELO\VEMAIL.cs" />
+    <Compile Include="MODELO\VTLF.cs" />
+    <Compile Include="tccDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>tccDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="VISÃO\CadastroProdutos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VISÃO\CadastroProdutos.Designer.cs">
+      <DependentUpon>CadastroProdutos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VISÃO\CadastroUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VISÃO\CadastroUsuario.Designer.cs">
+      <DependentUpon>CadastroUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VISÃO\CadastroVendas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VISÃO\CadastroVendas.Designer.cs">
+      <DependentUpon>CadastroVendas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VISÃO\ConfigSistema.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VISÃO\ConfigSistema.Designer.cs">
+      <DependentUpon>ConfigSistema.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VISÃO\ConfigUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VISÃO\ConfigUsuario.Designer.cs">
+      <DependentUpon>ConfigUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VISÃO\EditarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VISÃO\EditarUsuario.designer.cs">
+      <DependentUpon>EditarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VISÃO\logar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VISÃO\logar.Designer.cs">
+      <DependentUpon>logar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VISÃO\MenuPerfil%28Administrador%29.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VISÃO\MenuPerfil%28Administrador%29.Designer.cs">
+      <DependentUpon>MenuPerfil%28Administrador%29.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VISÃO\RelatorioEstoque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VISÃO\RelatorioEstoque.Designer.cs">
+      <DependentUpon>RelatorioEstoque.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VISÃO\RelatorioVendas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VISÃO\RelatorioVendas.Designer.cs">
+      <DependentUpon>RelatorioVendas.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="VISÃO\CadastroProdutos.resx">
+      <DependentUpon>CadastroProdutos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VISÃO\CadastroUsuario.resx">
+      <DependentUpon>CadastroUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VISÃO\CadastroVendas.resx">
+      <DependentUpon>CadastroVendas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VISÃO\ConfigSistema.resx">
+      <DependentUpon>ConfigSistema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VISÃO\ConfigUsuario.resx">
+      <DependentUpon>ConfigUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VISÃO\EditarUsuario.resx">
+      <DependentUpon>EditarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VISÃO\logar.resx">
+      <DependentUpon>logar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="VISÃO\MenuPerfil%28Administrador%29.resx">
+      <DependentUpon>MenuPerfil%28Administrador%29.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="tccDataSet.xsc">
+      <DependentUpon>tccDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="tccDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>tccDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="tccDataSet.xss">
+      <DependentUpon>tccDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1555492a6-11.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\avatardefault_92824.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\internet_lock_locked_padlock_password_secure_security_icon_127078.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Seja-bem-vindo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\d6a55e0c15b8da392e5cec62039e6e81.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ÍCONE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\d6a55e0c15b8da392e5cec620a39e6e81.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blueshoppingcart_azul_12543 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blue_chart_Statistics_12518.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bluearrowright_azul_flech_12452.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bluecarddestinationuser_azul_tarjeta_dedestin_12437.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\caixa-aberta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\caixa %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blue_insert_append_12490.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\business_application_addmale_useradd_insert_add_user_client_2312.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\male-user-add_25347.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cliente.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blue_users_customers_clients_people_12438.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\emblemdropboxuptodate_103733.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\emblemdropboxuptodate_1037331.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dropbox_icon-icons.com_72004.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dropbox_icon-icons.com_72004 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dropbox_icon-icons.com_72004 %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder-settings-4341324_120534.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder-settings-4341324_120534 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-configurações-do-usuário-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-configurações-do-usuário-96 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maxi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ÍCONE1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blue_key_locked_12546.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-envelope-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-envelope-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-identification-documents-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_77928.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel_77947.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save_Icon_icon-icons.com_69139.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DocumentEdit_40924.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EmptyRecycleBin_recycling_emptytrash_VaciarPapeleradereciclaje_1994.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\recyclingdrawer_empty_reciclaje_10798.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Blue_search_find_12583.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kimi-no-na-wa-clear-sky-cloud-sky-wallpaper-preview.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blue__12447.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blue_user_client_person_12581.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cv.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\perfil-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\excluir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\adicionar-ao-carrinho.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carrinho.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\confirme.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

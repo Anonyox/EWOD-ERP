@@ -1,0 +1,22 @@
+SCRIPT CRIAÇÃO TABELAS BANCO
+
+	create table logins
+(
+	codUser smallint primary key identity (1,1) not null,
+	usuario varchar(50),
+	senha varchar(50),
+	cpf varchar(50),
+	departamento varchar(50),
+	email varchar(50),
+	perfil varchar(50),
+	endereco varchar(50),
+	numero varchar(50),
+	cidade varchar(50),
+	bairro varchar(50),
+	estado varchar(50),
+	cep varchar(50),
+	complemento varchar(50),
+	telefone varchar(50),
+	sexo varchar(50),
+
+)

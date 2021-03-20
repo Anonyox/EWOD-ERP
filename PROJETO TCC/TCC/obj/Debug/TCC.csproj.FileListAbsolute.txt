@@ -1,0 +1,185 @@
+C:\Users\LukasPC\source\repos\TCC\TCC\bin\Debug\TCC.exe.config
+C:\Users\LukasPC\source\repos\TCC\TCC\bin\Debug\TCC.exe
+C:\Users\LukasPC\source\repos\TCC\TCC\bin\Debug\TCC.pdb
+C:\Users\LukasPC\source\repos\TCC\TCC\obj\Debug\TCC.csprojAssemblyReference.cache
+C:\Users\LukasPC\source\repos\TCC\TCC\obj\Debug\TCC.Form1.resources
+C:\Users\LukasPC\source\repos\TCC\TCC\obj\Debug\TCC.Properties.Resources.resources
+C:\Users\LukasPC\source\repos\TCC\TCC\obj\Debug\TCC.csproj.GenerateResource.cache
+C:\Users\LukasPC\source\repos\TCC\TCC\obj\Debug\TCC.csproj.CoreCompileInputs.cache
+C:\Users\LukasPC\source\repos\TCC\TCC\obj\Debug\TCC.exe
+C:\Users\LukasPC\source\repos\TCC\TCC\obj\Debug\TCC.pdb
+C:\Users\LukasPC\source\repos\TCC\TCC\obj\Debug\TCC.VISÃO.Menuzinho.resources
+D:\Desktop\TCC\bin\Debug\TCC.exe.config
+D:\Desktop\TCC\bin\Debug\TCC.exe
+D:\Desktop\TCC\bin\Debug\TCC.pdb
+D:\Desktop\TCC\obj\Debug\TCC.csprojAssemblyReference.cache
+D:\Desktop\TCC\obj\Debug\TCC.Form1.resources
+D:\Desktop\TCC\obj\Debug\TCC.Properties.Resources.resources
+D:\Desktop\TCC\obj\Debug\TCC.VISÃO.Menuzinho.resources
+D:\Desktop\TCC\obj\Debug\TCC.csproj.GenerateResource.cache
+D:\Desktop\TCC\obj\Debug\TCC.csproj.CoreCompileInputs.cache
+D:\Desktop\TCC\obj\Debug\TCC.exe
+D:\Desktop\TCC\obj\Debug\TCC.pdb
+D:\Desktop\TCC\obj\Debug\TCC.VISÃO.CadastroUsuario.resources
+\\Lukas-pc\temporária\PROJETO TCC\TCC\obj\Debug\TCC.csprojAssemblyReference.cache
+\\Lukas-pc\temporária\PROJETO TCC\TCC\obj\Debug\TCC.VISÃO.CadastroUsuario.resources
+\\Lukas-pc\temporária\PROJETO TCC\TCC\obj\Debug\TCC.Form1.resources
+\\Lukas-pc\temporária\PROJETO TCC\TCC\obj\Debug\TCC.Properties.Resources.resources
+\\Lukas-pc\temporária\PROJETO TCC\TCC\obj\Debug\TCC.VISÃO.Menuzinho.resources
+\\Lukas-pc\temporária\PROJETO TCC\TCC\obj\Debug\TCC.csproj.GenerateResource.cache
+\\Lukas-pc\temporária\PROJETO TCC\TCC\obj\Debug\TCC.csproj.CoreCompileInputs.cache
+\\Lukas-pc\temporária\PROJETO TCC\TCC\obj\Debug\TCC.exe
+\\Lukas-pc\temporária\PROJETO TCC\TCC\obj\Debug\TCC.pdb
+\\Lukas-pc\temporária\PROJETO TCC\TCC\bin\Debug\TCC.exe.config
+\\Lukas-pc\temporária\PROJETO TCC\TCC\bin\Debug\TCC.exe
+\\Lukas-pc\temporária\PROJETO TCC\TCC\bin\Debug\TCC.pdb
+E:\TEMPORÁRIA\PROJETO TCC\TCC\bin\Debug\TCC.exe.config
+E:\TEMPORÁRIA\PROJETO TCC\TCC\bin\Debug\TCC.exe
+E:\TEMPORÁRIA\PROJETO TCC\TCC\bin\Debug\TCC.pdb
+E:\TEMPORÁRIA\PROJETO TCC\TCC\obj\Debug\TCC.csprojAssemblyReference.cache
+E:\TEMPORÁRIA\PROJETO TCC\TCC\obj\Debug\TCC.VISÃO.CadastroUsuario.resources
+E:\TEMPORÁRIA\PROJETO TCC\TCC\obj\Debug\TCC.Properties.Resources.resources
+E:\TEMPORÁRIA\PROJETO TCC\TCC\obj\Debug\TCC.csproj.GenerateResource.cache
+E:\TEMPORÁRIA\PROJETO TCC\TCC\obj\Debug\TCC.csproj.CoreCompileInputs.cache
+E:\TEMPORÁRIA\PROJETO TCC\TCC\obj\Debug\TCC.exe
+E:\TEMPORÁRIA\PROJETO TCC\TCC\obj\Debug\TCC.pdb
+\\26.55.6.154\temporária\PROJETO TCC\TCC\obj\Debug\TCC.csprojAssemblyReference.cache
+\\26.55.6.154\temporária\PROJETO TCC\TCC\obj\Debug\TCC.exe
+\\26.55.6.154\temporária\PROJETO TCC\TCC\obj\Debug\TCC.pdb
+C:\Users\LukasPC\Desktop\PROJETO TCC\TCC\bin\Debug\TCC.exe.config
+C:\Users\LukasPC\Desktop\PROJETO TCC\TCC\bin\Debug\TCC.exe
+C:\Users\LukasPC\Desktop\PROJETO TCC\TCC\bin\Debug\TCC.pdb
+C:\Users\LukasPC\Desktop\PROJETO TCC\TCC\obj\Debug\TCC.csprojAssemblyReference.cache
+C:\Users\LukasPC\Desktop\PROJETO TCC\TCC\obj\Debug\TCC.VISÃO.CadastroUsuario.resources
+C:\Users\LukasPC\Desktop\PROJETO TCC\TCC\obj\Debug\TCC.Properties.Resources.resources
+C:\Users\LukasPC\Desktop\PROJETO TCC\TCC\obj\Debug\TCC.csproj.GenerateResource.cache
+C:\Users\LukasPC\Desktop\PROJETO TCC\TCC\obj\Debug\TCC.csproj.CoreCompileInputs.cache
+C:\Users\LukasPC\Desktop\PROJETO TCC\TCC\obj\Debug\TCC.exe
+C:\Users\LukasPC\Desktop\PROJETO TCC\TCC\obj\Debug\TCC.pdb
+\\26.55.6.154\temporária\PROJETO TCC\TCC\bin\Debug\TCC.exe.config
+\\26.55.6.154\temporária\PROJETO TCC\TCC\bin\Debug\TCC.exe
+\\26.55.6.154\temporária\PROJETO TCC\TCC\obj\Debug\TCC.VISÃO.CADASTRARPRODUTO.resources
+\\26.55.6.154\temporária\PROJETO TCC\TCC\obj\Debug\TCC.VISÃO.CadastroUsuario.resources
+\\26.55.6.154\temporária\PROJETO TCC\TCC\obj\Debug\TCC.Form1.resources
+\\26.55.6.154\temporária\PROJETO TCC\TCC\obj\Debug\TCC.Properties.Resources.resources
+\\26.55.6.154\temporária\PROJETO TCC\TCC\obj\Debug\TCC.VISÃO.Menuzinho.resources
+\\26.55.6.154\temporária\PROJETO TCC\TCC\obj\Debug\TCC.VISÃO.MenuPerfil_Compras_.resources
+\\26.55.6.154\temporária\PROJETO TCC\TCC\obj\Debug\TCC.VISÃO.MenuPerfil_Geral_.resources
+\\26.55.6.154\temporária\PROJETO TCC\TCC\obj\Debug\TCC.VISÃO.MenuPerfilVendas.resources
+\\26.55.6.154\temporária\PROJETO TCC\TCC\obj\Debug\TCC.csproj.GenerateResource.cache
+\\26.55.6.154\temporária\PROJETO TCC\TCC\obj\Debug\TCC.csproj.CoreCompileInputs.cache
+E:\TEMPORÁRIA\PROJETO TCC\TCC\obj\Debug\TCC.login.resources
+E:\TEMPORÁRIA\PROJETO TCC\TCC\obj\Debug\TCC.VISÃO.menuAdministrador.resources
+E:\TEMPORÁRIA\PROJETO TCC\TCC\obj\Debug\TCC.VISÃO.CadastroProdutos.resources
+D:\Desktop\PROJETO TCC\TCC\bin\Debug\TCC.exe.config
+D:\Desktop\PROJETO TCC\TCC\bin\Debug\TCC.exe
+D:\Desktop\PROJETO TCC\TCC\bin\Debug\TCC.pdb
+D:\Desktop\PROJETO TCC\TCC\obj\Debug\TCC.csprojAssemblyReference.cache
+D:\Desktop\PROJETO TCC\TCC\obj\Debug\TCC.VISÃO.CadastroProdutos.resources
+D:\Desktop\PROJETO TCC\TCC\obj\Debug\TCC.VISÃO.CadastroUsuario.resources
+D:\Desktop\PROJETO TCC\TCC\obj\Debug\TCC.login.resources
+D:\Desktop\PROJETO TCC\TCC\obj\Debug\TCC.Properties.Resources.resources
+D:\Desktop\PROJETO TCC\TCC\obj\Debug\TCC.VISÃO.menuAdministrador.resources
+D:\Desktop\PROJETO TCC\TCC\obj\Debug\TCC.VISÃO.MenuPerfil_Compras_.resources
+D:\Desktop\PROJETO TCC\TCC\obj\Debug\TCC.VISÃO.MenuPerfil_Geral_.resources
+D:\Desktop\PROJETO TCC\TCC\obj\Debug\TCC.VISÃO.MenuPerfilVendas.resources
+D:\Desktop\PROJETO TCC\TCC\obj\Debug\TCC.csproj.GenerateResource.cache
+D:\Desktop\PROJETO TCC\TCC\obj\Debug\TCC.csproj.CoreCompileInputs.cache
+D:\Desktop\PROJETO TCC\TCC\obj\Debug\TCC.exe
+D:\Desktop\PROJETO TCC\TCC\obj\Debug\TCC.pdb
+D:\Desktop\PROJETO TCC\TCC\obj\Debug\TCC.VISÃO.MenuPerfil_Geral.resources
+E:\TEMPORÁRIA\PROJETO TCC\TCC\obj\Debug\TCC.VISÃO.ConfigUsuario.resources
+E:\Desktop\PROJETO TCC\TCC\bin\Debug\TCC.exe.config
+E:\Desktop\PROJETO TCC\TCC\bin\Debug\TCC.exe
+E:\Desktop\PROJETO TCC\TCC\bin\Debug\TCC.pdb
+E:\Desktop\PROJETO TCC\TCC\obj\Debug\TCC.csprojAssemblyReference.cache
+E:\Desktop\PROJETO TCC\TCC\obj\Debug\TCC.VISÃO.CadastroUsuario.resources
+E:\Desktop\PROJETO TCC\TCC\obj\Debug\TCC.VISÃO.ConfigUsuario.resources
+E:\Desktop\PROJETO TCC\TCC\obj\Debug\TCC.login.resources
+E:\Desktop\PROJETO TCC\TCC\obj\Debug\TCC.Properties.Resources.resources
+E:\Desktop\PROJETO TCC\TCC\obj\Debug\TCC.VISÃO.menuAdministrador.resources
+E:\Desktop\PROJETO TCC\TCC\obj\Debug\TCC.csproj.GenerateResource.cache
+E:\Desktop\PROJETO TCC\TCC\obj\Debug\TCC.csproj.CoreCompileInputs.cache
+E:\Desktop\PROJETO TCC\TCC\obj\Debug\TCC.exe
+E:\Desktop\PROJETO TCC\TCC\obj\Debug\TCC.pdb
+C:\Users\LukasPC\Desktop\PROJETO TCC\TCC\obj\Debug\TCC.VISÃO.ConfigUsuario.resources
+C:\Users\LukasPC\Desktop\PROJETO TCC\TCC\obj\Debug\TCC.login.resources
+C:\Users\LukasPC\Desktop\PROJETO TCC\TCC\obj\Debug\TCC.VISÃO.menuAdministrador.resources
+C:\Users\LukasPC\Desktop\EWOD\PROJETO TCC\TCC\bin\Debug\TCC.exe.config
+C:\Users\LukasPC\Desktop\EWOD\PROJETO TCC\TCC\bin\Debug\TCC.exe
+C:\Users\LukasPC\Desktop\EWOD\PROJETO TCC\TCC\bin\Debug\TCC.pdb
+C:\Users\LukasPC\Desktop\EWOD\PROJETO TCC\TCC\obj\Debug\TCC.csprojAssemblyReference.cache
+C:\Users\LukasPC\Desktop\EWOD\PROJETO TCC\TCC\obj\Debug\TCC.VISÃO.CadastroUsuario.resources
+C:\Users\LukasPC\Desktop\EWOD\PROJETO TCC\TCC\obj\Debug\TCC.VISÃO.ConfigUsuario.resources
+C:\Users\LukasPC\Desktop\EWOD\PROJETO TCC\TCC\obj\Debug\TCC.login.resources
+C:\Users\LukasPC\Desktop\EWOD\PROJETO TCC\TCC\obj\Debug\TCC.Properties.Resources.resources
+C:\Users\LukasPC\Desktop\EWOD\PROJETO TCC\TCC\obj\Debug\TCC.VISÃO.menuAdministrador.resources
+C:\Users\LukasPC\Desktop\EWOD\PROJETO TCC\TCC\obj\Debug\TCC.csproj.GenerateResource.cache
+C:\Users\LukasPC\Desktop\EWOD\PROJETO TCC\TCC\obj\Debug\TCC.csproj.CoreCompileInputs.cache
+C:\Users\LukasPC\Desktop\EWOD\PROJETO TCC\TCC\obj\Debug\TCC.exe
+C:\Users\LukasPC\Desktop\EWOD\PROJETO TCC\TCC\obj\Debug\TCC.pdb
+C:\Users\LukasPC\Desktop\EWOD\PROJETO TCC\TCC\obj\Debug\TCC.VISÃO.txtfornecedor.resources
+\\26.55.6.154\ewod\PROJETO TCC\TCC\bin\Debug\TCC.exe.config
+\\26.55.6.154\ewod\PROJETO TCC\TCC\bin\Debug\TCC.exe
+\\26.55.6.154\ewod\PROJETO TCC\TCC\bin\Debug\TCC.pdb
+\\26.55.6.154\ewod\PROJETO TCC\TCC\obj\Debug\TCC.csprojAssemblyReference.cache
+\\26.55.6.154\ewod\PROJETO TCC\TCC\obj\Debug\TCC.VISÃO.txtfornecedor.resources
+\\26.55.6.154\ewod\PROJETO TCC\TCC\obj\Debug\TCC.VISÃO.CadastroUsuario.resources
+\\26.55.6.154\ewod\PROJETO TCC\TCC\obj\Debug\TCC.VISÃO.ConfigUsuario.resources
+\\26.55.6.154\ewod\PROJETO TCC\TCC\obj\Debug\TCC.login.resources
+\\26.55.6.154\ewod\PROJETO TCC\TCC\obj\Debug\TCC.Properties.Resources.resources
+\\26.55.6.154\ewod\PROJETO TCC\TCC\obj\Debug\TCC.VISÃO.menuAdministrador.resources
+\\26.55.6.154\ewod\PROJETO TCC\TCC\obj\Debug\TCC.csproj.GenerateResource.cache
+\\26.55.6.154\ewod\PROJETO TCC\TCC\obj\Debug\TCC.csproj.CoreCompileInputs.cache
+\\26.55.6.154\ewod\PROJETO TCC\TCC\obj\Debug\TCC.exe
+\\26.55.6.154\ewod\PROJETO TCC\TCC\obj\Debug\TCC.pdb
+E:\Desktop\PROJETO TCC\TCC\obj\Debug\TCC.VISÃO.txtfornecedor.resources
+E:\Desktop\PROJETO TCC\TCC\obj\Debug\TCC.VISÃO.ConfigSistema.resources
+\\26.55.6.154\ewod\PROJETO TCC-Cópia\TCC\obj\Debug\TCC.csprojAssemblyReference.cache
+\\26.55.6.154\ewod\PROJETO TCC-Cópia\TCC\obj\Debug\TCC.exe
+\\26.55.6.154\ewod\PROJETO TCC-Cópia\TCC\obj\Debug\TCC.pdb
+\\192.168.1.6\ewod\PROJETO TCC-Cópia\TCC\obj\Debug\TCC.csprojAssemblyReference.cache
+\\192.168.1.6\ewod\PROJETO TCC-Cópia\TCC\obj\Debug\TCC.exe
+\\192.168.1.6\ewod\PROJETO TCC-Cópia\TCC\obj\Debug\TCC.pdb
+C:\Users\LukasPC\Desktop\PROJETO TCC-Cópia\TCC\bin\Debug\TCC.exe.config
+C:\Users\LukasPC\Desktop\PROJETO TCC-Cópia\TCC\bin\Debug\TCC.exe
+C:\Users\LukasPC\Desktop\PROJETO TCC-Cópia\TCC\bin\Debug\TCC.pdb
+C:\Users\LukasPC\Desktop\PROJETO TCC-Cópia\TCC\obj\Debug\TCC.csprojAssemblyReference.cache
+C:\Users\LukasPC\Desktop\PROJETO TCC-Cópia\TCC\obj\Debug\TCC.VISÃO.txtfornecedor.resources
+C:\Users\LukasPC\Desktop\PROJETO TCC-Cópia\TCC\obj\Debug\TCC.VISÃO.CadastroUsuario.resources
+C:\Users\LukasPC\Desktop\PROJETO TCC-Cópia\TCC\obj\Debug\TCC.VISÃO.ConfigSistema.resources
+C:\Users\LukasPC\Desktop\PROJETO TCC-Cópia\TCC\obj\Debug\TCC.VISÃO.ConfigUsuario.resources
+C:\Users\LukasPC\Desktop\PROJETO TCC-Cópia\TCC\obj\Debug\TCC.login.resources
+C:\Users\LukasPC\Desktop\PROJETO TCC-Cópia\TCC\obj\Debug\TCC.Properties.Resources.resources
+C:\Users\LukasPC\Desktop\PROJETO TCC-Cópia\TCC\obj\Debug\TCC.VISÃO.menuAdministrador.resources
+C:\Users\LukasPC\Desktop\PROJETO TCC-Cópia\TCC\obj\Debug\TCC.csproj.GenerateResource.cache
+C:\Users\LukasPC\Desktop\PROJETO TCC-Cópia\TCC\obj\Debug\TCC.csproj.CoreCompileInputs.cache
+C:\Users\LukasPC\Desktop\PROJETO TCC-Cópia\TCC\obj\Debug\TCC.exe
+C:\Users\LukasPC\Desktop\PROJETO TCC-Cópia\TCC\obj\Debug\TCC.pdb
+C:\Users\LukasPC\Desktop\PROJETO TCC-Cópia\TCC\obj\Debug\TCC.VISÃO.CadastroVendas.resources
+C:\Users\LukasPC\Desktop\PROJETO TCC-Cópia - Copia\TCC\obj\Debug\TCC.csprojAssemblyReference.cache
+C:\Users\LukasPC\Desktop\PROJETO TCC-Cópia - Copia\TCC\obj\Debug\TCC.VISÃO.txtfornecedor.resources
+C:\Users\LukasPC\Desktop\PROJETO TCC-Cópia - Copia\TCC\obj\Debug\TCC.VISÃO.CadastroUsuario.resources
+C:\Users\LukasPC\Desktop\PROJETO TCC-Cópia - Copia\TCC\obj\Debug\TCC.VISÃO.CadastroVendas.resources
+C:\Users\LukasPC\Desktop\PROJETO TCC-Cópia - Copia\TCC\obj\Debug\TCC.VISÃO.ConfigSistema.resources
+C:\Users\LukasPC\Desktop\PROJETO TCC-Cópia - Copia\TCC\obj\Debug\TCC.VISÃO.ConfigUsuario.resources
+C:\Users\LukasPC\Desktop\PROJETO TCC-Cópia - Copia\TCC\obj\Debug\TCC.login.resources
+C:\Users\LukasPC\Desktop\PROJETO TCC-Cópia - Copia\TCC\obj\Debug\TCC.Properties.Resources.resources
+C:\Users\LukasPC\Desktop\PROJETO TCC-Cópia - Copia\TCC\obj\Debug\TCC.VISÃO.menuAdministrador.resources
+C:\Users\LukasPC\Desktop\PROJETO TCC-Cópia - Copia\TCC\obj\Debug\TCC.csproj.GenerateResource.cache
+C:\Users\LukasPC\Desktop\PROJETO TCC-Cópia - Copia\TCC\obj\Debug\TCC.csproj.CoreCompileInputs.cache
+C:\Users\LukasPC\Desktop\PROJETO TCC-Cópia - Copia\TCC\obj\Debug\TCC.exe
+C:\Users\LukasPC\Desktop\PROJETO TCC-Cópia - Copia\TCC\obj\Debug\TCC.pdb
+C:\Users\LukasPC\Desktop\PROJETO TCC-Cópia - Copia\TCC\bin\Debug\TCC.exe.config
+C:\Users\LukasPC\Desktop\PROJETO TCC-Cópia - Copia\TCC\bin\Debug\TCC.exe
+C:\Users\LukasPC\Desktop\PROJETO TCC-Cópia - Copia\TCC\bin\Debug\TCC.pdb
+C:\Users\LukasPC\Desktop\PROJETO TCC-Cópia - Copia\TCC\obj\Debug\TCC.VISÃO.EditarUsuario.resources
+E:\Desktop\PROJETO TCC\TCC\obj\Debug\TCC.VISÃO.CadastroVendas.resources
+E:\Desktop\PROJETO TCC\TCC\obj\Debug\TCC.VISÃO.EditarUsuario.resources
+C:\Users\LukasPC\Desktop\EWOD\PROJETO TCC\TCC\obj\Debug\TCC.VISÃO.CadastroVendas.resources
+C:\Users\LukasPC\Desktop\EWOD\PROJETO TCC\TCC\obj\Debug\TCC.VISÃO.ConfigSistema.resources
+C:\Users\LukasPC\Desktop\EWOD\PROJETO TCC\TCC\obj\Debug\TCC.VISÃO.EditarUsuario.resources
+C:\Users\LukasPC\Desktop\PROJETO TCC\TCC\obj\Debug\TCC.VISÃO.txtfornecedor.resources
+C:\Users\LukasPC\Desktop\PROJETO TCC\TCC\obj\Debug\TCC.VISÃO.CadastroVendas.resources
+C:\Users\LukasPC\Desktop\PROJETO TCC\TCC\obj\Debug\TCC.VISÃO.ConfigSistema.resources
+C:\Users\LukasPC\Desktop\PROJETO TCC\TCC\obj\Debug\TCC.VISÃO.EditarUsuario.resources
