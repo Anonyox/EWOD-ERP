@@ -57,35 +57,6 @@ namespace TCC.VISÃO
             
         }
 
-        private void txtnomeUsuario_TextChanged(object sender, EventArgs e)
-        {
-            Conexao con = new Conexao();
-            SqlCommand cmd = new SqlCommand();
-            string usuario = "";
-            string departamento = "";
-            string perfil = "";
-            string endereco = "";
-            string cidade = "";
-            string bairro = "";
-            string estado = "";
-            string cep = "";
-            string complemento = "";
-            string telefone = "";
-
-            cmd.CommandText = "select @usuario,@departamento,@perfil,@endereco,@cidade,@bairro,@estado,@cep,@complemento,@telefone from logins";
-
-            cmd.Parameters.AddWithValue("@usuario",usuario);
-            cmd.Parameters.AddWithValue("@departamento", departamento);
-           /* cmd.Parameters.AddWithValue("@perfil", perfil);
-            cmd.Parameters.AddWithValue("@usuario", usuario);
-            cmd.Parameters.AddWithValue("@usuario", usuario);
-            cmd.Parameters.AddWithValue("@usuario", usuario);
-            cmd.Parameters.AddWithValue("@usuario", usuario);
-            cmd.Parameters.AddWithValue("@usuario", usuario);
-            cmd.Parameters.AddWithValue("@usuario", usuario);
-            cmd.Parameters.AddWithValue("@usuario", usuario);
-            
-
-        }
+        
     }
 }

@@ -309,7 +309,7 @@ namespace TCC.VISÃO
             this.txtnomeUsuario.Name = "txtnomeUsuario";
             this.txtnomeUsuario.Size = new System.Drawing.Size(135, 20);
             this.txtnomeUsuario.TabIndex = 151;
-            this.txtnomeUsuario.TextChanged += new System.EventHandler(this.txtnomeUsuario_TextChanged);
+            
             // 
             // lblteste
             // 
