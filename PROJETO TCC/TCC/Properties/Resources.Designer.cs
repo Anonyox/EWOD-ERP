@@ -423,6 +423,26 @@ namespace TCC.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_botão_de_opção_marcado_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-botão-de-opção-marcado-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_cancelar_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-cancelar-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_configurações_do_usuário_96 {
             get {
                 object obj = ResourceManager.GetObject("icons8-configurações-do-usuário-96", resourceCulture);

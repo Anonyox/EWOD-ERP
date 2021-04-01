@@ -326,5 +326,11 @@
   <ItemGroup>
     <None Include="Resources\confirme.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-botão-de-opção-marcado-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-cancelar-48.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

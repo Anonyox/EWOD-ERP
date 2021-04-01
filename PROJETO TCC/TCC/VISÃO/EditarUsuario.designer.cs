@@ -55,9 +55,8 @@ namespace TCC.VISÃO
             this.lblnomeUsuario = new System.Windows.Forms.Label();
             this.txtnomeUsuario = new System.Windows.Forms.TextBox();
             this.lblteste = new System.Windows.Forms.DataGridView();
-            this.btnExtornar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnCadastrar = new System.Windows.Forms.Button();
+            this.btnConfirmar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -309,7 +308,6 @@ namespace TCC.VISÃO
             this.txtnomeUsuario.Name = "txtnomeUsuario";
             this.txtnomeUsuario.Size = new System.Drawing.Size(135, 20);
             this.txtnomeUsuario.TabIndex = 151;
-            
             // 
             // lblteste
             // 
@@ -329,27 +327,10 @@ namespace TCC.VISÃO
             this.lblteste.Size = new System.Drawing.Size(867, 185);
             this.lblteste.TabIndex = 153;
             // 
-            // btnExtornar
-            // 
-            this.btnExtornar.BackColor = System.Drawing.Color.Transparent;
-            this.btnExtornar.BackgroundImage = global::TCC.Properties.Resources._1555492a6_11;
-            this.btnExtornar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnExtornar.FlatAppearance.BorderSize = 0;
-            this.btnExtornar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnExtornar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnExtornar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExtornar.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExtornar.ForeColor = System.Drawing.Color.Transparent;
-            this.btnExtornar.Location = new System.Drawing.Point(111, 419);
-            this.btnExtornar.Name = "btnExtornar";
-            this.btnExtornar.Size = new System.Drawing.Size(49, 35);
-            this.btnExtornar.TabIndex = 156;
-            this.btnExtornar.UseVisualStyleBackColor = false;
-            // 
             // btnCancelar
             // 
             this.btnCancelar.BackColor = System.Drawing.Color.Transparent;
-            this.btnCancelar.BackgroundImage = global::TCC.Properties.Resources.cancel_77947;
+            this.btnCancelar.BackgroundImage = global::TCC.Properties.Resources.icons8_cancelar_48;
             this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnCancelar.FlatAppearance.BorderSize = 0;
             this.btnCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
@@ -357,28 +338,28 @@ namespace TCC.VISÃO
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.Transparent;
-            this.btnCancelar.Location = new System.Drawing.Point(222, 419);
+            this.btnCancelar.Location = new System.Drawing.Point(69, 422);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(49, 35);
             this.btnCancelar.TabIndex = 155;
             this.btnCancelar.UseVisualStyleBackColor = false;
             // 
-            // btnCadastrar
+            // btnConfirmar
             // 
-            this.btnCadastrar.BackColor = System.Drawing.Color.Transparent;
-            this.btnCadastrar.BackgroundImage = global::TCC.Properties.Resources.add_77928;
-            this.btnCadastrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnCadastrar.FlatAppearance.BorderSize = 0;
-            this.btnCadastrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnCadastrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCadastrar.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.btnCadastrar.Location = new System.Drawing.Point(-1, 419);
-            this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(49, 35);
-            this.btnCadastrar.TabIndex = 154;
-            this.btnCadastrar.UseVisualStyleBackColor = false;
+            this.btnConfirmar.BackColor = System.Drawing.Color.Transparent;
+            this.btnConfirmar.BackgroundImage = global::TCC.Properties.Resources.icons8_botão_de_opção_marcado_48;
+            this.btnConfirmar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnConfirmar.FlatAppearance.BorderSize = 0;
+            this.btnConfirmar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnConfirmar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnConfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConfirmar.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirmar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.btnConfirmar.Location = new System.Drawing.Point(12, 422);
+            this.btnConfirmar.Name = "btnConfirmar";
+            this.btnConfirmar.Size = new System.Drawing.Size(49, 35);
+            this.btnConfirmar.TabIndex = 154;
+            this.btnConfirmar.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
@@ -434,9 +415,8 @@ namespace TCC.VISÃO
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnExtornar);
             this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.btnCadastrar);
+            this.Controls.Add(this.btnConfirmar);
             this.Controls.Add(this.lblteste);
             this.Controls.Add(this.txtnomeUsuario);
             this.Controls.Add(this.lblnomeUsuario);
@@ -500,9 +480,8 @@ namespace TCC.VISÃO
         private System.Windows.Forms.Label lblnomeUsuario;
         private System.Windows.Forms.TextBox txtnomeUsuario;
         private System.Windows.Forms.DataGridView lblteste;
-        private System.Windows.Forms.Button btnExtornar;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.Button btnCadastrar;
+        private System.Windows.Forms.Button btnConfirmar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox comboBox2;
