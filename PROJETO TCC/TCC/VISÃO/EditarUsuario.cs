@@ -14,7 +14,7 @@ namespace TCC.VISÃO
 {
     public partial class EditarUsuario : Form
     {
-        SqlConnection con = new SqlConnection(Properties.Settings.Default.AutofillConnectionString);
+        //SqlConnection con = new SqlConnection();
         int validamsg = 0;
         public EditarUsuario()
         {
@@ -43,9 +43,13 @@ namespace TCC.VISÃO
 
         private void EditarUsuario_Load(object sender, EventArgs e)
         {
-            SqlCommand cmd = new SqlCommand("SELECT usuario FROM logins", con);
-            con.Open();
+            // TODO: esta linha de código carrega dados na tabela 'tccDataSet.logins'. Você pode movê-la ou removê-la conforme necessário.
+            this.loginsTableAdapter.Fill(this.tccDataSet.logins);
 
+           // SqlCommand cmd = new SqlCommand("SELECT usuario FROM logins", con);
+
+            
+           
         }
 
         private void EditarUsuario_MouseMove(object sender, MouseEventArgs e)
