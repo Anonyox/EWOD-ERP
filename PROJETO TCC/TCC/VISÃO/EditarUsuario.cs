@@ -14,6 +14,7 @@ namespace TCC.VISÃO
 {
     public partial class EditarUsuario : Form
     {
+        SqlConnection con = new SqlConnection(Properties.Settings.Default.AutofillConnectionString);
         int validamsg = 0;
         public EditarUsuario()
         {
@@ -42,7 +43,9 @@ namespace TCC.VISÃO
 
         private void EditarUsuario_Load(object sender, EventArgs e)
         {
-            
+            SqlCommand cmd = new SqlCommand("SELECT usuario FROM logins", con);
+            con.Open();
+
         }
 
         private void EditarUsuario_MouseMove(object sender, MouseEventArgs e)
