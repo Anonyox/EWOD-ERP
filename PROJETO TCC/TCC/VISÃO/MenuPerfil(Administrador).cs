@@ -279,6 +279,8 @@ namespace TCC.VISÃO
                 lblrelatorioVenda.Visible = false;
                 btnconfiguracoesSistema.Visible = false;
                 lblconfigSistema.Visible = false;
+                pcblogo.Visible = true;
+
 
                 //CASO CLIENTE QUEIRA INICIALIZAR COM A TELA NORMAL
 
@@ -295,7 +297,7 @@ namespace TCC.VISÃO
 
                 //CASO CLIENTE QUEIRA INICIALIZAR COM A TELA MAXIMIZADA
 
-                /*
+              /*  
                 btncadastroProdutos.Location = new Point(-2, 300);
                 lblcadastroProduto.Location = new Point(55, 450);
                 btnrelatorioEstoque.Location = new Point(580, 300);
@@ -307,17 +309,20 @@ namespace TCC.VISÃO
 
                 lblData.Location = new Point(2, 835);
                 lblHora.Location = new Point(125, 835);
-
-                //PICTURE BOX
-                pcblogo.Location = new Point(1180, 710); //LOGO
-                pcblogo.Size = new Size(271, 184); //LOGO
-
-
-                //PANELS
-                pn1.Location = new Point(-2, 859);
-                pn2.Location = new Point(118, 817);
-
                 */
+                 lblData.Location = new Point(3, 680);
+                  lblHora.Location = new Point(127, 680);
+
+                 //PICTURE BOX
+                 pcblogo.Location = new Point(837, 600); //LOGO
+                 pcblogo.Size = new Size(169, 107); //LOGO
+
+
+                 //PANELS
+                 pn1.Location = new Point(-50, 705);
+                 pn2.Location = new Point(125, 670);
+
+                
 
             }
             else if (perfil == "Vendas")
@@ -332,8 +337,9 @@ namespace TCC.VISÃO
                 lblrelatorioVenda.Visible = false;
                 btnconfiguracoesSistema.Visible = false;
                 lblconfigSistema.Visible = false;
+                pcblogo.Visible = true;
 
-                //INICIAR TELA EM MODO NORMAL CASO CLIENTE QUEIRA
+                 //INICIAR TELA EM MODO NORMAL CASO CLIENTE QUEIRA
 
                  btncadastroCliente.Location = new Point(391, 238);
                  lblcadastroCliente.Location = new Point(450, 387);
@@ -342,31 +348,31 @@ namespace TCC.VISÃO
                  btnlogout.Location = new Point(391, 421);
                  lbllogout.Location = new Point(506, 561);
 
-                 
+
 
                 //INICIAR TELA EM MODO MAXIMIZADO CASO CLIENTE QUEIRA
 
-               /* btncadastroVenda.Location = new Point(-2, 300);
-                lblcadastroVenda.Location = new Point(55, 450);
-                btncadastroCliente.Location = new Point(580, 300);
-                lblcadastroCliente.Location = new Point(640, 450);
-                btnconfiguracoesUsuario.Location = new Point(1136, 300);
-                lblconfigUsuario.Location = new Point(1190, 450);
-                btnlogout.Location = new Point(580, 550);
-                lbllogout.Location = new Point(695, 700);
-
-                lblData.Location = new Point(2, 835);
-                lblHora.Location = new Point(125, 835);
-
+                /* btncadastroVenda.Location = new Point(-2, 300);
+                 lblcadastroVenda.Location = new Point(55, 450);
+                 btncadastroCliente.Location = new Point(580, 300);
+                 lblcadastroCliente.Location = new Point(640, 450);
+                 btnconfiguracoesUsuario.Location = new Point(1136, 300);
+                 lblconfigUsuario.Location = new Point(1190, 450);
+                 btnlogout.Location = new Point(580, 550);
+                 lbllogout.Location = new Point(695, 700);
+                */
+                lblData.Location = new Point(3, 680);
+                 lblHora.Location = new Point(127, 680);
+                
                 //PICTURE BOX
-                pcblogo.Location = new Point(1180, 710); //LOGO
-                pcblogo.Size = new Size(271, 184); //LOGO
+                pcblogo.Location = new Point(837, 600); //LOGO
+                pcblogo.Size = new Size(169, 107); //LOGO
 
 
                 //PANELS
-                pn1.Location = new Point(-2, 859);
-                pn2.Location = new Point(118, 817);
-               */
+                pn1.Location = new Point(-50, 705);
+                pn2.Location = new Point(125, 670);
+               
             }
 
             else if (perfil == "Geral")
@@ -381,120 +387,123 @@ namespace TCC.VISÃO
                 btnlogout.Location = new Point(577, 401);
                 lbllogout.Location = new Point(690, 531);
 
-                
+
 
                 //INICIAR TELA MAXIMIZADA
 
-               /* //  BUTTONS
-                btncadastroProdutos.Location = new Point(-2, 50);
-                btncadastroCliente.Location = new Point(580, 50);
-                btncadastroUsuario.Location = new Point(1136, 50);
-                btncadastroVenda.Location = new Point(-2, 300);
-                btnrelatorioVenda.Location = new Point(580, 300);
-                btnrelatorioEstoque.Location = new Point(1136, 300);
-                btnconfiguracoesUsuario.Location = new Point(400, 550);
-                //btnconfiguracoesSistema.Location = new Point(580, 550);
-                btnlogout.Location = new Point(755, 550);
+                /* //  BUTTONS
+                 btncadastroProdutos.Location = new Point(-2, 50);
+                 btncadastroCliente.Location = new Point(580, 50);
+                 btncadastroUsuario.Location = new Point(1136, 50);
+                 btncadastroVenda.Location = new Point(-2, 300);
+                 btnrelatorioVenda.Location = new Point(580, 300);
+                 btnrelatorioEstoque.Location = new Point(1136, 300);
+                 btnconfiguracoesUsuario.Location = new Point(400, 550);
+                 //btnconfiguracoesSistema.Location = new Point(580, 550);
+                 btnlogout.Location = new Point(755, 550);
 
 
-                //LABELS
-                lblcadastroProduto.Location = new Point(61, 203);
-                lblcadastroCliente.Location = new Point(635, 203);
-                lblcadastroUsuario.Location = new Point(1195, 203);
-                lblcadastroVenda.Location = new Point(60, 450);
-                lblrelatorioVenda.Location = new Point(640, 450);
-                lblrelatorioEstoque.Location = new Point(1195, 450);
-                lblconfigUsuario.Location = new Point(450, 700);
-                //lblconfigSistema.Location = new Point(625, 700);
+                 //LABELS
+                 lblcadastroProduto.Location = new Point(61, 203);
+                 lblcadastroCliente.Location = new Point(635, 203);
+                 lblcadastroUsuario.Location = new Point(1195, 203);
+                 lblcadastroVenda.Location = new Point(60, 450);
+                 lblrelatorioVenda.Location = new Point(640, 450);
+                 lblrelatorioEstoque.Location = new Point(1195, 450);
+                 lblconfigUsuario.Location = new Point(450, 700);
+                 //lblconfigSistema.Location = new Point(625, 700);
 
-                lbllogout.Location = new Point(870, 700);
-                lblData.Location = new Point(2, 835);
-                lblHora.Location = new Point(125, 835);
-
-                //PICTURE BOX
-                pcblogo.Location = new Point(1180, 710); //LOGO
-                pcblogo.Size = new Size(271, 184); //LOGO
-
-
-                //PANELS
-                pn1.Location = new Point(-2, 859);
-                pn2.Location = new Point(118, 817);
-
+                 lbllogout.Location = new Point(870, 700);
+                 lblData.Location = new Point(2, 835);
+                 lblHora.Location = new Point(125, 835);
                 */
-            }
 
-            else
-            {
+                 lblData.Location = new Point(3, 680);
+                  lblHora.Location = new Point(127, 680);
 
-                //  BUTTONS
-                btncadastroProdutos.Location = new Point(-2, 50);
-                btncadastroCliente.Location = new Point(391, 50);
-                btncadastroUsuario.Location = new Point(761, 50);
-                btncadastroVenda.Location = new Point(-2, 238);
-                btnrelatorioVenda.Location = new Point(391, 238);
-                btnrelatorioEstoque.Location = new Point(761, 238);
-                btnconfiguracoesUsuario.Location = new Point(-2, 412);
-                btnconfiguracoesSistema.Location = new Point(391, 421);
-                btnlogout.Location = new Point(761, 421);
+                 //PICTURE BOX
+                 pcblogo.Location = new Point(837, 600); //LOGO
+                 pcblogo.Size = new Size(169, 107); //LOGO
 
 
-                //LABELS
-                lblcadastroProduto.Location = new Point(49, 203);
-                lblcadastroCliente.Location = new Point(450, 203);
-                lblcadastroUsuario.Location = new Point(821, 203);
-                lblcadastroVenda.Location = new Point(61, 387);
-                lblrelatorioVenda.Location = new Point(450, 387);
-                lblrelatorioEstoque.Location = new Point(821, 387);
-                lblconfigUsuario.Location = new Point(45, 561);
-                lblconfigSistema.Location = new Point(433, 561);
-                lbllogout.Location = new Point(875, 561);
-                lblData.Location = new Point(2, 680);
-                lblHora.Location = new Point(125, 680);
+                 //PANELS
+                 pn1.Location = new Point(-50, 705);
+                 pn2.Location = new Point(125, 670);
 
-                //PICTURE BOX
-                pcblogo.Location = new Point(849, 593); //LOGO
-                pcblogo.Size = new Size(178, 111); //LOGO
+             }
 
+             else
+             {
 
-                //PANELS
-                //pn1.Location = new Point(-2, 705);
-                //pn2.Location = new Point(120, 663);
-                //  BUTTONS
-                /*
-                btncadastroProdutos.Location = new Point(10, 50);
-                btncadastroCliente.Location = new Point(580, 50);
-                btncadastroUsuario.Location = new Point(1136, 50);
-                btncadastroVenda.Location = new Point(-2, 300);
-                btnrelatorioVenda.Location = new Point(580, 300);
-                btnrelatorioEstoque.Location = new Point(1136, 300);
-                btnconfiguracoesUsuario.Location = new Point(-2, 550);
-                btnconfiguracoesSistema.Location = new Point(580, 560);
-                btnlogout.Location = new Point(1137, 550);
+                 //  BUTTONS
+                 btncadastroProdutos.Location = new Point(-2, 50);
+                 btncadastroCliente.Location = new Point(391, 50);
+                 btncadastroUsuario.Location = new Point(761, 50);
+                 btncadastroVenda.Location = new Point(-2, 238);
+                 btnrelatorioVenda.Location = new Point(391, 238);
+                 btnrelatorioEstoque.Location = new Point(761, 238);
+                 btnconfiguracoesUsuario.Location = new Point(-2, 412);
+                 btnconfiguracoesSistema.Location = new Point(391, 421);
+                 btnlogout.Location = new Point(761, 421);
 
 
-                //LABELS
-                lblcadastroProduto.Location = new Point(61, 203);
-                lblcadastroCliente.Location = new Point(635, 203);
-                lblcadastroUsuario.Location = new Point(1195, 203);
-                lblcadastroVenda.Location = new Point(60, 450);
-                lblrelatorioVenda.Location = new Point(640, 450);
-                lblrelatorioEstoque.Location = new Point(1195, 450);
-                lblconfigUsuario.Location = new Point(40, 700);
-                lblconfigSistema.Location = new Point(625, 700);
+                 //LABELS
+                 lblcadastroProduto.Location = new Point(49, 203);
+                 lblcadastroCliente.Location = new Point(450, 203);
+                 lblcadastroUsuario.Location = new Point(821, 203);
+                 lblcadastroVenda.Location = new Point(61, 387);
+                 lblrelatorioVenda.Location = new Point(450, 387);
+                 lblrelatorioEstoque.Location = new Point(821, 387);
+                 lblconfigUsuario.Location = new Point(45, 561);
+                 lblconfigSistema.Location = new Point(433, 561);
+                 lbllogout.Location = new Point(875, 561);
+                 lblData.Location = new Point(2, 680);
+                 lblHora.Location = new Point(125, 680);
 
-                lbllogout.Location = new Point(1250, 700);
-                lblData.Location = new Point(2, 835);
-                lblHora.Location = new Point(125, 835);
-
-                //PICTURE BOX
-                pcblogo.Location = new Point(1180, 710); //LOGO
-                pcblogo.Size = new Size(271, 184); //LOGO
+                 //PICTURE BOX
+                 pcblogo.Location = new Point(849, 593); //LOGO
+                 pcblogo.Size = new Size(178, 111); //LOGO
 
 
-                //PANELS
-                pn1.Location = new Point(-2, 859);
-                pn2.Location = new Point(118, 817);
-                */
+                 //PANELS
+                 //pn1.Location = new Point(-2, 705);
+                 //pn2.Location = new Point(120, 663);
+                 //  BUTTONS
+                 /*
+                 btncadastroProdutos.Location = new Point(10, 50);
+                 btncadastroCliente.Location = new Point(580, 50);
+                 btncadastroUsuario.Location = new Point(1136, 50);
+                 btncadastroVenda.Location = new Point(-2, 300);
+                 btnrelatorioVenda.Location = new Point(580, 300);
+                 btnrelatorioEstoque.Location = new Point(1136, 300);
+                 btnconfiguracoesUsuario.Location = new Point(-2, 550);
+                 btnconfiguracoesSistema.Location = new Point(580, 560);
+                 btnlogout.Location = new Point(1137, 550);
+
+
+                 //LABELS
+                 lblcadastroProduto.Location = new Point(61, 203);
+                 lblcadastroCliente.Location = new Point(635, 203);
+                 lblcadastroUsuario.Location = new Point(1195, 203);
+                 lblcadastroVenda.Location = new Point(60, 450);
+                 lblrelatorioVenda.Location = new Point(640, 450);
+                 lblrelatorioEstoque.Location = new Point(1195, 450);
+                 lblconfigUsuario.Location = new Point(40, 700);
+                 lblconfigSistema.Location = new Point(625, 700);
+
+                 lbllogout.Location = new Point(1250, 700);
+                 lblData.Location = new Point(2, 835);
+                 lblHora.Location = new Point(125, 835);
+
+                 //PICTURE BOX
+                 pcblogo.Location = new Point(1180, 710); //LOGO
+                 pcblogo.Size = new Size(271, 184); //LOGO
+
+
+                 //PANELS
+                 pn1.Location = new Point(-2, 859);
+                 pn2.Location = new Point(118, 817);
+                 */
             }
         }
 
@@ -861,6 +870,22 @@ namespace TCC.VISÃO
                 cadastroVendas.Owner = this;
                 cadastroVendas.Show();
             }
+        }
+
+        private void menuAdministrador_Load(object sender, EventArgs e)
+        {
+            lblData.Location = new Point(3, 680);
+            lblHora.Location = new Point(127, 680);
+
+            //PICTURE BOX
+            pcblogo.Location = new Point(837, 600); //LOGO
+            pcblogo.Size = new Size(169, 107); //LOGO
+
+
+            //PANELS
+            pn1.Location = new Point(-50, 705);
+            pn2.Location = new Point(125, 670);
+            
         }
     }
 }
