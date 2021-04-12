@@ -46,8 +46,8 @@ namespace TCC.VISÃO
             // TODO: esta linha de código carrega dados na tabela 'tccDataSet.logins'. Você pode movê-la ou removê-la conforme necessário.
             this.loginsTableAdapter.Fill(this.tccDataSet.logins);
 
-           // SqlCommand cmd = new SqlCommand("SELECT usuario FROM logins", con);
-
+            // SqlCommand cmd = new SqlCommand("SELECT usuario FROM logins", con);
+          
             
            
         }
@@ -64,6 +64,20 @@ namespace TCC.VISÃO
             
         }
 
-        
+        private void txtnomeUsuario_MouseClick(object sender, MouseEventArgs e)
+        {
+            SqlCommand cmd = new SqlCommand();
+            Conexao con = new Conexao();
+            cmd.Connection = con.conectar();
+
+
+            var source = new AutoCompleteStringCollection();
+            source.AddRange(new string[]
+            {
+                cmd.CommandText = "SELECT usuario FROM logins"
+            });
+
+            txtnomeUsuario.AutoCompleteCustomSource = source;
+        }
     }
 }
