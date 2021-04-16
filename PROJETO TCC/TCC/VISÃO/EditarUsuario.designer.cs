@@ -31,7 +31,7 @@ namespace TCC.VISÃO
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditarUsuario));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.btnSair = new System.Windows.Forms.PictureBox();
@@ -54,7 +54,6 @@ namespace TCC.VISÃO
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.lblnomeUsuario = new System.Windows.Forms.Label();
-            this.txtnomeUsuario = new System.Windows.Forms.TextBox();
             this.loginsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tccDataSet = new TCC.tccDataSet();
             this.lblteste = new System.Windows.Forms.DataGridView();
@@ -65,6 +64,7 @@ namespace TCC.VISÃO
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.loginsTableAdapter = new TCC.tccDataSetTableAdapters.loginsTableAdapter();
+            this.txtnomeUsuario = new System.Windows.Forms.TextBox();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSair)).BeginInit();
@@ -308,18 +308,6 @@ namespace TCC.VISÃO
             this.lblnomeUsuario.TabIndex = 150;
             this.lblnomeUsuario.Text = "Nome do Usuário  :";
             // 
-            // txtnomeUsuario
-            // 
-            this.txtnomeUsuario.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.txtnomeUsuario.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txtnomeUsuario.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.loginsBindingSource, "usuario", true));
-            this.txtnomeUsuario.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.loginsBindingSource, "usuario", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.txtnomeUsuario.Location = new System.Drawing.Point(237, 62);
-            this.txtnomeUsuario.Name = "txtnomeUsuario";
-            this.txtnomeUsuario.Size = new System.Drawing.Size(135, 20);
-            this.txtnomeUsuario.TabIndex = 151;
-            this.txtnomeUsuario.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtnomeUsuario_MouseClick);
-            // 
             // loginsBindingSource
             // 
             this.loginsBindingSource.DataMember = "logins";
@@ -333,14 +321,14 @@ namespace TCC.VISÃO
             // lblteste
             // 
             this.lblteste.BackgroundColor = System.Drawing.Color.Lavender;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.lblteste.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.lblteste.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.lblteste.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.lblteste.Location = new System.Drawing.Point(-2, 471);
             this.lblteste.Name = "lblteste";
@@ -428,6 +416,13 @@ namespace TCC.VISÃO
             // 
             this.loginsTableAdapter.ClearBeforeFill = true;
             // 
+            // txtnomeUsuario
+            // 
+            this.txtnomeUsuario.Location = new System.Drawing.Point(237, 65);
+            this.txtnomeUsuario.Name = "txtnomeUsuario";
+            this.txtnomeUsuario.Size = new System.Drawing.Size(121, 20);
+            this.txtnomeUsuario.TabIndex = 162;
+            // 
             // EditarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -436,6 +431,7 @@ namespace TCC.VISÃO
             this.BackgroundImage = global::TCC.Properties.Resources._1555492a6_11;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(863, 654);
+            this.Controls.Add(this.txtnomeUsuario);
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
@@ -443,7 +439,6 @@ namespace TCC.VISÃO
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnConfirmar);
             this.Controls.Add(this.lblteste);
-            this.Controls.Add(this.txtnomeUsuario);
             this.Controls.Add(this.lblnomeUsuario);
             this.Controls.Add(this.textBox10);
             this.Controls.Add(this.textBox9);
@@ -505,7 +500,6 @@ namespace TCC.VISÃO
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.Label lblnomeUsuario;
-        private System.Windows.Forms.TextBox txtnomeUsuario;
         private System.Windows.Forms.DataGridView lblteste;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnConfirmar;
@@ -516,5 +510,6 @@ namespace TCC.VISÃO
         private tccDataSet tccDataSet;
         private System.Windows.Forms.BindingSource loginsBindingSource;
         private tccDataSetTableAdapters.loginsTableAdapter loginsTableAdapter;
+        private System.Windows.Forms.TextBox txtnomeUsuario;
     }
 }

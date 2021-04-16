@@ -9,12 +9,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TCC.CONTROLE;
+using System.Data.OleDb;
 
 namespace TCC.VISÃO
 {
     public partial class EditarUsuario : Form
     {
-        //SqlConnection con = new SqlConnection();
+        SqlConnection con = new SqlConnection(@"Data Source= tcp: 177.125.224.84,9022;Initial Catalog=tcc;User ID=etec;Password=123456;connection timeout = 1");
+            
         int validamsg = 0;
         public EditarUsuario()
         {
@@ -45,12 +47,31 @@ namespace TCC.VISÃO
         {
             // TODO: esta linha de código carrega dados na tabela 'tccDataSet.logins'. Você pode movê-la ou removê-la conforme necessário.
             this.loginsTableAdapter.Fill(this.tccDataSet.logins);
+            con.Open();
 
-            // SqlCommand cmd = new SqlCommand("SELECT usuario FROM logins", con);
-          
-            
+            SqlCommand cmd = new SqlCommand("SELECT usuario FROM logins",con);
+            //cmd.CommandText = ;
+            SqlDataReader dr;
+            dr = cmd.ExecuteReader();
+
+            AutoCompleteStringCollection collection = new AutoCompleteStringCollection();
+
+            while (dr.Read())
+            {
+                collection.Add(dr["usuario"].ToString());
+            }
+
+            txtnomeUsuario.AutoCompleteMode = AutoCompleteMode.Suggest;
+            txtnomeUsuario.AutoCompleteSource = AutoCompleteSource.CustomSource;
+
+            txtnomeUsuario.AutoCompleteCustomSource = collection;
+
+            dr.Close();
+            con.Close();
+                
            
         }
+
 
         private void EditarUsuario_MouseMove(object sender, MouseEventArgs e)
         {   
@@ -66,18 +87,12 @@ namespace TCC.VISÃO
 
         private void txtnomeUsuario_MouseClick(object sender, MouseEventArgs e)
         {
-            SqlCommand cmd = new SqlCommand();
-            Conexao con = new Conexao();
-            cmd.Connection = con.conectar();
+            
 
 
-            var source = new AutoCompleteStringCollection();
-            source.AddRange(new string[]
-            {
-                cmd.CommandText = "SELECT usuario FROM logins"
-            });
 
-            txtnomeUsuario.AutoCompleteCustomSource = source;
+
+
         }
     }
 }
