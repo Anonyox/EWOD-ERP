@@ -422,6 +422,7 @@ namespace TCC.VISÃO
             this.txtnomeUsuario.Name = "txtnomeUsuario";
             this.txtnomeUsuario.Size = new System.Drawing.Size(121, 20);
             this.txtnomeUsuario.TabIndex = 162;
+            this.txtnomeUsuario.Leave += new System.EventHandler(this.txtnomeUsuario_Leave);
             // 
             // EditarUsuario
             // 

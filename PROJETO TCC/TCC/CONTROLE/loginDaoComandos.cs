@@ -20,6 +20,9 @@ namespace TCC.CONTROLE
         public String perfillog = verificaPerfill.perfil;
         
         public string tipo = "Acesso ao sistema";
+        public string tipo2 = "Alterou o Nome de Usuário";
+        public string tipo3 = "Alterou o Email do Usuário";
+        public string tipo4 = "Alterou a Senha do Usuário";
         String user = DadosGeral.nomeUser;
         
         public DateTime dataLog = System.DateTime.Now;
@@ -193,6 +196,7 @@ namespace TCC.CONTROLE
             cmd.Parameters.AddWithValue("@login", login2);
             cmd.Parameters.AddWithValue("@senha", senha2);
 
+
            
 
 
@@ -238,6 +242,15 @@ namespace TCC.CONTROLE
             cmd.Parameters.AddWithValue("@novoLogin", novoLogin);
             cmd.Parameters.AddWithValue("@login", login);
 
+            cmd2.CommandText = "Insert into logs (tipo,dataLog,usuario,perfil) values (@tipo, @dataLog, @usuario, @perfil)";
+            cmd2.Parameters.AddWithValue("@tipo", tipo2);
+            cmd2.Parameters.AddWithValue("@datalog", dataLog);
+            cmd2.Parameters.AddWithValue("@usuario", user);
+            cmd2.Parameters.AddWithValue("@perfil", perfillog);
+
+
+
+
             try
             {
                 cmd.Connection = con.conectar();
@@ -255,6 +268,8 @@ namespace TCC.CONTROLE
                     cmd.ExecuteNonQuery();
 
                     con.desconectar();
+                    cmd2.Connection = con.conectar();
+                    cmd2.ExecuteNonQuery();
                     this.mensagem = "USUÁRIO ALTERADO COM SUCESSO";
 
                         
@@ -283,6 +298,12 @@ namespace TCC.CONTROLE
             cmd.Parameters.AddWithValue("@novaSenha", novaSenha);
             cmd.Parameters.AddWithValue("@usuario", usuario);
 
+            cmd2.CommandText = "Insert into logs (tipo,dataLog,usuario,perfil) values (@tipo, @dataLog, @usuario, @perfil)";
+            cmd2.Parameters.AddWithValue("@tipo", tipo4);
+            cmd2.Parameters.AddWithValue("@datalog", dataLog);
+            cmd2.Parameters.AddWithValue("@usuario", user);
+            cmd2.Parameters.AddWithValue("@perfil", perfillog);
+
             try
             {
                 cmd.Connection = con.conectar();
@@ -300,6 +321,8 @@ namespace TCC.CONTROLE
                     cmd.ExecuteNonQuery();
 
                     con.desconectar();
+                    cmd2.Connection = con.conectar();
+                    cmd2.ExecuteNonQuery();
                     this.mensagem = "SENHA ALTERADA COM SUCESSO";
 
 
@@ -328,6 +351,12 @@ namespace TCC.CONTROLE
             cmd.Parameters.AddWithValue("@novoEmail", novoEmail);
             cmd.Parameters.AddWithValue("@usuario", usuario);
 
+            cmd2.CommandText = "Insert into logs (tipo,dataLog,usuario,perfil) values (@tipo, @dataLog, @usuario, @perfil)";
+            cmd2.Parameters.AddWithValue("@tipo", tipo3);
+            cmd2.Parameters.AddWithValue("@datalog", dataLog);
+            cmd2.Parameters.AddWithValue("@usuario", user);
+            cmd2.Parameters.AddWithValue("@perfil", perfillog);
+
             try
             {
                 cmd.Connection = con.conectar();
@@ -345,6 +374,9 @@ namespace TCC.CONTROLE
                     cmd.ExecuteNonQuery();
 
                     con.desconectar();
+                    cmd2.Connection = con.conectar();
+                    cmd2.ExecuteNonQuery();
+
                     this.mensagem = "EMAIL ALTERADO COM SUCESSO";
 
 

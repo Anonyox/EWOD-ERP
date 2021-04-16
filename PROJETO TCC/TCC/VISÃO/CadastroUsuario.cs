@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Globalization;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -10,6 +11,8 @@ namespace TCC.VISÃO
 {
     public partial class CadastroUsuario : Form
     {
+        SqlConnection con = new SqlConnection();
+        SqlCommand cmd = new SqlCommand();
         menuAdministrador menuzAdm = new menuAdministrador();
         public String sexoSelecao;
         public string cpf;
@@ -82,6 +85,10 @@ namespace TCC.VISÃO
                                 txttelefone.Visible = false;
                                 rdbmasculino.Visible = false;
                                 rdbfeminino.Visible = false;
+
+                       // cmd.CommandText = "INSERT INTO logs VALUES(Novo Usuário Cadastrado)";
+
+                                
                             }
                 }
 

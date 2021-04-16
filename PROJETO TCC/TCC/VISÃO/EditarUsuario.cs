@@ -94,5 +94,22 @@ namespace TCC.VISÃO
 
 
         }
+
+        private void txtnomeUsuario_Leave(object sender, EventArgs e)
+        {
+            /*con.Open();
+            SqlCommand cmd = new SqlCommand("Select * FROM logins WHERE usuario = @usuario",con);         
+            cmd.Parameters.AddWithValue("@usuario", txtnomeUsuario);
+
+            if("@usuario" == txtnomeUsuario)
+            {
+               
+            }*/
+        }
+        //verificação do usuario do banco com o do textbox
+        /*public bool verificarusuario(String usuario, String perfil, String cpf, String Departamento, String endereco, String cidade, String telefone, String cep, String estado, String bairro)
+        {
+
+        }*/
     }
 }
