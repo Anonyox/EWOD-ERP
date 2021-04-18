@@ -26,7 +26,7 @@ namespace TCC.VISÃO
 
 
             selTotLogs();
-            selLogsEdit();
+            selLogsAlt();
             listarLogs();
             selLogsCad();
             selLogsExclu();
@@ -222,12 +222,12 @@ namespace TCC.VISÃO
             }
         }
 
-        public void selLogsEdit()
+        public void selLogsAlt()
         {
             Conexao con = new Conexao();
             SqlCommand cmd = new SqlCommand();
 
-            cmd.CommandText = "select count (tipo) from logs where tipo like 'Edit%'";
+            cmd.CommandText = "select count (tipo) from logs where tipo like 'Alt%'";
 
             con.conectar();
 

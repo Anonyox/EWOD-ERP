@@ -352,11 +352,11 @@ namespace TCC.VISÃO
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(77, 32);
+            this.label2.Location = new System.Drawing.Point(67, 32);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 15);
+            this.label2.Size = new System.Drawing.Size(96, 15);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Edições feitas";
+            this.label2.Text = "Alterações feitas";
             // 
             // panel5
             // 
