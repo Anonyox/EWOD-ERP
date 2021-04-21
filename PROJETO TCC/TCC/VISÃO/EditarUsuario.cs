@@ -97,8 +97,11 @@ namespace TCC.VISÃO
 
         private void txtnomeUsuario_Leave(object sender, EventArgs e)
         {
+           public String (string usuario)
             con.Open();
             //Elaborar Select que contenha cada um dos campos da tabela
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = ("SELECT * WHERE usuario = @usuario ");
             //criar variáveis para armazenar os campos
             //atribuir as variáveis para os txts
             //colocar no formato auto-complete
