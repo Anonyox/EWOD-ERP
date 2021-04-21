@@ -64,12 +64,12 @@ namespace TCC.VISÃO
 
         private void btnCadastrar_MouseEnter(object sender, EventArgs e)
         {
-            btnCadastrar.Size = new Size(100, 50);
+            //btnCadastrar.Size = new Size(100, 50);
         }
 
         private void btnCadastrar_MouseLeave(object sender, EventArgs e)
         {
-            btnCadastrar.Size = new Size(79, 35);
+           // btnCadastrar.Size = new Size(79, 35);
         }
 
         private void btnpesqisar_MouseEnter(object sender, EventArgs e)

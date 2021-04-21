@@ -16,7 +16,8 @@ namespace TCC.VISÃO
     public partial class EditarUsuario : Form
     {
         SqlConnection con = new SqlConnection(@"Data Source= tcp: 177.125.224.84,9022;Initial Catalog=tcc;User ID=etec;Password=123456;connection timeout = 1");
-            
+        SqlDataReader dr;
+
         int validamsg = 0;
         public EditarUsuario()
         {
@@ -51,7 +52,7 @@ namespace TCC.VISÃO
 
             SqlCommand cmd = new SqlCommand("SELECT usuario FROM logins",con);
             //cmd.CommandText = ;
-            SqlDataReader dr;
+            
             dr = cmd.ExecuteReader();
 
             AutoCompleteStringCollection collection = new AutoCompleteStringCollection();
@@ -97,17 +98,44 @@ namespace TCC.VISÃO
 
         private void txtnomeUsuario_Leave(object sender, EventArgs e)
         {
-           public String (string usuario)
-            con.Open();
-            //Elaborar Select que contenha cada um dos campos da tabela
-            SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = ("SELECT * WHERE usuario = @usuario ");
+            Conexao cone = new Conexao();
+            string usuario = Convert.ToString(txtnomeUsuario);
+                con.Open();
+                //Elaborar Select que contenha cada um dos campos da tabela
+                SqlCommand cmd = new SqlCommand("SELECT cidade,endereco,complemento,telefone FROM logins WHERE usuario = @usuario " , con);
+            cmd.Parameters.AddWithValue("@usuario",usuario);
+            dr = cmd.ExecuteReader();
             //criar variáveis para armazenar os campos
+            AutoCompleteStringCollection collection2 = new AutoCompleteStringCollection();
+
             //atribuir as variáveis para os txts
+            while (dr.Read())
+            {
+                collection2.Add(dr["cidade"].ToString());
+            }
+
+
             //colocar no formato auto-complete
+            
+            txtCidade.AutoCompleteMode = AutoCompleteMode.Append;
+            txtCidade.AutoCompleteSource = AutoCompleteSource.CustomSource;
+
+            txtnomeUsuario.AutoCompleteCustomSource = collection2;
+
+            dr.Close();
+            con.Close();
+
             //SqlCommand cmd = new SqlCommand("SELECT");
-                
+
+
+
+
+
+
+
         }
+
+        
         //verificação do usuario do banco com o do textbox
         /*public bool verificarusuario(String usuario, String perfil, String cpf, String Departamento, String endereco, String cidade, String telefone, String cep, String estado, String bairro)
         {

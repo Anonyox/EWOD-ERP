@@ -48,7 +48,7 @@ namespace TCC.VISÃO
             this.panel4 = new System.Windows.Forms.Panel();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtCidade = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
@@ -260,12 +260,12 @@ namespace TCC.VISÃO
             this.textBox4.Size = new System.Drawing.Size(181, 20);
             this.textBox4.TabIndex = 141;
             // 
-            // textBox6
+            // txtCidade
             // 
-            this.textBox6.Location = new System.Drawing.Point(171, 254);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(132, 20);
-            this.textBox6.TabIndex = 143;
+            this.txtCidade.Location = new System.Drawing.Point(171, 254);
+            this.txtCidade.Name = "txtCidade";
+            this.txtCidade.Size = new System.Drawing.Size(132, 20);
+            this.txtCidade.TabIndex = 143;
             // 
             // textBox7
             // 
@@ -445,7 +445,7 @@ namespace TCC.VISÃO
             this.Controls.Add(this.textBox9);
             this.Controls.Add(this.textBox8);
             this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.txtCidade);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.panel4);
@@ -495,7 +495,7 @@ namespace TCC.VISÃO
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtCidade;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.TextBox textBox9;
