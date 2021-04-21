@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(txtfornecedor));
             this.panel6 = new System.Windows.Forms.Panel();
+            this.btnConfirmar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.txtcep = new System.Windows.Forms.MaskedTextBox();
@@ -47,13 +49,11 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.btnpesqisar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.btnCadastrar = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -74,6 +74,8 @@
             // 
             this.panel6.BackgroundImage = global::TCC.Properties.Resources._1555492a6_11;
             this.panel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel6.Controls.Add(this.btnConfirmar);
+            this.panel6.Controls.Add(this.btnCancelar);
             this.panel6.Controls.Add(this.pictureBox3);
             this.panel6.Controls.Add(this.textBox1);
             this.panel6.Controls.Add(this.txtcep);
@@ -90,22 +92,53 @@
             this.panel6.Controls.Add(this.button5);
             this.panel6.Controls.Add(this.button4);
             this.panel6.Controls.Add(this.button3);
-            this.panel6.Controls.Add(this.button2);
             this.panel6.Controls.Add(this.btnpesqisar);
             this.panel6.Controls.Add(this.dataGridView1);
             this.panel6.Controls.Add(this.label7);
             this.panel6.Controls.Add(this.textBox2);
             this.panel6.Controls.Add(this.label6);
-            this.panel6.Controls.Add(this.btnCadastrar);
             this.panel6.Controls.Add(this.label5);
             this.panel6.Controls.Add(this.label3);
             this.panel6.Controls.Add(this.label2);
             this.panel6.Controls.Add(this.label1);
-            this.panel6.Location = new System.Drawing.Point(1, 71);
-            this.panel6.Margin = new System.Windows.Forms.Padding(4);
+            this.panel6.Location = new System.Drawing.Point(1, 58);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1133, 601);
+            this.panel6.Size = new System.Drawing.Size(850, 488);
             this.panel6.TabIndex = 57;
+            // 
+            // btnConfirmar
+            // 
+            this.btnConfirmar.BackColor = System.Drawing.Color.Transparent;
+            this.btnConfirmar.BackgroundImage = global::TCC.Properties.Resources.icons8_botão_de_opção_marcado_48;
+            this.btnConfirmar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnConfirmar.FlatAppearance.BorderSize = 0;
+            this.btnConfirmar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnConfirmar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnConfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConfirmar.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirmar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.btnConfirmar.Location = new System.Drawing.Point(62, 73);
+            this.btnConfirmar.Name = "btnConfirmar";
+            this.btnConfirmar.Size = new System.Drawing.Size(64, 38);
+            this.btnConfirmar.TabIndex = 157;
+            this.btnConfirmar.UseVisualStyleBackColor = false;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackColor = System.Drawing.Color.Transparent;
+            this.btnCancelar.BackgroundImage = global::TCC.Properties.Resources.icons8_cancelar_48;
+            this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.Color.Transparent;
+            this.btnCancelar.Location = new System.Drawing.Point(705, 73);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(67, 46);
+            this.btnCancelar.TabIndex = 156;
+            this.btnCancelar.UseVisualStyleBackColor = false;
             // 
             // pictureBox3
             // 
@@ -114,10 +147,9 @@
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.BackgroundImage = global::TCC.Properties.Resources.d6a55e0c15b8da392e5cec620a39e6e81;
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.Location = new System.Drawing.Point(1035, 501);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox3.Location = new System.Drawing.Point(776, 407);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(120, 88);
+            this.pictureBox3.Size = new System.Drawing.Size(90, 72);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 108;
             this.pictureBox3.TabStop = false;
@@ -126,20 +158,18 @@
             // 
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(228, 204);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox1.Location = new System.Drawing.Point(171, 166);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(405, 22);
+            this.textBox1.Size = new System.Drawing.Size(304, 20);
             this.textBox1.TabIndex = 107;
             // 
             // txtcep
             // 
             this.txtcep.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtcep.Location = new System.Drawing.Point(228, 298);
-            this.txtcep.Margin = new System.Windows.Forms.Padding(4);
+            this.txtcep.Location = new System.Drawing.Point(171, 242);
             this.txtcep.Mask = "00/00/0000";
             this.txtcep.Name = "txtcep";
-            this.txtcep.Size = new System.Drawing.Size(148, 35);
+            this.txtcep.Size = new System.Drawing.Size(112, 30);
             this.txtcep.TabIndex = 105;
             this.txtcep.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -149,10 +179,9 @@
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Orange;
-            this.label9.Location = new System.Drawing.Point(135, 302);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Location = new System.Drawing.Point(101, 245);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(73, 27);
+            this.label9.Size = new System.Drawing.Size(58, 21);
             this.label9.TabIndex = 104;
             this.label9.Text = "Data :";
             // 
@@ -161,10 +190,9 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Orange;
-            this.label8.Location = new System.Drawing.Point(423, 0);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(317, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(267, 27);
+            this.label8.Size = new System.Drawing.Size(212, 21);
             this.label8.TabIndex = 59;
             this.label8.Text = "CADASTRO DE PRODUTOS";
             // 
@@ -172,68 +200,61 @@
             // 
             this.cmbtipo.Enabled = false;
             this.cmbtipo.FormattingEnabled = true;
-            this.cmbtipo.Location = new System.Drawing.Point(228, 249);
-            this.cmbtipo.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbtipo.Location = new System.Drawing.Point(171, 202);
             this.cmbtipo.Name = "cmbtipo";
-            this.cmbtipo.Size = new System.Drawing.Size(132, 24);
+            this.cmbtipo.Size = new System.Drawing.Size(100, 21);
             this.cmbtipo.TabIndex = 102;
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(82, 53);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox6.Location = new System.Drawing.Point(62, 43);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(946, 22);
+            this.textBox6.Size = new System.Drawing.Size(710, 20);
             this.textBox6.TabIndex = 101;
             // 
             // txtvalordevenda
             // 
             this.txtvalordevenda.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtvalordevenda.Enabled = false;
-            this.txtvalordevenda.Location = new System.Drawing.Point(896, 308);
-            this.txtvalordevenda.Margin = new System.Windows.Forms.Padding(4);
+            this.txtvalordevenda.Location = new System.Drawing.Point(672, 250);
             this.txtvalordevenda.Name = "txtvalordevenda";
-            this.txtvalordevenda.Size = new System.Drawing.Size(132, 22);
+            this.txtvalordevenda.Size = new System.Drawing.Size(100, 20);
             this.txtvalordevenda.TabIndex = 98;
             // 
             // txtvalordecompra
             // 
             this.txtvalordecompra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtvalordecompra.Enabled = false;
-            this.txtvalordecompra.Location = new System.Drawing.Point(896, 249);
-            this.txtvalordecompra.Margin = new System.Windows.Forms.Padding(4);
+            this.txtvalordecompra.Location = new System.Drawing.Point(672, 202);
             this.txtvalordecompra.Name = "txtvalordecompra";
-            this.txtvalordecompra.Size = new System.Drawing.Size(132, 22);
+            this.txtvalordecompra.Size = new System.Drawing.Size(100, 20);
             this.txtvalordecompra.TabIndex = 97;
             // 
             // txtquantidadeprodutocadastra
             // 
             this.txtquantidadeprodutocadastra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtquantidadeprodutocadastra.Enabled = false;
-            this.txtquantidadeprodutocadastra.Location = new System.Drawing.Point(896, 204);
-            this.txtquantidadeprodutocadastra.Margin = new System.Windows.Forms.Padding(4);
+            this.txtquantidadeprodutocadastra.Location = new System.Drawing.Point(672, 166);
             this.txtquantidadeprodutocadastra.Name = "txtquantidadeprodutocadastra";
-            this.txtquantidadeprodutocadastra.Size = new System.Drawing.Size(132, 22);
+            this.txtquantidadeprodutocadastra.Size = new System.Drawing.Size(100, 20);
             this.txtquantidadeprodutocadastra.TabIndex = 96;
             // 
             // txtcadastroproduto
             // 
             this.txtcadastroproduto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtcadastroproduto.Enabled = false;
-            this.txtcadastroproduto.Location = new System.Drawing.Point(228, 157);
-            this.txtcadastroproduto.Margin = new System.Windows.Forms.Padding(4);
+            this.txtcadastroproduto.Location = new System.Drawing.Point(171, 128);
             this.txtcadastroproduto.Name = "txtcadastroproduto";
-            this.txtcadastroproduto.Size = new System.Drawing.Size(405, 22);
+            this.txtcadastroproduto.Size = new System.Drawing.Size(304, 20);
             this.txtcadastroproduto.TabIndex = 95;
             // 
             // txtcodigoprodutocadastro
             // 
             this.txtcodigoprodutocadastro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtcodigoprodutocadastro.Enabled = false;
-            this.txtcodigoprodutocadastro.Location = new System.Drawing.Point(896, 157);
-            this.txtcodigoprodutocadastro.Margin = new System.Windows.Forms.Padding(4);
+            this.txtcodigoprodutocadastro.Location = new System.Drawing.Point(672, 128);
             this.txtcodigoprodutocadastro.Name = "txtcodigoprodutocadastro";
-            this.txtcodigoprodutocadastro.Size = new System.Drawing.Size(132, 22);
+            this.txtcodigoprodutocadastro.Size = new System.Drawing.Size(100, 20);
             this.txtcodigoprodutocadastro.TabIndex = 94;
             // 
             // label4
@@ -241,80 +262,59 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Orange;
-            this.label4.Location = new System.Drawing.Point(142, 246);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(106, 200);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(66, 27);
+            this.label4.Size = new System.Drawing.Size(54, 21);
             this.label4.TabIndex = 92;
             this.label4.Text = "Tipo :";
             // 
             // button5
             // 
             this.button5.BackColor = System.Drawing.Color.Transparent;
-            this.button5.BackgroundImage = global::TCC.Properties.Resources.recyclingdrawer_empty_reciclaje_10798;
+            this.button5.BackgroundImage = global::TCC.Properties.Resources.icons8_lixeira_vazia_100;
             this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button5.Enabled = false;
             this.button5.FlatAppearance.BorderSize = 0;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.button5.Location = new System.Drawing.Point(815, 90);
-            this.button5.Margin = new System.Windows.Forms.Padding(4);
+            this.button5.Location = new System.Drawing.Point(611, 71);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(112, 50);
+            this.button5.Size = new System.Drawing.Size(88, 48);
             this.button5.TabIndex = 91;
             this.button5.UseVisualStyleBackColor = false;
             // 
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.Transparent;
-            this.button4.BackgroundImage = global::TCC.Properties.Resources.DocumentEdit_40924;
+            this.button4.BackgroundImage = global::TCC.Properties.Resources.icons8_editar_propriedade_100;
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button4.Enabled = false;
             this.button4.FlatAppearance.BorderSize = 0;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.button4.Location = new System.Drawing.Point(216, 90);
-            this.button4.Margin = new System.Windows.Forms.Padding(4);
+            this.button4.Location = new System.Drawing.Point(162, 73);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(101, 44);
+            this.button4.Size = new System.Drawing.Size(85, 38);
             this.button4.TabIndex = 90;
             this.button4.UseVisualStyleBackColor = false;
             // 
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.Transparent;
-            this.button3.BackgroundImage = global::TCC.Properties.Resources.Save_Icon_icon_icons_com_69139;
+            this.button3.BackgroundImage = global::TCC.Properties.Resources.icons8_salvar_96;
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button3.Enabled = false;
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.button3.Location = new System.Drawing.Point(336, 87);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
+            this.button3.Location = new System.Drawing.Point(253, 69);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(119, 59);
+            this.button3.Size = new System.Drawing.Size(89, 48);
             this.button3.TabIndex = 89;
             this.button3.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.BackgroundImage = global::TCC.Properties.Resources.cancel_77947;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button2.Enabled = false;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.button2.Location = new System.Drawing.Point(964, 87);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(64, 51);
-            this.button2.TabIndex = 88;
-            this.button2.UseVisualStyleBackColor = false;
             // 
             // btnpesqisar
             // 
@@ -327,10 +327,9 @@
             this.btnpesqisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnpesqisar.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnpesqisar.ForeColor = System.Drawing.Color.Transparent;
-            this.btnpesqisar.Location = new System.Drawing.Point(1044, 36);
-            this.btnpesqisar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnpesqisar.Location = new System.Drawing.Point(783, 29);
             this.btnpesqisar.Name = "btnpesqisar";
-            this.btnpesqisar.Size = new System.Drawing.Size(65, 50);
+            this.btnpesqisar.Size = new System.Drawing.Size(49, 41);
             this.btnpesqisar.TabIndex = 86;
             this.btnpesqisar.UseVisualStyleBackColor = false;
             this.btnpesqisar.MouseEnter += new System.EventHandler(this.btnpesqisar_MouseEnter);
@@ -340,11 +339,10 @@
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.Color.Lavender;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(82, 362);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView1.Location = new System.Drawing.Point(62, 294);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(946, 227);
+            this.dataGridView1.Size = new System.Drawing.Size(710, 184);
             this.dataGridView1.TabIndex = 85;
             // 
             // label7
@@ -352,10 +350,9 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Orange;
-            this.label7.Location = new System.Drawing.Point(77, 201);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(58, 163);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(131, 27);
+            this.label7.Size = new System.Drawing.Size(104, 21);
             this.label7.TabIndex = 80;
             this.label7.Text = "Fornecedor :";
             // 
@@ -364,10 +361,9 @@
             this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(12)))), ((int)(((byte)(38)))));
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox2.ForeColor = System.Drawing.Color.White;
-            this.textBox2.Location = new System.Drawing.Point(374, 288);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox2.Location = new System.Drawing.Point(280, 234);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(133, 15);
+            this.textBox2.Size = new System.Drawing.Size(100, 13);
             this.textBox2.TabIndex = 75;
             // 
             // label6
@@ -375,32 +371,11 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Orange;
-            this.label6.Location = new System.Drawing.Point(819, 152);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(614, 124);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(69, 27);
+            this.label6.Size = new System.Drawing.Size(56, 21);
             this.label6.TabIndex = 74;
             this.label6.Text = "COD :";
-            // 
-            // btnCadastrar
-            // 
-            this.btnCadastrar.BackColor = System.Drawing.Color.Transparent;
-            this.btnCadastrar.BackgroundImage = global::TCC.Properties.Resources.add_77928;
-            this.btnCadastrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnCadastrar.FlatAppearance.BorderSize = 0;
-            this.btnCadastrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnCadastrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCadastrar.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.btnCadastrar.Location = new System.Drawing.Point(82, 91);
-            this.btnCadastrar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(83, 43);
-            this.btnCadastrar.TabIndex = 70;
-            this.btnCadastrar.UseVisualStyleBackColor = false;
-            this.btnCadastrar.MouseEnter += new System.EventHandler(this.btnCadastrar_MouseEnter);
-            this.btnCadastrar.MouseLeave += new System.EventHandler(this.btnCadastrar_MouseLeave);
             // 
             // label5
             // 
@@ -408,10 +383,9 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Orange;
-            this.label5.Location = new System.Drawing.Point(707, 246);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(530, 200);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(181, 27);
+            this.label5.Size = new System.Drawing.Size(144, 21);
             this.label5.TabIndex = 67;
             this.label5.Text = "Valor de Compra :";
             // 
@@ -421,10 +395,9 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Orange;
-            this.label3.Location = new System.Drawing.Point(718, 302);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(538, 245);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(170, 27);
+            this.label3.Size = new System.Drawing.Size(135, 21);
             this.label3.TabIndex = 59;
             this.label3.Text = "Valor de Venda :";
             // 
@@ -434,10 +407,9 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Orange;
-            this.label2.Location = new System.Drawing.Point(754, 201);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(566, 163);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(134, 27);
+            this.label2.Size = new System.Drawing.Size(106, 21);
             this.label2.TabIndex = 58;
             this.label2.Text = "Quantidade :";
             // 
@@ -446,10 +418,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Orange;
-            this.label1.Location = new System.Drawing.Point(111, 152);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(83, 124);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 27);
+            this.label1.Size = new System.Drawing.Size(79, 21);
             this.label1.TabIndex = 57;
             this.label1.Text = "Produto :";
             // 
@@ -458,10 +429,9 @@
             this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
-            this.btnMinimizar.Location = new System.Drawing.Point(1054, 4);
-            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMinimizar.Location = new System.Drawing.Point(790, 3);
             this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(37, 34);
+            this.btnMinimizar.Size = new System.Drawing.Size(28, 28);
             this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnMinimizar.TabIndex = 61;
             this.btnMinimizar.TabStop = false;
@@ -472,10 +442,9 @@
             this.btnSair.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSair.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSair.Image = ((System.Drawing.Image)(resources.GetObject("btnSair.Image")));
-            this.btnSair.Location = new System.Drawing.Point(1101, 4);
-            this.btnSair.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSair.Location = new System.Drawing.Point(826, 3);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(37, 34);
+            this.btnSair.Size = new System.Drawing.Size(28, 28);
             this.btnSair.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnSair.TabIndex = 60;
             this.btnSair.TabStop = false;
@@ -487,8 +456,9 @@
             this.barra.Controls.Add(this.btnMinimizar);
             this.barra.Controls.Add(this.btnSair);
             this.barra.Location = new System.Drawing.Point(0, 0);
+            this.barra.Margin = new System.Windows.Forms.Padding(2);
             this.barra.Name = "barra";
-            this.barra.Size = new System.Drawing.Size(1156, 48);
+            this.barra.Size = new System.Drawing.Size(867, 39);
             this.barra.TabIndex = 62;
             // 
             // timer1
@@ -498,17 +468,16 @@
             // 
             // txtfornecedor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(12)))), ((int)(((byte)(38)))));
             this.BackgroundImage = global::TCC.Properties.Resources._1555492a6_11;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(1151, 673);
+            this.ClientSize = new System.Drawing.Size(863, 547);
             this.Controls.Add(this.barra);
             this.Controls.Add(this.panel6);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "txtfornecedor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CADASTRARPRODUTO";
@@ -530,7 +499,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
@@ -545,7 +513,6 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnpesqisar;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cmbtipo;
@@ -558,5 +525,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnConfirmar;
     }
 }

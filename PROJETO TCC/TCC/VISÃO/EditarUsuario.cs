@@ -97,14 +97,13 @@ namespace TCC.VISÃO
 
         private void txtnomeUsuario_Leave(object sender, EventArgs e)
         {
-            /*con.Open();
-            SqlCommand cmd = new SqlCommand("Select * FROM logins WHERE usuario = @usuario",con);         
-            cmd.Parameters.AddWithValue("@usuario", txtnomeUsuario);
-
-            if("@usuario" == txtnomeUsuario)
-            {
-               
-            }*/
+            con.Open();
+            //Elaborar Select que contenha cada um dos campos da tabela
+            //criar variáveis para armazenar os campos
+            //atribuir as variáveis para os txts
+            //colocar no formato auto-complete
+            //SqlCommand cmd = new SqlCommand("SELECT");
+                
         }
         //verificação do usuario do banco com o do textbox
         /*public bool verificarusuario(String usuario, String perfil, String cpf, String Departamento, String endereco, String cidade, String telefone, String cep, String estado, String bairro)

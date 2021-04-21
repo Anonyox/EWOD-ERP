@@ -463,6 +463,16 @@ namespace TCC.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_editar_propriedade_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-editar-propriedade-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_envelope_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-envelope-48", resourceCulture);
@@ -486,6 +496,36 @@ namespace TCC.Properties {
         internal static System.Drawing.Bitmap icons8_identification_documents_96 {
             get {
                 object obj = ResourceManager.GetObject("icons8-identification-documents-96", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_lixeira_vazia_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-lixeira-vazia-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_lixeira_vazia_96 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-lixeira-vazia-96", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_salvar_96 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-salvar-96", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
