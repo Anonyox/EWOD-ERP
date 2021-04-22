@@ -50,9 +50,9 @@ namespace TCC.VISÃO
             this.loginsTableAdapter.Fill(this.tccDataSet.logins);
             con.Open();
 
-            SqlCommand cmd = new SqlCommand("SELECT usuario FROM logins",con);
+            SqlCommand cmd = new SqlCommand("SELECT usuario FROM logins", con);
             //cmd.CommandText = ;
-            
+
             dr = cmd.ExecuteReader();
 
             AutoCompleteStringCollection collection = new AutoCompleteStringCollection();
@@ -69,26 +69,26 @@ namespace TCC.VISÃO
 
             dr.Close();
             con.Close();
-                
-           
+
+
         }
 
 
         private void EditarUsuario_MouseMove(object sender, MouseEventArgs e)
-        {   
-            if(validamsg == 0)
+        {
+            if (validamsg == 0)
             {
                 MessageBox.Show("Primeiro digite o nome do usuário que pretende alterar !!", "Defina o usuário", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
             validamsg = 1;
-           
-            
+
+
         }
 
         private void txtnomeUsuario_MouseClick(object sender, MouseEventArgs e)
         {
-            
+
 
 
 
@@ -100,10 +100,11 @@ namespace TCC.VISÃO
         {
             Conexao cone = new Conexao();
             string usuario = Convert.ToString(txtnomeUsuario);
-                con.Open();
-                //Elaborar Select que contenha cada um dos campos da tabela
-                SqlCommand cmd = new SqlCommand("SELECT cidade,endereco,complemento,telefone FROM logins WHERE usuario = @usuario " , con);
-            cmd.Parameters.AddWithValue("@usuario",usuario);
+            con.Open();
+            //Elaborar Select que contenha cada um dos campos da tabela
+            SqlCommand cmd = new SqlCommand("SELECT cidade,endereco,complemento,telefone FROM logins WHERE usuario = @usuario ", con);
+            cmd.Parameters.AddWithValue("@usuario", usuario);
+            cmd.Parameters.AddWithValue("cidade", Cidade);
             dr = cmd.ExecuteReader();
             //criar variáveis para armazenar os campos
             AutoCompleteStringCollection collection2 = new AutoCompleteStringCollection();
@@ -111,12 +112,13 @@ namespace TCC.VISÃO
             //atribuir as variáveis para os txts
             while (dr.Read())
             {
+
                 collection2.Add(dr["cidade"].ToString());
             }
 
 
             //colocar no formato auto-complete
-            
+
             txtCidade.AutoCompleteMode = AutoCompleteMode.Append;
             txtCidade.AutoCompleteSource = AutoCompleteSource.CustomSource;
 
@@ -135,11 +137,5 @@ namespace TCC.VISÃO
 
         }
 
-        
-        //verificação do usuario do banco com o do textbox
-        /*public bool verificarusuario(String usuario, String perfil, String cpf, String Departamento, String endereco, String cidade, String telefone, String cep, String estado, String bairro)
-        {
-
-        }*/
     }
-}
+}   
