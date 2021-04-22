@@ -104,7 +104,6 @@ namespace TCC.VISÃO
             //Elaborar Select que contenha cada um dos campos da tabela
             SqlCommand cmd = new SqlCommand("SELECT cidade,endereco,complemento,telefone FROM logins WHERE usuario = @usuario ", con);
             cmd.Parameters.AddWithValue("@usuario", usuario);
-            cmd.Parameters.AddWithValue("cidade", Cidade);
             dr = cmd.ExecuteReader();
             //criar variáveis para armazenar os campos
             AutoCompleteStringCollection collection2 = new AutoCompleteStringCollection();
@@ -113,20 +112,16 @@ namespace TCC.VISÃO
             while (dr.Read())
             {
 
-                collection2.Add(dr["cidade"].ToString());
+                txtCidade.Text = ((string)dr["cidade"]);
             }
 
 
             //colocar no formato auto-complete
 
-            txtCidade.AutoCompleteMode = AutoCompleteMode.Append;
-            txtCidade.AutoCompleteSource = AutoCompleteSource.CustomSource;
-
-            txtnomeUsuario.AutoCompleteCustomSource = collection2;
+            
 
             dr.Close();
             con.Close();
-
             //SqlCommand cmd = new SqlCommand("SELECT");
 
 
