@@ -112,13 +112,17 @@ namespace TCC.VISÃO
             while (dr.Read())
             {
 
-                txtCidade.Text = ((string)dr["cidade"]);
+                collection2.Add(dr["cidade"].ToString());
             }
 
 
             //colocar no formato auto-complete
 
-            
+            txtCidade.AutoCompleteMode = AutoCompleteMode.Suggest;
+            txtCidade.AutoCompleteSource = AutoCompleteSource.CustomSource;
+
+            txtCidade.AutoCompleteCustomSource = collection2;
+
 
             dr.Close();
             con.Close();
