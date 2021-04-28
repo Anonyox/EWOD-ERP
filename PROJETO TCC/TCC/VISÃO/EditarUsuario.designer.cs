@@ -52,7 +52,7 @@ namespace TCC.VISÃO
             this.txtcomplementoUsuario = new System.Windows.Forms.TextBox();
             this.txtenderecoUsuario = new System.Windows.Forms.TextBox();
             this.txttelefoneUsuario = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.txtsenhaAdm = new System.Windows.Forms.TextBox();
             this.lblnomeUsuario = new System.Windows.Forms.Label();
             this.loginsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tccDataSet = new TCC.tccDataSet();
@@ -288,12 +288,12 @@ namespace TCC.VISÃO
             this.txttelefoneUsuario.Size = new System.Drawing.Size(161, 20);
             this.txttelefoneUsuario.TabIndex = 146;
             // 
-            // textBox10
+            // txtsenhaAdm
             // 
-            this.textBox10.Location = new System.Drawing.Point(667, 422);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(164, 20);
-            this.textBox10.TabIndex = 147;
+            this.txtsenhaAdm.Location = new System.Drawing.Point(667, 422);
+            this.txtsenhaAdm.Name = "txtsenhaAdm";
+            this.txtsenhaAdm.Size = new System.Drawing.Size(164, 20);
+            this.txtsenhaAdm.TabIndex = 147;
             // 
             // lblnomeUsuario
             // 
@@ -446,7 +446,7 @@ namespace TCC.VISÃO
             this.Controls.Add(this.btnConfirmar);
             this.Controls.Add(this.lblteste);
             this.Controls.Add(this.lblnomeUsuario);
-            this.Controls.Add(this.textBox10);
+            this.Controls.Add(this.txtsenhaAdm);
             this.Controls.Add(this.txttelefoneUsuario);
             this.Controls.Add(this.txtenderecoUsuario);
             this.Controls.Add(this.txtcomplementoUsuario);
@@ -504,7 +504,7 @@ namespace TCC.VISÃO
         private System.Windows.Forms.TextBox txtcomplementoUsuario;
         private System.Windows.Forms.TextBox txtenderecoUsuario;
         private System.Windows.Forms.TextBox txttelefoneUsuario;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox txtsenhaAdm;
         private System.Windows.Forms.Label lblnomeUsuario;
         private System.Windows.Forms.DataGridView lblteste;
         private System.Windows.Forms.Button btnCancelar;
