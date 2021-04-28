@@ -156,14 +156,29 @@ namespace TCC.VISÃO
         {            
             string SenhaAdm = "";
             con.Open();
-            SqlCommand cmd = new SqlCommand("SELECT senha FROM logins WHERE perfil LIKE Administrador");
+            SqlCommand cmd = new SqlCommand("SELECT senha FROM logins WHERE perfil = 'Administrador'",con);
             cmd.Parameters.AddWithValue("senha", SenhaAdm);
             dr = cmd.ExecuteReader();
 
-            if(txtsenhaAdm.Text == SenhaAdm)
+            if(txtnomeUsuario.Text == "")
             {
-                cmd.CommandText = "SELECT usuario FROM logins WHERE";
+                MessageBox.Show("Defina o Usuário que deseja Alterar", "Erro de Confirmação!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            txtnomeUsuario.Text = ("");
+            txtCidade.Text = ("");
+            txtcepUsuario.Text = ("");
+            txtbairroUsuario.Text = ("");
+            txtcomplementoUsuario.Text = ("");
+            cbperfilUsuario.Text = ("");
+            cbestadoUsuario.Text = ("");
+            cbdepartamentoUsuario.Text = ("");
+            txttelefoneUsuario.Text = ("");
+            txtenderecoUsuario.Text = ("");
+            
         }
     }
 }   
