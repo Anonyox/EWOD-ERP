@@ -386,6 +386,11 @@ namespace TCC.VISÃO
             // cbperfilUsuario
             // 
             this.cbperfilUsuario.FormattingEnabled = true;
+            this.cbperfilUsuario.Items.AddRange(new object[] {
+            "Administrador",
+            "Geral",
+            "Venda",
+            "Compra"});
             this.cbperfilUsuario.Location = new System.Drawing.Point(674, 62);
             this.cbperfilUsuario.Name = "cbperfilUsuario";
             this.cbperfilUsuario.Size = new System.Drawing.Size(154, 21);

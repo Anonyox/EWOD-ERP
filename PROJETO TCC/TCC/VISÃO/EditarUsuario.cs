@@ -116,7 +116,7 @@ namespace TCC.VISÃO
             string usuario = Convert.ToString(txtnomeUsuario.Text);
             con.Open();
             //Elaborar Select que contenha cada um dos campos da tabela
-            SqlCommand cmd = new SqlCommand("SELECT cidade,endereco,complemento,bairro,telefone,CEP,estado FROM logins WHERE usuario LIKE @param ", con);
+            SqlCommand cmd = new SqlCommand("SELECT cidade,endereco,complemento,bairro,telefone,CEP,estado,perfil FROM logins WHERE usuario LIKE @param ", con);
             cmd.Parameters.AddWithValue("@param", txtnomeUsuario.Text + "%");
             dr = cmd.ExecuteReader();
             //criar variáveis para armazenar os campos
@@ -134,7 +134,7 @@ namespace TCC.VISÃO
                 txtcomplementoUsuario.Text = dr["complemento"].ToString();
                 txtcepUsuario.Text = dr["CEP"].ToString();
                 cbestadoUsuario.Text = dr["estado"].ToString();
-
+                cbperfilUsuario.Text = dr["perfil"].ToString();
                 
 
             }
