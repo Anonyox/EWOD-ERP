@@ -151,5 +151,19 @@ namespace TCC.VISÃO
             con.Close();
 
         }
+
+        private void btnConfirmar_Click(object sender, EventArgs e)
+        {            
+            string SenhaAdm = "";
+            con.Open();
+            SqlCommand cmd = new SqlCommand("SELECT senha FROM logins WHERE perfil LIKE Administrador");
+            cmd.Parameters.AddWithValue("senha", SenhaAdm);
+            dr = cmd.ExecuteReader();
+
+            if(txtsenhaAdm.Text == SenhaAdm)
+            {
+                cmd.CommandText = "SELECT usuario FROM logins WHERE";
+            }
+        }
     }
 }   
