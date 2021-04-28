@@ -98,14 +98,26 @@ namespace TCC.VISÃO
 
         private void txtnomeUsuario_Leave(object sender, EventArgs e)
         {
-            Conexao cone = new Conexao();
-            string usuario = Convert.ToString(txtnomeUsuario);
-            string Cidade = "";
+            
+
+
+
+
+
+        }
+
+        private void txtnomeUsuario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtnomeUsuario_Leave_1(object sender, EventArgs e)
+        {
+            string usuario = Convert.ToString(txtnomeUsuario.Text);
             con.Open();
             //Elaborar Select que contenha cada um dos campos da tabela
-            SqlCommand cmd = new SqlCommand("SELECT cidade,endereco,complemento,telefone FROM logins WHERE usuario = @usuario ", con);
-            cmd.Parameters.AddWithValue("@usuario", usuario);
-            cmd.Parameters.AddWithValue("cidade", Cidade);
+            SqlCommand cmd = new SqlCommand("SELECT cidade,endereco,complemento,bairro,telefone,CEP,estado FROM logins WHERE usuario LIKE @param ", con);
+            cmd.Parameters.AddWithValue("@param", txtnomeUsuario.Text + "%");
             dr = cmd.ExecuteReader();
             //criar variáveis para armazenar os campos
             AutoCompleteStringCollection collection2 = new AutoCompleteStringCollection();
@@ -115,27 +127,29 @@ namespace TCC.VISÃO
             {
 
                 collection2.Add(dr["cidade"].ToString());
+                txtCidade.Text = dr["cidade"].ToString();
+                txtenderecoUsuario.Text = dr["endereco"].ToString();
+                txtbairroUsuario.Text = dr["bairro"].ToString();
+                txttelefoneUsuario.Text = dr["telefone"].ToString();
+                txtcomplementoUsuario.Text = dr["complemento"].ToString();
+                txtcepUsuario.Text = dr["CEP"].ToString();
+                cbestadoUsuario.Text = dr["estado"].ToString();
+
+                
+
             }
 
 
             //colocar no formato auto-complete
 
-            txtCidade.Text = Convert.ToString(Cidade);
-
-
-
             
+
+
+
+
             dr.Close();
             con.Close();
-            //SqlCommand cmd = new SqlCommand("SELECT");
-
-
-
-
-
-
 
         }
-
     }
 }   

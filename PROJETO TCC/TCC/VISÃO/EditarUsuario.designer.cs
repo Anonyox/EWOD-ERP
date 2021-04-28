@@ -46,12 +46,12 @@ namespace TCC.VISÃO
             this.label10 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtbairroUsuario = new System.Windows.Forms.TextBox();
+            this.txtcepUsuario = new System.Windows.Forms.TextBox();
             this.txtCidade = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.txtcomplementoUsuario = new System.Windows.Forms.TextBox();
+            this.txtenderecoUsuario = new System.Windows.Forms.TextBox();
+            this.txttelefoneUsuario = new System.Windows.Forms.TextBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.lblnomeUsuario = new System.Windows.Forms.Label();
             this.loginsBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -60,9 +60,9 @@ namespace TCC.VISÃO
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.cbperfilUsuario = new System.Windows.Forms.ComboBox();
+            this.cbdepartamentoUsuario = new System.Windows.Forms.ComboBox();
+            this.cbestadoUsuario = new System.Windows.Forms.ComboBox();
             this.loginsTableAdapter = new TCC.tccDataSetTableAdapters.loginsTableAdapter();
             this.txtnomeUsuario = new System.Windows.Forms.TextBox();
             this.panel3.SuspendLayout();
@@ -246,19 +246,19 @@ namespace TCC.VISÃO
             this.panel4.Size = new System.Drawing.Size(931, 21);
             this.panel4.TabIndex = 137;
             // 
-            // textBox3
+            // txtbairroUsuario
             // 
-            this.textBox3.Location = new System.Drawing.Point(175, 316);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(179, 20);
-            this.textBox3.TabIndex = 140;
+            this.txtbairroUsuario.Location = new System.Drawing.Point(175, 316);
+            this.txtbairroUsuario.Name = "txtbairroUsuario";
+            this.txtbairroUsuario.Size = new System.Drawing.Size(179, 20);
+            this.txtbairroUsuario.TabIndex = 140;
             // 
-            // textBox4
+            // txtcepUsuario
             // 
-            this.textBox4.Location = new System.Drawing.Point(175, 347);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(181, 20);
-            this.textBox4.TabIndex = 141;
+            this.txtcepUsuario.Location = new System.Drawing.Point(175, 347);
+            this.txtcepUsuario.Name = "txtcepUsuario";
+            this.txtcepUsuario.Size = new System.Drawing.Size(181, 20);
+            this.txtcepUsuario.TabIndex = 141;
             // 
             // txtCidade
             // 
@@ -267,26 +267,26 @@ namespace TCC.VISÃO
             this.txtCidade.Size = new System.Drawing.Size(132, 20);
             this.txtCidade.TabIndex = 143;
             // 
-            // textBox7
+            // txtcomplementoUsuario
             // 
-            this.textBox7.Location = new System.Drawing.Point(667, 254);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(154, 20);
-            this.textBox7.TabIndex = 144;
+            this.txtcomplementoUsuario.Location = new System.Drawing.Point(667, 254);
+            this.txtcomplementoUsuario.Name = "txtcomplementoUsuario";
+            this.txtcomplementoUsuario.Size = new System.Drawing.Size(154, 20);
+            this.txtcomplementoUsuario.TabIndex = 144;
             // 
-            // textBox8
+            // txtenderecoUsuario
             // 
-            this.textBox8.Location = new System.Drawing.Point(667, 195);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(154, 20);
-            this.textBox8.TabIndex = 145;
+            this.txtenderecoUsuario.Location = new System.Drawing.Point(667, 195);
+            this.txtenderecoUsuario.Name = "txtenderecoUsuario";
+            this.txtenderecoUsuario.Size = new System.Drawing.Size(154, 20);
+            this.txtenderecoUsuario.TabIndex = 145;
             // 
-            // textBox9
+            // txttelefoneUsuario
             // 
-            this.textBox9.Location = new System.Drawing.Point(667, 313);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(161, 20);
-            this.textBox9.TabIndex = 146;
+            this.txttelefoneUsuario.Location = new System.Drawing.Point(667, 313);
+            this.txttelefoneUsuario.Name = "txttelefoneUsuario";
+            this.txttelefoneUsuario.Size = new System.Drawing.Size(161, 20);
+            this.txttelefoneUsuario.TabIndex = 146;
             // 
             // textBox10
             // 
@@ -383,34 +383,34 @@ namespace TCC.VISÃO
             this.label1.TabIndex = 157;
             this.label1.Text = "Alterar Perfil  :";
             // 
-            // comboBox1
+            // cbperfilUsuario
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(674, 62);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(154, 21);
-            this.comboBox1.TabIndex = 159;
+            this.cbperfilUsuario.FormattingEnabled = true;
+            this.cbperfilUsuario.Location = new System.Drawing.Point(674, 62);
+            this.cbperfilUsuario.Name = "cbperfilUsuario";
+            this.cbperfilUsuario.Size = new System.Drawing.Size(154, 21);
+            this.cbperfilUsuario.TabIndex = 159;
             // 
-            // comboBox2
+            // cbdepartamentoUsuario
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.cbdepartamentoUsuario.FormattingEnabled = true;
+            this.cbdepartamentoUsuario.Items.AddRange(new object[] {
             "Venda",
             "Compra",
             "Geral",
             "Administrador "});
-            this.comboBox2.Location = new System.Drawing.Point(237, 117);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 160;
+            this.cbdepartamentoUsuario.Location = new System.Drawing.Point(237, 117);
+            this.cbdepartamentoUsuario.Name = "cbdepartamentoUsuario";
+            this.cbdepartamentoUsuario.Size = new System.Drawing.Size(121, 21);
+            this.cbdepartamentoUsuario.TabIndex = 160;
             // 
-            // comboBox3
+            // cbestadoUsuario
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(171, 195);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(132, 21);
-            this.comboBox3.TabIndex = 161;
+            this.cbestadoUsuario.FormattingEnabled = true;
+            this.cbestadoUsuario.Location = new System.Drawing.Point(171, 195);
+            this.cbestadoUsuario.Name = "cbestadoUsuario";
+            this.cbestadoUsuario.Size = new System.Drawing.Size(132, 21);
+            this.cbestadoUsuario.TabIndex = 161;
             // 
             // loginsTableAdapter
             // 
@@ -422,7 +422,7 @@ namespace TCC.VISÃO
             this.txtnomeUsuario.Name = "txtnomeUsuario";
             this.txtnomeUsuario.Size = new System.Drawing.Size(121, 20);
             this.txtnomeUsuario.TabIndex = 162;
-            this.txtnomeUsuario.Leave += new System.EventHandler(this.txtnomeUsuario_Leave);
+            this.txtnomeUsuario.Leave += new System.EventHandler(this.txtnomeUsuario_Leave_1);
             // 
             // EditarUsuario
             // 
@@ -433,21 +433,21 @@ namespace TCC.VISÃO
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(863, 654);
             this.Controls.Add(this.txtnomeUsuario);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbestadoUsuario);
+            this.Controls.Add(this.cbdepartamentoUsuario);
+            this.Controls.Add(this.cbperfilUsuario);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnConfirmar);
             this.Controls.Add(this.lblteste);
             this.Controls.Add(this.lblnomeUsuario);
             this.Controls.Add(this.textBox10);
-            this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.txttelefoneUsuario);
+            this.Controls.Add(this.txtenderecoUsuario);
+            this.Controls.Add(this.txtcomplementoUsuario);
             this.Controls.Add(this.txtCidade);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtcepUsuario);
+            this.Controls.Add(this.txtbairroUsuario);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label10);
@@ -493,21 +493,21 @@ namespace TCC.VISÃO
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtbairroUsuario;
+        private System.Windows.Forms.TextBox txtcepUsuario;
         private System.Windows.Forms.TextBox txtCidade;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox txtcomplementoUsuario;
+        private System.Windows.Forms.TextBox txtenderecoUsuario;
+        private System.Windows.Forms.TextBox txttelefoneUsuario;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.Label lblnomeUsuario;
         private System.Windows.Forms.DataGridView lblteste;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnConfirmar;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cbperfilUsuario;
+        private System.Windows.Forms.ComboBox cbdepartamentoUsuario;
+        private System.Windows.Forms.ComboBox cbestadoUsuario;
         private tccDataSet tccDataSet;
         private System.Windows.Forms.BindingSource loginsBindingSource;
         private tccDataSetTableAdapters.loginsTableAdapter loginsTableAdapter;
