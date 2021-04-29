@@ -111,12 +111,12 @@ namespace TCC.VISÃO
 
         }
 
-        private void txtnomeUsuario_Leave_1(object sender, EventArgs e)
+        public void txtnomeUsuario_Leave_1(object sender, EventArgs e)
         {
             string usuario = Convert.ToString(txtnomeUsuario.Text);
             con.Open();
             //Elaborar Select que contenha cada um dos campos da tabela
-            SqlCommand cmd = new SqlCommand("SELECT cidade,endereco,complemento,bairro,telefone,CEP,estado,perfil FROM logins WHERE usuario LIKE @param ", con);
+            SqlCommand cmd = new SqlCommand("SELECT cidade,endereco,complemento,bairro,telefone,CEP,estado,perfil,departamento FROM logins WHERE usuario LIKE @param ", con);
             cmd.Parameters.AddWithValue("@param", txtnomeUsuario.Text + "%");
             dr = cmd.ExecuteReader();
             //criar variáveis para armazenar os campos
@@ -135,6 +135,7 @@ namespace TCC.VISÃO
                 txtcepUsuario.Text = dr["CEP"].ToString();
                 cbestadoUsuario.Text = dr["estado"].ToString();
                 cbperfilUsuario.Text = dr["perfil"].ToString();
+                cbdepartamentoUsuario.Text = dr["departamento"].ToString();
                 
 
             }
@@ -160,9 +161,53 @@ namespace TCC.VISÃO
             cmd.Parameters.AddWithValue("senha", SenhaAdm);
             dr = cmd.ExecuteReader();
 
+            dr.Close();
+            con.Close();
+
             if(txtnomeUsuario.Text == "")
             {
                 MessageBox.Show("Defina o Usuário que deseja Alterar", "Erro de Confirmação!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                 
+                if(txtsenhaAdm.Text == SenhaAdm)
+                {
+                    con.Open();
+                    SqlCommand cmd2 = new SqlCommand("UPDATE SET cidade = @cidade, endereco = @endereco,complemento = @complemento,bairro = @bairro,telefone = @telefone, CEP = @CEP,estado = @estado,perfil = @perfil,departamento = @departemento WHERE usuario = @usuario");
+                        cmd2.Parameters.AddWithValue("@cidade",txtCidade.Text);
+                        cmd2.Parameters.AddWithValue("@usuario", txtnomeUsuario.Text);
+                        cmd2.Parameters.AddWithValue("@endereco", txtenderecoUsuario.Text);
+                        cmd2.Parameters.AddWithValue("@complemento", txtcomplementoUsuario.Text);
+                        cmd2.Parameters.AddWithValue("@bairro", txtbairroUsuario.Text);
+                        cmd2.Parameters.AddWithValue("@telefone", txttelefoneUsuario.Text);
+                        cmd2.Parameters.AddWithValue("@CEP", txtcepUsuario.Text);
+                        cmd2.Parameters.AddWithValue("@estado", cbestadoUsuario.Text);
+                        cmd2.Parameters.AddWithValue("@perfil", cbperfilUsuario.Text);
+                        cmd2.Parameters.AddWithValue("@departamento", cbdepartamentoUsuario.Text);
+                    dr = cmd2.ExecuteReader();
+
+                    MessageBox.Show("Alteração realizada com Sucesso!!", "Ação realizada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    txtnomeUsuario.Text = ("");
+                    txtCidade.Text = ("");
+                    txtcepUsuario.Text = ("");
+                    txtbairroUsuario.Text = ("");
+                    txtcomplementoUsuario.Text = ("");
+                    cbperfilUsuario.Text = ("");
+                    cbestadoUsuario.Text = ("");
+                    cbdepartamentoUsuario.Text = ("");
+                    txttelefoneUsuario.Text = ("");
+                    txtenderecoUsuario.Text = ("");
+
+
+                    dr.Close();
+                    con.Close();
+
+                }
+                else if (txtsenhaAdm.Text != SenhaAdm)
+                {
+                    MessageBox.Show("Senha de Administrador inválida", "Erro de Confirmação", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                
             }
         }
 
