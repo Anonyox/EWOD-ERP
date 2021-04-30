@@ -74,12 +74,12 @@ namespace TCC.VISÃO
 
         private void btnpesqisar_MouseEnter(object sender, EventArgs e)
         {
-            btnpesqisar.Size = new Size(120, 70);
+            btnpesqisar.Size = new Size(60, 40);
         }
 
         private void btnpesqisar_MouseLeave(object sender, EventArgs e)
         {
-            btnpesqisar.Size = new Size(104, 53);
+            btnpesqisar.Size = new Size(44, 30);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -93,6 +93,11 @@ namespace TCC.VISÃO
         private void txtfornecedor_Load(object sender, EventArgs e)
         {
             timer1.Start();
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

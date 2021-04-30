@@ -127,9 +127,6 @@
   <data name="icons8-botão-de-opção-marcado-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-botão-de-opção-marcado-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="blue_insert_append_12490" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\blue_insert_append_12490.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="icons8-configurações-do-usuário-96 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-configurações-do-usuário-96 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -142,11 +139,14 @@
   <data name="EmptyRecycleBin_recycling_emptytrash_VaciarPapeleradereciclaje_1994" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\EmptyRecycleBin_recycling_emptytrash_VaciarPapeleradereciclaje_1994.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8-pesquisar-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-pesquisar-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="carrinho" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\carrinho.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bluearrowright_azul_flech_12452" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bluearrowright_azul_flech_12452.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-lixeira-vazia-100" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-lixeira-vazia-100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="adicionar-ao-carrinho" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\adicionar-ao-carrinho.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -163,17 +163,20 @@
   <data name="blueshoppingcart_azul_12543 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\blueshoppingcart_azul_12543 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8-cancelar-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-cancelar-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="iconfinder-settings-4341324_120534" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconfinder-settings-4341324_120534.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-configurações-do-usuário-96" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-configurações-do-usuário-96.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ÍCONE" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ÍCONE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="business_application_addmale_useradd_insert_add_user_client_2312" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\business_application_addmale_useradd_insert_add_user_client_2312.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-lixeira-vazia-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-lixeira-vazia-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-envelope-96" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-envelope-96.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -184,11 +187,11 @@
   <data name="kimi-no-na-wa-clear-sky-cloud-sky-wallpaper-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\kimi-no-na-wa-clear-sky-cloud-sky-wallpaper-preview.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="dropbox_icon-icons.com_72004" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dropbox_icon-icons.com_72004.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="cancel_77947" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cancel_77947.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8-salvar-96" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-salvar-96.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Save_Icon_icon-icons.com_69139" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Save_Icon_icon-icons.com_69139.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -208,20 +211,26 @@
   <data name="dropbox_icon-icons.com_72004 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dropbox_icon-icons.com_72004 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-lixeira-vazia-96" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-lixeira-vazia-96.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="blue_key_locked_12546" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\blue_key_locked_12546.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="caixa (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\caixa (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ÍCONE1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ÍCONE1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="icons8-identification-documents-96" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-identification-documents-96.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="emblemdropboxuptodate_1037331" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\emblemdropboxuptodate_1037331.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-editar-propriedade-100" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-editar-propriedade-100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ÍCONE1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ÍCONE1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bluearrowright_azul_flech_12452" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bluearrowright_azul_flech_12452.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="add_77928" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add_77928.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="dropbox_icon-icons.com_72004 (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dropbox_icon-icons.com_72004 (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -232,17 +241,23 @@
   <data name="perfil-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\perfil-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="dropbox_icon-icons.com_72004" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\dropbox_icon-icons.com_72004.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="iconfinder-settings-4341324_120534 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconfinder-settings-4341324_120534 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-pesquisar-481" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-pesquisar-481.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="emblemdropboxuptodate_1037331" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\emblemdropboxuptodate_1037331.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="avatardefault_92824" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\avatardefault_92824.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="blue_key_locked_12546" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\blue_key_locked_12546.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="blue_insert_append_12490" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\blue_insert_append_12490.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="add_77928" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\add_77928.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-lixeira-vazia-96" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-lixeira-vazia-96.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="confirme" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\confirme.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -253,20 +268,17 @@
   <data name="male-user-add_25347" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\male-user-add_25347.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-cancelar-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-cancelar-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-salvar-96" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-salvar-96.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="caixa-aberta" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\caixa-aberta.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ÍCONE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ÍCONE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="excluir" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\excluir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8-lixeira-vazia-100" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-lixeira-vazia-100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="iconfinder-settings-4341324_120534 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconfinder-settings-4341324_120534 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="cv" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cv.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -280,7 +292,7 @@
   <data name="recyclingdrawer_empty_reciclaje_10798" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\recyclingdrawer_empty_reciclaje_10798.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-editar-propriedade-100" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-editar-propriedade-100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-salvar-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-salvar-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

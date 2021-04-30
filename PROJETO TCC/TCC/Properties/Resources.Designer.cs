@@ -513,9 +513,49 @@ namespace TCC.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_lixeira_vazia_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-lixeira-vazia-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_lixeira_vazia_96 {
             get {
                 object obj = ResourceManager.GetObject("icons8-lixeira-vazia-96", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_pesquisar_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-pesquisar-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_pesquisar_481 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-pesquisar-481", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_salvar_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-salvar-48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -344,5 +344,17 @@
   <ItemGroup>
     <None Include="Resources\icons8-editar-propriedade-100.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-pesquisar-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-pesquisar-481.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-lixeira-vazia-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-salvar-48.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
