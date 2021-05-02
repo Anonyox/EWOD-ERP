@@ -206,8 +206,6 @@ namespace TCC.VISÃO
                 {
                     MessageBox.Show("Senha de Administrador inválida", "Erro de Confirmação", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
-                
             }
         }
 
