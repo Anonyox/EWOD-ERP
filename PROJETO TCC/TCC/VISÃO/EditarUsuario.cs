@@ -157,57 +157,71 @@ namespace TCC.VISÃO
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
             string SenhaAdm = "";
+
+            if (txtnomeUsuario.Text == "")
+            {
+                MessageBox.Show("Defina o Usuário que deseja Alterar", "Erro de Confirmação!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+
+            }
+
+            else if (txtsenhaAdm.Text == "")
+            {
+                MessageBox.Show("Digite a senha de Administrador!!", "Erro de Confirmação", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
             con.conectar();
-            SqlCommand cmd = new SqlCommand("SELECT senha FROM logins WHERE perfil = 'Administrador'", con.conectar());
+            SqlCommand cmd = new SqlCommand("SELECT senha FROM logins WHERE usuario = 'Usuário'", con.conectar());
             cmd.Parameters.AddWithValue("senha", SenhaAdm);
             dr = cmd.ExecuteReader();
 
             dr.Close();
             con.desconectar();
 
-            if (txtnomeUsuario.Text == "")
+           
+
+            if (txtsenhaAdm.Text == SenhaAdm)
             {
-                MessageBox.Show("Defina o Usuário que deseja Alterar", "Erro de Confirmação!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                con.conectar();
+                SqlCommand cmd2 = new SqlCommand("UPDATE logins SET cidade = '@cidade', endereco ='@endereco',complemento = '@complemento',bairro = '@bairro',telefone = '@telefone', CEP = '@CEP',estado = '@estado',perfil = '@perfil',departamento = '@departemento' WHERE usuario = '@usuario'", con.conectar());
+                cmd2.Parameters.AddWithValue("@cidade", txtCidade.Text);
+                cmd2.Parameters.AddWithValue("@usuario", txtnomeUsuario.Text);
+                cmd2.Parameters.AddWithValue("@endereco", txtenderecoUsuario.Text);
+                cmd2.Parameters.AddWithValue("@complemento", txtcomplementoUsuario.Text);
+                cmd2.Parameters.AddWithValue("@bairro", txtbairroUsuario.Text);
+                cmd2.Parameters.AddWithValue("@telefone", txttelefoneUsuario.Text);
+                cmd2.Parameters.AddWithValue("@CEP", txtcepUsuario.Text);
+                cmd2.Parameters.AddWithValue("@estado", cbestadoUsuario.Text);
+                cmd2.Parameters.AddWithValue("@perfil", cbperfilUsuario.Text);
+                cmd2.Parameters.AddWithValue("@departamento", cbdepartamentoUsuario.Text);
+                dr = cmd2.ExecuteReader();
 
-                if (txtsenhaAdm.Text == SenhaAdm)
-                {
-                    con.conectar();
-                    SqlCommand cmd2 = new SqlCommand("UPDATE SET cidade = @cidade, endereco = @endereco,complemento = @complemento,bairro = @bairro,telefone = @telefone, CEP = @CEP,estado = @estado,perfil = @perfil,departamento = @departemento WHERE usuario = @usuario", con.conectar());
-                    cmd2.Parameters.AddWithValue("@cidade", txtCidade.Text);
-                    cmd2.Parameters.AddWithValue("@usuario", txtnomeUsuario.Text);
-                    cmd2.Parameters.AddWithValue("@endereco", txtenderecoUsuario.Text);
-                    cmd2.Parameters.AddWithValue("@complemento", txtcomplementoUsuario.Text);
-                    cmd2.Parameters.AddWithValue("@bairro", txtbairroUsuario.Text);
-                    cmd2.Parameters.AddWithValue("@telefone", txttelefoneUsuario.Text);
-                    cmd2.Parameters.AddWithValue("@CEP", txtcepUsuario.Text);
-                    cmd2.Parameters.AddWithValue("@estado", cbestadoUsuario.Text);
-                    cmd2.Parameters.AddWithValue("@perfil", cbperfilUsuario.Text);
-                    cmd2.Parameters.AddWithValue("@departamento", cbdepartamentoUsuario.Text);
-                    dr = cmd2.ExecuteReader();
+                MessageBox.Show("Alteração realizada com Sucesso!!", "Ação realizada", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    MessageBox.Show("Alteração realizada com Sucesso!!", "Ação realizada", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    txtnomeUsuario.Text = ("");
-                    txtCidade.Text = ("");
-                    txtcepUsuario.Text = ("");
-                    txtbairroUsuario.Text = ("");
-                    txtcomplementoUsuario.Text = ("");
-                    cbperfilUsuario.Text = ("");
-                    cbestadoUsuario.Text = ("");
-                    cbdepartamentoUsuario.Text = ("");
-                    txttelefoneUsuario.Text = ("");
-                    txtenderecoUsuario.Text = ("");
+                txtnomeUsuario.Text = ("");
+                txtCidade.Text = ("");
+                txtcepUsuario.Text = ("");
+                txtbairroUsuario.Text = ("");
+                txtcomplementoUsuario.Text = ("");
+                cbperfilUsuario.Text = ("");
+                cbestadoUsuario.Text = ("");
+                cbdepartamentoUsuario.Text = ("");
+                txttelefoneUsuario.Text = ("");
+                txtenderecoUsuario.Text = ("");
 
 
-                    dr.Close();
-                    con.desconectar();
+                dr.Close();
+                con.desconectar();
 
-                }
-                else if (txtsenhaAdm.Text != SenhaAdm)
-                {
-                    MessageBox.Show("Senha de Administrador inválida", "Erro de Confirmação", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
             }
+                
+                if(txtsenhaAdm.Text != SenhaAdm)
+                {
+                    MessageBox.Show("Senha de Administrador Inválida!!", "Erro de Confirmação", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
