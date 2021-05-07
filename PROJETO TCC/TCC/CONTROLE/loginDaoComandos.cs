@@ -66,9 +66,9 @@ namespace TCC.CONTROLE
                         con.desconectar();
                        
                     }
-                    dr.Close();
+                    
                 }
-
+                dr.Close();
 
             }
             catch (SqlException)
