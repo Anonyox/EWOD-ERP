@@ -244,12 +244,12 @@ namespace TCC.VISÃO
                 if (tem == true)
                 {
                     SqlCommand cmd2 = new SqlCommand();
-                    cmd2.CommandText = ("UPDATE logins SET cidade = @cidade, endereco = @endereco, complemento = @complemento, bairro = " +
-                        "@bairro, telefone = @telefone, CEP = @CEP, estado = @estado, perfil = " +
-                        "@perfil, departamento = @departemento WHERE usuario = 'Alessandro'");
+                    cmd2.CommandText = "UPDATE logins SET cidade = @cidade, endereco = @endereco, complemento = @complemento, bairro = @bairro," + 
+                        "telefone = @telefone, CEP = @CEP, estado = @estado, " +  
+                        "perfil = @perfil, departamento = @departamento WHERE usuario = @usuario";
 
-                    cmd2.Parameters.AddWithValue("@cidade", txtCidade.Text);
                     cmd2.Parameters.AddWithValue("@usuario", txtnomeUsuario.Text);
+                    cmd2.Parameters.AddWithValue("@cidade", txtCidade.Text);
                     cmd2.Parameters.AddWithValue("@endereco", txtenderecoUsuario.Text);
                     cmd2.Parameters.AddWithValue("@complemento", txtcomplementoUsuario.Text);
                     cmd2.Parameters.AddWithValue("@bairro", txtbairroUsuario.Text);
