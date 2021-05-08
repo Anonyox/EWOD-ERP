@@ -111,7 +111,7 @@ namespace TCC
 
             DadosGeral.nomeUser = txtUser.Text;
             senhaUser.senha = txtSenha.Text;
-          
+
 
 
             Controle controle = new Controle();
@@ -171,7 +171,7 @@ namespace TCC
 
         private void login_MouseDown(object sender, MouseEventArgs e)
         {
-            
+
         }
 
         private void txtSenha_Enter(object sender, EventArgs e)

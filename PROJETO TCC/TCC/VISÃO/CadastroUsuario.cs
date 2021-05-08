@@ -19,6 +19,7 @@ namespace TCC.VISÃO
         public static List<Button> botoes;
         //public String email;
         public bool ok = false;
+
         public CadastroUsuario()
         {
             InitializeComponent();
