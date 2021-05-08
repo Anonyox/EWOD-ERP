@@ -244,8 +244,8 @@ namespace TCC.VISÃO
                 if (tem == true)
                 {
                     SqlCommand cmd2 = new SqlCommand();
-                    cmd2.CommandText = "UPDATE logins SET cidade = @cidade, endereco = @endereco, complemento = @complemento, bairro = @bairro," + 
-                        "telefone = @telefone, CEP = @CEP, estado = @estado, " +  
+                    cmd2.CommandText = "UPDATE logins SET cidade = @cidade, endereco = @endereco, complemento = @complemento, bairro = @bairro," +
+                        "telefone = @telefone, CEP = @CEP, estado = @estado, " +
                         "perfil = @perfil, departamento = @departamento WHERE usuario = @usuario";
 
                     cmd2.Parameters.AddWithValue("@usuario", txtnomeUsuario.Text);
@@ -279,7 +279,7 @@ namespace TCC.VISÃO
                     con.desconectar();
 
                 }
-               
+
             }
 
         }
@@ -306,19 +306,20 @@ namespace TCC.VISÃO
 
         private void txtnomeUsuario_TextChanged_1(object sender, EventArgs e)
         {
-            
-           
-                if (txtnomeUsuario.Text == "")
-                {
-                    limparCampos();
 
-                    txtnomeUsuario.Focus();
 
-                }
-           
-           
+            if (txtnomeUsuario.Text == "")
+            {
+                limparCampos();
+
+                txtnomeUsuario.Focus();
+
+            }
+
+
         }
 
-       
 
-    } } 
+
+    }
+}

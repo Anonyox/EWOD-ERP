@@ -47,54 +47,54 @@ namespace TCC.VISÃO
 
                 }
                 else
-                {        
-                            String mensagem = controle.cadastrar(txtuser.Text, txtsenha.Text, txtconfSenha.Text, txtcpf.Text, txtdepart.Text, txtemail.Text,
-                               cmbperfil.Text, txtendereco.Text, txtnumero.Text, txtcidade.Text, txtbairro.Text, txtestado.Text, txtcep.Text, txtcomplemento.Text, txttelefone.Text, sexoSelecao);
-                            if (controle.tem)
-                            {
-                                MessageBox.Show(mensagem, "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            }
-                            else
-                            {
-                                MessageBox.Show(controle.mensagem, "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
+                {
+                    String mensagem = controle.cadastrar(txtuser.Text, txtsenha.Text, txtconfSenha.Text, txtcpf.Text, txtdepart.Text, txtemail.Text,
+                       cmbperfil.Text, txtendereco.Text, txtnumero.Text, txtcidade.Text, txtbairro.Text, txtestado.Text, txtcep.Text, txtcomplemento.Text, txttelefone.Text, sexoSelecao);
+                    if (controle.tem)
+                    {
+                        MessageBox.Show(mensagem, "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show(controle.mensagem, "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
 
 
-                            if (controle.mensagem == "CADASTRADO COM SUCESSO")
-                            {
-                                limpaCampos();
+                    if (controle.mensagem == "CADASTRADO COM SUCESSO")
+                    {
+                        limpaCampos();
 
-                               
-                                btnCadastrar.Enabled = false;
-                                lblendereco.Visible = false;
-                                lblnumero.Visible = false;
-                                lblcidade.Visible = false;
-                                lblbairro.Visible = false;
-                                lblestado.Visible = false;
-                                lblcep.Visible = false;
-                                lblcomplemento.Visible = false;
-                                lbltelefone.Visible = false;
-                                lblsexo.Visible = false;
-                                txtendereco.Visible = false;
-                                txtnumero.Visible = false;
-                                txtcidade.Visible = false;
-                                txtbairro.Visible = false;
-                                txtestado.Visible = false;
-                                txtcep.Visible = false;
-                                txtcomplemento.Visible = false;
-                                txttelefone.Visible = false;
-                                rdbmasculino.Visible = false;
-                                rdbfeminino.Visible = false;
 
-                       // cmd.CommandText = "INSERT INTO logs VALUES(Novo Usuário Cadastrado)";
+                        btnCadastrar.Enabled = false;
+                        lblendereco.Visible = false;
+                        lblnumero.Visible = false;
+                        lblcidade.Visible = false;
+                        lblbairro.Visible = false;
+                        lblestado.Visible = false;
+                        lblcep.Visible = false;
+                        lblcomplemento.Visible = false;
+                        lbltelefone.Visible = false;
+                        lblsexo.Visible = false;
+                        txtendereco.Visible = false;
+                        txtnumero.Visible = false;
+                        txtcidade.Visible = false;
+                        txtbairro.Visible = false;
+                        txtestado.Visible = false;
+                        txtcep.Visible = false;
+                        txtcomplemento.Visible = false;
+                        txttelefone.Visible = false;
+                        rdbmasculino.Visible = false;
+                        rdbfeminino.Visible = false;
 
-                                
-                            }
+                        // cmd.CommandText = "INSERT INTO logs VALUES(Novo Usuário Cadastrado)";
+
+
+                    }
                 }
 
             }
 
- }
+        }
 
         private void limpaCampos()
         {
@@ -132,7 +132,7 @@ namespace TCC.VISÃO
         private void button1_Click(object sender, EventArgs e)
         {
 
-          
+
             btnCadastrar.Visible = true;
             lblendereco.Visible = true;
             lblnumero.Visible = true;
@@ -232,12 +232,12 @@ namespace TCC.VISÃO
                 | txtconfSenha.Text == string.Empty | txtcpf.Text == string.Empty |
                 txtdepart.Text == string.Empty | txtemail.Text == string.Empty)
             {
-                
+
 
             }
             else
             {
-                
+
                 btnlimpar.Enabled = true;
             }
         }
