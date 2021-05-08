@@ -152,7 +152,7 @@ namespace TCC.VISÃO
             this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label4.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label4.Location = new System.Drawing.Point(599, 220);
+            this.label4.Location = new System.Drawing.Point(599, 203);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(71, 23);
             this.label4.TabIndex = 73;
@@ -165,7 +165,7 @@ namespace TCC.VISÃO
             this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label5.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label5.Location = new System.Drawing.Point(619, 343);
+            this.label5.Location = new System.Drawing.Point(619, 338);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(53, 23);
             this.label5.TabIndex = 74;
@@ -219,7 +219,7 @@ namespace TCC.VISÃO
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label2.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(576, 117);
+            this.label2.Location = new System.Drawing.Point(576, 293);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(97, 23);
             this.label2.TabIndex = 78;
@@ -232,7 +232,7 @@ namespace TCC.VISÃO
             this.label9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label9.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
             this.label9.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label9.Location = new System.Drawing.Point(546, 279);
+            this.label9.Location = new System.Drawing.Point(546, 246);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(128, 23);
             this.label9.TabIndex = 79;
@@ -272,7 +272,7 @@ namespace TCC.VISÃO
             // txtbairroUsuario
             // 
             this.txtbairroUsuario.Font = new System.Drawing.Font("Comic Sans MS", 12F);
-            this.txtbairroUsuario.Location = new System.Drawing.Point(674, 218);
+            this.txtbairroUsuario.Location = new System.Drawing.Point(674, 201);
             this.txtbairroUsuario.Name = "txtbairroUsuario";
             this.txtbairroUsuario.Size = new System.Drawing.Size(179, 30);
             this.txtbairroUsuario.TabIndex = 140;
@@ -288,9 +288,9 @@ namespace TCC.VISÃO
             // txtcomplementoUsuario
             // 
             this.txtcomplementoUsuario.Font = new System.Drawing.Font("Comic Sans MS", 12F);
-            this.txtcomplementoUsuario.Location = new System.Drawing.Point(674, 279);
+            this.txtcomplementoUsuario.Location = new System.Drawing.Point(674, 246);
             this.txtcomplementoUsuario.Name = "txtcomplementoUsuario";
-            this.txtcomplementoUsuario.Size = new System.Drawing.Size(154, 30);
+            this.txtcomplementoUsuario.Size = new System.Drawing.Size(143, 30);
             this.txtcomplementoUsuario.TabIndex = 144;
             // 
             // txtnumeroUsuario
@@ -579,7 +579,7 @@ namespace TCC.VISÃO
             // txttelefoneUsuario
             // 
             this.txttelefoneUsuario.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txttelefoneUsuario.Location = new System.Drawing.Point(674, 115);
+            this.txttelefoneUsuario.Location = new System.Drawing.Point(674, 291);
             this.txttelefoneUsuario.Mask = "(00)00000-0000";
             this.txttelefoneUsuario.Name = "txttelefoneUsuario";
             this.txttelefoneUsuario.Size = new System.Drawing.Size(143, 30);
@@ -588,7 +588,7 @@ namespace TCC.VISÃO
             // txtcepUsuario
             // 
             this.txtcepUsuario.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtcepUsuario.Location = new System.Drawing.Point(674, 341);
+            this.txtcepUsuario.Location = new System.Drawing.Point(674, 336);
             this.txtcepUsuario.Mask = "00000-000";
             this.txtcepUsuario.Name = "txtcepUsuario";
             this.txtcepUsuario.Size = new System.Drawing.Size(103, 30);
@@ -622,7 +622,7 @@ namespace TCC.VISÃO
             this.lblcpfUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblcpfUsuario.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
             this.lblcpfUsuario.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblcpfUsuario.Location = new System.Drawing.Point(330, 93);
+            this.lblcpfUsuario.Location = new System.Drawing.Point(615, 131);
             this.lblcpfUsuario.Name = "lblcpfUsuario";
             this.lblcpfUsuario.Size = new System.Drawing.Size(53, 23);
             this.lblcpfUsuario.TabIndex = 168;
@@ -631,7 +631,7 @@ namespace TCC.VISÃO
             // txtcpfUsuario
             // 
             this.txtcpfUsuario.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtcpfUsuario.Location = new System.Drawing.Point(389, 90);
+            this.txtcpfUsuario.Location = new System.Drawing.Point(674, 128);
             this.txtcpfUsuario.Mask = "000,000,000-00";
             this.txtcpfUsuario.Name = "txtcpfUsuario";
             this.txtcpfUsuario.Size = new System.Drawing.Size(140, 30);
