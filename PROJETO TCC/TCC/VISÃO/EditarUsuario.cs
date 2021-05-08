@@ -132,7 +132,7 @@ namespace TCC.VISÃO
             {
                 string usuario = Convert.ToString(txtnomeUsuario.Text);
                 //Elaborar Select que contenha cada um dos campos da tabela
-                SqlCommand cmd = new SqlCommand("SELECT cidade,endereco,complemento,bairro,telefone,CEP,estado,perfil,departamento FROM logins WHERE usuario = @param ", con.conectar());
+                SqlCommand cmd = new SqlCommand("SELECT cidade,endereco,cpf,complemento,bairro,telefone,CEP,estado,perfil,departamento FROM logins WHERE usuario = @param ", con.conectar());
                 cmd.Parameters.AddWithValue("@param", txtnomeUsuario.Text);
 
                 dr = cmd.ExecuteReader();
