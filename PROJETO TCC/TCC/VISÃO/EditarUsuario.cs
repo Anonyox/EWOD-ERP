@@ -14,7 +14,7 @@ using System.Data.OleDb;
 namespace TCC.VISÃO
 {
     public partial class EditarUsuario : Form
-    {       
+    {
         string msg;
         bool tem;
         Conexao con = new Conexao();
@@ -87,7 +87,7 @@ namespace TCC.VISÃO
             dtgeditarUsuario.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
             #endregion
 
-            
+
 
         }
 
@@ -326,7 +326,7 @@ namespace TCC.VISÃO
 
         public void listarUsuarios()
         {
-            
+
             SqlCommand sqlcmd = new SqlCommand();
             sqlcmd.CommandText = ("SELECT * FROM logins");
             sqlcmd.Connection = con.conectar();
@@ -393,5 +393,19 @@ namespace TCC.VISÃO
             }
         }
 
+        private void btnConfirmar_MouseEnter(object sender, EventArgs e)
+        {
+            lblconfirmar.Visible = true;
+
+            btnConfirmar.Size = new Size(53,38);
+
+
+        }
+
+        private void btnConfirmar_MouseLeave(object sender, EventArgs e)
+        {
+            lblconfirmar.Visible = false;
+            btnConfirmar.Size = new Size(49,35);
+        }
     }
 }

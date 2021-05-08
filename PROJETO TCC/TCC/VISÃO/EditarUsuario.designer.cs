@@ -85,6 +85,8 @@ namespace TCC.VISÃO
             this.lblnumeroUsuario = new System.Windows.Forms.Label();
             this.lblcpfUsuario = new System.Windows.Forms.Label();
             this.txtcpfUsuario = new System.Windows.Forms.MaskedTextBox();
+            this.lblconfirmar = new System.Windows.Forms.Label();
+            this.lblcancelar = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSair)).BeginInit();
@@ -149,7 +151,7 @@ namespace TCC.VISÃO
             this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label4.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label4.Location = new System.Drawing.Point(599, 227);
+            this.label4.Location = new System.Drawing.Point(599, 220);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(71, 23);
             this.label4.TabIndex = 73;
@@ -162,7 +164,7 @@ namespace TCC.VISÃO
             this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label5.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label5.Location = new System.Drawing.Point(619, 345);
+            this.label5.Location = new System.Drawing.Point(619, 343);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(53, 23);
             this.label5.TabIndex = 74;
@@ -229,7 +231,7 @@ namespace TCC.VISÃO
             this.label9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label9.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
             this.label9.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label9.Location = new System.Drawing.Point(546, 286);
+            this.label9.Location = new System.Drawing.Point(546, 279);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(128, 23);
             this.label9.TabIndex = 79;
@@ -260,7 +262,7 @@ namespace TCC.VISÃO
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.panel4.Location = new System.Drawing.Point(0, 399);
+            this.panel4.Location = new System.Drawing.Point(0, 390);
             this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(931, 21);
@@ -269,7 +271,7 @@ namespace TCC.VISÃO
             // txtbairroUsuario
             // 
             this.txtbairroUsuario.Font = new System.Drawing.Font("Comic Sans MS", 12F);
-            this.txtbairroUsuario.Location = new System.Drawing.Point(674, 225);
+            this.txtbairroUsuario.Location = new System.Drawing.Point(674, 218);
             this.txtbairroUsuario.Name = "txtbairroUsuario";
             this.txtbairroUsuario.Size = new System.Drawing.Size(179, 30);
             this.txtbairroUsuario.TabIndex = 140;
@@ -285,7 +287,7 @@ namespace TCC.VISÃO
             // txtcomplementoUsuario
             // 
             this.txtcomplementoUsuario.Font = new System.Drawing.Font("Comic Sans MS", 12F);
-            this.txtcomplementoUsuario.Location = new System.Drawing.Point(674, 286);
+            this.txtcomplementoUsuario.Location = new System.Drawing.Point(674, 279);
             this.txtcomplementoUsuario.Name = "txtcomplementoUsuario";
             this.txtcomplementoUsuario.Size = new System.Drawing.Size(154, 30);
             this.txtcomplementoUsuario.TabIndex = 144;
@@ -480,7 +482,7 @@ namespace TCC.VISÃO
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.Transparent;
-            this.btnCancelar.Location = new System.Drawing.Point(69, 427);
+            this.btnCancelar.Location = new System.Drawing.Point(62, 435);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(49, 35);
             this.btnCancelar.TabIndex = 155;
@@ -497,13 +499,15 @@ namespace TCC.VISÃO
             this.btnConfirmar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnConfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfirmar.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirmar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.btnConfirmar.Location = new System.Drawing.Point(12, 427);
+            this.btnConfirmar.ForeColor = System.Drawing.Color.Transparent;
+            this.btnConfirmar.Location = new System.Drawing.Point(5, 435);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(49, 35);
             this.btnConfirmar.TabIndex = 154;
             this.btnConfirmar.UseVisualStyleBackColor = false;
             this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
+            this.btnConfirmar.MouseEnter += new System.EventHandler(this.btnConfirmar_MouseEnter);
+            this.btnConfirmar.MouseLeave += new System.EventHandler(this.btnConfirmar_MouseLeave);
             // 
             // label1
             // 
@@ -581,7 +585,7 @@ namespace TCC.VISÃO
             // txtcepUsuario
             // 
             this.txtcepUsuario.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtcepUsuario.Location = new System.Drawing.Point(674, 343);
+            this.txtcepUsuario.Location = new System.Drawing.Point(674, 341);
             this.txtcepUsuario.Mask = "00000-000";
             this.txtcepUsuario.Name = "txtcepUsuario";
             this.txtcepUsuario.Size = new System.Drawing.Size(103, 30);
@@ -597,7 +601,7 @@ namespace TCC.VISÃO
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.button5.Location = new System.Drawing.Point(124, 425);
+            this.button5.Location = new System.Drawing.Point(117, 433);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(64, 38);
             this.button5.TabIndex = 165;
@@ -646,6 +650,34 @@ namespace TCC.VISÃO
             this.txtcpfUsuario.Size = new System.Drawing.Size(140, 30);
             this.txtcpfUsuario.TabIndex = 170;
             // 
+            // lblconfirmar
+            // 
+            this.lblconfirmar.AutoSize = true;
+            this.lblconfirmar.BackColor = System.Drawing.Color.Transparent;
+            this.lblconfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblconfirmar.Font = new System.Drawing.Font("Comic Sans MS", 7F, System.Drawing.FontStyle.Bold);
+            this.lblconfirmar.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblconfirmar.Location = new System.Drawing.Point(2, 418);
+            this.lblconfirmar.Name = "lblconfirmar";
+            this.lblconfirmar.Size = new System.Drawing.Size(55, 14);
+            this.lblconfirmar.TabIndex = 171;
+            this.lblconfirmar.Text = "Confirmar";
+            this.lblconfirmar.Visible = false;
+            // 
+            // lblcancelar
+            // 
+            this.lblcancelar.AutoSize = true;
+            this.lblcancelar.BackColor = System.Drawing.Color.Transparent;
+            this.lblcancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblcancelar.Font = new System.Drawing.Font("Comic Sans MS", 7F, System.Drawing.FontStyle.Bold);
+            this.lblcancelar.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblcancelar.Location = new System.Drawing.Point(63, 418);
+            this.lblcancelar.Name = "lblcancelar";
+            this.lblcancelar.Size = new System.Drawing.Size(49, 14);
+            this.lblcancelar.TabIndex = 172;
+            this.lblcancelar.Text = "Cancelar";
+            this.lblcancelar.Visible = false;
+            // 
             // EditarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -654,6 +686,8 @@ namespace TCC.VISÃO
             this.BackgroundImage = global::TCC.Properties.Resources._1555492a6_11;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(863, 654);
+            this.Controls.Add(this.lblcancelar);
+            this.Controls.Add(this.lblconfirmar);
             this.Controls.Add(this.txtcpfUsuario);
             this.Controls.Add(this.lblcpfUsuario);
             this.Controls.Add(this.textBox1);
@@ -759,5 +793,7 @@ namespace TCC.VISÃO
         private System.Windows.Forms.Label lblnumeroUsuario;
         private System.Windows.Forms.Label lblcpfUsuario;
         private System.Windows.Forms.MaskedTextBox txtcpfUsuario;
+        private System.Windows.Forms.Label lblconfirmar;
+        private System.Windows.Forms.Label lblcancelar;
     }
 }
