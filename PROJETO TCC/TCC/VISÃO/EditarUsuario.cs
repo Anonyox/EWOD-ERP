@@ -14,7 +14,7 @@ using System.Data.OleDb;
 namespace TCC.VISÃO
 {
     public partial class EditarUsuario : Form
-    {
+    {       
         string msg;
         bool tem;
         Conexao con = new Conexao();
@@ -51,7 +51,8 @@ namespace TCC.VISÃO
         {
             // TODO: esta linha de código carrega dados na tabela 'tccDataSet.logins'. Você pode movê-la ou removê-la conforme necessário.
             this.loginsTableAdapter.Fill(this.tccDataSet.logins);
-            con.conectar();
+
+            listarUsuarios();
 
             SqlCommand cmd = new SqlCommand("SELECT usuario FROM logins", con.conectar());
             //cmd.CommandText = ;
@@ -85,6 +86,8 @@ namespace TCC.VISÃO
             dtgeditarUsuario.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(0, 209, 178);     //FromArgb(20, 25, 72);
             dtgeditarUsuario.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
             #endregion
+
+            
 
         }
 
@@ -144,7 +147,7 @@ namespace TCC.VISÃO
                 {
 
                     txtCidade.Text = dr["cidade"].ToString();
-                    txtenderecoUsuario.Text = dr["endereco"].ToString();
+                    txtnumeroUsuario.Text = dr["endereco"].ToString();
                     txtbairroUsuario.Text = dr["bairro"].ToString();
                     txttelefoneUsuario.Text = dr["telefone"].ToString();
                     txtcomplementoUsuario.Text = dr["complemento"].ToString();
@@ -250,7 +253,7 @@ namespace TCC.VISÃO
 
                     cmd2.Parameters.AddWithValue("@usuario", txtnomeUsuario.Text);
                     cmd2.Parameters.AddWithValue("@cidade", txtCidade.Text);
-                    cmd2.Parameters.AddWithValue("@endereco", txtenderecoUsuario.Text);
+                    cmd2.Parameters.AddWithValue("@endereco", txtnumeroUsuario.Text);
                     cmd2.Parameters.AddWithValue("@complemento", txtcomplementoUsuario.Text);
                     cmd2.Parameters.AddWithValue("@bairro", txtbairroUsuario.Text);
                     cmd2.Parameters.AddWithValue("@telefone", txttelefoneUsuario.Text);
@@ -301,7 +304,8 @@ namespace TCC.VISÃO
             cbestadoUsuario.Text = ("");
             cbdepartamentoUsuario.Text = ("");
             txttelefoneUsuario.Text = ("");
-            txtenderecoUsuario.Text = ("");
+            txtnumeroUsuario.Text = ("");
+            txtsenhaAdm.Text = ("");
         }
 
         private void txtnomeUsuario_TextChanged_1(object sender, EventArgs e)
@@ -320,6 +324,74 @@ namespace TCC.VISÃO
         }
 
 
+        public void listarUsuarios()
+        {
+            
+            SqlCommand sqlcmd = new SqlCommand();
+            sqlcmd.CommandText = ("SELECT * FROM logins");
+            sqlcmd.Connection = con.conectar();
+
+
+            try
+            {
+                con.conectar();
+                sqlcmd.ExecuteNonQuery();
+
+
+                SqlDataAdapter da = new SqlDataAdapter(sqlcmd);
+                DataTable dt = new DataTable();
+
+                da.Fill(dt);
+
+
+
+
+
+
+                dtgeditarUsuario.Rows.Clear();
+                foreach (DataRow item in dt.Rows)
+                {
+                    int n = dtgeditarUsuario.Rows.Add();
+
+                    dtgeditarUsuario.Rows[n].Cells[0].Value = item["usuario"].ToString();
+                    dtgeditarUsuario.Rows[n].Cells[1].Value = item["CPF"].ToString();
+                    dtgeditarUsuario.Rows[n].Cells[2].Value = item["telefone"].ToString();
+                    dtgeditarUsuario.Rows[n].Cells[3].Value = item["sexo"].ToString();
+                    dtgeditarUsuario.Rows[n].Cells[4].Value = item["cep"].ToString();
+                    dtgeditarUsuario.Rows[n].Cells[5].Value = item["complemento"].ToString();
+                    dtgeditarUsuario.Rows[n].Cells[6].Value = item["cidade"].ToString();
+                    dtgeditarUsuario.Rows[n].Cells[7].Value = item["bairro"].ToString();
+                    dtgeditarUsuario.Rows[n].Cells[8].Value = item["estado"].ToString();
+                    dtgeditarUsuario.Rows[n].Cells[9].Value = item["Senha"].ToString();
+                    dtgeditarUsuario.Rows[n].Cells[10].Value = item["perfil"].ToString();
+                    dtgeditarUsuario.Rows[n].Cells[11].Value = item["endereco"].ToString();
+                    dtgeditarUsuario.Rows[n].Cells[12].Value = item["numero"].ToString();
+                    dtgeditarUsuario.Rows[n].Cells[13].Value = item["email"].ToString();
+                    dtgeditarUsuario.Rows[n].Cells[14].Value = item["departamento"].ToString();
+
+
+
+
+
+
+
+
+
+
+
+                }
+                con.desconectar();
+                //dtEmail.DataSource = dt;
+
+
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
 
     }
 }

@@ -31,7 +31,7 @@ namespace TCC.VISÃO
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditarUsuario));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.btnSair = new System.Windows.Forms.PictureBox();
@@ -49,7 +49,7 @@ namespace TCC.VISÃO
             this.txtbairroUsuario = new System.Windows.Forms.TextBox();
             this.txtCidade = new System.Windows.Forms.TextBox();
             this.txtcomplementoUsuario = new System.Windows.Forms.TextBox();
-            this.txtenderecoUsuario = new System.Windows.Forms.TextBox();
+            this.txtnumeroUsuario = new System.Windows.Forms.TextBox();
             this.txtsenhaAdm = new System.Windows.Forms.TextBox();
             this.lblnomeUsuario = new System.Windows.Forms.Label();
             this.loginsBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -81,6 +81,10 @@ namespace TCC.VISÃO
             this.txttelefoneUsuario = new System.Windows.Forms.MaskedTextBox();
             this.txtcepUsuario = new System.Windows.Forms.MaskedTextBox();
             this.button5 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lblnumeroUsuario = new System.Windows.Forms.Label();
+            this.lblcpfUsuario = new System.Windows.Forms.Label();
+            this.txtcpfUsuario = new System.Windows.Forms.MaskedTextBox();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSair)).BeginInit();
@@ -95,9 +99,9 @@ namespace TCC.VISÃO
             this.panel3.Controls.Add(this.btnMinimizar);
             this.panel3.Controls.Add(this.btnSair);
             this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1153, 57);
+            this.panel3.Size = new System.Drawing.Size(865, 46);
             this.panel3.TabIndex = 53;
             // 
             // btnMinimizar
@@ -105,10 +109,9 @@ namespace TCC.VISÃO
             this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
-            this.btnMinimizar.Location = new System.Drawing.Point(1067, 14);
-            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMinimizar.Location = new System.Drawing.Point(800, 11);
             this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(37, 34);
+            this.btnMinimizar.Size = new System.Drawing.Size(28, 28);
             this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnMinimizar.TabIndex = 48;
             this.btnMinimizar.TabStop = false;
@@ -118,10 +121,9 @@ namespace TCC.VISÃO
             this.btnSair.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSair.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSair.Image = ((System.Drawing.Image)(resources.GetObject("btnSair.Image")));
-            this.btnSair.Location = new System.Drawing.Point(1112, 14);
-            this.btnSair.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSair.Location = new System.Drawing.Point(834, 11);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(37, 34);
+            this.btnSair.Size = new System.Drawing.Size(28, 28);
             this.btnSair.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnSair.TabIndex = 49;
             this.btnSair.TabStop = false;
@@ -134,10 +136,9 @@ namespace TCC.VISÃO
             this.lblDepartamento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblDepartamento.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
             this.lblDepartamento.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblDepartamento.Location = new System.Drawing.Point(13, 144);
-            this.lblDepartamento.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDepartamento.Location = new System.Drawing.Point(10, 131);
             this.lblDepartamento.Name = "lblDepartamento";
-            this.lblDepartamento.Size = new System.Drawing.Size(174, 29);
+            this.lblDepartamento.Size = new System.Drawing.Size(140, 23);
             this.lblDepartamento.TabIndex = 70;
             this.lblDepartamento.Text = "Departamento  :";
             // 
@@ -148,10 +149,9 @@ namespace TCC.VISÃO
             this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label4.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label4.Location = new System.Drawing.Point(799, 240);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(599, 227);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(92, 29);
+            this.label4.Size = new System.Drawing.Size(71, 23);
             this.label4.TabIndex = 73;
             this.label4.Text = "Bairro :";
             // 
@@ -162,10 +162,9 @@ namespace TCC.VISÃO
             this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label5.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label5.Location = new System.Drawing.Point(825, 385);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(619, 345);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(66, 29);
+            this.label5.Size = new System.Drawing.Size(53, 23);
             this.label5.TabIndex = 74;
             this.label5.Text = "CEP :";
             this.label5.Click += new System.EventHandler(this.label5_Click);
@@ -177,10 +176,9 @@ namespace TCC.VISÃO
             this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label6.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label6.Location = new System.Drawing.Point(60, 240);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(45, 201);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(127, 29);
+            this.label6.Size = new System.Drawing.Size(100, 23);
             this.label6.TabIndex = 75;
             this.label6.Text = "Endereço  :";
             this.label6.Click += new System.EventHandler(this.label6_Click);
@@ -192,10 +190,9 @@ namespace TCC.VISÃO
             this.label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label7.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
             this.label7.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label7.Location = new System.Drawing.Point(91, 383);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(69, 355);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(95, 29);
+            this.label7.Size = new System.Drawing.Size(74, 23);
             this.label7.TabIndex = 76;
             this.label7.Text = "Cidade :";
             // 
@@ -206,10 +203,9 @@ namespace TCC.VISÃO
             this.label8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label8.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
             this.label8.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label8.Location = new System.Drawing.Point(91, 312);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(69, 298);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(96, 29);
+            this.label8.Size = new System.Drawing.Size(76, 23);
             this.label8.TabIndex = 77;
             this.label8.Text = "Estado :";
             // 
@@ -220,10 +216,9 @@ namespace TCC.VISÃO
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label2.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(768, 144);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(576, 117);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(123, 29);
+            this.label2.Size = new System.Drawing.Size(97, 23);
             this.label2.TabIndex = 78;
             this.label2.Text = "Telefone  :";
             // 
@@ -234,10 +229,9 @@ namespace TCC.VISÃO
             this.label9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label9.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
             this.label9.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label9.Location = new System.Drawing.Point(728, 312);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Location = new System.Drawing.Point(546, 286);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(163, 29);
+            this.label9.Size = new System.Drawing.Size(128, 23);
             this.label9.TabIndex = 79;
             this.label9.Text = "Complemento  :";
             // 
@@ -248,74 +242,68 @@ namespace TCC.VISÃO
             this.label10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label10.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
             this.label10.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label10.Location = new System.Drawing.Point(604, 525);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Location = new System.Drawing.Point(460, 433);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(277, 29);
+            this.label10.Size = new System.Drawing.Size(215, 23);
             this.label10.TabIndex = 80;
             this.label10.Text = "Senha do Administrador  :";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.panel1.Location = new System.Drawing.Point(0, 191);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Location = new System.Drawing.Point(0, 175);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1241, 26);
+            this.panel1.Size = new System.Drawing.Size(931, 21);
             this.panel1.TabIndex = 135;
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.panel4.Location = new System.Drawing.Point(0, 468);
-            this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel4.Location = new System.Drawing.Point(0, 399);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1241, 26);
+            this.panel4.Size = new System.Drawing.Size(931, 21);
             this.panel4.TabIndex = 137;
             // 
             // txtbairroUsuario
             // 
             this.txtbairroUsuario.Font = new System.Drawing.Font("Comic Sans MS", 12F);
-            this.txtbairroUsuario.Location = new System.Drawing.Point(899, 238);
-            this.txtbairroUsuario.Margin = new System.Windows.Forms.Padding(4);
+            this.txtbairroUsuario.Location = new System.Drawing.Point(674, 225);
             this.txtbairroUsuario.Name = "txtbairroUsuario";
-            this.txtbairroUsuario.Size = new System.Drawing.Size(237, 35);
+            this.txtbairroUsuario.Size = new System.Drawing.Size(179, 30);
             this.txtbairroUsuario.TabIndex = 140;
             // 
             // txtCidade
             // 
             this.txtCidade.Font = new System.Drawing.Font("Comic Sans MS", 12F);
-            this.txtCidade.Location = new System.Drawing.Point(195, 383);
-            this.txtCidade.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCidade.Location = new System.Drawing.Point(147, 355);
             this.txtCidade.Name = "txtCidade";
-            this.txtCidade.Size = new System.Drawing.Size(323, 35);
+            this.txtCidade.Size = new System.Drawing.Size(243, 30);
             this.txtCidade.TabIndex = 143;
             // 
             // txtcomplementoUsuario
             // 
             this.txtcomplementoUsuario.Font = new System.Drawing.Font("Comic Sans MS", 12F);
-            this.txtcomplementoUsuario.Location = new System.Drawing.Point(899, 312);
-            this.txtcomplementoUsuario.Margin = new System.Windows.Forms.Padding(4);
+            this.txtcomplementoUsuario.Location = new System.Drawing.Point(674, 286);
             this.txtcomplementoUsuario.Name = "txtcomplementoUsuario";
-            this.txtcomplementoUsuario.Size = new System.Drawing.Size(204, 35);
+            this.txtcomplementoUsuario.Size = new System.Drawing.Size(154, 30);
             this.txtcomplementoUsuario.TabIndex = 144;
             // 
-            // txtenderecoUsuario
+            // txtnumeroUsuario
             // 
-            this.txtenderecoUsuario.Font = new System.Drawing.Font("Comic Sans MS", 12F);
-            this.txtenderecoUsuario.Location = new System.Drawing.Point(195, 240);
-            this.txtenderecoUsuario.Margin = new System.Windows.Forms.Padding(4);
-            this.txtenderecoUsuario.Name = "txtenderecoUsuario";
-            this.txtenderecoUsuario.Size = new System.Drawing.Size(323, 35);
-            this.txtenderecoUsuario.TabIndex = 145;
+            this.txtnumeroUsuario.Font = new System.Drawing.Font("Comic Sans MS", 12F);
+            this.txtnumeroUsuario.Location = new System.Drawing.Point(146, 201);
+            this.txtnumeroUsuario.Name = "txtnumeroUsuario";
+            this.txtnumeroUsuario.Size = new System.Drawing.Size(243, 30);
+            this.txtnumeroUsuario.TabIndex = 145;
             // 
             // txtsenhaAdm
             // 
             this.txtsenhaAdm.Font = new System.Drawing.Font("Comic Sans MS", 12F);
-            this.txtsenhaAdm.Location = new System.Drawing.Point(889, 519);
-            this.txtsenhaAdm.Margin = new System.Windows.Forms.Padding(4);
+            this.txtsenhaAdm.Location = new System.Drawing.Point(674, 428);
             this.txtsenhaAdm.Name = "txtsenhaAdm";
-            this.txtsenhaAdm.Size = new System.Drawing.Size(217, 35);
+            this.txtsenhaAdm.Size = new System.Drawing.Size(164, 30);
             this.txtsenhaAdm.TabIndex = 147;
             // 
             // lblnomeUsuario
@@ -325,10 +313,9 @@ namespace TCC.VISÃO
             this.lblnomeUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblnomeUsuario.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
             this.lblnomeUsuario.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblnomeUsuario.Location = new System.Drawing.Point(74, 76);
-            this.lblnomeUsuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblnomeUsuario.Location = new System.Drawing.Point(56, 62);
             this.lblnomeUsuario.Name = "lblnomeUsuario";
-            this.lblnomeUsuario.Size = new System.Drawing.Size(113, 29);
+            this.lblnomeUsuario.Size = new System.Drawing.Size(88, 23);
             this.lblnomeUsuario.TabIndex = 150;
             this.lblnomeUsuario.Text = "Usuário  :";
             // 
@@ -345,14 +332,14 @@ namespace TCC.VISÃO
             // dtgeditarUsuario
             // 
             this.dtgeditarUsuario.BackgroundColor = System.Drawing.Color.Lavender;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Comic Sans MS", 11.25F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgeditarUsuario.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Comic Sans MS", 11.25F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgeditarUsuario.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dtgeditarUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgeditarUsuario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.usuario,
@@ -370,10 +357,11 @@ namespace TCC.VISÃO
             this.numero,
             this.email,
             this.departamento});
-            this.dtgeditarUsuario.Location = new System.Drawing.Point(-3, 580);
+            this.dtgeditarUsuario.Location = new System.Drawing.Point(-2, 471);
+            this.dtgeditarUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dtgeditarUsuario.Name = "dtgeditarUsuario";
             this.dtgeditarUsuario.RowHeadersWidth = 51;
-            this.dtgeditarUsuario.Size = new System.Drawing.Size(1156, 228);
+            this.dtgeditarUsuario.Size = new System.Drawing.Size(867, 185);
             this.dtgeditarUsuario.TabIndex = 153;
             // 
             // usuario
@@ -492,10 +480,9 @@ namespace TCC.VISÃO
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.Transparent;
-            this.btnCancelar.Location = new System.Drawing.Point(92, 519);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCancelar.Location = new System.Drawing.Point(69, 427);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(65, 43);
+            this.btnCancelar.Size = new System.Drawing.Size(49, 35);
             this.btnCancelar.TabIndex = 155;
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -511,10 +498,9 @@ namespace TCC.VISÃO
             this.btnConfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfirmar.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirmar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.btnConfirmar.Location = new System.Drawing.Point(16, 519);
-            this.btnConfirmar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnConfirmar.Location = new System.Drawing.Point(12, 427);
             this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(65, 43);
+            this.btnConfirmar.Size = new System.Drawing.Size(49, 35);
             this.btnConfirmar.TabIndex = 154;
             this.btnConfirmar.UseVisualStyleBackColor = false;
             this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
@@ -526,10 +512,9 @@ namespace TCC.VISÃO
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(798, 79);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(598, 64);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 29);
+            this.label1.Size = new System.Drawing.Size(73, 23);
             this.label1.TabIndex = 157;
             this.label1.Text = "Perfil  :";
             // 
@@ -542,10 +527,9 @@ namespace TCC.VISÃO
             "Geral",
             "Venda",
             "Compra"});
-            this.cbperfilUsuario.Location = new System.Drawing.Point(899, 76);
-            this.cbperfilUsuario.Margin = new System.Windows.Forms.Padding(4);
+            this.cbperfilUsuario.Location = new System.Drawing.Point(674, 62);
             this.cbperfilUsuario.Name = "cbperfilUsuario";
-            this.cbperfilUsuario.Size = new System.Drawing.Size(185, 36);
+            this.cbperfilUsuario.Size = new System.Drawing.Size(140, 31);
             this.cbperfilUsuario.TabIndex = 159;
             // 
             // cbdepartamentoUsuario
@@ -557,20 +541,18 @@ namespace TCC.VISÃO
             "Compra",
             "Geral",
             "Administrador "});
-            this.cbdepartamentoUsuario.Location = new System.Drawing.Point(195, 142);
-            this.cbdepartamentoUsuario.Margin = new System.Windows.Forms.Padding(4);
+            this.cbdepartamentoUsuario.Location = new System.Drawing.Point(146, 129);
             this.cbdepartamentoUsuario.Name = "cbdepartamentoUsuario";
-            this.cbdepartamentoUsuario.Size = new System.Drawing.Size(240, 36);
+            this.cbdepartamentoUsuario.Size = new System.Drawing.Size(181, 31);
             this.cbdepartamentoUsuario.TabIndex = 160;
             // 
             // cbestadoUsuario
             // 
             this.cbestadoUsuario.Font = new System.Drawing.Font("Comic Sans MS", 12F);
             this.cbestadoUsuario.FormattingEnabled = true;
-            this.cbestadoUsuario.Location = new System.Drawing.Point(195, 312);
-            this.cbestadoUsuario.Margin = new System.Windows.Forms.Padding(4);
+            this.cbestadoUsuario.Location = new System.Drawing.Point(147, 298);
             this.cbestadoUsuario.Name = "cbestadoUsuario";
-            this.cbestadoUsuario.Size = new System.Drawing.Size(204, 36);
+            this.cbestadoUsuario.Size = new System.Drawing.Size(154, 31);
             this.cbestadoUsuario.TabIndex = 161;
             // 
             // loginsTableAdapter
@@ -580,10 +562,9 @@ namespace TCC.VISÃO
             // txtnomeUsuario
             // 
             this.txtnomeUsuario.Font = new System.Drawing.Font("Comic Sans MS", 12F);
-            this.txtnomeUsuario.Location = new System.Drawing.Point(195, 70);
-            this.txtnomeUsuario.Margin = new System.Windows.Forms.Padding(4);
+            this.txtnomeUsuario.Location = new System.Drawing.Point(146, 57);
             this.txtnomeUsuario.Name = "txtnomeUsuario";
-            this.txtnomeUsuario.Size = new System.Drawing.Size(240, 35);
+            this.txtnomeUsuario.Size = new System.Drawing.Size(181, 30);
             this.txtnomeUsuario.TabIndex = 162;
             this.txtnomeUsuario.TextChanged += new System.EventHandler(this.txtnomeUsuario_TextChanged_1);
             this.txtnomeUsuario.Leave += new System.EventHandler(this.txtnomeUsuario_Leave_1);
@@ -591,21 +572,19 @@ namespace TCC.VISÃO
             // txttelefoneUsuario
             // 
             this.txttelefoneUsuario.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txttelefoneUsuario.Location = new System.Drawing.Point(899, 142);
-            this.txttelefoneUsuario.Margin = new System.Windows.Forms.Padding(4);
+            this.txttelefoneUsuario.Location = new System.Drawing.Point(674, 115);
             this.txttelefoneUsuario.Mask = "(00)00000-0000";
             this.txttelefoneUsuario.Name = "txttelefoneUsuario";
-            this.txttelefoneUsuario.Size = new System.Drawing.Size(189, 35);
+            this.txttelefoneUsuario.Size = new System.Drawing.Size(143, 30);
             this.txttelefoneUsuario.TabIndex = 163;
             // 
             // txtcepUsuario
             // 
             this.txtcepUsuario.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtcepUsuario.Location = new System.Drawing.Point(899, 383);
-            this.txtcepUsuario.Margin = new System.Windows.Forms.Padding(4);
+            this.txtcepUsuario.Location = new System.Drawing.Point(674, 343);
             this.txtcepUsuario.Mask = "00000-000";
             this.txtcepUsuario.Name = "txtcepUsuario";
-            this.txtcepUsuario.Size = new System.Drawing.Size(136, 35);
+            this.txtcepUsuario.Size = new System.Drawing.Size(103, 30);
             this.txtcepUsuario.TabIndex = 164;
             // 
             // button5
@@ -618,21 +597,67 @@ namespace TCC.VISÃO
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.button5.Location = new System.Drawing.Point(165, 517);
-            this.button5.Margin = new System.Windows.Forms.Padding(4);
+            this.button5.Location = new System.Drawing.Point(124, 425);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(85, 47);
+            this.button5.Size = new System.Drawing.Size(64, 38);
             this.button5.TabIndex = 165;
             this.button5.UseVisualStyleBackColor = false;
             // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Comic Sans MS", 12F);
+            this.textBox1.Location = new System.Drawing.Point(146, 246);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(155, 30);
+            this.textBox1.TabIndex = 167;
+            // 
+            // lblnumeroUsuario
+            // 
+            this.lblnumeroUsuario.AutoSize = true;
+            this.lblnumeroUsuario.BackColor = System.Drawing.Color.Transparent;
+            this.lblnumeroUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblnumeroUsuario.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
+            this.lblnumeroUsuario.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblnumeroUsuario.Location = new System.Drawing.Point(58, 249);
+            this.lblnumeroUsuario.Name = "lblnumeroUsuario";
+            this.lblnumeroUsuario.Size = new System.Drawing.Size(82, 23);
+            this.lblnumeroUsuario.TabIndex = 166;
+            this.lblnumeroUsuario.Text = "Número :";
+            // 
+            // lblcpfUsuario
+            // 
+            this.lblcpfUsuario.AutoSize = true;
+            this.lblcpfUsuario.BackColor = System.Drawing.Color.Transparent;
+            this.lblcpfUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblcpfUsuario.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
+            this.lblcpfUsuario.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblcpfUsuario.Location = new System.Drawing.Point(330, 93);
+            this.lblcpfUsuario.Name = "lblcpfUsuario";
+            this.lblcpfUsuario.Size = new System.Drawing.Size(53, 23);
+            this.lblcpfUsuario.TabIndex = 168;
+            this.lblcpfUsuario.Text = "CPF :";
+            // 
+            // txtcpfUsuario
+            // 
+            this.txtcpfUsuario.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtcpfUsuario.Location = new System.Drawing.Point(389, 90);
+            this.txtcpfUsuario.Mask = "000,000,000-00";
+            this.txtcpfUsuario.Name = "txtcpfUsuario";
+            this.txtcpfUsuario.Size = new System.Drawing.Size(140, 30);
+            this.txtcpfUsuario.TabIndex = 170;
+            // 
             // EditarUsuario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(12)))), ((int)(((byte)(38)))));
             this.BackgroundImage = global::TCC.Properties.Resources._1555492a6_11;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(1151, 805);
+            this.ClientSize = new System.Drawing.Size(863, 654);
+            this.Controls.Add(this.txtcpfUsuario);
+            this.Controls.Add(this.lblcpfUsuario);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.lblnumeroUsuario);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.txtcepUsuario);
             this.Controls.Add(this.txttelefoneUsuario);
@@ -646,7 +671,7 @@ namespace TCC.VISÃO
             this.Controls.Add(this.dtgeditarUsuario);
             this.Controls.Add(this.lblnomeUsuario);
             this.Controls.Add(this.txtsenhaAdm);
-            this.Controls.Add(this.txtenderecoUsuario);
+            this.Controls.Add(this.txtnumeroUsuario);
             this.Controls.Add(this.txtcomplementoUsuario);
             this.Controls.Add(this.txtCidade);
             this.Controls.Add(this.txtbairroUsuario);
@@ -663,7 +688,6 @@ namespace TCC.VISÃO
             this.Controls.Add(this.lblDepartamento);
             this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EditarUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditarUsuario";
@@ -699,7 +723,7 @@ namespace TCC.VISÃO
         private System.Windows.Forms.TextBox txtbairroUsuario;
         private System.Windows.Forms.TextBox txtCidade;
         private System.Windows.Forms.TextBox txtcomplementoUsuario;
-        private System.Windows.Forms.TextBox txtenderecoUsuario;
+        private System.Windows.Forms.TextBox txtnumeroUsuario;
         private System.Windows.Forms.TextBox txtsenhaAdm;
         private System.Windows.Forms.Label lblnomeUsuario;
         private System.Windows.Forms.DataGridView dtgeditarUsuario;
@@ -731,5 +755,9 @@ namespace TCC.VISÃO
         private System.Windows.Forms.MaskedTextBox txtcepUsuario;
         private System.Windows.Forms.Button button5;
         public System.Windows.Forms.Button btnConfirmar;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label lblnumeroUsuario;
+        private System.Windows.Forms.Label lblcpfUsuario;
+        private System.Windows.Forms.MaskedTextBox txtcpfUsuario;
     }
 }
