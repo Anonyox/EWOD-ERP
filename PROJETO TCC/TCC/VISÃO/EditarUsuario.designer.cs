@@ -56,7 +56,7 @@ namespace TCC.VISÃO
             this.lblnomeUsuario = new System.Windows.Forms.Label();
             this.loginsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tccDataSet = new TCC.tccDataSet();
-            this.lblteste = new System.Windows.Forms.DataGridView();
+            this.dtgeditarUsuario = new System.Windows.Forms.DataGridView();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -65,12 +65,27 @@ namespace TCC.VISÃO
             this.cbestadoUsuario = new System.Windows.Forms.ComboBox();
             this.loginsTableAdapter = new TCC.tccDataSetTableAdapters.loginsTableAdapter();
             this.txtnomeUsuario = new System.Windows.Forms.TextBox();
+            this.departamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.endereco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.perfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Senha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bairro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.complemento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cep = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSair)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.loginsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tccDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lblteste)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgeditarUsuario)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -318,23 +333,39 @@ namespace TCC.VISÃO
             this.tccDataSet.DataSetName = "tccDataSet";
             this.tccDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // lblteste
+            // dtgeditarUsuario
             // 
-            this.lblteste.BackgroundColor = System.Drawing.Color.Lavender;
+            this.dtgeditarUsuario.BackgroundColor = System.Drawing.Color.Lavender;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Comic Sans MS", 11.25F);
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.lblteste.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.lblteste.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.lblteste.Location = new System.Drawing.Point(-2, 471);
-            this.lblteste.Name = "lblteste";
-            this.lblteste.RowHeadersWidth = 51;
-            this.lblteste.Size = new System.Drawing.Size(867, 185);
-            this.lblteste.TabIndex = 153;
+            this.dtgeditarUsuario.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dtgeditarUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgeditarUsuario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.usuario,
+            this.CPF,
+            this.telefone,
+            this.sexo,
+            this.cep,
+            this.complemento,
+            this.cidade,
+            this.bairro,
+            this.estado,
+            this.Senha,
+            this.perfil,
+            this.endereco,
+            this.numero,
+            this.email,
+            this.departamento});
+            this.dtgeditarUsuario.Location = new System.Drawing.Point(-2, 471);
+            this.dtgeditarUsuario.Name = "dtgeditarUsuario";
+            this.dtgeditarUsuario.RowHeadersWidth = 51;
+            this.dtgeditarUsuario.Size = new System.Drawing.Size(867, 185);
+            this.dtgeditarUsuario.TabIndex = 153;
             // 
             // btnCancelar
             // 
@@ -429,7 +460,83 @@ namespace TCC.VISÃO
             this.txtnomeUsuario.Name = "txtnomeUsuario";
             this.txtnomeUsuario.Size = new System.Drawing.Size(121, 20);
             this.txtnomeUsuario.TabIndex = 162;
+            this.txtnomeUsuario.TextChanged += new System.EventHandler(this.txtnomeUsuario_TextChanged_1);
             this.txtnomeUsuario.Leave += new System.EventHandler(this.txtnomeUsuario_Leave_1);
+            // 
+            // departamento
+            // 
+            this.departamento.HeaderText = "Departamento";
+            this.departamento.Name = "departamento";
+            // 
+            // email
+            // 
+            this.email.HeaderText = "Email";
+            this.email.Name = "email";
+            // 
+            // numero
+            // 
+            this.numero.HeaderText = "Número";
+            this.numero.Name = "numero";
+            // 
+            // endereco
+            // 
+            this.endereco.HeaderText = "Endereço";
+            this.endereco.Name = "endereco";
+            // 
+            // perfil
+            // 
+            this.perfil.HeaderText = "Perfil";
+            this.perfil.Name = "perfil";
+            // 
+            // Senha
+            // 
+            this.Senha.HeaderText = "Senha";
+            this.Senha.Name = "Senha";
+            // 
+            // estado
+            // 
+            this.estado.HeaderText = "Estado";
+            this.estado.Name = "estado";
+            // 
+            // bairro
+            // 
+            this.bairro.HeaderText = "Bairro";
+            this.bairro.Name = "bairro";
+            // 
+            // cidade
+            // 
+            this.cidade.HeaderText = "Cidade";
+            this.cidade.Name = "cidade";
+            // 
+            // complemento
+            // 
+            this.complemento.HeaderText = "Complemento";
+            this.complemento.Name = "complemento";
+            // 
+            // cep
+            // 
+            this.cep.HeaderText = "Cep";
+            this.cep.Name = "cep";
+            // 
+            // sexo
+            // 
+            this.sexo.HeaderText = "Sexo";
+            this.sexo.Name = "sexo";
+            // 
+            // telefone
+            // 
+            this.telefone.HeaderText = "Telefone";
+            this.telefone.Name = "telefone";
+            // 
+            // CPF
+            // 
+            this.CPF.HeaderText = "CPF";
+            this.CPF.Name = "CPF";
+            // 
+            // usuario
+            // 
+            this.usuario.HeaderText = "Usuário";
+            this.usuario.Name = "usuario";
             // 
             // EditarUsuario
             // 
@@ -446,7 +553,7 @@ namespace TCC.VISÃO
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnConfirmar);
-            this.Controls.Add(this.lblteste);
+            this.Controls.Add(this.dtgeditarUsuario);
             this.Controls.Add(this.lblnomeUsuario);
             this.Controls.Add(this.txtsenhaAdm);
             this.Controls.Add(this.txttelefoneUsuario);
@@ -478,7 +585,7 @@ namespace TCC.VISÃO
             ((System.ComponentModel.ISupportInitialize)(this.btnSair)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.loginsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tccDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lblteste)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgeditarUsuario)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -508,7 +615,7 @@ namespace TCC.VISÃO
         private System.Windows.Forms.TextBox txttelefoneUsuario;
         private System.Windows.Forms.TextBox txtsenhaAdm;
         private System.Windows.Forms.Label lblnomeUsuario;
-        private System.Windows.Forms.DataGridView lblteste;
+        private System.Windows.Forms.DataGridView dtgeditarUsuario;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnConfirmar;
         private System.Windows.Forms.Label label1;
@@ -519,5 +626,20 @@ namespace TCC.VISÃO
         private System.Windows.Forms.BindingSource loginsBindingSource;
         private tccDataSetTableAdapters.loginsTableAdapter loginsTableAdapter;
         private System.Windows.Forms.TextBox txtnomeUsuario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn usuario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CPF;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telefone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sexo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cep;
+        private System.Windows.Forms.DataGridViewTextBoxColumn complemento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cidade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bairro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Senha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn perfil;
+        private System.Windows.Forms.DataGridViewTextBoxColumn endereco;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numero;
+        private System.Windows.Forms.DataGridViewTextBoxColumn email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn departamento;
     }
 }

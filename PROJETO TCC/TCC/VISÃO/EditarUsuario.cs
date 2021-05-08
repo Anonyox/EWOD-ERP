@@ -15,6 +15,8 @@ namespace TCC.VISÃO
 {
     public partial class EditarUsuario : Form
     {
+        string msg;
+        bool tem;
         Conexao con = new Conexao();
         //SqlConnection con = new SqlConnection(@"Data Source= tcp: 26.186.226.18,9022;Initial Catalog=tcc;User ID=etec;Password=123456;connection timeout = 1");
         SqlDataReader dr;
@@ -70,7 +72,19 @@ namespace TCC.VISÃO
 
             dr.Close();
             con.desconectar();
+            #region configDataGrid
+            dtgeditarUsuario.BorderStyle = BorderStyle.None;  //DTEMAIL NOME DA VARIÁVEL
+            //dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
+            dtgeditarUsuario.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            // dataGridView1.DefaultCellStyle.SelectionBackColor = Color.DarkTurquoise;
+            //dataGridView1.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
+            /// dataGridView1.BackgroundColor = Color.White;
 
+            dtgeditarUsuario.EnableHeadersVisualStyles = false;
+            dtgeditarUsuario.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dtgeditarUsuario.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(0, 209, 178);     //FromArgb(20, 25, 72);
+            dtgeditarUsuario.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+            #endregion
 
         }
 
@@ -99,7 +113,7 @@ namespace TCC.VISÃO
 
         private void txtnomeUsuario_Leave(object sender, EventArgs e)
         {
-            
+
 
 
 
@@ -114,67 +128,128 @@ namespace TCC.VISÃO
 
         public void txtnomeUsuario_Leave_1(object sender, EventArgs e)
         {
-            string usuario = Convert.ToString(txtnomeUsuario.Text);
-            con.conectar();
-            //Elaborar Select que contenha cada um dos campos da tabela
-            SqlCommand cmd = new SqlCommand("SELECT cidade,endereco,complemento,bairro,telefone,CEP,estado,perfil,departamento FROM logins WHERE usuario LIKE @param ", con.conectar());
-            cmd.Parameters.AddWithValue("@param", txtnomeUsuario.Text + "%");
-            dr = cmd.ExecuteReader();
-            //criar variáveis para armazenar os campos
-            AutoCompleteStringCollection collection2 = new AutoCompleteStringCollection();
+            if (txtnomeUsuario.Text != string.Empty)
+            {
+                string usuario = Convert.ToString(txtnomeUsuario.Text);
+                //Elaborar Select que contenha cada um dos campos da tabela
+                SqlCommand cmd = new SqlCommand("SELECT cidade,endereco,complemento,bairro,telefone,CEP,estado,perfil,departamento FROM logins WHERE usuario = @param ", con.conectar());
+                cmd.Parameters.AddWithValue("@param", txtnomeUsuario.Text);
 
-            //atribuir as variáveis para os txts
-            while (dr.Read())
+                dr = cmd.ExecuteReader();
+                //criar variáveis para armazenar os campos
+                AutoCompleteStringCollection collection2 = new AutoCompleteStringCollection();
+
+                //atribuir as variáveis para os txts
+                while (dr.Read())
+                {
+
+                    txtCidade.Text = dr["cidade"].ToString();
+                    txtenderecoUsuario.Text = dr["endereco"].ToString();
+                    txtbairroUsuario.Text = dr["bairro"].ToString();
+                    txttelefoneUsuario.Text = dr["telefone"].ToString();
+                    txtcomplementoUsuario.Text = dr["complemento"].ToString();
+                    txtcepUsuario.Text = dr["CEP"].ToString();
+                    cbestadoUsuario.Text = dr["estado"].ToString();
+                    cbperfilUsuario.Text = dr["perfil"].ToString();
+                    cbdepartamentoUsuario.Text = dr["departamento"].ToString();
+
+
+                }
+
+
+                //colocar no formato auto-complete
+
+
+
+
+
+
+                dr.Close();
+                con.desconectar();
+            }
+            else
             {
 
-                collection2.Add(dr["cidade"].ToString());
-                txtCidade.Text = dr["cidade"].ToString();
-                txtenderecoUsuario.Text = dr["endereco"].ToString();
-                txtbairroUsuario.Text = dr["bairro"].ToString();
-                txttelefoneUsuario.Text = dr["telefone"].ToString();
-                txtcomplementoUsuario.Text = dr["complemento"].ToString();
-                txtcepUsuario.Text = dr["CEP"].ToString();
-                cbestadoUsuario.Text = dr["estado"].ToString();
-                cbperfilUsuario.Text = dr["perfil"].ToString();
-                cbdepartamentoUsuario.Text = dr["departamento"].ToString();
-                
+                MessageBox.Show("Primeiro digite o nome do usuário que pretende alterar !!", "Defina o usuário", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                limparCampos();
+
+                txtnomeUsuario.Focus();
 
             }
 
-
-            //colocar no formato auto-complete
-
-            
-
-
-
-
-            dr.Close();
-            con.desconectar();
 
         }
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            string SenhaAdm = "";
-            con.conectar();
-            SqlCommand cmd = new SqlCommand("SELECT senha FROM logins WHERE perfil = 'Administrador'", con.conectar());
-            cmd.Parameters.AddWithValue("senha", SenhaAdm);
-            dr = cmd.ExecuteReader();
-
-            dr.Close();
-            con.desconectar();
 
             if (txtnomeUsuario.Text == "")
             {
                 MessageBox.Show("Defina o Usuário que deseja Alterar", "Erro de Confirmação!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                if (txtsenhaAdm.Text == SenhaAdm)
+
+            }
+
+            else if (txtsenhaAdm.Text == "")
+            {
+                MessageBox.Show("Digite a senha de Administrador!!", "Erro de Confirmação", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            else if (txtnomeUsuario.Text != string.Empty && txtsenhaAdm.Text != string.Empty)
+            {
+                #region SelecionaSenhaAdm
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandText = "SELECT senha FROM logins WHERE senha = @senha AND usuario = 'Usuário'";
+                cmd.Parameters.AddWithValue("@senha", txtsenhaAdm.Text);
+
+                try
                 {
-                    con.conectar();
-                    SqlCommand cmd2 = new SqlCommand("UPDATE SET cidade = @cidade, endereco = @endereco,complemento = @complemento,bairro = @bairro,telefone = @telefone, CEP = @CEP,estado = @estado,perfil = @perfil,departamento = @departemento WHERE usuario = @usuario", con.conectar());
-                    cmd2.Parameters.AddWithValue("@cidade", txtCidade.Text);
+                    cmd.Connection = con.conectar();
+
+                    if (!con.mensagem.Equals(""))
+                    {
+                        this.msg = con.mensagem;
+
+                        MessageBox.Show(msg, "Erro de Conexão", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    }
+                    else
+                    {
+                        dr = cmd.ExecuteReader();
+                        if (dr.HasRows)
+                        {
+                            tem = true;
+
+                        }
+                        else
+                        {
+                            tem = false;
+                            MessageBox.Show("Senha de Administrador Inválida!!", "Erro de Confirmação", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+
+                    dr.Close();
+                    con.desconectar();
+                }
+                catch (Exception)
+                {
+
+                    msg = "Erro com o banco de dados";
+                    MessageBox.Show(msg, "Erro de Conexão", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                #endregion
+
+                if (tem == true)
+                {
+                    SqlCommand cmd2 = new SqlCommand();
+                    cmd2.CommandText = "UPDATE logins SET cidade = @cidade, endereco = @endereco, complemento = @complemento, bairro = @bairro," + 
+                        "telefone = @telefone, CEP = @CEP, estado = @estado, " +  
+                        "perfil = @perfil, departamento = @departamento WHERE usuario = @usuario";
+
                     cmd2.Parameters.AddWithValue("@usuario", txtnomeUsuario.Text);
+                    cmd2.Parameters.AddWithValue("@cidade", txtCidade.Text);
                     cmd2.Parameters.AddWithValue("@endereco", txtenderecoUsuario.Text);
                     cmd2.Parameters.AddWithValue("@complemento", txtcomplementoUsuario.Text);
                     cmd2.Parameters.AddWithValue("@bairro", txtbairroUsuario.Text);
@@ -183,34 +258,39 @@ namespace TCC.VISÃO
                     cmd2.Parameters.AddWithValue("@estado", cbestadoUsuario.Text);
                     cmd2.Parameters.AddWithValue("@perfil", cbperfilUsuario.Text);
                     cmd2.Parameters.AddWithValue("@departamento", cbdepartamentoUsuario.Text);
-                    dr = cmd2.ExecuteReader();
 
-                    MessageBox.Show("Alteração realizada com Sucesso!!", "Ação realizada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    try
+                    {
+                        cmd2.Connection = con.conectar();
+                        cmd2.ExecuteNonQuery();
 
-                    txtnomeUsuario.Text = ("");
-                    txtCidade.Text = ("");
-                    txtcepUsuario.Text = ("");
-                    txtbairroUsuario.Text = ("");
-                    txtcomplementoUsuario.Text = ("");
-                    cbperfilUsuario.Text = ("");
-                    cbestadoUsuario.Text = ("");
-                    cbdepartamentoUsuario.Text = ("");
-                    txttelefoneUsuario.Text = ("");
-                    txtenderecoUsuario.Text = ("");
+                        MessageBox.Show("Alteração realizada com Sucesso!!", "Ação realizada", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                    }
+                    catch (Exception)
+                    {
 
+                        msg = "Erro com o banco de dados";
+                        MessageBox.Show(msg, "Erro de Conexão", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                    limparCampos();
                     dr.Close();
                     con.desconectar();
 
                 }
-                else if (txtsenhaAdm.Text != SenhaAdm)
-                {
-                    MessageBox.Show("Senha de Administrador inválida", "Erro de Confirmação", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+               
             }
+
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            limparCampos();
+
+        }
+
+        private void limparCampos()
         {
             txtnomeUsuario.Text = ("");
             txtCidade.Text = ("");
@@ -222,7 +302,23 @@ namespace TCC.VISÃO
             cbdepartamentoUsuario.Text = ("");
             txttelefoneUsuario.Text = ("");
             txtenderecoUsuario.Text = ("");
-            
         }
-    }
-}   
+
+        private void txtnomeUsuario_TextChanged_1(object sender, EventArgs e)
+        {
+            
+           
+                if (txtnomeUsuario.Text == "")
+                {
+                    limparCampos();
+
+                    txtnomeUsuario.Focus();
+
+                }
+           
+           
+        }
+
+       
+
+    } } 
