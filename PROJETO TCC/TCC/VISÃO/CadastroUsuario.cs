@@ -64,7 +64,7 @@ namespace TCC.VISÃO
                             {
                                 limpaCampos();
 
-                                btnprox.Enabled = false;
+                               
                                 btnCadastrar.Enabled = false;
                                 lblendereco.Visible = false;
                                 lblnumero.Visible = false;
@@ -132,7 +132,7 @@ namespace TCC.VISÃO
         private void button1_Click(object sender, EventArgs e)
         {
 
-            btnprox.Enabled = false;
+          
             btnCadastrar.Visible = true;
             lblendereco.Visible = true;
             lblnumero.Visible = true;
@@ -232,12 +232,12 @@ namespace TCC.VISÃO
                 | txtconfSenha.Text == string.Empty | txtcpf.Text == string.Empty |
                 txtdepart.Text == string.Empty | txtemail.Text == string.Empty)
             {
-                btnprox.Enabled = false;
+                
 
             }
             else
             {
-                btnprox.Enabled = true;
+                
                 btnlimpar.Enabled = true;
             }
         }
