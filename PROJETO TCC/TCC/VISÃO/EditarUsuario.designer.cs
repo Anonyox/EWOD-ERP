@@ -47,16 +47,29 @@ namespace TCC.VISÃO
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.txtbairroUsuario = new System.Windows.Forms.TextBox();
-            this.txtcepUsuario = new System.Windows.Forms.TextBox();
             this.txtCidade = new System.Windows.Forms.TextBox();
             this.txtcomplementoUsuario = new System.Windows.Forms.TextBox();
             this.txtenderecoUsuario = new System.Windows.Forms.TextBox();
-            this.txttelefoneUsuario = new System.Windows.Forms.TextBox();
             this.txtsenhaAdm = new System.Windows.Forms.TextBox();
             this.lblnomeUsuario = new System.Windows.Forms.Label();
             this.loginsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tccDataSet = new TCC.tccDataSet();
             this.dtgeditarUsuario = new System.Windows.Forms.DataGridView();
+            this.usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cep = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.complemento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bairro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Senha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.perfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.endereco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.departamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -65,21 +78,9 @@ namespace TCC.VISÃO
             this.cbestadoUsuario = new System.Windows.Forms.ComboBox();
             this.loginsTableAdapter = new TCC.tccDataSetTableAdapters.loginsTableAdapter();
             this.txtnomeUsuario = new System.Windows.Forms.TextBox();
-            this.departamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.endereco = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.perfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Senha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bairro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.complemento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cep = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txttelefoneUsuario = new System.Windows.Forms.MaskedTextBox();
+            this.txtcepUsuario = new System.Windows.Forms.MaskedTextBox();
+            this.button5 = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSair)).BeginInit();
@@ -94,9 +95,9 @@ namespace TCC.VISÃO
             this.panel3.Controls.Add(this.btnMinimizar);
             this.panel3.Controls.Add(this.btnSair);
             this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(865, 46);
+            this.panel3.Size = new System.Drawing.Size(1153, 57);
             this.panel3.TabIndex = 53;
             // 
             // btnMinimizar
@@ -104,9 +105,10 @@ namespace TCC.VISÃO
             this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
-            this.btnMinimizar.Location = new System.Drawing.Point(800, 11);
+            this.btnMinimizar.Location = new System.Drawing.Point(1067, 14);
+            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(4);
             this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(28, 28);
+            this.btnMinimizar.Size = new System.Drawing.Size(37, 34);
             this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnMinimizar.TabIndex = 48;
             this.btnMinimizar.TabStop = false;
@@ -116,9 +118,10 @@ namespace TCC.VISÃO
             this.btnSair.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSair.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSair.Image = ((System.Drawing.Image)(resources.GetObject("btnSair.Image")));
-            this.btnSair.Location = new System.Drawing.Point(834, 11);
+            this.btnSair.Location = new System.Drawing.Point(1112, 14);
+            this.btnSair.Margin = new System.Windows.Forms.Padding(4);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(28, 28);
+            this.btnSair.Size = new System.Drawing.Size(37, 34);
             this.btnSair.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnSair.TabIndex = 49;
             this.btnSair.TabStop = false;
@@ -129,37 +132,40 @@ namespace TCC.VISÃO
             this.lblDepartamento.AutoSize = true;
             this.lblDepartamento.BackColor = System.Drawing.Color.Transparent;
             this.lblDepartamento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblDepartamento.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold);
-            this.lblDepartamento.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblDepartamento.Location = new System.Drawing.Point(30, 113);
+            this.lblDepartamento.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
+            this.lblDepartamento.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblDepartamento.Location = new System.Drawing.Point(13, 144);
+            this.lblDepartamento.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDepartamento.Name = "lblDepartamento";
-            this.lblDepartamento.Size = new System.Drawing.Size(190, 21);
+            this.lblDepartamento.Size = new System.Drawing.Size(174, 29);
             this.lblDepartamento.TabIndex = 70;
-            this.lblDepartamento.Text = "Alterar Departamento  :";
+            this.lblDepartamento.Text = "Departamento  :";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label4.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold);
+            this.label4.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label4.Location = new System.Drawing.Point(34, 313);
+            this.label4.Location = new System.Drawing.Point(799, 240);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(126, 21);
+            this.label4.Size = new System.Drawing.Size(92, 29);
             this.label4.TabIndex = 73;
-            this.label4.Text = "Alterar Bairro :";
+            this.label4.Text = "Bairro :";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label5.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold);
+            this.label5.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label5.Location = new System.Drawing.Point(51, 347);
+            this.label5.Location = new System.Drawing.Point(745, 383);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(109, 21);
+            this.label5.Size = new System.Drawing.Size(146, 29);
             this.label5.TabIndex = 74;
             this.label5.Text = "Alterar CEP :";
             this.label5.Click += new System.EventHandler(this.label5_Click);
@@ -169,13 +175,14 @@ namespace TCC.VISÃO
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label6.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold);
+            this.label6.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label6.Location = new System.Drawing.Point(509, 195);
+            this.label6.Location = new System.Drawing.Point(60, 240);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(155, 21);
+            this.label6.Size = new System.Drawing.Size(127, 29);
             this.label6.TabIndex = 75;
-            this.label6.Text = "Alterar Endereço  :";
+            this.label6.Text = "Endereço  :";
             this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label7
@@ -183,131 +190,132 @@ namespace TCC.VISÃO
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label7.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold);
+            this.label7.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
             this.label7.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label7.Location = new System.Drawing.Point(30, 254);
+            this.label7.Location = new System.Drawing.Point(91, 383);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(130, 21);
+            this.label7.Size = new System.Drawing.Size(95, 29);
             this.label7.TabIndex = 76;
-            this.label7.Text = "Alterar Cidade :";
+            this.label7.Text = "Cidade :";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label8.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold);
+            this.label8.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
             this.label8.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label8.Location = new System.Drawing.Point(30, 195);
+            this.label8.Location = new System.Drawing.Point(91, 312);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(131, 21);
+            this.label8.Size = new System.Drawing.Size(96, 29);
             this.label8.TabIndex = 77;
-            this.label8.Text = "Alterar Estado :";
+            this.label8.Text = "Estado :";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label2.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold);
+            this.label2.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(509, 310);
+            this.label2.Location = new System.Drawing.Point(768, 144);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(152, 21);
+            this.label2.Size = new System.Drawing.Size(123, 29);
             this.label2.TabIndex = 78;
-            this.label2.Text = "Alterar Telefone  :";
+            this.label2.Text = "Telefone  :";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label9.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold);
+            this.label9.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
             this.label9.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label9.Location = new System.Drawing.Point(479, 254);
+            this.label9.Location = new System.Drawing.Point(728, 312);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(182, 21);
+            this.label9.Size = new System.Drawing.Size(163, 29);
             this.label9.TabIndex = 79;
-            this.label9.Text = "Alterar Complemento  :";
+            this.label9.Text = "Complemento  :";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label10.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold);
+            this.label10.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
             this.label10.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label10.Location = new System.Drawing.Point(455, 419);
+            this.label10.Location = new System.Drawing.Point(607, 516);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(206, 21);
+            this.label10.Size = new System.Drawing.Size(277, 29);
             this.label10.TabIndex = 80;
             this.label10.Text = "Senha do Administrador  :";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.panel1.Location = new System.Drawing.Point(0, 155);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Location = new System.Drawing.Point(0, 191);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(931, 21);
+            this.panel1.Size = new System.Drawing.Size(1241, 26);
             this.panel1.TabIndex = 135;
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.panel4.Location = new System.Drawing.Point(0, 380);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2);
+            this.panel4.Location = new System.Drawing.Point(0, 468);
+            this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(931, 21);
+            this.panel4.Size = new System.Drawing.Size(1241, 26);
             this.panel4.TabIndex = 137;
             // 
             // txtbairroUsuario
             // 
-            this.txtbairroUsuario.Location = new System.Drawing.Point(175, 316);
+            this.txtbairroUsuario.Font = new System.Drawing.Font("Comic Sans MS", 12F);
+            this.txtbairroUsuario.Location = new System.Drawing.Point(899, 238);
+            this.txtbairroUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.txtbairroUsuario.Name = "txtbairroUsuario";
-            this.txtbairroUsuario.Size = new System.Drawing.Size(179, 20);
+            this.txtbairroUsuario.Size = new System.Drawing.Size(237, 35);
             this.txtbairroUsuario.TabIndex = 140;
-            // 
-            // txtcepUsuario
-            // 
-            this.txtcepUsuario.Location = new System.Drawing.Point(175, 347);
-            this.txtcepUsuario.Name = "txtcepUsuario";
-            this.txtcepUsuario.Size = new System.Drawing.Size(181, 20);
-            this.txtcepUsuario.TabIndex = 141;
             // 
             // txtCidade
             // 
-            this.txtCidade.Location = new System.Drawing.Point(171, 254);
+            this.txtCidade.Font = new System.Drawing.Font("Comic Sans MS", 12F);
+            this.txtCidade.Location = new System.Drawing.Point(195, 383);
+            this.txtCidade.Margin = new System.Windows.Forms.Padding(4);
             this.txtCidade.Name = "txtCidade";
-            this.txtCidade.Size = new System.Drawing.Size(132, 20);
+            this.txtCidade.Size = new System.Drawing.Size(323, 35);
             this.txtCidade.TabIndex = 143;
             // 
             // txtcomplementoUsuario
             // 
-            this.txtcomplementoUsuario.Location = new System.Drawing.Point(667, 254);
+            this.txtcomplementoUsuario.Font = new System.Drawing.Font("Comic Sans MS", 12F);
+            this.txtcomplementoUsuario.Location = new System.Drawing.Point(899, 312);
+            this.txtcomplementoUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.txtcomplementoUsuario.Name = "txtcomplementoUsuario";
-            this.txtcomplementoUsuario.Size = new System.Drawing.Size(154, 20);
+            this.txtcomplementoUsuario.Size = new System.Drawing.Size(204, 35);
             this.txtcomplementoUsuario.TabIndex = 144;
             // 
             // txtenderecoUsuario
             // 
-            this.txtenderecoUsuario.Location = new System.Drawing.Point(667, 195);
+            this.txtenderecoUsuario.Font = new System.Drawing.Font("Comic Sans MS", 12F);
+            this.txtenderecoUsuario.Location = new System.Drawing.Point(195, 240);
+            this.txtenderecoUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.txtenderecoUsuario.Name = "txtenderecoUsuario";
-            this.txtenderecoUsuario.Size = new System.Drawing.Size(154, 20);
+            this.txtenderecoUsuario.Size = new System.Drawing.Size(323, 35);
             this.txtenderecoUsuario.TabIndex = 145;
-            // 
-            // txttelefoneUsuario
-            // 
-            this.txttelefoneUsuario.Location = new System.Drawing.Point(667, 313);
-            this.txttelefoneUsuario.Name = "txttelefoneUsuario";
-            this.txttelefoneUsuario.Size = new System.Drawing.Size(161, 20);
-            this.txttelefoneUsuario.TabIndex = 146;
             // 
             // txtsenhaAdm
             // 
-            this.txtsenhaAdm.Location = new System.Drawing.Point(667, 422);
+            this.txtsenhaAdm.Font = new System.Drawing.Font("Comic Sans MS", 12F);
+            this.txtsenhaAdm.Location = new System.Drawing.Point(889, 519);
+            this.txtsenhaAdm.Margin = new System.Windows.Forms.Padding(4);
             this.txtsenhaAdm.Name = "txtsenhaAdm";
-            this.txtsenhaAdm.Size = new System.Drawing.Size(164, 20);
+            this.txtsenhaAdm.Size = new System.Drawing.Size(217, 35);
             this.txtsenhaAdm.TabIndex = 147;
             // 
             // lblnomeUsuario
@@ -315,13 +323,14 @@ namespace TCC.VISÃO
             this.lblnomeUsuario.AutoSize = true;
             this.lblnomeUsuario.BackColor = System.Drawing.Color.Transparent;
             this.lblnomeUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblnomeUsuario.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold);
+            this.lblnomeUsuario.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
             this.lblnomeUsuario.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblnomeUsuario.Location = new System.Drawing.Point(65, 62);
+            this.lblnomeUsuario.Location = new System.Drawing.Point(74, 76);
+            this.lblnomeUsuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblnomeUsuario.Name = "lblnomeUsuario";
-            this.lblnomeUsuario.Size = new System.Drawing.Size(155, 21);
+            this.lblnomeUsuario.Size = new System.Drawing.Size(113, 29);
             this.lblnomeUsuario.TabIndex = 150;
-            this.lblnomeUsuario.Text = "Nome do Usuário  :";
+            this.lblnomeUsuario.Text = "Usuário  :";
             // 
             // loginsBindingSource
             // 
@@ -361,11 +370,116 @@ namespace TCC.VISÃO
             this.numero,
             this.email,
             this.departamento});
-            this.dtgeditarUsuario.Location = new System.Drawing.Point(-2, 471);
+            this.dtgeditarUsuario.Location = new System.Drawing.Point(-3, 580);
             this.dtgeditarUsuario.Name = "dtgeditarUsuario";
             this.dtgeditarUsuario.RowHeadersWidth = 51;
-            this.dtgeditarUsuario.Size = new System.Drawing.Size(867, 185);
+            this.dtgeditarUsuario.Size = new System.Drawing.Size(1156, 228);
             this.dtgeditarUsuario.TabIndex = 153;
+            // 
+            // usuario
+            // 
+            this.usuario.HeaderText = "Usuário";
+            this.usuario.MinimumWidth = 6;
+            this.usuario.Name = "usuario";
+            this.usuario.Width = 125;
+            // 
+            // CPF
+            // 
+            this.CPF.HeaderText = "CPF";
+            this.CPF.MinimumWidth = 6;
+            this.CPF.Name = "CPF";
+            this.CPF.Width = 125;
+            // 
+            // telefone
+            // 
+            this.telefone.HeaderText = "Telefone";
+            this.telefone.MinimumWidth = 6;
+            this.telefone.Name = "telefone";
+            this.telefone.Width = 125;
+            // 
+            // sexo
+            // 
+            this.sexo.HeaderText = "Sexo";
+            this.sexo.MinimumWidth = 6;
+            this.sexo.Name = "sexo";
+            this.sexo.Width = 125;
+            // 
+            // cep
+            // 
+            this.cep.HeaderText = "Cep";
+            this.cep.MinimumWidth = 6;
+            this.cep.Name = "cep";
+            this.cep.Width = 125;
+            // 
+            // complemento
+            // 
+            this.complemento.HeaderText = "Complemento";
+            this.complemento.MinimumWidth = 6;
+            this.complemento.Name = "complemento";
+            this.complemento.Width = 125;
+            // 
+            // cidade
+            // 
+            this.cidade.HeaderText = "Cidade";
+            this.cidade.MinimumWidth = 6;
+            this.cidade.Name = "cidade";
+            this.cidade.Width = 125;
+            // 
+            // bairro
+            // 
+            this.bairro.HeaderText = "Bairro";
+            this.bairro.MinimumWidth = 6;
+            this.bairro.Name = "bairro";
+            this.bairro.Width = 125;
+            // 
+            // estado
+            // 
+            this.estado.HeaderText = "Estado";
+            this.estado.MinimumWidth = 6;
+            this.estado.Name = "estado";
+            this.estado.Width = 125;
+            // 
+            // Senha
+            // 
+            this.Senha.HeaderText = "Senha";
+            this.Senha.MinimumWidth = 6;
+            this.Senha.Name = "Senha";
+            this.Senha.Width = 125;
+            // 
+            // perfil
+            // 
+            this.perfil.HeaderText = "Perfil";
+            this.perfil.MinimumWidth = 6;
+            this.perfil.Name = "perfil";
+            this.perfil.Width = 125;
+            // 
+            // endereco
+            // 
+            this.endereco.HeaderText = "Endereço";
+            this.endereco.MinimumWidth = 6;
+            this.endereco.Name = "endereco";
+            this.endereco.Width = 125;
+            // 
+            // numero
+            // 
+            this.numero.HeaderText = "Número";
+            this.numero.MinimumWidth = 6;
+            this.numero.Name = "numero";
+            this.numero.Width = 125;
+            // 
+            // email
+            // 
+            this.email.HeaderText = "Email";
+            this.email.MinimumWidth = 6;
+            this.email.Name = "email";
+            this.email.Width = 125;
+            // 
+            // departamento
+            // 
+            this.departamento.HeaderText = "Departamento";
+            this.departamento.MinimumWidth = 6;
+            this.departamento.Name = "departamento";
+            this.departamento.Width = 125;
             // 
             // btnCancelar
             // 
@@ -378,9 +492,10 @@ namespace TCC.VISÃO
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.Transparent;
-            this.btnCancelar.Location = new System.Drawing.Point(69, 422);
+            this.btnCancelar.Location = new System.Drawing.Point(92, 519);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(49, 35);
+            this.btnCancelar.Size = new System.Drawing.Size(65, 43);
             this.btnCancelar.TabIndex = 155;
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -396,9 +511,10 @@ namespace TCC.VISÃO
             this.btnConfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfirmar.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirmar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.btnConfirmar.Location = new System.Drawing.Point(12, 422);
+            this.btnConfirmar.Location = new System.Drawing.Point(16, 519);
+            this.btnConfirmar.Margin = new System.Windows.Forms.Padding(4);
             this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(49, 35);
+            this.btnConfirmar.Size = new System.Drawing.Size(65, 43);
             this.btnConfirmar.TabIndex = 154;
             this.btnConfirmar.UseVisualStyleBackColor = false;
             this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
@@ -408,46 +524,53 @@ namespace TCC.VISÃO
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold);
+            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(532, 62);
+            this.label1.Location = new System.Drawing.Point(798, 79);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(129, 21);
+            this.label1.Size = new System.Drawing.Size(93, 29);
             this.label1.TabIndex = 157;
-            this.label1.Text = "Alterar Perfil  :";
+            this.label1.Text = "Perfil  :";
             // 
             // cbperfilUsuario
             // 
+            this.cbperfilUsuario.Font = new System.Drawing.Font("Comic Sans MS", 12F);
             this.cbperfilUsuario.FormattingEnabled = true;
             this.cbperfilUsuario.Items.AddRange(new object[] {
             "Administrador",
             "Geral",
             "Venda",
             "Compra"});
-            this.cbperfilUsuario.Location = new System.Drawing.Point(674, 62);
+            this.cbperfilUsuario.Location = new System.Drawing.Point(899, 76);
+            this.cbperfilUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.cbperfilUsuario.Name = "cbperfilUsuario";
-            this.cbperfilUsuario.Size = new System.Drawing.Size(154, 21);
+            this.cbperfilUsuario.Size = new System.Drawing.Size(185, 36);
             this.cbperfilUsuario.TabIndex = 159;
             // 
             // cbdepartamentoUsuario
             // 
+            this.cbdepartamentoUsuario.Font = new System.Drawing.Font("Comic Sans MS", 12F);
             this.cbdepartamentoUsuario.FormattingEnabled = true;
             this.cbdepartamentoUsuario.Items.AddRange(new object[] {
             "Venda",
             "Compra",
             "Geral",
             "Administrador "});
-            this.cbdepartamentoUsuario.Location = new System.Drawing.Point(237, 117);
+            this.cbdepartamentoUsuario.Location = new System.Drawing.Point(195, 142);
+            this.cbdepartamentoUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.cbdepartamentoUsuario.Name = "cbdepartamentoUsuario";
-            this.cbdepartamentoUsuario.Size = new System.Drawing.Size(121, 21);
+            this.cbdepartamentoUsuario.Size = new System.Drawing.Size(240, 36);
             this.cbdepartamentoUsuario.TabIndex = 160;
             // 
             // cbestadoUsuario
             // 
+            this.cbestadoUsuario.Font = new System.Drawing.Font("Comic Sans MS", 12F);
             this.cbestadoUsuario.FormattingEnabled = true;
-            this.cbestadoUsuario.Location = new System.Drawing.Point(171, 195);
+            this.cbestadoUsuario.Location = new System.Drawing.Point(195, 312);
+            this.cbestadoUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.cbestadoUsuario.Name = "cbestadoUsuario";
-            this.cbestadoUsuario.Size = new System.Drawing.Size(132, 21);
+            this.cbestadoUsuario.Size = new System.Drawing.Size(204, 36);
             this.cbestadoUsuario.TabIndex = 161;
             // 
             // loginsTableAdapter
@@ -456,96 +579,63 @@ namespace TCC.VISÃO
             // 
             // txtnomeUsuario
             // 
-            this.txtnomeUsuario.Location = new System.Drawing.Point(237, 65);
+            this.txtnomeUsuario.Font = new System.Drawing.Font("Comic Sans MS", 12F);
+            this.txtnomeUsuario.Location = new System.Drawing.Point(195, 70);
+            this.txtnomeUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.txtnomeUsuario.Name = "txtnomeUsuario";
-            this.txtnomeUsuario.Size = new System.Drawing.Size(121, 20);
+            this.txtnomeUsuario.Size = new System.Drawing.Size(240, 35);
             this.txtnomeUsuario.TabIndex = 162;
             this.txtnomeUsuario.TextChanged += new System.EventHandler(this.txtnomeUsuario_TextChanged_1);
             this.txtnomeUsuario.Leave += new System.EventHandler(this.txtnomeUsuario_Leave_1);
             // 
-            // departamento
+            // txttelefoneUsuario
             // 
-            this.departamento.HeaderText = "Departamento";
-            this.departamento.Name = "departamento";
+            this.txttelefoneUsuario.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txttelefoneUsuario.Location = new System.Drawing.Point(899, 142);
+            this.txttelefoneUsuario.Margin = new System.Windows.Forms.Padding(4);
+            this.txttelefoneUsuario.Mask = "(00)00000-0000";
+            this.txttelefoneUsuario.Name = "txttelefoneUsuario";
+            this.txttelefoneUsuario.Size = new System.Drawing.Size(189, 35);
+            this.txttelefoneUsuario.TabIndex = 163;
             // 
-            // email
+            // txtcepUsuario
             // 
-            this.email.HeaderText = "Email";
-            this.email.Name = "email";
+            this.txtcepUsuario.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtcepUsuario.Location = new System.Drawing.Point(899, 383);
+            this.txtcepUsuario.Margin = new System.Windows.Forms.Padding(4);
+            this.txtcepUsuario.Mask = "00000-000";
+            this.txtcepUsuario.Name = "txtcepUsuario";
+            this.txtcepUsuario.Size = new System.Drawing.Size(136, 35);
+            this.txtcepUsuario.TabIndex = 164;
             // 
-            // numero
+            // button5
             // 
-            this.numero.HeaderText = "Número";
-            this.numero.Name = "numero";
-            // 
-            // endereco
-            // 
-            this.endereco.HeaderText = "Endereço";
-            this.endereco.Name = "endereco";
-            // 
-            // perfil
-            // 
-            this.perfil.HeaderText = "Perfil";
-            this.perfil.Name = "perfil";
-            // 
-            // Senha
-            // 
-            this.Senha.HeaderText = "Senha";
-            this.Senha.Name = "Senha";
-            // 
-            // estado
-            // 
-            this.estado.HeaderText = "Estado";
-            this.estado.Name = "estado";
-            // 
-            // bairro
-            // 
-            this.bairro.HeaderText = "Bairro";
-            this.bairro.Name = "bairro";
-            // 
-            // cidade
-            // 
-            this.cidade.HeaderText = "Cidade";
-            this.cidade.Name = "cidade";
-            // 
-            // complemento
-            // 
-            this.complemento.HeaderText = "Complemento";
-            this.complemento.Name = "complemento";
-            // 
-            // cep
-            // 
-            this.cep.HeaderText = "Cep";
-            this.cep.Name = "cep";
-            // 
-            // sexo
-            // 
-            this.sexo.HeaderText = "Sexo";
-            this.sexo.Name = "sexo";
-            // 
-            // telefone
-            // 
-            this.telefone.HeaderText = "Telefone";
-            this.telefone.Name = "telefone";
-            // 
-            // CPF
-            // 
-            this.CPF.HeaderText = "CPF";
-            this.CPF.Name = "CPF";
-            // 
-            // usuario
-            // 
-            this.usuario.HeaderText = "Usuário";
-            this.usuario.Name = "usuario";
+            this.button5.BackColor = System.Drawing.Color.Transparent;
+            this.button5.BackgroundImage = global::TCC.Properties.Resources.icons8_lixeira_vazia_48;
+            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button5.Enabled = false;
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.button5.Location = new System.Drawing.Point(165, 517);
+            this.button5.Margin = new System.Windows.Forms.Padding(4);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(85, 47);
+            this.button5.TabIndex = 165;
+            this.button5.UseVisualStyleBackColor = false;
             // 
             // EditarUsuario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(12)))), ((int)(((byte)(38)))));
             this.BackgroundImage = global::TCC.Properties.Resources._1555492a6_11;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(863, 654);
+            this.ClientSize = new System.Drawing.Size(1151, 805);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.txtcepUsuario);
+            this.Controls.Add(this.txttelefoneUsuario);
             this.Controls.Add(this.txtnomeUsuario);
             this.Controls.Add(this.cbestadoUsuario);
             this.Controls.Add(this.cbdepartamentoUsuario);
@@ -556,11 +646,9 @@ namespace TCC.VISÃO
             this.Controls.Add(this.dtgeditarUsuario);
             this.Controls.Add(this.lblnomeUsuario);
             this.Controls.Add(this.txtsenhaAdm);
-            this.Controls.Add(this.txttelefoneUsuario);
             this.Controls.Add(this.txtenderecoUsuario);
             this.Controls.Add(this.txtcomplementoUsuario);
             this.Controls.Add(this.txtCidade);
-            this.Controls.Add(this.txtcepUsuario);
             this.Controls.Add(this.txtbairroUsuario);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
@@ -575,6 +663,7 @@ namespace TCC.VISÃO
             this.Controls.Add(this.lblDepartamento);
             this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EditarUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditarUsuario";
@@ -608,16 +697,13 @@ namespace TCC.VISÃO
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.TextBox txtbairroUsuario;
-        private System.Windows.Forms.TextBox txtcepUsuario;
         private System.Windows.Forms.TextBox txtCidade;
         private System.Windows.Forms.TextBox txtcomplementoUsuario;
         private System.Windows.Forms.TextBox txtenderecoUsuario;
-        private System.Windows.Forms.TextBox txttelefoneUsuario;
         private System.Windows.Forms.TextBox txtsenhaAdm;
         private System.Windows.Forms.Label lblnomeUsuario;
         private System.Windows.Forms.DataGridView dtgeditarUsuario;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.Button btnConfirmar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbperfilUsuario;
         private System.Windows.Forms.ComboBox cbdepartamentoUsuario;
@@ -641,5 +727,9 @@ namespace TCC.VISÃO
         private System.Windows.Forms.DataGridViewTextBoxColumn numero;
         private System.Windows.Forms.DataGridViewTextBoxColumn email;
         private System.Windows.Forms.DataGridViewTextBoxColumn departamento;
+        private System.Windows.Forms.MaskedTextBox txttelefoneUsuario;
+        private System.Windows.Forms.MaskedTextBox txtcepUsuario;
+        private System.Windows.Forms.Button button5;
+        public System.Windows.Forms.Button btnConfirmar;
     }
 }
