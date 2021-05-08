@@ -328,7 +328,7 @@ namespace TCC.VISÃO
         {
 
             SqlCommand sqlcmd = new SqlCommand();
-            sqlcmd.CommandText = ("SELECT * FROM logins");
+            sqlcmd.CommandText = ("SELECT * FROM logins ORDER BY usuario ASC");
             sqlcmd.Connection = con.conectar();
 
 
