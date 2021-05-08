@@ -20,7 +20,7 @@ namespace TCC.VISÃO
         public CadastroVendas()
         {
             InitializeComponent();
-           
+
         }
 
         private void CadastroVendas_Load(object sender, EventArgs e)
@@ -41,7 +41,7 @@ namespace TCC.VISÃO
             lblteste.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(0, 209, 178);     //FromArgb(20, 25, 72);
             lblteste.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
 
-            
+
         }
 
         public void listaCarrinho()
@@ -172,9 +172,9 @@ namespace TCC.VISÃO
 
         }
 
-       
 
-       
+
+
 
         private void btnCadastrar_MouseEnter(object sender, EventArgs e)
         {
@@ -234,24 +234,24 @@ namespace TCC.VISÃO
         private void timer1_Tick(object sender, EventArgs e)
         {
             int i = 0;
-            
+
 
             txtTotal.Text = Convert.ToString(i);
-            
+
             timer1.Start();
-            
+
 
         }
 
         private void panel6_MouseMove(object sender, MouseEventArgs e)
         {
-            if(validaMsg == 0)
+            if (validaMsg == 0)
             {
                 MessageBox.Show("Para realizar uma venda, clique no botão adicionar", "Venda", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                
+
             }
             validaMsg = 1;
-           
+
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
