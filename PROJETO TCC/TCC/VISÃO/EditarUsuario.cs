@@ -353,21 +353,22 @@ namespace TCC.VISÃO
                 {
                     int n = dtgeditarUsuario.Rows.Add();
 
-                    dtgeditarUsuario.Rows[n].Cells[0].Value = item["usuario"].ToString();
-                    dtgeditarUsuario.Rows[n].Cells[1].Value = item["CPF"].ToString();
-                    dtgeditarUsuario.Rows[n].Cells[2].Value = item["telefone"].ToString();
-                    dtgeditarUsuario.Rows[n].Cells[3].Value = item["sexo"].ToString();
-                    dtgeditarUsuario.Rows[n].Cells[4].Value = item["cep"].ToString();
-                    dtgeditarUsuario.Rows[n].Cells[5].Value = item["complemento"].ToString();
-                    dtgeditarUsuario.Rows[n].Cells[6].Value = item["cidade"].ToString();
-                    dtgeditarUsuario.Rows[n].Cells[7].Value = item["bairro"].ToString();
-                    dtgeditarUsuario.Rows[n].Cells[8].Value = item["estado"].ToString();
-                    dtgeditarUsuario.Rows[n].Cells[9].Value = item["Senha"].ToString();
-                    dtgeditarUsuario.Rows[n].Cells[10].Value = item["perfil"].ToString();
-                    dtgeditarUsuario.Rows[n].Cells[11].Value = item["endereco"].ToString();
-                    dtgeditarUsuario.Rows[n].Cells[12].Value = item["numero"].ToString();
-                    dtgeditarUsuario.Rows[n].Cells[13].Value = item["email"].ToString();
-                    dtgeditarUsuario.Rows[n].Cells[14].Value = item["departamento"].ToString();
+                    dtgeditarUsuario.Rows[n].Cells[0].Value = item["codUser"].ToString();
+                    dtgeditarUsuario.Rows[n].Cells[1].Value = item["usuario"].ToString();
+                    dtgeditarUsuario.Rows[n].Cells[2].Value = item["CPF"].ToString();
+                    dtgeditarUsuario.Rows[n].Cells[3].Value = item["telefone"].ToString();
+                    dtgeditarUsuario.Rows[n].Cells[4].Value = item["sexo"].ToString();
+                    dtgeditarUsuario.Rows[n].Cells[5].Value = item["cep"].ToString();
+                    dtgeditarUsuario.Rows[n].Cells[6].Value = item["complemento"].ToString();
+                    dtgeditarUsuario.Rows[n].Cells[7].Value = item["cidade"].ToString();
+                    dtgeditarUsuario.Rows[n].Cells[8].Value = item["bairro"].ToString();
+                    dtgeditarUsuario.Rows[n].Cells[9].Value = item["estado"].ToString();
+                    dtgeditarUsuario.Rows[n].Cells[10].Value = item["Senha"].ToString();
+                    dtgeditarUsuario.Rows[n].Cells[11].Value = item["perfil"].ToString();
+                    dtgeditarUsuario.Rows[n].Cells[12].Value = item["endereco"].ToString();
+                    dtgeditarUsuario.Rows[n].Cells[13].Value = item["numero"].ToString();
+                    dtgeditarUsuario.Rows[n].Cells[14].Value = item["email"].ToString();
+                    dtgeditarUsuario.Rows[n].Cells[15].Value = item["departamento"].ToString();
 
 
 
