@@ -356,5 +356,14 @@
   <ItemGroup>
     <None Include="Resources\icons8-salvar-48.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-lixeira-vazia-961.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-lixeira-vazia-48-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-lixeira-vazia-96-removebg-preview.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

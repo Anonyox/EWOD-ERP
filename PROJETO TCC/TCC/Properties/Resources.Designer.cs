@@ -523,9 +523,39 @@ namespace TCC.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_lixeira_vazia_48_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("icons8-lixeira-vazia-48-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_lixeira_vazia_96 {
             get {
                 object obj = ResourceManager.GetObject("icons8-lixeira-vazia-96", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_lixeira_vazia_96_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("icons8-lixeira-vazia-96-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_lixeira_vazia_961 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-lixeira-vazia-961", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

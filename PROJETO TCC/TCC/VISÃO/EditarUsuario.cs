@@ -397,7 +397,7 @@ namespace TCC.VISÃO
         {
             lblconfirmar.Visible = true;
 
-            btnConfirmar.Size = new Size(53,38);
+            btnconfirmar.Size = new Size(50,38);
 
 
         }
@@ -405,7 +405,47 @@ namespace TCC.VISÃO
         private void btnConfirmar_MouseLeave(object sender, EventArgs e)
         {
             lblconfirmar.Visible = false;
-            btnConfirmar.Size = new Size(49,35);
+            btnconfirmar.Size = new Size(49,35);
+        }
+
+        private void btnCancelar_MouseEnter(object sender, EventArgs e)
+        {
+            lblcancelar.Visible = true;
+            btncancelar.Size = new Size(50, 38);
+
+        }
+
+        private void btncancelar_MouseLeave(object sender, EventArgs e)
+        {
+            lblcancelar.Visible = false;
+            btncancelar.Size = new Size(49, 35);
+        }
+
+
+        //Excluir esses dois eventos
+        private void btnexcluir_MouseEnter(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnexcluir_MouseLeave(object sender, EventArgs e)
+        {
+            
+        }
+
+
+
+
+        private void btnexcluir_MouseEnter_1(object sender, EventArgs e)
+        {
+            lblexcluir.Visible = true;
+            btnexcluir.Size = new Size(50, 38);
+        }
+
+        private void btnexcluir_MouseLeave_1(object sender, EventArgs e)
+        {
+            lblexcluir.Visible = false;
+            btnexcluir.Size = new Size(49, 35);
         }
     }
 }
