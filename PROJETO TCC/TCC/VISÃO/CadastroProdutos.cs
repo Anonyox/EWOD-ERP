@@ -99,5 +99,15 @@ namespace TCC.VISÃO
         {
 
         }
+
+        private void btnConfirmar_MouseEnter(object sender, EventArgs e)
+        {
+            lblconfirmar.Visible = true;
+        }
+
+        private void btnConfirmar_MouseLeave(object sender, EventArgs e)
+        {
+            lblconfirmar.Visible = false;
+        }
     }
 }

@@ -59,6 +59,7 @@
             this.barra = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblconfirmar = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSair)).BeginInit();
@@ -76,11 +77,13 @@
             this.btnConfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfirmar.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirmar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.btnConfirmar.Location = new System.Drawing.Point(212, 385);
+            this.btnConfirmar.Location = new System.Drawing.Point(212, 389);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(64, 38);
             this.btnConfirmar.TabIndex = 157;
             this.btnConfirmar.UseVisualStyleBackColor = false;
+            this.btnConfirmar.MouseEnter += new System.EventHandler(this.btnConfirmar_MouseEnter);
+            this.btnConfirmar.MouseLeave += new System.EventHandler(this.btnConfirmar_MouseLeave);
             // 
             // btnCancelar
             // 
@@ -162,7 +165,7 @@
             this.txtvalordecompra.Enabled = false;
             this.txtvalordecompra.Location = new System.Drawing.Point(566, 259);
             this.txtvalordecompra.Name = "txtvalordecompra";
-            this.txtvalordecompra.Size = new System.Drawing.Size(100, 20);
+            this.txtvalordecompra.Size = new System.Drawing.Size(112, 20);
             this.txtvalordecompra.TabIndex = 97;
             // 
             // txtquantidadeprodutocadastra
@@ -404,6 +407,20 @@
             this.panel1.Size = new System.Drawing.Size(931, 21);
             this.panel1.TabIndex = 158;
             // 
+            // lblconfirmar
+            // 
+            this.lblconfirmar.AutoSize = true;
+            this.lblconfirmar.BackColor = System.Drawing.Color.Transparent;
+            this.lblconfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblconfirmar.Font = new System.Drawing.Font("Comic Sans MS", 7F, System.Drawing.FontStyle.Bold);
+            this.lblconfirmar.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblconfirmar.Location = new System.Drawing.Point(221, 372);
+            this.lblconfirmar.Name = "lblconfirmar";
+            this.lblconfirmar.Size = new System.Drawing.Size(55, 14);
+            this.lblconfirmar.TabIndex = 172;
+            this.lblconfirmar.Text = "Confirmar";
+            this.lblconfirmar.Visible = false;
+            // 
             // txtfornecedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -412,6 +429,7 @@
             this.BackgroundImage = global::TCC.Properties.Resources._1555492a6_11;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(863, 654);
+            this.Controls.Add(this.lblconfirmar);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnConfirmar);
             this.Controls.Add(this.dataGridView1);
@@ -484,5 +502,6 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnConfirmar;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lblconfirmar;
     }
 }
