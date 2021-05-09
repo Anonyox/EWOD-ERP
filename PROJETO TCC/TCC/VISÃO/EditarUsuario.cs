@@ -147,6 +147,8 @@ namespace TCC.VISÃO
                 {
 
                     txtCidade.Text = dr["cidade"].ToString();
+                    txtnumeroUsuario.Text = dr["numero"].ToString();
+                    txtcpfUsuario.Text = dr["cpf"].ToString();
                     txtnumeroUsuario.Text = dr["endereco"].ToString();
                     txtbairroUsuario.Text = dr["bairro"].ToString();
                     txttelefoneUsuario.Text = dr["telefone"].ToString();
