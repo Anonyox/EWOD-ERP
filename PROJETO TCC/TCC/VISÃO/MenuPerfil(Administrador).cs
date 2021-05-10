@@ -140,11 +140,11 @@ namespace TCC.VISÃO
 
         private void btncadastroProdutos_Click(object sender, EventArgs e)
         {
-            txtfornecedor cadProduto = new txtfornecedor();
+            CadastroProduto cadProduto = new CadastroProduto();
 
-            if (Application.OpenForms.OfType<txtfornecedor>().Count() > 0)
+            if (Application.OpenForms.OfType<CadastroProduto>().Count() > 0)
             {
-                Application.OpenForms.OfType<txtfornecedor>().First().Focus();
+                Application.OpenForms.OfType<CadastroProduto>().First().Focus();
             }
             else
             {

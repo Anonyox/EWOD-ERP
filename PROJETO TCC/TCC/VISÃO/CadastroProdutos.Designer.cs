@@ -1,6 +1,6 @@
 ﻿namespace TCC.VISÃO
 {
-    partial class txtfornecedor
+    partial class CadastroProduto
     {
         /// <summary>
         /// Required designer variable.
@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(txtfornecedor));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroProduto));
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtnomeProduto = new System.Windows.Forms.TextBox();
             this.txtcep = new System.Windows.Forms.MaskedTextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.cmbtipo = new System.Windows.Forms.ComboBox();
@@ -102,14 +102,15 @@
             this.btnCancelar.TabIndex = 156;
             this.btnCancelar.UseVisualStyleBackColor = false;
             // 
-            // textBox1
+            // txtnomeProduto
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(122, 118);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(304, 20);
-            this.textBox1.TabIndex = 107;
+            this.txtnomeProduto.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txtnomeProduto.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtnomeProduto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtnomeProduto.Location = new System.Drawing.Point(122, 118);
+            this.txtnomeProduto.Name = "txtnomeProduto";
+            this.txtnomeProduto.Size = new System.Drawing.Size(304, 20);
+            this.txtnomeProduto.TabIndex = 107;
             // 
             // txtcep
             // 
@@ -421,7 +422,7 @@
             this.lblconfirmar.Text = "Confirmar";
             this.lblconfirmar.Visible = false;
             // 
-            // txtfornecedor
+            // CadastroProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -437,7 +438,7 @@
             this.Controls.Add(this.txtcep);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtvalordevenda);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtnomeProduto);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.barra);
             this.Controls.Add(this.cmbtipo);
@@ -458,11 +459,11 @@
             this.Controls.Add(this.button3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "txtfornecedor";
+            this.Name = "CadastroProduto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CADASTRARPRODUTO";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CADASTRARPRODUTO_FormClosed);
-            this.Load += new System.EventHandler(this.txtfornecedor_Load);
+            this.Load += new System.EventHandler(this.CadastroProduto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSair)).EndInit();
@@ -497,7 +498,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.MaskedTextBox txtcep;
         private System.Windows.Forms.Panel barra;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtnomeProduto;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnConfirmar;

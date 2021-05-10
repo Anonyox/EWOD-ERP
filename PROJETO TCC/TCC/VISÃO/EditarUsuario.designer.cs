@@ -55,6 +55,22 @@ namespace TCC.VISÃO
             this.loginsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tccDataSet = new TCC.tccDataSet();
             this.dtgeditarUsuario = new System.Windows.Forms.DataGridView();
+            this.codUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cep = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.complemento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bairro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Senha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.perfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.endereco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.departamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btncancelar = new System.Windows.Forms.Button();
             this.btnconfirmar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -73,22 +89,6 @@ namespace TCC.VISÃO
             this.lblcancelar = new System.Windows.Forms.Label();
             this.lblexcluir = new System.Windows.Forms.Label();
             this.btnexcluir = new System.Windows.Forms.Button();
-            this.codUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cep = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.complemento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bairro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Senha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.perfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.endereco = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.departamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSair)).BeginInit();
@@ -307,6 +307,7 @@ namespace TCC.VISÃO
             this.txtsenhaAdm.Font = new System.Drawing.Font("Comic Sans MS", 12F);
             this.txtsenhaAdm.Location = new System.Drawing.Point(674, 428);
             this.txtsenhaAdm.Name = "txtsenhaAdm";
+            this.txtsenhaAdm.PasswordChar = '*';
             this.txtsenhaAdm.Size = new System.Drawing.Size(164, 30);
             this.txtsenhaAdm.TabIndex = 147;
             // 
@@ -368,6 +369,116 @@ namespace TCC.VISÃO
             this.dtgeditarUsuario.RowHeadersWidth = 51;
             this.dtgeditarUsuario.Size = new System.Drawing.Size(867, 185);
             this.dtgeditarUsuario.TabIndex = 153;
+            // 
+            // codUser
+            // 
+            this.codUser.HeaderText = "Código";
+            this.codUser.Name = "codUser";
+            // 
+            // usuario
+            // 
+            this.usuario.HeaderText = "Usuário";
+            this.usuario.MinimumWidth = 6;
+            this.usuario.Name = "usuario";
+            this.usuario.Width = 125;
+            // 
+            // CPF
+            // 
+            this.CPF.HeaderText = "CPF";
+            this.CPF.MinimumWidth = 6;
+            this.CPF.Name = "CPF";
+            this.CPF.Width = 125;
+            // 
+            // telefone
+            // 
+            this.telefone.HeaderText = "Telefone";
+            this.telefone.MinimumWidth = 6;
+            this.telefone.Name = "telefone";
+            this.telefone.Width = 125;
+            // 
+            // sexo
+            // 
+            this.sexo.HeaderText = "Sexo";
+            this.sexo.MinimumWidth = 6;
+            this.sexo.Name = "sexo";
+            this.sexo.Width = 125;
+            // 
+            // cep
+            // 
+            this.cep.HeaderText = "Cep";
+            this.cep.MinimumWidth = 6;
+            this.cep.Name = "cep";
+            this.cep.Width = 125;
+            // 
+            // complemento
+            // 
+            this.complemento.HeaderText = "Complemento";
+            this.complemento.MinimumWidth = 6;
+            this.complemento.Name = "complemento";
+            this.complemento.Width = 125;
+            // 
+            // cidade
+            // 
+            this.cidade.HeaderText = "Cidade";
+            this.cidade.MinimumWidth = 6;
+            this.cidade.Name = "cidade";
+            this.cidade.Width = 125;
+            // 
+            // bairro
+            // 
+            this.bairro.HeaderText = "Bairro";
+            this.bairro.MinimumWidth = 6;
+            this.bairro.Name = "bairro";
+            this.bairro.Width = 125;
+            // 
+            // estado
+            // 
+            this.estado.HeaderText = "Estado";
+            this.estado.MinimumWidth = 6;
+            this.estado.Name = "estado";
+            this.estado.Width = 125;
+            // 
+            // Senha
+            // 
+            this.Senha.HeaderText = "Senha";
+            this.Senha.MinimumWidth = 6;
+            this.Senha.Name = "Senha";
+            this.Senha.Width = 125;
+            // 
+            // perfil
+            // 
+            this.perfil.HeaderText = "Perfil";
+            this.perfil.MinimumWidth = 6;
+            this.perfil.Name = "perfil";
+            this.perfil.Width = 125;
+            // 
+            // endereco
+            // 
+            this.endereco.HeaderText = "Endereço";
+            this.endereco.MinimumWidth = 6;
+            this.endereco.Name = "endereco";
+            this.endereco.Width = 125;
+            // 
+            // numero
+            // 
+            this.numero.HeaderText = "Número";
+            this.numero.MinimumWidth = 6;
+            this.numero.Name = "numero";
+            this.numero.Width = 125;
+            // 
+            // email
+            // 
+            this.email.HeaderText = "Email";
+            this.email.MinimumWidth = 6;
+            this.email.Name = "email";
+            this.email.Width = 125;
+            // 
+            // departamento
+            // 
+            this.departamento.HeaderText = "Departamento";
+            this.departamento.MinimumWidth = 6;
+            this.departamento.Name = "departamento";
+            this.departamento.Width = 125;
             // 
             // btncancelar
             // 
@@ -594,116 +705,6 @@ namespace TCC.VISÃO
             this.btnexcluir.UseVisualStyleBackColor = false;
             this.btnexcluir.MouseEnter += new System.EventHandler(this.btnexcluir_MouseEnter_1);
             this.btnexcluir.MouseLeave += new System.EventHandler(this.btnexcluir_MouseLeave_1);
-            // 
-            // codUser
-            // 
-            this.codUser.HeaderText = "Código";
-            this.codUser.Name = "codUser";
-            // 
-            // usuario
-            // 
-            this.usuario.HeaderText = "Usuário";
-            this.usuario.MinimumWidth = 6;
-            this.usuario.Name = "usuario";
-            this.usuario.Width = 125;
-            // 
-            // CPF
-            // 
-            this.CPF.HeaderText = "CPF";
-            this.CPF.MinimumWidth = 6;
-            this.CPF.Name = "CPF";
-            this.CPF.Width = 125;
-            // 
-            // telefone
-            // 
-            this.telefone.HeaderText = "Telefone";
-            this.telefone.MinimumWidth = 6;
-            this.telefone.Name = "telefone";
-            this.telefone.Width = 125;
-            // 
-            // sexo
-            // 
-            this.sexo.HeaderText = "Sexo";
-            this.sexo.MinimumWidth = 6;
-            this.sexo.Name = "sexo";
-            this.sexo.Width = 125;
-            // 
-            // cep
-            // 
-            this.cep.HeaderText = "Cep";
-            this.cep.MinimumWidth = 6;
-            this.cep.Name = "cep";
-            this.cep.Width = 125;
-            // 
-            // complemento
-            // 
-            this.complemento.HeaderText = "Complemento";
-            this.complemento.MinimumWidth = 6;
-            this.complemento.Name = "complemento";
-            this.complemento.Width = 125;
-            // 
-            // cidade
-            // 
-            this.cidade.HeaderText = "Cidade";
-            this.cidade.MinimumWidth = 6;
-            this.cidade.Name = "cidade";
-            this.cidade.Width = 125;
-            // 
-            // bairro
-            // 
-            this.bairro.HeaderText = "Bairro";
-            this.bairro.MinimumWidth = 6;
-            this.bairro.Name = "bairro";
-            this.bairro.Width = 125;
-            // 
-            // estado
-            // 
-            this.estado.HeaderText = "Estado";
-            this.estado.MinimumWidth = 6;
-            this.estado.Name = "estado";
-            this.estado.Width = 125;
-            // 
-            // Senha
-            // 
-            this.Senha.HeaderText = "Senha";
-            this.Senha.MinimumWidth = 6;
-            this.Senha.Name = "Senha";
-            this.Senha.Width = 125;
-            // 
-            // perfil
-            // 
-            this.perfil.HeaderText = "Perfil";
-            this.perfil.MinimumWidth = 6;
-            this.perfil.Name = "perfil";
-            this.perfil.Width = 125;
-            // 
-            // endereco
-            // 
-            this.endereco.HeaderText = "Endereço";
-            this.endereco.MinimumWidth = 6;
-            this.endereco.Name = "endereco";
-            this.endereco.Width = 125;
-            // 
-            // numero
-            // 
-            this.numero.HeaderText = "Número";
-            this.numero.MinimumWidth = 6;
-            this.numero.Name = "numero";
-            this.numero.Width = 125;
-            // 
-            // email
-            // 
-            this.email.HeaderText = "Email";
-            this.email.MinimumWidth = 6;
-            this.email.Name = "email";
-            this.email.Width = 125;
-            // 
-            // departamento
-            // 
-            this.departamento.HeaderText = "Departamento";
-            this.departamento.MinimumWidth = 6;
-            this.departamento.Name = "departamento";
-            this.departamento.Width = 125;
             // 
             // EditarUsuario
             // 
