@@ -9,17 +9,27 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TCC.CONTROLE;
+using TCC.MODELO;
 
 namespace TCC.VISÃO
 {
+
+
     public partial class CadastroVendas : Form
     {
+        ControleVenda controleVenda = new ControleVenda();
+        vendaDaoComandos vdc = new vendaDaoComandos();
         int codOperacao = 0;
-        String recebeCodOperacao = "0";
+        
+        
         int validaMsg = 0;
+
+
+
         public CadastroVendas()
         {
             InitializeComponent();
+            
 
         }
 
@@ -42,78 +52,77 @@ namespace TCC.VISÃO
             lblteste.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
 
 
+
+
         }
 
         public void listaCarrinho()
         {
-            Conexao con = new Conexao();
-            SqlCommand cmd = new SqlCommand();
 
 
-            cmd.CommandText = "select * from itemDePedido where codOperacao = @codOperacao ";
-            cmd.Parameters.AddWithValue("@codOperacao", codOperacao);
-            cmd.Connection = con.conectar();
+            String codlist = codOperacao.ToString();
 
+            
 
-            try
-            {
-                con.conectar();
-                cmd.ExecuteNonQuery();
+            controleVenda.listaCarrinho(codlist);
 
+            DataTable dt = new DataTable();
 
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
+            dt = controleVenda.dtr;
 
-                da.Fill(dt);
+            lblteste.Rows.Clear();
 
-
-
-
-
-
-                lblteste.Rows.Clear();
-                foreach (DataRow item in dt.Rows)
-                {
-                    int n = lblteste.Rows.Add();
-                    lblteste.Rows[n].Cells[1].Value = item["coddeOperacao"].ToString();
-                    lblteste.Rows[n].Cells[2].Value = item["produtoPedido"].ToString();
-                    lblteste.Rows[n].Cells[3].Value = item["tipoProduto"].ToString();
-                    lblteste.Rows[n].Cells[4].Value = item["estiloModelo"].ToString();
-                    lblteste.Rows[n].Cells[5].Value = item["valordeCompraPedido"].ToString();
-                    lblteste.Rows[n].Cells[6].Value = item["valordeVendaPedido"].ToString();
-                    lblteste.Rows[n].Cells[7].Value = item["quantidadePedido"].ToString();
-
-
-
-
-
-
-
-
-
-
-
-
-                }
-                con.desconectar();
-                //dtEmail.DataSource = dt;
-
-
-
-            }
-            catch (Exception)
+            foreach (DataRow item in dt.Rows)
             {
 
-                throw;
+                int n = lblteste.Rows.Add();
+                lblteste.Rows[n].Cells[0].Value = item["codOperacao"].ToString();
+                lblteste.Rows[n].Cells[1].Value = item["produtoPedido"].ToString();
+                lblteste.Rows[n].Cells[2].Value = item["tipoProduto"].ToString();
+                lblteste.Rows[n].Cells[3].Value = item["estiloModeloPedido"].ToString();
+                lblteste.Rows[n].Cells[4].Value = item["valordeCompraPedido"].ToString();
+                lblteste.Rows[n].Cells[5].Value = item["valordeVendaPedido"].ToString();
+                lblteste.Rows[n].Cells[6].Value = item["quantidade"].ToString();
+
             }
+
+        }
+
+        public void adicionaAoCarrinho()
+        {
+
+            string codOp = codOperacao.ToString();
+
+            Decimal vlc, vlv;
+            int qtd = 0;
+
+            vlc = Convert.ToDecimal(txtvalordeCompra.Text);
+            vlv = Convert.ToDecimal(txtvalorDeVenda.Text);
+            qtd = Convert.ToInt32(txtquantidade.Text);
+           
+            
+
+            String mensagem = controleVenda.adicionaAoCarrinho(codOp, lsbProduto.Text, txttipo.Text, vlc,
+                vlv, qtd, txtestiloModelo.Text);
+            if (controleVenda.tem)
+            {
+                MessageBox.Show(mensagem, "Adicionando", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show(mensagem, "Adicionando", MessageBoxButtons.OK, MessageBoxIcon.Error);
+               
+            }
+
+
         }
 
         public void procuraCodigoOperacao()
         {
-            Conexao con = new Conexao();
+            /*Conexao con = new Conexao();
             SqlCommand cmd = new SqlCommand();
 
-            cmd.CommandText = ("SELECT MAX(codUser) FROM logins");
+            cmd.CommandText = ("SELECT MAX(codOperacao) FROM itemDePedido");
             con.conectar();
             cmd.Connection = con.conectar();
 
@@ -124,20 +133,14 @@ namespace TCC.VISÃO
             {
 
                 SqlDataReader reg = cmd.ExecuteReader();
+                String recebeCodOperacao;
                 while (reg.Read())
                 {
                     recebeCodOperacao = reg.GetValue(0).ToString();
                     codOperacao = Convert.ToInt32(recebeCodOperacao);
                     codOperacao = codOperacao + 1;
-                    txtTotal.Text = codOperacao.ToString();
+
                 }
-
-
-
-
-
-
-
 
                 con.desconectar();
                 //dtEmail.DataSource = dt;
@@ -145,13 +148,33 @@ namespace TCC.VISÃO
 
 
             }
-            catch (Exception)
+            catch (SqlException)
             {
 
                 throw;
             }
+            */
+
+            String codRecebe = controleVenda.procuraCodigoOperacao();
+            if (controleVenda.tem)
+            {
+
+                
+                codOperacao = Convert.ToInt32(codRecebe) + 1;
+                
+                
+            }
+            else
+           {
+                MessageBox.Show("ERRO DE CONEXÃO COM SERVIDOR", "OPERAÇÃO ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
+
         }
 
+
+
+        #region design
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             procuraCodigoOperacao();
@@ -167,23 +190,6 @@ namespace TCC.VISÃO
             btnCadastrar.Enabled = false;
             btnCancelar.Enabled = true;
             btnAdicionar.Enabled = true;
-
-
-
-        }
-
-
-
-
-
-        private void btnCadastrar_MouseEnter(object sender, EventArgs e)
-        {
-            btnCadastrar.Size = new Size(90, 43);
-        }
-
-        private void btnCadastrar_MouseLeave(object sender, EventArgs e)
-        {
-            btnCadastrar.Size = new Size(65, 43);
         }
 
         private void btnExtornar_MouseEnter(object sender, EventArgs e)
@@ -194,16 +200,6 @@ namespace TCC.VISÃO
         private void btnExtornar_MouseLeave(object sender, EventArgs e)
         {
             btnExtornar.Size = new Size(65, 43);
-        }
-
-        private void btnCancelar_MouseEnter(object sender, EventArgs e)
-        {
-            btnCancelar.Size = new Size(90, 43);
-        }
-
-        private void btnCancelar_MouseLeave(object sender, EventArgs e)
-        {
-            btnCancelar.Size = new Size(65, 43);
         }
 
         private void btnAdicionar_MouseEnter(object sender, EventArgs e)
@@ -266,6 +262,21 @@ namespace TCC.VISÃO
             btnCadastrar.Enabled = true;
             btnAdicionar.Enabled = false;
             btnCancelar.Enabled = false;
+        }
+
+        private void btnFinalizar_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Deseja finalizar a venda ?", "Venda", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+        }
+
+        #endregion
+
+        private void btnAdicionar_Click(object sender, EventArgs e)
+        {
+            adicionaAoCarrinho();
+            listaCarrinho();
+
+
         }
     }
 }

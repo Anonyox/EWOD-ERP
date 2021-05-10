@@ -48,8 +48,10 @@
   <ItemGroup>
     <Compile Include="CONTROLE\Conexao.cs" />
     <Compile Include="CONTROLE\loginDaoComandos.cs" />
+    <Compile Include="CONTROLE\produtoDaoComandoscs.cs" />
     <Compile Include="CONTROLE\vendaDaoComandos.cs" />
     <Compile Include="MODELO\Controle.cs" />
+    <Compile Include="MODELO\ControleVenda.cs" />
     <Compile Include="MODELO\VCEP.cs" />
     <Compile Include="MODELO\VCPF.cs" />
     <Compile Include="MODELO\VEMAIL.cs" />

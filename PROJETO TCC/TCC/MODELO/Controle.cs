@@ -44,8 +44,8 @@ namespace TCC.MODELO
 
         public String alteraUsuario(String login, String novoLogin)
         {
-            this.mensagem = loginDao.alteraUsuario(login,novoLogin);
-            if (loginDao.mensagem == "USUÁRIO ALTERADO COM SUCESSO") 
+            this.mensagem = loginDao.alteraUsuario(login, novoLogin);
+            if (loginDao.mensagem == "USUÁRIO ALTERADO COM SUCESSO")
             {
                 this.mensagem = "USUÁRIO ALTERADO COM SUCESSO";
 
@@ -55,7 +55,7 @@ namespace TCC.MODELO
                 this.mensagem = loginDao.mensagem;
 
             }
-            
+
             return mensagem;
         }
 

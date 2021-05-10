@@ -18,13 +18,13 @@ namespace TCC.CONTROLE
         SqlDataReader dr;
         public String perfil;
         public String perfillog = verificaPerfill.perfil;
-        
+
         public string tipo = "Acesso ao sistema";
         public string tipo2 = "Alterou o Nome de Usuário";
         public string tipo3 = "Alterou o Email do Usuário";
         public string tipo4 = "Alterou a Senha do Usuário";
         String user = DadosGeral.nomeUser;
-        
+
         public DateTime dataLog = System.DateTime.Now;
 
         public bool verificarlogin(String login, String senha)
@@ -47,7 +47,7 @@ namespace TCC.CONTROLE
             try
             {
                 cmd.Connection = con.conectar();
-                
+
 
                 if (!con.mensagem.Equals(""))
                 {
@@ -64,9 +64,9 @@ namespace TCC.CONTROLE
                     {
                         tem = true;
                         con.desconectar();
-                       
+
                     }
-                    
+
                 }
                 dr.Close();
 
@@ -135,51 +135,51 @@ namespace TCC.CONTROLE
                 tipo = "Cadastrou Usuario";
 
 
-                            cmd.CommandText = "insert into logins values (@a, @b, @c, @d, @e, @f, @g, @h, @i, @j, @k, @l, @m, @n, @o)";
-                            cmd.Parameters.AddWithValue("@a", login);
-                            cmd.Parameters.AddWithValue("@b", senha);
-                            cmd.Parameters.AddWithValue("@c", cpf);
-                            cmd.Parameters.AddWithValue("@d", departamento);
-                            cmd.Parameters.AddWithValue("@e", email);
-                            cmd.Parameters.AddWithValue("@f", perfil);
-                            cmd.Parameters.AddWithValue("@g", endereco);
-                            cmd.Parameters.AddWithValue("@h", numero);
-                            cmd.Parameters.AddWithValue("@i", cidade);
-                            cmd.Parameters.AddWithValue("@j", bairro);
-                            cmd.Parameters.AddWithValue("@k", estado);
-                            cmd.Parameters.AddWithValue("@l", cep);
-                            cmd.Parameters.AddWithValue("@m", complemento);
-                            cmd.Parameters.AddWithValue("@n", telefone);
-                            cmd.Parameters.AddWithValue("@o", sexo);
+                cmd.CommandText = "insert into logins values (@a, @b, @c, @d, @e, @f, @g, @h, @i, @j, @k, @l, @m, @n, @o)";
+                cmd.Parameters.AddWithValue("@a", login);
+                cmd.Parameters.AddWithValue("@b", senha);
+                cmd.Parameters.AddWithValue("@c", cpf);
+                cmd.Parameters.AddWithValue("@d", departamento);
+                cmd.Parameters.AddWithValue("@e", email);
+                cmd.Parameters.AddWithValue("@f", perfil);
+                cmd.Parameters.AddWithValue("@g", endereco);
+                cmd.Parameters.AddWithValue("@h", numero);
+                cmd.Parameters.AddWithValue("@i", cidade);
+                cmd.Parameters.AddWithValue("@j", bairro);
+                cmd.Parameters.AddWithValue("@k", estado);
+                cmd.Parameters.AddWithValue("@l", cep);
+                cmd.Parameters.AddWithValue("@m", complemento);
+                cmd.Parameters.AddWithValue("@n", telefone);
+                cmd.Parameters.AddWithValue("@o", sexo);
 
-                            cmd2.CommandText = "Insert into logs (tipo,dataLog,usuario,perfil) values (@tipo, @dataLog, @usuario, @perfil)";
-                            cmd2.Parameters.AddWithValue("@tipo", tipo);
-                            cmd2.Parameters.AddWithValue("@datalog", dataLog);
-                            cmd2.Parameters.AddWithValue("@usuario", user);
-                            cmd2.Parameters.AddWithValue("@perfil", perfillog);
+                cmd2.CommandText = "Insert into logs (tipo,dataLog,usuario,perfil) values (@tipo, @dataLog, @usuario, @perfil)";
+                cmd2.Parameters.AddWithValue("@tipo", tipo);
+                cmd2.Parameters.AddWithValue("@datalog", dataLog);
+                cmd2.Parameters.AddWithValue("@usuario", user);
+                cmd2.Parameters.AddWithValue("@perfil", perfillog);
 
 
 
                 try
                 {
-                                //dr.Close(); ;
-                                cmd.Connection = con.conectar();
-                                cmd.ExecuteNonQuery();
+                    //dr.Close(); ;
+                    cmd.Connection = con.conectar();
+                    cmd.ExecuteNonQuery();
 
                     cmd2.Connection = con.conectar();
                     cmd2.ExecuteNonQuery();
 
-                                con.desconectar();
-                                    
+                    con.desconectar();
 
-                                this.mensagem = "CADASTRADO COM SUCESSO";
-                                tem = true;
-                            }
-                            catch (SqlException)
-                            {
-                                this.mensagem = "Erro com Banco de Dados!";
 
-                            }                   
+                    this.mensagem = "CADASTRADO COM SUCESSO";
+                    tem = true;
+                }
+                catch (SqlException)
+                {
+                    this.mensagem = "Erro com Banco de Dados!";
+
+                }
             }
             else
             {
@@ -197,7 +197,7 @@ namespace TCC.CONTROLE
             cmd.Parameters.AddWithValue("@senha", senha2);
 
 
-           
+
 
 
             cmd.Connection = con.conectar();
@@ -207,11 +207,11 @@ namespace TCC.CONTROLE
             {
                 while (dr.Read())
                 {
-                    
-                    perfil = dr[0].ToString();
-                    
 
-                    
+                    perfil = dr[0].ToString();
+
+
+
 
 
 
@@ -231,7 +231,7 @@ namespace TCC.CONTROLE
 
 
             }
-            
+
 
 
         }
@@ -254,17 +254,17 @@ namespace TCC.CONTROLE
             try
             {
                 cmd.Connection = con.conectar();
-                if(!con.mensagem.Equals(""))
+                if (!con.mensagem.Equals(""))
                 {
                     this.mensagem = con.mensagem;
-                    
+
 
                 }
                 else
                 {
-                                       
-                        
-                      
+
+
+
                     cmd.ExecuteNonQuery();
 
                     con.desconectar();
@@ -272,12 +272,12 @@ namespace TCC.CONTROLE
                     cmd2.ExecuteNonQuery();
                     this.mensagem = "USUÁRIO ALTERADO COM SUCESSO";
 
-                        
-                        
-                        
 
 
-                   
+
+
+
+
                 }
 
                 return mensagem;
@@ -286,9 +286,9 @@ namespace TCC.CONTROLE
             {
                 this.mensagem = "ERRO COM O BANCO DE DADOS";
 
-                
+
             }
-            
+
             return mensagem;
         }
 
@@ -345,9 +345,9 @@ namespace TCC.CONTROLE
             return mensagem;
         }
 
-        public String alteraEmail( String novoEmail, String usuario)
+        public String alteraEmail(String novoEmail, String usuario)
         {
-            cmd.CommandText = ("update logins set email = @novoEmail where usuario = @usuario " );
+            cmd.CommandText = ("update logins set email = @novoEmail where usuario = @usuario ");
             cmd.Parameters.AddWithValue("@novoEmail", novoEmail);
             cmd.Parameters.AddWithValue("@usuario", usuario);
 
@@ -400,13 +400,13 @@ namespace TCC.CONTROLE
 
         public String verificaUsuario(String usuario)
         {
-             cmd.CommandText = "select * from logins where usuario = @login";
-                cmd.Parameters.AddWithValue("@login", usuario);
+            cmd.CommandText = "select * from logins where usuario = @login";
+            cmd.Parameters.AddWithValue("@login", usuario);
             try
             {
                 cmd.Connection = con.conectar();
                 dr = cmd.ExecuteReader();
-                
+
                 if (dr.HasRows)//se foi encontrado
                 {
                     this.mensagem = "USUÁRIO JÁ EXISTENTE, INSIRA UM USUÁRIO VÁLIDO";
@@ -416,7 +416,7 @@ namespace TCC.CONTROLE
             }
             catch (Exception)
             {
-                this.mensagem = "ERRO COM BANCO DE DADOS";  
+                this.mensagem = "ERRO COM BANCO DE DADOS";
                 throw;
             }
             dr.Close();
@@ -440,10 +440,10 @@ namespace TCC.CONTROLE
             catch (Exception)
             {
                 this.mensagem = "ERRO COM BANCO DE DADOS";
-              
-            } 
 
-            
+            }
+
+
 
             return mensagem;
         }
