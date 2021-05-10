@@ -18,10 +18,7 @@ namespace TCC.VISÃO
     public partial class CadastroVendas : Form
     {
         ControleVenda controleVenda = new ControleVenda();
-        vendaDaoComandos vdc = new vendaDaoComandos();
-        int codOperacao = 0;
-        
-        
+         int codOperacao = 0;
         int validaMsg = 0;
 
 
@@ -35,7 +32,7 @@ namespace TCC.VISÃO
 
         private void CadastroVendas_Load(object sender, EventArgs e)
         {
-            timer1.Start();
+            
             // TODO: esta linha de código carrega dados na tabela 'tccDataSet.produtos'. Você pode movê-la ou removê-la conforme necessário.
             this.produtosTableAdapter.Fill(this.tccDataSet.produtos);
 
@@ -59,7 +56,7 @@ namespace TCC.VISÃO
         public void listaCarrinho()
         {
 
-
+           
             String codlist = codOperacao.ToString();
 
             
@@ -90,7 +87,7 @@ namespace TCC.VISÃO
 
         public void adicionaAoCarrinho()
         {
-
+           
             string codOp = codOperacao.ToString();
 
             Decimal vlc, vlv;
@@ -107,6 +104,7 @@ namespace TCC.VISÃO
             if (controleVenda.tem)
             {
                 MessageBox.Show(mensagem, "Adicionando", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
             }
             else
             {
@@ -119,41 +117,7 @@ namespace TCC.VISÃO
 
         public void procuraCodigoOperacao()
         {
-            /*Conexao con = new Conexao();
-            SqlCommand cmd = new SqlCommand();
-
-            cmd.CommandText = ("SELECT MAX(codOperacao) FROM itemDePedido");
-            con.conectar();
-            cmd.Connection = con.conectar();
-
-
-
-
-            try
-            {
-
-                SqlDataReader reg = cmd.ExecuteReader();
-                String recebeCodOperacao;
-                while (reg.Read())
-                {
-                    recebeCodOperacao = reg.GetValue(0).ToString();
-                    codOperacao = Convert.ToInt32(recebeCodOperacao);
-                    codOperacao = codOperacao + 1;
-
-                }
-
-                con.desconectar();
-                //dtEmail.DataSource = dt;
-
-
-
-            }
-            catch (SqlException)
-            {
-
-                throw;
-            }
-            */
+            
 
             String codRecebe = controleVenda.procuraCodigoOperacao();
             if (controleVenda.tem)
@@ -172,12 +136,33 @@ namespace TCC.VISÃO
 
         }
 
+        public void procuraUltimoCodigoOperacao()
+        {
+
+
+            String codRecebe = controleVenda.procuraCodigoUltimoCodigoOperacao();
+            if (controleVenda.tem)
+            {
+                codOperacao = Convert.ToInt32(codRecebe);
+                listaCarrinho();
+              
+            }
+            else
+            {
+                MessageBox.Show("ERRO DE CONEXÃO COM SERVIDOR", "OPERAÇÃO ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+        }
+
 
 
         #region design
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
+           
             procuraCodigoOperacao();
+           
 
             lsbProduto.Enabled = true;
             txttipo.Enabled = true;
@@ -227,17 +212,7 @@ namespace TCC.VISÃO
             Close();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            int i = 0;
-
-
-            txtTotal.Text = Convert.ToString(i);
-
-            timer1.Start();
-
-
-        }
+       
 
         private void panel6_MouseMove(object sender, MouseEventArgs e)
         {
@@ -273,10 +248,15 @@ namespace TCC.VISÃO
 
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
+            
             adicionaAoCarrinho();
+
             listaCarrinho();
 
 
+
         }
+
+        
     }
 }

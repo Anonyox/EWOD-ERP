@@ -66,5 +66,25 @@ namespace TCC.MODELO
 
             return this.codOperacao;
         }
+
+        public String procuraCodigoUltimoCodigoOperacao()
+        {
+            this.codOperacao = vendaDao.procuraCodigoOperacao();
+            if (vendaDao.tem)
+            {
+
+                this.tem = true;
+                return this.codOperacao;
+            }
+            else
+            {
+                this.tem = false;
+            }
+
+
+
+            return this.codOperacao;
+        }
+
     }
 }

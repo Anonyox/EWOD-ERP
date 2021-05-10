@@ -25,7 +25,7 @@ namespace TCC.CONTROLE
 
             cmd.CommandText = "select * from itemDePedido where codOperacao = @codOperacao ";
             cmd.Parameters.AddWithValue("@codOperacao", codOperacao);
-            cmd.Connection = con.conectar();
+           
 
 
             try
@@ -33,6 +33,7 @@ namespace TCC.CONTROLE
                 con.conectar();
                 cmd.ExecuteNonQuery();
 
+               
 
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dtr = new DataTable();
@@ -41,15 +42,17 @@ namespace TCC.CONTROLE
 
 
 
+                cmd.Parameters.RemoveAt("@codoperacao");
                 return dtr;
-
-
-
-
-
-
-
                 con.desconectar();
+
+
+
+
+
+
+
+
                 //dtEmail.DataSource = dt;
 
 
@@ -57,8 +60,8 @@ namespace TCC.CONTROLE
             }
             catch (SqlException)
             {
-
                 throw;
+                
             }
         }
 
@@ -67,7 +70,8 @@ namespace TCC.CONTROLE
         {
 
 
-            cmd.CommandText = "insert into itemDePedido values (@a, @b, @c, @d, @e, @f, @g)";
+            cmd.CommandText = "insert into itemDePedido values (@a,@b,@c,@d,@e,@f,@g)"; 
+            
             cmd.Parameters.AddWithValue("@a", codOperacao);
             cmd.Parameters.AddWithValue("@b", produtoPedido);
             cmd.Parameters.AddWithValue("@c", tipoProduto);
@@ -75,6 +79,7 @@ namespace TCC.CONTROLE
             cmd.Parameters.AddWithValue("@e", valorDeCompra);
             cmd.Parameters.AddWithValue("@f", valorDeVenda);
             cmd.Parameters.AddWithValue("@g", quantidade);
+            
 
             
 
@@ -84,18 +89,32 @@ namespace TCC.CONTROLE
                 cmd.ExecuteNonQuery();
 
 
+                cmd.Parameters.RemoveAt("@a");
+                cmd.Parameters.RemoveAt("@b");
+                cmd.Parameters.RemoveAt("@c");
+                cmd.Parameters.RemoveAt("@d");
+                cmd.Parameters.RemoveAt("@e");
+                cmd.Parameters.RemoveAt("@f");
+                cmd.Parameters.RemoveAt("@g");
+
+
+
                 this.mensagem = ("Produto adicionado");
+               
+                con.desconectar();
+
 
                 this.tem = true;
-
+               
                 return mensagem;
             }
             catch (SqlException)
             {
-
+                tem = false;
                 this.mensagem = ("Erro com banco de dados");
             }
             return mensagem;
+           
         }
 
         public String procuraCodigoOperacao()
@@ -121,12 +140,15 @@ namespace TCC.CONTROLE
                     codOperacao = reg.GetValue(0).ToString();
 
                     this.tem = true;
-                    
+
+                    con.desconectar();
                     return codOperacao;
+
                   
                 }
+              
 
-                con.desconectar();
+
                 //dtEmail.DataSource = dt;
 
 
@@ -139,6 +161,51 @@ namespace TCC.CONTROLE
             }
             return codOperacao;
             
+        }
+
+        public String procuraUltimoCodigoOperacao()
+        {
+            Conexao con = new Conexao();
+            SqlCommand cmd = new SqlCommand();
+            String codOperacao = "";
+
+            cmd.CommandText = ("SELECT MAX(codOperacao) FROM itemDePedido");
+            con.conectar();
+            cmd.Connection = con.conectar();
+
+
+
+
+            try
+            {
+
+                SqlDataReader reg = cmd.ExecuteReader();
+
+                while (reg.Read())
+                {
+                    codOperacao = reg.GetValue(0).ToString();
+
+                    this.tem = true;
+
+                    con.desconectar();
+                    return codOperacao;
+
+                }
+               
+
+
+                //dtEmail.DataSource = dt;
+
+
+
+            }
+            catch (SqlException)
+            {
+
+                this.tem = false;
+            }
+            return codOperacao;
+
         }
 
 
