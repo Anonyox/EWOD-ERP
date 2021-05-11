@@ -18,7 +18,7 @@ namespace TCC.VISÃO
     public partial class CadastroVendas : Form
     {
         ControleVenda controleVenda = new ControleVenda();
-         int codOperacao = 0;
+        int codOperacao = 0;
         int validaMsg = 0;
 
 
@@ -26,13 +26,13 @@ namespace TCC.VISÃO
         public CadastroVendas()
         {
             InitializeComponent();
-            
+
 
         }
 
         private void CadastroVendas_Load(object sender, EventArgs e)
         {
-            
+
             // TODO: esta linha de código carrega dados na tabela 'tccDataSet.produtos'. Você pode movê-la ou removê-la conforme necessário.
             this.produtosTableAdapter.Fill(this.tccDataSet.produtos);
 
@@ -48,7 +48,10 @@ namespace TCC.VISÃO
             lblteste.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(0, 209, 178);     //FromArgb(20, 25, 72);
             lblteste.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
 
-          
+
+           
+
+
 
 
 
@@ -57,10 +60,10 @@ namespace TCC.VISÃO
         public void listaCarrinho()
         {
 
-           
+
             String codlist = codOperacao.ToString();
 
-            
+
 
             controleVenda.listaCarrinho(codlist);
 
@@ -88,7 +91,7 @@ namespace TCC.VISÃO
 
         public void adicionaAoCarrinho()
         {
-           
+
             string codOp = codOperacao.ToString();
 
             Decimal vlc, vlv;
@@ -97,20 +100,20 @@ namespace TCC.VISÃO
             vlc = Convert.ToDecimal(txtvalordeCompra.Text);
             vlv = Convert.ToDecimal(txtvalorDeVenda.Text);
             qtd = Convert.ToInt32(txtquantidade.Text);
-           
-            
+
+
 
             String mensagem = controleVenda.adicionaAoCarrinho(codOp, lsbProduto.Text, txttipo.Text, vlc,
                 vlv, qtd, txtestiloModelo.Text);
             if (controleVenda.tem)
             {
                 MessageBox.Show(mensagem, "Adicionando", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                
+
             }
             else
             {
                 MessageBox.Show(mensagem, "Adicionando", MessageBoxButtons.OK, MessageBoxIcon.Error);
-               
+
             }
 
 
@@ -118,22 +121,22 @@ namespace TCC.VISÃO
 
         public void procuraCodigoOperacao()
         {
-            
+
 
             String codRecebe = controleVenda.procuraCodigoOperacao();
             if (controleVenda.tem)
             {
 
-                
+
                 codOperacao = Convert.ToInt32(codRecebe) + 1;
-                
-                
+
+
             }
             else
-           {
+            {
                 MessageBox.Show("ERRO DE CONEXÃO COM SERVIDOR", "OPERAÇÃO ", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+
 
         }
 
@@ -146,7 +149,7 @@ namespace TCC.VISÃO
             {
                 codOperacao = Convert.ToInt32(codRecebe);
                 listaCarrinho();
-              
+
             }
             else
             {
@@ -156,14 +159,40 @@ namespace TCC.VISÃO
 
         }
 
+        public void retiraDoCarrinho()
+        {
+            string codOp = codOperacao.ToString();
+
+
+
+            String mensagem = controleVenda.deletaTodosProdutosDoCarrinho(codOp);
+            if (controleVenda.tem)
+            {
+                MessageBox.Show(mensagem, "Carrinho", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            else
+            {
+                MessageBox.Show(mensagem, "Carrinho", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+        }
+
+       
+
+
+
+
+
+
 
 
         #region design
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-           
+
             procuraCodigoOperacao();
-           
+
 
             lsbProduto.Enabled = true;
             txttipo.Enabled = true;
@@ -176,6 +205,48 @@ namespace TCC.VISÃO
             btnCadastrar.Enabled = false;
             btnCancelar.Enabled = true;
             btnAdicionar.Enabled = true;
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            #region design
+            lsbProduto.Enabled = false;
+            txttipo.Enabled = false;
+            txtvalordeCompra.Enabled = false;
+            txtvalorDeVenda.Enabled = false;
+            txtquantidade.Enabled = false;
+            txtestiloModelo.Enabled = false;
+
+            btnCadastrar.Enabled = true;
+            btnAdicionar.Enabled = false;
+            btnCancelar.Enabled = false;
+
+            lsbProduto.Text = "";
+            txttipo.Text = "";
+            txtvalordeCompra.Text = "";
+            txtvalorDeVenda.Text = "";
+            txtquantidade.Text = "";
+            txtestiloModelo.Text = "";
+
+            btnCadastrar.Text = "";
+            btnAdicionar.Text = "";
+            btnCancelar.Text = "";
+            #endregion
+            retiraDoCarrinho();
+            listaCarrinho();
+
+
+        }
+
+        private void btnAdicionar_Click(object sender, EventArgs e)
+        {
+
+            adicionaAoCarrinho();
+
+            listaCarrinho();
+
+
+
         }
 
         private void btnExtornar_MouseEnter(object sender, EventArgs e)
@@ -213,8 +284,6 @@ namespace TCC.VISÃO
             Close();
         }
 
-       
-
         private void panel6_MouseMove(object sender, MouseEventArgs e)
         {
             if (validaMsg == 0)
@@ -226,38 +295,11 @@ namespace TCC.VISÃO
 
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            lsbProduto.Enabled = false;
-            txttipo.Enabled = false;
-            txtvalordeCompra.Enabled = false;
-            txtvalorDeVenda.Enabled = false;
-            txtquantidade.Enabled = false;
-            txtestiloModelo.Enabled = false;
-
-            btnCadastrar.Enabled = true;
-            btnAdicionar.Enabled = false;
-            btnCancelar.Enabled = false;
-        }
-
         private void btnFinalizar_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Deseja finalizar a venda ?", "Venda", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
         }
 
         #endregion
-
-        private void btnAdicionar_Click(object sender, EventArgs e)
-        {
-            
-            adicionaAoCarrinho();
-
-            listaCarrinho();
-
-
-
-        }
-
-        
     }
 }

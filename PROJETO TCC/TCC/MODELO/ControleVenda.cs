@@ -47,7 +47,28 @@ namespace TCC.MODELO
 
             return this.mensagem;
         }
+        public String deletaTodosProdutosDoCarrinho(String codOperacao)
+        {
 
+
+            this.mensagem = vendaDao.deletaTodosProdutosDoCarrinho(codOperacao);
+
+            if (vendaDao.tem)
+            {
+                this.mensagem = vendaDao.mensagem;
+                tem = true;
+
+
+            }
+            else
+            {
+                this.mensagem = "ERRO COM BANCO DE DADOS";
+                tem = false;
+            }
+
+            return mensagem;
+
+        }
         public String procuraCodigoOperacao()
         {
             this.codOperacao = vendaDao.procuraCodigoOperacao();
@@ -85,6 +106,8 @@ namespace TCC.MODELO
 
             return this.codOperacao;
         }
+
+        
 
     }
 }

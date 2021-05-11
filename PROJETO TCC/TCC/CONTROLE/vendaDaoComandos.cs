@@ -40,11 +40,11 @@ namespace TCC.CONTROLE
 
                 da.Fill(dtr);
 
-
+                con.desconectar();
 
                 cmd.Parameters.RemoveAt("@codoperacao");
                 return dtr;
-                con.desconectar();
+               
 
 
 
@@ -115,6 +115,35 @@ namespace TCC.CONTROLE
             }
             return mensagem;
            
+        }
+
+        public String deletaTodosProdutosDoCarrinho(String codOperacao)
+        {
+            cmd.CommandText = "delete from itemDePedido where codOperacao = @codigo";
+
+            cmd.Parameters.AddWithValue("@codigo", codOperacao);
+
+
+            try
+            {
+
+                cmd.Connection = con.conectar();
+                cmd.ExecuteNonQuery();
+                cmd.Parameters.RemoveAt("@codigo");
+
+                this.mensagem = "PRODUTOS RETIRADOS DO CARRINHO";
+                tem = true;
+                return mensagem;
+
+
+            }
+            catch (Exception)
+            {
+
+                this.mensagem = "ERRO COM BANCO DE DADOS";
+                tem = false;
+            }
+            return mensagem;
         }
 
         public String procuraCodigoOperacao()

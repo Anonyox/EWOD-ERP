@@ -493,12 +493,13 @@ namespace TCC.CONTROLE
                 DataTable dtr = new DataTable();
 
                 da.Fill(dtr);
-
-
-
-                
-                return dtr;
                 con.desconectar();
+
+
+
+
+                return dtr;
+                
 
 
 
