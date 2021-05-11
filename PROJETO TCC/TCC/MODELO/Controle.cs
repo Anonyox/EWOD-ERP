@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using TCC.CONTROLE;
 
 namespace TCC.MODELO
@@ -9,6 +10,7 @@ namespace TCC.MODELO
         public String mensagem = "";
         public String loginM;
         loginDaoComandos loginDao = new loginDaoComandos();
+        public DataTable dtr = new DataTable();
 
 
 
@@ -44,8 +46,8 @@ namespace TCC.MODELO
 
         public String alteraUsuario(String login, String novoLogin)
         {
-            this.mensagem = loginDao.alteraUsuario(login,novoLogin);
-            if (loginDao.mensagem == "USUÁRIO ALTERADO COM SUCESSO") 
+            this.mensagem = loginDao.alteraUsuario(login, novoLogin);
+            if (loginDao.mensagem == "USUÁRIO ALTERADO COM SUCESSO")
             {
                 this.mensagem = "USUÁRIO ALTERADO COM SUCESSO";
 
@@ -55,7 +57,7 @@ namespace TCC.MODELO
                 this.mensagem = loginDao.mensagem;
 
             }
-            
+
             return mensagem;
         }
 
@@ -143,6 +145,13 @@ namespace TCC.MODELO
             }
 
             return mensagem;
+        }
+
+        public DataTable listaUser()
+        {
+            this.dtr = loginDao.listaUser();
+
+            return dtr;
         }
     }
 }

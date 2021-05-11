@@ -1,6 +1,6 @@
 ﻿namespace TCC.VISÃO
 {
-    partial class txtfornecedor
+    partial class CadastroProduto
     {
         /// <summary>
         /// Required designer variable.
@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(txtfornecedor));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroProduto));
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.txtcep = new System.Windows.Forms.MaskedTextBox();
+            this.txtnomeProduto = new System.Windows.Forms.TextBox();
+            this.txtdata = new System.Windows.Forms.MaskedTextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.cmbtipo = new System.Windows.Forms.ComboBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
-            this.txtvalordevenda = new System.Windows.Forms.TextBox();
-            this.txtvalordecompra = new System.Windows.Forms.TextBox();
-            this.txtquantidadeprodutocadastra = new System.Windows.Forms.TextBox();
+            this.txtcodigoProduto = new System.Windows.Forms.TextBox();
+            this.txtquantidadeProduto = new System.Windows.Forms.TextBox();
+            this.txtvalorCompra = new System.Windows.Forms.TextBox();
             this.txtcadastroproduto = new System.Windows.Forms.TextBox();
-            this.txtcodigoprodutocadastro = new System.Windows.Forms.TextBox();
+            this.txtvalorVenda = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -59,6 +59,7 @@
             this.barra = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblconfirmar = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSair)).BeginInit();
@@ -76,11 +77,13 @@
             this.btnConfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfirmar.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirmar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.btnConfirmar.Location = new System.Drawing.Point(212, 385);
+            this.btnConfirmar.Location = new System.Drawing.Point(212, 389);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(64, 38);
             this.btnConfirmar.TabIndex = 157;
             this.btnConfirmar.UseVisualStyleBackColor = false;
+            this.btnConfirmar.MouseEnter += new System.EventHandler(this.btnConfirmar_MouseEnter);
+            this.btnConfirmar.MouseLeave += new System.EventHandler(this.btnConfirmar_MouseLeave);
             // 
             // btnCancelar
             // 
@@ -99,24 +102,26 @@
             this.btnCancelar.TabIndex = 156;
             this.btnCancelar.UseVisualStyleBackColor = false;
             // 
-            // textBox1
+            // txtnomeProduto
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(122, 118);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(304, 20);
-            this.textBox1.TabIndex = 107;
+            this.txtnomeProduto.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txtnomeProduto.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtnomeProduto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtnomeProduto.Location = new System.Drawing.Point(122, 118);
+            this.txtnomeProduto.Name = "txtnomeProduto";
+            this.txtnomeProduto.Size = new System.Drawing.Size(304, 20);
+            this.txtnomeProduto.TabIndex = 107;
+            this.txtnomeProduto.Leave += new System.EventHandler(this.txtnomeProduto_Leave);
             // 
-            // txtcep
+            // txtdata
             // 
-            this.txtcep.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtcep.Location = new System.Drawing.Point(566, 303);
-            this.txtcep.Mask = "00/00/0000";
-            this.txtcep.Name = "txtcep";
-            this.txtcep.Size = new System.Drawing.Size(112, 30);
-            this.txtcep.TabIndex = 105;
-            this.txtcep.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtdata.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtdata.Location = new System.Drawing.Point(566, 303);
+            this.txtdata.Mask = "00/00/0000";
+            this.txtdata.Name = "txtdata";
+            this.txtdata.Size = new System.Drawing.Size(112, 30);
+            this.txtdata.TabIndex = 105;
+            this.txtdata.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label9
             // 
@@ -147,32 +152,32 @@
             this.textBox6.TabIndex = 101;
             this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
-            // txtvalordevenda
+            // txtcodigoProduto
             // 
-            this.txtvalordevenda.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtvalordevenda.Enabled = false;
-            this.txtvalordevenda.Location = new System.Drawing.Point(122, 144);
-            this.txtvalordevenda.Name = "txtvalordevenda";
-            this.txtvalordevenda.Size = new System.Drawing.Size(100, 20);
-            this.txtvalordevenda.TabIndex = 98;
+            this.txtcodigoProduto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtcodigoProduto.Enabled = false;
+            this.txtcodigoProduto.Location = new System.Drawing.Point(122, 144);
+            this.txtcodigoProduto.Name = "txtcodigoProduto";
+            this.txtcodigoProduto.Size = new System.Drawing.Size(100, 20);
+            this.txtcodigoProduto.TabIndex = 98;
             // 
-            // txtvalordecompra
+            // txtquantidadeProduto
             // 
-            this.txtvalordecompra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtvalordecompra.Enabled = false;
-            this.txtvalordecompra.Location = new System.Drawing.Point(566, 259);
-            this.txtvalordecompra.Name = "txtvalordecompra";
-            this.txtvalordecompra.Size = new System.Drawing.Size(100, 20);
-            this.txtvalordecompra.TabIndex = 97;
+            this.txtquantidadeProduto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtquantidadeProduto.Enabled = false;
+            this.txtquantidadeProduto.Location = new System.Drawing.Point(566, 259);
+            this.txtquantidadeProduto.Name = "txtquantidadeProduto";
+            this.txtquantidadeProduto.Size = new System.Drawing.Size(112, 20);
+            this.txtquantidadeProduto.TabIndex = 97;
             // 
-            // txtquantidadeprodutocadastra
+            // txtvalorCompra
             // 
-            this.txtquantidadeprodutocadastra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtquantidadeprodutocadastra.Enabled = false;
-            this.txtquantidadeprodutocadastra.Location = new System.Drawing.Point(176, 308);
-            this.txtquantidadeprodutocadastra.Name = "txtquantidadeprodutocadastra";
-            this.txtquantidadeprodutocadastra.Size = new System.Drawing.Size(100, 20);
-            this.txtquantidadeprodutocadastra.TabIndex = 96;
+            this.txtvalorCompra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtvalorCompra.Enabled = false;
+            this.txtvalorCompra.Location = new System.Drawing.Point(176, 308);
+            this.txtvalorCompra.Name = "txtvalorCompra";
+            this.txtvalorCompra.Size = new System.Drawing.Size(100, 20);
+            this.txtvalorCompra.TabIndex = 96;
             // 
             // txtcadastroproduto
             // 
@@ -183,14 +188,14 @@
             this.txtcadastroproduto.Size = new System.Drawing.Size(288, 20);
             this.txtcadastroproduto.TabIndex = 95;
             // 
-            // txtcodigoprodutocadastro
+            // txtvalorVenda
             // 
-            this.txtcodigoprodutocadastro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtcodigoprodutocadastro.Enabled = false;
-            this.txtcodigoprodutocadastro.Location = new System.Drawing.Point(178, 262);
-            this.txtcodigoprodutocadastro.Name = "txtcodigoprodutocadastro";
-            this.txtcodigoprodutocadastro.Size = new System.Drawing.Size(100, 20);
-            this.txtcodigoprodutocadastro.TabIndex = 94;
+            this.txtvalorVenda.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtvalorVenda.Enabled = false;
+            this.txtvalorVenda.Location = new System.Drawing.Point(178, 262);
+            this.txtvalorVenda.Name = "txtvalorVenda";
+            this.txtvalorVenda.Size = new System.Drawing.Size(100, 20);
+            this.txtvalorVenda.TabIndex = 94;
             // 
             // label4
             // 
@@ -404,7 +409,21 @@
             this.panel1.Size = new System.Drawing.Size(931, 21);
             this.panel1.TabIndex = 158;
             // 
-            // txtfornecedor
+            // lblconfirmar
+            // 
+            this.lblconfirmar.AutoSize = true;
+            this.lblconfirmar.BackColor = System.Drawing.Color.Transparent;
+            this.lblconfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblconfirmar.Font = new System.Drawing.Font("Comic Sans MS", 7F, System.Drawing.FontStyle.Bold);
+            this.lblconfirmar.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblconfirmar.Location = new System.Drawing.Point(221, 372);
+            this.lblconfirmar.Name = "lblconfirmar";
+            this.lblconfirmar.Size = new System.Drawing.Size(55, 14);
+            this.lblconfirmar.TabIndex = 172;
+            this.lblconfirmar.Text = "Confirmar";
+            this.lblconfirmar.Visible = false;
+            // 
+            // CadastroProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -412,14 +431,15 @@
             this.BackgroundImage = global::TCC.Properties.Resources._1555492a6_11;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(863, 654);
+            this.Controls.Add(this.lblconfirmar);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnConfirmar);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.txtcep);
+            this.Controls.Add(this.txtdata);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtvalordevenda);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtcodigoProduto);
+            this.Controls.Add(this.txtnomeProduto);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.barra);
             this.Controls.Add(this.cmbtipo);
@@ -433,18 +453,18 @@
             this.Controls.Add(this.txtcadastroproduto);
             this.Controls.Add(this.btnpesqisar);
             this.Controls.Add(this.button5);
-            this.Controls.Add(this.txtvalordecompra);
-            this.Controls.Add(this.txtcodigoprodutocadastro);
+            this.Controls.Add(this.txtquantidadeProduto);
+            this.Controls.Add(this.txtvalorVenda);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.txtquantidadeprodutocadastra);
+            this.Controls.Add(this.txtvalorCompra);
             this.Controls.Add(this.button3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "txtfornecedor";
+            this.Name = "CadastroProduto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CADASTRARPRODUTO";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CADASTRARPRODUTO_FormClosed);
-            this.Load += new System.EventHandler(this.txtfornecedor_Load);
+            this.Load += new System.EventHandler(this.CadastroProduto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSair)).EndInit();
@@ -463,11 +483,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox txtvalordevenda;
-        private System.Windows.Forms.TextBox txtvalordecompra;
-        private System.Windows.Forms.TextBox txtquantidadeprodutocadastra;
+        private System.Windows.Forms.TextBox txtcodigoProduto;
+        private System.Windows.Forms.TextBox txtquantidadeProduto;
+        private System.Windows.Forms.TextBox txtvalorCompra;
         private System.Windows.Forms.TextBox txtcadastroproduto;
-        private System.Windows.Forms.TextBox txtcodigoprodutocadastro;
+        private System.Windows.Forms.TextBox txtvalorVenda;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
@@ -477,12 +497,13 @@
         private System.Windows.Forms.PictureBox btnMinimizar;
         private System.Windows.Forms.PictureBox btnSair;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.MaskedTextBox txtcep;
+        private System.Windows.Forms.MaskedTextBox txtdata;
         private System.Windows.Forms.Panel barra;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtnomeProduto;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnConfirmar;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lblconfirmar;
     }
 }

@@ -21,7 +21,7 @@ namespace TCC.CONTROLE
 
         }
 
-        public SqlConnection conectar()
+        public  SqlConnection conectar()
         {
 
 

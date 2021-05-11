@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -13,17 +15,20 @@ namespace TCC.VISÃO
     {
         SqlConnection con = new SqlConnection();
         SqlCommand cmd = new SqlCommand();
+        Controle controle = new Controle();
         menuAdministrador menuzAdm = new menuAdministrador();
         public String sexoSelecao;
         public string cpf;
         public static List<Button> botoes;
         //public String email;
         public bool ok = false;
+
         public CadastroUsuario()
         {
             InitializeComponent();
             menuzAdm.valida = 2;
             validaTeclas();
+            
 
         }
 
@@ -47,54 +52,57 @@ namespace TCC.VISÃO
 
                 }
                 else
-                {        
-                            String mensagem = controle.cadastrar(txtuser.Text, txtsenha.Text, txtconfSenha.Text, txtcpf.Text, txtdepart.Text, txtemail.Text,
-                               cmbperfil.Text, txtendereco.Text, txtnumero.Text, txtcidade.Text, txtbairro.Text, txtestado.Text, txtcep.Text, txtcomplemento.Text, txttelefone.Text, sexoSelecao);
-                            if (controle.tem)
-                            {
-                                MessageBox.Show(mensagem, "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            }
-                            else
-                            {
-                                MessageBox.Show(controle.mensagem, "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
+                {
+                    String mensagem = controle.cadastrar(txtuser.Text, txtsenha.Text, txtconfSenha.Text, txtcpf.Text, txtdepart.Text, txtemail.Text,
+                       cmbperfil.Text, txtendereco.Text, txtnumero.Text, txtcidade.Text, txtbairro.Text, txtestado.Text, txtcep.Text, txtcomplemento.Text, txttelefone.Text, sexoSelecao);
+                    if (controle.tem)
+                    {
+                        MessageBox.Show(mensagem, "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show(controle.mensagem, "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
 
 
-                            if (controle.mensagem == "CADASTRADO COM SUCESSO")
-                            {
-                                limpaCampos();
+                    if (controle.mensagem == "CADASTRADO COM SUCESSO")
+                    {
+                        limpaCampos();
 
-                               
-                                btnCadastrar.Enabled = false;
-                                lblendereco.Visible = false;
-                                lblnumero.Visible = false;
-                                lblcidade.Visible = false;
-                                lblbairro.Visible = false;
-                                lblestado.Visible = false;
-                                lblcep.Visible = false;
-                                lblcomplemento.Visible = false;
-                                lbltelefone.Visible = false;
-                                lblsexo.Visible = false;
-                                txtendereco.Visible = false;
-                                txtnumero.Visible = false;
-                                txtcidade.Visible = false;
-                                txtbairro.Visible = false;
-                                txtestado.Visible = false;
-                                txtcep.Visible = false;
-                                txtcomplemento.Visible = false;
-                                txttelefone.Visible = false;
-                                rdbmasculino.Visible = false;
-                                rdbfeminino.Visible = false;
 
-                       // cmd.CommandText = "INSERT INTO logs VALUES(Novo Usuário Cadastrado)";
+                        btnCadastrar.Enabled = false;
+                        txtuser.Enabled = false;
+                        txtsenha.Enabled = false;
+                        txtconfSenha.Enabled = false;
+                        txtemail.Enabled = false;
+                        cmbperfil.Enabled = false;
+                        txtcpf.Enabled = false;
+                        chcSenha.Enabled = false;
 
-                                
-                            }
+                        txtendereco.Enabled = false;
+                        txtestado.Enabled = false;
+                        txtcidade.Enabled =  false;
+                        txtbairro.Enabled = false;
+                        txtcomplemento.Enabled = false;
+                        txtnumero.Enabled = false;
+
+                        txtcep.Enabled = false;
+                        txttelefone.Enabled = false;
+                        txtdepart.Enabled = false;
+                        rdbmasculino.Enabled = false;
+                        rdbfeminino.Enabled = false;
+                        
+                        
+
+                        // cmd.CommandText = "INSERT INTO logs VALUES(Novo Usuário Cadastrado)";
+
+
+                    }
                 }
 
             }
 
- }
+        }
 
         private void limpaCampos()
         {
@@ -132,7 +140,7 @@ namespace TCC.VISÃO
         private void button1_Click(object sender, EventArgs e)
         {
 
-          
+
             btnCadastrar.Visible = true;
             lblendereco.Visible = true;
             lblnumero.Visible = true;
@@ -232,21 +240,73 @@ namespace TCC.VISÃO
                 | txtconfSenha.Text == string.Empty | txtcpf.Text == string.Empty |
                 txtdepart.Text == string.Empty | txtemail.Text == string.Empty)
             {
-                
+
 
             }
             else
             {
-                
+
                 btnlimpar.Enabled = true;
             }
         }
 
+        public void listaUsers()
+        {
+
+
+
+
+
+            controle.listaUser();
+
+            DataTable dt = new DataTable();
+
+            dt = controle.dtr;
+
+            dtUsers.Rows.Clear();
+
+            foreach (DataRow item in dt.Rows)
+            {
+
+                int n = dtUsers.Rows.Add();
+                dtUsers.Rows[n].Cells[0].Value = item["usuario"].ToString();
+                dtUsers.Rows[n].Cells[1].Value = item["departamento"].ToString();
+                dtUsers.Rows[n].Cells[2].Value = item["email"].ToString();
+                dtUsers.Rows[n].Cells[3].Value = item["telefone"].ToString();
+                dtUsers.Rows[n].Cells[4].Value = item["sexo"].ToString();
+              
+            }
+        }
         private void CadastroUsuario_Shown(object sender, EventArgs e)
         {
+            //CadastroUsuario cad = new CadastroUsuario();
+            //cad.Size = new Size(1155, 1000);
+
+
+
+            // TODO: esta linha de código carrega dados na tabela 'tccDataSet.produtos'. Você pode movê-la ou removê-la conforme necessário.
+            
+
+            dtUsers.BorderStyle = BorderStyle.None;  //DTEMAIL NOME DA VARIÁVEL
+            //dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
+            dtUsers.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            // dataGridView1.DefaultCellStyle.SelectionBackColor = Color.DarkTurquoise;
+            //dataGridView1.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
+            /// dataGridView1.BackgroundColor = Color.White;
+
+            dtUsers.EnableHeadersVisualStyles = false;
+            dtUsers.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dtUsers.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(0, 209, 178);     //FromArgb(20, 25, 72);
+            dtUsers.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+
+            listaUsers();
+            MessageBox.Show("Para cadastrar um usuário, clique no botão adicionar", "Novo Usuário", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
 
         }
 
+        #region design
         private void cmbPerfil_SelectedIndexChanged(object sender, EventArgs e)
         {
             verificaCamposProximo();
@@ -272,6 +332,26 @@ namespace TCC.VISÃO
         private void btnlimpar_Click(object sender, EventArgs e)
         {
             limpaCampos();
+            txtuser.Enabled = false;
+            txtsenha.Enabled = false;
+            txtconfSenha.Enabled = false;
+            txtemail.Enabled = false;
+            cmbperfil.Enabled = false;
+            txtcpf.Enabled = false;
+            chcSenha.Enabled = false;
+
+            txtendereco.Enabled = false;
+            txtestado.Enabled = false;
+            txtcidade.Enabled = false;
+            txtbairro.Enabled = false;
+            txtcomplemento.Enabled = false;
+            txtnumero.Enabled = false;
+
+            txtcep.Enabled = false;
+            txttelefone.Enabled = false;
+            txtdepart.Enabled = false;
+            rdbmasculino.Enabled = false;
+            rdbfeminino.Enabled = false;
         }
 
         public string Maiuscula(TextBox tbox)
@@ -393,25 +473,6 @@ namespace TCC.VISÃO
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }
-
-        private void txtTelefone_TextChanged(object sender, EventArgs e)
-        {
-
-            if (!verificaCamposCadastro())
-            {
-                lblsexo.Visible = false;
-                rdbmasculino.Visible = false;
-                rdbfeminino.Visible = false;
-
-
-            }
-            else
-            {
-                lblsexo.Visible = true;
-                rdbmasculino.Visible = true;
-                rdbfeminino.Visible = true;
-            }
         }
 
         private void rdbMasculino_Click(object sender, EventArgs e)
@@ -546,6 +607,35 @@ namespace TCC.VISÃO
                 txttelefone.Text = "";
                 txttelefone.Focus();
             }
+        }
+        #endregion
+
+      
+
+        private void btnAdicionar_Click(object sender, EventArgs e)
+        {
+            txtuser.Enabled = true;
+            txtsenha.Enabled = true; ;
+            txtconfSenha.Enabled = true; 
+            txtemail.Enabled = true;
+            cmbperfil.Enabled = true;
+            txtcpf.Enabled = true;
+            chcSenha.Enabled = true;
+
+            txtendereco.Enabled = true;
+            txtestado.Enabled = true;
+            txtcidade.Enabled = true;
+            txtbairro.Enabled = true;
+            txtcomplemento.Enabled = true;
+            txtnumero.Enabled = true;
+
+            txtcep.Enabled = true;
+            txttelefone.Enabled = true;
+            txtdepart.Enabled = true;
+            rdbmasculino.Enabled = true;
+            rdbfeminino.Enabled = true;
+
+            txtuser.Focus();
         }
     }
 }
