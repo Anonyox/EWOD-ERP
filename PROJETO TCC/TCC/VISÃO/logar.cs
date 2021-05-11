@@ -179,7 +179,7 @@ namespace TCC
             txtSenha.Text = "";
         }
 
-        private void txtUser_Enter(object sender, EventArgs e)
+        private void txtUser_Enter(object sender, EventArgs e) 
         {
             if (txtUser.Text.Equals("Usuário"))
             {

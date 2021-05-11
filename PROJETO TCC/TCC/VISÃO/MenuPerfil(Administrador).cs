@@ -325,6 +325,7 @@ namespace TCC.VISÃO
                 
 
             }
+
             else if (perfil == "Vendas")
             {
                 btncadastroProdutos.Visible = false;
@@ -518,9 +519,6 @@ namespace TCC.VISÃO
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-
-        
-
         private void timer1_Tick(object sender, EventArgs e)
         {
             lblData.Text = DateTime.Now.ToShortDateString();
@@ -887,5 +885,7 @@ namespace TCC.VISÃO
             pn2.Location = new Point(125, 670);
             
         }
+
+
     }
 }
