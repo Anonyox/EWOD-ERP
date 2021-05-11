@@ -7,10 +7,16 @@ using TCC.CONTROLE;
 
 namespace TCC.VISÃO
 {
-    public partial class txtfornecedor : Form
+    public partial class CadastroProduto : Form
     {
         menuAdministrador menuz = new menuAdministrador();
-        public txtfornecedor()
+        cadastroprodutoDaoComandos cadpro = new cadastroprodutoDaoComandos();
+        
+        SqlDataReader dr;
+        Conexao con = new Conexao();
+
+       
+        public CadastroProduto()
         {
             InitializeComponent();
             menuz.valida = 2;
@@ -90,14 +96,76 @@ namespace TCC.VISÃO
             
         }
 
-        private void txtfornecedor_Load(object sender, EventArgs e)
-        {
-            timer1.Start();
+        private void CadastroProduto_Load(object sender, EventArgs e)
+        {           
+            buscarProduto();                  
+            timer1.Start();           
         }
 
         private void textBox6_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnConfirmar_MouseEnter(object sender, EventArgs e)
+        {
+            lblconfirmar.Visible = true;
+        }
+
+        private void btnConfirmar_MouseLeave(object sender, EventArgs e)
+        {
+            lblconfirmar.Visible = false;
+        }
+
+        public void buscarProduto()
+        {
+
+            SqlCommand cmd = new SqlCommand("SELECT nome FROM produtos", con.conectar());          
+
+            dr = cmd.ExecuteReader();
+
+            AutoCompleteStringCollection collection = new AutoCompleteStringCollection();
+
+            while (dr.Read())
+            {
+                collection.Add(dr["nome"].ToString());
+            }
+
+            txtnomeProduto.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            txtnomeProduto.AutoCompleteSource = AutoCompleteSource.CustomSource;
+
+            txtnomeProduto.AutoCompleteCustomSource = collection;
+
+
+            dr.Close();
+            con.desconectar();
+
+        }
+
+        public void preencherCampos()
+        {
+            SqlCommand command = new SqlCommand("SELECT quantidade, valordeCompra, valordeVenda FROM produtos WHERE nome = @nome", con.conectar());
+            command.Parameters.AddWithValue("@nome", txtnomeProduto.Text);
+            
+            dr = command.ExecuteReader();
+
+            while (dr.Read())
+            {
+                //txtcodigoProduto.Text = dr["codProduto"].ToString();
+                txtquantidadeProduto.Text = dr["quantidade"].ToString();              
+                txtvalorCompra.Text = dr["valordeCompra"].ToString();
+                txtvalorVenda.Text = dr["valordeVenda"].ToString();
+                //cmbtipo.Text = dr["tipo"].ToString();
+
+            }
+
+            dr.Close();
+            con.desconectar();
+        }
+
+        private void txtnomeProduto_Leave(object sender, EventArgs e)
+        {
+            preencherCampos();
         }
     }
 }

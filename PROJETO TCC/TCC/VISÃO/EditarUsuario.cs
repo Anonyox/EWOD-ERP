@@ -51,7 +51,8 @@ namespace TCC.VISÃO
         {
             // TODO: esta linha de código carrega dados na tabela 'tccDataSet.logins'. Você pode movê-la ou removê-la conforme necessário.
             this.loginsTableAdapter.Fill(this.tccDataSet.logins);
-            con.conectar();
+
+            listarUsuarios();
 
             SqlCommand cmd = new SqlCommand("SELECT usuario FROM logins", con.conectar());
             //cmd.CommandText = ;
@@ -85,6 +86,8 @@ namespace TCC.VISÃO
             dtgeditarUsuario.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(0, 209, 178);     //FromArgb(20, 25, 72);
             dtgeditarUsuario.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
             #endregion
+
+
 
         }
 
@@ -132,23 +135,24 @@ namespace TCC.VISÃO
             {
                 string usuario = Convert.ToString(txtnomeUsuario.Text);
                 //Elaborar Select que contenha cada um dos campos da tabela
-                SqlCommand cmd = new SqlCommand("SELECT cidade,endereco,cpf,complemento,bairro,telefone,CEP,estado,perfil,departamento FROM logins WHERE usuario = @param ", con.conectar());
+                SqlCommand cmd = new SqlCommand("SELECT cidade, endereco, cpf, complemento, bairro, telefone, cep, estado, perfil, departamento, numero FROM logins WHERE usuario = @param ", con.conectar());
                 cmd.Parameters.AddWithValue("@param", txtnomeUsuario.Text);
 
                 dr = cmd.ExecuteReader();
                 //criar variáveis para armazenar os campos
-                AutoCompleteStringCollection collection2 = new AutoCompleteStringCollection();
 
                 //atribuir as variáveis para os txts
                 while (dr.Read())
                 {
 
                     txtCidade.Text = dr["cidade"].ToString();
+                    txtenderecoUsuario.Text = dr["numero"].ToString();
+                    txtcpfUsuario.Text = dr["cpf"].ToString();
                     txtenderecoUsuario.Text = dr["endereco"].ToString();
                     txtbairroUsuario.Text = dr["bairro"].ToString();
                     txttelefoneUsuario.Text = dr["telefone"].ToString();
                     txtcomplementoUsuario.Text = dr["complemento"].ToString();
-                    txtcepUsuario.Text = dr["CEP"].ToString();
+                    txtcepUsuario.Text = dr["cep"].ToString();
                     cbestadoUsuario.Text = dr["estado"].ToString();
                     cbperfilUsuario.Text = dr["perfil"].ToString();
                     cbdepartamentoUsuario.Text = dr["departamento"].ToString();
@@ -302,6 +306,7 @@ namespace TCC.VISÃO
             cbdepartamentoUsuario.Text = ("");
             txttelefoneUsuario.Text = ("");
             txtenderecoUsuario.Text = ("");
+            txtsenhaAdm.Text = ("");
         }
 
         private void txtnomeUsuario_TextChanged_1(object sender, EventArgs e)
@@ -320,6 +325,129 @@ namespace TCC.VISÃO
         }
 
 
+        public void listarUsuarios()
+        {
 
+            SqlCommand sqlcmd = new SqlCommand();
+            sqlcmd.CommandText = ("SELECT * FROM logins ORDER BY usuario ASC");
+            sqlcmd.Connection = con.conectar();
+
+
+            try
+            {
+                con.conectar();
+                sqlcmd.ExecuteNonQuery();
+
+
+                SqlDataAdapter da = new SqlDataAdapter(sqlcmd);
+                DataTable dt = new DataTable();
+
+                da.Fill(dt);
+
+
+
+
+
+
+                dtgeditarUsuario.Rows.Clear();
+                foreach (DataRow item in dt.Rows)
+                {
+                    int n = dtgeditarUsuario.Rows.Add();
+
+                    dtgeditarUsuario.Rows[n].Cells[0].Value = item["codUser"].ToString();
+                    dtgeditarUsuario.Rows[n].Cells[1].Value = item["usuario"].ToString();
+                    dtgeditarUsuario.Rows[n].Cells[2].Value = item["CPF"].ToString();
+                    dtgeditarUsuario.Rows[n].Cells[3].Value = item["telefone"].ToString();
+                    dtgeditarUsuario.Rows[n].Cells[4].Value = item["sexo"].ToString();
+                    dtgeditarUsuario.Rows[n].Cells[5].Value = item["cep"].ToString();
+                    dtgeditarUsuario.Rows[n].Cells[6].Value = item["complemento"].ToString();
+                    dtgeditarUsuario.Rows[n].Cells[7].Value = item["cidade"].ToString();
+                    dtgeditarUsuario.Rows[n].Cells[8].Value = item["bairro"].ToString();
+                    dtgeditarUsuario.Rows[n].Cells[9].Value = item["estado"].ToString();
+                    dtgeditarUsuario.Rows[n].Cells[10].Value = item["Senha"].ToString();
+                    dtgeditarUsuario.Rows[n].Cells[11].Value = item["perfil"].ToString();
+                    dtgeditarUsuario.Rows[n].Cells[12].Value = item["endereco"].ToString();
+                    dtgeditarUsuario.Rows[n].Cells[13].Value = item["numero"].ToString();
+                    dtgeditarUsuario.Rows[n].Cells[14].Value = item["email"].ToString();
+                    dtgeditarUsuario.Rows[n].Cells[15].Value = item["departamento"].ToString();
+
+
+
+
+
+
+
+
+
+
+
+                }
+                con.desconectar();
+                //dtEmail.DataSource = dt;
+
+
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        private void btnConfirmar_MouseEnter(object sender, EventArgs e)
+        {
+            lblconfirmar.Visible = true;
+
+            btnconfirmar.Size = new Size(50,38);
+
+
+        }
+
+        private void btnConfirmar_MouseLeave(object sender, EventArgs e)
+        {
+            lblconfirmar.Visible = false;
+            btnconfirmar.Size = new Size(49,35);
+        }
+
+        private void btnCancelar_MouseEnter(object sender, EventArgs e)
+        {
+            lblcancelar.Visible = true;
+            btncancelar.Size = new Size(50, 38);
+
+        }
+
+        private void btncancelar_MouseLeave(object sender, EventArgs e)
+        {
+            lblcancelar.Visible = false;
+            btncancelar.Size = new Size(49, 35);
+        }
+
+
+        //Excluir esses dois eventos
+        private void btnexcluir_MouseEnter(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnexcluir_MouseLeave(object sender, EventArgs e)
+        {
+            
+        }
+
+
+
+
+        private void btnexcluir_MouseEnter_1(object sender, EventArgs e)
+        {
+            lblexcluir.Visible = true;
+            btnexcluir.Size = new Size(50, 38);
+        }
+
+        private void btnexcluir_MouseLeave_1(object sender, EventArgs e)
+        {
+            lblexcluir.Visible = false;
+            btnexcluir.Size = new Size(49, 35);
+        }
     }
 }
