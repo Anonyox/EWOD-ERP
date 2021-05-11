@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Data;
 using System.Data.SqlClient;
 using static TCC.login;
 
@@ -471,6 +472,51 @@ namespace TCC.CONTROLE
 
 
             return mensagem;
+        }
+
+        public DataTable listaUser()
+        {
+
+            cmd.CommandText = "select usuario, departamento, email, telefone, sexo from logins ";
+           
+
+
+
+            try
+            {
+                cmd.Connection = con.conectar();
+                cmd.ExecuteNonQuery();
+
+
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dtr = new DataTable();
+
+                da.Fill(dtr);
+
+
+
+                
+                return dtr;
+                con.desconectar();
+
+
+
+
+
+
+
+
+                //dtEmail.DataSource = dt;
+
+
+
+            }
+            catch (SqlException)
+            {
+                throw;
+
+            }
         }
 
 

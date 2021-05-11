@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using TCC.CONTROLE;
 
 namespace TCC.MODELO
@@ -9,6 +10,7 @@ namespace TCC.MODELO
         public String mensagem = "";
         public String loginM;
         loginDaoComandos loginDao = new loginDaoComandos();
+        public DataTable dtr = new DataTable();
 
 
 
@@ -143,6 +145,13 @@ namespace TCC.MODELO
             }
 
             return mensagem;
+        }
+
+        public DataTable listaUser()
+        {
+            this.dtr = loginDao.listaUser();
+
+            return dtr;
         }
     }
 }
