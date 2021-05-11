@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroUsuario));
             this.panel6 = new System.Windows.Forms.Panel();
             this.btnAdicionar = new System.Windows.Forms.Button();
@@ -136,10 +136,10 @@
             this.panel6.Controls.Add(this.txtbairro);
             this.panel6.Controls.Add(this.txtcidade);
             this.panel6.Controls.Add(this.lblnumero);
-            this.panel6.Location = new System.Drawing.Point(-20, 71);
+            this.panel6.Location = new System.Drawing.Point(-5, 57);
             this.panel6.Margin = new System.Windows.Forms.Padding(4);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1190, 936);
+            this.panel6.Size = new System.Drawing.Size(1190, 922);
             this.panel6.TabIndex = 36;
             this.panel6.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel6_MouseDown);
             // 
@@ -154,7 +154,7 @@
             this.btnAdicionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdicionar.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdicionar.ForeColor = System.Drawing.Color.Transparent;
-            this.btnAdicionar.Location = new System.Drawing.Point(26, 597);
+            this.btnAdicionar.Location = new System.Drawing.Point(26, 583);
             this.btnAdicionar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdicionar.Name = "btnAdicionar";
             this.btnAdicionar.Size = new System.Drawing.Size(65, 39);
@@ -173,14 +173,14 @@
             // dtUsers
             // 
             this.dtUsers.BackgroundColor = System.Drawing.Color.Lavender;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Comic Sans MS", 12F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtUsers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Comic Sans MS", 12F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtUsers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dtUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtUsers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Usuario,
@@ -188,11 +188,11 @@
             this.email,
             this.telefone,
             this.sexo});
-            this.dtUsers.Location = new System.Drawing.Point(21, 644);
+            this.dtUsers.Location = new System.Drawing.Point(0, 630);
             this.dtUsers.Margin = new System.Windows.Forms.Padding(4);
             this.dtUsers.Name = "dtUsers";
             this.dtUsers.RowHeadersWidth = 51;
-            this.dtUsers.Size = new System.Drawing.Size(1165, 176);
+            this.dtUsers.Size = new System.Drawing.Size(1186, 190);
             this.dtUsers.TabIndex = 137;
             // 
             // Usuario
@@ -249,7 +249,7 @@
             this.btnlimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnlimpar.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnlimpar.ForeColor = System.Drawing.Color.Transparent;
-            this.btnlimpar.Location = new System.Drawing.Point(200, 593);
+            this.btnlimpar.Location = new System.Drawing.Point(199, 583);
             this.btnlimpar.Margin = new System.Windows.Forms.Padding(4);
             this.btnlimpar.Name = "btnlimpar";
             this.btnlimpar.Size = new System.Drawing.Size(65, 43);
@@ -299,7 +299,7 @@
             this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCadastrar.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.btnCadastrar.Location = new System.Drawing.Point(109, 593);
+            this.btnCadastrar.Location = new System.Drawing.Point(112, 583);
             this.btnCadastrar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(65, 43);
@@ -812,7 +812,7 @@
             this.btnSair.Location = new System.Drawing.Point(1116, 4);
             this.btnSair.Margin = new System.Windows.Forms.Padding(4);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(37, 34);
+            this.btnSair.Size = new System.Drawing.Size(31, 31);
             this.btnSair.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnSair.TabIndex = 49;
             this.btnSair.TabStop = false;
@@ -826,7 +826,7 @@
             this.btnMinimizar.Location = new System.Drawing.Point(1071, 3);
             this.btnMinimizar.Margin = new System.Windows.Forms.Padding(4);
             this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(37, 34);
+            this.btnMinimizar.Size = new System.Drawing.Size(31, 31);
             this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnMinimizar.TabIndex = 50;
             this.btnMinimizar.TabStop = false;
@@ -839,7 +839,7 @@
             this.panel3.Controls.Add(this.btnSair);
             this.panel3.Location = new System.Drawing.Point(-5, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1175, 48);
+            this.panel3.Size = new System.Drawing.Size(1175, 36);
             this.panel3.TabIndex = 54;
             // 
             // CadastroUsuario
@@ -849,7 +849,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(12)))), ((int)(((byte)(38)))));
             this.BackgroundImage = global::TCC.Properties.Resources.ÍCONE;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(1151, 880);
+            this.ClientSize = new System.Drawing.Size(1151, 850);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.panel6);
