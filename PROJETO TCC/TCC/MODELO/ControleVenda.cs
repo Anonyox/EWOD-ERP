@@ -1,15 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TCC.CONTROLE;
 
 namespace TCC.MODELO
 {
     public class ControleVenda
     {
+
+        //CLASSE DE COMUNICAÇÃO DA TELA COM O BANCO DE DADOS
+
+
+
+
+        #region VARIÁVEIS E INSTÂNCIAS
         vendaDaoComandos vendaDao = new vendaDaoComandos();
         public Boolean tem = false;
         String codOperacao;
@@ -17,14 +20,23 @@ namespace TCC.MODELO
         public DataTable dtr = new DataTable();
         public string mensagem;
 
+        #endregion
+
+
+
+
+
+
+
+        #region MÉTODOS DE FUNCIONALIDADES
         public DataTable listaCarrinho(String codOperacao)
         {           
                 this.dtr = vendaDao.listaCarrinho(codOperacao);
       
             return dtr;
-        }
+        } //LISTAGEM DE CARRINHO 
 
-        public String adicionaAoCarrinho(String codOperacao, String produtoPedido, String tipoProduto,
+        public String adicionaAoCarrinho(String codOperacao, String produtoPedido, String tipoProduto, //ADICIONA AO CARRINHO 
             Decimal valorDeCompra, Decimal valorDeVenda, int quantidade, String estiloModelo)
         {
 
@@ -47,6 +59,7 @@ namespace TCC.MODELO
 
             return this.mensagem;
         }
+
         public String deletaTodosProdutosDoCarrinho(String codOperacao)
         {
 
@@ -68,7 +81,8 @@ namespace TCC.MODELO
 
             return mensagem;
 
-        }
+        } //RETIRA TODOS PRODUTOS DO CARRINHO
+
         public String procuraCodigoOperacao()
         {
             this.codOperacao = vendaDao.procuraCodigoOperacao();
@@ -86,7 +100,7 @@ namespace TCC.MODELO
 
 
             return this.codOperacao;
-        }
+        } //FAZ A BUSCA DO ÚLTIMO CÓDIGO DE OPERAÇÃO E ADICIONA 1
 
         public String procuraCodigoUltimoCodigoOperacao()
         {
@@ -105,9 +119,14 @@ namespace TCC.MODELO
 
 
             return this.codOperacao;
-        }
+        } //FAZ A BUSCA DO ÚLTIMO CÓDIGO DE OPERAÇÃO
+        #endregion
 
-        
+
+
+
+
+
 
     }
 }

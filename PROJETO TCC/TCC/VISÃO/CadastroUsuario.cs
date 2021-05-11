@@ -4,7 +4,6 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Globalization;
-using System.Linq;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using TCC.MODELO;
@@ -13,6 +12,14 @@ namespace TCC.VISÃO
 {
     public partial class CadastroUsuario : Form
     {
+
+        //CLASSE PRINCIPAL DA TELA CADASTRO DE USUÁRIO
+
+
+
+
+
+        #region VARIÁVEIS E INSTÂNCIAS
         SqlConnection con = new SqlConnection();
         SqlCommand cmd = new SqlCommand();
         Controle controle = new Controle();
@@ -22,20 +29,32 @@ namespace TCC.VISÃO
         public static List<Button> botoes;
         //public String email;
         public bool ok = false;
+        #endregion
 
+
+
+
+
+
+        #region CONSTRUTOR
         public CadastroUsuario()
         {
             InitializeComponent();
             menuzAdm.valida = 2;
             validaTeclas();
-            
+
 
         }
+        #endregion
 
 
 
-        private void btnAcessar_Click(object sender, EventArgs e)
 
+
+
+        #region MÉTODOS DE FUNCIONALIDADES
+
+        private void cadastrarUsuário()
         {
             Controle controle = new Controle();
             verificaSexo();
@@ -81,7 +100,7 @@ namespace TCC.VISÃO
 
                         txtendereco.Enabled = false;
                         txtestado.Enabled = false;
-                        txtcidade.Enabled =  false;
+                        txtcidade.Enabled = false;
                         txtbairro.Enabled = false;
                         txtcomplemento.Enabled = false;
                         txtnumero.Enabled = false;
@@ -91,8 +110,8 @@ namespace TCC.VISÃO
                         txtdepart.Enabled = false;
                         rdbmasculino.Enabled = false;
                         rdbfeminino.Enabled = false;
-                        
-                        
+
+
 
                         // cmd.CommandText = "INSERT INTO logs VALUES(Novo Usuário Cadastrado)";
 
@@ -101,8 +120,112 @@ namespace TCC.VISÃO
                 }
 
             }
+        } //CADASTRA USUÁRIO
 
-        }
+        private void verificaSeUsuarioDigitadoJaEstaCadastrado()
+        {
+            Controle controle = new Controle();
+
+            String mensagem = controle.verificaUsuario(txtuser.Text);
+
+            if (mensagem == "USUÁRIO JÁ EXISTENTE, INSIRA UM USUÁRIO VÁLIDO")
+            {
+                if (MessageBox.Show("USUÁRIO JÁ CADASTRADO, INSIRA UM USUÁRIO VÁLIDO", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error) == DialogResult.OK)
+
+                {
+                    txtuser.Text = "";
+                    txtuser.Focus();
+                }
+
+
+            }
+        } //VERIFICA SE USUÁRIO DIGITADO JÁ É EXISTENTE NO BANCO 
+
+        private void verificaSeCpfDigitadoJaEstaCadastrado()
+        {
+            Controle controle = new Controle();
+            string cpf = txtcpf.Text;
+
+            String mensagem = controle.verificaCpf(txtcpf.Text);
+
+            if (VCPF.verificaCpf(cpf))
+            {
+
+
+
+                if (mensagem == "CPF JÁ CADASTRADO, INSIRA UM CPF VÁLIDO")
+                {
+                    if (MessageBox.Show("CPF JÁ CADASTRADO, INSIRA UM CPF VÁLIDO", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error) == DialogResult.OK)
+
+                    {
+                        txtcpf.Text = "";
+                        txtcpf.Focus();
+
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("CPF INVÁLIDO, INSIRA UM CPF VÁLIDO", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtcpf.Text = "";
+                txtcpf.Focus();
+            }
+        } //VERIFICA SE CPF DIGITADO JÁ É EXISTENTE NO BANCO
+
+        private void verificaSeEmailDigitadoJaEstaCadastrado()
+        {
+            Controle controle = new Controle();
+            string email = txtemail.Text;
+
+            String mensagem = controle.verificaEmail(txtemail.Text);
+
+            if (VEMAIL.validaEmail(email))
+            {
+
+
+
+                if (mensagem == "EMAIL JÁ CADASTRADO, INSIRA UM EMAIL VÁLIDO")
+                {
+                    if (MessageBox.Show("EMAIL JÁ CADASTRADO, INSIRA UM EMAIL VÁLIDO", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error) == DialogResult.OK)
+
+                    {
+                        txtemail.Text = "";
+                        txtemail.Focus();
+
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("EMAIL INVÁLIDO, INSIRA UM EMAIL VÁLIDO", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtemail.Text = "";
+                txtemail.Focus();
+            }
+        } //VERIFICA SE O EMAIL DIGITADO JÁ É EXISTENTE NO BANCO
+
+        public void listaUsers()
+        {
+
+            controle.listaUser();
+
+            DataTable dt = new DataTable();
+
+            dt = controle.dtr;
+
+            dtUsers.Rows.Clear();
+
+            foreach (DataRow item in dt.Rows)
+            {
+
+                int n = dtUsers.Rows.Add();
+                dtUsers.Rows[n].Cells[0].Value = item["usuario"].ToString();
+                dtUsers.Rows[n].Cells[1].Value = item["departamento"].ToString();
+                dtUsers.Rows[n].Cells[2].Value = item["email"].ToString();
+                dtUsers.Rows[n].Cells[3].Value = item["telefone"].ToString();
+                dtUsers.Rows[n].Cells[4].Value = item["sexo"].ToString();
+
+            }
+        } //LISTA TODOS OS USUÁRIOS CADASTRADOS
 
         private void limpaCampos()
         {
@@ -123,6 +246,117 @@ namespace TCC.VISÃO
             txttelefone.Text = "";
             rdbmasculino.Checked = false;
             rdbfeminino.Checked = false;
+        } //LIMPA OS CAMPOS 
+
+        private void verificaSexo()
+        {
+            if (rdbmasculino.Checked)
+            {
+                sexoSelecao = "Masculino";
+            }
+            else if (rdbfeminino.Checked)
+            {
+                sexoSelecao = "Feminino";
+            }
+            else
+            {
+                sexoSelecao = "";
+            }
+        } //VERIFICA RDB PRESSIONADO
+
+        public bool verificaCamposCadastro()
+        {
+            if (txtuser.Text == string.Empty | txtsenha.Text == string.Empty
+                | txtconfSenha.Text == string.Empty | txtcpf.Text == string.Empty |
+                txtdepart.Text == string.Empty | txtemail.Text == string.Empty | cmbperfil.Text == string.Empty |
+                txtendereco.Text == string.Empty |
+                txtnumero.Text == string.Empty | txtbairro.Text == string.Empty | txtcomplemento.Text == string.Empty |
+                txttelefone.MaskFull == false)
+            {
+                btnCadastrar.Enabled = false;
+
+                return false;
+            }
+            else
+            {
+                btnlimpar.Enabled = true;
+
+
+                return true;
+            }
+
+
+
+
+
+
+
+
+        } //VERIFICA SE OS CAMPOS ESTÃO PREENCHIDOS
+
+        public string Maiuscula(TextBox tbox)
+        {
+            TextInfo textinfo = new CultureInfo("PT-BR", true).TextInfo;
+            tbox.Text = textinfo.ToTitleCase(tbox.Text);
+            return tbox.Text;
+        } //TORNA A PRIMEIRA LETRA DO CAMPO MAÍÚSCULA 
+
+        private void validaTeclas()
+        {
+            txtsenha.MaxLength = 10;
+            txtconfSenha.MaxLength = 10;
+            txtuser.MaxLength = 15;
+            txtdepart.MaxLength = 20;
+            txtnumero.MaxLength = 10;
+            txtbairro.MaxLength = 20;
+            txtcomplemento.MaxLength = 15;
+            txtcidade.MaxLength = 20;
+
+        } //VALIDA TECLAS DE ACORDO COM CADA CAMPO
+
+        private void formataGrid()
+        {
+             //CadastroUsuario cad = new CadastroUsuario();
+            //cad.Size = new Size(1155, 1000);
+
+
+
+            // TODO: esta linha de código carrega dados na tabela 'tccDataSet.produtos'. Você pode movê-la ou removê-la conforme necessário.
+
+
+            dtUsers.BorderStyle = BorderStyle.None;  //DTEMAIL NOME DA VARIÁVEL
+            //dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
+            dtUsers.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            // dataGridView1.DefaultCellStyle.SelectionBackColor = Color.DarkTurquoise;
+            //dataGridView1.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
+            /// dataGridView1.BackgroundColor = Color.White;
+
+            dtUsers.EnableHeadersVisualStyles = false;
+            dtUsers.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dtUsers.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(0, 209, 178);     //FromArgb(20, 25, 72);
+            dtUsers.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+        } //FORMATA DATA GRID 
+
+        private void CadastroUsuario_Shown(object sender, EventArgs e)
+        {
+
+            formataGrid();
+            listaUsers();
+            MessageBox.Show("Para cadastrar um usuário, clique no botão adicionar", "Novo Usuário", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        } //LOAD DO FORM
+        #endregion
+
+
+
+
+
+
+        #region DESIGN
+        private void btnAcessar_Click(object sender, EventArgs e)
+
+        {
+            cadastrarUsuário();
         }
 
         private void btnSair_Click(object sender, EventArgs e)
@@ -188,136 +422,19 @@ namespace TCC.VISÃO
             }
         }
 
-        private void verificaSexo()
-        {
-            if (rdbmasculino.Checked)
-            {
-                sexoSelecao = "Masculino";
-            }
-            else if (rdbfeminino.Checked)
-            {
-                sexoSelecao = "Feminino";
-            }
-            else
-            {
-                sexoSelecao = "";
-            }
-        }
-
-        public bool verificaCamposCadastro()
-        {
-            if (txtuser.Text == string.Empty | txtsenha.Text == string.Empty
-                | txtconfSenha.Text == string.Empty | txtcpf.Text == string.Empty |
-                txtdepart.Text == string.Empty | txtemail.Text == string.Empty | cmbperfil.Text == string.Empty |
-                txtendereco.Text == string.Empty |
-                txtnumero.Text == string.Empty | txtbairro.Text == string.Empty | txtcomplemento.Text == string.Empty |
-                txttelefone.MaskFull == false)
-            {
-                btnCadastrar.Enabled = false;
-
-                return false;
-            }
-            else
-            {
-                btnlimpar.Enabled = true;
 
 
-                return true;
-            }
-
-
-
-
-
-
-
-
-        }
-
-        public void verificaCamposProximo()
-        {
-            if (txtuser.Text == string.Empty | txtsenha.Text == string.Empty
-                | txtconfSenha.Text == string.Empty | txtcpf.Text == string.Empty |
-                txtdepart.Text == string.Empty | txtemail.Text == string.Empty)
-            {
-
-
-            }
-            else
-            {
-
-                btnlimpar.Enabled = true;
-            }
-        }
-
-        public void listaUsers()
-        {
-
-
-
-
-
-            controle.listaUser();
-
-            DataTable dt = new DataTable();
-
-            dt = controle.dtr;
-
-            dtUsers.Rows.Clear();
-
-            foreach (DataRow item in dt.Rows)
-            {
-
-                int n = dtUsers.Rows.Add();
-                dtUsers.Rows[n].Cells[0].Value = item["usuario"].ToString();
-                dtUsers.Rows[n].Cells[1].Value = item["departamento"].ToString();
-                dtUsers.Rows[n].Cells[2].Value = item["email"].ToString();
-                dtUsers.Rows[n].Cells[3].Value = item["telefone"].ToString();
-                dtUsers.Rows[n].Cells[4].Value = item["sexo"].ToString();
-              
-            }
-        }
-        private void CadastroUsuario_Shown(object sender, EventArgs e)
-        {
-            //CadastroUsuario cad = new CadastroUsuario();
-            //cad.Size = new Size(1155, 1000);
-
-
-
-            // TODO: esta linha de código carrega dados na tabela 'tccDataSet.produtos'. Você pode movê-la ou removê-la conforme necessário.
-            
-
-            dtUsers.BorderStyle = BorderStyle.None;  //DTEMAIL NOME DA VARIÁVEL
-            //dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
-            dtUsers.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            // dataGridView1.DefaultCellStyle.SelectionBackColor = Color.DarkTurquoise;
-            //dataGridView1.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
-            /// dataGridView1.BackgroundColor = Color.White;
-
-            dtUsers.EnableHeadersVisualStyles = false;
-            dtUsers.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dtUsers.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(0, 209, 178);     //FromArgb(20, 25, 72);
-            dtUsers.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
-
-            listaUsers();
-            MessageBox.Show("Para cadastrar um usuário, clique no botão adicionar", "Novo Usuário", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-
-
-        }
-
-        #region design
         private void cmbPerfil_SelectedIndexChanged(object sender, EventArgs e)
         {
-            verificaCamposProximo();
-        }
 
+        }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
 
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
         private void CadastroUsuario_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
@@ -354,33 +471,10 @@ namespace TCC.VISÃO
             rdbfeminino.Enabled = false;
         }
 
-        public string Maiuscula(TextBox tbox)
-        {
-            TextInfo textinfo = new CultureInfo("PT-BR", true).TextInfo;
-            tbox.Text = textinfo.ToTitleCase(tbox.Text);
-            return tbox.Text;
-        }
-
         private void txtUser_Leave(object sender, EventArgs e)
         {
             Maiuscula(txtuser);
-            Controle controle = new Controle();
-
-            String mensagem = controle.verificaUsuario(txtuser.Text);
-
-            if (mensagem == "USUÁRIO JÁ EXISTENTE, INSIRA UM USUÁRIO VÁLIDO")
-            {
-                if (MessageBox.Show("USUÁRIO JÁ CADASTRADO, INSIRA UM USUÁRIO VÁLIDO", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error) == DialogResult.OK)
-
-                {
-                    txtuser.Text = "";
-                    txtuser.Focus();
-                }
-
-
-            }
-
-
+            verificaSeUsuarioDigitadoJaEstaCadastrado();
         }
 
         private void txtDepart_Leave(object sender, EventArgs e)
@@ -456,19 +550,6 @@ namespace TCC.VISÃO
             }
         }
 
-        private void validaTeclas()
-        {
-            txtsenha.MaxLength = 10;
-            txtconfSenha.MaxLength = 10;
-            txtuser.MaxLength = 15;
-            txtdepart.MaxLength = 20;
-            txtnumero.MaxLength = 10;
-            txtbairro.MaxLength = 20;
-            txtcomplemento.MaxLength = 15;
-            txtcidade.MaxLength = 20;
-
-        }
-
         private void panel6_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
@@ -527,64 +608,12 @@ namespace TCC.VISÃO
 
         private void txtemail_Leave(object sender, EventArgs e)
         {
-            Controle controle = new Controle();
-            string email = txtemail.Text;
-
-            String mensagem = controle.verificaEmail(txtemail.Text);
-
-            if (VEMAIL.validaEmail(email))
-            {
-
-
-
-                if (mensagem == "EMAIL JÁ CADASTRADO, INSIRA UM EMAIL VÁLIDO")
-                {
-                    if (MessageBox.Show("EMAIL JÁ CADASTRADO, INSIRA UM EMAIL VÁLIDO", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error) == DialogResult.OK)
-
-                    {
-                        txtemail.Text = "";
-                        txtemail.Focus();
-
-                    }
-                }
-            }
-            else
-            {
-                MessageBox.Show("EMAIL INVÁLIDO, INSIRA UM EMAIL VÁLIDO", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtemail.Text = "";
-                txtemail.Focus();
-            }
+            verificaSeEmailDigitadoJaEstaCadastrado();
         }
 
         private void txtcpf_Leave(object sender, EventArgs e)
         {
-            Controle controle = new Controle();
-            string cpf = txtcpf.Text;
-
-            String mensagem = controle.verificaCpf(txtcpf.Text);
-
-            if (VCPF.verificaCpf(cpf))
-            {
-
-
-
-                if (mensagem == "CPF JÁ CADASTRADO, INSIRA UM CPF VÁLIDO")
-                {
-                    if (MessageBox.Show("CPF JÁ CADASTRADO, INSIRA UM CPF VÁLIDO", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error) == DialogResult.OK)
-
-                    {
-                        txtcpf.Text = "";
-                        txtcpf.Focus();
-
-                    }
-                }
-            }
-            else
-            {
-                MessageBox.Show("CPF INVÁLIDO, INSIRA UM CPF VÁLIDO", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtcpf.Text = "";
-                txtcpf.Focus();
-            }
+            verificaSeCpfDigitadoJaEstaCadastrado();
         }
 
         private void txtcep_Leave(object sender, EventArgs e)
@@ -608,15 +637,12 @@ namespace TCC.VISÃO
                 txttelefone.Focus();
             }
         }
-        #endregion
-
-      
 
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
             txtuser.Enabled = true;
             txtsenha.Enabled = true; ;
-            txtconfSenha.Enabled = true; 
+            txtconfSenha.Enabled = true;
             txtemail.Enabled = true;
             cmbperfil.Enabled = true;
             txtcpf.Enabled = true;
@@ -637,5 +663,12 @@ namespace TCC.VISÃO
 
             txtuser.Focus();
         }
+        #endregion
+
+
+
+
+
+
     }
 }

@@ -25,12 +25,13 @@ namespace TCC
         Conexao conex = new Conexao();
         public String perfil;
 
-        //
+        
 
         public login()
         {
             InitializeComponent();
         }
+
         public static class DadosGeral
         {
             public static String nomeUser;
@@ -196,6 +197,7 @@ namespace TCC
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+
     }
 }
 

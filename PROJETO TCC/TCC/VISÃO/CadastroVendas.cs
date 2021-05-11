@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Globalization;
 using System.Windows.Forms;
-using TCC.CONTROLE;
 using TCC.MODELO;
 
 namespace TCC.VISÃO
@@ -17,18 +11,39 @@ namespace TCC.VISÃO
 
     public partial class CadastroVendas : Form
     {
+
+        //CLASSE PRINCIPAL DO FORMULÁRIO
+
+
+
+
+        #region VARIÁVEIS E INSTÂNCIAS 
         ControleVenda controleVenda = new ControleVenda();
         int codOperacao = 0;
         int validaMsg = 0;
+        #endregion
 
 
 
+
+
+
+        #region CONSTRUTOR
         public CadastroVendas()
         {
             InitializeComponent();
 
 
         }
+
+        #endregion
+
+
+
+
+
+
+        #region MÉTODOS DE FUNCIONALIDADES
 
         private void CadastroVendas_Load(object sender, EventArgs e)
         {
@@ -49,13 +64,13 @@ namespace TCC.VISÃO
             lblteste.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
 
 
-           
 
 
 
 
 
-        }
+
+        } //FORM LOAD
 
         public void listaCarrinho()
         {
@@ -87,7 +102,7 @@ namespace TCC.VISÃO
 
             }
 
-        }
+        } //LISTAGEM DE CARRINHO 
 
         public void adicionaAoCarrinho()
         {
@@ -117,7 +132,7 @@ namespace TCC.VISÃO
             }
 
 
-        }
+        } //ADICIONA AO CARRINHO 
 
         public void procuraCodigoOperacao()
         {
@@ -138,7 +153,7 @@ namespace TCC.VISÃO
             }
 
 
-        }
+        } //FAZ A BUSCA DO ÚLTIMO CÓDIGO DE OPERAÇÃO E ADICIONA 1
 
         public void procuraUltimoCodigoOperacao()
         {
@@ -157,7 +172,7 @@ namespace TCC.VISÃO
             }
 
 
-        }
+        } //FAZ A BUSCA DO ÚLTIMO CÓDIGO DE OPERAÇÃO
 
         public void retiraDoCarrinho()
         {
@@ -176,18 +191,30 @@ namespace TCC.VISÃO
                 MessageBox.Show(mensagem, "Carrinho", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
+        } //RETIRA TODOS PRODUTOS DO CARRINHO
+
+        #endregion
+
+
+
+
+
+
+        #region DESIGN
+
+        public string MaiusculaTxt(TextBox tbox)
+        {
+            TextInfo textinfo = new CultureInfo("PT-BR", true).TextInfo;
+            tbox.Text = textinfo.ToTitleCase(tbox.Text);
+            return tbox.Text;
         }
 
-       
-
-
-
-
-
-
-
-
-        #region design
+        public string Maiusculacmb(ComboBox cmbox)
+        {
+            TextInfo textinfo = new CultureInfo("PT-BR", true).TextInfo;
+            cmbox.Text = textinfo.ToTitleCase(cmbox.Text);
+            return cmbox.Text;
+        }
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
 
@@ -300,6 +327,25 @@ namespace TCC.VISÃO
             MessageBox.Show("Deseja finalizar a venda ?", "Venda", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
         }
 
+        private void lsbProduto_Leave(object sender, EventArgs e)
+        {
+            Maiusculacmb(lsbProduto);
+        }
+
+        private void txttipo_Leave(object sender, EventArgs e)
+        {
+            MaiusculaTxt(txttipo);
+        }
+
+        private void txtestiloModelo_Leave(object sender, EventArgs e)
+        {
+            Maiusculacmb(txtestiloModelo);
+        }
+
+
         #endregion
+
+
+
     }
 }

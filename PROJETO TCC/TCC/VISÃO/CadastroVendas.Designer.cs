@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroVendas));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.barra = new System.Windows.Forms.Panel();
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.btnSair = new System.Windows.Forms.PictureBox();
@@ -76,11 +76,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblteste = new System.Windows.Forms.DataGridView();
-            this.produtosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tccDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tccDataSet = new TCC.tccDataSet();
-            this.produtosTableAdapter = new TCC.tccDataSetTableAdapters.produtosTableAdapter();
-            this.tccDataSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.coddeOperacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.produtoPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipoProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -89,6 +84,11 @@
             this.valordeVendaPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantidadePedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnexcluir = new System.Windows.Forms.DataGridViewImageColumn();
+            this.produtosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tccDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tccDataSet = new TCC.tccDataSet();
+            this.produtosTableAdapter = new TCC.tccDataSetTableAdapters.produtosTableAdapter();
+            this.tccDataSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.barra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSair)).BeginInit();
@@ -240,6 +240,7 @@
             this.txtestiloModelo.Name = "txtestiloModelo";
             this.txtestiloModelo.Size = new System.Drawing.Size(139, 36);
             this.txtestiloModelo.TabIndex = 6;
+            this.txtestiloModelo.Leave += new System.EventHandler(this.txtestiloModelo_Leave);
             // 
             // lsbpgt
             // 
@@ -265,6 +266,7 @@
             this.lsbProduto.Name = "lsbProduto";
             this.lsbProduto.Size = new System.Drawing.Size(275, 36);
             this.lsbProduto.TabIndex = 1;
+            this.lsbProduto.Leave += new System.EventHandler(this.lsbProduto_Leave);
             // 
             // btnFinalizar
             // 
@@ -682,6 +684,7 @@
             this.txttipo.Name = "txttipo";
             this.txttipo.Size = new System.Drawing.Size(139, 35);
             this.txttipo.TabIndex = 2;
+            this.txttipo.Leave += new System.EventHandler(this.txttipo_Leave);
             // 
             // label2
             // 
@@ -710,14 +713,14 @@
             // lblteste
             // 
             this.lblteste.BackgroundColor = System.Drawing.Color.Lavender;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Comic Sans MS", 9F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.lblteste.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Comic Sans MS", 9F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.lblteste.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.lblteste.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.lblteste.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.coddeOperacao,
@@ -734,30 +737,6 @@
             this.lblteste.RowHeadersWidth = 51;
             this.lblteste.Size = new System.Drawing.Size(1156, 228);
             this.lblteste.TabIndex = 85;
-            // 
-            // produtosBindingSource
-            // 
-            this.produtosBindingSource.DataMember = "produtos";
-            this.produtosBindingSource.DataSource = this.tccDataSetBindingSource;
-            // 
-            // tccDataSetBindingSource
-            // 
-            this.tccDataSetBindingSource.DataSource = this.tccDataSet;
-            this.tccDataSetBindingSource.Position = 0;
-            // 
-            // tccDataSet
-            // 
-            this.tccDataSet.DataSetName = "tccDataSet";
-            this.tccDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // produtosTableAdapter
-            // 
-            this.produtosTableAdapter.ClearBeforeFill = true;
-            // 
-            // tccDataSetBindingSource1
-            // 
-            this.tccDataSetBindingSource1.DataSource = this.tccDataSet;
-            this.tccDataSetBindingSource1.Position = 0;
             // 
             // coddeOperacao
             // 
@@ -797,6 +776,7 @@
             this.valordeCompraPedido.MinimumWidth = 6;
             this.valordeCompraPedido.Name = "valordeCompraPedido";
             this.valordeCompraPedido.ReadOnly = true;
+            this.valordeCompraPedido.Width = 125;
             // 
             // valordeVendaPedido
             // 
@@ -804,6 +784,7 @@
             this.valordeVendaPedido.MinimumWidth = 6;
             this.valordeVendaPedido.Name = "valordeVendaPedido";
             this.valordeVendaPedido.ReadOnly = true;
+            this.valordeVendaPedido.Width = 125;
             // 
             // quantidadePedido
             // 
@@ -821,6 +802,30 @@
             this.btnexcluir.MinimumWidth = 6;
             this.btnexcluir.Name = "btnexcluir";
             this.btnexcluir.Width = 70;
+            // 
+            // produtosBindingSource
+            // 
+            this.produtosBindingSource.DataMember = "produtos";
+            this.produtosBindingSource.DataSource = this.tccDataSetBindingSource;
+            // 
+            // tccDataSetBindingSource
+            // 
+            this.tccDataSetBindingSource.DataSource = this.tccDataSet;
+            this.tccDataSetBindingSource.Position = 0;
+            // 
+            // tccDataSet
+            // 
+            this.tccDataSet.DataSetName = "tccDataSet";
+            this.tccDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // produtosTableAdapter
+            // 
+            this.produtosTableAdapter.ClearBeforeFill = true;
+            // 
+            // tccDataSetBindingSource1
+            // 
+            this.tccDataSetBindingSource1.DataSource = this.tccDataSet;
+            this.tccDataSetBindingSource1.Position = 0;
             // 
             // CadastroVendas
             // 

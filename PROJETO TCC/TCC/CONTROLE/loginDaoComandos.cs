@@ -11,10 +11,23 @@ namespace TCC.CONTROLE
 
     {
 
+        //CLASSE RESPONSÁVEL PARA CONTROLAR A COMUNICAÇÃO DIRETA COM O BANCO DAS TELAS :
+        //LOGIN;
+        //CADASTRAR USUÁRIO;
+        //ALTERAR DADOS DE ACESSO DO USUÁRIO;
+        //EDITAR USUÁRIO;
+
+
+
+
+
+        #region VARIÁVEIS E INSTÂNCIAS
         public bool tem = false;
         public String mensagem = ("");
+
         SqlCommand cmd = new SqlCommand();
         SqlCommand cmd2 = new SqlCommand();
+
         Conexao con = new Conexao();
         SqlDataReader dr;
         public String perfil;
@@ -24,10 +37,18 @@ namespace TCC.CONTROLE
         public string tipo2 = "Alterou o Nome de Usuário";
         public string tipo3 = "Alterou o Email do Usuário";
         public string tipo4 = "Alterou a Senha do Usuário";
+
         String user = DadosGeral.nomeUser;
 
         public DateTime dataLog = System.DateTime.Now;
+        #endregion
 
+
+
+
+
+
+        #region MÉTODOS DE FUNCIONALIDADES(TELA DE LOGIN)
         public bool verificarlogin(String login, String senha)
         {
 
@@ -81,6 +102,60 @@ namespace TCC.CONTROLE
             return tem;
         }
 
+        public void verificaPerfil(String login2, String senha2)
+        {
+
+            cmd.CommandText = ("select perfil from logins where usuario = @login and senha = @senha");
+            cmd.Parameters.AddWithValue("@login", login2);
+            cmd.Parameters.AddWithValue("@senha", senha2);
+
+
+
+
+
+            cmd.Connection = con.conectar();
+            dr = cmd.ExecuteReader();
+
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+
+                    perfil = dr[0].ToString();
+
+
+
+
+
+
+
+
+                }
+                dr.Close();
+                cmd2.CommandText = "Insert into logs (tipo,dataLog,usuario, perfil) values (@tipo, @dataLog, @usuario, @perfil)";
+                cmd2.Parameters.AddWithValue("@tipo", tipo);
+                cmd2.Parameters.AddWithValue("@datalog", dataLog);
+                cmd2.Parameters.AddWithValue("@usuario", login2);
+                cmd2.Parameters.AddWithValue("@perfil", perfil);
+
+                cmd2.Connection = con.conectar();
+                cmd2.ExecuteNonQuery();
+
+
+
+            }
+
+
+
+        }
+        #endregion
+
+
+
+
+
+
+        #region MÉTODOS DE FUNCIONALIDADES(TELA DE CADASTRO DE USUARIO)
         public String cadastrar(String login, String senha, String confSenha, String cpf, String departamento, String email,
             String perfil, String endereco, String numero, String cidade, String bairro, String estado, String cep, String complemento, String telefone, String sexo)
         {
@@ -190,53 +265,59 @@ namespace TCC.CONTROLE
 
         }
 
-        public void verificaPerfil(String login2, String senha2)
+        public DataTable listaUser()
         {
 
-            cmd.CommandText = ("select perfil from logins where usuario = @login and senha = @senha");
-            cmd.Parameters.AddWithValue("@login", login2);
-            cmd.Parameters.AddWithValue("@senha", senha2);
+            cmd.CommandText = "select usuario, departamento, email, telefone, sexo from logins ";
 
 
 
 
-
-            cmd.Connection = con.conectar();
-            dr = cmd.ExecuteReader();
-
-            if (dr.HasRows)
+            try
             {
-                while (dr.Read())
-                {
-
-                    perfil = dr[0].ToString();
+                cmd.Connection = con.conectar();
+                cmd.ExecuteNonQuery();
 
 
 
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dtr = new DataTable();
+
+                da.Fill(dtr);
+                con.desconectar();
+
+
+
+
+                return dtr;
 
 
 
 
 
-                }
-                dr.Close();
-                cmd2.CommandText = "Insert into logs (tipo,dataLog,usuario, perfil) values (@tipo, @dataLog, @usuario, @perfil)";
-                cmd2.Parameters.AddWithValue("@tipo", tipo);
-                cmd2.Parameters.AddWithValue("@datalog", dataLog);
-                cmd2.Parameters.AddWithValue("@usuario", login2);
-                cmd2.Parameters.AddWithValue("@perfil", perfil);
 
-                cmd2.Connection = con.conectar();
-                cmd2.ExecuteNonQuery();
+
+
+
+                //dtEmail.DataSource = dt;
 
 
 
             }
+            catch (SqlException)
+            {
+                throw;
 
-
-
+            }
         }
+        #endregion
 
+
+
+
+
+        //MÉTODOS DE VERIFICAÇÃO, AS DUAS TELAS UTILIZAM
+        #region MÉTODOS DE FUNCIONALIDADES(TELA DE CADASTRO DE USUÁRIO E TELA DE EDITAR DADOS DE ACESSO DO USUÁRIO 
         public String alteraUsuario(String login, String novoLogin)
         {
             cmd.CommandText = ("update logins set usuario = @novoLogin where usuario = @login");
@@ -473,52 +554,7 @@ namespace TCC.CONTROLE
 
             return mensagem;
         }
-
-        public DataTable listaUser()
-        {
-
-            cmd.CommandText = "select usuario, departamento, email, telefone, sexo from logins ";
-           
-
-
-
-            try
-            {
-                cmd.Connection = con.conectar();
-                cmd.ExecuteNonQuery();
-
-
-
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataTable dtr = new DataTable();
-
-                da.Fill(dtr);
-                con.desconectar();
-
-
-
-
-                return dtr;
-                
-
-
-
-
-
-
-
-
-                //dtEmail.DataSource = dt;
-
-
-
-            }
-            catch (SqlException)
-            {
-                throw;
-
-            }
-        }
+        #endregion
 
 
 

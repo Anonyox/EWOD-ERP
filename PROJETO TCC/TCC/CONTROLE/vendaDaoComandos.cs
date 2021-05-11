@@ -1,20 +1,31 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TCC.CONTROLE
 {
     public class vendaDaoComandos
     {
+
+        //CLASSE DE COMUNICAÇÃO DIRETA COM BANCO DE DADOS
+
+
+
+
+
+        #region VARIÁVEIS E IN^STÂNCIAS
         public string mensagem;
         public Boolean tem = false;
         Conexao con = new Conexao();
         SqlCommand cmd = new SqlCommand();
+        #endregion
 
+
+
+
+
+
+        #region MÉTODOS DE FUNCIONALIDADES
 
         public DataTable listaCarrinho(String codOperacao)
         {
@@ -63,9 +74,9 @@ namespace TCC.CONTROLE
                 throw;
                 
             }
-        }
+        } //LISTAGEM DE CARRINHO 
 
-        public String adicionaAoCarrinho(String codOperacao, String produtoPedido, String tipoProduto,
+        public String adicionaAoCarrinho(String codOperacao, String produtoPedido, String tipoProduto, //ADICIONA AO CARRINHO 
             Decimal valorDeCompra, Decimal valorDeVenda, int quantidade, String estiloModelo)
         {
 
@@ -144,7 +155,7 @@ namespace TCC.CONTROLE
                 tem = false;
             }
             return mensagem;
-        }
+        } //RETIRA TODOS PRODUTOS DO CARRINHO
 
         public String procuraCodigoOperacao()
         {
@@ -189,8 +200,8 @@ namespace TCC.CONTROLE
                 this.tem = false;
             }
             return codOperacao;
-            
-        }
+
+        } //FAZ A BUSCA DO ÚLTIMO CÓDIGO DE OPERAÇÃO E ADICIONA 1
 
         public String procuraUltimoCodigoOperacao()
         {
@@ -235,7 +246,11 @@ namespace TCC.CONTROLE
             }
             return codOperacao;
 
-        }
+        } //FAZ A BUSCA DO ÚLTIMO CÓDIGO DE OPERAÇÃO
+        #endregion
+
+
+
 
 
 
