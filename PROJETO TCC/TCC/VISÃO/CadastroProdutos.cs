@@ -131,7 +131,7 @@ namespace TCC.VISÃO
                 collection.Add(dr["nome"].ToString());
             }
 
-            txtnomeProduto.AutoCompleteMode = AutoCompleteMode.Append;
+            txtnomeProduto.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             txtnomeProduto.AutoCompleteSource = AutoCompleteSource.CustomSource;
 
             txtnomeProduto.AutoCompleteCustomSource = collection;
@@ -140,6 +140,32 @@ namespace TCC.VISÃO
             dr.Close();
             con.desconectar();
 
+        }
+
+        public void preencherCampos()
+        {
+            SqlCommand command = new SqlCommand("SELECT quantidade, valordeCompra, valordeVenda FROM produtos WHERE nome = @nome", con.conectar());
+            command.Parameters.AddWithValue("@nome", txtnomeProduto.Text);
+            
+            dr = command.ExecuteReader();
+
+            while (dr.Read())
+            {
+                //txtcodigoProduto.Text = dr["codProduto"].ToString();
+                txtquantidadeProduto.Text = dr["quantidade"].ToString();              
+                txtvalorCompra.Text = dr["valordeCompra"].ToString();
+                txtvalorVenda.Text = dr["valordeVenda"].ToString();
+                //cmbtipo.Text = dr["tipo"].ToString();
+
+            }
+
+            dr.Close();
+            con.desconectar();
+        }
+
+        private void txtnomeProduto_Leave(object sender, EventArgs e)
+        {
+            preencherCampos();
         }
     }
 }

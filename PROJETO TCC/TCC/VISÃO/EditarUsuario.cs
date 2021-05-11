@@ -135,25 +135,24 @@ namespace TCC.VISÃO
             {
                 string usuario = Convert.ToString(txtnomeUsuario.Text);
                 //Elaborar Select que contenha cada um dos campos da tabela
-                SqlCommand cmd = new SqlCommand("SELECT cidade,endereco,cpf,complemento,bairro,telefone,CEP,estado,perfil,departamento FROM logins WHERE usuario = @param ", con.conectar());
+                SqlCommand cmd = new SqlCommand("SELECT cidade, endereco, cpf, complemento, bairro, telefone, cep, estado, perfil, departamento, numero FROM logins WHERE usuario = @param ", con.conectar());
                 cmd.Parameters.AddWithValue("@param", txtnomeUsuario.Text);
 
                 dr = cmd.ExecuteReader();
                 //criar variáveis para armazenar os campos
-                AutoCompleteStringCollection collection2 = new AutoCompleteStringCollection();
 
                 //atribuir as variáveis para os txts
                 while (dr.Read())
                 {
 
                     txtCidade.Text = dr["cidade"].ToString();
-                    txtnumeroUsuario.Text = dr["numero"].ToString();
+                    txtenderecoUsuario.Text = dr["numero"].ToString();
                     txtcpfUsuario.Text = dr["cpf"].ToString();
-                    txtnumeroUsuario.Text = dr["endereco"].ToString();
+                    txtenderecoUsuario.Text = dr["endereco"].ToString();
                     txtbairroUsuario.Text = dr["bairro"].ToString();
                     txttelefoneUsuario.Text = dr["telefone"].ToString();
                     txtcomplementoUsuario.Text = dr["complemento"].ToString();
-                    txtcepUsuario.Text = dr["CEP"].ToString();
+                    txtcepUsuario.Text = dr["cep"].ToString();
                     cbestadoUsuario.Text = dr["estado"].ToString();
                     cbperfilUsuario.Text = dr["perfil"].ToString();
                     cbdepartamentoUsuario.Text = dr["departamento"].ToString();
@@ -255,7 +254,7 @@ namespace TCC.VISÃO
 
                     cmd2.Parameters.AddWithValue("@usuario", txtnomeUsuario.Text);
                     cmd2.Parameters.AddWithValue("@cidade", txtCidade.Text);
-                    cmd2.Parameters.AddWithValue("@endereco", txtnumeroUsuario.Text);
+                    cmd2.Parameters.AddWithValue("@endereco", txtenderecoUsuario.Text);
                     cmd2.Parameters.AddWithValue("@complemento", txtcomplementoUsuario.Text);
                     cmd2.Parameters.AddWithValue("@bairro", txtbairroUsuario.Text);
                     cmd2.Parameters.AddWithValue("@telefone", txttelefoneUsuario.Text);
@@ -306,7 +305,7 @@ namespace TCC.VISÃO
             cbestadoUsuario.Text = ("");
             cbdepartamentoUsuario.Text = ("");
             txttelefoneUsuario.Text = ("");
-            txtnumeroUsuario.Text = ("");
+            txtenderecoUsuario.Text = ("");
             txtsenhaAdm.Text = ("");
         }
 

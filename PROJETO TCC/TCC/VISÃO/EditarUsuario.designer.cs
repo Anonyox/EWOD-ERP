@@ -49,7 +49,7 @@ namespace TCC.VISÃO
             this.txtbairroUsuario = new System.Windows.Forms.TextBox();
             this.txtCidade = new System.Windows.Forms.TextBox();
             this.txtcomplementoUsuario = new System.Windows.Forms.TextBox();
-            this.txtnumeroUsuario = new System.Windows.Forms.TextBox();
+            this.txtenderecoUsuario = new System.Windows.Forms.TextBox();
             this.txtsenhaAdm = new System.Windows.Forms.TextBox();
             this.lblnomeUsuario = new System.Windows.Forms.Label();
             this.loginsBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -81,7 +81,7 @@ namespace TCC.VISÃO
             this.txtnomeUsuario = new System.Windows.Forms.TextBox();
             this.txttelefoneUsuario = new System.Windows.Forms.MaskedTextBox();
             this.txtcepUsuario = new System.Windows.Forms.MaskedTextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtnumeroUsuario = new System.Windows.Forms.TextBox();
             this.lblnumeroUsuario = new System.Windows.Forms.Label();
             this.lblcpfUsuario = new System.Windows.Forms.Label();
             this.txtcpfUsuario = new System.Windows.Forms.MaskedTextBox();
@@ -294,13 +294,13 @@ namespace TCC.VISÃO
             this.txtcomplementoUsuario.Size = new System.Drawing.Size(143, 30);
             this.txtcomplementoUsuario.TabIndex = 144;
             // 
-            // txtnumeroUsuario
+            // txtenderecoUsuario
             // 
-            this.txtnumeroUsuario.Font = new System.Drawing.Font("Comic Sans MS", 12F);
-            this.txtnumeroUsuario.Location = new System.Drawing.Point(146, 201);
-            this.txtnumeroUsuario.Name = "txtnumeroUsuario";
-            this.txtnumeroUsuario.Size = new System.Drawing.Size(243, 30);
-            this.txtnumeroUsuario.TabIndex = 145;
+            this.txtenderecoUsuario.Font = new System.Drawing.Font("Comic Sans MS", 12F);
+            this.txtenderecoUsuario.Location = new System.Drawing.Point(146, 201);
+            this.txtenderecoUsuario.Name = "txtenderecoUsuario";
+            this.txtenderecoUsuario.Size = new System.Drawing.Size(243, 30);
+            this.txtenderecoUsuario.TabIndex = 145;
             // 
             // txtsenhaAdm
             // 
@@ -602,13 +602,13 @@ namespace TCC.VISÃO
             this.txtcepUsuario.Size = new System.Drawing.Size(103, 30);
             this.txtcepUsuario.TabIndex = 164;
             // 
-            // textBox1
+            // txtnumeroUsuario
             // 
-            this.textBox1.Font = new System.Drawing.Font("Comic Sans MS", 12F);
-            this.textBox1.Location = new System.Drawing.Point(146, 246);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(155, 30);
-            this.textBox1.TabIndex = 167;
+            this.txtnumeroUsuario.Font = new System.Drawing.Font("Comic Sans MS", 12F);
+            this.txtnumeroUsuario.Location = new System.Drawing.Point(146, 246);
+            this.txtnumeroUsuario.Name = "txtnumeroUsuario";
+            this.txtnumeroUsuario.Size = new System.Drawing.Size(155, 30);
+            this.txtnumeroUsuario.TabIndex = 167;
             // 
             // lblnumeroUsuario
             // 
@@ -720,7 +720,7 @@ namespace TCC.VISÃO
             this.Controls.Add(this.lblconfirmar);
             this.Controls.Add(this.txtcpfUsuario);
             this.Controls.Add(this.lblcpfUsuario);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtnumeroUsuario);
             this.Controls.Add(this.lblnumeroUsuario);
             this.Controls.Add(this.txtcepUsuario);
             this.Controls.Add(this.txttelefoneUsuario);
@@ -734,7 +734,7 @@ namespace TCC.VISÃO
             this.Controls.Add(this.dtgeditarUsuario);
             this.Controls.Add(this.lblnomeUsuario);
             this.Controls.Add(this.txtsenhaAdm);
-            this.Controls.Add(this.txtnumeroUsuario);
+            this.Controls.Add(this.txtenderecoUsuario);
             this.Controls.Add(this.txtcomplementoUsuario);
             this.Controls.Add(this.txtCidade);
             this.Controls.Add(this.txtbairroUsuario);
@@ -786,7 +786,7 @@ namespace TCC.VISÃO
         private System.Windows.Forms.TextBox txtbairroUsuario;
         private System.Windows.Forms.TextBox txtCidade;
         private System.Windows.Forms.TextBox txtcomplementoUsuario;
-        private System.Windows.Forms.TextBox txtnumeroUsuario;
+        private System.Windows.Forms.TextBox txtenderecoUsuario;
         private System.Windows.Forms.TextBox txtsenhaAdm;
         private System.Windows.Forms.Label lblnomeUsuario;
         private System.Windows.Forms.DataGridView dtgeditarUsuario;
@@ -802,7 +802,7 @@ namespace TCC.VISÃO
         private System.Windows.Forms.MaskedTextBox txttelefoneUsuario;
         private System.Windows.Forms.MaskedTextBox txtcepUsuario;
         public System.Windows.Forms.Button btnconfirmar;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtnumeroUsuario;
         private System.Windows.Forms.Label lblnumeroUsuario;
         private System.Windows.Forms.Label lblcpfUsuario;
         private System.Windows.Forms.MaskedTextBox txtcpfUsuario;
