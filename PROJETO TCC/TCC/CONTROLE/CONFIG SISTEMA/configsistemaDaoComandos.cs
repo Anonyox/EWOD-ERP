@@ -23,6 +23,8 @@ namespace TCC.CONTROLE
 
         DataTable dt = new DataTable();
 
+        String cadastro, excluir, alterar, total;
+
         SqlDataReader regCad;
 
         SqlDataReader regExc;
@@ -30,6 +32,8 @@ namespace TCC.CONTROLE
         SqlDataReader regAlt;
 
         SqlDataReader regTot;
+
+       
         #endregion
 
 
@@ -86,11 +90,11 @@ namespace TCC.CONTROLE
             }
         } //LISTAGEM DE LOGS
 
-        public SqlDataReader selLogsCad()
+        public String selLogsCad()
         {
 
 
-            
+           
 
             cmd.CommandText = "select count (tipo) from logs where tipo like 'Cad%'";
 
@@ -108,9 +112,10 @@ namespace TCC.CONTROLE
                 cmd.Connection = con.conectar();
 
                 regCad = cmd.ExecuteReader();
+
                 while (regCad.Read())
                 {
-                    return regCad;
+                     cadastro = regCad.GetValue(0).ToString();
                 }
                 con.desconectar();
 
@@ -126,12 +131,12 @@ namespace TCC.CONTROLE
                 throw;
             }
 
-            
 
-            return regCad;
+            regCad.Close();
+            return cadastro;
         } //LISTAGEM DE LOGS TOTAL DE CADASTROS
 
-        public SqlDataReader selLogsExclu()
+        public String selLogsExclu()
         {
 
            
@@ -148,9 +153,9 @@ namespace TCC.CONTROLE
                 regExc = cmd.ExecuteReader();
                 while (regExc.Read())
                 {
-                    
-                    
-                    return regExc;
+
+                    excluir = regExc.GetValue(0).ToString();
+
                 }
 
                 con.desconectar();
@@ -164,12 +169,12 @@ namespace TCC.CONTROLE
                 throw;
             }
 
-            
 
-            return regExc;
+            regExc.Close();
+            return excluir;
         } //LISTAGENS DE LOGS TOTAL DE EXCLUSÃO 
 
-        public SqlDataReader selLogsAlt()
+        public String selLogsAlt()
         {
 
           
@@ -188,10 +193,10 @@ namespace TCC.CONTROLE
                 while (regAlt.Read())
                 {
 
-                    
-                    
-                    return regAlt;
-                    
+
+
+                    alterar = regAlt.GetValue(0).ToString();
+
                 }
 
                 con.desconectar();
@@ -206,14 +211,14 @@ namespace TCC.CONTROLE
 
                 throw;
             }
-            
 
-            return regAlt;
+            regAlt.Close();
+            return alterar;
             
            
         } //LISTAGENS DE LOGS TOTAL DE ALTERAÇÃO
 
-        public SqlDataReader selLogsTot()
+        public String selLogsTot()
         {
 
            
@@ -231,11 +236,11 @@ namespace TCC.CONTROLE
                 while (regTot.Read())
 
                 {
-                    
-                    
-                    return regTot;
-                    
-                   
+
+
+                   total = regTot.GetValue(0).ToString();
+
+
 
                 }
                 con.desconectar();
@@ -247,9 +252,9 @@ namespace TCC.CONTROLE
                 throw;
             }
 
-           
 
-            return regTot;
+            regTot.Close();
+            return total;
         } //LISTAGENS DE LOGS TOTAL
         #endregion
 

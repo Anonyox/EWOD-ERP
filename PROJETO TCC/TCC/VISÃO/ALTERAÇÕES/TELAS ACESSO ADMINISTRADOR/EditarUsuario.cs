@@ -1,57 +1,54 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TCC.CONTROLE;
-using System.Data.OleDb;
 
 namespace TCC.VISÃO
 {
     public partial class EditarUsuario : Form
     {
+
+        //CLASSE PRINCIPAL DA TELA EDITAR USUARIO : CONFIG SISTEMA 
+
+
+
+
+
+        #region VARIÁVEIS E INSTÂNCIAS
         string msg;
         bool tem;
         Conexao con = new Conexao();
-        //SqlConnection con = new SqlConnection(@"Data Source= tcp: 26.186.226.18,9022;Initial Catalog=tcc;User ID=etec;Password=123456;connection timeout = 1");
+
         SqlDataReader dr;
 
         int validamsg = 0;
+        #endregion
+
+
+
+
+
+
+        #region CONSTRUTOR
         public EditarUsuario()
         {
             InitializeComponent();
         }
 
-        private void label6_Click(object sender, EventArgs e)
-        {
+        #endregion
 
-        }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
 
-        }
 
-        private void btnSair_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
-        private void label5_Click(object sender, EventArgs e)
-        {
 
-        }
+        #region MÉTODOS DE FUNCIONALIDADES
+
 
         private void EditarUsuario_Load(object sender, EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'tccDataSet.logins'. Você pode movê-la ou removê-la conforme necessário.
-            this.loginsTableAdapter.Fill(this.tccDataSet.logins);
-
             listarUsuarios();
 
             SqlCommand cmd = new SqlCommand("SELECT usuario FROM logins", con.conectar());
@@ -73,63 +70,15 @@ namespace TCC.VISÃO
 
             dr.Close();
             con.desconectar();
-            #region configDataGrid
-            dtgeditarUsuario.BorderStyle = BorderStyle.None;  //DTEMAIL NOME DA VARIÁVEL
-            //dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
-            dtgeditarUsuario.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            // dataGridView1.DefaultCellStyle.SelectionBackColor = Color.DarkTurquoise;
-            //dataGridView1.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
-            /// dataGridView1.BackgroundColor = Color.White;
 
-            dtgeditarUsuario.EnableHeadersVisualStyles = false;
-            dtgeditarUsuario.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dtgeditarUsuario.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(0, 209, 178);     //FromArgb(20, 25, 72);
-            dtgeditarUsuario.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
-            #endregion
+
+            formataGrid();
 
 
 
         }
 
-
-        private void EditarUsuario_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (validamsg == 0)
-            {
-                MessageBox.Show("Primeiro digite o nome do usuário que pretende alterar !!", "Defina o usuário", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-
-            validamsg = 1;
-
-
-        }
-
-        private void txtnomeUsuario_MouseClick(object sender, MouseEventArgs e)
-        {
-
-
-
-
-
-
-        }
-
-        private void txtnomeUsuario_Leave(object sender, EventArgs e)
-        {
-
-
-
-
-
-
-        }
-
-        private void txtnomeUsuario_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        public void txtnomeUsuario_Leave_1(object sender, EventArgs e)
+        private void autoComplete()
         {
             if (txtnomeUsuario.Text != string.Empty)
             {
@@ -181,13 +130,10 @@ namespace TCC.VISÃO
                 txtnomeUsuario.Focus();
 
             }
-
-
         }
 
-        private void btnConfirmar_Click(object sender, EventArgs e)
+        private void alteraDados()
         {
-
             if (txtnomeUsuario.Text == "")
             {
                 MessageBox.Show("Defina o Usuário que deseja Alterar", "Erro de Confirmação!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -285,13 +231,6 @@ namespace TCC.VISÃO
                 }
 
             }
-
-        }
-
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            limparCampos();
-
         }
 
         private void limparCampos()
@@ -308,22 +247,6 @@ namespace TCC.VISÃO
             txtenderecoUsuario.Text = ("");
             txtsenhaAdm.Text = ("");
         }
-
-        private void txtnomeUsuario_TextChanged_1(object sender, EventArgs e)
-        {
-
-
-            if (txtnomeUsuario.Text == "")
-            {
-                limparCampos();
-
-                txtnomeUsuario.Focus();
-
-            }
-
-
-        }
-
 
         public void listarUsuarios()
         {
@@ -395,11 +318,134 @@ namespace TCC.VISÃO
             }
         }
 
+        private void formataGrid()
+        {
+
+            
+            dtgeditarUsuario.BorderStyle = BorderStyle.None;  //DTEMAIL NOME DA VARIÁVEL
+            //dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
+            dtgeditarUsuario.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            // dataGridView1.DefaultCellStyle.SelectionBackColor = Color.DarkTurquoise;
+            //dataGridView1.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
+            /// dataGridView1.BackgroundColor = Color.White;
+
+            dtgeditarUsuario.EnableHeadersVisualStyles = false;
+            dtgeditarUsuario.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dtgeditarUsuario.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(0, 209, 178);     //FromArgb(20, 25, 72);
+            dtgeditarUsuario.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+           
+        }
+
+
+        #endregion
+
+
+
+
+
+
+        #region DESIGN
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+
+        private void EditarUsuario_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (validamsg == 0)
+            {
+                MessageBox.Show("Primeiro digite o nome do usuário que pretende alterar !!", "Defina o usuário", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            validamsg = 1;
+
+
+        }
+
+        private void txtnomeUsuario_MouseClick(object sender, MouseEventArgs e)
+        {
+
+
+
+
+
+
+        }
+
+        private void txtnomeUsuario_Leave(object sender, EventArgs e)
+        {
+
+
+
+
+
+
+        }
+
+        private void txtnomeUsuario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        public void txtnomeUsuario_Leave_1(object sender, EventArgs e)
+        {
+            autoComplete();
+        }
+
+        private void btnConfirmar_Click(object sender, EventArgs e)
+        {
+            alteraDados();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            limparCampos();
+
+        }
+
+
+
+        private void txtnomeUsuario_TextChanged_1(object sender, EventArgs e)
+        {
+
+
+            if (txtnomeUsuario.Text == "")
+            {
+                limparCampos();
+
+                txtnomeUsuario.Focus();
+
+            }
+
+
+        }
+
+
+
+
         private void btnConfirmar_MouseEnter(object sender, EventArgs e)
         {
             lblconfirmar.Visible = true;
 
-            btnconfirmar.Size = new Size(50,38);
+            btnconfirmar.Size = new Size(50, 38);
 
 
         }
@@ -407,7 +453,7 @@ namespace TCC.VISÃO
         private void btnConfirmar_MouseLeave(object sender, EventArgs e)
         {
             lblconfirmar.Visible = false;
-            btnconfirmar.Size = new Size(49,35);
+            btnconfirmar.Size = new Size(49, 35);
         }
 
         private void btnCancelar_MouseEnter(object sender, EventArgs e)
@@ -427,12 +473,12 @@ namespace TCC.VISÃO
         //Excluir esses dois eventos
         private void btnexcluir_MouseEnter(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnexcluir_MouseLeave(object sender, EventArgs e)
         {
-            
+
         }
 
 
@@ -449,5 +495,13 @@ namespace TCC.VISÃO
             lblexcluir.Visible = false;
             btnexcluir.Size = new Size(49, 35);
         }
+
+        #endregion
+
+
+
+
+
+
     }
 }

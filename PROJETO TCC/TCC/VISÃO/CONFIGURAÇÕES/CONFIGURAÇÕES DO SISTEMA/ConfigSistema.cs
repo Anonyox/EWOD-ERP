@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
 using TCC.MODELO;
@@ -20,13 +19,13 @@ namespace TCC.VISÃO
         #region VARIÁVEIS E INSTÂNCIAS
         ControleConfigSistema controleConfigSistema = new ControleConfigSistema();
 
-        SqlDataReader regCad;
+        String regCad;
 
-        SqlDataReader regExc;
+        String regExc;
 
-        SqlDataReader regAlt;
+        String regAlt;
 
-        SqlDataReader regTot;
+        String regTot;
         #endregion
 
 
@@ -71,53 +70,31 @@ namespace TCC.VISÃO
         public void selLogsCad()
         {
             regCad = controleConfigSistema.selLogsCad();
-            lblLogCadastro.Text = regCad.GetValue(0).ToString();
+            lblLogCadastro.Text = regCad;
         } //LISTAGEM DE LOGS TOTAL DE CADASTROS
 
         public void selLogsExclu()
         {
             regExc = controleConfigSistema.selLogsCad();
-            lblExcluUsuario.Text = regExc.GetValue(0).ToString();
+            lblExcluUsuario.Text = regExc;
         } //LISTAGENS DE LOGS TOTAL DE EXCLUSÃO 
 
         public void selLogsAlt()
         {
             regAlt = controleConfigSistema.selLogsAlt();
-            lblEditUsuario.Text = regAlt.GetValue(0).ToString();
+            lblEditUsuario.Text = regAlt;
         } //LISTAGENS DE LOGS TOTAL DE ALTERAÇÃO
 
         public void selTotLogs()
         {
             regTot = controleConfigSistema.selLogsTot();
-            lblTotLogs.Text = regTot.GetValue(0).ToString();
+            lblTotLogs.Text = regTot;
         } //LISTAGENS DE LOGS TOTAL
 
-        #endregion
-
-
-
-
-
-
-        #region DESIGN
-        private void ConfigSistema_Load(object sender, EventArgs e)
+        public void formataGrid()
         {
-            //timer1.Start();
-
-            listarLogs();
-
-            selLogsCad();
-
-            selLogsExclu();
-
-            selLogsAlt();
-
-            selTotLogs();
-            
-            
-
             // TODO: esta linha de código carrega dados na tabela 'tccDataSet.logs'. Você pode movê-la ou removê-la conforme necessário.
-            this.logsTableAdapter.Fill(this.tccDataSet.logs);
+            //this.logsTableAdapter.Fill(this.tccDataSet.logs);
             dtgLogs.BorderStyle = BorderStyle.None;  //DTEMAIL NOME DA VARIÁVEL
             //dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
             dtgLogs.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
@@ -129,6 +106,36 @@ namespace TCC.VISÃO
             dtgLogs.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dtgLogs.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(0, 209, 178);     //FromArgb(20, 25, 72);
             dtgLogs.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+        } //FORMATA GRID PARA PADRÃO 
+
+        #endregion
+
+
+
+
+
+
+        #region DESIGN
+        private void ConfigSistema_Load(object sender, EventArgs e)
+        {
+            //INICIALIZAÇÃO FORMATANDO GRID
+            formataGrid();
+
+            //TIMER START
+            timer1.Start();
+
+
+            //LOGS
+            listarLogs();
+
+            selLogsCad();
+
+            selLogsExclu();
+
+            selLogsAlt();
+
+            selTotLogs();
+
         }
 
         private void label2_Click(object sender, EventArgs e)

@@ -1,5 +1,4 @@
 ﻿using System.Data;
-using System.Data.SqlClient;
 using TCC.CONTROLE;
 
 namespace TCC.MODELO
@@ -20,13 +19,14 @@ namespace TCC.MODELO
 
 
 
-        SqlDataReader regCad;
+        string regCad;
 
-        SqlDataReader regExc;
+        string regExc;
 
-        SqlDataReader regAlt;
+        string regAlt;
 
-        SqlDataReader regTot;
+        string regTot;
+
         #endregion
 
 
@@ -42,28 +42,28 @@ namespace TCC.MODELO
             return dtr;
         } //LISTAGEM DE LOGS
 
-        public SqlDataReader selLogsCad()
+        public string selLogsCad()
         {
             this.regCad = configSistema.selLogsCad();
 
             return regCad;
         } //LISTAGEM DE LOGS TOTAL DE CADASTROS
 
-        public SqlDataReader selLogsExclu()
+        public string selLogsExclu()
         {
             this.regExc = configSistema.selLogsExclu();
 
             return regExc;
         } //LISTAGENS DE LOGS TOTAL DE EXCLUSÃO 
 
-        public SqlDataReader selLogsAlt()
+        public string selLogsAlt()
         {
             this.regAlt = configSistema.selLogsAlt();
 
             return regAlt;
         } //LISTAGENS DE LOGS TOTAL DE ALTERAÇÃO
 
-        public SqlDataReader selLogsTot()
+        public string selLogsTot()
         {
             this.regTot = configSistema.selLogsTot();
 
