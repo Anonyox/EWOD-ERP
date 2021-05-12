@@ -1,5 +1,4 @@
 ﻿using System;
-
 using System.Drawing;
 using System.Globalization;
 using System.Runtime.InteropServices;
@@ -11,19 +10,228 @@ namespace TCC.VISÃO
 {
     public partial class ConfigUsuario : Form
     {
+
+        //CLASSE PRINCIPAL CONFIGURÇOES DO USUÁRIO
+
+
+
+
+
+        #region VARIÁVEIS E INSTÂNCIAS
         public String usuario = login.DadosGeral.nomeUser;
         public String senha = login.senhaUser.senha;
         menuAdministrador menuz = new menuAdministrador();
         bool val = false;
+        #endregion
 
 
+
+
+
+
+        #region CONSTRUTOR
         public ConfigUsuario()
         {
             InitializeComponent();
-
-
         }
+        #endregion
 
+
+
+
+
+
+        #region MÉTODOS DE FUNCIONALIDADES
+
+        private void alterarUsuario()
+        {
+            Controle Control = new Controle();
+
+            loginDaoComandos lgd = new loginDaoComandos();
+
+            String mensagem;
+
+            //Control.verificaUsuario(txt1.Text);
+
+
+            if (txt1.Text != "" && txt2.Text != "")
+            {
+
+
+                if (txt2.Text == senha)
+                {
+
+
+
+                    if (MessageBox.Show("Deseja alterar o nome de Usuário?",
+                        "ALTERAR", MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        mensagem = Control.alteraUsuario(usuario, txt1.Text);
+
+                        if (Control.mensagem == "USUÁRIO ALTERADO COM SUCESSO")
+                        {
+                            MessageBox.Show(mensagem, "ALTERAR", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            txt1.Text = "";
+                            txt2.Text = "";
+                            if (MessageBox.Show("SUA SESSÃO FOI ENCERRADA POR MOTIVOS DE ALTERAÇÃO NO LOGIN!", "SAINDO", MessageBoxButtons.OK,
+                                MessageBoxIcon.Information) == DialogResult.OK)
+                            {
+
+                                Application.Exit();
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show(Control.mensagem, "ALTERAR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        }
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("SENHA DE CONFIRMAÇÃO INVÁLIDA", "ALTERAR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+            else
+            {
+                MessageBox.Show("PREENCHA TODOS OS CAMPOS", "ALTERAR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+
+
+        } //BUSCA E ALTERA NOME DE USUÁRIO
+
+        private void alteraEmail()
+        {
+            Controle Control = new Controle();
+
+            loginDaoComandos lgd = new loginDaoComandos();
+
+            String mensagem;
+
+            Control.verificaUsuario(txt1.Text);
+
+
+            if (txt1.Text != "" && txt2.Text != "")
+            {
+
+
+                if (txt2.Text == senha)
+                {
+
+
+
+                    if (MessageBox.Show("Deseja alterar o seu email de Usuário?",
+                        "ALTERAR", MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        mensagem = Control.alteraEmail(txt1.Text, usuario);
+
+                        if (Control.mensagem == "EMAIL ALTERADO COM SUCESSO")
+                        {
+                            MessageBox.Show(mensagem, "ALTERAR", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            txt1.Text = "";
+                            txt2.Text = "";
+                        }
+                        else
+                        {
+                            MessageBox.Show(Control.mensagem, "ALTERAR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        }
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("SENHA DE CONFIRMAÇÃO INVÁLIDA", "ALTERAR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+            else
+            {
+                MessageBox.Show("PREENCHA TODOS OS CAMPOS", "ALTERAR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        } //BUSCA E ALTERA EMAIL DE USUÁRIO
+
+        private void alteraSenha()
+        {
+            Controle Control = new Controle();
+
+            loginDaoComandos lgd = new loginDaoComandos();
+
+            String mensagem;
+
+            //Control.verificaUsuario(txt1.Text);
+
+
+            if (txt1.Text != "" && txt2.Text != "")
+            {
+
+
+                if (txt2.Text == senha)
+                {
+
+
+
+                    if (MessageBox.Show("Deseja alterar a senha de Usuário?",
+                        "ALTERAR", MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        mensagem = Control.alteraSenha(txt1.Text, usuario);
+
+                        if (Control.mensagem == "SENHA ALTERADA COM SUCESSO")
+                        {
+                            MessageBox.Show(mensagem, "ALTERAR", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            txt1.Text = "";
+                            txt2.Text = "";
+                            if (MessageBox.Show("SUA SESSÃO FOI ENCERRADA POR MOTIVOS DE ALTERAÇÃO NO LOGIN!", "SAINDO", MessageBoxButtons.OK,
+                                MessageBoxIcon.Information) == DialogResult.OK)
+                            {
+
+                                Application.Exit();
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show(Control.mensagem, "ALTERAR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        }
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("SENHA DE CONFIRMAÇÃO INVÁLIDA", "ALTERAR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+            else
+            {
+                MessageBox.Show("PREENCHA TODOS OS CAMPOS", "ALTERAR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        } //BUSCA E ALTERA SENHA DE USUÁRIO
+
+        public string Maiuscula(TextBox tbox)
+        {
+            TextInfo textinfo = new CultureInfo("PT-BR", true).TextInfo;
+            tbox.Text = textinfo.ToTitleCase(tbox.Text);
+            return tbox.Text;
+        } //PRIMEIRA LETRA MAIUSCULA NOS CAMPOS
+
+
+
+        #endregion
+
+
+
+
+
+
+        #region DESIGN
         private void btnSair_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -161,12 +369,12 @@ namespace TCC.VISÃO
 
         private void btn2_Click(object sender, EventArgs e)
         {
-            
+
             if (btn2.Text == "Alterar")
             {
                 alterarUsuario();
-                
-                    
+
+
             }
 
             else if (btn2.Text == "Alterar Email")
@@ -186,10 +394,10 @@ namespace TCC.VISÃO
 
             btnalterarUsuario.Visible = false;
             btnalterarSenha.Visible = false;
-            
+
             btnalterarEmail.Location = new Point(285, 167);
 
-            
+
             lbl1.Text = "Novo Email : ";
             lbl1.Visible = true;
             lbl2.Text = "Senha de Usuário : ";
@@ -225,185 +433,6 @@ namespace TCC.VISÃO
 
 
         }
-        private void alterarUsuario()
-        {
-            Controle Control = new Controle();
-
-            loginDaoComandos lgd = new loginDaoComandos();
-
-            String mensagem;
-
-            //Control.verificaUsuario(txt1.Text);
-
-
-            if (txt1.Text != "" && txt2.Text != "" )
-            {
-
-            
-            if (txt2.Text == senha)
-            {
-
-            
-
-            if (MessageBox.Show("Deseja alterar o nome de Usuário?", 
-                "ALTERAR", MessageBoxButtons.YesNo, 
-                MessageBoxIcon.Question) == DialogResult.Yes) 
-            {
-                 mensagem = Control.alteraUsuario(usuario, txt1.Text);
-
-                if (Control.mensagem == "USUÁRIO ALTERADO COM SUCESSO")
-                {
-                    MessageBox.Show(mensagem,"ALTERAR",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                            txt1.Text = "";
-                            txt2.Text = "";
-                    if(MessageBox.Show("SUA SESSÃO FOI ENCERRADA POR MOTIVOS DE ALTERAÇÃO NO LOGIN!", "SAINDO", MessageBoxButtons.OK,
-                        MessageBoxIcon.Information) == DialogResult.OK)
-                        {
-
-                                Application.Exit();
-                        }
-                }
-                else
-                {
-                    MessageBox.Show(Control.mensagem, "ALTERAR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                }
-            }
-            
-        }
-            else
-            {
-                MessageBox.Show("SENHA DE CONFIRMAÇÃO INVÁLIDA", "ALTERAR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            }
-
-            else
-            {
-                MessageBox.Show("PREENCHA TODOS OS CAMPOS", "ALTERAR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-
-
-
-    }
-        //Estrutura da conexão do banco no insert email
-        private void alteraEmail()
-        {
-            Controle Control = new Controle();
-
-            loginDaoComandos lgd = new loginDaoComandos();
-
-            String mensagem;
-
-            Control.verificaUsuario(txt1.Text);
-
-
-            if (txt1.Text != "" && txt2.Text != "")
-            {
-
-
-                if (txt2.Text == senha)
-                {
-
-
-
-                    if (MessageBox.Show("Deseja alterar o seu email de Usuário?",
-                        "ALTERAR", MessageBoxButtons.YesNo,
-                        MessageBoxIcon.Question) == DialogResult.Yes)
-                    {
-                        mensagem = Control.alteraEmail(txt1.Text, usuario);
-
-                        if (Control.mensagem == "EMAIL ALTERADO COM SUCESSO")
-                        {
-                            MessageBox.Show(mensagem, "ALTERAR", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            txt1.Text = "";
-                            txt2.Text = "";
-                        }
-                        else
-                        {
-                            MessageBox.Show(Control.mensagem, "ALTERAR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                        }
-                    }
-
-                }
-                else
-                {
-                    MessageBox.Show("SENHA DE CONFIRMAÇÃO INVÁLIDA", "ALTERAR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-
-            else
-            {
-                MessageBox.Show("PREENCHA TODOS OS CAMPOS", "ALTERAR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void alteraSenha()
-        {
-            Controle Control = new Controle();
-
-            loginDaoComandos lgd = new loginDaoComandos();
-
-            String mensagem;
-
-            //Control.verificaUsuario(txt1.Text);
-
-
-            if (txt1.Text != "" && txt2.Text != "")
-            {
-
-
-                if (txt2.Text == senha)
-                {
-
-
-
-                    if (MessageBox.Show("Deseja alterar a senha de Usuário?",
-                        "ALTERAR", MessageBoxButtons.YesNo,
-                        MessageBoxIcon.Question) == DialogResult.Yes)
-                    {
-                        mensagem = Control.alteraSenha(txt1.Text, usuario);
-
-                        if (Control.mensagem == "SENHA ALTERADA COM SUCESSO")
-                        {
-                            MessageBox.Show(mensagem, "ALTERAR", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            txt1.Text = "";
-                            txt2.Text = "";
-                            if (MessageBox.Show("SUA SESSÃO FOI ENCERRADA POR MOTIVOS DE ALTERAÇÃO NO LOGIN!", "SAINDO", MessageBoxButtons.OK,
-                                MessageBoxIcon.Information) == DialogResult.OK)
-                            {
-
-                                Application.Exit();
-                            }
-                        }
-                        else
-                        {
-                            MessageBox.Show(Control.mensagem, "ALTERAR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                        }
-                    }
-
-                }
-                else
-                {
-                    MessageBox.Show("SENHA DE CONFIRMAÇÃO INVÁLIDA", "ALTERAR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-
-            else
-            {
-                MessageBox.Show("PREENCHA TODOS OS CAMPOS", "ALTERAR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-
-        public string Maiuscula(TextBox tbox)
-        {
-            TextInfo textinfo = new CultureInfo("PT-BR", true).TextInfo;
-            tbox.Text = textinfo.ToTitleCase(tbox.Text);
-            return tbox.Text;
-        }
 
         private void txt1_Leave(object sender, EventArgs e)
         {
@@ -435,47 +464,47 @@ namespace TCC.VISÃO
                 if (txt1.Text != "")
                 {
 
-                if (VEMAIL.validaEmail(txt1.Text))
-                {
-
-                    String mensagem = controle.verificaEmail(txt1.Text);
-
-                    if (mensagem == "EMAIL JÁ CADASTRADO, INSIRA UM EMAIL VÁLIDO")
+                    if (VEMAIL.validaEmail(txt1.Text))
                     {
-                        if (MessageBox.Show("EMAIL JÁ CADASTRADO, INSIRA UM EMAIL VÁLIDO", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error) == DialogResult.OK)
 
+                        String mensagem = controle.verificaEmail(txt1.Text);
+
+                        if (mensagem == "EMAIL JÁ CADASTRADO, INSIRA UM EMAIL VÁLIDO")
                         {
-                            txt1.Text = "";
-                            txt1.Focus();
+                            if (MessageBox.Show("EMAIL JÁ CADASTRADO, INSIRA UM EMAIL VÁLIDO", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error) == DialogResult.OK)
+
+                            {
+                                txt1.Text = "";
+                                txt1.Focus();
+                            }
+
+
                         }
-
-
+                    }
+                    else
+                    {
+                        MessageBox.Show("EMAIL INVÁLIDO, INSIRA UM EMAIL VÁLIDO", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txt1.Text = "";
+                        txt1.Focus();
                     }
                 }
-                else
-                {
-                    MessageBox.Show("EMAIL INVÁLIDO, INSIRA UM EMAIL VÁLIDO", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    txt1.Text = "";
-                    txt1.Focus();
-                }
-                }
-                }
-                
             }
+
+        }
 
         private void ConfigUsuario_FormClosed(object sender, FormClosedEventArgs e)
         {
-            
+
         }
 
         private void chb1_Click(object sender, EventArgs e)
         {
-            if(val == false)
+            if (val == false)
             {
                 if (chb1.Checked)
                 {
-                    
-                    txt2.UseSystemPasswordChar = false ;
+
+                    txt2.UseSystemPasswordChar = false;
 
                 }
                 else
@@ -539,6 +568,13 @@ namespace TCC.VISÃO
             chb1.Visible = true;
             chb1.Location = new Point(360, 404);
         }
+
+        #endregion
+
+
+
+
+
+
     }
-            
 }

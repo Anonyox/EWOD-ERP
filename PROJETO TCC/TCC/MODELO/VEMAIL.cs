@@ -5,6 +5,14 @@ namespace TCC.MODELO
     class VEMAIL
     {
 
+        //REGEX DE VALIDAEMAIL
+
+
+
+
+
+
+        #region MÉTODOS DE FUNCIONALIDADES
 
         public static bool validaEmail(string email)
         {
@@ -15,5 +23,13 @@ namespace TCC.MODELO
             else
                 return false;
         }
+
+        #endregion
+
+
+
+
+
+
     }
 }

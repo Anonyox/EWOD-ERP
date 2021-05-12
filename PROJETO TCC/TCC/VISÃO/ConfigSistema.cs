@@ -1,35 +1,120 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using TCC.CONTROLE;
+using TCC.MODELO;
 
 namespace TCC.VISÃO
 {
     public partial class ConfigSistema : Form
     {
+
+        //CLASSE PRINCIPAL CONFIGURAÇOES DO SISTEMA
+
+
+
+
+
+
+        #region VARIÁVEIS E INSTÂNCIAS
+        ControleConfigSistema controleConfigSistema = new ControleConfigSistema();
+
+        SqlDataReader regCad;
+
+        SqlDataReader regExc;
+
+        SqlDataReader regAlt;
+
+        SqlDataReader regTot;
+        #endregion
+
+
+
+
+
+
+        #region CONSTRUTOR
+
         public ConfigSistema()
         {
             InitializeComponent();
         }
 
+        #endregion
+
+
+
+
+
+
+        #region MÉTODOS DE FUNCIONALIDADES
+
+        public void listarLogs()
+        {
+            DataTable dt = controleConfigSistema.listarLogs();
+
+            dtgLogs.Rows.Clear();
+
+            foreach (DataRow item in dt.Rows)
+            {
+                int n = dtgLogs.Rows.Add();
+
+                dtgLogs.Rows[n].Cells[0].Value = item["Tipo"].ToString();
+                dtgLogs.Rows[n].Cells[1].Value = item["dataLog"].ToString();
+                dtgLogs.Rows[n].Cells[2].Value = item["usuario"].ToString();
+                dtgLogs.Rows[n].Cells[3].Value = item["perfil"].ToString();
+
+            }
+        } //LISTAGEM DE LOGS
+
+        public void selLogsCad()
+        {
+            regCad = controleConfigSistema.selLogsCad();
+            lblLogCadastro.Text = regCad.GetValue(0).ToString();
+        } //LISTAGEM DE LOGS TOTAL DE CADASTROS
+
+        public void selLogsExclu()
+        {
+            regExc = controleConfigSistema.selLogsCad();
+            lblExcluUsuario.Text = regExc.GetValue(0).ToString();
+        } //LISTAGENS DE LOGS TOTAL DE EXCLUSÃO 
+
+        public void selLogsAlt()
+        {
+            regAlt = controleConfigSistema.selLogsAlt();
+            lblEditUsuario.Text = regAlt.GetValue(0).ToString();
+        } //LISTAGENS DE LOGS TOTAL DE ALTERAÇÃO
+
+        public void selTotLogs()
+        {
+            regTot = controleConfigSistema.selLogsTot();
+            lblTotLogs.Text = regTot.GetValue(0).ToString();
+        } //LISTAGENS DE LOGS TOTAL
+
+        #endregion
+
+
+
+
+
+
+        #region DESIGN
         private void ConfigSistema_Load(object sender, EventArgs e)
         {
-            timer1.Start();
-           
+            //timer1.Start();
 
+            listarLogs();
+
+            selLogsCad();
+
+            selLogsExclu();
+
+            selLogsAlt();
 
             selTotLogs();
-            selLogsAlt();
-            listarLogs();
-            selLogsCad();
-            selLogsExclu();
+            
+            
 
             // TODO: esta linha de código carrega dados na tabela 'tccDataSet.logs'. Você pode movê-la ou removê-la conforme necessário.
             this.logsTableAdapter.Fill(this.tccDataSet.logs);
@@ -64,7 +149,7 @@ namespace TCC.VISÃO
 
         private void btnpreferenciaSistema_MouseEnter(object sender, EventArgs e)
         {
-            btnpreferenciaSistema.Size = new Size(200,100);
+            btnpreferenciaSistema.Size = new Size(200, 100);
             lblpreferenciaSistema.Visible = true;
         }
 
@@ -85,201 +170,6 @@ namespace TCC.VISÃO
             EditarUsuario editUser = new EditarUsuario();
             editUser.Show();
         }
-
- 
-        public void listarLogs()
-        {
-            Conexao con = new Conexao();
-            SqlCommand cmd = new SqlCommand();
-
-
-            cmd.CommandText = "select  tipo, Convert (varchar(20),dataLog, 113) AS [dataLog] ,  usuario , perfil from logs Order By codLog DESC";
-            cmd.Connection = con.conectar();
-
-
-            try
-            {
-                con.conectar();
-                cmd.ExecuteNonQuery();
-
-
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-
-                da.Fill(dt);
-
-
-
-
-
-
-                dtgLogs.Rows.Clear();
-                foreach (DataRow item in dt.Rows)
-                {
-                    int n = dtgLogs.Rows.Add();
-                    
-                    dtgLogs.Rows[n].Cells[0].Value = item["Tipo"].ToString();
-                    dtgLogs.Rows[n].Cells[1].Value = item["dataLog"].ToString();
-                    dtgLogs.Rows[n].Cells[2].Value = item["usuario"].ToString();
-                    dtgLogs.Rows[n].Cells[3].Value = item["perfil"].ToString();
-
-
-
-
-
-
-
-
-
-
-
-                }
-                con.desconectar();
-                //dtEmail.DataSource = dt;
-
-
-
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-        }
-
-        
-        public void selLogsCad()
-        {
-           
-            Conexao con = new Conexao();
-            SqlCommand cmd = new SqlCommand();
-
-            cmd.CommandText = "select count (tipo) from logs where tipo like 'Cad%'";
-
-            
-            
-
-            con.conectar();
-            cmd.Connection = con.conectar();
-
-          
-
-
-            try
-            {
-
-                SqlDataReader reg = cmd.ExecuteReader();
-                while (reg.Read())
-                {
-                    lblLogCadastro.Text = reg.GetValue(0).ToString();
-                }
-
-
-
-
-
-
-                
-                
-                con.desconectar();
-                //dtEmail.DataSource = dt;
-
-
-
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-        }
-
-        public void selLogsExclu()
-        {
-            Conexao con = new Conexao();
-            SqlCommand cmd = new SqlCommand();
-
-            cmd.CommandText = "select count (tipo) from logs where tipo like 'Exclu%'";
-
-            con.conectar();
-            cmd.Connection = con.conectar();
-
-            try
-            {
-                SqlDataReader reg = cmd.ExecuteReader();
-                while(reg.Read())
-                {
-                    lblExcluUsuario.Text = reg.GetValue(0).ToString();
-                }
-
-
-                con.desconectar();
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-        }
-
-        public void selLogsAlt()
-        {
-            Conexao con = new Conexao();
-            SqlCommand cmd = new SqlCommand();
-
-            cmd.CommandText = "select count (tipo) from logs where tipo like 'Alt%'";
-
-            con.conectar();
-
-            cmd.Connection = con.conectar();
-
-            try
-            {
-                SqlDataReader reg = cmd.ExecuteReader();
-                while (reg.Read())
-                {
-                    lblEditUsuario.Text = reg.GetValue(0).ToString();
-                }
-
-
-                con.desconectar();
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-
-        }
-
-        public void selTotLogs()
-        {
-            Conexao con = new Conexao();
-            SqlCommand cmd = new SqlCommand();
-
-            cmd.CommandText = "select count (tipo) from logs";
-
-
-            con.conectar();
-            cmd.Connection = con.conectar();
-
-            try
-            {
-                SqlDataReader reg = cmd.ExecuteReader();
-                while (reg.Read()) 
-                {
-                    lblTotLogs.Text = reg.GetValue(0).ToString();
-                }
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-
-                    
-        }
-
 
         private void btnSair_Click(object sender, EventArgs e)
         {
@@ -307,5 +197,13 @@ namespace TCC.VISÃO
 
             timer1.Start();
         }
+
+        #endregion
+
+
+
+
+
+
     }
 }

@@ -100,7 +100,7 @@ namespace TCC.CONTROLE
             }
 
             return tem;
-        }
+        } //VERIFICA SE O USUÁRIO DIGITADO NA TELA DE LOGIN CONTÉM NO BANCO
 
         public void verificaPerfil(String login2, String senha2)
         {
@@ -147,7 +147,7 @@ namespace TCC.CONTROLE
 
 
 
-        }
+        } //VERIFICA O PERFIL DO USUÁRIO BUSCADO
         #endregion
 
 
@@ -263,7 +263,7 @@ namespace TCC.CONTROLE
             }
             return mensagem;
 
-        }
+        } //CADASTRA USUÁRIO
 
         public DataTable listaUser()
         {
@@ -309,7 +309,7 @@ namespace TCC.CONTROLE
                 throw;
 
             }
-        }
+        } //LISTA USUÁRIOS CADASTRADOS NO BANCO
         #endregion
 
 
@@ -372,7 +372,7 @@ namespace TCC.CONTROLE
             }
 
             return mensagem;
-        }
+        } //ALTERA NOME DE USUÁRIO
 
         public String alteraSenha(String novaSenha, String usuario)
         {
@@ -425,7 +425,7 @@ namespace TCC.CONTROLE
             }
 
             return mensagem;
-        }
+        } //ALTERA SENHA DE USUÁRIO
 
         public String alteraEmail(String novoEmail, String usuario)
         {
@@ -478,7 +478,7 @@ namespace TCC.CONTROLE
             }
 
             return mensagem;
-        }
+        } //ALTERA EMAIL DE USUÁRIO
 
         public String verificaUsuario(String usuario)
         {
@@ -503,7 +503,7 @@ namespace TCC.CONTROLE
             }
             dr.Close();
             return mensagem;
-        }
+        } //VERIFICA SE O USUÁRIO DIGITADO JÁ CONTÉM NO BANCO
 
         public String verificaEmail(String email)
         {
@@ -528,7 +528,7 @@ namespace TCC.CONTROLE
 
 
             return mensagem;
-        }
+        } //VERIFICA SE O EMAIL DIGITADO JÁ CONTEM NO BANCO
 
         public String verificaCpf(String cpf)
         {
@@ -553,7 +553,7 @@ namespace TCC.CONTROLE
 
 
             return mensagem;
-        }
+        } //VERIFICA SE O CPF DIGITADO JÁ CONTEM NO BANCO
         #endregion
 
 

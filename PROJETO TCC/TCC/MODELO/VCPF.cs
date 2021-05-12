@@ -6,7 +6,22 @@ namespace TCC.MODELO
     class VCPF
     {
 
+        //REGEX DE VALIDACPF
+
+
+
+
+
+
+        #region VARIÁVEIS E INSTÂNCIAS
         public String cpf;
+        #endregion
+
+
+
+
+
+        #region MÉTODOS DE FUNCIONALIDADES
         public static bool verificaCpf(string cpf)
         {
             int[] v1 = new int[9] { 10, 9, 8, 7, 6, 5, 4, 3, 2 };
@@ -70,5 +85,12 @@ namespace TCC.MODELO
 
 
         }
+        #endregion
+
+
+
+
+
+
     }
 }

@@ -1,18 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Globalization;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using TCC.CONTROLE;
 using TCC.MODELO;
 using TCC.VISÃO;
-using System.Threading;
 
 namespace TCC
 {
@@ -20,18 +12,37 @@ namespace TCC
     public partial class login : Form
 
     {
-        //INSTÂNCIAS E VARIÁVEIS
+
+        //CLASSE PRINCIPAL TELA DE LOGIN
+
+
+
+
+
+        #region VARIÁVEIS E INSTÂNCIAS
         loginDaoComandos lgd = new loginDaoComandos();
         Conexao conex = new Conexao();
         public String perfil;
+        #endregion
 
-        
 
+
+
+
+
+        #region CONSTRUTOR
         public login()
         {
             InitializeComponent();
         }
+        #endregion
 
+
+
+
+
+
+        #region CLASSES DE ARMAZENAMENTO DE DADOS
         public static class DadosGeral
         {
             public static String nomeUser;
@@ -51,60 +62,20 @@ namespace TCC
         {
             public static String usuario;
         }
+        #endregion
 
+
+
+
+
+
+        #region MÉTODOS DE FUNCIONALIDADES
         public string Maiuscula(TextBox tbox)
         {
             TextInfo textinfo = new CultureInfo("PT-BR", true).TextInfo;
             tbox.Text = textinfo.ToTitleCase(tbox.Text);
             return tbox.Text;
-        }
-
-        private void btnAcessar_Click(object sender, EventArgs e)
-        {
-            verificacao();
-        }
-
-        private void btnMinimizar_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void btnSair_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void txtUser_Click(object sender, EventArgs e)
-        {
-            txtUser.Text = "";
-        }
-
-        private void txtSenha_Click(object sender, EventArgs e)
-        {
-            txtSenha.Text = "";
-        }
-
-        private void txtUser_Leave(object sender, EventArgs e)
-        {
-
-            if (txtUser.Text.Equals(String.Empty))
-            {
-                txtUser.Text = "Usuário";
-            }
-            else
-            {
-                Maiuscula(txtUser);
-            }
-        }
-
-        private void txtSenha_Leave(object sender, EventArgs e)
-        {
-            if (txtSenha.Text.Equals(String.Empty))
-            {
-                txtSenha.Text = "senha";
-            }
-
-        }
+        } //PRIMEIRA LETRA MAÍUSCULAS DO CAMPO USUÁRIO
 
         private void verificacao()
         {
@@ -163,7 +134,64 @@ namespace TCC
 
 
 
+        } //VERIFICA SE CONTÉM O USUÁRIO E SENHA DIGITADOS, NO BANCO, ALÉM DE PESQUISAR O PERFIL DO USUÁRIO 
+
+        #endregion
+
+
+
+
+
+
+        #region DESIGN
+        private void btnAcessar_Click(object sender, EventArgs e)
+        {
+            verificacao();
         }
+
+        private void btnMinimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void txtUser_Click(object sender, EventArgs e)
+        {
+            txtUser.Text = "";
+        }
+
+        private void txtSenha_Click(object sender, EventArgs e)
+        {
+            txtSenha.Text = "";
+        }
+
+        private void txtUser_Leave(object sender, EventArgs e)
+        {
+
+            if (txtUser.Text.Equals(String.Empty))
+            {
+                txtUser.Text = "Usuário";
+            }
+            else
+            {
+                Maiuscula(txtUser);
+            }
+        }
+
+        private void txtSenha_Leave(object sender, EventArgs e)
+        {
+            if (txtSenha.Text.Equals(String.Empty))
+            {
+                txtSenha.Text = "senha";
+            }
+
+        }
+
+
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
@@ -180,7 +208,7 @@ namespace TCC
             txtSenha.Text = "";
         }
 
-        private void txtUser_Enter(object sender, EventArgs e) 
+        private void txtUser_Enter(object sender, EventArgs e)
         {
             if (txtUser.Text.Equals("Usuário"))
             {
@@ -198,9 +226,12 @@ namespace TCC
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
+        #endregion
+
+
+
+
+
+
     }
 }
-
-
-
-
