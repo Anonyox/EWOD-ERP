@@ -493,6 +493,26 @@ namespace TCC.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_exportar_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-exportar-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_eye_unchecked_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-eye-unchecked-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_identification_documents_96 {
             get {
                 object obj = ResourceManager.GetObject("icons8-identification-documents-96", resourceCulture);
@@ -556,6 +576,16 @@ namespace TCC.Properties {
         internal static System.Drawing.Bitmap icons8_lixeira_vazia_961 {
             get {
                 object obj = ResourceManager.GetObject("icons8-lixeira-vazia-961", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_olho_fechado_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-olho-fechado-64", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

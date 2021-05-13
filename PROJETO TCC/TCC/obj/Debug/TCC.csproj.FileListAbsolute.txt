@@ -217,3 +217,4 @@ C:\Users\LukasPC\source\repos\EWOD-ERP\PROJETO TCC\TCC\obj\Debug\TCC.csproj.Core
 C:\Users\LukasPC\source\repos\EWOD-ERP\PROJETO TCC\TCC\obj\Debug\TCC.exe
 C:\Users\LukasPC\source\repos\EWOD-ERP\PROJETO TCC\TCC\obj\Debug\TCC.pdb
 C:\Users\LukasPC\source\repos\EWOD-ERP\PROJETO TCC\TCC\obj\Debug\TCC.csprojAssemblyReference.cache
+C:\Users\Pedro\Source\Repos\EWOD-ERP\PROJETO TCC\TCC\obj\Debug\TCC.VISIONS.logs_visao.EXPORTAR_LOGS.ExportarLogs.resources

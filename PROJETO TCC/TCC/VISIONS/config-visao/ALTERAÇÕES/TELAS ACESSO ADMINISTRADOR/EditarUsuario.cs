@@ -146,6 +146,9 @@ namespace TCC.VISÃO
             else if (txtsenhaAdm.Text == "")
             {
                 MessageBox.Show("Digite a senha de Administrador!!", "Erro de Confirmação", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                txtsenhaAdm.Focus();
+                
             }
 
             else if (txtnomeUsuario.Text != string.Empty && txtsenhaAdm.Text != string.Empty)
@@ -499,11 +502,42 @@ namespace TCC.VISÃO
             btnexcluir.Size = new Size(49, 35);
         }
 
+
+        private void pbolhoFechado_Click(object sender, EventArgs e)
+        {
+            txtsenhaAdm.PasswordChar = (char)0;
+            pbolhoFechado.Visible = false;
+            pbolhoAberto.Visible = true;
+        }
+
+        private void pbolhoAberto_Click(object sender, EventArgs e)
+        {
+            txtsenhaAdm.PasswordChar = '*';
+            pbolhoAberto.Visible = false;
+            pbolhoFechado.Visible = true;
+        }
+
+        private void pbolhoAberto_MouseEnter(object sender, EventArgs e)
+        {
+            Cursor = Cursors.Hand;
+        }
+
+        private void pbolhoAberto_MouseLeave(object sender, EventArgs e)
+        {
+            Cursor = Cursors.Default;
+        }
+
+        private void pbolhoFechado_MouseEnter(object sender, EventArgs e)
+        {
+            Cursor = Cursors.Hand;
+        }
+
+        private void pbolhoFechado_MouseLeave(object sender, EventArgs e)
+        {
+            Cursor = Cursors.Default;
+        }
+
         #endregion
-
-
-
-
 
 
     }

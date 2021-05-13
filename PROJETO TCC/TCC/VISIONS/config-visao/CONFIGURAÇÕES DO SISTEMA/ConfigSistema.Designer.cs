@@ -30,9 +30,9 @@ namespace TCC.VISÃO
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConfigSistema));
             this.dtgLogs = new System.Windows.Forms.DataGridView();
             this.tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,6 +63,8 @@ namespace TCC.VISÃO
             this.logsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.logsTableAdapter = new TCC.tccDataSetTableAdapters.logsTableAdapter();
             this.tccDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnexportarLogs = new System.Windows.Forms.Button();
+            this.lblexportarLogs = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtgLogs)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
@@ -79,33 +81,33 @@ namespace TCC.VISÃO
             // dtgLogs
             // 
             this.dtgLogs.BackgroundColor = System.Drawing.Color.Lavender;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Comic Sans MS", 11.25F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgLogs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Comic Sans MS", 11.25F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgLogs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dtgLogs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgLogs.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.tipo,
             this.dataLog,
             this.usuario,
             this.perfil});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgLogs.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgLogs.DefaultCellStyle = dataGridViewCellStyle5;
             this.dtgLogs.Location = new System.Drawing.Point(-2, 337);
             this.dtgLogs.Name = "dtgLogs";
             this.dtgLogs.RowHeadersWidth = 51;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dtgLogs.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dtgLogs.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dtgLogs.Size = new System.Drawing.Size(865, 209);
             this.dtgLogs.TabIndex = 0;
             // 
@@ -197,7 +199,7 @@ namespace TCC.VISÃO
             this.lblpreferenciaSistema.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblpreferenciaSistema.Font = new System.Drawing.Font("Comic Sans MS", 11F);
             this.lblpreferenciaSistema.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblpreferenciaSistema.Location = new System.Drawing.Point(527, 174);
+            this.lblpreferenciaSistema.Location = new System.Drawing.Point(557, 174);
             this.lblpreferenciaSistema.Name = "lblpreferenciaSistema";
             this.lblpreferenciaSistema.Size = new System.Drawing.Size(178, 20);
             this.lblpreferenciaSistema.TabIndex = 31;
@@ -211,7 +213,7 @@ namespace TCC.VISÃO
             this.lblalterarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblalterarUsuario.Font = new System.Drawing.Font("Comic Sans MS", 11F);
             this.lblalterarUsuario.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblalterarUsuario.Location = new System.Drawing.Point(191, 174);
+            this.lblalterarUsuario.Location = new System.Drawing.Point(159, 174);
             this.lblalterarUsuario.Name = "lblalterarUsuario";
             this.lblalterarUsuario.Size = new System.Drawing.Size(106, 20);
             this.lblalterarUsuario.TabIndex = 32;
@@ -228,7 +230,7 @@ namespace TCC.VISÃO
             this.btnalterarUsuario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnalterarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnalterarUsuario.ForeColor = System.Drawing.Color.Black;
-            this.btnalterarUsuario.Location = new System.Drawing.Point(155, 76);
+            this.btnalterarUsuario.Location = new System.Drawing.Point(123, 76);
             this.btnalterarUsuario.Name = "btnalterarUsuario";
             this.btnalterarUsuario.Size = new System.Drawing.Size(186, 95);
             this.btnalterarUsuario.TabIndex = 23;
@@ -247,7 +249,7 @@ namespace TCC.VISÃO
             this.btnpreferenciaSistema.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnpreferenciaSistema.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnpreferenciaSistema.ForeColor = System.Drawing.Color.Black;
-            this.btnpreferenciaSistema.Location = new System.Drawing.Point(518, 76);
+            this.btnpreferenciaSistema.Location = new System.Drawing.Point(548, 76);
             this.btnpreferenciaSistema.Name = "btnpreferenciaSistema";
             this.btnpreferenciaSistema.Size = new System.Drawing.Size(187, 95);
             this.btnpreferenciaSistema.TabIndex = 22;
@@ -404,6 +406,39 @@ namespace TCC.VISÃO
             this.tccDataSetBindingSource.DataSource = this.tccDataSet;
             this.tccDataSetBindingSource.Position = 0;
             // 
+            // btnexportarLogs
+            // 
+            this.btnexportarLogs.BackColor = System.Drawing.Color.Transparent;
+            this.btnexportarLogs.BackgroundImage = global::TCC.Properties.Resources.icons8_exportar_64;
+            this.btnexportarLogs.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnexportarLogs.FlatAppearance.BorderSize = 0;
+            this.btnexportarLogs.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnexportarLogs.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnexportarLogs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnexportarLogs.ForeColor = System.Drawing.Color.Black;
+            this.btnexportarLogs.Location = new System.Drawing.Point(335, 76);
+            this.btnexportarLogs.Name = "btnexportarLogs";
+            this.btnexportarLogs.Size = new System.Drawing.Size(186, 95);
+            this.btnexportarLogs.TabIndex = 55;
+            this.btnexportarLogs.UseVisualStyleBackColor = false;
+            this.btnexportarLogs.Click += new System.EventHandler(this.btnexportarLogs_Click);
+            this.btnexportarLogs.MouseEnter += new System.EventHandler(this.btnexportarLogs_MouseEnter);
+            this.btnexportarLogs.MouseLeave += new System.EventHandler(this.btnexportarLogs_MouseLeave);
+            // 
+            // lblexportarLogs
+            // 
+            this.lblexportarLogs.AutoSize = true;
+            this.lblexportarLogs.BackColor = System.Drawing.Color.Transparent;
+            this.lblexportarLogs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblexportarLogs.Font = new System.Drawing.Font("Comic Sans MS", 11F);
+            this.lblexportarLogs.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblexportarLogs.Location = new System.Drawing.Point(376, 174);
+            this.lblexportarLogs.Name = "lblexportarLogs";
+            this.lblexportarLogs.Size = new System.Drawing.Size(107, 20);
+            this.lblexportarLogs.TabIndex = 56;
+            this.lblexportarLogs.Text = "Exportar Logs";
+            this.lblexportarLogs.Visible = false;
+            // 
             // ConfigSistema
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -412,6 +447,8 @@ namespace TCC.VISÃO
             this.BackgroundImage = global::TCC.Properties.Resources._1555492a6_11;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(863, 547);
+            this.Controls.Add(this.lblexportarLogs);
+            this.Controls.Add(this.btnexportarLogs);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel4);
@@ -423,6 +460,7 @@ namespace TCC.VISÃO
             this.Controls.Add(this.btnpreferenciaSistema);
             this.Controls.Add(this.dtgLogs);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ConfigSistema";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "N";
@@ -478,5 +516,7 @@ namespace TCC.VISÃO
         private System.Windows.Forms.DataGridViewTextBoxColumn dataLog;
         private System.Windows.Forms.DataGridViewTextBoxColumn usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn perfil;
+        private System.Windows.Forms.Button btnexportarLogs;
+        private System.Windows.Forms.Label lblexportarLogs;
     }
 }

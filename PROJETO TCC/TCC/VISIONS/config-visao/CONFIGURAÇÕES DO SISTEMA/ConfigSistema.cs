@@ -3,6 +3,7 @@ using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 using TCC.MODELO;
+using TCC.VISIONS.logs_visao.EXPORTAR_LOGS;
 
 namespace TCC.VISÃO
 {
@@ -205,11 +206,27 @@ namespace TCC.VISÃO
             timer1.Start();
         }
 
+        private void btnexportarLogs_MouseEnter(object sender, EventArgs e)
+        {
+            btnexportarLogs.Size = new Size(190, 100);
+            lblexportarLogs.Visible = true;
+        }
+
+        private void btnexportarLogs_MouseLeave(object sender, EventArgs e)
+        {
+            btnexportarLogs.Size = new Size(187, 95);
+            lblexportarLogs.Visible = false;
+        }
+
+        private void btnexportarLogs_Click(object sender, EventArgs e)
+        {
+            ExportarLogs explogs = new ExportarLogs();
+            explogs.Show();
+
+        }
+
+
         #endregion
-
-
-
-
 
 
     }

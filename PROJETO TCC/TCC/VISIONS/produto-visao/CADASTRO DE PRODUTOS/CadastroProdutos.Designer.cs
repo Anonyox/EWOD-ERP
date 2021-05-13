@@ -36,7 +36,6 @@
             this.txtdata = new System.Windows.Forms.MaskedTextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.cmbtipo = new System.Windows.Forms.ComboBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
             this.txtcodigoProduto = new System.Windows.Forms.TextBox();
             this.txtquantidadeProduto = new System.Windows.Forms.TextBox();
             this.txtvalorCompra = new System.Windows.Forms.TextBox();
@@ -46,7 +45,6 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.btnpesqisar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -60,6 +58,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblconfirmar = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSair)).BeginInit();
@@ -107,7 +106,7 @@
             this.txtnomeProduto.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.txtnomeProduto.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtnomeProduto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtnomeProduto.Location = new System.Drawing.Point(122, 118);
+            this.txtnomeProduto.Location = new System.Drawing.Point(142, 91);
             this.txtnomeProduto.Name = "txtnomeProduto";
             this.txtnomeProduto.Size = new System.Drawing.Size(304, 20);
             this.txtnomeProduto.TabIndex = 107;
@@ -116,7 +115,7 @@
             // txtdata
             // 
             this.txtdata.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtdata.Location = new System.Drawing.Point(566, 303);
+            this.txtdata.Location = new System.Drawing.Point(576, 229);
             this.txtdata.Mask = "00/00/0000";
             this.txtdata.Name = "txtdata";
             this.txtdata.Size = new System.Drawing.Size(112, 30);
@@ -129,7 +128,7 @@
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label9.Location = new System.Drawing.Point(502, 312);
+            this.label9.Location = new System.Drawing.Point(512, 238);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(58, 21);
             this.label9.TabIndex = 104;
@@ -139,24 +138,16 @@
             // 
             this.cmbtipo.Enabled = false;
             this.cmbtipo.FormattingEnabled = true;
-            this.cmbtipo.Location = new System.Drawing.Point(566, 154);
+            this.cmbtipo.Location = new System.Drawing.Point(576, 127);
             this.cmbtipo.Name = "cmbtipo";
             this.cmbtipo.Size = new System.Drawing.Size(100, 21);
             this.cmbtipo.TabIndex = 102;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(41, 68);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(710, 20);
-            this.textBox6.TabIndex = 101;
-            this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // txtcodigoProduto
             // 
             this.txtcodigoProduto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtcodigoProduto.Enabled = false;
-            this.txtcodigoProduto.Location = new System.Drawing.Point(122, 144);
+            this.txtcodigoProduto.Location = new System.Drawing.Point(142, 117);
             this.txtcodigoProduto.Name = "txtcodigoProduto";
             this.txtcodigoProduto.Size = new System.Drawing.Size(100, 20);
             this.txtcodigoProduto.TabIndex = 98;
@@ -165,34 +156,34 @@
             // 
             this.txtquantidadeProduto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtquantidadeProduto.Enabled = false;
-            this.txtquantidadeProduto.Location = new System.Drawing.Point(566, 259);
+            this.txtquantidadeProduto.Location = new System.Drawing.Point(142, 229);
             this.txtquantidadeProduto.Name = "txtquantidadeProduto";
-            this.txtquantidadeProduto.Size = new System.Drawing.Size(112, 20);
+            this.txtquantidadeProduto.Size = new System.Drawing.Size(100, 20);
             this.txtquantidadeProduto.TabIndex = 97;
             // 
             // txtvalorCompra
             // 
             this.txtvalorCompra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtvalorCompra.Enabled = false;
-            this.txtvalorCompra.Location = new System.Drawing.Point(176, 308);
+            this.txtvalorCompra.Location = new System.Drawing.Point(576, 190);
             this.txtvalorCompra.Name = "txtvalorCompra";
-            this.txtvalorCompra.Size = new System.Drawing.Size(100, 20);
+            this.txtvalorCompra.Size = new System.Drawing.Size(112, 20);
             this.txtvalorCompra.TabIndex = 96;
             // 
             // txtcadastroproduto
             // 
             this.txtcadastroproduto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtcadastroproduto.Enabled = false;
-            this.txtcadastroproduto.Location = new System.Drawing.Point(566, 122);
+            this.txtcadastroproduto.Location = new System.Drawing.Point(576, 95);
             this.txtcadastroproduto.Name = "txtcadastroproduto";
-            this.txtcadastroproduto.Size = new System.Drawing.Size(288, 20);
+            this.txtcadastroproduto.Size = new System.Drawing.Size(278, 20);
             this.txtcadastroproduto.TabIndex = 95;
             // 
             // txtvalorVenda
             // 
             this.txtvalorVenda.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtvalorVenda.Enabled = false;
-            this.txtvalorVenda.Location = new System.Drawing.Point(178, 262);
+            this.txtvalorVenda.Location = new System.Drawing.Point(142, 187);
             this.txtvalorVenda.Name = "txtvalorVenda";
             this.txtvalorVenda.Size = new System.Drawing.Size(100, 20);
             this.txtvalorVenda.TabIndex = 94;
@@ -203,7 +194,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label4.Location = new System.Drawing.Point(506, 154);
+            this.label4.Location = new System.Drawing.Point(516, 127);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(54, 21);
             this.label4.TabIndex = 92;
@@ -257,25 +248,6 @@
             this.button3.TabIndex = 89;
             this.button3.UseVisualStyleBackColor = false;
             // 
-            // btnpesqisar
-            // 
-            this.btnpesqisar.BackColor = System.Drawing.Color.Transparent;
-            this.btnpesqisar.BackgroundImage = global::TCC.Properties.Resources.icons8_pesquisar_481;
-            this.btnpesqisar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnpesqisar.FlatAppearance.BorderSize = 0;
-            this.btnpesqisar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnpesqisar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnpesqisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnpesqisar.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnpesqisar.ForeColor = System.Drawing.Color.Transparent;
-            this.btnpesqisar.Location = new System.Drawing.Point(762, 63);
-            this.btnpesqisar.Name = "btnpesqisar";
-            this.btnpesqisar.Size = new System.Drawing.Size(44, 30);
-            this.btnpesqisar.TabIndex = 86;
-            this.btnpesqisar.UseVisualStyleBackColor = false;
-            this.btnpesqisar.MouseEnter += new System.EventHandler(this.btnpesqisar_MouseEnter);
-            this.btnpesqisar.MouseLeave += new System.EventHandler(this.btnpesqisar_MouseLeave);
-            // 
             // dataGridView1
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.Color.Lavender;
@@ -292,7 +264,7 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label7.Location = new System.Drawing.Point(456, 118);
+            this.label7.Location = new System.Drawing.Point(466, 91);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(104, 21);
             this.label7.TabIndex = 80;
@@ -304,7 +276,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label6.Location = new System.Drawing.Point(60, 148);
+            this.label6.Location = new System.Drawing.Point(80, 121);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(56, 21);
             this.label6.TabIndex = 74;
@@ -316,7 +288,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label5.Location = new System.Drawing.Point(28, 307);
+            this.label5.Location = new System.Drawing.Point(428, 189);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(144, 21);
             this.label5.TabIndex = 67;
@@ -328,7 +300,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.Location = new System.Drawing.Point(37, 261);
+            this.label3.Location = new System.Drawing.Point(1, 186);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(135, 21);
             this.label3.TabIndex = 59;
@@ -340,7 +312,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(454, 258);
+            this.label2.Location = new System.Drawing.Point(30, 228);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(106, 21);
             this.label2.TabIndex = 58;
@@ -352,7 +324,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(37, 118);
+            this.label1.Location = new System.Drawing.Point(57, 91);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(79, 21);
             this.label1.TabIndex = 57;
@@ -403,10 +375,10 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.panel1.Location = new System.Drawing.Point(2, 204);
+            this.panel1.Location = new System.Drawing.Point(-10, 162);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(931, 21);
+            this.panel1.Size = new System.Drawing.Size(943, 21);
             this.panel1.TabIndex = 158;
             // 
             // lblconfirmar
@@ -423,6 +395,17 @@
             this.lblconfirmar.Text = "Confirmar";
             this.lblconfirmar.Visible = false;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Orange;
+            this.label8.Location = new System.Drawing.Point(355, 52);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(184, 21);
+            this.label8.TabIndex = 173;
+            this.label8.Text = "CADASTRAR PRODUTO";
+            // 
             // CadastroProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -431,6 +414,7 @@
             this.BackgroundImage = global::TCC.Properties.Resources._1555492a6_11;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(863, 654);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.lblconfirmar);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnConfirmar);
@@ -449,9 +433,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox6);
             this.Controls.Add(this.txtcadastroproduto);
-            this.Controls.Add(this.btnpesqisar);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.txtquantidadeProduto);
             this.Controls.Add(this.txtvalorVenda);
@@ -482,7 +464,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox txtcodigoProduto;
         private System.Windows.Forms.TextBox txtquantidadeProduto;
         private System.Windows.Forms.TextBox txtvalorCompra;
@@ -492,7 +473,6 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button btnpesqisar;
         private System.Windows.Forms.ComboBox cmbtipo;
         private System.Windows.Forms.PictureBox btnMinimizar;
         private System.Windows.Forms.PictureBox btnSair;
@@ -505,5 +485,6 @@
         private System.Windows.Forms.Button btnConfirmar;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblconfirmar;
+        private System.Windows.Forms.Label label8;
     }
 }

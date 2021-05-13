@@ -31,7 +31,7 @@ namespace TCC.VISÃO
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditarUsuario));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.btnSair = new System.Windows.Forms.PictureBox();
@@ -93,12 +93,16 @@ namespace TCC.VISÃO
             this.lblnovoNome = new System.Windows.Forms.Label();
             this.txtnovaSenha = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.pbolhoFechado = new System.Windows.Forms.PictureBox();
+            this.pbolhoAberto = new System.Windows.Forms.PictureBox();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSair)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.loginsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tccDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgeditarUsuario)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbolhoFechado)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbolhoAberto)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -106,10 +110,10 @@ namespace TCC.VISÃO
             this.panel3.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.panel3.Controls.Add(this.btnMinimizar);
             this.panel3.Controls.Add(this.btnSair);
-            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Location = new System.Drawing.Point(-2, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(865, 46);
+            this.panel3.Size = new System.Drawing.Size(867, 46);
             this.panel3.TabIndex = 53;
             // 
             // btnMinimizar
@@ -117,7 +121,7 @@ namespace TCC.VISÃO
             this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
-            this.btnMinimizar.Location = new System.Drawing.Point(800, 11);
+            this.btnMinimizar.Location = new System.Drawing.Point(802, 11);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(28, 28);
             this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -129,7 +133,7 @@ namespace TCC.VISÃO
             this.btnSair.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSair.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSair.Image = ((System.Drawing.Image)(resources.GetObject("btnSair.Image")));
-            this.btnSair.Location = new System.Drawing.Point(834, 11);
+            this.btnSair.Location = new System.Drawing.Point(836, 11);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(28, 28);
             this.btnSair.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -250,7 +254,7 @@ namespace TCC.VISÃO
             this.label10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label10.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
             this.label10.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label10.Location = new System.Drawing.Point(460, 433);
+            this.label10.Location = new System.Drawing.Point(436, 432);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(215, 23);
             this.label10.TabIndex = 80;
@@ -309,7 +313,7 @@ namespace TCC.VISÃO
             // txtsenhaAdm
             // 
             this.txtsenhaAdm.Font = new System.Drawing.Font("Comic Sans MS", 12F);
-            this.txtsenhaAdm.Location = new System.Drawing.Point(674, 428);
+            this.txtsenhaAdm.Location = new System.Drawing.Point(650, 427);
             this.txtsenhaAdm.Name = "txtsenhaAdm";
             this.txtsenhaAdm.PasswordChar = '*';
             this.txtsenhaAdm.Size = new System.Drawing.Size(164, 30);
@@ -341,14 +345,14 @@ namespace TCC.VISÃO
             // dtgeditarUsuario
             // 
             this.dtgeditarUsuario.BackgroundColor = System.Drawing.Color.Lavender;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Comic Sans MS", 11.25F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgeditarUsuario.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Comic Sans MS", 11.25F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgeditarUsuario.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dtgeditarUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgeditarUsuario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.codUser,
@@ -752,6 +756,33 @@ namespace TCC.VISÃO
             this.label3.TabIndex = 178;
             this.label3.Text = "Senha :";
             // 
+            // pbolhoFechado
+            // 
+            this.pbolhoFechado.BackgroundImage = global::TCC.Properties.Resources.icons8_olho_fechado_64;
+            this.pbolhoFechado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbolhoFechado.Location = new System.Drawing.Point(820, 427);
+            this.pbolhoFechado.Name = "pbolhoFechado";
+            this.pbolhoFechado.Size = new System.Drawing.Size(33, 28);
+            this.pbolhoFechado.TabIndex = 180;
+            this.pbolhoFechado.TabStop = false;
+            this.pbolhoFechado.Click += new System.EventHandler(this.pbolhoFechado_Click);
+            this.pbolhoFechado.MouseEnter += new System.EventHandler(this.pbolhoFechado_MouseEnter);
+            this.pbolhoFechado.MouseLeave += new System.EventHandler(this.pbolhoFechado_MouseLeave);
+            // 
+            // pbolhoAberto
+            // 
+            this.pbolhoAberto.BackgroundImage = global::TCC.Properties.Resources.icons8_eye_unchecked_64;
+            this.pbolhoAberto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbolhoAberto.Location = new System.Drawing.Point(820, 427);
+            this.pbolhoAberto.Name = "pbolhoAberto";
+            this.pbolhoAberto.Size = new System.Drawing.Size(33, 28);
+            this.pbolhoAberto.TabIndex = 181;
+            this.pbolhoAberto.TabStop = false;
+            this.pbolhoAberto.Visible = false;
+            this.pbolhoAberto.Click += new System.EventHandler(this.pbolhoAberto_Click);
+            this.pbolhoAberto.MouseEnter += new System.EventHandler(this.pbolhoAberto_MouseEnter);
+            this.pbolhoAberto.MouseLeave += new System.EventHandler(this.pbolhoAberto_MouseLeave);
+            // 
             // EditarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -760,6 +791,8 @@ namespace TCC.VISÃO
             this.BackgroundImage = global::TCC.Properties.Resources._1555492a6_11;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(863, 654);
+            this.Controls.Add(this.pbolhoAberto);
+            this.Controls.Add(this.pbolhoFechado);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtnovaSenha);
             this.Controls.Add(this.lblnovoNome);
@@ -812,6 +845,8 @@ namespace TCC.VISÃO
             ((System.ComponentModel.ISupportInitialize)(this.loginsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tccDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgeditarUsuario)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbolhoFechado)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbolhoAberto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -880,5 +915,7 @@ namespace TCC.VISÃO
         private System.Windows.Forms.Label lblnovoNome;
         private System.Windows.Forms.TextBox txtnovaSenha;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.PictureBox pbolhoFechado;
+        private System.Windows.Forms.PictureBox pbolhoAberto;
     }
 }

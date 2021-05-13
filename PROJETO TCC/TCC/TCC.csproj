@@ -60,6 +60,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="VISIONS\logs-visao\EXPORTAR LOGS\ExportarLogs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VISIONS\logs-visao\EXPORTAR LOGS\ExportarLogs.Designer.cs">
+      <DependentUpon>ExportarLogs.cs</DependentUpon>
+    </Compile>
     <Compile Include="warning\VCEP.cs" />
     <Compile Include="warning\VCPF.cs" />
     <Compile Include="warning\VEMAIL.cs" />
@@ -131,6 +137,9 @@
     <Compile Include="VISIONS\relatorio-visao\RelatorioVendas.Designer.cs">
       <DependentUpon>RelatorioVendas.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="VISIONS\logs-visao\EXPORTAR LOGS\ExportarLogs.resx">
+      <DependentUpon>ExportarLogs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VISIONS\produto-visao\CADASTRO DE PRODUTOS\CadastroProdutos.resx">
       <DependentUpon>CadastroProdutos.cs</DependentUpon>
     </EmbeddedResource>
@@ -376,6 +385,15 @@
     <Folder Include="MODELS\cliente-modelo\" />
     <Folder Include="MODELS\relatorio-modelo\" />
     <Folder Include="VISIONS\cliente-visao\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-olho-fechado-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-eye-unchecked-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-exportar-64.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
