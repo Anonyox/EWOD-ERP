@@ -46,116 +46,118 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CONTROLE\cadastroprodutoDaoComandos.cs" />
-    <Compile Include="CONTROLE\Conexao.cs" />
-    <Compile Include="CONTROLE\loginDaoComandos.cs" />
-    <Compile Include="CONTROLE\produtoDaoComandoscs.cs" />
-    <Compile Include="CONTROLE\vendaDaoComandos.cs" />
-    <Compile Include="MODELO\Controle.cs" />
-    <Compile Include="MODELO\ControleVenda.cs" />
-    <Compile Include="MODELO\VCEP.cs" />
-    <Compile Include="MODELO\VCPF.cs" />
-    <Compile Include="MODELO\VEMAIL.cs" />
-    <Compile Include="MODELO\VTLF.cs" />
+    <Compile Include="CONTROLS\produto-controledao\PRODUTOS\cadastroprodutoDaoComandos.cs" />
+    <Compile Include="BANCO\Conexao.cs" />
+    <Compile Include="CONTROLS\config-controledao\CONFIG SISTEMA\configsistemaDaoComandos.cs" />
+    <Compile Include="CONTROLS\usuarios-controledao\USUARIO\loginDaoComandos.cs" />
+    <Compile Include="CONTROLS\venda-controledao\VENDAS\vendaDaoComandos.cs" />
+    <Compile Include="MODELS\produto-modelo\produtoControle.cs" />
+    <Compile Include="MODELS\usuarios-modelo\USUARIO\Controle.cs" />
+    <Compile Include="MODELS\config-modelo\CONFIG SISTEMA\ControleConfigSistema.cs" />
+    <Compile Include="MODELS\venda-modelo\VENDAS\ControleVenda.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="warning\VCEP.cs" />
+    <Compile Include="warning\VCPF.cs" />
+    <Compile Include="warning\VEMAIL.cs" />
+    <Compile Include="warning\VTLF.cs" />
     <Compile Include="tccDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>tccDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="VISÃO\CadastroProdutos.cs">
+    <Compile Include="VISIONS\produto-visao\CADASTRO DE PRODUTOS\CadastroProdutos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VISÃO\CadastroProdutos.Designer.cs">
+    <Compile Include="VISIONS\produto-visao\CADASTRO DE PRODUTOS\CadastroProdutos.Designer.cs">
       <DependentUpon>CadastroProdutos.cs</DependentUpon>
     </Compile>
-    <Compile Include="VISÃO\CadastroUsuario.cs">
+    <Compile Include="VISIONS\usuarios-visao\CADASTRO DE USUÁRIOS\CadastroUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VISÃO\CadastroUsuario.Designer.cs">
+    <Compile Include="VISIONS\usuarios-visao\CADASTRO DE USUÁRIOS\CadastroUsuario.Designer.cs">
       <DependentUpon>CadastroUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="VISÃO\CadastroVendas.cs">
+    <Compile Include="VISIONS\venda-visao\CADASTRO DE VENDAS\CadastroVendas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VISÃO\CadastroVendas.Designer.cs">
+    <Compile Include="VISIONS\venda-visao\CADASTRO DE VENDAS\CadastroVendas.Designer.cs">
       <DependentUpon>CadastroVendas.cs</DependentUpon>
     </Compile>
-    <Compile Include="VISÃO\ConfigSistema.cs">
+    <Compile Include="VISIONS\config-visao\CONFIGURAÇÕES DO SISTEMA\ConfigSistema.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VISÃO\ConfigSistema.Designer.cs">
+    <Compile Include="VISIONS\config-visao\CONFIGURAÇÕES DO SISTEMA\ConfigSistema.Designer.cs">
       <DependentUpon>ConfigSistema.cs</DependentUpon>
     </Compile>
-    <Compile Include="VISÃO\ConfigUsuario.cs">
+    <Compile Include="VISIONS\config-visao\CONFIGURAÇÕES DO USUÁRIO\ConfigUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VISÃO\ConfigUsuario.Designer.cs">
+    <Compile Include="VISIONS\config-visao\CONFIGURAÇÕES DO USUÁRIO\ConfigUsuario.Designer.cs">
       <DependentUpon>ConfigUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="VISÃO\EditarUsuario.cs">
+    <Compile Include="VISIONS\config-visao\ALTERAÇÕES\TELAS ACESSO ADMINISTRADOR\EditarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VISÃO\EditarUsuario.designer.cs">
+    <Compile Include="VISIONS\config-visao\ALTERAÇÕES\TELAS ACESSO ADMINISTRADOR\EditarUsuario.designer.cs">
       <DependentUpon>EditarUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="VISÃO\logar.cs">
+    <Compile Include="VISIONS\usuarios-visao\LOGIN\logar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VISÃO\logar.Designer.cs">
+    <Compile Include="VISIONS\usuarios-visao\LOGIN\logar.Designer.cs">
       <DependentUpon>logar.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="VISÃO\MenuPerfil%28Administrador%29.cs">
+    <Compile Include="VISIONS\usuarios-visao\MENU\MenuPerfil%28Administrador%29.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VISÃO\MenuPerfil%28Administrador%29.Designer.cs">
+    <Compile Include="VISIONS\usuarios-visao\MENU\MenuPerfil%28Administrador%29.Designer.cs">
       <DependentUpon>MenuPerfil%28Administrador%29.cs</DependentUpon>
     </Compile>
-    <Compile Include="VISÃO\RelatorioEstoque.cs">
+    <Compile Include="VISIONS\relatorio-visao\RelatorioEstoque.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VISÃO\RelatorioEstoque.Designer.cs">
+    <Compile Include="VISIONS\relatorio-visao\RelatorioEstoque.Designer.cs">
       <DependentUpon>RelatorioEstoque.cs</DependentUpon>
     </Compile>
-    <Compile Include="VISÃO\RelatorioVendas.cs">
+    <Compile Include="VISIONS\relatorio-visao\RelatorioVendas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VISÃO\RelatorioVendas.Designer.cs">
+    <Compile Include="VISIONS\relatorio-visao\RelatorioVendas.Designer.cs">
       <DependentUpon>RelatorioVendas.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="VISÃO\CadastroProdutos.resx">
+    <EmbeddedResource Include="VISIONS\produto-visao\CADASTRO DE PRODUTOS\CadastroProdutos.resx">
       <DependentUpon>CadastroProdutos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VISÃO\CadastroUsuario.resx">
+    <EmbeddedResource Include="VISIONS\usuarios-visao\CADASTRO DE USUÁRIOS\CadastroUsuario.resx">
       <DependentUpon>CadastroUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VISÃO\CadastroVendas.resx">
+    <EmbeddedResource Include="VISIONS\venda-visao\CADASTRO DE VENDAS\CadastroVendas.resx">
       <DependentUpon>CadastroVendas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VISÃO\ConfigSistema.resx">
+    <EmbeddedResource Include="VISIONS\config-visao\CONFIGURAÇÕES DO SISTEMA\ConfigSistema.resx">
       <DependentUpon>ConfigSistema.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VISÃO\ConfigUsuario.resx">
+    <EmbeddedResource Include="VISIONS\config-visao\CONFIGURAÇÕES DO USUÁRIO\ConfigUsuario.resx">
       <DependentUpon>ConfigUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VISÃO\EditarUsuario.resx">
+    <EmbeddedResource Include="VISIONS\config-visao\ALTERAÇÕES\TELAS ACESSO ADMINISTRADOR\EditarUsuario.resx">
       <DependentUpon>EditarUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VISÃO\logar.resx">
+    <EmbeddedResource Include="VISIONS\usuarios-visao\LOGIN\logar.resx">
       <DependentUpon>logar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <EmbeddedResource Include="VISÃO\MenuPerfil%28Administrador%29.resx">
+    <EmbeddedResource Include="VISIONS\usuarios-visao\MENU\MenuPerfil%28Administrador%29.resx">
       <DependentUpon>MenuPerfil%28Administrador%29.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
@@ -367,6 +369,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-lixeira-vazia-96-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CONTROLS\cliente-controledao\" />
+    <Folder Include="CONTROLS\relatorio-controledao\" />
+    <Folder Include="MODELS\cliente-modelo\" />
+    <Folder Include="MODELS\relatorio-modelo\" />
+    <Folder Include="VISIONS\cliente-visao\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
