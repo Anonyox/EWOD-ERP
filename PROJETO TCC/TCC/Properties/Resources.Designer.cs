@@ -423,6 +423,16 @@ namespace TCC.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_abrir_pasta_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-abrir-pasta-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_botão_de_opção_marcado_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-botão-de-opção-marcado-48", resourceCulture);
@@ -576,6 +586,36 @@ namespace TCC.Properties {
         internal static System.Drawing.Bitmap icons8_lixeira_vazia_961 {
             get {
                 object obj = ResourceManager.GetObject("icons8-lixeira-vazia-961", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_ms_excel_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-ms-excel-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_ms_excel_50_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("icons8-ms-excel-50-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_ms_excel_501 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-ms-excel-501", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

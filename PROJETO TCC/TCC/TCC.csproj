@@ -395,5 +395,17 @@
   <ItemGroup>
     <None Include="Resources\icons8-exportar-64.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-ms-excel-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-ms-excel-50-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-ms-excel-501.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-abrir-pasta-64.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

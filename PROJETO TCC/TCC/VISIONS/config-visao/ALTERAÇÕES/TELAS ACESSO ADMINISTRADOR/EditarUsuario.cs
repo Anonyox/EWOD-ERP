@@ -537,6 +537,12 @@ namespace TCC.VISÃO
             Cursor = Cursors.Default;
         }
 
+        private void btnMinimizar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+
         #endregion
 
 
