@@ -89,6 +89,10 @@ namespace TCC.VISÃO
             this.lblcancelar = new System.Windows.Forms.Label();
             this.lblexcluir = new System.Windows.Forms.Label();
             this.btnexcluir = new System.Windows.Forms.Button();
+            this.txtnovoNome = new System.Windows.Forms.TextBox();
+            this.lblnovoNome = new System.Windows.Forms.Label();
+            this.txtnovaSenha = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSair)).BeginInit();
@@ -140,7 +144,7 @@ namespace TCC.VISÃO
             this.lblDepartamento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblDepartamento.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
             this.lblDepartamento.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblDepartamento.Location = new System.Drawing.Point(10, 131);
+            this.lblDepartamento.Location = new System.Drawing.Point(4, 129);
             this.lblDepartamento.Name = "lblDepartamento";
             this.lblDepartamento.Size = new System.Drawing.Size(140, 23);
             this.lblDepartamento.TabIndex = 70;
@@ -527,7 +531,7 @@ namespace TCC.VISÃO
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(598, 64);
+            this.label1.Location = new System.Drawing.Point(598, 56);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 23);
             this.label1.TabIndex = 157;
@@ -542,7 +546,7 @@ namespace TCC.VISÃO
             "Geral",
             "Venda",
             "Compra"});
-            this.cbperfilUsuario.Location = new System.Drawing.Point(674, 62);
+            this.cbperfilUsuario.Location = new System.Drawing.Point(674, 54);
             this.cbperfilUsuario.Name = "cbperfilUsuario";
             this.cbperfilUsuario.Size = new System.Drawing.Size(140, 31);
             this.cbperfilUsuario.TabIndex = 159;
@@ -706,6 +710,48 @@ namespace TCC.VISÃO
             this.btnexcluir.MouseEnter += new System.EventHandler(this.btnexcluir_MouseEnter_1);
             this.btnexcluir.MouseLeave += new System.EventHandler(this.btnexcluir_MouseLeave_1);
             // 
+            // txtnovoNome
+            // 
+            this.txtnovoNome.Font = new System.Drawing.Font("Comic Sans MS", 12F);
+            this.txtnovoNome.Location = new System.Drawing.Point(146, 93);
+            this.txtnovoNome.Name = "txtnovoNome";
+            this.txtnovoNome.Size = new System.Drawing.Size(181, 30);
+            this.txtnovoNome.TabIndex = 175;
+            // 
+            // lblnovoNome
+            // 
+            this.lblnovoNome.AutoSize = true;
+            this.lblnovoNome.BackColor = System.Drawing.Color.Transparent;
+            this.lblnovoNome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblnovoNome.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
+            this.lblnovoNome.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblnovoNome.Location = new System.Drawing.Point(35, 96);
+            this.lblnovoNome.Name = "lblnovoNome";
+            this.lblnovoNome.Size = new System.Drawing.Size(110, 23);
+            this.lblnovoNome.TabIndex = 176;
+            this.lblnovoNome.Text = "Novo Nome :";
+            // 
+            // txtnovaSenha
+            // 
+            this.txtnovaSenha.Font = new System.Drawing.Font("Comic Sans MS", 12F);
+            this.txtnovaSenha.Location = new System.Drawing.Point(674, 91);
+            this.txtnovaSenha.Name = "txtnovaSenha";
+            this.txtnovaSenha.Size = new System.Drawing.Size(140, 30);
+            this.txtnovaSenha.TabIndex = 177;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label3.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label3.Location = new System.Drawing.Point(601, 94);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(70, 23);
+            this.label3.TabIndex = 178;
+            this.label3.Text = "Senha :";
+            // 
             // EditarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -714,6 +760,10 @@ namespace TCC.VISÃO
             this.BackgroundImage = global::TCC.Properties.Resources._1555492a6_11;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(863, 654);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txtnovaSenha);
+            this.Controls.Add(this.lblnovoNome);
+            this.Controls.Add(this.txtnovoNome);
             this.Controls.Add(this.btnexcluir);
             this.Controls.Add(this.lblexcluir);
             this.Controls.Add(this.lblcancelar);
@@ -826,5 +876,9 @@ namespace TCC.VISÃO
         private System.Windows.Forms.DataGridViewTextBoxColumn numero;
         private System.Windows.Forms.DataGridViewTextBoxColumn email;
         private System.Windows.Forms.DataGridViewTextBoxColumn departamento;
+        private System.Windows.Forms.TextBox txtnovoNome;
+        private System.Windows.Forms.Label lblnovoNome;
+        private System.Windows.Forms.TextBox txtnovaSenha;
+        private System.Windows.Forms.Label label3;
     }
 }

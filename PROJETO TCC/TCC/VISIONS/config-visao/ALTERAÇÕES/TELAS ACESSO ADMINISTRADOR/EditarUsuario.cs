@@ -84,7 +84,7 @@ namespace TCC.VISÃO
             {
                 string usuario = Convert.ToString(txtnomeUsuario.Text);
                 //Elaborar Select que contenha cada um dos campos da tabela
-                SqlCommand cmd = new SqlCommand("SELECT cidade, endereco, cpf, complemento, bairro, telefone, cep, estado, perfil, departamento, numero FROM logins WHERE usuario = @param ", con.conectar());
+                SqlCommand cmd = new SqlCommand("SELECT usuario, senha, cidade, endereco, cpf, complemento, bairro, telefone, cep, estado, perfil, departamento, numero FROM logins WHERE usuario = @param ", con.conectar());
                 cmd.Parameters.AddWithValue("@param", txtnomeUsuario.Text);
 
                 dr = cmd.ExecuteReader();
@@ -93,7 +93,7 @@ namespace TCC.VISÃO
                 //atribuir as variáveis para os txts
                 while (dr.Read())
                 {
-
+                    txtnovoNome.Text = dr["usuario"].ToString();
                     txtCidade.Text = dr["cidade"].ToString();
                     txtenderecoUsuario.Text = dr["numero"].ToString();
                     txtcpfUsuario.Text = dr["cpf"].ToString();
@@ -105,6 +105,8 @@ namespace TCC.VISÃO
                     cbestadoUsuario.Text = dr["estado"].ToString();
                     cbperfilUsuario.Text = dr["perfil"].ToString();
                     cbdepartamentoUsuario.Text = dr["departamento"].ToString();
+                    txtnovaSenha.Text = dr["senha"].ToString();
+
 
 
                 }
@@ -196,7 +198,7 @@ namespace TCC.VISÃO
                     SqlCommand cmd2 = new SqlCommand();
                     cmd2.CommandText = "UPDATE logins SET cidade = @cidade, endereco = @endereco, complemento = @complemento, bairro = @bairro," +
                         "telefone = @telefone, CEP = @CEP, estado = @estado, " +
-                        "perfil = @perfil, departamento = @departamento WHERE usuario = @usuario";
+                        "perfil = @perfil, departamento = @departamento, senha = @senha WHERE usuario = @usuario";
 
                     cmd2.Parameters.AddWithValue("@usuario", txtnomeUsuario.Text);
                     cmd2.Parameters.AddWithValue("@cidade", txtCidade.Text);
@@ -208,6 +210,7 @@ namespace TCC.VISÃO
                     cmd2.Parameters.AddWithValue("@estado", cbestadoUsuario.Text);
                     cmd2.Parameters.AddWithValue("@perfil", cbperfilUsuario.Text);
                     cmd2.Parameters.AddWithValue("@departamento", cbdepartamentoUsuario.Text);
+                    cmd2.Parameters.AddWithValue("@senha", txtnovaSenha.Text);
 
                     try
                     {
