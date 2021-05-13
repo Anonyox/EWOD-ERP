@@ -95,7 +95,7 @@ namespace TCC.VISÃO
                 {
                     txtnovoNome.Text = dr["usuario"].ToString();
                     txtCidade.Text = dr["cidade"].ToString();
-                    txtenderecoUsuario.Text = dr["numero"].ToString();
+                    txtnumeroUsuario.Text = dr["numero"].ToString();
                     txtcpfUsuario.Text = dr["cpf"].ToString();
                     txtenderecoUsuario.Text = dr["endereco"].ToString();
                     txtbairroUsuario.Text = dr["bairro"].ToString();
@@ -199,13 +199,15 @@ namespace TCC.VISÃO
                 if (tem == true)
                 {
                     SqlCommand cmd2 = new SqlCommand();
-                    cmd2.CommandText = "UPDATE logins SET cidade = @cidade, endereco = @endereco, complemento = @complemento, bairro = @bairro," +
+                    cmd2.CommandText = "UPDATE logins SET usuario = usuari cidade = @cidade, endereco = @endereco, numero = @numero, complemento = @complemento, bairro = @bairro," +
                         "telefone = @telefone, CEP = @CEP, estado = @estado, " +
                         "perfil = @perfil, departamento = @departamento, senha = @senha WHERE usuario = @usuario";
 
                     cmd2.Parameters.AddWithValue("@usuario", txtnomeUsuario.Text);
+                    //cmd2.Parameters.AddWithValue("usuari", txtnovoNome.Text);
                     cmd2.Parameters.AddWithValue("@cidade", txtCidade.Text);
                     cmd2.Parameters.AddWithValue("@endereco", txtenderecoUsuario.Text);
+                    cmd2.Parameters.AddWithValue("@numero", txtnumeroUsuario.Text);
                     cmd2.Parameters.AddWithValue("@complemento", txtcomplementoUsuario.Text);
                     cmd2.Parameters.AddWithValue("@bairro", txtbairroUsuario.Text);
                     cmd2.Parameters.AddWithValue("@telefone", txttelefoneUsuario.Text);
@@ -252,6 +254,10 @@ namespace TCC.VISÃO
             txttelefoneUsuario.Text = ("");
             txtenderecoUsuario.Text = ("");
             txtsenhaAdm.Text = ("");
+            txtnumeroUsuario.Text = ("");
+            txtnovaSenha.Text = ("");
+            txtcpfUsuario.Text = ("");
+            txtnovoNome.Text = ("");
         }
 
         public void listarUsuarios()

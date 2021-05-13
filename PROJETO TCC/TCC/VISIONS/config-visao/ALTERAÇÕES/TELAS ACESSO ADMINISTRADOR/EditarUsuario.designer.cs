@@ -81,7 +81,6 @@ namespace TCC.VISÃO
             this.txtnomeUsuario = new System.Windows.Forms.TextBox();
             this.txttelefoneUsuario = new System.Windows.Forms.MaskedTextBox();
             this.txtcepUsuario = new System.Windows.Forms.MaskedTextBox();
-            this.txtnumeroUsuario = new System.Windows.Forms.TextBox();
             this.lblnumeroUsuario = new System.Windows.Forms.Label();
             this.lblcpfUsuario = new System.Windows.Forms.Label();
             this.txtcpfUsuario = new System.Windows.Forms.MaskedTextBox();
@@ -95,6 +94,7 @@ namespace TCC.VISÃO
             this.label3 = new System.Windows.Forms.Label();
             this.pbolhoFechado = new System.Windows.Forms.PictureBox();
             this.pbolhoAberto = new System.Windows.Forms.PictureBox();
+            this.txtnumeroUsuario = new System.Windows.Forms.TextBox();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSair)).BeginInit();
@@ -611,14 +611,6 @@ namespace TCC.VISÃO
             this.txtcepUsuario.Size = new System.Drawing.Size(103, 30);
             this.txtcepUsuario.TabIndex = 164;
             // 
-            // txtnumeroUsuario
-            // 
-            this.txtnumeroUsuario.Font = new System.Drawing.Font("Comic Sans MS", 12F);
-            this.txtnumeroUsuario.Location = new System.Drawing.Point(146, 246);
-            this.txtnumeroUsuario.Name = "txtnumeroUsuario";
-            this.txtnumeroUsuario.Size = new System.Drawing.Size(155, 30);
-            this.txtnumeroUsuario.TabIndex = 167;
-            // 
             // lblnumeroUsuario
             // 
             this.lblnumeroUsuario.AutoSize = true;
@@ -784,6 +776,14 @@ namespace TCC.VISÃO
             this.pbolhoAberto.MouseEnter += new System.EventHandler(this.pbolhoAberto_MouseEnter);
             this.pbolhoAberto.MouseLeave += new System.EventHandler(this.pbolhoAberto_MouseLeave);
             // 
+            // txtnumeroUsuario
+            // 
+            this.txtnumeroUsuario.Font = new System.Drawing.Font("Comic Sans MS", 12F);
+            this.txtnumeroUsuario.Location = new System.Drawing.Point(146, 242);
+            this.txtnumeroUsuario.Name = "txtnumeroUsuario";
+            this.txtnumeroUsuario.Size = new System.Drawing.Size(181, 30);
+            this.txtnumeroUsuario.TabIndex = 182;
+            // 
             // EditarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -792,6 +792,7 @@ namespace TCC.VISÃO
             this.BackgroundImage = global::TCC.Properties.Resources._1555492a6_11;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(863, 654);
+            this.Controls.Add(this.txtnumeroUsuario);
             this.Controls.Add(this.pbolhoAberto);
             this.Controls.Add(this.pbolhoFechado);
             this.Controls.Add(this.label3);
@@ -804,7 +805,6 @@ namespace TCC.VISÃO
             this.Controls.Add(this.lblconfirmar);
             this.Controls.Add(this.txtcpfUsuario);
             this.Controls.Add(this.lblcpfUsuario);
-            this.Controls.Add(this.txtnumeroUsuario);
             this.Controls.Add(this.lblnumeroUsuario);
             this.Controls.Add(this.txtcepUsuario);
             this.Controls.Add(this.txttelefoneUsuario);
@@ -888,7 +888,6 @@ namespace TCC.VISÃO
         private System.Windows.Forms.MaskedTextBox txttelefoneUsuario;
         private System.Windows.Forms.MaskedTextBox txtcepUsuario;
         public System.Windows.Forms.Button btnconfirmar;
-        private System.Windows.Forms.TextBox txtnumeroUsuario;
         private System.Windows.Forms.Label lblnumeroUsuario;
         private System.Windows.Forms.Label lblcpfUsuario;
         private System.Windows.Forms.MaskedTextBox txtcpfUsuario;
@@ -918,5 +917,6 @@ namespace TCC.VISÃO
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pbolhoFechado;
         private System.Windows.Forms.PictureBox pbolhoAberto;
+        private System.Windows.Forms.TextBox txtnumeroUsuario;
     }
 }

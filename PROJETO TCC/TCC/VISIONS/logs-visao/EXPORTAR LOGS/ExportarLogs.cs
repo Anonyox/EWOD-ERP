@@ -74,8 +74,8 @@ namespace TCC.VISIONS.logs_visao.EXPORTAR_LOGS
 
         private void panel3_MouseDown(object sender, MouseEventArgs e)
         {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
+            /*ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);*/
         }
 
         #endregion
