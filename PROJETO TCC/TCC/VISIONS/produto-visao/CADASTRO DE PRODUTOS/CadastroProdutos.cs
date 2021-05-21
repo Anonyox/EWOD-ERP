@@ -50,10 +50,14 @@ namespace TCC.VISÃO
             {
                 int n = dtgproduto.Rows.Add();
 
-                dtgproduto.Rows[n].Cells[0].Value = item["Tipo"].ToString();
-                dtgproduto.Rows[n].Cells[1].Value = item["dataLog"].ToString();
-                dtgproduto.Rows[n].Cells[2].Value = item["usuario"].ToString();
-                dtgproduto.Rows[n].Cells[3].Value = item["perfil"].ToString();
+                dtgproduto.Rows[n].Cells[0].Value = item["nome"].ToString();
+                dtgproduto.Rows[n].Cells[1].Value = item["fornecedor"].ToString();
+                dtgproduto.Rows[n].Cells[2].Value = item["tipo"].ToString();
+                dtgproduto.Rows[n].Cells[3].Value = item["modelo"].ToString();
+                dtgproduto.Rows[n].Cells[4].Value = item["quantidade"].ToString();
+                dtgproduto.Rows[n].Cells[5].Value = item["valordeCompra"].ToString();
+                dtgproduto.Rows[n].Cells[6].Value = item["valordeVenda"].ToString();
+                dtgproduto.Rows[n].Cells[7].Value = item["datadeCadastro"].ToString();
 
             }
         } //LISTAGEM DE LOGS
