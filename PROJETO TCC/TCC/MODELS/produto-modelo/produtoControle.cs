@@ -1,12 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TCC.CONTROLE;
+using TCC.VISÃO;
 
 namespace TCC.MODELS.produto_modelo
 {
+    
     public class produtoControle
     {
+        public DataTable dtr = new DataTable();
+        cadastroprodutoDaoComandos cadproduto = new cadastroprodutoDaoComandos();
+
+        public DataTable listarProdutos()
+        {
+            this.dtr = cadproduto.listarProdutos();
+
+            return dtr;
+        } //LISTAGEM DE Produtos
     }
 }

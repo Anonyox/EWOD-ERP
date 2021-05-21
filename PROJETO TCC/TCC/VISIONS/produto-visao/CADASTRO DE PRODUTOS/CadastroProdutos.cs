@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
 using TCC.CONTROLE;
+using TCC.MODELS.produto_modelo;
 
 namespace TCC.VISÃO
 {
@@ -23,46 +24,40 @@ namespace TCC.VISÃO
         }
         #endregion
 
+
+
+
+
         #region VARIÁVEIS E INTÂNCIAS
         menuAdministrador menuz = new menuAdministrador();
-        cadastroprodutoDaoComandos cadpro = new cadastroprodutoDaoComandos();
+        produtoControle cadpro = new produtoControle();
 
         SqlDataReader dr;
         Conexao con = new Conexao();
         #endregion
 
+
+
+
         #region MÉTODOS DE FUNCIONALIDADES
-        private void listarProdutos()
+        public void listarProdutos()
         {
-            Conexao con = new Conexao();
-            SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "select * from produtos";
-            cmd.Connection = con.conectar();
+            DataTable dt = cadpro.listarProdutos();
 
+            dtgproduto.Rows.Clear();
 
-            try
+            foreach (DataRow item in dt.Rows)
             {
-                con.conectar();
-                cmd.ExecuteNonQuery();
+                int n = dtgproduto.Rows.Add();
 
-
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-
-                con.desconectar();
-
-                dataGridView1.DataSource = dt;
+                dtgproduto.Rows[n].Cells[0].Value = item["Tipo"].ToString();
+                dtgproduto.Rows[n].Cells[1].Value = item["dataLog"].ToString();
+                dtgproduto.Rows[n].Cells[2].Value = item["usuario"].ToString();
+                dtgproduto.Rows[n].Cells[3].Value = item["perfil"].ToString();
 
             }
-            catch (Exception)
-            {
-
-                throw;
-            }
-
-
-        }
+        } //LISTAGEM DE LOGS
+       
 
         public void buscarProduto()
         {
@@ -111,6 +106,10 @@ namespace TCC.VISÃO
         }
 
         #endregion
+
+
+
+
 
         #region DESIGN
         private void btnCadastrar_MouseEnter(object sender, EventArgs e)
