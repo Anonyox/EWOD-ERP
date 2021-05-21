@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TCC.VISÃO;
 
 namespace TCC.CONTROLE
 {   
@@ -15,7 +16,11 @@ namespace TCC.CONTROLE
         SqlCommand cmd = new SqlCommand();
         SqlDataReader dr;       
         DataTable dt = new DataTable();
-
+        CadastroProduto cadastroproduto = new CadastroProduto();
+        public bool tem;
+        public string nomeproduto;
+        public string mensagem;
+             
         public DataTable listarProdutos()
         {
             Conexao con = new Conexao();
@@ -49,6 +54,42 @@ namespace TCC.CONTROLE
 
         }
 
+        public void buscarProduto()
+        {
+
+            SqlCommand cmd = new SqlCommand("SELECT nome FROM produtos", con.conectar());
+
+            dr = cmd.ExecuteReader();
+
+            AutoCompleteStringCollection collection = new AutoCompleteStringCollection();
+
+            while (dr.Read())
+            {
+                collection.Add(dr["nome"].ToString());
+            }
+           
+
+            dr.Close();
+            con.desconectar();
+
+        }
+
+      /* public bool VerificarProduto(string nome)
+        {
+            cmd.CommandText = "SELECT nome FROM dbo.produtos WHERE nome = @nome";
+            cmd.Parameters.AddWithValue("@nome", nome);
+
+            if (nome != dr["@nome"].ToString())
+            {
+                tem = false;
+             
+                
+                
+            }
+                
+
+
+        }*/
 
 
 

@@ -62,7 +62,6 @@ namespace TCC.VISÃO
             }
         } //LISTAGEM DE LOGS
        
-
         public void buscarProduto()
         {
 
