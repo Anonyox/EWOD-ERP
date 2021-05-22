@@ -12,11 +12,14 @@ namespace TCC.MODELS.produto_modelo
     
     public class produtoControle
     {
+        #region VARIÁVEIS E INSTÂNCIAS
         public DataTable dtr = new DataTable();
         cadastroprodutoDaoComandos cadproduto = new cadastroprodutoDaoComandos();
         public string mensagem = ("");
         public bool tem;
+        #endregion
 
+        #region MÉTODOS DE FUNCIONALIDADES (CADASTRO DE PRODUTO)
         public DataTable listarProdutos()
         {
             this.dtr = cadproduto.listarProdutos();
@@ -32,9 +35,11 @@ namespace TCC.MODELS.produto_modelo
             {
                 this.tem = true;
 
-                
+
             }
             return mensagem;
         }
+        #endregion
+
     }
 }
