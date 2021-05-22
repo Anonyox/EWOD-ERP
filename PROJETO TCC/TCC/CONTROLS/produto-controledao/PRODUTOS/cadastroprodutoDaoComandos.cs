@@ -17,7 +17,7 @@ namespace TCC.CONTROLE
         SqlDataReader dr;       
         DataTable dt = new DataTable();
         CadastroProduto cadastroproduto = new CadastroProduto();
-        public bool tem;
+        public bool tem = false;
         public string nomeproduto;
         public string mensagem;
              
@@ -90,6 +90,41 @@ namespace TCC.CONTROLE
 
 
         }*/
+
+        public String cadastrarProdutos (string nome, string fornecedor, string tipo, string modelo, string quantidade, string valordeCompra, string valordeVenda,
+            string datadeCadastro)
+        {
+            cmd.CommandText = "INSERT INTO dbo.produtos VALUES(@a, @b, @c, @d, @e, @f, @g, @h)";
+            cmd.Parameters.AddWithValue("@a", nome);
+            cmd.Parameters.AddWithValue("@b", fornecedor);
+            cmd.Parameters.AddWithValue("@c", tipo);
+            cmd.Parameters.AddWithValue("@d", modelo);
+            cmd.Parameters.AddWithValue("@e", quantidade);
+            cmd.Parameters.AddWithValue("@f", valordeCompra);
+            cmd.Parameters.AddWithValue("@g", valordeVenda);
+            cmd.Parameters.AddWithValue("@h", datadeCadastro);
+
+            //INSERT NA TABELA LOGS
+
+            try
+            {
+                cmd.Connection = con.conectar();
+                cmd.ExecuteNonQuery();
+
+                //ABRIR CONEXÃO DOS LOGS
+
+                con.desconectar();
+
+                this.mensagem = "CADASTRADO COM SUCESSO!!";
+                tem = true;
+            }
+            catch (SqlException)
+            {
+
+                this.mensagem = "ERRO COM O BANCO DE DADOS";
+            }
+            return mensagem;
+        }
 
 
 

@@ -14,6 +14,8 @@ namespace TCC.MODELS.produto_modelo
     {
         public DataTable dtr = new DataTable();
         cadastroprodutoDaoComandos cadproduto = new cadastroprodutoDaoComandos();
+        public string mensagem = ("");
+        public bool tem;
 
         public DataTable listarProdutos()
         {
@@ -21,5 +23,18 @@ namespace TCC.MODELS.produto_modelo
 
             return dtr;
         } //LISTAGEM DE Produtos
+        public String cadastrarProdutos(string nome, string fornecedor, string tipo, string modelo, string quantidade, string valordeCompra, string valordeVenda,
+             string datadeCadastro)
+        {
+            this.mensagem = cadproduto.cadastrarProdutos(nome, fornecedor, tipo, modelo, quantidade, valordeCompra, valordeVenda, datadeCadastro);
+
+            if (cadproduto.tem)
+            {
+                this.tem = true;
+
+                
+            }
+            return mensagem;
+        }
     }
 }

@@ -34,6 +34,7 @@ namespace TCC.VISÃO
 
         SqlDataReader dr;
         Conexao con = new Conexao();
+        
         #endregion
 
 
@@ -108,6 +109,68 @@ namespace TCC.VISÃO
             con.desconectar();
         }
 
+        private void limparCampos()
+        {
+            txtnomeProduto.Text = "";
+            txtfornecedor.Text = "";
+            txtdata.Text = "";
+            txtmodeloProduto.Text = "";
+            txtvalorCompra.Text = "";
+            txtvalorVenda.Text = "";
+            txtquantidadeProduto.Text = "";
+            cmbtipo.Text = "";
+        }
+
+        public bool verificarCampos()
+        {
+            if (txtnomeProduto.Text == string.Empty | txtdata.Text == string.Empty | txtmodeloProduto.Text == string.Empty | txtquantidadeProduto.Text == string.Empty |
+                txtfornecedor.Text == string.Empty | cmbtipo.Text == string.Empty | txtvalorCompra.Text == string.Empty | txtvalorVenda.Text == string.Empty)
+            {
+                btnConfirmar.Enabled = false;
+                
+
+                return false;
+            }          
+            else
+            {
+                btnConfirmar.Enabled = true;
+
+                return true;
+            }
+            
+        }
+
+        public void cadastrarProdutos()
+        {
+            if (MessageBox.Show("Deseja Cadastrar um Novo Produto ?", "CADASTRAR", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+            {
+                if (!verificarCampos())
+                {
+                    MessageBox.Show("PREENCHA TODOS OS CAMPOS", "PREENCHER CAMPOS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    String mensagem = cadpro.cadastrarProdutos(txtnomeProduto.Text, txtfornecedor.Text, cmbtipo.Text, txtmodeloProduto.Text,
+                        txtquantidadeProduto.Text, txtvalorCompra.Text, valordeVenda.HeaderText, txtdata.Text);
+                    if (cadpro.tem)
+                    {
+                        MessageBox.Show(mensagem, "CADASTRO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show(cadpro.mensagem, "CADASTRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                    if(cadpro.mensagem == "CADASTRADO COM SUCESSO!!")
+                    {
+                        limparCampos();
+                        btnConfirmar.Enabled = false;
+                        
+                    }
+                }
+            }
+        }
+
         #endregion
 
 
@@ -115,6 +178,10 @@ namespace TCC.VISÃO
 
 
         #region DESIGN
+        private void btnConfirmar_Click(object sender, EventArgs e)
+        {
+            cadastrarProdutos();
+        }
         private void btnCadastrar_MouseEnter(object sender, EventArgs e)
         {
             //btnCadastrar.Size = new Size(100, 50);
@@ -172,11 +239,12 @@ namespace TCC.VISÃO
             preencherCampos();
         }
 
+
+
+
+
         #endregion
 
-
        
-
-        
     }
 }

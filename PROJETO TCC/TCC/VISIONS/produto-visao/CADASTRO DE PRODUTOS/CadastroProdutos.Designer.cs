@@ -39,7 +39,7 @@
             this.txtcodigoProduto = new System.Windows.Forms.TextBox();
             this.txtquantidadeProduto = new System.Windows.Forms.TextBox();
             this.txtvalorCompra = new System.Windows.Forms.TextBox();
-            this.txtcadastroproduto = new System.Windows.Forms.TextBox();
+            this.txtfornecedor = new System.Windows.Forms.TextBox();
             this.txtvalorVenda = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
@@ -92,6 +92,7 @@
             this.btnConfirmar.Size = new System.Drawing.Size(64, 38);
             this.btnConfirmar.TabIndex = 157;
             this.btnConfirmar.UseVisualStyleBackColor = false;
+            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             this.btnConfirmar.MouseEnter += new System.EventHandler(this.btnConfirmar_MouseEnter);
             this.btnConfirmar.MouseLeave += new System.EventHandler(this.btnConfirmar_MouseLeave);
             // 
@@ -181,14 +182,14 @@
             this.txtvalorCompra.Size = new System.Drawing.Size(112, 20);
             this.txtvalorCompra.TabIndex = 96;
             // 
-            // txtcadastroproduto
+            // txtfornecedor
             // 
-            this.txtcadastroproduto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtcadastroproduto.Enabled = false;
-            this.txtcadastroproduto.Location = new System.Drawing.Point(576, 95);
-            this.txtcadastroproduto.Name = "txtcadastroproduto";
-            this.txtcadastroproduto.Size = new System.Drawing.Size(278, 20);
-            this.txtcadastroproduto.TabIndex = 95;
+            this.txtfornecedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtfornecedor.Enabled = false;
+            this.txtfornecedor.Location = new System.Drawing.Point(576, 95);
+            this.txtfornecedor.Name = "txtfornecedor";
+            this.txtfornecedor.Size = new System.Drawing.Size(278, 20);
+            this.txtfornecedor.TabIndex = 95;
             // 
             // txtvalorVenda
             // 
@@ -527,7 +528,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtcadastroproduto);
+            this.Controls.Add(this.txtfornecedor);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.txtquantidadeProduto);
             this.Controls.Add(this.txtvalorVenda);
@@ -561,7 +562,7 @@
         private System.Windows.Forms.TextBox txtcodigoProduto;
         private System.Windows.Forms.TextBox txtquantidadeProduto;
         private System.Windows.Forms.TextBox txtvalorCompra;
-        private System.Windows.Forms.TextBox txtcadastroproduto;
+        private System.Windows.Forms.TextBox txtfornecedor;
         private System.Windows.Forms.TextBox txtvalorVenda;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button5;
