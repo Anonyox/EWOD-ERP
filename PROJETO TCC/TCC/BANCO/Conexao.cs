@@ -16,6 +16,7 @@ namespace TCC.CONTROLE
         SqlConnection con = new SqlConnection();
         SqlConnection con2 = new SqlConnection();
         SqlConnection con3 = new SqlConnection();
+        SqlConnection con4 = new SqlConnection();
         SqlCommand command = new SqlCommand();
         public String mensagem = "";
         public bool verificaConexao = false;
@@ -44,8 +45,9 @@ namespace TCC.CONTROLE
 
 
             //CONEXÃO EXTERNA UTILIZANDO IP FIXO                     //PORTA
-            con3.ConnectionString = @"Data Source= tcp: 177.125.224.77,1433;Initial Catalog=lfbd;User ID=SA;Password=lionforce@147;connection timeout = 1";
+            //con3.ConnectionString = @"Data Source= tcp: 177.125.224.77,1433;Initial Catalog=lfbd;User ID=SA;Password=lionforce@147;connection timeout = 1";
 
+            con4.ConnectionString = @"Data Source= DESKTOP-GQFE158\SQLEXPRESS;Initial Catalog=lfbd;Integrated Security = true;connection timeout = 1";
 
             #endregion
         }
@@ -95,8 +97,18 @@ namespace TCC.CONTROLE
                         }
                         catch (Exception)
                         {
+                            try
+                            {
+                                con = con4;
+                                con.Open();
+                            }
+                            catch (Exception)
+                            {
 
-                            this.mensagem = "ERRO DE CONEXÃO COM O SERVIDOR";
+                                this.mensagem = "ERRO DE CONEXÃO COM O SERVIDOR";
+                            }
+
+                            
                         }
                         
                     }
