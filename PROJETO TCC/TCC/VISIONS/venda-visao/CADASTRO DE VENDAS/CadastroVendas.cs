@@ -459,7 +459,7 @@ namespace TCC.VISÃO
 
         private void txtvalordeCompra_TextChanged(object sender, EventArgs e)
         {
-            txtvalordeCompra.Text = String.Format("{0:C}");
+            //txtvalordeCompra.Text = String.Format("{0:C}");
         }
 
 
