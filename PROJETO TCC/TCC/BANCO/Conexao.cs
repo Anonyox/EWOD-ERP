@@ -9,8 +9,10 @@ namespace TCC.CONTROLE
         //CLASSE PRINCIPAL DE CONEXÃO COM O BANCO DE DADOS
 
 
-
-
+        string ip = "26.186.226.18,9022";
+        string tcc = "tcc";
+        string user = "etec";
+        string pass = "123456";
 
         #region VARIÁVEIS E INSTÂNCIAS
         SqlConnection con = new SqlConnection();
@@ -34,17 +36,17 @@ namespace TCC.CONTROLE
 
 
             //CONEXÃO EXTERNA COM RADMIN VPN                       //PORTA
-            con.ConnectionString = @"Data Source= tcp: 26.186.226.18,9022;Initial Catalog=tcc;User ID=etec;Password=123456;connection timeout = 1";
+            //con.ConnectionString = @"Data Source= tcp: "+ip+";Initial Catalog="+tcc+";User ID="+user+";Password="+pass+";connection timeout = 1";
 
 
 
             //CONEXÃO LOCAL IP WINDOWS ESTÁTICO
-            con2.ConnectionString = @"Data Source=  192.168.1.5;Initial Catalog=tcc;User ID=etec;Password=123456;connection timeout = 1";
+            //con2.ConnectionString = @"Data Source=  192.168.1.5;Initial Catalog=lfbd;User ID=SA;Password=lionforce@147;connection timeout = 1";
 
 
 
             //CONEXÃO EXTERNA UTILIZANDO IP FIXO                     //PORTA
-            con3.ConnectionString = @"Data Source= tcp: 177.125.224.84,9022;Initial Catalog=tcc;User ID=etec;Password=123456;connection timeout = 1";
+            con3.ConnectionString = @"Data Source= tcp: 177.125.224.77,1433;Initial Catalog=lfbd;User ID=SA;Password=lionforce@147;connection timeout = 1";
 
 
             #endregion

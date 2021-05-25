@@ -20,7 +20,7 @@ namespace TCC.VISÃO
         {
             InitializeComponent();
             menuz.valida = 2;
-            listarProdutos();
+            //listarProdutos();
             
 
 
@@ -98,8 +98,8 @@ namespace TCC.VISÃO
 
         private void CadastroProduto_Load(object sender, EventArgs e)
         {           
-            buscarProduto();                  
-            timer1.Start();           
+            //buscarProduto();                  
+            //timer1.Start();           
         }
 
         private void textBox6_TextChanged(object sender, EventArgs e)
