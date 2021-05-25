@@ -4,30 +4,21 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TCC.CONTROLE;
-using TCC.VISÃO;
 
 namespace TCC.MODELS.produto_modelo
 {
-    
     public class produtoControle
     {
-        #region VARIÁVEIS E INSTÂNCIAS
-        public DataTable dtr = new DataTable();
-        cadastroprodutoDaoComandos cadproduto = new cadastroprodutoDaoComandos();
-        public string mensagem = ("");
-        public bool tem;
-        #endregion
 
-        #region MÉTODOS DE FUNCIONALIDADES (CADASTRO DE PRODUTO)
         public DataTable listarProdutos()
         {
             this.dtr = cadproduto.listarProdutos();
 
             return dtr;
         } //LISTAGEM DE Produtos
+
         public String cadastrarProdutos(string nome, string fornecedor, string tipo, string modelo, string quantidade, string valordeCompra, string valordeVenda,
-             string datadeCadastro)
+                     string datadeCadastro)
         {
             this.mensagem = cadproduto.cadastrarProdutos(nome, fornecedor, tipo, modelo, quantidade, valordeCompra, valordeVenda, datadeCadastro);
 
@@ -39,7 +30,5 @@ namespace TCC.MODELS.produto_modelo
             }
             return mensagem;
         }
-        #endregion
-
     }
 }

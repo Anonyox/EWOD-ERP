@@ -10,15 +10,15 @@ namespace TCC.VISÃO
 {
     public partial class CadastroProduto : Form
     {
-       
+        
 
-        #region CONTROLADOR 
+        #region CONSTRUTOR
         public CadastroProduto()
         {
             InitializeComponent();
             menuz.valida = 2;
-            listarProdutos();
-            
+            //listarProdutos();
+
 
 
         }
@@ -28,19 +28,25 @@ namespace TCC.VISÃO
 
 
 
-        #region VARIÁVEIS E INTÂNCIAS
+        #region VARIÁVEIS E INSTÂNCIAS
+
         menuAdministrador menuz = new menuAdministrador();
         produtoControle cadpro = new produtoControle();
 
         SqlDataReader dr;
         Conexao con = new Conexao();
-        
+
+
+
         #endregion
 
 
 
 
+
+
         #region MÉTODOS DE FUNCIONALIDADES
+
         public void listarProdutos()
         {
             DataTable dt = cadpro.listarProdutos();
@@ -61,8 +67,9 @@ namespace TCC.VISÃO
                 dtgproduto.Rows[n].Cells[7].Value = item["datadeCadastro"].ToString();
 
             }
-        } //LISTAGEM DE LOGS
-       
+        } //LISTAGEM DE PRODUTOS
+
+
         public void buscarProduto()
         {
 
@@ -127,17 +134,17 @@ namespace TCC.VISÃO
                 txtfornecedor.Text == string.Empty | cmbtipo.Text == string.Empty | txtvalorCompra.Text == string.Empty | txtvalorVenda.Text == string.Empty)
             {
                 btnConfirmar.Enabled = false;
-                
+
 
                 return false;
-            }          
+            }
             else
             {
                 btnConfirmar.Enabled = true;
 
                 return true;
             }
-            
+
         }
 
         public void cadastrarProdutos()
@@ -161,15 +168,16 @@ namespace TCC.VISÃO
                         MessageBox.Show(cadpro.mensagem, "CADASTRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
 
-                    if(cadpro.mensagem == "CADASTRADO COM SUCESSO!!")
+                    if (cadpro.mensagem == "CADASTRADO COM SUCESSO!!")
                     {
                         limparCampos();
                         btnConfirmar.Enabled = false;
-                        
+
                     }
                 }
             }
         }
+
 
         #endregion
 
@@ -177,11 +185,21 @@ namespace TCC.VISÃO
 
 
 
+
         #region DESIGN
-        private void btnConfirmar_Click(object sender, EventArgs e)
+
+        private void btnSair_Click(object sender, EventArgs e)
         {
-            cadastrarProdutos();
+            Close();
         }
+
+        private void CADASTRARPRODUTO_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //menuz.Show();
+        }
+
+
+
         private void btnCadastrar_MouseEnter(object sender, EventArgs e)
         {
             //btnCadastrar.Size = new Size(100, 50);
@@ -191,7 +209,6 @@ namespace TCC.VISÃO
         {
             // btnCadastrar.Size = new Size(79, 35);
         }
-
 
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -204,8 +221,8 @@ namespace TCC.VISÃO
 
         private void CadastroProduto_Load(object sender, EventArgs e)
         {
-            buscarProduto();
-            timer1.Start();
+            //buscarProduto();                  
+            //timer1.Start();           
         }
 
         private void textBox6_TextChanged(object sender, EventArgs e)
@@ -221,30 +238,17 @@ namespace TCC.VISÃO
         private void btnConfirmar_MouseLeave(object sender, EventArgs e)
         {
             lblconfirmar.Visible = false;
-
         }
 
-        private void btnSair_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
 
-        private void CADASTRARPRODUTO_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            //menuz.Show();
-        }
+
 
         private void txtnomeProduto_Leave(object sender, EventArgs e)
         {
             preencherCampos();
         }
 
-
-
-
-
         #endregion
 
-       
     }
 }
