@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using TCC.VISÃO;
 
 namespace TCC.VISIONS.logs_visao.EXPORTAR_LOGS
 {
@@ -8,6 +9,7 @@ namespace TCC.VISIONS.logs_visao.EXPORTAR_LOGS
     {
         #region VARIÁVEIS E INSTÂNCIAS
 
+        ConfigSistema config = new ConfigSistema();
 
         #endregion
 
@@ -37,6 +39,12 @@ namespace TCC.VISIONS.logs_visao.EXPORTAR_LOGS
 
 
         #region DESIGN
+
+        private void ExportarLogs_Load(object sender, EventArgs e)
+        {
+            txttabela.Text = "logs";
+        }
+
 
         private void btngerarExcel_MouseEnter(object sender, EventArgs e)
         {
@@ -79,8 +87,9 @@ namespace TCC.VISIONS.logs_visao.EXPORTAR_LOGS
             SendMessage(this.Handle, 0x112, 0xf012, 0);*/
         }
 
+
         #endregion
 
-
+       
     }
 }

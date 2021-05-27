@@ -34,7 +34,7 @@ namespace TCC.VISIONS.logs_visao.EXPORTAR_LOGS
             this.lblnomesServer = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.lblnomeBD = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txttabela = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -53,10 +53,11 @@ namespace TCC.VISIONS.logs_visao.EXPORTAR_LOGS
             // txtnomeServer
             // 
             this.txtnomeServer.Font = new System.Drawing.Font("Comic Sans MS", 12F);
-            this.txtnomeServer.Location = new System.Drawing.Point(308, 98);
+            this.txtnomeServer.Location = new System.Drawing.Point(778, 370);
             this.txtnomeServer.Name = "txtnomeServer";
-            this.txtnomeServer.Size = new System.Drawing.Size(276, 30);
+            this.txtnomeServer.Size = new System.Drawing.Size(10, 30);
             this.txtnomeServer.TabIndex = 1;
+            this.txtnomeServer.Visible = false;
             // 
             // lblnomesServer
             // 
@@ -65,19 +66,21 @@ namespace TCC.VISIONS.logs_visao.EXPORTAR_LOGS
             this.lblnomesServer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblnomesServer.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
             this.lblnomesServer.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblnomesServer.Location = new System.Drawing.Point(140, 101);
+            this.lblnomesServer.Location = new System.Drawing.Point(610, 373);
             this.lblnomesServer.Name = "lblnomesServer";
             this.lblnomesServer.Size = new System.Drawing.Size(162, 23);
             this.lblnomesServer.TabIndex = 164;
             this.lblnomesServer.Text = "Nome do Servidor :";
+            this.lblnomesServer.Visible = false;
             // 
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Comic Sans MS", 12F);
-            this.textBox1.Location = new System.Drawing.Point(308, 140);
+            this.textBox1.Location = new System.Drawing.Point(778, 412);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(276, 30);
+            this.textBox1.Size = new System.Drawing.Size(10, 30);
             this.textBox1.TabIndex = 2;
+            this.textBox1.Visible = false;
             // 
             // lblnomeBD
             // 
@@ -86,19 +89,21 @@ namespace TCC.VISIONS.logs_visao.EXPORTAR_LOGS
             this.lblnomeBD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblnomeBD.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
             this.lblnomeBD.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblnomeBD.Location = new System.Drawing.Point(84, 140);
+            this.lblnomeBD.Location = new System.Drawing.Point(554, 412);
             this.lblnomeBD.Name = "lblnomeBD";
             this.lblnomeBD.Size = new System.Drawing.Size(218, 23);
             this.lblnomeBD.TabIndex = 166;
             this.lblnomeBD.Text = "Nome do Banco de Dados :";
+            this.lblnomeBD.Visible = false;
             // 
-            // textBox2
+            // txttabela
             // 
-            this.textBox2.Font = new System.Drawing.Font("Comic Sans MS", 12F);
-            this.textBox2.Location = new System.Drawing.Point(308, 187);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(276, 30);
-            this.textBox2.TabIndex = 3;
+            this.txttabela.Font = new System.Drawing.Font("Comic Sans MS", 12F);
+            this.txttabela.Location = new System.Drawing.Point(320, 140);
+            this.txttabela.Name = "txttabela";
+            this.txttabela.ReadOnly = true;
+            this.txttabela.Size = new System.Drawing.Size(276, 30);
+            this.txttabela.TabIndex = 3;
             // 
             // label1
             // 
@@ -107,7 +112,7 @@ namespace TCC.VISIONS.logs_visao.EXPORTAR_LOGS
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(219, 190);
+            this.label1.Location = new System.Drawing.Point(231, 143);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(83, 23);
             this.label1.TabIndex = 168;
@@ -116,7 +121,7 @@ namespace TCC.VISIONS.logs_visao.EXPORTAR_LOGS
             // textBox3
             // 
             this.textBox3.Font = new System.Drawing.Font("Comic Sans MS", 12F);
-            this.textBox3.Location = new System.Drawing.Point(308, 240);
+            this.textBox3.Location = new System.Drawing.Point(320, 193);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(276, 30);
             this.textBox3.TabIndex = 4;
@@ -128,7 +133,7 @@ namespace TCC.VISIONS.logs_visao.EXPORTAR_LOGS
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label2.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(160, 247);
+            this.label2.Location = new System.Drawing.Point(172, 200);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(142, 23);
             this.label2.TabIndex = 170;
@@ -145,7 +150,7 @@ namespace TCC.VISIONS.logs_visao.EXPORTAR_LOGS
             this.btnexportarExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnexportarExcel.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnexportarExcel.ForeColor = System.Drawing.Color.Transparent;
-            this.btnexportarExcel.Location = new System.Drawing.Point(308, 298);
+            this.btnexportarExcel.Location = new System.Drawing.Point(320, 255);
             this.btnexportarExcel.Name = "btnexportarExcel";
             this.btnexportarExcel.Size = new System.Drawing.Size(81, 61);
             this.btnexportarExcel.TabIndex = 5;
@@ -164,7 +169,7 @@ namespace TCC.VISIONS.logs_visao.EXPORTAR_LOGS
             this.btnabrirExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnabrirExcel.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnabrirExcel.ForeColor = System.Drawing.Color.Transparent;
-            this.btnabrirExcel.Location = new System.Drawing.Point(503, 298);
+            this.btnabrirExcel.Location = new System.Drawing.Point(515, 255);
             this.btnabrirExcel.Name = "btnabrirExcel";
             this.btnabrirExcel.Size = new System.Drawing.Size(81, 61);
             this.btnabrirExcel.TabIndex = 6;
@@ -179,7 +184,7 @@ namespace TCC.VISIONS.logs_visao.EXPORTAR_LOGS
             this.lblexportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblexportar.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold);
             this.lblexportar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblexportar.Location = new System.Drawing.Point(246, 373);
+            this.lblexportar.Location = new System.Drawing.Point(258, 330);
             this.lblexportar.Name = "lblexportar";
             this.lblexportar.Size = new System.Drawing.Size(203, 19);
             this.lblexportar.TabIndex = 174;
@@ -193,7 +198,7 @@ namespace TCC.VISIONS.logs_visao.EXPORTAR_LOGS
             this.lblabrir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblabrir.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold);
             this.lblabrir.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblabrir.Location = new System.Drawing.Point(489, 373);
+            this.lblabrir.Location = new System.Drawing.Point(501, 330);
             this.lblabrir.Name = "lblabrir";
             this.lblabrir.Size = new System.Drawing.Size(107, 19);
             this.lblabrir.TabIndex = 175;
@@ -254,7 +259,7 @@ namespace TCC.VISIONS.logs_visao.EXPORTAR_LOGS
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txttabela);
             this.Controls.Add(this.lblnomeBD);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lblnomesServer);
@@ -264,6 +269,7 @@ namespace TCC.VISIONS.logs_visao.EXPORTAR_LOGS
             this.Name = "ExportarLogs";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ExportarLogs";
+            this.Load += new System.EventHandler(this.ExportarLogs_Load);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSair)).EndInit();
@@ -278,7 +284,7 @@ namespace TCC.VISIONS.logs_visao.EXPORTAR_LOGS
         private System.Windows.Forms.Label lblnomesServer;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label lblnomeBD;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txttabela;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label2;

@@ -92,7 +92,7 @@
             this.btnConfirmar.Size = new System.Drawing.Size(64, 38);
             this.btnConfirmar.TabIndex = 157;
             this.btnConfirmar.UseVisualStyleBackColor = false;
-            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
+            //this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             this.btnConfirmar.MouseEnter += new System.EventHandler(this.btnConfirmar_MouseEnter);
             this.btnConfirmar.MouseLeave += new System.EventHandler(this.btnConfirmar_MouseLeave);
             // 
