@@ -4,11 +4,18 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TCC.CONTROLE;
 
 namespace TCC.MODELS.produto_modelo
 {
     public class produtoControle
     {
+        #region VARIÁVEIS E INTÂNCIAS
+        DataTable dtr = new DataTable();
+        cadastroprodutoDaoComandos cadproduto = new cadastroprodutoDaoComandos();
+        public string mensagem = ("");
+        public bool tem;
+        #endregion
 
         public DataTable listarProdutos()
         {
