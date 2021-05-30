@@ -218,3 +218,12 @@ C:\Users\LukasPC\source\repos\EWOD-ERP\PROJETO TCC\TCC\obj\Debug\TCC.exe
 C:\Users\LukasPC\source\repos\EWOD-ERP\PROJETO TCC\TCC\obj\Debug\TCC.pdb
 C:\Users\LukasPC\source\repos\EWOD-ERP\PROJETO TCC\TCC\obj\Debug\TCC.csprojAssemblyReference.cache
 C:\Users\Pedro\Source\Repos\EWOD-ERP\PROJETO TCC\TCC\obj\Debug\TCC.VISIONS.logs_visao.EXPORTAR_LOGS.ExportarLogs.resources
+C:\Users\Pedro\source\repos\EWOD-ERP\PROJETO TCC\TCC\bin\Debug\ClosedXML.dll
+C:\Users\Pedro\source\repos\EWOD-ERP\PROJETO TCC\TCC\bin\Debug\DocumentFormat.OpenXml.dll
+C:\Users\Pedro\source\repos\EWOD-ERP\PROJETO TCC\TCC\bin\Debug\ExcelNumberFormat.dll
+C:\Users\Pedro\source\repos\EWOD-ERP\PROJETO TCC\TCC\bin\Debug\System.IO.Packaging.dll
+C:\Users\Pedro\source\repos\EWOD-ERP\PROJETO TCC\TCC\bin\Debug\ClosedXML.pdb
+C:\Users\Pedro\source\repos\EWOD-ERP\PROJETO TCC\TCC\bin\Debug\ClosedXML.xml
+C:\Users\Pedro\source\repos\EWOD-ERP\PROJETO TCC\TCC\bin\Debug\DocumentFormat.OpenXml.xml
+C:\Users\Pedro\source\repos\EWOD-ERP\PROJETO TCC\TCC\bin\Debug\ExcelNumberFormat.xml
+C:\Users\Pedro\source\repos\EWOD-ERP\PROJETO TCC\TCC\obj\Debug\TCC.csproj.CopyComplete

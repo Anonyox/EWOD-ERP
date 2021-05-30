@@ -2,14 +2,28 @@
 using System.Drawing;
 using System.Windows.Forms;
 using TCC.VISÃO;
+using ClosedXML.Excel;
+using TCC.CONTROLE;
+using System.Data.SqlClient;
 
 namespace TCC.VISIONS.logs_visao.EXPORTAR_LOGS
 {
     public partial class ExportarLogs : Form
     {
         #region VARIÁVEIS E INSTÂNCIAS
-
+        Conexao con = new Conexao();
+        SqlCommand cmd = new SqlCommand();
         ConfigSistema config = new ConfigSistema();
+        SaveFileDialog salvar = new SaveFileDialog();
+        XLWorkbook wb = new XLWorkbook();
+        private IXLWorksheet ws;
+        private IXLRange range;
+        public string codLog;
+        public string tipo;
+        public string dataLog;
+        public string usuario;
+        public string perfil;
+
 
         #endregion
 
@@ -28,17 +42,34 @@ namespace TCC.VISIONS.logs_visao.EXPORTAR_LOGS
 
         private void exportarExcel()
         {
-            SaveFileDialog salvar = new SaveFileDialog();
+;           cmd.CommandText = "SELECT codLog,tipo,dataLog,usuario,perfil FROM logs";
+            cmd.Parameters.AddWithValue("codLog",codLog);
+            cmd.Parameters.AddWithValue("tipo",tipo);
+            cmd.Parameters.AddWithValue("dataLog",dataLog);
+            cmd.Parameters.AddWithValue("usuario",usuario);
+            con.conectar();
+            ws = wb.Worksheets.Add("TABELA_LOGS");
 
-            
-            
+            //TÍTULO DA PLANILHA
+            ws.Cell("C2").Value = "TABELA DE LOGS";
+            range = ws.Range("C2:J2");
+            range.Merge().Style.Font.SetBold().Font.FontSize = 20;
+
+            //COLUNAS
+
 
         }
+
+
         #endregion
 
 
 
         #region DESIGN
+        private void btnescolhaDiretorio_Click(object sender, EventArgs e)
+        {
+            exportarExcel();
+        }
 
         private void ExportarLogs_Load(object sender, EventArgs e)
         {
@@ -88,8 +119,9 @@ namespace TCC.VISIONS.logs_visao.EXPORTAR_LOGS
         }
 
 
+
         #endregion
 
-       
+        
     }
 }

@@ -45,6 +45,7 @@ namespace TCC.VISIONS.logs_visao.EXPORTAR_LOGS
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.btnSair = new System.Windows.Forms.PictureBox();
+            this.btnescolhaDiretorio = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSair)).BeginInit();
@@ -243,6 +244,24 @@ namespace TCC.VISIONS.logs_visao.EXPORTAR_LOGS
             this.btnSair.TabStop = false;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
+            // btnescolhaDiretorio
+            // 
+            this.btnescolhaDiretorio.BackColor = System.Drawing.Color.Transparent;
+            this.btnescolhaDiretorio.BackgroundImage = global::TCC.Properties.Resources.icons8_abrir_pasta_64;
+            this.btnescolhaDiretorio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnescolhaDiretorio.FlatAppearance.BorderSize = 0;
+            this.btnescolhaDiretorio.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnescolhaDiretorio.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnescolhaDiretorio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnescolhaDiretorio.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnescolhaDiretorio.ForeColor = System.Drawing.Color.Transparent;
+            this.btnescolhaDiretorio.Location = new System.Drawing.Point(602, 193);
+            this.btnescolhaDiretorio.Name = "btnescolhaDiretorio";
+            this.btnescolhaDiretorio.Size = new System.Drawing.Size(29, 30);
+            this.btnescolhaDiretorio.TabIndex = 177;
+            this.btnescolhaDiretorio.UseVisualStyleBackColor = false;
+            this.btnescolhaDiretorio.Click += new System.EventHandler(this.btnescolhaDiretorio_Click);
+            // 
             // ExportarLogs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -251,6 +270,7 @@ namespace TCC.VISIONS.logs_visao.EXPORTAR_LOGS
             this.BackgroundImage = global::TCC.Properties.Resources._1555492a6_11;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(805, 451);
+            this.Controls.Add(this.btnescolhaDiretorio);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.lblabrir);
             this.Controls.Add(this.lblexportar);
@@ -295,5 +315,6 @@ namespace TCC.VISIONS.logs_visao.EXPORTAR_LOGS
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox btnMinimizar;
         private System.Windows.Forms.PictureBox btnSair;
+        public System.Windows.Forms.Button btnescolhaDiretorio;
     }
 }
