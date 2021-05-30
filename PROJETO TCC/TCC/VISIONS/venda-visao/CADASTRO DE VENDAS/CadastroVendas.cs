@@ -50,7 +50,7 @@ namespace TCC.VISÃO
         {
 
             // TODO: esta linha de código carrega dados na tabela 'tccDataSet.produtos'. Você pode movê-la ou removê-la conforme necessário.
-            this.produtosTableAdapter.Fill(this.tccDataSet.produtos);
+            //this.produtosTableAdapter.Fill(this.tccDataSet.produtos);
 
             lblteste.BorderStyle = BorderStyle.None;  //DTEMAIL NOME DA VARIÁVEL
             //dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
