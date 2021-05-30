@@ -221,7 +221,8 @@ namespace TCC.VISÃO
 
         private void CadastroProduto_Load(object sender, EventArgs e)
         {
-            //buscarProduto();                  
+            buscarProduto();
+            listarProdutos();                 
             //timer1.Start();           
         }
 
@@ -245,10 +246,23 @@ namespace TCC.VISÃO
 
         private void txtnomeProduto_Leave(object sender, EventArgs e)
         {
+            
             preencherCampos();
         }
 
+        private void txtnomeProduto_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnConfirmar_Click(object sender, EventArgs e)
+        {
+            cadastrarProdutos();
+            limparCampos();
+        }
+
         #endregion
+
 
     }
 }

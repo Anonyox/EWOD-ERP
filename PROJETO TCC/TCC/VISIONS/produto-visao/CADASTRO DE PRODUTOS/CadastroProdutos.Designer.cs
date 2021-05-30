@@ -36,7 +36,6 @@
             this.txtdata = new System.Windows.Forms.MaskedTextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.cmbtipo = new System.Windows.Forms.ComboBox();
-            this.txtcodigoProduto = new System.Windows.Forms.TextBox();
             this.txtquantidadeProduto = new System.Windows.Forms.TextBox();
             this.txtvalorCompra = new System.Windows.Forms.TextBox();
             this.txtfornecedor = new System.Windows.Forms.TextBox();
@@ -55,7 +54,6 @@
             this.valordeVenda = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datadeCadastro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -92,7 +90,7 @@
             this.btnConfirmar.Size = new System.Drawing.Size(64, 38);
             this.btnConfirmar.TabIndex = 157;
             this.btnConfirmar.UseVisualStyleBackColor = false;
-            //this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
+            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             this.btnConfirmar.MouseEnter += new System.EventHandler(this.btnConfirmar_MouseEnter);
             this.btnConfirmar.MouseLeave += new System.EventHandler(this.btnConfirmar_MouseLeave);
             // 
@@ -122,6 +120,7 @@
             this.txtnomeProduto.Name = "txtnomeProduto";
             this.txtnomeProduto.Size = new System.Drawing.Size(304, 20);
             this.txtnomeProduto.TabIndex = 107;
+            this.txtnomeProduto.TextChanged += new System.EventHandler(this.txtnomeProduto_TextChanged);
             this.txtnomeProduto.Leave += new System.EventHandler(this.txtnomeProduto_Leave);
             // 
             // txtdata
@@ -148,26 +147,15 @@
             // 
             // cmbtipo
             // 
-            this.cmbtipo.Enabled = false;
             this.cmbtipo.FormattingEnabled = true;
             this.cmbtipo.Location = new System.Drawing.Point(142, 122);
             this.cmbtipo.Name = "cmbtipo";
             this.cmbtipo.Size = new System.Drawing.Size(112, 21);
             this.cmbtipo.TabIndex = 102;
             // 
-            // txtcodigoProduto
-            // 
-            this.txtcodigoProduto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtcodigoProduto.Enabled = false;
-            this.txtcodigoProduto.Location = new System.Drawing.Point(142, 70);
-            this.txtcodigoProduto.Name = "txtcodigoProduto";
-            this.txtcodigoProduto.Size = new System.Drawing.Size(100, 20);
-            this.txtcodigoProduto.TabIndex = 98;
-            // 
             // txtquantidadeProduto
             // 
             this.txtquantidadeProduto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtquantidadeProduto.Enabled = false;
             this.txtquantidadeProduto.Location = new System.Drawing.Point(142, 270);
             this.txtquantidadeProduto.Name = "txtquantidadeProduto";
             this.txtquantidadeProduto.Size = new System.Drawing.Size(100, 20);
@@ -176,7 +164,6 @@
             // txtvalorCompra
             // 
             this.txtvalorCompra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtvalorCompra.Enabled = false;
             this.txtvalorCompra.Location = new System.Drawing.Point(576, 227);
             this.txtvalorCompra.Name = "txtvalorCompra";
             this.txtvalorCompra.Size = new System.Drawing.Size(112, 20);
@@ -185,7 +172,6 @@
             // txtfornecedor
             // 
             this.txtfornecedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtfornecedor.Enabled = false;
             this.txtfornecedor.Location = new System.Drawing.Point(576, 95);
             this.txtfornecedor.Name = "txtfornecedor";
             this.txtfornecedor.Size = new System.Drawing.Size(278, 20);
@@ -194,7 +180,6 @@
             // txtvalorVenda
             // 
             this.txtvalorVenda.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtvalorVenda.Enabled = false;
             this.txtvalorVenda.Location = new System.Drawing.Point(142, 228);
             this.txtvalorVenda.Name = "txtvalorVenda";
             this.txtvalorVenda.Size = new System.Drawing.Size(100, 20);
@@ -330,18 +315,6 @@
             this.label7.Size = new System.Drawing.Size(104, 21);
             this.label7.TabIndex = 80;
             this.label7.Text = "Fornecedor :";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label6.Location = new System.Drawing.Point(80, 69);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(56, 21);
-            this.label6.TabIndex = 74;
-            this.label6.Text = "COD :";
             // 
             // label5
             // 
@@ -517,7 +490,6 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txtdata);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtcodigoProduto);
             this.Controls.Add(this.txtnomeProduto);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.barra);
@@ -526,7 +498,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtfornecedor);
             this.Controls.Add(this.button5);
@@ -554,12 +525,10 @@
         #endregion
         private System.Windows.Forms.DataGridView dtgproduto;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtcodigoProduto;
         private System.Windows.Forms.TextBox txtquantidadeProduto;
         private System.Windows.Forms.TextBox txtvalorCompra;
         private System.Windows.Forms.TextBox txtfornecedor;

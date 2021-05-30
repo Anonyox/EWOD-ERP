@@ -16,9 +16,7 @@ namespace TCC.CONTROLE
         SqlCommand cmd = new SqlCommand();
         SqlDataReader dr;       
         DataTable dt = new DataTable();
-        CadastroProduto cadastroproduto = new CadastroProduto();
         public bool tem = false;
-        public string nomeproduto;
         public string mensagem;
              
         public DataTable listarProdutos()
@@ -94,7 +92,7 @@ namespace TCC.CONTROLE
         public String cadastrarProdutos (string nome, string fornecedor, string tipo, string modelo, string quantidade, string valordeCompra, string valordeVenda,
             string datadeCadastro)
         {
-            cmd.CommandText = "INSERT INTO dbo.produtos VALUES(@a, @b, @c, @d, @e, @f, @g, @h)";
+            cmd.CommandText = "INSERT INTO produtos VALUES(@a, @b, @c, @d, @e, @f, @g, @h)";
             cmd.Parameters.AddWithValue("@a", nome);
             cmd.Parameters.AddWithValue("@b", fornecedor);
             cmd.Parameters.AddWithValue("@c", tipo);
