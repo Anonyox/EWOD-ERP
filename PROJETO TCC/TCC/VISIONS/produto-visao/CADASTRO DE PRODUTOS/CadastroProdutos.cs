@@ -56,7 +56,7 @@ namespace TCC.VISÃO
 
                 con.desconectar();
 
-                dataGridView1.DataSource = dt;
+               
 
             }
             catch (Exception)
@@ -80,12 +80,12 @@ namespace TCC.VISÃO
 
         private void btnpesqisar_MouseEnter(object sender, EventArgs e)
         {
-            btnpesqisar.Size = new Size(60, 40);
+            
         }
 
         private void btnpesqisar_MouseLeave(object sender, EventArgs e)
         {
-            btnpesqisar.Size = new Size(44, 30);
+            
         }
 
         private void timer1_Tick(object sender, EventArgs e)
