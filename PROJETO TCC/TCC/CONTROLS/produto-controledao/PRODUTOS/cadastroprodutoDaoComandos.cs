@@ -13,7 +13,6 @@ namespace TCC.CONTROLE
         SqlCommand cmd = new SqlCommand();
         SqlDataReader dr;
         DataTable dt = new DataTable();
-        produtoControle cadastroproduto = new produtoControle();
         public bool tem = false;
         public string mensagem;
 
