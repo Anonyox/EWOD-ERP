@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TCC.VISÃO;
 
@@ -18,7 +14,6 @@ namespace TCC.CONTROLE
         DataTable dt = new DataTable();
         CadastroProduto cadastroproduto = new CadastroProduto();
         public bool tem = false;
-        public string nomeproduto;
         public string mensagem;
 
         public DataTable listarProdutos()
