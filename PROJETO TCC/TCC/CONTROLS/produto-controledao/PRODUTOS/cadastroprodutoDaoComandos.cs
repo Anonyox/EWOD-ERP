@@ -2,6 +2,7 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using TCC.MODELS.produto_modelo;
 using TCC.VISÃO;
 
 namespace TCC.CONTROLE
@@ -12,7 +13,7 @@ namespace TCC.CONTROLE
         SqlCommand cmd = new SqlCommand();
         SqlDataReader dr;
         DataTable dt = new DataTable();
-        CadastroProduto cadastroproduto = new CadastroProduto();
+        produtoControle cadastroproduto = new produtoControle();
         public bool tem = false;
         public string mensagem;
 
