@@ -373,6 +373,16 @@ namespace TCC.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap entrar {
+            get {
+                object obj = ResourceManager.GetObject("entrar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap excluir {
             get {
                 object obj = ResourceManager.GetObject("excluir", resourceCulture);
@@ -676,6 +686,26 @@ namespace TCC.Properties {
         internal static System.Drawing.Bitmap Seja_bem_vindo {
             get {
                 object obj = ResourceManager.GetObject("Seja-bem-vindo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap wallpaper_olimpiadas {
+            get {
+                object obj = ResourceManager.GetObject("wallpaper-olimpiadas", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap white_bold_mosaic_wallpaper {
+            get {
+                object obj = ResourceManager.GetObject("white-bold-mosaic-wallpaper", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

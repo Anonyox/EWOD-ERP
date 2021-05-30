@@ -377,5 +377,14 @@
     <Folder Include="MODELS\relatorio-modelo\" />
     <Folder Include="VISIONS\cliente-visao\" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\white-bold-mosaic-wallpaper.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wallpaper-olimpiadas.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\entrar.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

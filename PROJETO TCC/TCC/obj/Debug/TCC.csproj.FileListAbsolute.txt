@@ -187,7 +187,6 @@ C:\Users\Pedro\Source\Repos\EWOD-ERP\PROJETO TCC\TCC\obj\Debug\TCC.login.resourc
 C:\Users\LukasPC\Source\Repos\EWOD-ERP\PROJETO TCC\TCC\bin\Debug\TCC.exe.config
 C:\Users\LukasPC\Source\Repos\EWOD-ERP\PROJETO TCC\TCC\bin\Debug\TCC.exe
 C:\Users\LukasPC\Source\Repos\EWOD-ERP\PROJETO TCC\TCC\bin\Debug\TCC.pdb
-C:\Users\LukasPC\Source\Repos\EWOD-ERP\PROJETO TCC\TCC\obj\Debug\TCC.csprojAssemblyReference.cache
 C:\Users\LukasPC\Source\Repos\EWOD-ERP\PROJETO TCC\TCC\obj\Debug\TCC.VISÃO.CadastroProduto.resources
 C:\Users\LukasPC\Source\Repos\EWOD-ERP\PROJETO TCC\TCC\obj\Debug\TCC.VISÃO.CadastroUsuario.resources
 C:\Users\LukasPC\Source\Repos\EWOD-ERP\PROJETO TCC\TCC\obj\Debug\TCC.VISÃO.CadastroVendas.resources
@@ -216,3 +215,4 @@ C:\Users\Pedro\source\repos\EWOD-ERP\PROJETO TCC\TCC\obj\Debug\TCC.csproj.Genera
 C:\Users\Pedro\source\repos\EWOD-ERP\PROJETO TCC\TCC\obj\Debug\TCC.csproj.CoreCompileInputs.cache
 C:\Users\Pedro\source\repos\EWOD-ERP\PROJETO TCC\TCC\obj\Debug\TCC.exe
 C:\Users\Pedro\source\repos\EWOD-ERP\PROJETO TCC\TCC\obj\Debug\TCC.pdb
+C:\Users\LukasPC\Source\Repos\EWOD-ERP\PROJETO TCC\TCC\obj\Debug\TCC.csprojAssemblyReference.cache
