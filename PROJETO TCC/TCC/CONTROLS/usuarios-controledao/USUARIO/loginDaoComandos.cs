@@ -23,7 +23,7 @@ namespace TCC.CONTROLE
 
         #region VARIÁVEIS E INSTÂNCIAS
         public bool tem = false;
-        public String mensagem = ("");
+         public String mensagem = ("");
 
         SqlCommand cmd = new SqlCommand();
         SqlCommand cmd2 = new SqlCommand();
