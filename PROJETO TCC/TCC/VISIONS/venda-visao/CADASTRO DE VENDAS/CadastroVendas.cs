@@ -459,11 +459,9 @@ namespace TCC.VISÃO
 
         private void txtvalordeCompra_TextChanged(object sender, EventArgs e)
         {
-<<<<<<< HEAD
+
            
-=======
-            //txtvalordeCompra.Text = String.Format("{0:C}");
->>>>>>> lucas/scrummaster
+
         }
 
 
