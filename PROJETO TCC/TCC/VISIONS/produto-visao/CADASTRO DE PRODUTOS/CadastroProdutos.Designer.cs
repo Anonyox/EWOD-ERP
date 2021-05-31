@@ -110,6 +110,7 @@
             this.btnCancelar.Size = new System.Drawing.Size(64, 38);
             this.btnCancelar.TabIndex = 156;
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // txtnomeProduto
             // 

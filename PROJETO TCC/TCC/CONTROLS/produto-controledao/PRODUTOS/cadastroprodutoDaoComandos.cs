@@ -17,7 +17,7 @@ namespace TCC.CONTROLE
         SqlDataReader dr;       
         DataTable dt = new DataTable();
         public bool tem = false;
-        public string mensagem;
+        public string mensagem = ("");
              
         public DataTable listarProdutos()
         {
@@ -90,9 +90,11 @@ namespace TCC.CONTROLE
         }*/
 
         public String cadastrarProdutos (string nome, string fornecedor, string tipo, string modelo, string quantidade, string valordeCompra, string valordeVenda,
-            string datadeCadastro)
+            string dataDeCadastro)
         {
-            cmd.CommandText = "INSERT INTO produtos VALUES(@a, @b, @c, @d, @e, @f, @g, @h)";
+            tem = false;
+
+            cmd.CommandText = "insert into produtos values (@a, @b, @c, @d, @e, @f, @g, @h)";
             cmd.Parameters.AddWithValue("@a", nome);
             cmd.Parameters.AddWithValue("@b", fornecedor);
             cmd.Parameters.AddWithValue("@c", tipo);
@@ -100,16 +102,15 @@ namespace TCC.CONTROLE
             cmd.Parameters.AddWithValue("@e", quantidade);
             cmd.Parameters.AddWithValue("@f", valordeCompra);
             cmd.Parameters.AddWithValue("@g", valordeVenda);
-            cmd.Parameters.AddWithValue("@h", datadeCadastro);
-
-            //INSERT NA TABELA LOGS
+            cmd.Parameters.AddWithValue("@h", dataDeCadastro);
+            //INSERT NA TABELA PRODUTOS
 
             try
             {
                 cmd.Connection = con.conectar();
                 cmd.ExecuteNonQuery();
 
-                //ABRIR CONEXÃO DOS LOGS
+                //ABRIR CONEXÃO DOS PRODUTOS
 
                 con.desconectar();
 

@@ -36,6 +36,8 @@ namespace TCC.VISÃO
         SqlDataReader dr;
         Conexao con = new Conexao();
 
+        public DateTime datadecadastro = System.DateTime.Now;
+
 
 
         #endregion
@@ -101,18 +103,22 @@ namespace TCC.VISÃO
 
         public void preencherCampos()
         {
-            SqlCommand command = new SqlCommand("SELECT quantidade, valordeCompra, valordeVenda FROM produtos WHERE nome = @nome", con.conectar());
+
+            txtdata.ReadOnly = false;
+            SqlCommand command = new SqlCommand("SELECT quantidade, fornecedor, dataDeCadastro, modelo, tipo, valordeCompra, valordeVenda FROM produtos WHERE nome = @nome", con.conectar());
             command.Parameters.AddWithValue("@nome", txtnomeProduto.Text);
 
             dr = command.ExecuteReader();
 
             while (dr.Read())
             {
-                //txtcodigoProduto.Text = dr["codProduto"].ToString();
+                txtdata.Text = dr["dataDeCadastro"].ToString();
+                txtmodeloProduto.Text = dr["modelo"].ToString();
+                txtfornecedor.Text = dr["fornecedor"].ToString();
                 txtquantidadeProduto.Text = dr["quantidade"].ToString();
                 txtvalorCompra.Text = dr["valordeCompra"].ToString();
                 txtvalorVenda.Text = dr["valordeVenda"].ToString();
-                //cmbtipo.Text = dr["tipo"].ToString();
+                cmbtipo.Text = dr["tipo"].ToString();
 
             }
 
@@ -192,6 +198,11 @@ namespace TCC.VISÃO
 
         #region DESIGN
 
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            limparCampos();
+        }
+
         private void btnSair_Click(object sender, EventArgs e)
         {
             Close();
@@ -225,6 +236,8 @@ namespace TCC.VISÃO
 
         private void CadastroProduto_Load(object sender, EventArgs e)
         {
+            txtdata.ReadOnly = true;
+            txtdata.Text = datadecadastro.ToString();
             buscarProduto();
             listarProdutos();                 
             //timer1.Start();           
@@ -265,8 +278,9 @@ namespace TCC.VISÃO
             limparCampos();
         }
 
+
         #endregion
 
-
+        
     }
 }
