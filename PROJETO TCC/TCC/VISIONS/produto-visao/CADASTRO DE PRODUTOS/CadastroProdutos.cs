@@ -69,6 +69,10 @@ namespace TCC.VISÃO
             }
         } //LISTAGEM DE PRODUTOS
 
+        public void verificarProduto()
+        {
+
+        }
 
         public void buscarProduto()
         {
@@ -225,7 +229,7 @@ namespace TCC.VISÃO
             listarProdutos();                 
             //timer1.Start();           
         }
-
+        
         private void textBox6_TextChanged(object sender, EventArgs e)
         {
 

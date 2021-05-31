@@ -41,9 +41,9 @@
             this.txtfornecedor = new System.Windows.Forms.TextBox();
             this.txtvalorVenda = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnexcluir = new System.Windows.Forms.Button();
+            this.btnalterar = new System.Windows.Forms.Button();
+            this.btnsalvarAlteracao = new System.Windows.Forms.Button();
             this.dtgproduto = new System.Windows.Forms.DataGridView();
             this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -197,53 +197,53 @@
             this.label4.TabIndex = 92;
             this.label4.Text = "Tipo :";
             // 
-            // button5
+            // btnexcluir
             // 
-            this.button5.BackColor = System.Drawing.Color.Transparent;
-            this.button5.BackgroundImage = global::TCC.Properties.Resources.icons8_lixeira_vazia_48;
-            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button5.Enabled = false;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.button5.Location = new System.Drawing.Point(142, 385);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(64, 38);
-            this.button5.TabIndex = 91;
-            this.button5.UseVisualStyleBackColor = false;
+            this.btnexcluir.BackColor = System.Drawing.Color.Transparent;
+            this.btnexcluir.BackgroundImage = global::TCC.Properties.Resources.icons8_lixeira_vazia_48;
+            this.btnexcluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnexcluir.Enabled = false;
+            this.btnexcluir.FlatAppearance.BorderSize = 0;
+            this.btnexcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnexcluir.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnexcluir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.btnexcluir.Location = new System.Drawing.Point(142, 385);
+            this.btnexcluir.Name = "btnexcluir";
+            this.btnexcluir.Size = new System.Drawing.Size(64, 38);
+            this.btnexcluir.TabIndex = 91;
+            this.btnexcluir.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // btnalterar
             // 
-            this.button4.BackColor = System.Drawing.Color.Transparent;
-            this.button4.BackgroundImage = global::TCC.Properties.Resources.icons8_editar_propriedade_100;
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button4.Enabled = false;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.button4.Location = new System.Drawing.Point(2, 389);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(64, 34);
-            this.button4.TabIndex = 90;
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnalterar.BackColor = System.Drawing.Color.Transparent;
+            this.btnalterar.BackgroundImage = global::TCC.Properties.Resources.icons8_editar_propriedade_100;
+            this.btnalterar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnalterar.Enabled = false;
+            this.btnalterar.FlatAppearance.BorderSize = 0;
+            this.btnalterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnalterar.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnalterar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.btnalterar.Location = new System.Drawing.Point(2, 389);
+            this.btnalterar.Name = "btnalterar";
+            this.btnalterar.Size = new System.Drawing.Size(64, 34);
+            this.btnalterar.TabIndex = 90;
+            this.btnalterar.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // btnsalvarAlteracao
             // 
-            this.button3.BackColor = System.Drawing.Color.Transparent;
-            this.button3.BackgroundImage = global::TCC.Properties.Resources.icons8_salvar_48;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button3.Enabled = false;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.button3.Location = new System.Drawing.Point(72, 385);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(64, 38);
-            this.button3.TabIndex = 89;
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnsalvarAlteracao.BackColor = System.Drawing.Color.Transparent;
+            this.btnsalvarAlteracao.BackgroundImage = global::TCC.Properties.Resources.icons8_salvar_48;
+            this.btnsalvarAlteracao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnsalvarAlteracao.Enabled = false;
+            this.btnsalvarAlteracao.FlatAppearance.BorderSize = 0;
+            this.btnsalvarAlteracao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnsalvarAlteracao.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnsalvarAlteracao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.btnsalvarAlteracao.Location = new System.Drawing.Point(72, 385);
+            this.btnsalvarAlteracao.Name = "btnsalvarAlteracao";
+            this.btnsalvarAlteracao.Size = new System.Drawing.Size(64, 38);
+            this.btnsalvarAlteracao.TabIndex = 89;
+            this.btnsalvarAlteracao.UseVisualStyleBackColor = false;
             // 
             // dtgproduto
             // 
@@ -500,12 +500,12 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtfornecedor);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.btnexcluir);
             this.Controls.Add(this.txtquantidadeProduto);
             this.Controls.Add(this.txtvalorVenda);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btnalterar);
             this.Controls.Add(this.txtvalorCompra);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnsalvarAlteracao);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CadastroProduto";
@@ -534,9 +534,9 @@
         private System.Windows.Forms.TextBox txtfornecedor;
         private System.Windows.Forms.TextBox txtvalorVenda;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnexcluir;
+        private System.Windows.Forms.Button btnalterar;
+        private System.Windows.Forms.Button btnsalvarAlteracao;
         private System.Windows.Forms.ComboBox cmbtipo;
         private System.Windows.Forms.PictureBox btnMinimizar;
         private System.Windows.Forms.PictureBox btnSair;
