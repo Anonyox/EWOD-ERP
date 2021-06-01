@@ -35,7 +35,6 @@
             this.txtnomeProduto = new System.Windows.Forms.TextBox();
             this.txtdata = new System.Windows.Forms.MaskedTextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.cmbtipo = new System.Windows.Forms.ComboBox();
             this.txtquantidadeProduto = new System.Windows.Forms.TextBox();
             this.txtvalorCompra = new System.Windows.Forms.TextBox();
             this.txtfornecedor = new System.Windows.Forms.TextBox();
@@ -68,6 +67,7 @@
             this.txtmodeloProduto = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txttipo = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtgproduto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSair)).BeginInit();
@@ -117,22 +117,24 @@
             this.txtnomeProduto.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.txtnomeProduto.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtnomeProduto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtnomeProduto.Font = new System.Drawing.Font("Comic Sans MS", 12F);
             this.txtnomeProduto.Location = new System.Drawing.Point(142, 96);
             this.txtnomeProduto.Name = "txtnomeProduto";
-            this.txtnomeProduto.Size = new System.Drawing.Size(304, 20);
+            this.txtnomeProduto.Size = new System.Drawing.Size(304, 30);
             this.txtnomeProduto.TabIndex = 107;
             this.txtnomeProduto.TextChanged += new System.EventHandler(this.txtnomeProduto_TextChanged);
             this.txtnomeProduto.Leave += new System.EventHandler(this.txtnomeProduto_Leave);
             // 
             // txtdata
             // 
-            this.txtdata.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtdata.Location = new System.Drawing.Point(576, 266);
+            this.txtdata.Font = new System.Drawing.Font("Comic Sans MS", 12F);
+            this.txtdata.Location = new System.Drawing.Point(576, 263);
             this.txtdata.Mask = "00/00/0000";
             this.txtdata.Name = "txtdata";
             this.txtdata.Size = new System.Drawing.Size(112, 30);
             this.txtdata.TabIndex = 105;
             this.txtdata.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtdata.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtdata_MaskInputRejected);
             // 
             // label9
             // 
@@ -140,51 +142,51 @@
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label9.Location = new System.Drawing.Point(512, 275);
+            this.label9.Location = new System.Drawing.Point(512, 266);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(58, 21);
             this.label9.TabIndex = 104;
             this.label9.Text = "Data :";
             // 
-            // cmbtipo
-            // 
-            this.cmbtipo.FormattingEnabled = true;
-            this.cmbtipo.Location = new System.Drawing.Point(142, 122);
-            this.cmbtipo.Name = "cmbtipo";
-            this.cmbtipo.Size = new System.Drawing.Size(112, 21);
-            this.cmbtipo.TabIndex = 102;
-            // 
             // txtquantidadeProduto
             // 
             this.txtquantidadeProduto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtquantidadeProduto.Location = new System.Drawing.Point(142, 270);
+            this.txtquantidadeProduto.Font = new System.Drawing.Font("Comic Sans MS", 12F);
+            this.txtquantidadeProduto.Location = new System.Drawing.Point(142, 263);
             this.txtquantidadeProduto.Name = "txtquantidadeProduto";
-            this.txtquantidadeProduto.Size = new System.Drawing.Size(100, 20);
+            this.txtquantidadeProduto.Size = new System.Drawing.Size(100, 30);
             this.txtquantidadeProduto.TabIndex = 97;
+            this.txtquantidadeProduto.TextChanged += new System.EventHandler(this.txtquantidadeProduto_TextChanged);
             // 
             // txtvalorCompra
             // 
             this.txtvalorCompra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtvalorCompra.Font = new System.Drawing.Font("Comic Sans MS", 12F);
             this.txtvalorCompra.Location = new System.Drawing.Point(576, 227);
             this.txtvalorCompra.Name = "txtvalorCompra";
-            this.txtvalorCompra.Size = new System.Drawing.Size(112, 20);
+            this.txtvalorCompra.Size = new System.Drawing.Size(112, 30);
             this.txtvalorCompra.TabIndex = 96;
+            this.txtvalorCompra.TextChanged += new System.EventHandler(this.txtvalorCompra_TextChanged);
             // 
             // txtfornecedor
             // 
             this.txtfornecedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtfornecedor.Font = new System.Drawing.Font("Comic Sans MS", 12F);
             this.txtfornecedor.Location = new System.Drawing.Point(576, 95);
             this.txtfornecedor.Name = "txtfornecedor";
-            this.txtfornecedor.Size = new System.Drawing.Size(278, 20);
+            this.txtfornecedor.Size = new System.Drawing.Size(278, 30);
             this.txtfornecedor.TabIndex = 95;
+            this.txtfornecedor.TextChanged += new System.EventHandler(this.txtfornecedor_TextChanged);
             // 
             // txtvalorVenda
             // 
             this.txtvalorVenda.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtvalorVenda.Font = new System.Drawing.Font("Comic Sans MS", 12F);
             this.txtvalorVenda.Location = new System.Drawing.Point(142, 228);
             this.txtvalorVenda.Name = "txtvalorVenda";
-            this.txtvalorVenda.Size = new System.Drawing.Size(100, 20);
+            this.txtvalorVenda.Size = new System.Drawing.Size(100, 30);
             this.txtvalorVenda.TabIndex = 94;
+            this.txtvalorVenda.TextChanged += new System.EventHandler(this.txtvalorVenda_TextChanged);
             // 
             // label4
             // 
@@ -192,7 +194,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label4.Location = new System.Drawing.Point(82, 122);
+            this.label4.Location = new System.Drawing.Point(82, 132);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(54, 21);
             this.label4.TabIndex = 92;
@@ -323,7 +325,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label5.Location = new System.Drawing.Point(428, 226);
+            this.label5.Location = new System.Drawing.Point(426, 231);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(144, 21);
             this.label5.TabIndex = 67;
@@ -347,7 +349,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(30, 269);
+            this.label2.Location = new System.Drawing.Point(30, 266);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(106, 21);
             this.label2.TabIndex = 58;
@@ -446,10 +448,12 @@
             this.txtmodeloProduto.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.txtmodeloProduto.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtmodeloProduto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtmodeloProduto.Location = new System.Drawing.Point(576, 122);
+            this.txtmodeloProduto.Font = new System.Drawing.Font("Comic Sans MS", 12F);
+            this.txtmodeloProduto.Location = new System.Drawing.Point(576, 129);
             this.txtmodeloProduto.Name = "txtmodeloProduto";
-            this.txtmodeloProduto.Size = new System.Drawing.Size(112, 20);
+            this.txtmodeloProduto.Size = new System.Drawing.Size(170, 30);
             this.txtmodeloProduto.TabIndex = 174;
+            this.txtmodeloProduto.TextChanged += new System.EventHandler(this.txtmodeloProduto_TextChanged);
             // 
             // label10
             // 
@@ -457,7 +461,7 @@
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label10.Location = new System.Drawing.Point(496, 122);
+            this.label10.Location = new System.Drawing.Point(496, 132);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(74, 21);
             this.label10.TabIndex = 175;
@@ -472,6 +476,17 @@
             this.panel2.Size = new System.Drawing.Size(943, 21);
             this.panel2.TabIndex = 159;
             // 
+            // txttipo
+            // 
+            this.txttipo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txttipo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txttipo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txttipo.Font = new System.Drawing.Font("Comic Sans MS", 12F);
+            this.txttipo.Location = new System.Drawing.Point(142, 129);
+            this.txttipo.Name = "txttipo";
+            this.txttipo.Size = new System.Drawing.Size(170, 30);
+            this.txttipo.TabIndex = 176;
+            // 
             // CadastroProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -480,6 +495,7 @@
             this.BackgroundImage = global::TCC.Properties.Resources._1555492a6_11;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(863, 654);
+            this.Controls.Add(this.txttipo);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtmodeloProduto);
@@ -494,7 +510,6 @@
             this.Controls.Add(this.txtnomeProduto);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.barra);
-            this.Controls.Add(this.cmbtipo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnCancelar);
@@ -538,7 +553,6 @@
         private System.Windows.Forms.Button btnexcluir;
         private System.Windows.Forms.Button btnalterar;
         private System.Windows.Forms.Button btnsalvarAlteracao;
-        private System.Windows.Forms.ComboBox cmbtipo;
         private System.Windows.Forms.PictureBox btnMinimizar;
         private System.Windows.Forms.PictureBox btnSair;
         private System.Windows.Forms.Label label9;
@@ -562,5 +576,6 @@
         private System.Windows.Forms.TextBox txtmodeloProduto;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TextBox txttipo;
     }
 }

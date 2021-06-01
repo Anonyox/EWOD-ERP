@@ -12,13 +12,18 @@ namespace TCC.CONTROLE
 {   
     class cadastroprodutoDaoComandos
     {
+        #region VARIÁVEIS E INTÂNCIAS
         Conexao con = new Conexao();
         SqlCommand cmd = new SqlCommand();
         SqlDataReader dr;       
         DataTable dt = new DataTable();
         public bool tem = false;
         public string mensagem = ("");
-             
+        #endregion
+
+
+
+        #region CONSTRUTOR
         public DataTable listarProdutos()
         {
             Conexao con = new Conexao();
@@ -89,7 +94,7 @@ namespace TCC.CONTROLE
 
         }*/
 
-        public String cadastrarProdutos (string nome, string fornecedor, string tipo, string modelo, string quantidade, string valordeCompra, string valordeVenda,
+        public String cadastrarProdutos (string nome, string fornecedor, string tipo, string modelo, float quantidade, float valordeCompra, float valordeVenda,
             string dataDeCadastro)
         {
             tem = false;
@@ -112,7 +117,7 @@ namespace TCC.CONTROLE
 
                 //ABRIR CONEXÃO DOS PRODUTOS
 
-                con.desconectar();
+               
 
                 this.mensagem = "CADASTRADO COM SUCESSO!!";
                 tem = true;
@@ -123,8 +128,20 @@ namespace TCC.CONTROLE
                 this.mensagem = "ERRO COM O BANCO DE DADOS";
             }
             return mensagem;
+            con.desconectar();
         }
 
+        /*public String alterarProduto(string nome, string fornecedor, string tipo, string modelo, string quantidade, string valordeCompra, string valordeVenda)
+        {
+            tem = false;
+
+            cmd.CommandText = "update produtos set @coluna = @valor where codProduto = @codproduto";
+            cmd.Parameters.AddWithValue("@coluna", coluna);
+        }*/
+
+
+
+    #endregion
 
 
     }

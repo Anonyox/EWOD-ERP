@@ -2,6 +2,7 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Globalization;
 using System.Windows.Forms;
 using TCC.CONTROLE;
 using TCC.MODELS.produto_modelo;
@@ -71,9 +72,21 @@ namespace TCC.VISÃO
             }
         } //LISTAGEM DE PRODUTOS
 
-        public void verificarProduto()
+        public string letraMaiscula(TextBox tbox)
+        {
+            TextInfo textinfo = new CultureInfo("PT-BR", true).TextInfo;
+            tbox.Text = textinfo.ToTitleCase(tbox.Text);
+            return tbox.Text;
+        }
+
+        public void alterarProduto()
         {
 
+        }
+
+        public void verificarProduto()
+        {
+            //DESEJA ALTERAR DADOS DESSE PRODUTO ?
         }
 
         public void buscarProduto()
@@ -103,27 +116,40 @@ namespace TCC.VISÃO
 
         public void preencherCampos()
         {
-
-            txtdata.ReadOnly = false;
-            SqlCommand command = new SqlCommand("SELECT quantidade, fornecedor, dataDeCadastro, modelo, tipo, valordeCompra, valordeVenda FROM produtos WHERE nome = @nome", con.conectar());
-            command.Parameters.AddWithValue("@nome", txtnomeProduto.Text);
-
-            dr = command.ExecuteReader();
-
-            while (dr.Read())
+            if(txtnomeProduto.Text != string.Empty)
             {
-                txtdata.Text = dr["dataDeCadastro"].ToString();
-                txtmodeloProduto.Text = dr["modelo"].ToString();
-                txtfornecedor.Text = dr["fornecedor"].ToString();
-                txtquantidadeProduto.Text = dr["quantidade"].ToString();
-                txtvalorCompra.Text = dr["valordeCompra"].ToString();
-                txtvalorVenda.Text = dr["valordeVenda"].ToString();
-                cmbtipo.Text = dr["tipo"].ToString();
+                txtdata.ReadOnly = false;
+                SqlCommand command = new SqlCommand("SELECT quantidade, fornecedor, dataDeCadastro, modelo, tipo, valordeCompra, valordeVenda FROM produtos WHERE nome = @nome", con.conectar());
+                command.Parameters.AddWithValue("@nome", txtnomeProduto.Text);
+
+                dr = command.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    txtdata.Text = dr["dataDeCadastro"].ToString();
+                    txtmodeloProduto.Text = dr["modelo"].ToString();
+                    txtfornecedor.Text = dr["fornecedor"].ToString();
+                    txtquantidadeProduto.Text = dr["quantidade"].ToString();
+                    txtvalorCompra.Text = dr["valordeCompra"].ToString();
+                    txtvalorVenda.Text = dr["valordeVenda"].ToString();
+                    txttipo.Text = dr["tipo"].ToString();
+
+                    letraMaiscula(txttipo);
+                    letraMaiscula(txtfornecedor);
+                    letraMaiscula(txtmodeloProduto);
+
+                }
+
+                dr.Close();
+                con.desconectar();
+            }
+            else
+            {
+                limparCampos();
+                txtnomeProduto.Focus();
 
             }
 
-            dr.Close();
-            con.desconectar();
         }
 
         private void limparCampos()
@@ -135,13 +161,13 @@ namespace TCC.VISÃO
             txtvalorCompra.Text = "";
             txtvalorVenda.Text = "";
             txtquantidadeProduto.Text = "";
-            cmbtipo.Text = "";
+            txttipo.Text = "";
         }
 
         public bool verificarCampos()
         {
             if (txtnomeProduto.Text == string.Empty | txtdata.Text == string.Empty | txtmodeloProduto.Text == string.Empty | txtquantidadeProduto.Text == string.Empty |
-                txtfornecedor.Text == string.Empty | cmbtipo.Text == string.Empty | txtvalorCompra.Text == string.Empty | txtvalorVenda.Text == string.Empty)
+                txtfornecedor.Text == string.Empty | txttipo.Text == string.Empty | txtvalorCompra.Text == string.Empty | txtvalorVenda.Text == string.Empty)
             {
                 btnConfirmar.Enabled = false;
 
@@ -159,6 +185,15 @@ namespace TCC.VISÃO
 
         public void cadastrarProdutos()
         {
+            float valordeCompra = float.Parse(txtvalorCompra.Text);
+            float valordeVenda = float.Parse(txtvalorVenda.Text);
+            float quantidade = float.Parse(txtquantidadeProduto.Text);
+
+                
+
+
+
+
             if (MessageBox.Show("Deseja Cadastrar um Novo Produto ?", "CADASTRAR", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
             {
                 if (!verificarCampos())
@@ -167,8 +202,8 @@ namespace TCC.VISÃO
                 }
                 else
                 {
-                    String mensagem = cadpro.cadastrarProdutos(txtnomeProduto.Text, txtfornecedor.Text, cmbtipo.Text, txtmodeloProduto.Text,
-                        txtquantidadeProduto.Text, txtvalorCompra.Text, valordeVenda.HeaderText, txtdata.Text);
+                    String mensagem = cadpro.cadastrarProdutos(txtnomeProduto.Text, txtfornecedor.Text, txttipo.Text, txtmodeloProduto.Text,
+                        quantidade, valordeCompra, valordeVenda, txtdata.Text);
                     if (cadpro.tem)
                     {
                         MessageBox.Show(mensagem, "CADASTRO", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -180,12 +215,30 @@ namespace TCC.VISÃO
 
                     if (cadpro.mensagem == "CADASTRADO COM SUCESSO!!")
                     {
+                        listarProdutos();
                         limparCampos();
                         btnConfirmar.Enabled = false;
 
                     }
                 }
             }
+        }
+
+        public void formataGrid()
+        {
+            // TODO: esta linha de código carrega dados na tabela 'tccDataSet.logs'. Você pode movê-la ou removê-la conforme necessário.
+            //this.logsTableAdapter.Fill(this.tccDataSet.logs);
+            dtgproduto.BorderStyle = BorderStyle.None;  //DTEMAIL NOME DA VARIÁVEL
+            //dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
+            dtgproduto.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            // dataGridView1.DefaultCellStyle.SelectionBackColor = Color.DarkTurquoise;
+            //dataGridView1.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
+            /// dataGridView1.BackgroundColor = Color.White;
+
+            dtgproduto.EnableHeadersVisualStyles = false;
+            dtgproduto.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dtgproduto.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(0, 209, 178);     //FromArgb(20, 25, 72);
+            dtgproduto.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
         }
 
 
@@ -236,6 +289,7 @@ namespace TCC.VISÃO
 
         private void CadastroProduto_Load(object sender, EventArgs e)
         {
+            formataGrid();
             txtdata.ReadOnly = true;
             txtdata.Text = datadecadastro.ToString();
             buscarProduto();
@@ -263,12 +317,16 @@ namespace TCC.VISÃO
 
         private void txtnomeProduto_Leave(object sender, EventArgs e)
         {
-            
-            preencherCampos();
+    
+            letraMaiscula(txtnomeProduto);            
+
         }
 
         private void txtnomeProduto_TextChanged(object sender, EventArgs e)
         {
+                preencherCampos();
+           
+           
             
         }
 
@@ -278,9 +336,57 @@ namespace TCC.VISÃO
             limparCampos();
         }
 
+        private void txtfornecedor_Leave(object sender, EventArgs e)
+        {
+            letraMaiscula(txtfornecedor);
+        }
+
+        private void txtmodeloProduto_Leave(object sender, EventArgs e)
+        {
+            letraMaiscula(txtmodeloProduto);
+        }
+
+        private void txttipo_Leave_1(object sender, EventArgs e)
+        {
+            letraMaiscula(txttipo);
+        }
+
 
         #endregion
 
-        
+        private void cmbtipo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtfornecedor_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtmodeloProduto_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtvalorCompra_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtdata_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void txtquantidadeProduto_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtvalorVenda_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -24,7 +24,7 @@ namespace TCC.MODELS.produto_modelo
             return dtr;
         } //LISTAGEM DE Produtos
 
-        public String cadastrarProdutos(string nome, string fornecedor, string tipo, string modelo, string quantidade, string valordeCompra, string valordeVenda,
+        public String cadastrarProdutos(string nome, string fornecedor, string tipo, string modelo, float quantidade, float valordeCompra, float valordeVenda,
                      string datadeCadastro)
         {
             this.mensagem = cadproduto.cadastrarProdutos(nome, fornecedor, tipo, modelo, quantidade, valordeCompra, valordeVenda, datadeCadastro);
