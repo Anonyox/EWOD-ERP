@@ -363,18 +363,18 @@ namespace TCC.VISÃO
         private void timer1_Tick(object sender, EventArgs e)
         {
             listarProdutos();
-            timer1.Start();
+           
 
 
         }
 
         private void CadastroProduto_Load(object sender, EventArgs e)
         {
+            timer1.Start();
             formataGrid();
             txtdata.ReadOnly = true;
             txtdata.Text = datadecadastro.ToString();
-            buscarProduto();
-            listarProdutos();                 
+            buscarProduto();               
             //timer1.Start();           
         }
         
