@@ -24,6 +24,10 @@ namespace TCC.MODELO
 
         string valtot;
 
+        string quantidadeEstoque;
+
+        
+
         #endregion
 
 
@@ -125,12 +129,43 @@ namespace TCC.MODELO
             return this.codOperacao;
         } //FAZ A BUSCA DO ÚLTIMO CÓDIGO DE OPERAÇÃO
 
-
-
         public String somaProdutosAdicionadosAoCarrinho(int codOperacaoSomaTotal)
         {
             this.valtot = vendaDao.somaProdutosAdicionadosAoCarrinho(codOperacaoSomaTotal);
             return valtot;
+        }
+
+        public String verificaQuantidadeRestanteNoEstoque(String nomeProduto)
+        {
+            this.quantidadeEstoque = vendaDao.verificaQuantidadeRestanteNoEstoque(nomeProduto);
+            if (vendaDao.tem)
+            {
+
+                this.tem = true;
+               
+            }
+            else
+            {
+                this.tem = false;
+            }
+
+
+            return this.quantidadeEstoque;
+        }
+
+        public bool verificaSeOMesmoProdutoJaFoiInserido( String nomedoProduto, String codOperacao)
+        {
+            this.tem = vendaDao.verificaSeOMesmoProdutoJaFoiInserido(nomedoProduto, codOperacao);
+
+            if (vendaDao.tem)
+            {
+                this.tem = true;
+            }
+
+            return tem;
+            
+
+            
         }
         #endregion
 

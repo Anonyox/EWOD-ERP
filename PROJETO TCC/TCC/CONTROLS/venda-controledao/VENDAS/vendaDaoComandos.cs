@@ -18,6 +18,8 @@ namespace TCC.CONTROLE
         public Boolean tem = false;
         Conexao con = new Conexao();
         SqlCommand cmd = new SqlCommand();
+
+        public string quantidadeEstoque;
         #endregion
 
 
@@ -34,17 +36,23 @@ namespace TCC.CONTROLE
             
 
 
-            cmd.CommandText = "select * from itemDePedido where codOperacao = @codOperacao ";
-            cmd.Parameters.AddWithValue("@codOperacao", codOperacao);
+            cmd.CommandText = "select codOperacao, produtoPedido, tipoProduto, estilomodeloPedido, " +
+                " format (valordeCompraPedido, 'c', 'pt-br') as valorDeCompraPedido, " +
+                " format (valordeVendaPedido, 'c', 'pt-br') as valordeVendaPedido, " +
+                " quantidade " +
+                " from itemDePedido where codOperacao = @codOperacaoLista ";
+            cmd.Parameters.AddWithValue("@codOperacaoLista", codOperacao);
+            cmd.Connection = con.conectar();
            
 
 
             try
             {
-                con.conectar();
+                
+              
                 cmd.ExecuteNonQuery();
+                
 
-               
 
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dtr = new DataTable();
@@ -53,7 +61,7 @@ namespace TCC.CONTROLE
 
                 con.desconectar();
 
-                cmd.Parameters.RemoveAt("@codoperacao");
+                cmd.Parameters.RemoveAt("@codoperacaoLista");
                 return dtr;
                
 
@@ -286,6 +294,103 @@ namespace TCC.CONTROLE
 
 
             return codOperacaoSoma;
+        }
+
+        public String verificaQuantidadeRestanteNoEstoque(String nomeProduto)
+        {
+            cmd.CommandText = ("SELECT quantidade from PRODUTOS where nome = @nomeProduto");
+            cmd.Parameters.AddWithValue("@nomeProduto", nomeProduto);
+            cmd.Connection = con.conectar();
+
+
+
+            try
+            {
+                
+                SqlDataReader registro = cmd.ExecuteReader();
+
+                while (registro.Read())
+                {
+                    
+                    this.quantidadeEstoque = registro.GetValue(0).ToString();
+                    cmd.Parameters.RemoveAt("@nomeProduto");
+                    this.tem = true;
+
+                    
+                   
+                   
+
+
+                }
+
+
+
+                //dtEmail.DataSource = dt;
+
+
+
+            }
+            catch (SqlException)
+            {
+
+                this.tem = false;
+            }
+
+
+
+            con.desconectar();
+            
+            return this.quantidadeEstoque;
+        }
+
+        public bool verificaSeOMesmoProdutoJaFoiInserido(String nomeDoProduto, String codOperacaoBusca)
+        {
+            cmd.CommandText = ("Select produtoPedido from itemDePedido where produtoPedido = @nomeDoProduto and codOperacao = @codOperacaoBusca");
+            cmd.Parameters.AddWithValue("@nomeDoProduto", nomeDoProduto);
+            cmd.Parameters.AddWithValue("@codOperacaoBusca", codOperacaoBusca);
+            cmd.Connection = con.conectar();
+
+
+           
+            try
+            {
+                SqlDataReader registro = cmd.ExecuteReader();
+
+
+
+                while (registro.Read())
+                {
+
+                    cmd.Parameters.RemoveAt("@nomeDoProduto");
+                    cmd.Parameters.RemoveAt("@codOperacaoBusca");
+                    registro.Close();
+                    this.tem = true;
+                    return this.tem;
+                    
+
+                }
+
+                cmd.Parameters.RemoveAt("@nomeDoProduto");
+                cmd.Parameters.RemoveAt("@codOperacaoBusca");
+                registro.Close();
+                tem = false;
+                return tem;
+                //dtEmail.DataSource = dt;
+
+
+
+            }
+            catch (SqlException)
+            {
+                
+            }
+
+
+            
+            con.desconectar();
+            return this.tem;
+
+
         }
 
 
