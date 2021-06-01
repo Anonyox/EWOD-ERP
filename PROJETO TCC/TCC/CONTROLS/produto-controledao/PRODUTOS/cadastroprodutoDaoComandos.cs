@@ -28,23 +28,31 @@ namespace TCC.CONTROLE
         {
             Conexao con = new Conexao();
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "select * from produtos";
+            cmd.CommandText = "select nome, " +
+                "fornecedor, " +
+                "tipo, modelo, " +
+                "quantidade, " +
+                "valordeCompra," +
+                "valordeVenda," +
+                "dataDeCadastro" +
+                " from produtos";
             cmd.Connection = con.conectar();
 
 
             try
             {
                 con.conectar();
-                cmd.ExecuteNonQuery();
+
 
 
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
-                
+                cmd.ExecuteNonQuery();
+
                 da.Fill(dt);
 
                 con.desconectar();
 
-               
+                return dt;
 
             }
             catch (SqlException)
@@ -53,7 +61,7 @@ namespace TCC.CONTROLE
                 throw;
             }
 
-            return dt;
+            
 
         }
 
