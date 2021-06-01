@@ -104,10 +104,11 @@ namespace TCC.VISÃO
 
                 if (MessageBox.Show("Deseja alterar dados do produto existente ?","ALTERAÇÃO",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    nomeAnterior = txtnomeProduto.Text;
-                    preencherCampos();
                     btnConfirmar.Enabled = false;
                     btnsalvarAlteracao.Enabled = true;
+                    nomeAnterior = txtnomeProduto.Text;
+                    preencherCampos();
+                    
                 }
                 else
                 {
