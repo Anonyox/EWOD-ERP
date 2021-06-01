@@ -134,7 +134,6 @@
             this.txtdata.Size = new System.Drawing.Size(112, 30);
             this.txtdata.TabIndex = 105;
             this.txtdata.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtdata.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtdata_MaskInputRejected);
             // 
             // label9
             // 
@@ -156,7 +155,6 @@
             this.txtquantidadeProduto.Name = "txtquantidadeProduto";
             this.txtquantidadeProduto.Size = new System.Drawing.Size(100, 30);
             this.txtquantidadeProduto.TabIndex = 97;
-            this.txtquantidadeProduto.TextChanged += new System.EventHandler(this.txtquantidadeProduto_TextChanged);
             // 
             // txtvalorCompra
             // 
@@ -166,7 +164,6 @@
             this.txtvalorCompra.Name = "txtvalorCompra";
             this.txtvalorCompra.Size = new System.Drawing.Size(112, 30);
             this.txtvalorCompra.TabIndex = 96;
-            this.txtvalorCompra.TextChanged += new System.EventHandler(this.txtvalorCompra_TextChanged);
             // 
             // txtfornecedor
             // 
@@ -176,7 +173,6 @@
             this.txtfornecedor.Name = "txtfornecedor";
             this.txtfornecedor.Size = new System.Drawing.Size(278, 30);
             this.txtfornecedor.TabIndex = 95;
-            this.txtfornecedor.TextChanged += new System.EventHandler(this.txtfornecedor_TextChanged);
             // 
             // txtvalorVenda
             // 
@@ -186,7 +182,6 @@
             this.txtvalorVenda.Name = "txtvalorVenda";
             this.txtvalorVenda.Size = new System.Drawing.Size(100, 30);
             this.txtvalorVenda.TabIndex = 94;
-            this.txtvalorVenda.TextChanged += new System.EventHandler(this.txtvalorVenda_TextChanged);
             // 
             // label4
             // 
@@ -247,6 +242,7 @@
             this.btnsalvarAlteracao.Size = new System.Drawing.Size(64, 38);
             this.btnsalvarAlteracao.TabIndex = 89;
             this.btnsalvarAlteracao.UseVisualStyleBackColor = false;
+            this.btnsalvarAlteracao.Click += new System.EventHandler(this.btnsalvarAlteracao_Click);
             // 
             // dtgproduto
             // 
@@ -453,7 +449,6 @@
             this.txtmodeloProduto.Name = "txtmodeloProduto";
             this.txtmodeloProduto.Size = new System.Drawing.Size(170, 30);
             this.txtmodeloProduto.TabIndex = 174;
-            this.txtmodeloProduto.TextChanged += new System.EventHandler(this.txtmodeloProduto_TextChanged);
             // 
             // label10
             // 

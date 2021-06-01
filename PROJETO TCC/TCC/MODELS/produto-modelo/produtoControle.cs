@@ -37,5 +37,34 @@ namespace TCC.MODELS.produto_modelo
             }
             return mensagem;
         }
+
+        public bool verificarProduto(String nomeProduto)
+        {
+            this.tem = cadproduto.verificarProduto(nomeProduto);
+
+            if (cadproduto.tem)
+            {
+                this.tem = true;
+            }
+
+
+
+
+            return tem;
+        }
+
+        public String salvarAlteracao(string nomeAnterior,string nome, string fornecedor, string tipo, string modelo, float quantidade, float valordeCompra, float valordeVenda,
+                     string datadeCadastro)
+        {
+            this.mensagem = cadproduto.salvarAlteracao(nomeAnterior,nome, fornecedor, tipo, modelo, quantidade, valordeCompra, valordeVenda, datadeCadastro);
+
+            if (cadproduto.tem)
+            {
+                this.tem = true;
+
+
+            }
+            return mensagem;
+        }
     }
 }

@@ -115,9 +115,18 @@ namespace TCC.CONTROLE
                 cmd.Connection = con.conectar();
                 cmd.ExecuteNonQuery();
 
+                cmd.Parameters.AddWithValue("@a", nome);
+                cmd.Parameters.AddWithValue("@b", fornecedor);
+                cmd.Parameters.AddWithValue("@c", tipo);
+                cmd.Parameters.AddWithValue("@d", modelo);
+                cmd.Parameters.AddWithValue("@e", quantidade);
+                cmd.Parameters.AddWithValue("@f", valordeCompra);
+                cmd.Parameters.AddWithValue("@g", valordeVenda);
+                cmd.Parameters.AddWithValue("@h", dataDeCadastro);
+
                 //ABRIR CONEXÃO DOS PRODUTOS
 
-               
+
 
                 this.mensagem = "CADASTRADO COM SUCESSO!!";
                 tem = true;
@@ -139,7 +148,106 @@ namespace TCC.CONTROLE
             cmd.Parameters.AddWithValue("@coluna", coluna);
         }*/
 
+        public bool verificarProduto(String nomeProduto)
+        {
+            cmd.CommandText = "SELECT nome FROM produtos WHERE nome = @nome";
+            cmd.Parameters.AddWithValue("@nome", nomeProduto);
 
+            try
+            {
+                cmd.Connection = con.conectar();
+                dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    cmd.Parameters.RemoveAt("@nome");
+                    dr.Close();
+                    this.tem = true;
+
+                    return tem;
+
+                }
+
+                cmd.Parameters.RemoveAt("@nome");
+                dr.Close();
+
+                this.tem = false;
+
+                return tem;
+
+                
+
+            }
+            catch (Exception)
+            {
+
+
+                throw;
+            }
+
+
+
+            con.desconectar();
+        }
+
+        public String salvarAlteracao(string nomeAnterior,string nome, string fornecedor, string tipo, string modelo, float quantidade, float valordeCompra, float valordeVenda,
+            string dataDeCadastro)
+        {
+            tem = false;
+
+            cmd.CommandText = "update produtos set nome = @a," +
+                "fornecedor = @b," +
+                "tipo = @c," +
+                "modelo = @d," +
+                "quantidade = @e," +
+                "valordeCompra = @f," +
+                "valordeVenda = @g," +
+                "dataDeCadastro = @h" +
+                " where nome = @nomeAnterior";
+
+
+            cmd.Parameters.AddWithValue("@a", nome);
+            cmd.Parameters.AddWithValue("@b", fornecedor);
+            cmd.Parameters.AddWithValue("@c", tipo);
+            cmd.Parameters.AddWithValue("@d", modelo);
+            cmd.Parameters.AddWithValue("@e", quantidade);
+            cmd.Parameters.AddWithValue("@f", valordeCompra);
+            cmd.Parameters.AddWithValue("@g", valordeVenda);
+            cmd.Parameters.AddWithValue("@h", dataDeCadastro);
+            cmd.Parameters.AddWithValue("@nomeAnterior", nomeAnterior);
+           
+           
+            //INSERT NA TABELA PRODUTOS
+
+            try
+            {
+                cmd.Connection = con.conectar();
+                cmd.ExecuteNonQuery();
+
+                cmd.Parameters.RemoveAt("@a");
+                cmd.Parameters.RemoveAt("@b");
+                cmd.Parameters.RemoveAt("@c");
+                cmd.Parameters.RemoveAt("@d");
+                cmd.Parameters.RemoveAt("@e");
+                cmd.Parameters.RemoveAt("@f");
+                cmd.Parameters.RemoveAt("@g");
+                cmd.Parameters.RemoveAt("@h");
+                cmd.Parameters.RemoveAt("@nomeAnterior");
+                //ABRIR CONEXÃO DOS PRODUTOS
+
+
+
+                this.mensagem = "ALTERADO COM SUCESSO!!";
+                tem = true;
+            }
+            catch (SqlException)
+            {
+
+                this.mensagem = "ERRO COM O BANCO DE DADOS";
+            }
+            return mensagem;
+            con.desconectar();
+        }
 
     #endregion
 

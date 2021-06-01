@@ -37,7 +37,11 @@ namespace TCC.VISÃO
         SqlDataReader dr;
         Conexao con = new Conexao();
 
+        bool tem = false;
+
         public DateTime datadecadastro = System.DateTime.Now;
+
+        string nomeAnterior = "";
 
 
 
@@ -84,8 +88,40 @@ namespace TCC.VISÃO
 
         }
 
-        public void verificarProduto()
+        public bool verificarProduto()
         {
+            string nomeProduto = txtnomeProduto.Text;
+
+            this.tem = cadpro.verificarProduto(nomeProduto);
+
+            if (cadpro.tem && btnsalvarAlteracao.Enabled == false)
+            {
+                
+                
+                MessageBox.Show("Produto já existente !!", "CADASTRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                
+
+                if (MessageBox.Show("Deseja alterar dados do produto existente ?","ALTERAÇÃO",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    nomeAnterior = txtnomeProduto.Text;
+                    preencherCampos();
+                    btnConfirmar.Enabled = false;
+                    btnsalvarAlteracao.Enabled = true;
+                }
+                else
+                {
+                    limparCampos();
+                    txtnomeProduto.Focus();
+                }
+
+                return true;
+
+
+            }
+
+            return false;
+            
             //DESEJA ALTERAR DADOS DESSE PRODUTO ?
         }
 
@@ -116,7 +152,7 @@ namespace TCC.VISÃO
 
         public void preencherCampos()
         {
-            if(txtnomeProduto.Text != string.Empty)
+            if(txtnomeProduto.Text != string.Empty && btnsalvarAlteracao.Enabled == false)
             {
                 txtdata.ReadOnly = false;
                 SqlCommand command = new SqlCommand("SELECT quantidade, fornecedor, dataDeCadastro, modelo, tipo, valordeCompra, valordeVenda FROM produtos WHERE nome = @nome", con.conectar());
@@ -241,6 +277,48 @@ namespace TCC.VISÃO
             dtgproduto.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
         }
 
+        public void salvarAlteracao()
+        {
+            float valordeCompra = float.Parse(txtvalorCompra.Text);
+            float valordeVenda = float.Parse(txtvalorVenda.Text);
+            float quantidade = float.Parse(txtquantidadeProduto.Text);
+
+
+
+
+
+
+            if (MessageBox.Show("Deseja Salvar as alterações ?", "ALTERAÇÃO", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+            {
+                if (!verificarCampos())
+                {
+                    MessageBox.Show("PREENCHA TODOS OS CAMPOS", "PREENCHER CAMPOS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    String mensagem = cadpro.salvarAlteracao(this.nomeAnterior,txtnomeProduto.Text, txtfornecedor.Text, txttipo.Text, txtmodeloProduto.Text,
+                        quantidade, valordeCompra, valordeVenda, txtdata.Text);
+                    if (cadpro.tem)
+                    {
+                        MessageBox.Show(mensagem, "ALTERAÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show(cadpro.mensagem, "ALTERAÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                    if (cadpro.mensagem == "ALTERADO COM SUCESSO!!")
+                    {
+                        listarProdutos();
+                        limparCampos();
+                        btnConfirmar.Enabled = false;
+                        btnsalvarAlteracao.Enabled = false;
+
+                    }
+                }
+            }
+        }
+
 
         #endregion
 
@@ -253,6 +331,8 @@ namespace TCC.VISÃO
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
+            btnsalvarAlteracao.Enabled = false;
+            btnConfirmar.Enabled = true;
             limparCampos();
         }
 
@@ -324,10 +404,15 @@ namespace TCC.VISÃO
 
         private void txtnomeProduto_TextChanged(object sender, EventArgs e)
         {
+            if (!verificarProduto())
+            {
+
                 preencherCampos();
-           
-           
-            
+
+            }
+
+
+
         }
 
         private void btnConfirmar_Click(object sender, EventArgs e)
@@ -351,42 +436,14 @@ namespace TCC.VISÃO
             letraMaiscula(txttipo);
         }
 
+        private void btnsalvarAlteracao_Click(object sender, EventArgs e)
+        {
+            salvarAlteracao();
+            limparCampos();
+        }
 
         #endregion
 
-        private void cmbtipo_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
-        }
-
-        private void txtfornecedor_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtmodeloProduto_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtvalorCompra_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtdata_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-
-        }
-
-        private void txtquantidadeProduto_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtvalorVenda_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
