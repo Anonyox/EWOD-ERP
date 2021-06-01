@@ -481,6 +481,7 @@
             this.txttipo.Name = "txttipo";
             this.txttipo.Size = new System.Drawing.Size(170, 30);
             this.txttipo.TabIndex = 176;
+            this.txttipo.Leave += new System.EventHandler(this.txttipo_Leave);
             // 
             // CadastroProduto
             // 

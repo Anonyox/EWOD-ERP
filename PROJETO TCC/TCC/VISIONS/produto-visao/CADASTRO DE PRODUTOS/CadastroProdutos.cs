@@ -104,11 +104,11 @@ namespace TCC.VISÃO
 
                 if (MessageBox.Show("Deseja alterar dados do produto existente ?","ALTERAÇÃO",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    btnConfirmar.Enabled = false;
-                    btnsalvarAlteracao.Enabled = true;
-                    nomeAnterior = txtnomeProduto.Text;
                     preencherCampos();
-                    
+                    btnConfirmar.Enabled = false;                                                         
+                    nomeAnterior = txtnomeProduto.Text;
+                    btnsalvarAlteracao.Enabled = true;
+
                 }
                 else
                 {
@@ -182,7 +182,7 @@ namespace TCC.VISÃO
             }
             else
             {
-                limparCampos();
+                
                 txtnomeProduto.Focus();
 
             }
@@ -398,21 +398,15 @@ namespace TCC.VISÃO
 
         private void txtnomeProduto_Leave(object sender, EventArgs e)
         {
-    
+            verificarProduto();
             letraMaiscula(txtnomeProduto);            
 
         }
 
         private void txtnomeProduto_TextChanged(object sender, EventArgs e)
         {
-            if (!verificarProduto())
-            {
-
+                
                 preencherCampos();
-
-            }
-
-
 
         }
 
@@ -432,7 +426,7 @@ namespace TCC.VISÃO
             letraMaiscula(txtmodeloProduto);
         }
 
-        private void txttipo_Leave_1(object sender, EventArgs e)
+        private void txttipo_Leave(object sender, EventArgs e)
         {
             letraMaiscula(txttipo);
         }
@@ -443,8 +437,9 @@ namespace TCC.VISÃO
             limparCampos();
         }
 
+
         #endregion
 
-
+        
     }
 }

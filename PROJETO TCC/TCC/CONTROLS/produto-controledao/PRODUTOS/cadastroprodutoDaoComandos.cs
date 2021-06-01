@@ -115,14 +115,14 @@ namespace TCC.CONTROLE
                 cmd.Connection = con.conectar();
                 cmd.ExecuteNonQuery();
 
-                cmd.Parameters.AddWithValue("@a", nome);
-                cmd.Parameters.AddWithValue("@b", fornecedor);
-                cmd.Parameters.AddWithValue("@c", tipo);
-                cmd.Parameters.AddWithValue("@d", modelo);
-                cmd.Parameters.AddWithValue("@e", quantidade);
-                cmd.Parameters.AddWithValue("@f", valordeCompra);
-                cmd.Parameters.AddWithValue("@g", valordeVenda);
-                cmd.Parameters.AddWithValue("@h", dataDeCadastro);
+                cmd.Parameters.RemoveAt("@a");
+                cmd.Parameters.RemoveAt("@b");
+                cmd.Parameters.RemoveAt("@c");
+                cmd.Parameters.RemoveAt("@d");
+                cmd.Parameters.RemoveAt("@e");
+                cmd.Parameters.RemoveAt("@f");
+                cmd.Parameters.RemoveAt("@g");
+                cmd.Parameters.RemoveAt("@h");
 
                 //ABRIR CONEXÃO DOS PRODUTOS
 
