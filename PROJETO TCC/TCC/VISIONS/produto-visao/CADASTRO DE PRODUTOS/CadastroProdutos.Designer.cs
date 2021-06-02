@@ -257,7 +257,7 @@
             this.valordeCompra,
             this.valordeVenda,
             this.datadeCadastro});
-            this.dtgproduto.Location = new System.Drawing.Point(0, 429);
+            this.dtgproduto.Location = new System.Drawing.Point(-1, 428);
             this.dtgproduto.Name = "dtgproduto";
             this.dtgproduto.RowHeadersWidth = 51;
             this.dtgproduto.Size = new System.Drawing.Size(864, 228);
