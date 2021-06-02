@@ -393,6 +393,38 @@ namespace TCC.CONTROLE
 
         }
 
+        public String deletaProdutoSelecionadoDoCarrinho(String nome, String codOperacao)
+        {
+            cmd.CommandText = ("delete from itemDePedido where codOperacao = @codOp and produtoPedido = @nome");
+            cmd.Parameters.AddWithValue("@codOp", codOperacao);
+            cmd.Parameters.AddWithValue("@nome", nome);
+
+
+            try
+            {
+
+                cmd.Connection = con.conectar();
+                cmd.ExecuteNonQuery();
+                cmd.Parameters.RemoveAt("@codOp");
+                cmd.Parameters.RemoveAt("@nome");
+
+                this.mensagem = "PRODUTO RETIRADO DO CARRINHO";
+                tem = true;
+                return mensagem;
+
+
+            }
+            catch (Exception)
+            {
+                this.mensagem = "ERRO COM BANCO DE DADOS";
+                tem = false;
+                
+            }
+
+
+            return mensagem;
+        }
+
 
         #endregion
 

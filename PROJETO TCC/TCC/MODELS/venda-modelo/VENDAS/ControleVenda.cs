@@ -167,6 +167,26 @@ namespace TCC.MODELO
 
             
         }
+
+        public String deletaProdutoSelecionadoDoCarrinho(String nome, String codOperacao)
+        {
+            this.mensagem = vendaDao.deletaProdutoSelecionadoDoCarrinho(nome, codOperacao);
+
+            if (vendaDao.tem)
+            {
+                this.mensagem = vendaDao.mensagem;
+                tem = true;
+
+
+            }
+            else
+            {
+                this.mensagem = "ERRO COM BANCO DE DADOS";
+                tem = false;
+            }
+
+            return mensagem;
+        }
         #endregion
 
 

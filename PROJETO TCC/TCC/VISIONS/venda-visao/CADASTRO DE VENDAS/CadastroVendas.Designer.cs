@@ -30,23 +30,22 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroVendas));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.barra = new System.Windows.Forms.Panel();
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.btnSair = new System.Windows.Forms.PictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.txtDesconto = new System.Windows.Forms.MaskedTextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.txtestiloModelo = new System.Windows.Forms.ComboBox();
             this.lsbpgt = new System.Windows.Forms.ComboBox();
             this.lsbProduto = new System.Windows.Forms.ComboBox();
             this.btnFinalizar = new System.Windows.Forms.Button();
             this.btnAdicionar = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnExtornar = new System.Windows.Forms.Button();
             this.txtcidadeCliente = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.txtEndereco = new System.Windows.Forms.TextBox();
@@ -74,6 +73,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblteste = new System.Windows.Forms.DataGridView();
+            this.produtosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tccDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tccDataSet = new TCC.tccDataSet();
+            this.produtosTableAdapter = new TCC.tccDataSetTableAdapters.produtosTableAdapter();
+            this.tccDataSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.coddeOperacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.produtoPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipoProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -81,12 +85,8 @@
             this.valordeCompraPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valordeVendaPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantidadePedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valortotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnexcluir = new System.Windows.Forms.DataGridViewImageColumn();
-            this.produtosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tccDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tccDataSet = new TCC.tccDataSet();
-            this.produtosTableAdapter = new TCC.tccDataSetTableAdapters.produtosTableAdapter();
-            this.tccDataSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.barra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSair)).BeginInit();
@@ -141,14 +141,12 @@
             this.panel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel6.Controls.Add(this.txtDesconto);
             this.panel6.Controls.Add(this.label8);
-            this.panel6.Controls.Add(this.button1);
             this.panel6.Controls.Add(this.txtestiloModelo);
             this.panel6.Controls.Add(this.lsbpgt);
             this.panel6.Controls.Add(this.lsbProduto);
             this.panel6.Controls.Add(this.btnFinalizar);
             this.panel6.Controls.Add(this.btnAdicionar);
             this.panel6.Controls.Add(this.panel3);
-            this.panel6.Controls.Add(this.btnExtornar);
             this.panel6.Controls.Add(this.txtcidadeCliente);
             this.panel6.Controls.Add(this.label15);
             this.panel6.Controls.Add(this.txtEndereco);
@@ -207,25 +205,6 @@
             this.label8.Size = new System.Drawing.Size(206, 27);
             this.label8.TabIndex = 155;
             this.label8.Text = "CADASTRAR VENDA";
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.BackgroundImage = global::TCC.Properties.Resources.icons8_salvar_48;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.Enabled = false;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Transparent;
-            this.button1.Location = new System.Drawing.Point(87, 449);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(65, 43);
-            this.button1.TabIndex = 154;
-            this.button1.UseVisualStyleBackColor = false;
             // 
             // txtestiloModelo
             // 
@@ -316,27 +295,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1193, 26);
             this.panel3.TabIndex = 148;
-            // 
-            // btnExtornar
-            // 
-            this.btnExtornar.BackColor = System.Drawing.Color.Transparent;
-            this.btnExtornar.BackgroundImage = global::TCC.Properties.Resources.icons8_lixeira_vazia_48;
-            this.btnExtornar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnExtornar.Enabled = false;
-            this.btnExtornar.FlatAppearance.BorderSize = 0;
-            this.btnExtornar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnExtornar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnExtornar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExtornar.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExtornar.ForeColor = System.Drawing.Color.Transparent;
-            this.btnExtornar.Location = new System.Drawing.Point(160, 447);
-            this.btnExtornar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnExtornar.Name = "btnExtornar";
-            this.btnExtornar.Size = new System.Drawing.Size(65, 43);
-            this.btnExtornar.TabIndex = 147;
-            this.btnExtornar.UseVisualStyleBackColor = false;
-            this.btnExtornar.MouseEnter += new System.EventHandler(this.btnExtornar_MouseEnter);
-            this.btnExtornar.MouseLeave += new System.EventHandler(this.btnExtornar_MouseLeave);
             // 
             // txtcidadeCliente
             // 
@@ -437,7 +395,7 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.Transparent;
-            this.btnCancelar.Location = new System.Drawing.Point(240, 447);
+            this.btnCancelar.Location = new System.Drawing.Point(85, 450);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(65, 43);
@@ -666,14 +624,14 @@
             // lblteste
             // 
             this.lblteste.BackgroundColor = System.Drawing.Color.Lavender;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Comic Sans MS", 9F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.lblteste.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Comic Sans MS", 9F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.lblteste.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.lblteste.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.lblteste.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.coddeOperacao,
@@ -683,83 +641,24 @@
             this.valordeCompraPedido,
             this.valordeVendaPedido,
             this.quantidadePedido,
+            this.valortotal,
             this.btnexcluir});
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.lblteste.DefaultCellStyle = dataGridViewCellStyle8;
+            this.lblteste.Enabled = false;
             this.lblteste.Location = new System.Drawing.Point(-5, 512);
             this.lblteste.Margin = new System.Windows.Forms.Padding(4);
             this.lblteste.Name = "lblteste";
             this.lblteste.RowHeadersWidth = 51;
             this.lblteste.Size = new System.Drawing.Size(1156, 228);
             this.lblteste.TabIndex = 85;
-            // 
-            // coddeOperacao
-            // 
-            this.coddeOperacao.HeaderText = "Código da Operação";
-            this.coddeOperacao.MinimumWidth = 6;
-            this.coddeOperacao.Name = "coddeOperacao";
-            this.coddeOperacao.ReadOnly = true;
-            this.coddeOperacao.Width = 70;
-            // 
-            // produtoPedido
-            // 
-            this.produtoPedido.HeaderText = "Nome do Produto";
-            this.produtoPedido.MinimumWidth = 6;
-            this.produtoPedido.Name = "produtoPedido";
-            this.produtoPedido.ReadOnly = true;
-            this.produtoPedido.Width = 180;
-            // 
-            // tipoProduto
-            // 
-            this.tipoProduto.HeaderText = "Tipo do Produto";
-            this.tipoProduto.MinimumWidth = 6;
-            this.tipoProduto.Name = "tipoProduto";
-            this.tipoProduto.ReadOnly = true;
-            this.tipoProduto.Width = 105;
-            // 
-            // estiloModelo
-            // 
-            this.estiloModelo.HeaderText = "Estilo/Modelo";
-            this.estiloModelo.MinimumWidth = 6;
-            this.estiloModelo.Name = "estiloModelo";
-            this.estiloModelo.ReadOnly = true;
-            this.estiloModelo.Width = 105;
-            // 
-            // valordeCompraPedido
-            // 
-            dataGridViewCellStyle5.Format = "C2";
-            dataGridViewCellStyle5.NullValue = null;
-            this.valordeCompraPedido.DefaultCellStyle = dataGridViewCellStyle5;
-            this.valordeCompraPedido.HeaderText = "Valor de Compra do Produto";
-            this.valordeCompraPedido.MinimumWidth = 6;
-            this.valordeCompraPedido.Name = "valordeCompraPedido";
-            this.valordeCompraPedido.ReadOnly = true;
-            this.valordeCompraPedido.Width = 125;
-            // 
-            // valordeVendaPedido
-            // 
-            dataGridViewCellStyle6.Format = "C2";
-            this.valordeVendaPedido.DefaultCellStyle = dataGridViewCellStyle6;
-            this.valordeVendaPedido.HeaderText = "Valor de Venda do Produto";
-            this.valordeVendaPedido.MinimumWidth = 6;
-            this.valordeVendaPedido.Name = "valordeVendaPedido";
-            this.valordeVendaPedido.ReadOnly = true;
-            this.valordeVendaPedido.Width = 125;
-            // 
-            // quantidadePedido
-            // 
-            this.quantidadePedido.HeaderText = "Quantidade do Produto";
-            this.quantidadePedido.MinimumWidth = 6;
-            this.quantidadePedido.Name = "quantidadePedido";
-            this.quantidadePedido.ReadOnly = true;
-            this.quantidadePedido.Width = 90;
-            // 
-            // btnexcluir
-            // 
-            this.btnexcluir.HeaderText = "Retirar do Carrinho ";
-            this.btnexcluir.Image = global::TCC.Properties.Resources.icons8_cancelar_48;
-            this.btnexcluir.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.btnexcluir.MinimumWidth = 6;
-            this.btnexcluir.Name = "btnexcluir";
-            this.btnexcluir.Width = 70;
+            this.lblteste.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.lblteste_CellMouseClick);
             // 
             // produtosBindingSource
             // 
@@ -784,6 +683,85 @@
             // 
             this.tccDataSetBindingSource1.DataSource = this.tccDataSet;
             this.tccDataSetBindingSource1.Position = 0;
+            // 
+            // coddeOperacao
+            // 
+            this.coddeOperacao.HeaderText = "Código";
+            this.coddeOperacao.MinimumWidth = 6;
+            this.coddeOperacao.Name = "coddeOperacao";
+            this.coddeOperacao.ReadOnly = true;
+            this.coddeOperacao.Width = 50;
+            // 
+            // produtoPedido
+            // 
+            this.produtoPedido.HeaderText = "Produto";
+            this.produtoPedido.MinimumWidth = 6;
+            this.produtoPedido.Name = "produtoPedido";
+            this.produtoPedido.ReadOnly = true;
+            this.produtoPedido.Width = 170;
+            // 
+            // tipoProduto
+            // 
+            this.tipoProduto.HeaderText = " Tipo";
+            this.tipoProduto.MinimumWidth = 6;
+            this.tipoProduto.Name = "tipoProduto";
+            this.tipoProduto.ReadOnly = true;
+            this.tipoProduto.Width = 90;
+            // 
+            // estiloModelo
+            // 
+            this.estiloModelo.HeaderText = "Estilo/Modelo";
+            this.estiloModelo.MinimumWidth = 6;
+            this.estiloModelo.Name = "estiloModelo";
+            this.estiloModelo.ReadOnly = true;
+            this.estiloModelo.Width = 105;
+            // 
+            // valordeCompraPedido
+            // 
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.Format = "C2";
+            dataGridViewCellStyle6.NullValue = null;
+            this.valordeCompraPedido.DefaultCellStyle = dataGridViewCellStyle6;
+            this.valordeCompraPedido.HeaderText = "Valor de Compra";
+            this.valordeCompraPedido.MinimumWidth = 6;
+            this.valordeCompraPedido.Name = "valordeCompraPedido";
+            this.valordeCompraPedido.ReadOnly = true;
+            this.valordeCompraPedido.Width = 90;
+            // 
+            // valordeVendaPedido
+            // 
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.Format = "C2";
+            this.valordeVendaPedido.DefaultCellStyle = dataGridViewCellStyle7;
+            this.valordeVendaPedido.HeaderText = "Valor de Venda";
+            this.valordeVendaPedido.MinimumWidth = 6;
+            this.valordeVendaPedido.Name = "valordeVendaPedido";
+            this.valordeVendaPedido.ReadOnly = true;
+            this.valordeVendaPedido.Width = 90;
+            // 
+            // quantidadePedido
+            // 
+            this.quantidadePedido.HeaderText = "Quantidade";
+            this.quantidadePedido.MinimumWidth = 6;
+            this.quantidadePedido.Name = "quantidadePedido";
+            this.quantidadePedido.ReadOnly = true;
+            this.quantidadePedido.Width = 80;
+            // 
+            // valortotal
+            // 
+            this.valortotal.HeaderText = "   Valor Total";
+            this.valortotal.MinimumWidth = 6;
+            this.valortotal.Name = "valortotal";
+            this.valortotal.Width = 110;
+            // 
+            // btnexcluir
+            // 
+            this.btnexcluir.HeaderText = "";
+            this.btnexcluir.Image = global::TCC.Properties.Resources.icons8_cancelar_48;
+            this.btnexcluir.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.btnexcluir.MinimumWidth = 6;
+            this.btnexcluir.Name = "btnexcluir";
+            this.btnexcluir.Width = 30;
             // 
             // CadastroVendas
             // 
@@ -841,7 +819,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnExtornar;
         private System.Windows.Forms.TextBox txtcidadeCliente;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtEndereco;
@@ -857,8 +834,8 @@
         private System.Windows.Forms.ComboBox lsbpgt;
         private System.Windows.Forms.BindingSource tccDataSetBindingSource1;
         private System.Windows.Forms.ComboBox txtestiloModelo;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.MaskedTextBox txtDesconto;
         private System.Windows.Forms.DataGridViewTextBoxColumn coddeOperacao;
         private System.Windows.Forms.DataGridViewTextBoxColumn produtoPedido;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipoProduto;
@@ -866,7 +843,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn valordeCompraPedido;
         private System.Windows.Forms.DataGridViewTextBoxColumn valordeVendaPedido;
         private System.Windows.Forms.DataGridViewTextBoxColumn quantidadePedido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valortotal;
         private System.Windows.Forms.DataGridViewImageColumn btnexcluir;
-        private System.Windows.Forms.MaskedTextBox txtDesconto;
     }
 }

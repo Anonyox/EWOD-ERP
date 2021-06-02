@@ -38,8 +38,6 @@ namespace TCC.VISÃO
         public CadastroVendas()
         {
             InitializeComponent();
-
-
         }
 
         #endregion
@@ -185,7 +183,11 @@ namespace TCC.VISÃO
             foreach (DataRow item in dt.Rows)
             {
 
+
                 int n = lblteste.Rows.Add();
+
+
+
                 lblteste.Rows[n].Cells[0].Value = item["codOperacao"].ToString();
                 lblteste.Rows[n].Cells[1].Value = item["produtoPedido"].ToString();
                 lblteste.Rows[n].Cells[2].Value = item["tipoProduto"].ToString();
@@ -193,6 +195,33 @@ namespace TCC.VISÃO
                 lblteste.Rows[n].Cells[4].Value = item["valordeCompraPedido"].ToString();
                 lblteste.Rows[n].Cells[5].Value = item["valordeVendaPedido"].ToString();
                 lblteste.Rows[n].Cells[6].Value = item["quantidade"].ToString();
+
+
+                char[] MyChar = { 'R', '$' };
+                string valorVenda = lblteste.CurrentRow.Cells["valorDeVendaPedido"].Value.ToString();
+                string NewStringVenda = valorVenda.TrimStart(MyChar);
+
+
+
+                string quantidade = lblteste.CurrentRow.Cells["quantidadePedido"].Value.ToString();
+                string NewStringQtd = quantidade.TrimStart(MyChar);
+
+                string total;
+
+                float val1 = float.Parse(NewStringVenda);
+                float qtd = float.Parse(quantidade);
+                float totalC = val1 * qtd;
+
+                total = totalC.ToString("C");
+
+
+
+
+
+                lblteste.Rows[n].Cells[7].Value = total.ToString();
+
+
+
 
             }
 
@@ -260,7 +289,7 @@ namespace TCC.VISÃO
                 txtquantidade.Focus();
                 txtquantidade.Text = "";
             }
-           
+
 
 
         } //ADICIONA AO CARRINHO 
@@ -326,6 +355,30 @@ namespace TCC.VISÃO
             }
         } //RETIRA TODOS PRODUTOS DO CARRINHO
 
+        public void deletaProdutoSelecionadoDoCarrinho()
+        {
+            string codOp = codOperacao.ToString();
+
+            string nome = lblteste.CurrentRow.Cells["produtoPedido"].Value.ToString();
+
+
+
+            String mensagem = controleVenda.deletaProdutoSelecionadoDoCarrinho(nome, codOp);
+            if (controleVenda.tem)
+            {
+                MessageBox.Show(mensagem, "Carrinho", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btnFinalizar.Enabled = false;
+
+
+            }
+            else
+            {
+                MessageBox.Show(mensagem, "Carrinho", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            listaCarrinho();
+        }
+
         public void verificaQuantidadeRestanteNoEstoque()
         {
             if (txtquantidade.Text != "")
@@ -340,6 +393,7 @@ namespace TCC.VISÃO
                 else
                 {
                     this.quantidadeEstoque = "0";
+                    
                 }
 
             }
@@ -511,10 +565,6 @@ namespace TCC.VISÃO
             return false;
         } //VERIFICA SE O MESMO PRODUTO JA FOI INSERIDO
 
-
-
-
-
         #endregion
 
 
@@ -541,17 +591,21 @@ namespace TCC.VISÃO
         {
 
             procuraCodigoOperacao();
-            MessageBox.Show("Oparação Iniciada!", "Venda", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Operação Iniciada!!", "OPERAÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            lblteste.Enabled = true;
+
 
 
 
             lsbProduto.Enabled = true;
             txtquantidade.Enabled = true;
 
-            lsbProduto.Focus();
+            
             btnCadastrar.Enabled = false;
             btnCancelar.Enabled = true;
             btnAdicionar.Enabled = true;
+
+            lsbProduto.Focus();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -579,8 +633,20 @@ namespace TCC.VISÃO
             btnAdicionar.Text = "";
             btnCancelar.Text = "";
             #endregion
-            retiraDoCarrinho();
-            listaCarrinho();
+
+            if (String.IsNullOrEmpty((string)lblteste.Rows[0].Cells[0].Value))
+            {
+                MessageBox.Show("Operação Cancelada!!", "OPERAÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btnFinalizar.Enabled = false;
+
+            }
+            else
+            {
+                retiraDoCarrinho();
+                listaCarrinho();
+                lblteste.Enabled = true;
+            }
+
         }
 
         private void btnAdicionar_Click(object sender, EventArgs e)
@@ -592,21 +658,15 @@ namespace TCC.VISÃO
                 txtquantidade.Text = null;
                 listaCarrinho();
             }
-            
+
 
 
 
         }
 
-        private void btnExtornar_MouseEnter(object sender, EventArgs e)
-        {
-            btnExtornar.Size = new Size(90, 43);
-        }
+        
 
-        private void btnExtornar_MouseLeave(object sender, EventArgs e)
-        {
-            btnExtornar.Size = new Size(65, 43);
-        }
+        
 
         private void btnAdicionar_MouseEnter(object sender, EventArgs e)
         {
@@ -649,10 +709,11 @@ namespace TCC.VISÃO
             if (txtTotal.Text == "")
             {
                 desativaCarrinho();
-                if (MessageBox.Show("Deseja finalizar a venda ?", "Venda", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                if (MessageBox.Show("Adicionar a forma de Pagamento ?", "Venda", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
                 {
                     somaProdutosAdicionadosAoCarrinho();
                     ativaSegundaEtapa();
+                    lblteste.Enabled = false;
                 }
                 else
                 {
@@ -749,13 +810,25 @@ namespace TCC.VISÃO
 
         }
 
+
+
+
+
+
         #endregion
 
+        private void lblteste_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.ColumnIndex == this.btnexcluir.Index && e.RowIndex >= 0 && btnFinalizar.Enabled == true)
+            {
+                // pega a linha atual...
+                //DataGridViewRow currentRow = this.lblteste.Rows[e.RowIndex];
+                // mostra o form...
+                //MessageBox.Show(Convert.ToString(currentRow.Cells[0].Value));
 
-
-
-
-
-
+                deletaProdutoSelecionadoDoCarrinho();
+                lsbProduto.Focus();
+            }
+        }
     }
 }
