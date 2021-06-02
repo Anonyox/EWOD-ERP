@@ -16,7 +16,7 @@ namespace TCC.CONTROLE
         Conexao con = new Conexao();
         SqlCommand cmd = new SqlCommand();
         SqlDataReader dr;       
-        DataTable dt = new DataTable();
+        DataTable dtr = new DataTable();
         public bool tem = false;
         public string mensagem = ("");
         #endregion
@@ -27,7 +27,6 @@ namespace TCC.CONTROLE
         public DataTable listarProdutos()
         {
             
-            SqlCommand cmd = new SqlCommand();
             cmd.CommandText = "select nome, " +
                 "fornecedor, " +
                 "tipo, modelo, " +
@@ -36,24 +35,24 @@ namespace TCC.CONTROLE
                 "valordeVenda," +
                 "dataDeCadastro" +
                 " from produtos Order By nome ASC";
-            
+                cmd.Connection = con.conectar();
 
 
             try
-            {
-                cmd.Connection = con.conectar();
-               
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
+            {            
+                
                 cmd.ExecuteNonQuery();
 
-                da.Fill(dt);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
 
-                
+                da.Fill(dtr);
 
-                return dt;
+                con.desconectar();
+
+                return dtr;
 
             }
-            catch (Exception)
+            catch (SqlException)
             {
 
                 throw;
