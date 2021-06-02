@@ -56,22 +56,29 @@ namespace TCC.VISÃO
 
         public void listarProdutos()
         {
+            DataGridViewImageColumn dtimage = new DataGridViewImageColumn();
             DataTable dt = cadpro.listarProdutos();
+            dtimage.Name = "Alterar";
 
             dtgproduto.Rows.Clear();
+
+            Image i = Image.FromFile(@"E:\Desktop\editar.png");
+            dtimage.Image = i;
+            
+            
 
             foreach (DataRow item in dt.Rows)
             {
                 int n = dtgproduto.Rows.Add();
-
-                dtgproduto.Rows[n].Cells[0].Value = item["nome"].ToString();
-                dtgproduto.Rows[n].Cells[1].Value = item["fornecedor"].ToString();
-                dtgproduto.Rows[n].Cells[2].Value = item["tipo"].ToString();
-                dtgproduto.Rows[n].Cells[3].Value = item["modelo"].ToString();
-                dtgproduto.Rows[n].Cells[4].Value = item["quantidade"].ToString();
-                dtgproduto.Rows[n].Cells[5].Value = item["valordeCompra"].ToString();
-                dtgproduto.Rows[n].Cells[6].Value = item["valordeVenda"].ToString();
-                dtgproduto.Rows[n].Cells[7].Value = item["datadeCadastro"].ToString();
+                dtgproduto.Columns.Insert(0, dtimage);
+                dtgproduto.Rows[n].Cells[1].Value = item["nome"].ToString();
+                dtgproduto.Rows[n].Cells[2].Value = item["fornecedor"].ToString();
+                dtgproduto.Rows[n].Cells[3].Value = item["tipo"].ToString();
+                dtgproduto.Rows[n].Cells[4].Value = item["modelo"].ToString();
+                dtgproduto.Rows[n].Cells[5].Value = item["quantidade"].ToString();
+                dtgproduto.Rows[n].Cells[6].Value = item["valordeCompra"].ToString();
+                dtgproduto.Rows[n].Cells[7].Value = item["valordeVenda"].ToString();
+                dtgproduto.Rows[n].Cells[8].Value = item["datadeCadastro"].ToString();
 
             }
         } //LISTAGEM DE PRODUTOS
