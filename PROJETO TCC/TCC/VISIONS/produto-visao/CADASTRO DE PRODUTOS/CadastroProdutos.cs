@@ -153,7 +153,7 @@ namespace TCC.VISÃO
 
         public void preencherCampos()
         {
-            if(txtnomeProduto.Text != string.Empty && btnsalvarAlteracao.Enabled == false)
+            if(txtnomeProduto.Text != string.Empty || btnsalvarAlteracao.Enabled == false)
             {
                 txtdata.ReadOnly = false;
                 SqlCommand command = new SqlCommand("SELECT quantidade, fornecedor, dataDeCadastro, modelo, tipo, valordeCompra, valordeVenda FROM produtos WHERE nome = @nome", con.conectar());
@@ -182,7 +182,7 @@ namespace TCC.VISÃO
             }
             else
             {
-                
+                limparCampos();
                 txtnomeProduto.Focus();
 
             }
@@ -362,16 +362,23 @@ namespace TCC.VISÃO
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            listarProdutos();
-            timer1.Start();
 
+            listarProdutos();
+
+            timer1.Start();
+            
 
         }
 
         private void CadastroProduto_Load(object sender, EventArgs e)
         {
-            listarProdutos();
             formataGrid();
+
+            timer1.Start();
+
+            listarProdutos();
+          
+
             txtdata.ReadOnly = true;
             txtdata.Text = datadecadastro.ToString();
             buscarProduto();               

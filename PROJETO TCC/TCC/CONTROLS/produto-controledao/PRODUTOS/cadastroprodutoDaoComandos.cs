@@ -35,7 +35,7 @@ namespace TCC.CONTROLE
                 "valordeCompra," +
                 "valordeVenda," +
                 "dataDeCadastro" +
-                " from produtos";
+                " from produtos Order By nome ASC";
             cmd.Connection = con.conectar();
 
 
