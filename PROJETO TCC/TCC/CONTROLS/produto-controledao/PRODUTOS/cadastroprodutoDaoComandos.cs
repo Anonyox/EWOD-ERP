@@ -26,7 +26,7 @@ namespace TCC.CONTROLE
         #region CONSTRUTOR
         public DataTable listarProdutos()
         {
-            Conexao con = new Conexao();
+            
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = "select nome, " +
                 "fornecedor, " +
@@ -36,26 +36,24 @@ namespace TCC.CONTROLE
                 "valordeVenda," +
                 "dataDeCadastro" +
                 " from produtos Order By nome ASC";
-            cmd.Connection = con.conectar();
+            
 
 
             try
             {
-                con.conectar();
-
-
-
+                cmd.Connection = con.conectar();
+               
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 cmd.ExecuteNonQuery();
 
                 da.Fill(dt);
 
-                con.desconectar();
+                
 
                 return dt;
 
             }
-            catch (SqlException)
+            catch (Exception)
             {
 
                 throw;
