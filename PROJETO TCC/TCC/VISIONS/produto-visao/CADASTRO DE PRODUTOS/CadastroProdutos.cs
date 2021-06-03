@@ -79,7 +79,7 @@ namespace TCC.VISÃO
                 dtgproduto.Rows[n].Cells[5].Value = item["quantidade"].ToString();
                 dtgproduto.Rows[n].Cells[6].Value = item["valordecompra"].ToString();
                 dtgproduto.Rows[n].Cells[7].Value = item["valordevenda"].ToString();
-                //dtgproduto.Rows[n].Cells[8].Value = item["DataCadastro"].ToString();
+                dtgproduto.Rows[n].Cells[8].Value = item["dataDeCadastro"].ToString();
 
             }
         } //LISTAGEM DE PRODUTOS
@@ -156,6 +156,7 @@ namespace TCC.VISÃO
 
             dr.Close();
             con.desconectar();
+
 
         }
 
@@ -337,7 +338,22 @@ namespace TCC.VISÃO
 
 
         #region DESIGN
+        private void CadastroProduto_Load_1(object sender, EventArgs e)
+        {
+            txtnomeProduto.Focus();
+            formataGrid();
 
+            //timer1.Start();
+
+            listarProdutos();
+
+
+            txtdata.ReadOnly = true;
+            txtdata.Text = datadecadastro.ToString();
+            buscarProduto();
+
+        }
+       
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             btnsalvarAlteracao.Enabled = false;
@@ -378,20 +394,7 @@ namespace TCC.VISÃO
 
         }
 
-        private void CadastroProduto_Load(object sender, EventArgs e)
-        {
-            formataGrid();
-
-            //timer1.Start();
-
-            listarProdutos();
-          
-
-            txtdata.ReadOnly = true;
-            txtdata.Text = datadecadastro.ToString();
-            buscarProduto();               
-                    
-        }
+        
         
         private void textBox6_TextChanged(object sender, EventArgs e)
         {
@@ -431,7 +434,7 @@ namespace TCC.VISÃO
             limparCampos();
         }
 
-        private void txtfornecedor_Leave(object sender, EventArgs e)
+        private void txtfornecedor_Leave_1(object sender, EventArgs e)
         {
             letraMaiscula(txtfornecedor);
         }
@@ -451,6 +454,8 @@ namespace TCC.VISÃO
             salvarAlteracao();
             limparCampos();
         }
+
+
 
 
         #endregion

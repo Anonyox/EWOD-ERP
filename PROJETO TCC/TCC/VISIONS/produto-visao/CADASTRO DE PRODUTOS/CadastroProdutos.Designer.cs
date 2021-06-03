@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroProduto));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.txtnomeProduto = new System.Windows.Forms.TextBox();
@@ -69,6 +69,7 @@
             this.quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valordeCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valordeVenda = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataCadastro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSair)).BeginInit();
             this.barra.SuspendLayout();
@@ -122,7 +123,7 @@
             this.txtnomeProduto.Location = new System.Drawing.Point(142, 96);
             this.txtnomeProduto.Name = "txtnomeProduto";
             this.txtnomeProduto.Size = new System.Drawing.Size(304, 30);
-            this.txtnomeProduto.TabIndex = 107;
+            this.txtnomeProduto.TabIndex = 1;
             this.txtnomeProduto.TextChanged += new System.EventHandler(this.txtnomeProduto_TextChanged);
             this.txtnomeProduto.Leave += new System.EventHandler(this.txtnomeProduto_Leave);
             // 
@@ -133,7 +134,7 @@
             this.txtdata.Mask = "00/00/0000";
             this.txtdata.Name = "txtdata";
             this.txtdata.Size = new System.Drawing.Size(112, 30);
-            this.txtdata.TabIndex = 105;
+            this.txtdata.TabIndex = 8;
             this.txtdata.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label9
@@ -155,7 +156,7 @@
             this.txtquantidadeProduto.Location = new System.Drawing.Point(142, 263);
             this.txtquantidadeProduto.Name = "txtquantidadeProduto";
             this.txtquantidadeProduto.Size = new System.Drawing.Size(100, 30);
-            this.txtquantidadeProduto.TabIndex = 97;
+            this.txtquantidadeProduto.TabIndex = 7;
             // 
             // txtvalorCompra
             // 
@@ -164,7 +165,7 @@
             this.txtvalorCompra.Location = new System.Drawing.Point(576, 227);
             this.txtvalorCompra.Name = "txtvalorCompra";
             this.txtvalorCompra.Size = new System.Drawing.Size(112, 30);
-            this.txtvalorCompra.TabIndex = 96;
+            this.txtvalorCompra.TabIndex = 6;
             // 
             // txtfornecedor
             // 
@@ -173,7 +174,8 @@
             this.txtfornecedor.Location = new System.Drawing.Point(576, 95);
             this.txtfornecedor.Name = "txtfornecedor";
             this.txtfornecedor.Size = new System.Drawing.Size(278, 30);
-            this.txtfornecedor.TabIndex = 95;
+            this.txtfornecedor.TabIndex = 2;
+            this.txtfornecedor.Leave += new System.EventHandler(this.txtfornecedor_Leave_1);
             // 
             // txtvalorVenda
             // 
@@ -182,7 +184,7 @@
             this.txtvalorVenda.Location = new System.Drawing.Point(142, 228);
             this.txtvalorVenda.Name = "txtvalorVenda";
             this.txtvalorVenda.Size = new System.Drawing.Size(100, 30);
-            this.txtvalorVenda.TabIndex = 94;
+            this.txtvalorVenda.TabIndex = 5;
             // 
             // label4
             // 
@@ -390,7 +392,7 @@
             this.txtmodeloProduto.Location = new System.Drawing.Point(576, 129);
             this.txtmodeloProduto.Name = "txtmodeloProduto";
             this.txtmodeloProduto.Size = new System.Drawing.Size(170, 30);
-            this.txtmodeloProduto.TabIndex = 174;
+            this.txtmodeloProduto.TabIndex = 4;
             // 
             // label10
             // 
@@ -422,7 +424,7 @@
             this.txttipo.Location = new System.Drawing.Point(142, 129);
             this.txttipo.Name = "txttipo";
             this.txttipo.Size = new System.Drawing.Size(170, 30);
-            this.txttipo.TabIndex = 176;
+            this.txttipo.TabIndex = 3;
             this.txttipo.Leave += new System.EventHandler(this.txttipo_Leave);
             // 
             // dtgproduto
@@ -436,7 +438,8 @@
             this.modelo,
             this.quantidade,
             this.valordeCompra,
-            this.valordeVenda});
+            this.valordeVenda,
+            this.dataCadastro});
             this.dtgproduto.Location = new System.Drawing.Point(0, 429);
             this.dtgproduto.Name = "dtgproduto";
             this.dtgproduto.Size = new System.Drawing.Size(863, 226);
@@ -444,8 +447,8 @@
             // 
             // imgalterar
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.imgalterar.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.imgalterar.DefaultCellStyle = dataGridViewCellStyle2;
             this.imgalterar.HeaderText = "";
             this.imgalterar.Image = global::TCC.Properties.Resources.Save_Icon_icon_icons_com_69139;
             this.imgalterar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
@@ -486,6 +489,12 @@
             // 
             this.valordeVenda.HeaderText = "ValorDeVenda";
             this.valordeVenda.Name = "valordeVenda";
+            // 
+            // dataCadastro
+            // 
+            this.dataCadastro.HeaderText = "DataDeCadastro";
+            this.dataCadastro.Name = "dataCadastro";
+            this.dataCadastro.ReadOnly = true;
             // 
             // CadastroProduto
             // 
@@ -528,7 +537,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CADASTRARPRODUTO";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CADASTRARPRODUTO_FormClosed);
-            this.Load += new System.EventHandler(this.CadastroProduto_Load);
+            this.Load += new System.EventHandler(this.CadastroProduto_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSair)).EndInit();
             this.barra.ResumeLayout(false);
@@ -577,5 +586,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn quantidade;
         private System.Windows.Forms.DataGridViewTextBoxColumn valordeCompra;
         private System.Windows.Forms.DataGridViewTextBoxColumn valordeVenda;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataCadastro;
     }
 }
