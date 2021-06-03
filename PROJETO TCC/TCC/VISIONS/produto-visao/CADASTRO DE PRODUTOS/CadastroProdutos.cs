@@ -164,7 +164,7 @@ namespace TCC.VISÃO
             if(txtnomeProduto.Text != string.Empty || btnsalvarAlteracao.Enabled == false)
             {
                 txtdata.ReadOnly = false;
-                SqlCommand command = new SqlCommand("SELECT quantidade, fornecedor, dataDeCadastro, modelo, tipo, valordeCompra, valordeVenda FROM produtos WHERE nome = @nome", con.conectar());
+                SqlCommand command = new SqlCommand("SELECT P.nome, P.fornecedor,P.tipo, P.modelo, P.valorDeCompra, P.valordeVenda, P.dataDeCadastro,E.idProdutoEstoque, E.Quantidade, E.datadeCadastro FROM produtos P INNER JOIN estoqueProdutos E ON E.idProduto = P.codProduto WHERE nome = @nome", con.conectar());
                 command.Parameters.AddWithValue("@nome", txtnomeProduto.Text);
 
                 dr = command.ExecuteReader();
@@ -382,7 +382,7 @@ namespace TCC.VISÃO
         {
             formataGrid();
 
-            timer1.Start();
+            //timer1.Start();
 
             listarProdutos();
           

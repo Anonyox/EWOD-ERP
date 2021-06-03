@@ -26,30 +26,22 @@ namespace TCC.CONTROLE
         #region CONSTRUTOR
         public DataTable listarProdutos()
         {
-            
-            cmd.CommandText = "SELECT produtos.nome," +
-                "produtos.fornecedor," +
-                "produtos.tipo," +
-                "produtos.modelo," +
-                "produtos.valordeCompra," +
-                "produtos.valordeVenda," +
-                "produtos.dataDeCadastro,"+
-                "estoqueProdutos.Quantidade" +
-                "FROM produtos,estoqueProdutos"+
-                "WHERE produtos.codProduto = estoqueProdutos.idProduto";
-                cmd.Connection = con.conectar();
+
+            cmd.CommandText = "SELECT P.nome, P.fornecedor,P.tipo, P.modelo, P.valorDeCompra, P.valordeVenda, P.dataDeCadastro,E.idProdutoEstoque, E.Quantidade, E.datadeCadastro FROM produtos P INNER JOIN estoqueProdutos E ON E.idProduto = P.codProduto ORDER BY E.dataDeCadastro";
+                
 
 
             try
-            {            
-                
-                cmd.ExecuteNonQuery();
+            {
+
+                cmd.Connection = con.conectar();
 
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
+                cmd.ExecuteNonQuery();
+
 
                 da.Fill(dtr);
 
-                con.desconectar();
 
                 return dtr;
 
@@ -106,7 +98,7 @@ namespace TCC.CONTROLE
         {
             tem = false;
 
-            cmd.CommandText = "insert into produtos values (@a, @b, @c, @d, @e, @f, @g, @h)";
+            cmd.CommandText = "BEGIN TRANSACTION; DECLARE @id[int]; INSERT INTO produtos VALUES(@a,@b,@c,@d,@f,@g,@h); SELECT @id = SCOPE_IDENTITY(); INSERT INTO estoqueProdutos(idProduto, Quantidade) VALUES(@id, @e);COMMIT TRANSACTION; ";
             cmd.Parameters.AddWithValue("@a", nome);
             cmd.Parameters.AddWithValue("@b", fornecedor);
             cmd.Parameters.AddWithValue("@c", tipo);
@@ -200,24 +192,21 @@ namespace TCC.CONTROLE
         public String salvarAlteracao(string nomeAnterior,string nome, string fornecedor, string tipo, string modelo, float quantidade, float valordeCompra, float valordeVenda,
             string dataDeCadastro)
         {
+            SqlCommand cmd2 = new SqlCommand();
             tem = false;
 
-            cmd.CommandText = "update produtos set nome = @a," +
-                "fornecedor = @b," +
-                "tipo = @c," +
-                "modelo = @d," +
-                "quantidade = @e," +
-                "valordeCompra = @f," +
-                "valordeVenda = @g," +
-                "dataDeCadastro = @h" +
-                " where nome = @nomeAnterior";
-
+            //cmd.CommandText = "UPDATE produtos INNER JOIN estoqueProdutos ON produtos.codProduto = estoqueProdutos.idProduto SET produtos.nome = @a, produtos.fornecedor = @b, produtos.tipo = @c, produtos.modelo = @d,produtos.valordeCompra = @f, produtos.valordeVenda = @g, produtos.dataDeCadastro = @h + estoqueProduto.Quantidade = @e, estoqueProduto.datadeCadastro = @e WHERE nome = @nomeAnterior";
+            cmd.CommandText = "UPDATE produtos SET nome = @a, fornecedor = @b, tipo = @c, modelo = @d, valordeCompra = @f,valordeVenda = @g,dataDeCadastro = @h WHERE nome = @nomeAnterior";
+            cmd2.CommandText = "UPDATE estoque SET Quantidade = @e, datadeCadastro = @h2 WHERE produtos.codProduto = estoqueProdutos.idProdutos ";
 
             cmd.Parameters.AddWithValue("@a", nome);
             cmd.Parameters.AddWithValue("@b", fornecedor);
             cmd.Parameters.AddWithValue("@c", tipo);
             cmd.Parameters.AddWithValue("@d", modelo);
-            cmd.Parameters.AddWithValue("@e", quantidade);
+
+            cmd2.Parameters.AddWithValue("@e", quantidade);
+            cmd2.Parameters.AddWithValue("@h2", dataDeCadastro);
+
             cmd.Parameters.AddWithValue("@f", valordeCompra);
             cmd.Parameters.AddWithValue("@g", valordeVenda);
             cmd.Parameters.AddWithValue("@h", dataDeCadastro);
@@ -235,7 +224,10 @@ namespace TCC.CONTROLE
                 cmd.Parameters.RemoveAt("@b");
                 cmd.Parameters.RemoveAt("@c");
                 cmd.Parameters.RemoveAt("@d");
-                cmd.Parameters.RemoveAt("@e");
+
+                cmd2.Parameters.RemoveAt("@e");
+                cmd2.Parameters.RemoveAt("@h2");
+
                 cmd.Parameters.RemoveAt("@f");
                 cmd.Parameters.RemoveAt("@g");
                 cmd.Parameters.RemoveAt("@h");
