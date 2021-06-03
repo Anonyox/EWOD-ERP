@@ -71,15 +71,15 @@ namespace TCC.VISÃO
             foreach (DataRow item in dt.Rows)
             {
                 int n = dtgproduto.Rows.Add();
-                //dtgproduto.Rows[n].Cells[0].Value = Properties.Resources.icons8_editar_propriedade_100;
-                dtgproduto.Rows[n].Cells[0].Value = item["nome"].ToString();
-                dtgproduto.Rows[n].Cells[1].Value = item["fornecedor"].ToString();
-                dtgproduto.Rows[n].Cells[2].Value = item["tipo"].ToString();
-                dtgproduto.Rows[n].Cells[3].Value = item["modelo"].ToString();
-                dtgproduto.Rows[n].Cells[4].Value = item["quantidade"].ToString();
-                dtgproduto.Rows[n].Cells[5].Value = item["valordeCompra"].ToString();
-                dtgproduto.Rows[n].Cells[6].Value = item["valordeVenda"].ToString();
-                dtgproduto.Rows[n].Cells[7].Value = item["datadeCadastro"].ToString();
+                dtgproduto.Rows[n].Cells[0].Value = Properties.Resources.icons8_editar_propriedade_100;
+                dtgproduto.Rows[n].Cells[1].Value = item["nome"].ToString();
+                dtgproduto.Rows[n].Cells[2].Value = item["fornecedor"].ToString();
+                dtgproduto.Rows[n].Cells[3].Value = item["tipo"].ToString();
+                dtgproduto.Rows[n].Cells[4].Value = item["modelo"].ToString();
+                dtgproduto.Rows[n].Cells[5].Value = item["quantidade"].ToString();
+                dtgproduto.Rows[n].Cells[6].Value = item["valordecompra"].ToString();
+                dtgproduto.Rows[n].Cells[7].Value = item["valordevenda"].ToString();
+                //dtgproduto.Rows[n].Cells[8].Value = item["DataCadastro"].ToString();
 
             }
         } //LISTAGEM DE PRODUTOS

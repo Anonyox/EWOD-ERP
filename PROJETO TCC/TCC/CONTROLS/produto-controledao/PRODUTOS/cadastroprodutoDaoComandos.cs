@@ -27,14 +27,16 @@ namespace TCC.CONTROLE
         public DataTable listarProdutos()
         {
             
-            cmd.CommandText = "select nome, " +
-                "fornecedor, " +
-                "tipo, modelo, " +
-                "quantidade, " +
-                "valordeCompra," +
-                "valordeVenda," +
-                "dataDeCadastro" +
-                " from produtos Order By nome ASC";
+            cmd.CommandText = "SELECT produtos.nome," +
+                "produtos.fornecedor," +
+                "produtos.tipo," +
+                "produtos.modelo," +
+                "produtos.valordeCompra," +
+                "produtos.valordeVenda," +
+                "produtos.dataDeCadastro,"+
+                "estoqueProdutos.Quantidade" +
+                "FROM produtos,estoqueProdutos"+
+                "WHERE produtos.codProduto = estoqueProdutos.idProduto";
                 cmd.Connection = con.conectar();
 
 

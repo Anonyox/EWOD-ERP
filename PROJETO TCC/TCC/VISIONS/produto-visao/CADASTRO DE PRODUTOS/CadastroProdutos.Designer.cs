@@ -43,15 +43,6 @@
             this.btnexcluir = new System.Windows.Forms.Button();
             this.btnalterar = new System.Windows.Forms.Button();
             this.btnsalvarAlteracao = new System.Windows.Forms.Button();
-            this.dtgproduto = new System.Windows.Forms.DataGridView();
-            this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.modelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valordeCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valordeVenda = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.datadeCadastro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -68,10 +59,19 @@
             this.label10 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txttipo = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgproduto)).BeginInit();
+            this.dtgproduto = new System.Windows.Forms.DataGridView();
+            this.imgalterar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.modelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valordeCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valordeVenda = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSair)).BeginInit();
             this.barra.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgproduto)).BeginInit();
             this.SuspendLayout();
             // 
             // btnConfirmar
@@ -244,65 +244,6 @@
             this.btnsalvarAlteracao.UseVisualStyleBackColor = false;
             this.btnsalvarAlteracao.Click += new System.EventHandler(this.btnsalvarAlteracao_Click);
             // 
-            // dtgproduto
-            // 
-            this.dtgproduto.BackgroundColor = System.Drawing.Color.Lavender;
-            this.dtgproduto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgproduto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nome,
-            this.fornecedor,
-            this.tipo,
-            this.modelo,
-            this.quantidade,
-            this.valordeCompra,
-            this.valordeVenda,
-            this.datadeCadastro});
-            this.dtgproduto.Location = new System.Drawing.Point(-1, 428);
-            this.dtgproduto.Name = "dtgproduto";
-            this.dtgproduto.RowHeadersWidth = 51;
-            this.dtgproduto.Size = new System.Drawing.Size(864, 228);
-            this.dtgproduto.TabIndex = 85;
-            // 
-            // nome
-            // 
-            this.nome.HeaderText = "Nome";
-            this.nome.Name = "nome";
-            // 
-            // fornecedor
-            // 
-            this.fornecedor.HeaderText = "Fornecedor";
-            this.fornecedor.Name = "fornecedor";
-            // 
-            // tipo
-            // 
-            this.tipo.HeaderText = "Tipo";
-            this.tipo.Name = "tipo";
-            // 
-            // modelo
-            // 
-            this.modelo.HeaderText = "Modelo";
-            this.modelo.Name = "modelo";
-            // 
-            // quantidade
-            // 
-            this.quantidade.HeaderText = "Quantidade";
-            this.quantidade.Name = "quantidade";
-            // 
-            // valordeCompra
-            // 
-            this.valordeCompra.HeaderText = "Valor de Compra";
-            this.valordeCompra.Name = "valordeCompra";
-            // 
-            // valordeVenda
-            // 
-            this.valordeVenda.HeaderText = "Valor de Venda";
-            this.valordeVenda.Name = "valordeVenda";
-            // 
-            // datadeCadastro
-            // 
-            this.datadeCadastro.HeaderText = "Data de Cadastro";
-            this.datadeCadastro.Name = "datadeCadastro";
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -368,7 +309,7 @@
             this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
-            this.btnMinimizar.Location = new System.Drawing.Point(790, 3);
+            this.btnMinimizar.Location = new System.Drawing.Point(786, 3);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(28, 28);
             this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -381,7 +322,7 @@
             this.btnSair.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSair.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSair.Image = ((System.Drawing.Image)(resources.GetObject("btnSair.Image")));
-            this.btnSair.Location = new System.Drawing.Point(826, 3);
+            this.btnSair.Location = new System.Drawing.Point(822, 3);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(28, 28);
             this.btnSair.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -397,7 +338,7 @@
             this.barra.Location = new System.Drawing.Point(0, 0);
             this.barra.Margin = new System.Windows.Forms.Padding(2);
             this.barra.Name = "barra";
-            this.barra.Size = new System.Drawing.Size(867, 39);
+            this.barra.Size = new System.Drawing.Size(863, 39);
             this.barra.TabIndex = 62;
             // 
             // timer1
@@ -483,6 +424,66 @@
             this.txttipo.TabIndex = 176;
             this.txttipo.Leave += new System.EventHandler(this.txttipo_Leave);
             // 
+            // dtgproduto
+            // 
+            this.dtgproduto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgproduto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.imgalterar,
+            this.nome,
+            this.fornecedor,
+            this.tipo,
+            this.modelo,
+            this.quantidade,
+            this.valordeCompra,
+            this.valordeVenda});
+            this.dtgproduto.Location = new System.Drawing.Point(0, 429);
+            this.dtgproduto.Name = "dtgproduto";
+            this.dtgproduto.Size = new System.Drawing.Size(863, 226);
+            this.dtgproduto.TabIndex = 177;
+            // 
+            // imgalterar
+            // 
+            this.imgalterar.HeaderText = "";
+            this.imgalterar.Image = global::TCC.Properties.Resources.Save_Icon_icon_icons_com_69139;
+            this.imgalterar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.imgalterar.Name = "imgalterar";
+            this.imgalterar.Width = 25;
+            // 
+            // nome
+            // 
+            this.nome.HeaderText = "Nome";
+            this.nome.Name = "nome";
+            // 
+            // fornecedor
+            // 
+            this.fornecedor.HeaderText = "Fornecedor";
+            this.fornecedor.Name = "fornecedor";
+            // 
+            // tipo
+            // 
+            this.tipo.HeaderText = "Tipo";
+            this.tipo.Name = "tipo";
+            // 
+            // modelo
+            // 
+            this.modelo.HeaderText = "Modelo";
+            this.modelo.Name = "modelo";
+            // 
+            // quantidade
+            // 
+            this.quantidade.HeaderText = "Quantidade";
+            this.quantidade.Name = "quantidade";
+            // 
+            // valordeCompra
+            // 
+            this.valordeCompra.HeaderText = "ValorDeCompra";
+            this.valordeCompra.Name = "valordeCompra";
+            // 
+            // valordeVenda
+            // 
+            this.valordeVenda.HeaderText = "ValorDeVenda";
+            this.valordeVenda.Name = "valordeVenda";
+            // 
             // CadastroProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -491,6 +492,7 @@
             this.BackgroundImage = global::TCC.Properties.Resources._1555492a6_11;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(863, 654);
+            this.Controls.Add(this.dtgproduto);
             this.Controls.Add(this.txttipo);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label10);
@@ -499,7 +501,6 @@
             this.Controls.Add(this.lblconfirmar);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnConfirmar);
-            this.Controls.Add(this.dtgproduto);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txtdata);
             this.Controls.Add(this.label4);
@@ -525,17 +526,16 @@
             this.Text = "CADASTRARPRODUTO";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CADASTRARPRODUTO_FormClosed);
             this.Load += new System.EventHandler(this.CadastroProduto_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgproduto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSair)).EndInit();
             this.barra.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgproduto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView dtgproduto;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
@@ -561,6 +561,12 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblconfirmar;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtmodeloProduto;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TextBox txttipo;
+        private System.Windows.Forms.DataGridView dtgproduto;
+        private System.Windows.Forms.DataGridViewImageColumn imgalterar;
         private System.Windows.Forms.DataGridViewTextBoxColumn nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn fornecedor;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipo;
@@ -568,10 +574,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn quantidade;
         private System.Windows.Forms.DataGridViewTextBoxColumn valordeCompra;
         private System.Windows.Forms.DataGridViewTextBoxColumn valordeVenda;
-        private System.Windows.Forms.DataGridViewTextBoxColumn datadeCadastro;
-        private System.Windows.Forms.TextBox txtmodeloProduto;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox txttipo;
     }
 }
