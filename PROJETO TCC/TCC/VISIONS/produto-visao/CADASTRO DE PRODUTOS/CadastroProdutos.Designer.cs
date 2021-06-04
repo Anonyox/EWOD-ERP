@@ -61,7 +61,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.txttipo = new System.Windows.Forms.TextBox();
             this.dtproduto = new System.Windows.Forms.DataGridView();
-            this.lblcancelar = new System.Windows.Forms.Label();
             this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,6 +70,7 @@
             this.valordeVenda = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataCadastro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.imgexcluir = new System.Windows.Forms.DataGridViewImageColumn();
+            this.lblcancelar = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSair)).BeginInit();
             this.barra.SuspendLayout();
@@ -457,20 +457,7 @@
             this.dtproduto.RowHeadersWidth = 51;
             this.dtproduto.Size = new System.Drawing.Size(861, 225);
             this.dtproduto.TabIndex = 178;
-            // 
-            // lblcancelar
-            // 
-            this.lblcancelar.AutoSize = true;
-            this.lblcancelar.BackColor = System.Drawing.Color.Transparent;
-            this.lblcancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblcancelar.Font = new System.Drawing.Font("Comic Sans MS", 7F, System.Drawing.FontStyle.Bold);
-            this.lblcancelar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblcancelar.Location = new System.Drawing.Point(290, 372);
-            this.lblcancelar.Name = "lblcancelar";
-            this.lblcancelar.Size = new System.Drawing.Size(49, 14);
-            this.lblcancelar.TabIndex = 179;
-            this.lblcancelar.Text = "Cancelar";
-            this.lblcancelar.Visible = false;
+            this.dtproduto.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtproduto_CellMouseClick);
             // 
             // nome
             // 
@@ -522,6 +509,20 @@
             this.imgexcluir.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.imgexcluir.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.imgexcluir.Width = 30;
+            // 
+            // lblcancelar
+            // 
+            this.lblcancelar.AutoSize = true;
+            this.lblcancelar.BackColor = System.Drawing.Color.Transparent;
+            this.lblcancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblcancelar.Font = new System.Drawing.Font("Comic Sans MS", 7F, System.Drawing.FontStyle.Bold);
+            this.lblcancelar.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblcancelar.Location = new System.Drawing.Point(290, 372);
+            this.lblcancelar.Name = "lblcancelar";
+            this.lblcancelar.Size = new System.Drawing.Size(49, 14);
+            this.lblcancelar.TabIndex = 179;
+            this.lblcancelar.Text = "Cancelar";
+            this.lblcancelar.Visible = false;
             // 
             // CadastroProduto
             // 

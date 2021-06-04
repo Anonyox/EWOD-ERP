@@ -242,6 +242,33 @@ namespace TCC.CONTROLE
 
         }
 
+        public String excluirProduto(string nome)
+        {
+            cmd.CommandText = "DELETE FROM produtos WHERE nome = @n";
+            cmd.Parameters.AddWithValue("@n", nome);
+
+            try
+            {
+                cmd.Connection = con.conectar();
+                cmd.ExecuteNonQuery();
+
+                con.desconectar();
+
+                this.mensagem = "PRODUTO RETIRADO COM SUCESSO!!";
+                tem = true;
+
+
+            }
+            catch (SqlException)
+            {
+                this.mensagem = "ERRO COM O BANCO DE DADOS!!";
+
+               
+            }
+            return mensagem;
+
+        }
+
         #endregion
 
 

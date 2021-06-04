@@ -66,5 +66,17 @@ namespace TCC.MODELS.produto_modelo
             }
             return mensagem;
         }
+
+        public String excluirProduto(string nome)
+        {
+            this.mensagem = cadproduto.excluirProduto(nome);
+
+            if (cadproduto.tem)
+            {
+                this.tem = true;
+            }
+            return mensagem;
+
+        }
     }
 }

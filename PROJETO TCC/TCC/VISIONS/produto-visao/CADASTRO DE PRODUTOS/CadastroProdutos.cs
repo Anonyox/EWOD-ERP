@@ -356,6 +356,32 @@ namespace TCC.VISÃO
             }
         }
 
+
+        public void excluirProduto()
+        {
+            string nome = dtproduto.CurrentRow.Cells["nome"].Value.ToString();
+
+
+            if (MessageBox.Show("DESEJA MESMO EXCLUIR ESTE PRODUTO ?","VERIFICAÇÃO DE AÇÃO", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                String mensagem = cadpro.excluirProduto(nome);
+
+                if (cadpro.tem)
+                {
+                    MessageBox.Show(mensagem, "EXCLUSÃO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show(cadpro.mensagem, "EXCLUSÃO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                limparCampos();
+                txtnomeProduto.Focus();
+            }
+        }
+
         #endregion
 
 
@@ -543,9 +569,18 @@ namespace TCC.VISÃO
 
 
 
+
         #endregion
 
+        private void dtproduto_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if(e.ColumnIndex == this.imgexcluir.Index && e.RowIndex >= 0)
+            {
+                excluirProduto();
 
+
+            }
+        }
     }
 
 }
