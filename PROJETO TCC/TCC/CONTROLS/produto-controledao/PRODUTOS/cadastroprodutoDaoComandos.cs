@@ -196,23 +196,18 @@ namespace TCC.CONTROLE
             tem = false;
 
             //cmd.CommandText = "UPDATE produtos INNER JOIN estoqueProdutos ON produtos.codProduto = estoqueProdutos.idProduto SET produtos.nome = @a, produtos.fornecedor = @b, produtos.tipo = @c, produtos.modelo = @d,produtos.valordeCompra = @f, produtos.valordeVenda = @g, produtos.dataDeCadastro = @h + estoqueProduto.Quantidade = @e, estoqueProduto.datadeCadastro = @e WHERE nome = @nomeAnterior";
-            cmd.CommandText = "UPDATE produtos SET nome = @a, fornecedor = @b, tipo = @c, modelo = @d, valordeCompra = @f,valordeVenda = @g,dataDeCadastro = @h WHERE nome = @nomeAnterior";
-
+            cmd.CommandText = "UPDATE produtos SET nome = @a, fornecedor = @b, tipo = @c, modelo = @d,valordeCompra = @f,valordeVenda = @g,dataDeCadastro = @h WHERE produtos.codProduto = estoqueProdutos.idProduto AND produtos.nome = @nomeAnterior" +
+                "UPDATE estoqueProdutos SET Quantidade = @e, datadeCadastro = produtos.dataDeCadastro FROM produtos P WHERE estoqueProdutos.idProduto = P.codProduto ";
 
             cmd.Parameters.AddWithValue("@a", nome);
             cmd.Parameters.AddWithValue("@b", fornecedor);
             cmd.Parameters.AddWithValue("@c", tipo);
             cmd.Parameters.AddWithValue("@d", modelo);
+            cmd.Parameters.AddWithValue("@e", quantidade);
             cmd.Parameters.AddWithValue("@f", valordeCompra);
             cmd.Parameters.AddWithValue("@g", valordeVenda);
             cmd.Parameters.AddWithValue("@h", dataDeCadastro);
             cmd.Parameters.AddWithValue("@nomeAnterior", nomeAnterior);
-
-
-            cmd2.CommandText = "UPDATE estoqueProdutos SET Quantidade = @e, datadeCadastro = @h2 FROM produtos P WHERE estoque.idProduto = P.codProduto ";
-
-            cmd2.Parameters.AddWithValue("@e", quantidade);
-            cmd2.Parameters.AddWithValue("@h2", dataDeCadastro);
 
 
 
@@ -225,13 +220,6 @@ namespace TCC.CONTROLE
             {
                 cmd.Connection = con.conectar();
                 cmd.ExecuteNonQuery();
-
-
-
-                cmd2.Connection = con.conectar();
-                cmd2.ExecuteNonQuery();
-
-
 
 
 

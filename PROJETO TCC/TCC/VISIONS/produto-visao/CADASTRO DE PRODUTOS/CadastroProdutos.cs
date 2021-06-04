@@ -169,7 +169,7 @@ namespace TCC.VISÃO
         {
             if (txtnomeProduto.Text != string.Empty || btnsalvarAlteracao.Enabled == false)
             {
-                txtdata.ReadOnly = false;
+                txtdata.Text = datadecadastro.ToString();
                 SqlCommand command = new SqlCommand("SELECT P.nome, P.fornecedor,P.tipo, P.modelo, format (P.valordeCompra, 'c', 'pt-br') as valordeCompra, format (P.valordeVenda, 'c', 'pt-br') as valordeVenda, P.dataDeCadastro,E.idProdutoEstoque, E.Quantidade, E.datadeCadastro FROM produtos P INNER JOIN estoqueProdutos E ON E.idProduto = P.codProduto WHERE nome = @nome", con.conectar());
                 command.Parameters.AddWithValue("@nome", txtnomeProduto.Text);
 
@@ -193,12 +193,12 @@ namespace TCC.VISÃO
 
                 dr.Close();
                 con.desconectar();
-            }
-            else
-            {
-                limparCampos();
-                txtnomeProduto.Focus();
 
+                if (txtnomeProduto.Text == string.Empty || btnsalvarAlteracao.Enabled == true)
+                {
+                    limparCampos();
+                    txtnomeProduto.Focus();
+                }
             }
 
         }
@@ -400,7 +400,15 @@ namespace TCC.VISÃO
 
         private void btnSair_Click(object sender, EventArgs e)
         {
-            Close();
+            if (txtnomeProduto.Text == string.Empty && txtfornecedor.Text == string.Empty && txtmodeloProduto.Text == string.Empty && txtquantidadeProduto.Text == string.Empty && txttipo.Text == string.Empty && txtvalorCompra.Text == string.Empty && txtvalorVenda.Text == string.Empty)
+            {
+                Close();
+            }
+            else
+            {
+                MessageBox.Show("Primeiro, Cancele a Operação !!", "OPERAÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
 
@@ -478,8 +486,16 @@ namespace TCC.VISÃO
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            cadastrarProdutos();
-            limparCampos();
+            if(txtnomeProduto.Text == string.Empty)
+            {
+                MessageBox.Show("Digite o Produto que deseja Cadastrar!!", "CADASTRO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                cadastrarProdutos();
+                limparCampos();
+            }
+            
         }
 
 
@@ -515,7 +531,15 @@ namespace TCC.VISÃO
             limparCampos();
         }
 
+        private void btnCancelar_MouseEnter(object sender, EventArgs e)
+        {
+            lblcancelar.Visible = true;
+        }
 
+        private void btnCancelar_MouseLeave(object sender, EventArgs e)
+        {
+            lblcancelar.Visible = false;
+        }
 
 
 

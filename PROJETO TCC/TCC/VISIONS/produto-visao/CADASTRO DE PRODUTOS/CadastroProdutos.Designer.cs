@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroProduto));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.txtnomeProduto = new System.Windows.Forms.TextBox();
@@ -69,6 +69,7 @@
             this.valordeCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valordeVenda = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataCadastro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblcancelar = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSair)).BeginInit();
             this.barra.SuspendLayout();
@@ -106,12 +107,14 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.Transparent;
-            this.btnCancelar.Location = new System.Drawing.Point(282, 385);
+            this.btnCancelar.Location = new System.Drawing.Point(282, 389);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(64, 38);
             this.btnCancelar.TabIndex = 156;
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            this.btnCancelar.MouseEnter += new System.EventHandler(this.btnCancelar_MouseEnter);
+            this.btnCancelar.MouseLeave += new System.EventHandler(this.btnCancelar_MouseLeave);
             // 
             // txtnomeProduto
             // 
@@ -429,14 +432,14 @@
             // dtproduto
             // 
             this.dtproduto.BackgroundColor = System.Drawing.Color.Lavender;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Comic Sans MS", 9F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtproduto.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Comic Sans MS", 9F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtproduto.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dtproduto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtproduto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nome,
@@ -493,6 +496,20 @@
             this.DataCadastro.HeaderText = "DatadeCadastro";
             this.DataCadastro.Name = "DataCadastro";
             // 
+            // lblcancelar
+            // 
+            this.lblcancelar.AutoSize = true;
+            this.lblcancelar.BackColor = System.Drawing.Color.Transparent;
+            this.lblcancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblcancelar.Font = new System.Drawing.Font("Comic Sans MS", 7F, System.Drawing.FontStyle.Bold);
+            this.lblcancelar.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblcancelar.Location = new System.Drawing.Point(290, 372);
+            this.lblcancelar.Name = "lblcancelar";
+            this.lblcancelar.Size = new System.Drawing.Size(49, 14);
+            this.lblcancelar.TabIndex = 179;
+            this.lblcancelar.Text = "Cancelar";
+            this.lblcancelar.Visible = false;
+            // 
             // CadastroProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -501,6 +518,7 @@
             this.BackgroundImage = global::TCC.Properties.Resources._1555492a6_11;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(863, 654);
+            this.Controls.Add(this.lblcancelar);
             this.Controls.Add(this.dtproduto);
             this.Controls.Add(this.txttipo);
             this.Controls.Add(this.panel2);
@@ -583,5 +601,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn valordeCompra;
         private System.Windows.Forms.DataGridViewTextBoxColumn valordeVenda;
         private System.Windows.Forms.DataGridViewTextBoxColumn DataCadastro;
+        private System.Windows.Forms.Label lblcancelar;
     }
 }
