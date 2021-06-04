@@ -226,3 +226,4 @@ C:\Users\Pedro\Source\Repos\EWOD-ERP\PROJETO TCC\TCC\obj\Debug\TCC.csproj.Genera
 C:\Users\Pedro\Source\Repos\EWOD-ERP\PROJETO TCC\TCC\obj\Debug\TCC.csproj.CoreCompileInputs.cache
 C:\Users\Pedro\Source\Repos\EWOD-ERP\PROJETO TCC\TCC\obj\Debug\TCC.csproj.CopyComplete
 C:\Users\Pedro\Source\Repos\EWOD-ERP\PROJETO TCC\TCC\obj\Debug\TCC.pdb
+C:\Users\Pedro\Source\Repos\EWOD-ERP\PROJETO TCC\TCC\obj\Debug\TCC.csprojAssemblyReference.cache

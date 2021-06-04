@@ -11,7 +11,7 @@ namespace TCC.VISÃO
 {
     public partial class CadastroProduto : Form
     {
-        
+
 
         #region CONSTRUTOR
         public CadastroProduto()
@@ -31,7 +31,7 @@ namespace TCC.VISÃO
 
         #region VARIÁVEIS E INSTÂNCIAS
 
-       menuAdministrador menuz = new menuAdministrador();
+        menuAdministrador menuz = new menuAdministrador();
         produtoControle cadpro = new produtoControle();
 
         SqlDataReader dr;
@@ -57,13 +57,13 @@ namespace TCC.VISÃO
         public void listarProdutos()
         {
             DataTable dtr = new DataTable();
-            
-            
-            
+
+
+
             dtr = cadpro.listarProdutos();
 
             dtproduto.Rows.Clear();
-  
+
 
             foreach (DataRow item in dtr.Rows)
             {
@@ -81,11 +81,11 @@ namespace TCC.VISÃO
                 dtproduto.Rows[n].Cells[6].Value = item["valordevenda"].ToString();
                 dtproduto.Rows[n].Cells[7].Value = item["dataDeCadastro"].ToString();
 
-               
+
 
             }
 
-            
+
 
         } //LISTAGEM DE PRODUTOS
 
@@ -109,16 +109,16 @@ namespace TCC.VISÃO
 
             if (cadpro.tem && btnsalvarAlteracao.Enabled == false)
             {
-                
-                
+
+
                 MessageBox.Show("Produto já existente !!", "CADASTRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                
 
-                if (MessageBox.Show("Deseja alterar dados do produto existente ?","ALTERAÇÃO",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+
+                if (MessageBox.Show("Deseja alterar dados do produto existente ?", "ALTERAÇÃO", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     preencherCampos();
-                    btnConfirmar.Enabled = false;                                                         
+                    btnConfirmar.Enabled = false;
                     nomeAnterior = txtnomeProduto.Text;
                     btnsalvarAlteracao.Enabled = true;
 
@@ -135,7 +135,7 @@ namespace TCC.VISÃO
             }
 
             return false;
-            
+
             //DESEJA ALTERAR DADOS DESSE PRODUTO ?
         }
 
@@ -167,7 +167,7 @@ namespace TCC.VISÃO
 
         public void preencherCampos()
         {
-            if(txtnomeProduto.Text != string.Empty || btnsalvarAlteracao.Enabled == false)
+            if (txtnomeProduto.Text != string.Empty || btnsalvarAlteracao.Enabled == false)
             {
                 txtdata.ReadOnly = false;
                 SqlCommand command = new SqlCommand("SELECT P.nome, P.fornecedor,P.tipo, P.modelo, format (P.valordeCompra, 'c', 'pt-br') as valordeCompra, format (P.valordeVenda, 'c', 'pt-br') as valordeVenda, P.dataDeCadastro,E.idProdutoEstoque, E.Quantidade, E.datadeCadastro FROM produtos P INNER JOIN estoqueProdutos E ON E.idProduto = P.codProduto WHERE nome = @nome", con.conectar());
@@ -251,7 +251,7 @@ namespace TCC.VISÃO
             float quantidade = float.Parse(txtquantidadeProduto.Text);
 
 
-                
+
 
 
 
@@ -333,7 +333,7 @@ namespace TCC.VISÃO
                 }
                 else
                 {
-                    String mensagem = cadpro.salvarAlteracao(this.nomeAnterior,txtnomeProduto.Text, txtfornecedor.Text, txttipo.Text, txtmodeloProduto.Text,
+                    String mensagem = cadpro.salvarAlteracao(this.nomeAnterior, txtnomeProduto.Text, txtfornecedor.Text, txttipo.Text, txtmodeloProduto.Text,
                         quantidade, valordeCompra, valordeVenda, txtdata.Text);
                     if (cadpro.tem)
                     {
@@ -426,7 +426,7 @@ namespace TCC.VISÃO
 
 
 
-        
+
 
 
 
@@ -457,7 +457,7 @@ namespace TCC.VISÃO
         private void txtnomeProduto_Leave(object sender, EventArgs e)
         {
             verificarProduto();
-            letraMaiscula(txtnomeProduto);            
+            letraMaiscula(txtnomeProduto);
 
         }
 
@@ -466,8 +466,8 @@ namespace TCC.VISÃO
 
         private void txtnomeProduto_TextChanged(object sender, EventArgs e)
         {
-                
-                preencherCampos();
+
+            preencherCampos();
 
             btnConfirmar.Enabled = true;
 
@@ -521,6 +521,6 @@ namespace TCC.VISÃO
 
         #endregion
 
-       
+
     }
 }
