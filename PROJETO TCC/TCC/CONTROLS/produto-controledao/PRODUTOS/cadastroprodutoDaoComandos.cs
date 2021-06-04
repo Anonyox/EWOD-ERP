@@ -27,8 +27,7 @@ namespace TCC.CONTROLE
         public DataTable listarProdutos()
         {
 
-            cmd.CommandText = "SELECT P.nome, P.fornecedor,P.tipo, P.modelo, P.valorDeCompra, P.valordeVenda, P.dataDeCadastro,E.idProdutoEstoque, E.Quantidade, E.datadeCadastro FROM produtos P INNER JOIN estoqueProdutos E ON E.idProduto = P.codProduto ORDER BY E.dataDeCadastro";
-                
+            cmd.CommandText = "SELECT P.nome, P.fornecedor,P.tipo, P.modelo, format (P.valordeCompra, 'c', 'pt-br') as valordeCompra, format (P.valordeVenda, 'c', 'pt-br') as valordeVenda, P.dataDeCadastro,E.idProdutoEstoque, E.Quantidade, E.datadeCadastro FROM produtos P INNER JOIN estoqueProdutos E ON E.idProduto = P.codProduto ";
 
 
             try
@@ -42,6 +41,7 @@ namespace TCC.CONTROLE
 
                 da.Fill(dtr);
 
+                con.desconectar();
 
                 return dtr;
 
@@ -197,22 +197,28 @@ namespace TCC.CONTROLE
 
             //cmd.CommandText = "UPDATE produtos INNER JOIN estoqueProdutos ON produtos.codProduto = estoqueProdutos.idProduto SET produtos.nome = @a, produtos.fornecedor = @b, produtos.tipo = @c, produtos.modelo = @d,produtos.valordeCompra = @f, produtos.valordeVenda = @g, produtos.dataDeCadastro = @h + estoqueProduto.Quantidade = @e, estoqueProduto.datadeCadastro = @e WHERE nome = @nomeAnterior";
             cmd.CommandText = "UPDATE produtos SET nome = @a, fornecedor = @b, tipo = @c, modelo = @d, valordeCompra = @f,valordeVenda = @g,dataDeCadastro = @h WHERE nome = @nomeAnterior";
-            cmd2.CommandText = "UPDATE estoque SET Quantidade = @e, datadeCadastro = @h2 WHERE produtos.codProduto = estoqueProdutos.idProdutos ";
+            
 
             cmd.Parameters.AddWithValue("@a", nome);
             cmd.Parameters.AddWithValue("@b", fornecedor);
             cmd.Parameters.AddWithValue("@c", tipo);
             cmd.Parameters.AddWithValue("@d", modelo);
-
-            cmd2.Parameters.AddWithValue("@e", quantidade);
-            cmd2.Parameters.AddWithValue("@h2", dataDeCadastro);
-
             cmd.Parameters.AddWithValue("@f", valordeCompra);
             cmd.Parameters.AddWithValue("@g", valordeVenda);
             cmd.Parameters.AddWithValue("@h", dataDeCadastro);
             cmd.Parameters.AddWithValue("@nomeAnterior", nomeAnterior);
-           
-           
+
+
+            cmd2.CommandText = "UPDATE estoqueProdutos SET Quantidade = @e, datadeCadastro = @h2 FROM produtos P WHERE estoque.idProduto = P.codProduto ";
+
+            cmd2.Parameters.AddWithValue("@e", quantidade);
+            cmd2.Parameters.AddWithValue("@h2", dataDeCadastro);
+
+
+
+
+
+
             //INSERT NA TABELA PRODUTOS
 
             try
@@ -220,18 +226,17 @@ namespace TCC.CONTROLE
                 cmd.Connection = con.conectar();
                 cmd.ExecuteNonQuery();
 
-                cmd.Parameters.RemoveAt("@a");
-                cmd.Parameters.RemoveAt("@b");
-                cmd.Parameters.RemoveAt("@c");
-                cmd.Parameters.RemoveAt("@d");
 
-                cmd2.Parameters.RemoveAt("@e");
-                cmd2.Parameters.RemoveAt("@h2");
+               
+                cmd2.Connection = con.conectar();
+                cmd2.ExecuteNonQuery();
 
-                cmd.Parameters.RemoveAt("@f");
-                cmd.Parameters.RemoveAt("@g");
-                cmd.Parameters.RemoveAt("@h");
-                cmd.Parameters.RemoveAt("@nomeAnterior");
+
+
+                
+
+
+                con.desconectar();
                 //ABRIR CONEXÃO DOS PRODUTOS
 
 
@@ -245,7 +250,8 @@ namespace TCC.CONTROLE
                 this.mensagem = "ERRO COM O BANCO DE DADOS";
             }
             return mensagem;
-            con.desconectar();
+             
+           
         }
 
     #endregion

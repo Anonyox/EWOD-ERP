@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroProduto));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.txtnomeProduto = new System.Windows.Forms.TextBox();
@@ -60,8 +60,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txttipo = new System.Windows.Forms.TextBox();
-            this.dtgproduto = new System.Windows.Forms.DataGridView();
-            this.imgalterar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dtproduto = new System.Windows.Forms.DataGridView();
             this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,11 +68,11 @@
             this.quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valordeCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valordeVenda = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataCadastro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataCadastro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSair)).BeginInit();
             this.barra.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgproduto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtproduto)).BeginInit();
             this.SuspendLayout();
             // 
             // btnConfirmar
@@ -346,8 +345,8 @@
             // 
             // timer1
             // 
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.timer1.Interval = 5000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
             // 
             // panel1
             // 
@@ -427,11 +426,19 @@
             this.txttipo.TabIndex = 3;
             this.txttipo.Leave += new System.EventHandler(this.txttipo_Leave);
             // 
-            // dtgproduto
+            // dtproduto
             // 
-            this.dtgproduto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgproduto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.imgalterar,
+            this.dtproduto.BackgroundColor = System.Drawing.Color.Lavender;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Comic Sans MS", 9F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtproduto.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dtproduto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtproduto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nome,
             this.fornecedor,
             this.tipo,
@@ -439,21 +446,12 @@
             this.quantidade,
             this.valordeCompra,
             this.valordeVenda,
-            this.dataCadastro});
-            this.dtgproduto.Location = new System.Drawing.Point(0, 429);
-            this.dtgproduto.Name = "dtgproduto";
-            this.dtgproduto.Size = new System.Drawing.Size(863, 226);
-            this.dtgproduto.TabIndex = 177;
-            // 
-            // imgalterar
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.imgalterar.DefaultCellStyle = dataGridViewCellStyle2;
-            this.imgalterar.HeaderText = "";
-            this.imgalterar.Image = global::TCC.Properties.Resources.Save_Icon_icon_icons_com_69139;
-            this.imgalterar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.imgalterar.Name = "imgalterar";
-            this.imgalterar.Width = 25;
+            this.DataCadastro});
+            this.dtproduto.Location = new System.Drawing.Point(2, 433);
+            this.dtproduto.Name = "dtproduto";
+            this.dtproduto.RowHeadersWidth = 51;
+            this.dtproduto.Size = new System.Drawing.Size(861, 225);
+            this.dtproduto.TabIndex = 178;
             // 
             // nome
             // 
@@ -490,11 +488,10 @@
             this.valordeVenda.HeaderText = "ValorDeVenda";
             this.valordeVenda.Name = "valordeVenda";
             // 
-            // dataCadastro
+            // DataCadastro
             // 
-            this.dataCadastro.HeaderText = "DataDeCadastro";
-            this.dataCadastro.Name = "dataCadastro";
-            this.dataCadastro.ReadOnly = true;
+            this.DataCadastro.HeaderText = "DatadeCadastro";
+            this.DataCadastro.Name = "DataCadastro";
             // 
             // CadastroProduto
             // 
@@ -504,7 +501,7 @@
             this.BackgroundImage = global::TCC.Properties.Resources._1555492a6_11;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(863, 654);
-            this.Controls.Add(this.dtgproduto);
+            this.Controls.Add(this.dtproduto);
             this.Controls.Add(this.txttipo);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label10);
@@ -541,7 +538,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSair)).EndInit();
             this.barra.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgproduto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtproduto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -577,8 +574,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox txttipo;
-        private System.Windows.Forms.DataGridView dtgproduto;
-        private System.Windows.Forms.DataGridViewImageColumn imgalterar;
+        private System.Windows.Forms.DataGridView dtproduto;
         private System.Windows.Forms.DataGridViewTextBoxColumn nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn fornecedor;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipo;
@@ -586,6 +582,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn quantidade;
         private System.Windows.Forms.DataGridViewTextBoxColumn valordeCompra;
         private System.Windows.Forms.DataGridViewTextBoxColumn valordeVenda;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataCadastro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DataCadastro;
     }
 }

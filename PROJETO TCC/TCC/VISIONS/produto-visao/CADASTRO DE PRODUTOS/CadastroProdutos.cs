@@ -31,7 +31,7 @@ namespace TCC.VISÃO
 
         #region VARIÁVEIS E INSTÂNCIAS
 
-        menuAdministrador menuz = new menuAdministrador();
+       menuAdministrador menuz = new menuAdministrador();
         produtoControle cadpro = new produtoControle();
 
         SqlDataReader dr;
@@ -56,32 +56,37 @@ namespace TCC.VISÃO
 
         public void listarProdutos()
         {
+            DataTable dtr = new DataTable();
             
-            DataTable dt = cadpro.listarProdutos();
-
-            /*DataGridViewImageColumn dtimage = new DataGridViewImageColumn();
-            dtimage.Name = "Alterar";
             
-            Image i = Image.FromFile(@"E:\Desktop\editar.png");
-            dtimage.Image = i;*/
+            
+            dtr = cadpro.listarProdutos();
 
-            dtgproduto.Rows.Clear();
+            dtproduto.Rows.Clear();
+  
 
-
-            foreach (DataRow item in dt.Rows)
+            foreach (DataRow item in dtr.Rows)
             {
-                int n = dtgproduto.Rows.Add();
-                dtgproduto.Rows[n].Cells[0].Value = Properties.Resources.icons8_editar_propriedade_100;
-                dtgproduto.Rows[n].Cells[1].Value = item["nome"].ToString();
-                dtgproduto.Rows[n].Cells[2].Value = item["fornecedor"].ToString();
-                dtgproduto.Rows[n].Cells[3].Value = item["tipo"].ToString();
-                dtgproduto.Rows[n].Cells[4].Value = item["modelo"].ToString();
-                dtgproduto.Rows[n].Cells[5].Value = item["quantidade"].ToString();
-                dtgproduto.Rows[n].Cells[6].Value = item["valordecompra"].ToString();
-                dtgproduto.Rows[n].Cells[7].Value = item["valordevenda"].ToString();
-                dtgproduto.Rows[n].Cells[8].Value = item["dataDeCadastro"].ToString();
+
+                dtproduto.Refresh();
+
+                int n = dtproduto.Rows.Add();
+                //dtproduto.Rows[n].Cells[0].Value = Properties.Resources.icons8_editar_propriedade_100;
+                dtproduto.Rows[n].Cells[0].Value = item["nome"].ToString();
+                dtproduto.Rows[n].Cells[1].Value = item["fornecedor"].ToString();
+                dtproduto.Rows[n].Cells[2].Value = item["tipo"].ToString();
+                dtproduto.Rows[n].Cells[3].Value = item["modelo"].ToString();
+                dtproduto.Rows[n].Cells[4].Value = item["quantidade"].ToString();
+                dtproduto.Rows[n].Cells[5].Value = item["valordecompra"].ToString();
+                dtproduto.Rows[n].Cells[6].Value = item["valordevenda"].ToString();
+                dtproduto.Rows[n].Cells[7].Value = item["dataDeCadastro"].ToString();
+
+               
 
             }
+
+            
+
         } //LISTAGEM DE PRODUTOS
 
         public string letraMaiscula(TextBox tbox)
@@ -165,7 +170,7 @@ namespace TCC.VISÃO
             if(txtnomeProduto.Text != string.Empty || btnsalvarAlteracao.Enabled == false)
             {
                 txtdata.ReadOnly = false;
-                SqlCommand command = new SqlCommand("SELECT P.nome, P.fornecedor,P.tipo, P.modelo, P.valorDeCompra, P.valordeVenda, P.dataDeCadastro,E.idProdutoEstoque, E.Quantidade, E.datadeCadastro FROM produtos P INNER JOIN estoqueProdutos E ON E.idProduto = P.codProduto WHERE nome = @nome", con.conectar());
+                SqlCommand command = new SqlCommand("SELECT P.nome, P.fornecedor,P.tipo, P.modelo, format (P.valordeCompra, 'c', 'pt-br') as valordeCompra, format (P.valordeVenda, 'c', 'pt-br') as valordeVenda, P.dataDeCadastro,E.idProdutoEstoque, E.Quantidade, E.datadeCadastro FROM produtos P INNER JOIN estoqueProdutos E ON E.idProduto = P.codProduto WHERE nome = @nome", con.conectar());
                 command.Parameters.AddWithValue("@nome", txtnomeProduto.Text);
 
                 dr = command.ExecuteReader();
@@ -231,9 +236,20 @@ namespace TCC.VISÃO
 
         public void cadastrarProdutos()
         {
-            float valordeCompra = float.Parse(txtvalorCompra.Text);
-            float valordeVenda = float.Parse(txtvalorVenda.Text);
+            string valordeCompraNovo = txtvalorCompra.Text;
+            string valordeVendaNovo = txtvalorVenda.Text;
+
+
+            char[] MyChar = { 'R', '$' };
+            valordeCompraNovo = valordeCompraNovo.TrimStart(MyChar);
+            valordeVendaNovo = valordeVendaNovo.TrimStart(MyChar);
+
+
+
+            float valordeCompra = float.Parse(valordeCompraNovo);
+            float valordeVenda = float.Parse(valordeVendaNovo);
             float quantidade = float.Parse(txtquantidadeProduto.Text);
+
 
                 
 
@@ -274,24 +290,35 @@ namespace TCC.VISÃO
         {
             // TODO: esta linha de código carrega dados na tabela 'tccDataSet.logs'. Você pode movê-la ou removê-la conforme necessário.
             //this.logsTableAdapter.Fill(this.tccDataSet.logs);
-            dtgproduto.BorderStyle = BorderStyle.None;  //DTEMAIL NOME DA VARIÁVEL
+            dtproduto.BorderStyle = BorderStyle.None;  //DTEMAIL NOME DA VARIÁVEL
             //dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
-            dtgproduto.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dtproduto.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             // dataGridView1.DefaultCellStyle.SelectionBackColor = Color.DarkTurquoise;
             //dataGridView1.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
             /// dataGridView1.BackgroundColor = Color.White;
 
-            dtgproduto.EnableHeadersVisualStyles = false;
-            dtgproduto.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dtgproduto.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(0, 209, 178);     //FromArgb(20, 25, 72);
-            dtgproduto.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+            dtproduto.EnableHeadersVisualStyles = false;
+            dtproduto.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dtproduto.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(0, 209, 178);     //FromArgb(20, 25, 72);
+            dtproduto.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
         }
 
         public void salvarAlteracao()
         {
-            float valordeCompra = float.Parse(txtvalorCompra.Text);
-            float valordeVenda = float.Parse(txtvalorVenda.Text);
+            string valordeCompraNovo = txtvalorCompra.Text;
+            string valordeVendaNovo = txtvalorVenda.Text;
+
+
+            char[] MyChar = { 'R', '$' };
+            valordeCompraNovo = valordeCompraNovo.TrimStart(MyChar);
+            valordeVendaNovo = valordeVendaNovo.TrimStart(MyChar);
+
+
+
+            float valordeCompra = float.Parse(valordeCompraNovo);
+            float valordeVenda = float.Parse(valordeVendaNovo);
             float quantidade = float.Parse(txtquantidadeProduto.Text);
+
 
 
 
@@ -329,7 +356,6 @@ namespace TCC.VISÃO
             }
         }
 
-
         #endregion
 
 
@@ -341,19 +367,28 @@ namespace TCC.VISÃO
         private void CadastroProduto_Load_1(object sender, EventArgs e)
         {
             txtnomeProduto.Focus();
+
             formataGrid();
 
-            //timer1.Start();
 
             listarProdutos();
-
 
             txtdata.ReadOnly = true;
             txtdata.Text = datadecadastro.ToString();
             buscarProduto();
 
         }
-       
+
+
+        private void timer1_Tick_1(object sender, EventArgs e)
+        {
+            listarProdutos();
+
+            timer1.Start();
+
+        }
+
+
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             btnsalvarAlteracao.Enabled = false;
@@ -361,10 +396,14 @@ namespace TCC.VISÃO
             limparCampos();
         }
 
+
+
         private void btnSair_Click(object sender, EventArgs e)
         {
             Close();
         }
+
+
 
         private void CADASTRARPRODUTO_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -378,33 +417,34 @@ namespace TCC.VISÃO
             //btnCadastrar.Size = new Size(100, 50);
         }
 
+
+
         private void btnCadastrar_MouseLeave(object sender, EventArgs e)
         {
             // btnCadastrar.Size = new Size(79, 35);
         }
 
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-
-            listarProdutos();
-
-            timer1.Start();
-            
-
-        }
 
         
-        
+
+
+
         private void textBox6_TextChanged(object sender, EventArgs e)
         {
 
         }
 
+
+
+
         private void btnConfirmar_MouseEnter(object sender, EventArgs e)
         {
             lblconfirmar.Visible = true;
         }
+
+
+
 
         private void btnConfirmar_MouseLeave(object sender, EventArgs e)
         {
@@ -421,12 +461,20 @@ namespace TCC.VISÃO
 
         }
 
+
+
+
         private void txtnomeProduto_TextChanged(object sender, EventArgs e)
         {
                 
                 preencherCampos();
 
+            btnConfirmar.Enabled = true;
+
         }
+
+
+
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
@@ -434,20 +482,32 @@ namespace TCC.VISÃO
             limparCampos();
         }
 
+
+
+
         private void txtfornecedor_Leave_1(object sender, EventArgs e)
         {
             letraMaiscula(txtfornecedor);
         }
+
+
+
 
         private void txtmodeloProduto_Leave(object sender, EventArgs e)
         {
             letraMaiscula(txtmodeloProduto);
         }
 
+
+
+
         private void txttipo_Leave(object sender, EventArgs e)
         {
             letraMaiscula(txttipo);
         }
+
+
+
 
         private void btnsalvarAlteracao_Click(object sender, EventArgs e)
         {
@@ -458,8 +518,9 @@ namespace TCC.VISÃO
 
 
 
+
         #endregion
 
-        
+       
     }
 }
