@@ -51,6 +51,7 @@ namespace TCC.VISÃO
 
         private void CadastroVendas_Load(object sender, EventArgs e)
         {
+            txtTotal.Text = string.Format("{0:C}", 0);
             iniciaAutoComplete();
             // TODO: esta linha de código carrega dados na tabela 'tccDataSet.produtos'. Você pode movê-la ou removê-la conforme necessário.
             //this.produtosTableAdapter.Fill(this.tccDataSet.produtos);
@@ -83,25 +84,33 @@ namespace TCC.VISÃO
 
         {
 
-            SqlCommand cmd = new SqlCommand("SELECT nome FROM produtos where quantidade > 0", con.conectar());
+            SqlCommand cmd = new SqlCommand("SELECT P.nome FROM produtos P inner join estoqueProdutos E ON P.codProduto = E.idProduto and E.quantidade > 0", con.conectar());
             //cmd.CommandText = ;
 
-            dr = cmd.ExecuteReader();
-
-            AutoCompleteStringCollection collection = new AutoCompleteStringCollection();
-
-            while (dr.Read())
+            try
             {
-                collection.Add(dr["nome"].ToString());
+                dr = cmd.ExecuteReader();
+
+                AutoCompleteStringCollection collection = new AutoCompleteStringCollection();
+
+                while (dr.Read())
+                {
+                    collection.Add(dr["nome"].ToString());
+                }
+
+                lsbProduto.AutoCompleteMode = AutoCompleteMode.Suggest;
+                lsbProduto.AutoCompleteSource = AutoCompleteSource.CustomSource;
+
+                lsbProduto.AutoCompleteCustomSource = collection;
+
+                dr.Close();
+                con.desconectar();
             }
-
-            lsbProduto.AutoCompleteMode = AutoCompleteMode.Suggest;
-            lsbProduto.AutoCompleteSource = AutoCompleteSource.CustomSource;
-
-            lsbProduto.AutoCompleteCustomSource = collection;
-
-            dr.Close();
-            con.desconectar();
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                throw;
+            } 
         }   //INICIA AUTO COMPLETE
 
         public void limpaCampos()
@@ -120,12 +129,7 @@ namespace TCC.VISÃO
             {
                 string usuario = Convert.ToString(lsbProduto.Text);
                 //Elaborar Select que contenha cada um dos campos da tabela
-                SqlCommand cmd = new SqlCommand("SELECT tipo," +
-                    " format (valordeCompra, 'c', 'pt-br') as valordeCompra, " +
-                    " format (valordeVenda, 'c', 'pt-br') as valordeVenda, " +
-                    " modelo " +
-                    "FROM produtos WHERE nome = @param and quantidade > 0  ", con.conectar());
-
+                SqlCommand cmd = new SqlCommand("SELECT P.tipo, format(P.valordeCompra, 'c', 'pt-br') as valordeCompra, format(P.valordeVenda, 'c', 'pt-br') as valordeVenda, P.modelo FROM produtos P INNER JOIN estoqueProdutos E ON P.nome = @param AND  P.codProduto = E.idProduto AND E.Quantidade > 0 ",  con.conectar());
                 cmd.Parameters.AddWithValue("@param", lsbProduto.Text);
 
                 dr = cmd.ExecuteReader();
@@ -195,30 +199,16 @@ namespace TCC.VISÃO
                 lblteste.Rows[n].Cells[4].Value = item["valordeCompraPedido"].ToString();
                 lblteste.Rows[n].Cells[5].Value = item["valordeVendaPedido"].ToString();
                 lblteste.Rows[n].Cells[6].Value = item["quantidade"].ToString();
-
-
-                char[] MyChar = { 'R', '$' };
-                string valorVenda = lblteste.CurrentRow.Cells["valorDeVendaPedido"].Value.ToString();
-                string NewStringVenda = valorVenda.TrimStart(MyChar);
-
-
-
-                string quantidade = lblteste.CurrentRow.Cells["quantidadePedido"].Value.ToString();
-                string NewStringQtd = quantidade.TrimStart(MyChar);
-
-                string total;
-
-                float val1 = float.Parse(NewStringVenda);
-                float qtd = float.Parse(quantidade);
-                float totalC = val1 * qtd;
-
-                total = totalC.ToString("C");
+                lblteste.Rows[n].Cells[7].Value = item["valorTotal"].ToString();
 
 
 
 
 
-                lblteste.Rows[n].Cells[7].Value = total.ToString();
+
+
+
+
 
 
 
@@ -367,7 +357,7 @@ namespace TCC.VISÃO
             if (controleVenda.tem)
             {
                 MessageBox.Show(mensagem, "Carrinho", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                btnFinalizar.Enabled = false;
+
 
 
             }
@@ -393,7 +383,7 @@ namespace TCC.VISÃO
                 else
                 {
                     this.quantidadeEstoque = "0";
-                    
+
                 }
 
             }
@@ -509,33 +499,41 @@ namespace TCC.VISÃO
 
 
 
-
-            if (txtDesconto.Text == string.Empty)
+            if (valor != "")
             {
-                valorTotalSemDesconto = float.Parse(valor);
-                valorSemDesconto = string.Format("{0:C}", valorTotalSemDesconto);
-                txtTotal.Text = valorSemDesconto.ToString();
+
+
+                if (txtDesconto.Text == string.Empty)
+                {
+                    valorTotalSemDesconto = float.Parse(valor);
+                    valorSemDesconto = string.Format("{0:C}", valorTotalSemDesconto);
+                    txtTotal.Text = valorSemDesconto.ToString();
+                }
+                else
+                {
+
+
+                    desconto = float.Parse(txtDesconto.Text);
+                    float resultDesconto = float.Parse(valor);
+
+                    float desc = (desconto * resultDesconto) / 100;
+
+                    valorTotalComDesconto = resultDesconto - desc;
+
+
+
+
+
+                    valorComDesconto = string.Format("{0:C}", valorTotalComDesconto);
+                    txtTotal.Text = valorComDesconto.ToString();
+
+
+
+                }
             }
             else
             {
-
-
-                desconto = float.Parse(txtDesconto.Text);
-                float resultDesconto = float.Parse(valor);
-
-                float desc = (desconto * resultDesconto) / 100;
-
-                valorTotalComDesconto = resultDesconto - desc;
-
-
-
-
-
-                valorComDesconto = string.Format("{0:C}", valorTotalComDesconto);
-                txtTotal.Text = valorComDesconto.ToString();
-
-
-
+                txtTotal.Text = string.Format("{0:C}", 0);
             }
 
 
@@ -564,6 +562,95 @@ namespace TCC.VISÃO
             }
             return false;
         } //VERIFICA SE O MESMO PRODUTO JA FOI INSERIDO
+
+        public void baixarEstoque()
+        {
+
+
+
+            string quantidadeDoProduto = controleVenda.verificaQuantidadeRestanteNoEstoque(lsbProduto.Text);
+            bool tem = false;
+
+
+            if (controleVenda.tem)
+            {
+                float novaQuantidade;
+
+
+                float qtdrestante = float.Parse(quantidadeDoProduto);
+                float quantidadeBaixa = float.Parse(txtquantidade.Text);
+
+                novaQuantidade = qtdrestante - quantidadeBaixa;
+
+                string baixarEstoque;
+                baixarEstoque = novaQuantidade.ToString();
+
+                tem = controleVenda.baixarEstoque(lsbProduto.Text, baixarEstoque);
+                if (controleVenda.tem)
+                {
+
+                }
+
+                
+
+
+
+            }
+            else
+            {
+
+
+            }
+
+
+        }
+
+        public void reverterBaixaEstoqueUnitario()
+        {
+            bool tem;
+
+            double qtdEstoque = 0;
+            double qtdBaixada = 0;
+            double novaQtd = 0;
+
+            string novaBaixa;
+
+            foreach (DataGridViewRow dr in lblteste.Rows)
+            {
+
+                
+                string nome = Convert.ToString(dr.Cells["produtoPedido"].Value);
+
+
+
+                Double quantidadeBaixadaa = Convert.ToDouble(dr.Cells["quantidadePedido"].Value);
+                qtdBaixada = quantidadeBaixadaa;
+
+
+
+            string quantidadeDoProduto = controleVenda.verificaQuantidadeRestanteNoEstoque(nome);
+            qtdEstoque = float.Parse(quantidadeDoProduto);
+
+
+            if (controleVenda.tem)
+            {
+
+
+                novaQtd = qtdBaixada + qtdEstoque;
+
+                novaBaixa = novaQtd.ToString();
+
+                tem = controleVenda.baixarEstoque(nome, novaBaixa);
+
+                  
+
+
+
+
+            }
+
+            }
+        }
 
         #endregion
 
@@ -600,7 +687,7 @@ namespace TCC.VISÃO
             lsbProduto.Enabled = true;
             txtquantidade.Enabled = true;
 
-            
+
             btnCadastrar.Enabled = false;
             btnCancelar.Enabled = true;
             btnAdicionar.Enabled = true;
@@ -640,11 +727,34 @@ namespace TCC.VISÃO
                 btnFinalizar.Enabled = false;
 
             }
+
+            else if (txtDesconto.Enabled == true)
+            {
+                MessageBox.Show("Carrinho Reativado!!", "OPERAÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                somaProdutosAdicionadosAoCarrinho();
+                desativaSegundaEtapa();
+                reativaCarrinho();
+                lsbProduto.Focus();
+            }
             else
             {
+                
                 retiraDoCarrinho();
                 listaCarrinho();
+
+                lsbProduto.Enabled = true;
+                txttipo.Enabled = true;
+                txtvalordeCompra.Enabled = true;
+                txtvalorDeVenda.Enabled = true;
+                txtquantidade.Enabled = true;
+                txtestiloModelo.Enabled = true;
+
+                btnCadastrar.Enabled = false;
+                btnAdicionar.Enabled = true;
                 lblteste.Enabled = true;
+                btnCancelar.Enabled = true;
+
+                lsbProduto.Focus();
             }
 
         }
@@ -653,7 +763,9 @@ namespace TCC.VISÃO
         {
             if (!verificaSeOMesmoProdutoJaFoiInserido())
             {
+                
                 adicionaAoCarrinho();
+                somaProdutosAdicionadosAoCarrinho();
                 lsbProduto.Text = null;
                 txtquantidade.Text = null;
                 listaCarrinho();
@@ -664,9 +776,9 @@ namespace TCC.VISÃO
 
         }
 
-        
 
-        
+
+
 
         private void btnAdicionar_MouseEnter(object sender, EventArgs e)
         {
@@ -690,7 +802,15 @@ namespace TCC.VISÃO
 
         private void btnSair_Click(object sender, EventArgs e)
         {
-            Close();
+            if (btnCancelar.Enabled == true)
+            {
+                MessageBox.Show("Antes de sair, cancele a Operação!!", "OPERAÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                this.Close();
+            }
+
         }
 
         private void panel6_MouseMove(object sender, MouseEventArgs e)
@@ -711,7 +831,7 @@ namespace TCC.VISÃO
                 desativaCarrinho();
                 if (MessageBox.Show("Adicionar a forma de Pagamento ?", "Venda", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
                 {
-                    somaProdutosAdicionadosAoCarrinho();
+
                     ativaSegundaEtapa();
                     lblteste.Enabled = false;
                 }
@@ -811,12 +931,6 @@ namespace TCC.VISÃO
         }
 
 
-
-
-
-
-        #endregion
-
         private void lblteste_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (e.ColumnIndex == this.btnexcluir.Index && e.RowIndex >= 0 && btnFinalizar.Enabled == true)
@@ -826,9 +940,30 @@ namespace TCC.VISÃO
                 // mostra o form...
                 //MessageBox.Show(Convert.ToString(currentRow.Cells[0].Value));
 
+               
                 deletaProdutoSelecionadoDoCarrinho();
+                txtTotal.Text = string.Format("{0:C}", 0);
+                somaProdutosAdicionadosAoCarrinho();
+                lblteste.Enabled = true;
+
                 lsbProduto.Focus();
             }
+        }
+
+
+
+
+        #endregion
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void lblteste_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

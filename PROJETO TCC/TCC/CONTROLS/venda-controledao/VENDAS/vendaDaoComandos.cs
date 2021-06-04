@@ -31,27 +31,28 @@ namespace TCC.CONTROLE
 
         public DataTable listaCarrinho(String codOperacao)
         {
-           
-            
-            
+
+
+
 
 
             cmd.CommandText = "select codOperacao, produtoPedido, tipoProduto, estilomodeloPedido, " +
                 " format (valordeCompraPedido, 'c', 'pt-br') as valorDeCompraPedido, " +
                 " format (valordeVendaPedido, 'c', 'pt-br') as valordeVendaPedido, " +
-                " quantidade " +
+                " quantidade, " +
+                " format (valorTotal, 'c', 'pt-br') as valorTotal " +
                 " from itemDePedido where codOperacao = @codOperacaoLista ";
             cmd.Parameters.AddWithValue("@codOperacaoLista", codOperacao);
             cmd.Connection = con.conectar();
-           
+
 
 
             try
             {
-                
-              
+
+
                 cmd.ExecuteNonQuery();
-                
+
 
 
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -63,7 +64,7 @@ namespace TCC.CONTROLE
 
                 cmd.Parameters.RemoveAt("@codoperacaoLista");
                 return dtr;
-               
+
 
 
 
@@ -80,7 +81,7 @@ namespace TCC.CONTROLE
             catch (SqlException)
             {
                 throw;
-                
+
             }
         } //LISTAGEM DE CARRINHO 
 
@@ -89,8 +90,8 @@ namespace TCC.CONTROLE
         {
 
 
-            cmd.CommandText = "insert into itemDePedido values (@a,@b,@c,@d,@e,@f,@g,@h)"; 
-            
+            cmd.CommandText = "insert into itemDePedido values (@a,@b,@c,@d,@e,@f,@g,@h)";
+
             cmd.Parameters.AddWithValue("@a", codOperacao);
             cmd.Parameters.AddWithValue("@b", produtoPedido);
             cmd.Parameters.AddWithValue("@c", tipoProduto);
@@ -99,9 +100,9 @@ namespace TCC.CONTROLE
             cmd.Parameters.AddWithValue("@f", valorDeVenda);
             cmd.Parameters.AddWithValue("@g", quantidade);
             cmd.Parameters.AddWithValue("@h", valorTotal);
-            
 
-            
+
+
 
             try
             {
@@ -121,12 +122,12 @@ namespace TCC.CONTROLE
 
 
                 this.mensagem = ("Produto adicionado");
-               
+
                 con.desconectar();
 
 
                 this.tem = true;
-               
+
                 return mensagem;
             }
             catch (SqlException)
@@ -135,7 +136,7 @@ namespace TCC.CONTROLE
                 this.mensagem = ("Erro com banco de dados");
             }
             return mensagem;
-           
+
         }
 
         public String deletaTodosProdutosDoCarrinho(String codOperacao)
@@ -194,9 +195,9 @@ namespace TCC.CONTROLE
                     con.desconectar();
                     return codOperacao;
 
-                  
+
                 }
-              
+
 
 
                 //dtEmail.DataSource = dt;
@@ -241,7 +242,7 @@ namespace TCC.CONTROLE
                     return codOperacao;
 
                 }
-               
+
 
 
                 //dtEmail.DataSource = dt;
@@ -298,27 +299,27 @@ namespace TCC.CONTROLE
 
         public String verificaQuantidadeRestanteNoEstoque(String nomeProduto)
         {
-            cmd.CommandText = ("SELECT quantidade from PRODUTOS where nome = @nomeProduto");
-            cmd.Parameters.AddWithValue("@nomeProduto", nomeProduto);
+            cmd.CommandText = ("SELECT E.quantidade FROM estoqueProdutos E INNER JOIN produtos P ON E.idProduto = P.codProduto and P.nome = @nomeProdutoE");
+            cmd.Parameters.AddWithValue("@nomeProdutoE", nomeProduto);
             cmd.Connection = con.conectar();
 
 
 
             try
             {
-                
+
                 SqlDataReader registro = cmd.ExecuteReader();
 
                 while (registro.Read())
                 {
-                    
+
                     this.quantidadeEstoque = registro.GetValue(0).ToString();
-                    cmd.Parameters.RemoveAt("@nomeProduto");
+                    cmd.Parameters.RemoveAt("@nomeProdutoE");
                     this.tem = true;
 
-                    
-                   
-                   
+
+
+
 
 
                 }
@@ -339,19 +340,19 @@ namespace TCC.CONTROLE
 
 
             con.desconectar();
-            
+
             return this.quantidadeEstoque;
         }
 
         public bool verificaSeOMesmoProdutoJaFoiInserido(String nomeDoProduto, String codOperacaoBusca)
         {
-            cmd.CommandText = ("Select produtoPedido from itemDePedido where produtoPedido = @nomeDoProduto and codOperacao = @codOperacaoBusca");
-            cmd.Parameters.AddWithValue("@nomeDoProduto", nomeDoProduto);
+            cmd.CommandText = ("Select produtoPedido from itemDePedido where produtoPedido = @nomeDoProdutoA and codOperacao = @codOperacaoBusca");
+            cmd.Parameters.AddWithValue("@nomeDoProdutoA", nomeDoProduto);
             cmd.Parameters.AddWithValue("@codOperacaoBusca", codOperacaoBusca);
             cmd.Connection = con.conectar();
 
 
-           
+
             try
             {
                 SqlDataReader registro = cmd.ExecuteReader();
@@ -361,16 +362,16 @@ namespace TCC.CONTROLE
                 while (registro.Read())
                 {
 
-                    cmd.Parameters.RemoveAt("@nomeDoProduto");
+                    cmd.Parameters.RemoveAt("@nomeDoProdutoA");
                     cmd.Parameters.RemoveAt("@codOperacaoBusca");
                     registro.Close();
                     this.tem = true;
                     return this.tem;
-                    
+
 
                 }
 
-                cmd.Parameters.RemoveAt("@nomeDoProduto");
+                cmd.Parameters.RemoveAt("@nomeDoProdutoA");
                 cmd.Parameters.RemoveAt("@codOperacaoBusca");
                 registro.Close();
                 tem = false;
@@ -382,11 +383,11 @@ namespace TCC.CONTROLE
             }
             catch (SqlException)
             {
-                
+
             }
 
 
-            
+
             con.desconectar();
             return this.tem;
 
@@ -418,11 +419,53 @@ namespace TCC.CONTROLE
             {
                 this.mensagem = "ERRO COM BANCO DE DADOS";
                 tem = false;
-                
+
             }
 
 
             return mensagem;
+        }
+
+        public bool baixarEstoque (String nomeDoProduto, String baixaEstoque)
+        {
+
+            cmd.CommandText = ("UPDATE produtos set quantidade = @baixaEstoque where nome = @nomeDoProduto");
+            cmd.Parameters.AddWithValue("@nomeDoProduto", nomeDoProduto);
+            cmd.Parameters.AddWithValue("@baixaEstoque", baixaEstoque);
+            cmd.Connection = con.conectar();
+
+
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+                cmd.Parameters.RemoveAt("@nomeDoProduto");
+                cmd.Parameters.RemoveAt("@baixaEstoque");
+                this.tem = true;
+                return this.tem;
+
+
+
+
+
+
+
+
+
+
+
+                //dtEmail.DataSource = dt;
+
+
+
+            }
+            catch (SqlException)
+            {
+
+            }
+
+            con.desconectar();
+            return tem;
         }
 
 

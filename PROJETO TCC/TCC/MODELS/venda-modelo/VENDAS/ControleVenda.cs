@@ -26,7 +26,7 @@ namespace TCC.MODELO
 
         string quantidadeEstoque;
 
-        
+
 
         #endregion
 
@@ -38,9 +38,9 @@ namespace TCC.MODELO
 
         #region MÉTODOS DE FUNCIONALIDADES
         public DataTable listaCarrinho(String codOperacao)
-        {           
-                this.dtr = vendaDao.listaCarrinho(codOperacao);
-      
+        {
+            this.dtr = vendaDao.listaCarrinho(codOperacao);
+
             return dtr;
         } //LISTAGEM DE CARRINHO 
 
@@ -56,8 +56,8 @@ namespace TCC.MODELO
             {
                 this.mensagem = vendaDao.mensagem;
                 tem = true;
-                
-              
+
+
             }
             else
             {
@@ -96,15 +96,15 @@ namespace TCC.MODELO
             this.codOperacao = vendaDao.procuraCodigoOperacao();
             if (vendaDao.tem)
             {
-                
+
                 this.tem = true;
-                 return this.codOperacao;
+                return this.codOperacao;
             }
             else
             {
                 this.tem = false;
             }
-           
+
 
 
             return this.codOperacao;
@@ -142,7 +142,7 @@ namespace TCC.MODELO
             {
 
                 this.tem = true;
-               
+
             }
             else
             {
@@ -153,7 +153,7 @@ namespace TCC.MODELO
             return this.quantidadeEstoque;
         }
 
-        public bool verificaSeOMesmoProdutoJaFoiInserido( String nomedoProduto, String codOperacao)
+        public bool verificaSeOMesmoProdutoJaFoiInserido(String nomedoProduto, String codOperacao)
         {
             this.tem = vendaDao.verificaSeOMesmoProdutoJaFoiInserido(nomedoProduto, codOperacao);
 
@@ -163,9 +163,9 @@ namespace TCC.MODELO
             }
 
             return tem;
-            
 
-            
+
+
         }
 
         public String deletaProdutoSelecionadoDoCarrinho(String nome, String codOperacao)
@@ -187,7 +187,20 @@ namespace TCC.MODELO
 
             return mensagem;
         }
-        #endregion
+
+        public bool baixarEstoque(String nomedoProduto, String baixarEstoque)
+        {
+            this.tem = vendaDao.baixarEstoque(nomedoProduto, baixarEstoque);
+
+            if (vendaDao.tem)
+            {
+                this.tem = true;
+            }
+
+            return tem;
+            {
+            }
+            #endregion
 
 
 
@@ -195,5 +208,6 @@ namespace TCC.MODELO
 
 
 
+        }
     }
 }

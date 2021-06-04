@@ -30,14 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroVendas));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             this.barra = new System.Windows.Forms.Panel();
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.btnSair = new System.Windows.Forms.PictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.lbllol = new System.Windows.Forms.Label();
             this.txtDesconto = new System.Windows.Forms.MaskedTextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtestiloModelo = new System.Windows.Forms.ComboBox();
@@ -73,11 +74,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblteste = new System.Windows.Forms.DataGridView();
-            this.produtosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tccDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tccDataSet = new TCC.tccDataSet();
-            this.produtosTableAdapter = new TCC.tccDataSetTableAdapters.produtosTableAdapter();
-            this.tccDataSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.coddeOperacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.produtoPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipoProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -87,6 +83,12 @@
             this.quantidadePedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valortotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnexcluir = new System.Windows.Forms.DataGridViewImageColumn();
+            this.produtosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tccDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tccDataSet = new TCC.tccDataSet();
+            this.produtosTableAdapter = new TCC.tccDataSetTableAdapters.produtosTableAdapter();
+            this.tccDataSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.barra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSair)).BeginInit();
@@ -139,6 +141,7 @@
             // 
             this.panel6.BackgroundImage = global::TCC.Properties.Resources._1555492a6_11;
             this.panel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel6.Controls.Add(this.lbllol);
             this.panel6.Controls.Add(this.txtDesconto);
             this.panel6.Controls.Add(this.label8);
             this.panel6.Controls.Add(this.txtestiloModelo);
@@ -180,6 +183,19 @@
             this.panel6.Size = new System.Drawing.Size(1155, 744);
             this.panel6.TabIndex = 64;
             this.panel6.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel6_MouseMove);
+            // 
+            // lbllol
+            // 
+            this.lbllol.AutoSize = true;
+            this.lbllol.BackColor = System.Drawing.Color.Transparent;
+            this.lbllol.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbllol.ForeColor = System.Drawing.Color.White;
+            this.lbllol.Location = new System.Drawing.Point(539, 359);
+            this.lbllol.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbllol.Name = "lbllol";
+            this.lbllol.Size = new System.Drawing.Size(76, 27);
+            this.lbllol.TabIndex = 157;
+            this.lbllol.Text = "Total :";
             // 
             // txtDesconto
             // 
@@ -624,14 +640,14 @@
             // lblteste
             // 
             this.lblteste.BackgroundColor = System.Drawing.Color.Lavender;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Comic Sans MS", 9F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.lblteste.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Comic Sans MS", 9F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.lblteste.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.lblteste.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.lblteste.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.coddeOperacao,
@@ -643,14 +659,14 @@
             this.quantidadePedido,
             this.valortotal,
             this.btnexcluir});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.lblteste.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.lblteste.DefaultCellStyle = dataGridViewCellStyle12;
             this.lblteste.Enabled = false;
             this.lblteste.Location = new System.Drawing.Point(-5, 512);
             this.lblteste.Margin = new System.Windows.Forms.Padding(4);
@@ -658,31 +674,8 @@
             this.lblteste.RowHeadersWidth = 51;
             this.lblteste.Size = new System.Drawing.Size(1156, 228);
             this.lblteste.TabIndex = 85;
+            this.lblteste.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.lblteste_CellContentClick);
             this.lblteste.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.lblteste_CellMouseClick);
-            // 
-            // produtosBindingSource
-            // 
-            this.produtosBindingSource.DataMember = "produtos";
-            this.produtosBindingSource.DataSource = this.tccDataSetBindingSource;
-            // 
-            // tccDataSetBindingSource
-            // 
-            this.tccDataSetBindingSource.DataSource = this.tccDataSet;
-            this.tccDataSetBindingSource.Position = 0;
-            // 
-            // tccDataSet
-            // 
-            this.tccDataSet.DataSetName = "tccDataSet";
-            this.tccDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // produtosTableAdapter
-            // 
-            this.produtosTableAdapter.ClearBeforeFill = true;
-            // 
-            // tccDataSetBindingSource1
-            // 
-            this.tccDataSetBindingSource1.DataSource = this.tccDataSet;
-            this.tccDataSetBindingSource1.Position = 0;
             // 
             // coddeOperacao
             // 
@@ -718,10 +711,10 @@
             // 
             // valordeCompraPedido
             // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.Format = "C2";
-            dataGridViewCellStyle6.NullValue = null;
-            this.valordeCompraPedido.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.Format = "C2";
+            dataGridViewCellStyle10.NullValue = null;
+            this.valordeCompraPedido.DefaultCellStyle = dataGridViewCellStyle10;
             this.valordeCompraPedido.HeaderText = "Valor de Compra";
             this.valordeCompraPedido.MinimumWidth = 6;
             this.valordeCompraPedido.Name = "valordeCompraPedido";
@@ -730,9 +723,9 @@
             // 
             // valordeVendaPedido
             // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.Format = "C2";
-            this.valordeVendaPedido.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.Format = "C2";
+            this.valordeVendaPedido.DefaultCellStyle = dataGridViewCellStyle11;
             this.valordeVendaPedido.HeaderText = "Valor de Venda";
             this.valordeVendaPedido.MinimumWidth = 6;
             this.valordeVendaPedido.Name = "valordeVendaPedido";
@@ -762,6 +755,35 @@
             this.btnexcluir.MinimumWidth = 6;
             this.btnexcluir.Name = "btnexcluir";
             this.btnexcluir.Width = 30;
+            // 
+            // produtosBindingSource
+            // 
+            this.produtosBindingSource.DataMember = "produtos";
+            this.produtosBindingSource.DataSource = this.tccDataSetBindingSource;
+            // 
+            // tccDataSetBindingSource
+            // 
+            this.tccDataSetBindingSource.DataSource = this.tccDataSet;
+            this.tccDataSetBindingSource.Position = 0;
+            // 
+            // tccDataSet
+            // 
+            this.tccDataSet.DataSetName = "tccDataSet";
+            this.tccDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // produtosTableAdapter
+            // 
+            this.produtosTableAdapter.ClearBeforeFill = true;
+            // 
+            // tccDataSetBindingSource1
+            // 
+            this.tccDataSetBindingSource1.DataSource = this.tccDataSet;
+            this.tccDataSetBindingSource1.Position = 0;
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 5000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // CadastroVendas
             // 
@@ -814,7 +836,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnCadastrar;
-        private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.TextBox txtReferencia;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Panel panel2;
@@ -830,7 +851,6 @@
         private tccDataSet tccDataSet;
         private System.Windows.Forms.BindingSource produtosBindingSource;
         private tccDataSetTableAdapters.produtosTableAdapter produtosTableAdapter;
-        private System.Windows.Forms.ComboBox lsbProduto;
         private System.Windows.Forms.ComboBox lsbpgt;
         private System.Windows.Forms.BindingSource tccDataSetBindingSource1;
         private System.Windows.Forms.ComboBox txtestiloModelo;
@@ -845,5 +865,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn quantidadePedido;
         private System.Windows.Forms.DataGridViewTextBoxColumn valortotal;
         private System.Windows.Forms.DataGridViewImageColumn btnexcluir;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label lbllol;
+        public System.Windows.Forms.Button btnCancelar;
+        public System.Windows.Forms.ComboBox lsbProduto;
     }
 }

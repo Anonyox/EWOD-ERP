@@ -216,4 +216,3 @@ C:\Users\LukasPC\Source\Repos\EWOD-ERP\PROJETO TCC\TCC\obj\Debug\TCC.csproj.Gene
 C:\Users\LukasPC\Source\Repos\EWOD-ERP\PROJETO TCC\TCC\obj\Debug\TCC.csproj.CoreCompileInputs.cache
 C:\Users\LukasPC\Source\Repos\EWOD-ERP\PROJETO TCC\TCC\obj\Debug\TCC.exe
 C:\Users\LukasPC\Source\Repos\EWOD-ERP\PROJETO TCC\TCC\obj\Debug\TCC.pdb
-C:\Users\LukasPC\Source\Repos\EWOD-ERP\PROJETO TCC\TCC\obj\Debug\TCC.csprojAssemblyReference.cache
