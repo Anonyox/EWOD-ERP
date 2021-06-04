@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroProduto));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.txtnomeProduto = new System.Windows.Forms.TextBox();
@@ -61,6 +61,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.txttipo = new System.Windows.Forms.TextBox();
             this.dtproduto = new System.Windows.Forms.DataGridView();
+            this.lblcancelar = new System.Windows.Forms.Label();
             this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,7 +70,7 @@
             this.valordeCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valordeVenda = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataCadastro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblcancelar = new System.Windows.Forms.Label();
+            this.imgexcluir = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSair)).BeginInit();
             this.barra.SuspendLayout();
@@ -432,14 +433,14 @@
             // dtproduto
             // 
             this.dtproduto.BackgroundColor = System.Drawing.Color.Lavender;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Comic Sans MS", 9F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtproduto.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Comic Sans MS", 9F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtproduto.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dtproduto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtproduto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nome,
@@ -449,12 +450,27 @@
             this.quantidade,
             this.valordeCompra,
             this.valordeVenda,
-            this.DataCadastro});
+            this.DataCadastro,
+            this.imgexcluir});
             this.dtproduto.Location = new System.Drawing.Point(2, 433);
             this.dtproduto.Name = "dtproduto";
             this.dtproduto.RowHeadersWidth = 51;
             this.dtproduto.Size = new System.Drawing.Size(861, 225);
             this.dtproduto.TabIndex = 178;
+            // 
+            // lblcancelar
+            // 
+            this.lblcancelar.AutoSize = true;
+            this.lblcancelar.BackColor = System.Drawing.Color.Transparent;
+            this.lblcancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblcancelar.Font = new System.Drawing.Font("Comic Sans MS", 7F, System.Drawing.FontStyle.Bold);
+            this.lblcancelar.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblcancelar.Location = new System.Drawing.Point(290, 372);
+            this.lblcancelar.Name = "lblcancelar";
+            this.lblcancelar.Size = new System.Drawing.Size(49, 14);
+            this.lblcancelar.TabIndex = 179;
+            this.lblcancelar.Text = "Cancelar";
+            this.lblcancelar.Visible = false;
             // 
             // nome
             // 
@@ -480,6 +496,7 @@
             // 
             this.quantidade.HeaderText = "Quantidade";
             this.quantidade.Name = "quantidade";
+            this.quantidade.Width = 80;
             // 
             // valordeCompra
             // 
@@ -496,19 +513,15 @@
             this.DataCadastro.HeaderText = "DatadeCadastro";
             this.DataCadastro.Name = "DataCadastro";
             // 
-            // lblcancelar
+            // imgexcluir
             // 
-            this.lblcancelar.AutoSize = true;
-            this.lblcancelar.BackColor = System.Drawing.Color.Transparent;
-            this.lblcancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblcancelar.Font = new System.Drawing.Font("Comic Sans MS", 7F, System.Drawing.FontStyle.Bold);
-            this.lblcancelar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblcancelar.Location = new System.Drawing.Point(290, 372);
-            this.lblcancelar.Name = "lblcancelar";
-            this.lblcancelar.Size = new System.Drawing.Size(49, 14);
-            this.lblcancelar.TabIndex = 179;
-            this.lblcancelar.Text = "Cancelar";
-            this.lblcancelar.Visible = false;
+            this.imgexcluir.HeaderText = "";
+            this.imgexcluir.Image = global::TCC.Properties.Resources.icons8_lixeira_vazia_48;
+            this.imgexcluir.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.imgexcluir.Name = "imgexcluir";
+            this.imgexcluir.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.imgexcluir.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.imgexcluir.Width = 30;
             // 
             // CadastroProduto
             // 
@@ -593,6 +606,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox txttipo;
         private System.Windows.Forms.DataGridView dtproduto;
+        private System.Windows.Forms.Label lblcancelar;
         private System.Windows.Forms.DataGridViewTextBoxColumn nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn fornecedor;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipo;
@@ -601,6 +615,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn valordeCompra;
         private System.Windows.Forms.DataGridViewTextBoxColumn valordeVenda;
         private System.Windows.Forms.DataGridViewTextBoxColumn DataCadastro;
-        private System.Windows.Forms.Label lblcancelar;
+        private System.Windows.Forms.DataGridViewImageColumn imgexcluir;
     }
 }
