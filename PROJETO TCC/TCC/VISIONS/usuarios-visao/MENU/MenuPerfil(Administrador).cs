@@ -25,6 +25,7 @@ namespace TCC.VISÃO
         String user = DadosGeral.nomeUser;
 
         public String perfil = verificaPerfill.perfil;
+        CadastroVendas cadastroVendas = new CadastroVendas();
         #endregion
 
 
@@ -673,7 +674,16 @@ namespace TCC.VISÃO
         private void btnSair_Click(object sender, EventArgs e)
         {
             sairLog();
-            Application.Exit();
+            CadastroVendas cadastro = new CadastroVendas();
+            if (cadastro.btnCancelar.Enabled == true)
+            {
+                MessageBox.Show("Antes de sair, cancele a Operação!!", "OPERAÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                cadastro.lsbProduto.Focus();
+            }
+            else 
+            { 
+                Application.Exit();
+            }
         }
 
         private void btnMinimizar_Click(object sender, EventArgs e)
@@ -890,7 +900,7 @@ namespace TCC.VISÃO
 
         private void btncadastroVenda_Click(object sender, EventArgs e)
         {
-            CadastroVendas cadastroVendas = new CadastroVendas();
+           
             if (Application.OpenForms.OfType<CadastroVendas>().Count() > 0)
             {
                 Application.OpenForms.OfType<CadastroVendas>().First().Focus();

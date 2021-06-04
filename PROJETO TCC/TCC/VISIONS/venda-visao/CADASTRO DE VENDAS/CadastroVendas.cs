@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Globalization;
 using System.Windows.Forms;
+using TCC.CONTROLE;
 using TCC.MODELO;
 
 namespace TCC.VISÃO
@@ -19,8 +21,11 @@ namespace TCC.VISÃO
 
         #region VARIÁVEIS E INSTÂNCIAS 
         ControleVenda controleVenda = new ControleVenda();
+        SqlDataReader dr;
+        Conexao con = new Conexao();
         int codOperacao = 0;
         int validaMsg = 0;
+        string quantidadeEstoque;
 
         #endregion
 
@@ -33,8 +38,6 @@ namespace TCC.VISÃO
         public CadastroVendas()
         {
             InitializeComponent();
-
-
         }
 
         #endregion
@@ -48,7 +51,8 @@ namespace TCC.VISÃO
 
         private void CadastroVendas_Load(object sender, EventArgs e)
         {
-
+            txtTotal.Text = string.Format("{0:C}", 0);
+            iniciaAutoComplete();
             // TODO: esta linha de código carrega dados na tabela 'tccDataSet.produtos'. Você pode movê-la ou removê-la conforme necessário.
             //this.produtosTableAdapter.Fill(this.tccDataSet.produtos);
 
@@ -64,6 +68,9 @@ namespace TCC.VISÃO
             lblteste.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(0, 209, 178);     //FromArgb(20, 25, 72);
             lblteste.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
 
+            DateTime data = DateTime.Now;
+            txtData.Text = data.ToString();
+
 
 
 
@@ -72,6 +79,94 @@ namespace TCC.VISÃO
 
 
         } //FORM LOAD
+
+        public void iniciaAutoComplete()
+
+        {
+
+            SqlCommand cmd = new SqlCommand("SELECT P.nome FROM produtos P inner join estoqueProdutos E ON P.codProduto = E.idProduto and E.quantidade > 0", con.conectar());
+            //cmd.CommandText = ;
+
+            try
+            {
+                dr = cmd.ExecuteReader();
+
+                AutoCompleteStringCollection collection = new AutoCompleteStringCollection();
+
+                while (dr.Read())
+                {
+                    collection.Add(dr["nome"].ToString());
+                }
+
+                lsbProduto.AutoCompleteMode = AutoCompleteMode.Suggest;
+                lsbProduto.AutoCompleteSource = AutoCompleteSource.CustomSource;
+
+                lsbProduto.AutoCompleteCustomSource = collection;
+
+                dr.Close();
+                con.desconectar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                throw;
+            } 
+        }   //INICIA AUTO COMPLETE
+
+        public void limpaCampos()
+        {
+            lsbProduto.Text = "";
+            txttipo.Text = "";
+            txtvalordeCompra.Text = "";
+            txtvalorDeVenda.Text = "";
+            txtquantidade.Text = "";
+            txtestiloModelo.Text = "";
+        } //LIMPA OS CAMPOS
+
+        private void autoComplete()
+        {
+            if (lsbProduto.Text != string.Empty)
+            {
+                string usuario = Convert.ToString(lsbProduto.Text);
+                //Elaborar Select que contenha cada um dos campos da tabela
+                SqlCommand cmd = new SqlCommand("SELECT P.tipo, format(P.valordeCompra, 'c', 'pt-br') as valordeCompra, format(P.valordeVenda, 'c', 'pt-br') as valordeVenda, P.modelo FROM produtos P INNER JOIN estoqueProdutos E ON P.nome = @param AND  P.codProduto = E.idProduto AND E.Quantidade > 0 ",  con.conectar());
+                cmd.Parameters.AddWithValue("@param", lsbProduto.Text);
+
+                dr = cmd.ExecuteReader();
+                //criar variáveis para armazenar os campos
+
+                //atribuir as variáveis para os txts
+                while (dr.Read())
+                {
+
+                    txttipo.Text = dr["tipo"].ToString();
+                    MaiusculaTxt(txttipo);
+                    txtvalordeCompra.Text = dr["valordeCompra"].ToString();
+                    txtvalorDeVenda.Text = dr["valordeVenda"].ToString();
+                    txtestiloModelo.Text = dr["modelo"].ToString();
+                    Maiusculacmb(txtestiloModelo);
+
+
+
+                }
+
+
+                //colocar no formato auto-complete
+
+
+
+
+
+
+                dr.Close();
+                con.desconectar();
+            }
+            else
+            {
+                limpaCampos();
+                lsbProduto.Focus();
+            }
+        } //COMPLETA OS CAMPOS
 
         public void listaCarrinho()
         {
@@ -92,7 +187,11 @@ namespace TCC.VISÃO
             foreach (DataRow item in dt.Rows)
             {
 
+
                 int n = lblteste.Rows.Add();
+
+
+
                 lblteste.Rows[n].Cells[0].Value = item["codOperacao"].ToString();
                 lblteste.Rows[n].Cells[1].Value = item["produtoPedido"].ToString();
                 lblteste.Rows[n].Cells[2].Value = item["tipoProduto"].ToString();
@@ -100,6 +199,19 @@ namespace TCC.VISÃO
                 lblteste.Rows[n].Cells[4].Value = item["valordeCompraPedido"].ToString();
                 lblteste.Rows[n].Cells[5].Value = item["valordeVendaPedido"].ToString();
                 lblteste.Rows[n].Cells[6].Value = item["quantidade"].ToString();
+                lblteste.Rows[n].Cells[7].Value = item["valorTotal"].ToString();
+
+
+
+
+
+
+
+
+
+
+
+
 
             }
 
@@ -107,40 +219,67 @@ namespace TCC.VISÃO
 
         public void adicionaAoCarrinho()
         {
-
-            string codOp = codOperacao.ToString();
-
-
-            Decimal vlc, vlv;
-            float qtd = 0;
-
-
-            float valorDeVendapedido = float.Parse(txtvalorDeVenda.Text);
-
-            vlc = Convert.ToDecimal(txtvalordeCompra.Text);
-            vlv = Convert.ToDecimal(txtvalorDeVenda.Text);
-
-            #region quantidade * valor de venda
-            qtd = float.Parse(txtquantidade.Text);
-            float quantidade = float.Parse(txtquantidade.Text);
-
-            float valorTot = qtd * valorDeVendapedido;
-            #endregion
-
-
-
-            String mensagem = controleVenda.adicionaAoCarrinho(codOp, lsbProduto.Text, txttipo.Text, vlc,
-                vlv, quantidade, txtestiloModelo.Text, valorTot);
-            if (controleVenda.tem)
+            if (txtquantidade.Text != "")
             {
-                MessageBox.Show(mensagem, "Adicionando", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+
+                string codOp = codOperacao.ToString();
+
+
+                Decimal vlc, vlv;
+                float qtd = 0;
+
+
+                string valorVenda = txtvalorDeVenda.Text;
+                char[] MyChar = { 'R', '$' };
+                string NewStringVenda = valorVenda.TrimStart(MyChar);
+
+                string valorCompra = txtvalordeCompra.Text;
+                char[] MyCharCompra = { 'R', '$' };
+                string NewStringCompra = valorCompra.TrimStart(MyCharCompra);
+
+
+
+
+                float valorDeVendapedido = float.Parse(NewStringVenda);
+                float valorDeComprapedido = float.Parse(NewStringCompra);
+
+
+
+                vlc = Convert.ToDecimal(NewStringCompra);
+                vlv = Convert.ToDecimal(valorDeVendapedido);
+
+                #region quantidade * valor de venda
+                qtd = float.Parse(txtquantidade.Text);
+                float quantidade = float.Parse(txtquantidade.Text);
+
+                float valorTot = qtd * valorDeVendapedido;
+                #endregion
+
+
+
+                String mensagem = controleVenda.adicionaAoCarrinho(codOp, lsbProduto.Text, txttipo.Text, vlc,
+                    vlv, quantidade, txtestiloModelo.Text, valorTot);
+                if (controleVenda.tem)
+                {
+                    MessageBox.Show(mensagem, "Adicionando", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    btnFinalizar.Enabled = true;
+
+                }
+                else
+                {
+                    MessageBox.Show(mensagem, "Adicionando", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+
+                }
             }
             else
             {
-                MessageBox.Show(mensagem, "Adicionando", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                MessageBox.Show("Quantidade Inválida!!", "OPERAÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtquantidade.Focus();
+                txtquantidade.Text = "";
             }
+
 
 
         } //ADICIONA AO CARRINHO 
@@ -195,6 +334,8 @@ namespace TCC.VISÃO
             if (controleVenda.tem)
             {
                 MessageBox.Show(mensagem, "Carrinho", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btnFinalizar.Enabled = false;
+
 
             }
             else
@@ -204,6 +345,79 @@ namespace TCC.VISÃO
             }
         } //RETIRA TODOS PRODUTOS DO CARRINHO
 
+        public void deletaProdutoSelecionadoDoCarrinho()
+        {
+            string codOp = codOperacao.ToString();
+
+            string nome = lblteste.CurrentRow.Cells["produtoPedido"].Value.ToString();
+
+
+
+            String mensagem = controleVenda.deletaProdutoSelecionadoDoCarrinho(nome, codOp);
+            if (controleVenda.tem)
+            {
+                MessageBox.Show(mensagem, "Carrinho", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+
+            }
+            else
+            {
+                MessageBox.Show(mensagem, "Carrinho", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            listaCarrinho();
+        }
+
+        public void verificaQuantidadeRestanteNoEstoque()
+        {
+            if (txtquantidade.Text != "")
+            {
+
+
+                string quantidade = controleVenda.verificaQuantidadeRestanteNoEstoque(lsbProduto.Text);
+                if (controleVenda.tem)
+                {
+                    this.quantidadeEstoque = quantidade;
+                }
+                else
+                {
+                    this.quantidadeEstoque = "0";
+
+                }
+
+            }
+
+
+        } //VERIFICAQUANTIDADERESTANTENOESTOQUE
+
+        public void realizaCalculoEstoque()
+        {
+
+
+
+            if (txtquantidade.Text != string.Empty)
+            {
+
+
+                float qtdestoque = float.Parse(this.quantidadeEstoque);
+                float qtdInserida = float.Parse(txtquantidade.Text);
+
+
+                if (qtdInserida > qtdestoque)
+                {
+                    MessageBox.Show("Quantidade de produtos insuficiente!! \n" +
+                        "Restando Apenas : " + qtdestoque + " Peças no Estoque!!", "OPERAÇÃO ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    txtquantidade.Text = "";
+                }
+
+            }
+
+
+
+
+        }   //REALIZA CALCULO ESTOQUE
 
         public void desativaCarrinho()
         {
@@ -218,7 +432,9 @@ namespace TCC.VISÃO
             txtquantidade.Enabled = false;
 
             txtestiloModelo.Enabled = false;
-        }
+
+            btnCadastrar.Enabled = false;
+        }  //DESATIVAR CARRINHO
 
         public void reativaCarrinho()
         {
@@ -233,16 +449,38 @@ namespace TCC.VISÃO
             txtquantidade.Enabled = true;
 
             txtestiloModelo.Enabled = true;
-        }
+        } //REATIVA CARRINHO
+
+        public void desativaSegundaEtapa()
+        {
+            lsbpgt.Enabled = false;
+            txtDesconto.Enabled = false;
+        } //DESATIVA SEGUNTA ETAPA
 
         public void ativaSegundaEtapa()
         {
             lsbpgt.Enabled = true;
             txtDesconto.Enabled = true;
-        }
+        } //ATIVA SEGUNDA ETAPA
+
+        public void desativaTerceiraEtapa()
+        {
+            txtReferencia.Enabled = false;
+            txtEndereco.Enabled = false;
+            txtcidadeCliente.Enabled = false;
+        } //DESATIVA TERCEIRA ETAPA 
+
+        public void ativaTerceiraEtapa()
+        {
+            txtReferencia.Enabled = true;
+            txtEndereco.Enabled = true;
+            txtcidadeCliente.Enabled = true;
+
+        } //ATIVA TERCEIRA ETAPA
 
         public void somaProdutosAdicionadosAoCarrinho()
         {
+
             int codSoma = this.codOperacao;
 
             float desconto;
@@ -261,35 +499,157 @@ namespace TCC.VISÃO
 
 
 
-
-            if (txtDesconto.Text == string.Empty)
+            if (valor != "")
             {
-                valorTotalSemDesconto = float.Parse(valor);
-                valorSemDesconto = string.Format("{0:C}", valorTotalSemDesconto);
-                txtTotal.Text = valorSemDesconto.ToString();
+
+
+                if (txtDesconto.Text == string.Empty)
+                {
+                    valorTotalSemDesconto = float.Parse(valor);
+                    valorSemDesconto = string.Format("{0:C}", valorTotalSemDesconto);
+                    txtTotal.Text = valorSemDesconto.ToString();
+                }
+                else
+                {
+
+
+                    desconto = float.Parse(txtDesconto.Text);
+                    float resultDesconto = float.Parse(valor);
+
+                    float desc = (desconto * resultDesconto) / 100;
+
+                    valorTotalComDesconto = resultDesconto - desc;
+
+
+
+
+
+                    valorComDesconto = string.Format("{0:C}", valorTotalComDesconto);
+                    txtTotal.Text = valorComDesconto.ToString();
+
+
+
+                }
+            }
+            else
+            {
+                txtTotal.Text = string.Format("{0:C}", 0);
+            }
+
+
+        } //SOMA PRODUTOS ADICIONADOS AO CARRINHO
+
+        public void permitirApenasNumeros(object sender, KeyPressEventArgs e)
+        {
+            //Se a tecla digitada não for número e nem backspace
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 08)
+            {
+                //Atribui True no Handled para cancelar o evento
+                e.Handled = true;
+            }
+        } //PERMITIR APENAS NUMEROS
+
+        public bool verificaSeOMesmoProdutoJaFoiInserido()
+        {
+            string codOp = codOperacao.ToString();
+            bool tem = controleVenda.verificaSeOMesmoProdutoJaFoiInserido(lsbProduto.Text, codOp);
+            if (controleVenda.tem)
+            {
+                MessageBox.Show("Não é possível adicionar o mesmo produto novamente!!", "OPERAÇÃO ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lsbProduto.Text = "";
+                txtquantidade.Text = "";
+                return true;
+            }
+            return false;
+        } //VERIFICA SE O MESMO PRODUTO JA FOI INSERIDO
+
+        public void baixarEstoque()
+        {
+
+
+
+            string quantidadeDoProduto = controleVenda.verificaQuantidadeRestanteNoEstoque(lsbProduto.Text);
+            bool tem = false;
+
+
+            if (controleVenda.tem)
+            {
+                float novaQuantidade;
+
+
+                float qtdrestante = float.Parse(quantidadeDoProduto);
+                float quantidadeBaixa = float.Parse(txtquantidade.Text);
+
+                novaQuantidade = qtdrestante - quantidadeBaixa;
+
+                string baixarEstoque;
+                baixarEstoque = novaQuantidade.ToString();
+
+                tem = controleVenda.baixarEstoque(lsbProduto.Text, baixarEstoque);
+                if (controleVenda.tem)
+                {
+
+                }
+
+                
+
+
+
             }
             else
             {
 
-                desconto = float.Parse(txtDesconto.Text);
-                float resultDesconto = float.Parse(valor);
 
-                float desc = (desconto * resultDesconto) / 100;
-
-                valorTotalComDesconto = resultDesconto - desc;
+            }
 
 
+        }
+
+        public void reverterBaixaEstoqueUnitario()
+        {
+            bool tem;
+
+            double qtdEstoque = 0;
+            double qtdBaixada = 0;
+            double novaQtd = 0;
+
+            string novaBaixa;
+
+            foreach (DataGridViewRow dr in lblteste.Rows)
+            {
+
+                
+                string nome = Convert.ToString(dr.Cells["produtoPedido"].Value);
 
 
 
-                valorComDesconto = string.Format("{0:C}", valorTotalComDesconto);
-                txtTotal.Text = valorComDesconto.ToString();
+                Double quantidadeBaixadaa = Convert.ToDouble(dr.Cells["quantidadePedido"].Value);
+                qtdBaixada = quantidadeBaixadaa;
+
+
+
+            string quantidadeDoProduto = controleVenda.verificaQuantidadeRestanteNoEstoque(nome);
+            qtdEstoque = float.Parse(quantidadeDoProduto);
+
+
+            if (controleVenda.tem)
+            {
+
+
+                novaQtd = qtdBaixada + qtdEstoque;
+
+                novaBaixa = novaQtd.ToString();
+
+                tem = controleVenda.baixarEstoque(nome, novaBaixa);
+
+                  
+
 
 
 
             }
 
-
+            }
         }
 
         #endregion
@@ -318,19 +678,21 @@ namespace TCC.VISÃO
         {
 
             procuraCodigoOperacao();
+            MessageBox.Show("Operação Iniciada!!", "OPERAÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            lblteste.Enabled = true;
+
+
 
 
             lsbProduto.Enabled = true;
-            txttipo.Enabled = true;
-            txtvalordeCompra.Enabled = true;
-            txtvalorDeVenda.Enabled = true;
             txtquantidade.Enabled = true;
-            txtestiloModelo.Enabled = true;
 
-            lsbProduto.Focus();
+
             btnCadastrar.Enabled = false;
             btnCancelar.Enabled = true;
             btnAdicionar.Enabled = true;
+
+            lsbProduto.Focus();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -358,32 +720,65 @@ namespace TCC.VISÃO
             btnAdicionar.Text = "";
             btnCancelar.Text = "";
             #endregion
-            retiraDoCarrinho();
-            listaCarrinho();
 
+            if (String.IsNullOrEmpty((string)lblteste.Rows[0].Cells[0].Value))
+            {
+                MessageBox.Show("Operação Cancelada!!", "OPERAÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btnFinalizar.Enabled = false;
+
+            }
+
+            else if (txtDesconto.Enabled == true)
+            {
+                MessageBox.Show("Carrinho Reativado!!", "OPERAÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                somaProdutosAdicionadosAoCarrinho();
+                desativaSegundaEtapa();
+                reativaCarrinho();
+                lsbProduto.Focus();
+            }
+            else
+            {
+                
+                retiraDoCarrinho();
+                listaCarrinho();
+
+                lsbProduto.Enabled = true;
+                txttipo.Enabled = true;
+                txtvalordeCompra.Enabled = true;
+                txtvalorDeVenda.Enabled = true;
+                txtquantidade.Enabled = true;
+                txtestiloModelo.Enabled = true;
+
+                btnCadastrar.Enabled = false;
+                btnAdicionar.Enabled = true;
+                lblteste.Enabled = true;
+                btnCancelar.Enabled = true;
+
+                lsbProduto.Focus();
+            }
 
         }
 
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
+            if (!verificaSeOMesmoProdutoJaFoiInserido())
+            {
+                
+                adicionaAoCarrinho();
+                somaProdutosAdicionadosAoCarrinho();
+                lsbProduto.Text = null;
+                txtquantidade.Text = null;
+                listaCarrinho();
+            }
 
-            adicionaAoCarrinho();
-
-            listaCarrinho();
 
 
 
         }
 
-        private void btnExtornar_MouseEnter(object sender, EventArgs e)
-        {
-            btnExtornar.Size = new Size(90, 43);
-        }
 
-        private void btnExtornar_MouseLeave(object sender, EventArgs e)
-        {
-            btnExtornar.Size = new Size(65, 43);
-        }
+
+
 
         private void btnAdicionar_MouseEnter(object sender, EventArgs e)
         {
@@ -407,7 +802,15 @@ namespace TCC.VISÃO
 
         private void btnSair_Click(object sender, EventArgs e)
         {
-            Close();
+            if (btnCancelar.Enabled == true)
+            {
+                MessageBox.Show("Antes de sair, cancele a Operação!!", "OPERAÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                this.Close();
+            }
+
         }
 
         private void panel6_MouseMove(object sender, MouseEventArgs e)
@@ -423,22 +826,40 @@ namespace TCC.VISÃO
 
         private void btnFinalizar_Click(object sender, EventArgs e)
         {
-            desativaCarrinho();
-            if (MessageBox.Show("Deseja finalizar a venda ?", "Venda", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+            if (txtTotal.Text == "")
             {
-                somaProdutosAdicionadosAoCarrinho();
-                ativaSegundaEtapa();
+                desativaCarrinho();
+                if (MessageBox.Show("Adicionar a forma de Pagamento ?", "Venda", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                {
+
+                    ativaSegundaEtapa();
+                    lblteste.Enabled = false;
+                }
+                else
+                {
+                    reativaCarrinho();
+                }
             }
             else
             {
-                reativaCarrinho();
+                if (MessageBox.Show("Adicionar endereço de entrega ?", "Venda", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                {
+
+                }
+                else
+                {
+
+                }
+
             }
 
         }
 
         private void lsbProduto_Leave(object sender, EventArgs e)
         {
+
             Maiusculacmb(lsbProduto);
+
         }
 
         private void txttipo_Leave(object sender, EventArgs e)
@@ -460,8 +881,78 @@ namespace TCC.VISÃO
         private void txtvalordeCompra_TextChanged(object sender, EventArgs e)
         {
 
+<<<<<<< HEAD
            
 
+=======
+        }
+
+
+        private void txtvalordeCompra_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            permitirApenasNumeros(sender, e);
+        }
+
+        private void txtvalorDeVenda_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            permitirApenasNumeros(sender, e);
+        }
+
+        private void txtquantidade_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            permitirApenasNumeros(sender, e);
+
+
+        }
+
+
+        private void lsbProduto_TextChanged(object sender, EventArgs e)
+        {
+
+            autoComplete();
+        }
+
+        private void txtDesconto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            permitirApenasNumeros(sender, e);
+        }
+
+        private void txtquantidade_TextChanged(object sender, EventArgs e)
+        {
+            if (txtquantidade.Text != "0")
+            {
+                verificaQuantidadeRestanteNoEstoque();
+                realizaCalculoEstoque();
+            }
+            else
+            {
+                MessageBox.Show("Quantidade Inválida!!", "OPERAÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtquantidade.Focus();
+                txtquantidade.Text = "";
+            }
+
+
+        }
+
+
+        private void lblteste_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.ColumnIndex == this.btnexcluir.Index && e.RowIndex >= 0 && btnFinalizar.Enabled == true)
+            {
+                // pega a linha atual...
+                //DataGridViewRow currentRow = this.lblteste.Rows[e.RowIndex];
+                // mostra o form...
+                //MessageBox.Show(Convert.ToString(currentRow.Cells[0].Value));
+
+               
+                deletaProdutoSelecionadoDoCarrinho();
+                txtTotal.Text = string.Format("{0:C}", 0);
+                somaProdutosAdicionadosAoCarrinho();
+                lblteste.Enabled = true;
+
+                lsbProduto.Focus();
+            }
+>>>>>>> lucas/scrummaster
         }
 
 
@@ -469,6 +960,15 @@ namespace TCC.VISÃO
 
         #endregion
 
+        private void timer1_Tick(object sender, EventArgs e)
+        {
 
+
+        }
+
+        private void lblteste_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

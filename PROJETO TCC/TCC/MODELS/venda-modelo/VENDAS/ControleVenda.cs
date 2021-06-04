@@ -24,6 +24,10 @@ namespace TCC.MODELO
 
         string valtot;
 
+        string quantidadeEstoque;
+
+
+
         #endregion
 
 
@@ -34,9 +38,9 @@ namespace TCC.MODELO
 
         #region MÉTODOS DE FUNCIONALIDADES
         public DataTable listaCarrinho(String codOperacao)
-        {           
-                this.dtr = vendaDao.listaCarrinho(codOperacao);
-      
+        {
+            this.dtr = vendaDao.listaCarrinho(codOperacao);
+
             return dtr;
         } //LISTAGEM DE CARRINHO 
 
@@ -52,8 +56,8 @@ namespace TCC.MODELO
             {
                 this.mensagem = vendaDao.mensagem;
                 tem = true;
-                
-              
+
+
             }
             else
             {
@@ -92,15 +96,15 @@ namespace TCC.MODELO
             this.codOperacao = vendaDao.procuraCodigoOperacao();
             if (vendaDao.tem)
             {
-                
+
                 this.tem = true;
-                 return this.codOperacao;
+                return this.codOperacao;
             }
             else
             {
                 this.tem = false;
             }
-           
+
 
 
             return this.codOperacao;
@@ -125,14 +129,78 @@ namespace TCC.MODELO
             return this.codOperacao;
         } //FAZ A BUSCA DO ÚLTIMO CÓDIGO DE OPERAÇÃO
 
-
-
         public String somaProdutosAdicionadosAoCarrinho(int codOperacaoSomaTotal)
         {
             this.valtot = vendaDao.somaProdutosAdicionadosAoCarrinho(codOperacaoSomaTotal);
             return valtot;
         }
-        #endregion
+
+        public String verificaQuantidadeRestanteNoEstoque(String nomeProduto)
+        {
+            this.quantidadeEstoque = vendaDao.verificaQuantidadeRestanteNoEstoque(nomeProduto);
+            if (vendaDao.tem)
+            {
+
+                this.tem = true;
+
+            }
+            else
+            {
+                this.tem = false;
+            }
+
+
+            return this.quantidadeEstoque;
+        }
+
+        public bool verificaSeOMesmoProdutoJaFoiInserido(String nomedoProduto, String codOperacao)
+        {
+            this.tem = vendaDao.verificaSeOMesmoProdutoJaFoiInserido(nomedoProduto, codOperacao);
+
+            if (vendaDao.tem)
+            {
+                this.tem = true;
+            }
+
+            return tem;
+
+
+
+        }
+
+        public String deletaProdutoSelecionadoDoCarrinho(String nome, String codOperacao)
+        {
+            this.mensagem = vendaDao.deletaProdutoSelecionadoDoCarrinho(nome, codOperacao);
+
+            if (vendaDao.tem)
+            {
+                this.mensagem = vendaDao.mensagem;
+                tem = true;
+
+
+            }
+            else
+            {
+                this.mensagem = "ERRO COM BANCO DE DADOS";
+                tem = false;
+            }
+
+            return mensagem;
+        }
+
+        public bool baixarEstoque(String nomedoProduto, String baixarEstoque)
+        {
+            this.tem = vendaDao.baixarEstoque(nomedoProduto, baixarEstoque);
+
+            if (vendaDao.tem)
+            {
+                this.tem = true;
+            }
+
+            return tem;
+            {
+            }
+            #endregion
 
 
 
@@ -140,5 +208,6 @@ namespace TCC.MODELO
 
 
 
+        }
     }
 }
