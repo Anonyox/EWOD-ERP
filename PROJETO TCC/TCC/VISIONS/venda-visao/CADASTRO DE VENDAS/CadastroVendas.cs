@@ -881,10 +881,7 @@ namespace TCC.VISÃO
         private void txtvalordeCompra_TextChanged(object sender, EventArgs e)
         {
 
-<<<<<<< HEAD
-           
 
-=======
         }
 
 
@@ -952,7 +949,7 @@ namespace TCC.VISÃO
 
                 lsbProduto.Focus();
             }
->>>>>>> lucas/scrummaster
+
         }
 
 
