@@ -61,6 +61,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.txttipo = new System.Windows.Forms.TextBox();
             this.dtproduto = new System.Windows.Forms.DataGridView();
+            this.lblcancelar = new System.Windows.Forms.Label();
+            this.imgalterar = new System.Windows.Forms.DataGridViewImageColumn();
             this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,7 +72,6 @@
             this.valordeVenda = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataCadastro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.imgexcluir = new System.Windows.Forms.DataGridViewImageColumn();
-            this.lblcancelar = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSair)).BeginInit();
             this.barra.SuspendLayout();
@@ -443,6 +444,7 @@
             this.dtproduto.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dtproduto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtproduto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.imgalterar,
             this.nome,
             this.fornecedor,
             this.tipo,
@@ -458,6 +460,28 @@
             this.dtproduto.Size = new System.Drawing.Size(861, 225);
             this.dtproduto.TabIndex = 178;
             this.dtproduto.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtproduto_CellMouseClick);
+            // 
+            // lblcancelar
+            // 
+            this.lblcancelar.AutoSize = true;
+            this.lblcancelar.BackColor = System.Drawing.Color.Transparent;
+            this.lblcancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblcancelar.Font = new System.Drawing.Font("Comic Sans MS", 7F, System.Drawing.FontStyle.Bold);
+            this.lblcancelar.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblcancelar.Location = new System.Drawing.Point(290, 372);
+            this.lblcancelar.Name = "lblcancelar";
+            this.lblcancelar.Size = new System.Drawing.Size(49, 14);
+            this.lblcancelar.TabIndex = 179;
+            this.lblcancelar.Text = "Cancelar";
+            this.lblcancelar.Visible = false;
+            // 
+            // imgalterar
+            // 
+            this.imgalterar.HeaderText = "";
+            this.imgalterar.Image = global::TCC.Properties.Resources.icons8_editar_propriedade_100;
+            this.imgalterar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.imgalterar.Name = "imgalterar";
+            this.imgalterar.Width = 25;
             // 
             // nome
             // 
@@ -489,11 +513,13 @@
             // 
             this.valordeCompra.HeaderText = "ValorDeCompra";
             this.valordeCompra.Name = "valordeCompra";
+            this.valordeCompra.Width = 90;
             // 
             // valordeVenda
             // 
             this.valordeVenda.HeaderText = "ValorDeVenda";
             this.valordeVenda.Name = "valordeVenda";
+            this.valordeVenda.Width = 90;
             // 
             // DataCadastro
             // 
@@ -508,21 +534,7 @@
             this.imgexcluir.Name = "imgexcluir";
             this.imgexcluir.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.imgexcluir.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.imgexcluir.Width = 30;
-            // 
-            // lblcancelar
-            // 
-            this.lblcancelar.AutoSize = true;
-            this.lblcancelar.BackColor = System.Drawing.Color.Transparent;
-            this.lblcancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblcancelar.Font = new System.Drawing.Font("Comic Sans MS", 7F, System.Drawing.FontStyle.Bold);
-            this.lblcancelar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblcancelar.Location = new System.Drawing.Point(290, 372);
-            this.lblcancelar.Name = "lblcancelar";
-            this.lblcancelar.Size = new System.Drawing.Size(49, 14);
-            this.lblcancelar.TabIndex = 179;
-            this.lblcancelar.Text = "Cancelar";
-            this.lblcancelar.Visible = false;
+            this.imgexcluir.Width = 25;
             // 
             // CadastroProduto
             // 
@@ -608,6 +620,7 @@
         private System.Windows.Forms.TextBox txttipo;
         private System.Windows.Forms.DataGridView dtproduto;
         private System.Windows.Forms.Label lblcancelar;
+        private System.Windows.Forms.DataGridViewImageColumn imgalterar;
         private System.Windows.Forms.DataGridViewTextBoxColumn nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn fornecedor;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipo;

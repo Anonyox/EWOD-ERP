@@ -98,8 +98,11 @@ namespace TCC.VISÃO
 
         public void alterarProduto()
         {
-
-        }
+            if (MessageBox.Show("DESEJA ALTERAR ESTE PRODUTO ?", "ALTERAÇÃO", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                
+            }
+        }x
 
         public bool verificarProduto()
         {
