@@ -447,6 +447,10 @@ namespace TCC.VISÃO
 
 
             }
+           /* else
+            {
+                MessageBox.Show("Nenhum Produto selecionado", "SELEÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }*/
         }
 
         
