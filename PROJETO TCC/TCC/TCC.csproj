@@ -377,5 +377,8 @@
     <Folder Include="MODELS\relatorio-modelo\" />
     <Folder Include="VISIONS\cliente-visao\" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editar_datagrid.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

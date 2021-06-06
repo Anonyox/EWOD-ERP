@@ -71,15 +71,15 @@ namespace TCC.VISÃO
                 dtproduto.Refresh();
 
                 int n = dtproduto.Rows.Add();
-                //dtproduto.Rows[n].Cells[0].Value = Properties.Resources.icons8_editar_propriedade_100;
-                dtproduto.Rows[n].Cells[0].Value = item["nome"].ToString();
-                dtproduto.Rows[n].Cells[1].Value = item["fornecedor"].ToString();
-                dtproduto.Rows[n].Cells[2].Value = item["tipo"].ToString();
-                dtproduto.Rows[n].Cells[3].Value = item["modelo"].ToString();
-                dtproduto.Rows[n].Cells[4].Value = item["quantidade"].ToString();
-                dtproduto.Rows[n].Cells[5].Value = item["valordecompra"].ToString();
-                dtproduto.Rows[n].Cells[6].Value = item["valordevenda"].ToString();
-                dtproduto.Rows[n].Cells[7].Value = item["dataDeCadastro"].ToString();
+                dtproduto.Rows[n].Cells[0].Value = Properties.Resources.editar_datagrid;
+                dtproduto.Rows[n].Cells[1].Value = item["nome"].ToString();
+                dtproduto.Rows[n].Cells[2].Value = item["fornecedor"].ToString();
+                dtproduto.Rows[n].Cells[3].Value = item["tipo"].ToString();
+                dtproduto.Rows[n].Cells[4].Value = item["modelo"].ToString();
+                dtproduto.Rows[n].Cells[5].Value = item["quantidade"].ToString();
+                dtproduto.Rows[n].Cells[6].Value = item["valordecompra"].ToString();
+                dtproduto.Rows[n].Cells[7].Value = item["valordevenda"].ToString();
+                dtproduto.Rows[n].Cells[8].Value = item["dataDeCadastro"].ToString();
 
 
 
@@ -95,14 +95,6 @@ namespace TCC.VISÃO
             tbox.Text = textinfo.ToTitleCase(tbox.Text);
             return tbox.Text;
         }
-
-        public void alterarProduto()
-        {
-            if (MessageBox.Show("DESEJA ALTERAR ESTE PRODUTO ?", "ALTERAÇÃO", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                
-            }
-        }x
 
         public bool verificarProduto()
         {
@@ -144,26 +136,37 @@ namespace TCC.VISÃO
 
         public void buscarProduto()
         {
+            txtdata.Text = datadecadastro.ToString();
 
             SqlCommand cmd = new SqlCommand("SELECT nome FROM produtos", con.conectar());
 
-            dr = cmd.ExecuteReader();
 
-            AutoCompleteStringCollection collection = new AutoCompleteStringCollection();
-
-            while (dr.Read())
+            try
             {
-                collection.Add(dr["nome"].ToString());
+                dr = cmd.ExecuteReader();
+
+                AutoCompleteStringCollection collection = new AutoCompleteStringCollection();
+
+                while (dr.Read())
+                {
+                    collection.Add(dr["nome"].ToString());
+                }
+
+                txtnomeProduto.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                txtnomeProduto.AutoCompleteSource = AutoCompleteSource.CustomSource;
+
+                txtnomeProduto.AutoCompleteCustomSource = collection;
+
+
+                dr.Close();
+                con.desconectar();
+
             }
-
-            txtnomeProduto.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            txtnomeProduto.AutoCompleteSource = AutoCompleteSource.CustomSource;
-
-            txtnomeProduto.AutoCompleteCustomSource = collection;
-
-
-            dr.Close();
-            con.desconectar();
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                throw;
+            }
 
 
         }
@@ -395,6 +398,11 @@ namespace TCC.VISÃO
         #region DESIGN
         private void CadastroProduto_Load_1(object sender, EventArgs e)
         {
+            txtdata.ReadOnly = true;
+            txtdata.Text = datadecadastro.ToString();
+
+            buscarProduto();
+
             txtnomeProduto.Focus();
 
             formataGrid();
@@ -402,9 +410,8 @@ namespace TCC.VISÃO
 
             listarProdutos();
 
-            txtdata.ReadOnly = true;
-            txtdata.Text = datadecadastro.ToString();
-            buscarProduto();
+            
+            
 
         }
 
@@ -416,6 +423,33 @@ namespace TCC.VISÃO
             timer1.Start();
 
         }
+
+
+        private void dtproduto_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+                
+            if (e.ColumnIndex == this.imgexcluir.Index && e.RowIndex >= 0)
+            {
+                excluirProduto();                
+
+            }
+            else if (dtproduto.SelectedRows.Count >= 0)
+            {
+
+                txtnomeProduto.Text = dtproduto.SelectedRows[0].Cells[1].Value.ToString();
+                txtfornecedor.Text = dtproduto.SelectedRows[0].Cells[2].Value.ToString();
+                txttipo.Text = dtproduto.SelectedRows[0].Cells[3].Value.ToString();
+                txtmodeloProduto.Text = dtproduto.SelectedRows[0].Cells[4].Value.ToString();
+                txtquantidadeProduto.Text = dtproduto.SelectedRows[0].Cells[5].Value.ToString();
+                txtvalorCompra.Text = dtproduto.SelectedRows[0].Cells[6].Value.ToString();
+                txtvalorVenda.Text = dtproduto.SelectedRows[0].Cells[7].Value.ToString();
+                txtdata.Text = dtproduto.SelectedRows[0].Cells[8].Value.ToString();
+
+
+            }
+        }
+
+        
 
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -493,6 +527,7 @@ namespace TCC.VISÃO
 
         private void txtnomeProduto_Leave(object sender, EventArgs e)
         {
+            preencherCampos();
             verificarProduto();
             letraMaiscula(txtnomeProduto);
 
@@ -504,7 +539,7 @@ namespace TCC.VISÃO
         private void txtnomeProduto_TextChanged(object sender, EventArgs e)
         {
 
-            preencherCampos();
+            txtdata.Text = datadecadastro.ToString();
 
             btnConfirmar.Enabled = true;
 
@@ -573,17 +608,10 @@ namespace TCC.VISÃO
 
 
 
+
         #endregion
 
-        private void dtproduto_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            if(e.ColumnIndex == this.imgexcluir.Index && e.RowIndex >= 0)
-            {
-                excluirProduto();
-
-
-            }
-        }
+       
     }
 
 }

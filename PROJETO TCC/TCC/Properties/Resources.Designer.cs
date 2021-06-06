@@ -343,6 +343,16 @@ namespace TCC.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap editar_datagrid {
+            get {
+                object obj = ResourceManager.GetObject("editar_datagrid", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap emblemdropboxuptodate_103733 {
             get {
                 object obj = ResourceManager.GetObject("emblemdropboxuptodate_103733", resourceCulture);

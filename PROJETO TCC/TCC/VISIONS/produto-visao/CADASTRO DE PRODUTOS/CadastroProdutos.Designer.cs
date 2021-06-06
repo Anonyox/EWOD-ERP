@@ -133,6 +133,7 @@
             // 
             // txtdata
             // 
+            this.txtdata.Enabled = false;
             this.txtdata.Font = new System.Drawing.Font("Comic Sans MS", 12F);
             this.txtdata.Location = new System.Drawing.Point(576, 263);
             this.txtdata.Mask = "00/00/0000";
@@ -455,8 +456,10 @@
             this.DataCadastro,
             this.imgexcluir});
             this.dtproduto.Location = new System.Drawing.Point(2, 433);
+            this.dtproduto.MultiSelect = false;
             this.dtproduto.Name = "dtproduto";
             this.dtproduto.RowHeadersWidth = 51;
+            this.dtproduto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtproduto.Size = new System.Drawing.Size(861, 225);
             this.dtproduto.TabIndex = 178;
             this.dtproduto.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtproduto_CellMouseClick);
@@ -478,7 +481,6 @@
             // imgalterar
             // 
             this.imgalterar.HeaderText = "";
-            this.imgalterar.Image = global::TCC.Properties.Resources.icons8_editar_propriedade_100;
             this.imgalterar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.imgalterar.Name = "imgalterar";
             this.imgalterar.Width = 25;
