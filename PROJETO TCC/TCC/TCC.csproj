@@ -134,6 +134,12 @@
     <EmbeddedResource Include="VISIONS\produto-visao\CADASTRO DE PRODUTOS\CadastroProdutos.resx">
       <DependentUpon>CadastroProdutos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="VISIONS\relatorio-visao\RelatorioEstoque.resx">
+      <DependentUpon>RelatorioEstoque.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VISIONS\relatorio-visao\RelatorioVendas.resx">
+      <DependentUpon>RelatorioVendas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VISIONS\usuarios-visao\CADASTRO DE USUÁRIOS\CadastroUsuario.resx">
       <DependentUpon>CadastroUsuario.cs</DependentUpon>
     </EmbeddedResource>

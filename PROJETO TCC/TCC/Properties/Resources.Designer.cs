@@ -73,6 +73,16 @@ namespace TCC.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1555492a6_111 {
+            get {
+                object obj = ResourceManager.GetObject("1555492a6-111", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap add_77928 {
             get {
                 object obj = ResourceManager.GetObject("add_77928", resourceCulture);
