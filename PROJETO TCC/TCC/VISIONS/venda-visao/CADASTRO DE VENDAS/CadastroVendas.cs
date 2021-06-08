@@ -441,15 +441,12 @@ namespace TCC.VISÃO
         {
             lsbProduto.Enabled = true;
 
-            txttipo.Enabled = true;
-
-            txtvalordeCompra.Enabled = true;
-
-            txtvalorDeVenda.Enabled = true;
-
+            
             txtquantidade.Enabled = true;
 
-            txtestiloModelo.Enabled = true;
+           
+
+            btnAdicionar.Enabled = true;
         } //REATIVA CARRINHO
 
         public void desativaSegundaEtapa()
@@ -698,32 +695,33 @@ namespace TCC.VISÃO
 
         public void btnCancelar_Click(object sender, EventArgs e)
         {
-            #region design
-            lsbProduto.Enabled = false;
-            txttipo.Enabled = false;
-            txtvalordeCompra.Enabled = false;
-            txtvalorDeVenda.Enabled = false;
-            txtquantidade.Enabled = false;
-            txtestiloModelo.Enabled = false;
-
-            btnCadastrar.Enabled = true;
-            btnAdicionar.Enabled = false;
-            btnCancelar.Enabled = false;
-
-            lsbProduto.Text = "";
-            txttipo.Text = "";
-            txtvalordeCompra.Text = "";
-            txtvalorDeVenda.Text = "";
-            txtquantidade.Text = "";
-            txtestiloModelo.Text = "";
-
-            btnCadastrar.Text = "";
-            btnAdicionar.Text = "";
-            btnCancelar.Text = "";
-            #endregion
+            
 
             if (lblteste.Rows.Count == 0)
             {
+                #region design
+                lsbProduto.Enabled = false;
+                txttipo.Enabled = false;
+                txtvalordeCompra.Enabled = false;
+                txtvalorDeVenda.Enabled = false;
+                txtquantidade.Enabled = false;
+                txtestiloModelo.Enabled = false;
+
+                btnCadastrar.Enabled = true;
+                btnAdicionar.Enabled = false;
+                btnCancelar.Enabled = false;
+
+                lsbProduto.Text = "";
+                txttipo.Text = "";
+                txtvalordeCompra.Text = "";
+                txtvalorDeVenda.Text = "";
+                txtquantidade.Text = "";
+                txtestiloModelo.Text = "";
+
+                btnCadastrar.Text = "";
+                btnAdicionar.Text = "";
+                btnCancelar.Text = "";
+                #endregion
                 MessageBox.Show("Operação Cancelada!!", "OPERAÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 btnFinalizar.Enabled = false;
                 
@@ -737,7 +735,26 @@ namespace TCC.VISÃO
                 somaProdutosAdicionadosAoCarrinho();
                 desativaSegundaEtapa();
                 reativaCarrinho();
+               
                 lsbProduto.Focus();
+            }
+            else if (lblteste.Rows.Count != 0)
+            {
+
+                lsbProduto.Text = "";
+                txttipo.Text = "";
+                txtvalordeCompra.Text = "";
+                txtvalorDeVenda.Text = "";
+                txtquantidade.Text = "";
+                txtestiloModelo.Text = "";
+
+                btnCadastrar.Text = "";
+                btnAdicionar.Text = "";
+                btnCancelar.Text = "";
+                retiraDoCarrinho();
+                lsbProduto.Focus();
+                listaCarrinho();
+
             }
             else
             {
@@ -828,7 +845,15 @@ namespace TCC.VISÃO
 
         private void btnFinalizar_Click(object sender, EventArgs e)
         {
-            if (txtTotal.Text == "")
+            btnCancelar.Enabled = true;
+
+             if (lblteste.Rows.Count == 0)
+            {
+                MessageBox.Show("Primeiro adicione um produto!", "Venda", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lsbProduto.Focus();
+            }
+
+            else if (txtTotal.Text != "" && lblteste.Rows.Count != 0)
             {
                 desativaCarrinho();
                 if (MessageBox.Show("Adicionar a forma de Pagamento ?", "Venda", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
@@ -836,23 +861,35 @@ namespace TCC.VISÃO
 
                     ativaSegundaEtapa();
                     lblteste.Enabled = false;
+                    lsbpgt.Focus();
+                    
                 }
                 else
                 {
                     reativaCarrinho();
+                    lsbProduto.Focus();
                 }
             }
-            else
+            
+            else if (lsbpgt.Text != "")
             {
                 if (MessageBox.Show("Adicionar endereço de entrega ?", "Venda", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
                 {
-
+                    desativaSegundaEtapa();
+                    ativaTerceiraEtapa();
+                    txtEndereco.Focus();
                 }
                 else
                 {
-
+                    ativaSegundaEtapa();
+                    lblteste.Enabled = false;
+                    lsbpgt.Focus();
                 }
 
+            }
+            else
+            {
+                MessageBox.Show("Adicione a forma de pagamento!!", "Venda", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
             }
 
         }
