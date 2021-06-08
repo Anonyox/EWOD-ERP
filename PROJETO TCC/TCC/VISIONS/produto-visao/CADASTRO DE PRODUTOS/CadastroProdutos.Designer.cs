@@ -29,29 +29,23 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroProduto));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroProduto));
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.txtnomeProduto = new System.Windows.Forms.TextBox();
             this.txtdata = new System.Windows.Forms.MaskedTextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtquantidadeProduto = new System.Windows.Forms.TextBox();
-            this.txtvalorCompra = new System.Windows.Forms.TextBox();
             this.txtfornecedor = new System.Windows.Forms.TextBox();
             this.txtvalorVenda = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnexcluir = new System.Windows.Forms.Button();
-            this.btnalterar = new System.Windows.Forms.Button();
             this.btnsalvarAlteracao = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnMinimizar = new System.Windows.Forms.PictureBox();
-            this.btnSair = new System.Windows.Forms.PictureBox();
-            this.barra = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblconfirmar = new System.Windows.Forms.Label();
@@ -61,8 +55,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.txttipo = new System.Windows.Forms.TextBox();
             this.dtproduto = new System.Windows.Forms.DataGridView();
-            this.lblcancelar = new System.Windows.Forms.Label();
             this.imgalterar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.imgexcluir = new System.Windows.Forms.DataGridViewImageColumn();
             this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,11 +65,16 @@
             this.valordeCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valordeVenda = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataCadastro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.imgexcluir = new System.Windows.Forms.DataGridViewImageColumn();
+            this.lblcancelar = new System.Windows.Forms.Label();
+            this.txtvalorCompra = new System.Windows.Forms.TextBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btnMinimizar = new System.Windows.Forms.PictureBox();
+            this.btnSair = new System.Windows.Forms.PictureBox();
+            this.lblsalvar = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dtproduto)).BeginInit();
+            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSair)).BeginInit();
-            this.barra.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtproduto)).BeginInit();
             this.SuspendLayout();
             // 
             // btnConfirmar
@@ -89,7 +88,7 @@
             this.btnConfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfirmar.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirmar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.btnConfirmar.Location = new System.Drawing.Point(212, 389);
+            this.btnConfirmar.Location = new System.Drawing.Point(75, 389);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(64, 38);
             this.btnConfirmar.TabIndex = 157;
@@ -109,7 +108,7 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.Transparent;
-            this.btnCancelar.Location = new System.Drawing.Point(282, 389);
+            this.btnCancelar.Location = new System.Drawing.Point(151, 389);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(64, 38);
             this.btnCancelar.TabIndex = 156;
@@ -163,15 +162,6 @@
             this.txtquantidadeProduto.Size = new System.Drawing.Size(100, 30);
             this.txtquantidadeProduto.TabIndex = 7;
             // 
-            // txtvalorCompra
-            // 
-            this.txtvalorCompra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtvalorCompra.Font = new System.Drawing.Font("Comic Sans MS", 12F);
-            this.txtvalorCompra.Location = new System.Drawing.Point(576, 227);
-            this.txtvalorCompra.Name = "txtvalorCompra";
-            this.txtvalorCompra.Size = new System.Drawing.Size(112, 30);
-            this.txtvalorCompra.TabIndex = 6;
-            // 
             // txtfornecedor
             // 
             this.txtfornecedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -203,38 +193,6 @@
             this.label4.TabIndex = 92;
             this.label4.Text = "Tipo :";
             // 
-            // btnexcluir
-            // 
-            this.btnexcluir.BackColor = System.Drawing.Color.Transparent;
-            this.btnexcluir.BackgroundImage = global::TCC.Properties.Resources.icons8_lixeira_vazia_48;
-            this.btnexcluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnexcluir.Enabled = false;
-            this.btnexcluir.FlatAppearance.BorderSize = 0;
-            this.btnexcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnexcluir.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnexcluir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.btnexcluir.Location = new System.Drawing.Point(142, 385);
-            this.btnexcluir.Name = "btnexcluir";
-            this.btnexcluir.Size = new System.Drawing.Size(64, 38);
-            this.btnexcluir.TabIndex = 91;
-            this.btnexcluir.UseVisualStyleBackColor = false;
-            // 
-            // btnalterar
-            // 
-            this.btnalterar.BackColor = System.Drawing.Color.Transparent;
-            this.btnalterar.BackgroundImage = global::TCC.Properties.Resources.icons8_editar_propriedade_100;
-            this.btnalterar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnalterar.Enabled = false;
-            this.btnalterar.FlatAppearance.BorderSize = 0;
-            this.btnalterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnalterar.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnalterar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.btnalterar.Location = new System.Drawing.Point(2, 389);
-            this.btnalterar.Name = "btnalterar";
-            this.btnalterar.Size = new System.Drawing.Size(64, 34);
-            this.btnalterar.TabIndex = 90;
-            this.btnalterar.UseVisualStyleBackColor = false;
-            // 
             // btnsalvarAlteracao
             // 
             this.btnsalvarAlteracao.BackColor = System.Drawing.Color.Transparent;
@@ -245,12 +203,14 @@
             this.btnsalvarAlteracao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnsalvarAlteracao.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnsalvarAlteracao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.btnsalvarAlteracao.Location = new System.Drawing.Point(72, 385);
+            this.btnsalvarAlteracao.Location = new System.Drawing.Point(5, 389);
             this.btnsalvarAlteracao.Name = "btnsalvarAlteracao";
             this.btnsalvarAlteracao.Size = new System.Drawing.Size(64, 38);
             this.btnsalvarAlteracao.TabIndex = 89;
             this.btnsalvarAlteracao.UseVisualStyleBackColor = false;
             this.btnsalvarAlteracao.Click += new System.EventHandler(this.btnsalvarAlteracao_Click);
+            this.btnsalvarAlteracao.MouseEnter += new System.EventHandler(this.btnsalvarAlteracao_MouseEnter);
+            this.btnsalvarAlteracao.MouseLeave += new System.EventHandler(this.btnsalvarAlteracao_MouseLeave);
             // 
             // label7
             // 
@@ -312,43 +272,6 @@
             this.label1.TabIndex = 57;
             this.label1.Text = "Produto :";
             // 
-            // btnMinimizar
-            // 
-            this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
-            this.btnMinimizar.Location = new System.Drawing.Point(786, 3);
-            this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(28, 28);
-            this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnMinimizar.TabIndex = 61;
-            this.btnMinimizar.TabStop = false;
-            this.btnMinimizar.Click += new System.EventHandler(this.btnSair_Click);
-            // 
-            // btnSair
-            // 
-            this.btnSair.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSair.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSair.Image = ((System.Drawing.Image)(resources.GetObject("btnSair.Image")));
-            this.btnSair.Location = new System.Drawing.Point(822, 3);
-            this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(28, 28);
-            this.btnSair.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnSair.TabIndex = 60;
-            this.btnSair.TabStop = false;
-            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
-            // 
-            // barra
-            // 
-            this.barra.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.barra.Controls.Add(this.btnMinimizar);
-            this.barra.Controls.Add(this.btnSair);
-            this.barra.Location = new System.Drawing.Point(0, 0);
-            this.barra.Margin = new System.Windows.Forms.Padding(2);
-            this.barra.Name = "barra";
-            this.barra.Size = new System.Drawing.Size(863, 39);
-            this.barra.TabIndex = 62;
-            // 
             // timer1
             // 
             this.timer1.Interval = 5000;
@@ -370,7 +293,7 @@
             this.lblconfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblconfirmar.Font = new System.Drawing.Font("Comic Sans MS", 7F, System.Drawing.FontStyle.Bold);
             this.lblconfirmar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblconfirmar.Location = new System.Drawing.Point(221, 372);
+            this.lblconfirmar.Location = new System.Drawing.Point(84, 372);
             this.lblconfirmar.Name = "lblconfirmar";
             this.lblconfirmar.Size = new System.Drawing.Size(55, 14);
             this.lblconfirmar.TabIndex = 172;
@@ -434,6 +357,7 @@
             // 
             // dtproduto
             // 
+            this.dtproduto.AllowUserToAddRows = false;
             this.dtproduto.BackgroundColor = System.Drawing.Color.Lavender;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -446,6 +370,7 @@
             this.dtproduto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtproduto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.imgalterar,
+            this.imgexcluir,
             this.nome,
             this.fornecedor,
             this.tipo,
@@ -453,8 +378,7 @@
             this.quantidade,
             this.valordeCompra,
             this.valordeVenda,
-            this.DataCadastro,
-            this.imgexcluir});
+            this.DataCadastro});
             this.dtproduto.Location = new System.Drawing.Point(2, 433);
             this.dtproduto.MultiSelect = false;
             this.dtproduto.Name = "dtproduto";
@@ -464,26 +388,22 @@
             this.dtproduto.TabIndex = 178;
             this.dtproduto.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtproduto_CellMouseClick);
             // 
-            // lblcancelar
-            // 
-            this.lblcancelar.AutoSize = true;
-            this.lblcancelar.BackColor = System.Drawing.Color.Transparent;
-            this.lblcancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblcancelar.Font = new System.Drawing.Font("Comic Sans MS", 7F, System.Drawing.FontStyle.Bold);
-            this.lblcancelar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblcancelar.Location = new System.Drawing.Point(290, 372);
-            this.lblcancelar.Name = "lblcancelar";
-            this.lblcancelar.Size = new System.Drawing.Size(49, 14);
-            this.lblcancelar.TabIndex = 179;
-            this.lblcancelar.Text = "Cancelar";
-            this.lblcancelar.Visible = false;
-            // 
             // imgalterar
             // 
             this.imgalterar.HeaderText = "";
             this.imgalterar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.imgalterar.Name = "imgalterar";
             this.imgalterar.Width = 25;
+            // 
+            // imgexcluir
+            // 
+            this.imgexcluir.HeaderText = "";
+            this.imgexcluir.Image = global::TCC.Properties.Resources.icons8_lixeira_vazia_48;
+            this.imgexcluir.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.imgexcluir.Name = "imgexcluir";
+            this.imgexcluir.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.imgexcluir.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.imgexcluir.Width = 25;
             // 
             // nome
             // 
@@ -528,15 +448,79 @@
             this.DataCadastro.HeaderText = "DatadeCadastro";
             this.DataCadastro.Name = "DataCadastro";
             // 
-            // imgexcluir
+            // lblcancelar
             // 
-            this.imgexcluir.HeaderText = "";
-            this.imgexcluir.Image = global::TCC.Properties.Resources.icons8_lixeira_vazia_48;
-            this.imgexcluir.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.imgexcluir.Name = "imgexcluir";
-            this.imgexcluir.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.imgexcluir.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.imgexcluir.Width = 25;
+            this.lblcancelar.AutoSize = true;
+            this.lblcancelar.BackColor = System.Drawing.Color.Transparent;
+            this.lblcancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblcancelar.Font = new System.Drawing.Font("Comic Sans MS", 7F, System.Drawing.FontStyle.Bold);
+            this.lblcancelar.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblcancelar.Location = new System.Drawing.Point(162, 372);
+            this.lblcancelar.Name = "lblcancelar";
+            this.lblcancelar.Size = new System.Drawing.Size(49, 14);
+            this.lblcancelar.TabIndex = 179;
+            this.lblcancelar.Text = "Cancelar";
+            this.lblcancelar.Visible = false;
+            // 
+            // txtvalorCompra
+            // 
+            this.txtvalorCompra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtvalorCompra.Font = new System.Drawing.Font("Comic Sans MS", 12F);
+            this.txtvalorCompra.Location = new System.Drawing.Point(576, 224);
+            this.txtvalorCompra.Name = "txtvalorCompra";
+            this.txtvalorCompra.Size = new System.Drawing.Size(100, 30);
+            this.txtvalorCompra.TabIndex = 180;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.panel3.Controls.Add(this.btnMinimizar);
+            this.panel3.Controls.Add(this.btnSair);
+            this.panel3.Location = new System.Drawing.Point(-2, -10);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(865, 46);
+            this.panel3.TabIndex = 181;
+            // 
+            // btnMinimizar
+            // 
+            this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
+            this.btnMinimizar.Location = new System.Drawing.Point(801, 15);
+            this.btnMinimizar.Name = "btnMinimizar";
+            this.btnMinimizar.Size = new System.Drawing.Size(28, 28);
+            this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnMinimizar.TabIndex = 48;
+            this.btnMinimizar.TabStop = false;
+            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
+            // 
+            // btnSair
+            // 
+            this.btnSair.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSair.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSair.Image = ((System.Drawing.Image)(resources.GetObject("btnSair.Image")));
+            this.btnSair.Location = new System.Drawing.Point(835, 15);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(28, 28);
+            this.btnSair.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnSair.TabIndex = 49;
+            this.btnSair.TabStop = false;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click_1);
+            // 
+            // lblsalvar
+            // 
+            this.lblsalvar.AutoSize = true;
+            this.lblsalvar.BackColor = System.Drawing.Color.Transparent;
+            this.lblsalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblsalvar.Font = new System.Drawing.Font("Comic Sans MS", 7F, System.Drawing.FontStyle.Bold);
+            this.lblsalvar.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblsalvar.Location = new System.Drawing.Point(18, 372);
+            this.lblsalvar.Name = "lblsalvar";
+            this.lblsalvar.Size = new System.Drawing.Size(39, 14);
+            this.lblsalvar.TabIndex = 182;
+            this.lblsalvar.Text = "Salvar";
+            this.lblsalvar.Visible = false;
             // 
             // CadastroProduto
             // 
@@ -546,6 +530,9 @@
             this.BackgroundImage = global::TCC.Properties.Resources._1555492a6_11;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(863, 654);
+            this.Controls.Add(this.lblsalvar);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.txtvalorCompra);
             this.Controls.Add(this.lblcancelar);
             this.Controls.Add(this.dtproduto);
             this.Controls.Add(this.txttipo);
@@ -561,18 +548,14 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtnomeProduto);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.barra);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtfornecedor);
-            this.Controls.Add(this.btnexcluir);
             this.Controls.Add(this.txtquantidadeProduto);
             this.Controls.Add(this.txtvalorVenda);
-            this.Controls.Add(this.btnalterar);
-            this.Controls.Add(this.txtvalorCompra);
             this.Controls.Add(this.btnsalvarAlteracao);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -581,10 +564,11 @@
             this.Text = "CADASTRARPRODUTO";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CADASTRARPRODUTO_FormClosed);
             this.Load += new System.EventHandler(this.CadastroProduto_Load_1);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.CadastroProduto_MouseMove);
+            ((System.ComponentModel.ISupportInitialize)(this.dtproduto)).EndInit();
+            this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSair)).EndInit();
-            this.barra.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtproduto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -597,18 +581,12 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtquantidadeProduto;
-        private System.Windows.Forms.TextBox txtvalorCompra;
         private System.Windows.Forms.TextBox txtfornecedor;
         private System.Windows.Forms.TextBox txtvalorVenda;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnexcluir;
-        private System.Windows.Forms.Button btnalterar;
         private System.Windows.Forms.Button btnsalvarAlteracao;
-        private System.Windows.Forms.PictureBox btnMinimizar;
-        private System.Windows.Forms.PictureBox btnSair;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.MaskedTextBox txtdata;
-        private System.Windows.Forms.Panel barra;
         private System.Windows.Forms.TextBox txtnomeProduto;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button btnCancelar;
@@ -623,6 +601,7 @@
         private System.Windows.Forms.DataGridView dtproduto;
         private System.Windows.Forms.Label lblcancelar;
         private System.Windows.Forms.DataGridViewImageColumn imgalterar;
+        private System.Windows.Forms.DataGridViewImageColumn imgexcluir;
         private System.Windows.Forms.DataGridViewTextBoxColumn nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn fornecedor;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipo;
@@ -631,6 +610,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn valordeCompra;
         private System.Windows.Forms.DataGridViewTextBoxColumn valordeVenda;
         private System.Windows.Forms.DataGridViewTextBoxColumn DataCadastro;
-        private System.Windows.Forms.DataGridViewImageColumn imgexcluir;
+        private System.Windows.Forms.TextBox txtvalorCompra;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.PictureBox btnMinimizar;
+        private System.Windows.Forms.PictureBox btnSair;
+        private System.Windows.Forms.Label lblsalvar;
     }
 }

@@ -219,3 +219,5 @@ C:\Users\LukasPC\Source\Repos\EWOD-ERP\PROJETO TCC\TCC\obj\Debug\TCC.pdb
 C:\Users\LukasPC\Source\Repos\EWOD-ERP\PROJETO TCC\TCC\obj\Debug\TCC.csprojAssemblyReference.cache
 C:\Users\LukasPC\Source\Repos\EWOD-ERP\PROJETO TCC\TCC\obj\Debug\TCC.VISÃO.RelatorioEstoque.resources
 C:\Users\LukasPC\Source\Repos\EWOD-ERP\PROJETO TCC\TCC\obj\Debug\TCC.VISÃO.RelatorioVendas.resources
+C:\Users\Pedro\source\repos\EWOD-ERP\PROJETO TCC\TCC\obj\Debug\TCC.VISÃO.RelatorioEstoque.resources
+C:\Users\Pedro\source\repos\EWOD-ERP\PROJETO TCC\TCC\obj\Debug\TCC.VISÃO.RelatorioVendas.resources

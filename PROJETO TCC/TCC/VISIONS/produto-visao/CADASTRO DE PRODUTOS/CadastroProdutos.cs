@@ -43,6 +43,7 @@ namespace TCC.VISÃO
 
         string nomeAnterior = "";
 
+        int validamsg = 0;
 
 
         #endregion
@@ -72,14 +73,14 @@ namespace TCC.VISÃO
 
                 int n = dtproduto.Rows.Add();
                 dtproduto.Rows[n].Cells[0].Value = Properties.Resources.editar_datagrid;
-                dtproduto.Rows[n].Cells[1].Value = item["nome"].ToString();
-                dtproduto.Rows[n].Cells[2].Value = item["fornecedor"].ToString();
-                dtproduto.Rows[n].Cells[3].Value = item["tipo"].ToString();
-                dtproduto.Rows[n].Cells[4].Value = item["modelo"].ToString();
-                dtproduto.Rows[n].Cells[5].Value = item["quantidade"].ToString();
-                dtproduto.Rows[n].Cells[6].Value = item["valordecompra"].ToString();
-                dtproduto.Rows[n].Cells[7].Value = item["valordevenda"].ToString();
-                dtproduto.Rows[n].Cells[8].Value = item["dataDeCadastro"].ToString();
+                dtproduto.Rows[n].Cells[2].Value = item["nome"].ToString();
+                dtproduto.Rows[n].Cells[3].Value = item["fornecedor"].ToString();
+                dtproduto.Rows[n].Cells[4].Value = item["tipo"].ToString();
+                dtproduto.Rows[n].Cells[5].Value = item["modelo"].ToString();
+                dtproduto.Rows[n].Cells[6].Value = item["quantidade"].ToString();
+                dtproduto.Rows[n].Cells[7].Value = item["valordecompra"].ToString();
+                dtproduto.Rows[n].Cells[8].Value = item["valordevenda"].ToString();
+                dtproduto.Rows[n].Cells[9].Value = item["dataDeCadastro"].ToString();
 
 
 
@@ -396,8 +397,23 @@ namespace TCC.VISÃO
 
 
         #region DESIGN
+
+        private void CadastroProduto_MouseMove(object sender, MouseEventArgs e)
+        {
+            if(validamsg == 0)
+            {
+                MessageBox.Show("Para adicionar um produto ao estoque, digite seu nome primeiro", "INFORMAÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            validamsg = 1;
+        }
+
+
+
         private void CadastroProduto_Load_1(object sender, EventArgs e)
         {
+            
+
+
             txtdata.ReadOnly = true;
             txtdata.Text = datadecadastro.ToString();
 
@@ -436,14 +452,14 @@ namespace TCC.VISÃO
             else if (dtproduto.SelectedRows.Count >= 0)
             {
 
-                txtnomeProduto.Text = dtproduto.SelectedRows[0].Cells[1].Value.ToString();
-                txtfornecedor.Text = dtproduto.SelectedRows[0].Cells[2].Value.ToString();
-                txttipo.Text = dtproduto.SelectedRows[0].Cells[3].Value.ToString();
-                txtmodeloProduto.Text = dtproduto.SelectedRows[0].Cells[4].Value.ToString();
-                txtquantidadeProduto.Text = dtproduto.SelectedRows[0].Cells[5].Value.ToString();
-                txtvalorCompra.Text = dtproduto.SelectedRows[0].Cells[6].Value.ToString();
-                txtvalorVenda.Text = dtproduto.SelectedRows[0].Cells[7].Value.ToString();
-                txtdata.Text = dtproduto.SelectedRows[0].Cells[8].Value.ToString();
+                txtnomeProduto.Text = dtproduto.SelectedRows[0].Cells[2].Value.ToString();
+                txtfornecedor.Text = dtproduto.SelectedRows[0].Cells[3].Value.ToString();
+                txttipo.Text = dtproduto.SelectedRows[0].Cells[4].Value.ToString();
+                txtmodeloProduto.Text = dtproduto.SelectedRows[0].Cells[5].Value.ToString();
+                txtquantidadeProduto.Text = dtproduto.SelectedRows[0].Cells[6].Value.ToString();
+                txtvalorCompra.Text = dtproduto.SelectedRows[0].Cells[7].Value.ToString();
+                txtvalorVenda.Text = dtproduto.SelectedRows[0].Cells[8].Value.ToString();
+                txtdata.Text = dtproduto.SelectedRows[0].Cells[9].Value.ToString();
 
 
             }
@@ -516,6 +532,7 @@ namespace TCC.VISÃO
         private void btnConfirmar_MouseEnter(object sender, EventArgs e)
         {
             lblconfirmar.Visible = true;
+            btnConfirmar.Size = new Size(68, 40);
         }
 
 
@@ -524,6 +541,7 @@ namespace TCC.VISÃO
         private void btnConfirmar_MouseLeave(object sender, EventArgs e)
         {
             lblconfirmar.Visible = false;
+            btnConfirmar.Size = new Size(64, 38);
         }
 
 
@@ -602,15 +620,38 @@ namespace TCC.VISÃO
         private void btnCancelar_MouseEnter(object sender, EventArgs e)
         {
             lblcancelar.Visible = true;
+            btnCancelar.Size = new Size(68, 40);
         }
 
         private void btnCancelar_MouseLeave(object sender, EventArgs e)
         {
             lblcancelar.Visible = false;
+            btnCancelar.Size = new Size(64, 38);
         }
 
 
+        private void btnSair_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
+        private void btnMinimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnsalvarAlteracao_MouseEnter(object sender, EventArgs e)
+        {
+            lblsalvar.Visible = true;
+            btnsalvarAlteracao.Size = new Size(68, 40);
+        }
+
+        private void btnsalvarAlteracao_MouseLeave(object sender, EventArgs e)
+        {
+            lblsalvar.Visible = false;
+            btnsalvarAlteracao.Size = new Size(64, 38);
+
+        }
 
 
         #endregion

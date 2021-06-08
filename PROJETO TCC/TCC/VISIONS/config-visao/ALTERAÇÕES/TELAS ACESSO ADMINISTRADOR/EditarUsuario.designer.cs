@@ -89,6 +89,7 @@ namespace TCC.VISÃO
             this.lblcancelar = new System.Windows.Forms.Label();
             this.lblexcluir = new System.Windows.Forms.Label();
             this.btnexcluir = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSair)).BeginInit();
@@ -102,7 +103,7 @@ namespace TCC.VISÃO
             this.panel3.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.panel3.Controls.Add(this.btnMinimizar);
             this.panel3.Controls.Add(this.btnSair);
-            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Location = new System.Drawing.Point(-2, -10);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(865, 46);
@@ -318,7 +319,7 @@ namespace TCC.VISÃO
             this.lblnomeUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblnomeUsuario.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
             this.lblnomeUsuario.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblnomeUsuario.Location = new System.Drawing.Point(56, 62);
+            this.lblnomeUsuario.Location = new System.Drawing.Point(57, 81);
             this.lblnomeUsuario.Name = "lblnomeUsuario";
             this.lblnomeUsuario.Size = new System.Drawing.Size(88, 23);
             this.lblnomeUsuario.TabIndex = 150;
@@ -527,7 +528,7 @@ namespace TCC.VISÃO
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(598, 64);
+            this.label1.Location = new System.Drawing.Point(598, 80);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 23);
             this.label1.TabIndex = 157;
@@ -542,7 +543,7 @@ namespace TCC.VISÃO
             "Geral",
             "Venda",
             "Compra"});
-            this.cbperfilUsuario.Location = new System.Drawing.Point(674, 62);
+            this.cbperfilUsuario.Location = new System.Drawing.Point(674, 78);
             this.cbperfilUsuario.Name = "cbperfilUsuario";
             this.cbperfilUsuario.Size = new System.Drawing.Size(140, 31);
             this.cbperfilUsuario.TabIndex = 159;
@@ -577,7 +578,7 @@ namespace TCC.VISÃO
             // txtnomeUsuario
             // 
             this.txtnomeUsuario.Font = new System.Drawing.Font("Comic Sans MS", 12F);
-            this.txtnomeUsuario.Location = new System.Drawing.Point(146, 57);
+            this.txtnomeUsuario.Location = new System.Drawing.Point(147, 76);
             this.txtnomeUsuario.Name = "txtnomeUsuario";
             this.txtnomeUsuario.Size = new System.Drawing.Size(181, 30);
             this.txtnomeUsuario.TabIndex = 162;
@@ -706,6 +707,17 @@ namespace TCC.VISÃO
             this.btnexcluir.MouseEnter += new System.EventHandler(this.btnexcluir_MouseEnter_1);
             this.btnexcluir.MouseLeave += new System.EventHandler(this.btnexcluir_MouseLeave_1);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Orange;
+            this.label3.Location = new System.Drawing.Point(377, 38);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(149, 21);
+            this.label3.TabIndex = 175;
+            this.label3.Text = "EDITAR USUÁRIO";
+            // 
             // EditarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -714,6 +726,7 @@ namespace TCC.VISÃO
             this.BackgroundImage = global::TCC.Properties.Resources._1555492a6_11;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(863, 654);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnexcluir);
             this.Controls.Add(this.lblexcluir);
             this.Controls.Add(this.lblcancelar);
@@ -826,5 +839,6 @@ namespace TCC.VISÃO
         private System.Windows.Forms.DataGridViewTextBoxColumn numero;
         private System.Windows.Forms.DataGridViewTextBoxColumn email;
         private System.Windows.Forms.DataGridViewTextBoxColumn departamento;
+        private System.Windows.Forms.Label label3;
     }
 }

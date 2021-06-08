@@ -205,11 +205,15 @@ namespace TCC.VISÃO
             timer1.Start();
         }
 
+
+        private void btnMinimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+
+
         #endregion
-
-
-
-
 
 
     }
