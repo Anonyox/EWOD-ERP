@@ -12,10 +12,37 @@ namespace TCC.VISÃO
 {
     public partial class RelatorioEstoque : Form
     {
+        #region VARIÁVEIS E INSTÂNCIAS
+
+        #endregion
+
+
+
+
+
+
+        #region CONSTRUTOR
         public RelatorioEstoque()
         {
             InitializeComponent();
         }
+        #endregion
+
+
+
+
+
+
+        #region MÉTODOS DE FUNCIONALIDADES
+
+        #endregion
+
+
+
+
+
+
+        #region DESIGN 
 
         private void btnSair_Click(object sender, EventArgs e)
         {
@@ -26,5 +53,7 @@ namespace TCC.VISÃO
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        #endregion
     }
 }
