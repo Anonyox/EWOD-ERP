@@ -110,7 +110,7 @@ namespace TCC.VISÃO
             {
                 MessageBox.Show(ex.Message);
                 throw;
-            } 
+            }
         }   //INICIA AUTO COMPLETE
 
         public void limpaCampos()
@@ -129,7 +129,7 @@ namespace TCC.VISÃO
             {
                 string usuario = Convert.ToString(lsbProduto.Text);
                 //Elaborar Select que contenha cada um dos campos da tabela
-                SqlCommand cmd = new SqlCommand("SELECT P.tipo, format(P.valordeCompra, 'c', 'pt-br') as valordeCompra, format(P.valordeVenda, 'c', 'pt-br') as valordeVenda, P.modelo FROM produtos P INNER JOIN estoqueProdutos E ON P.nome = @param AND  P.codProduto = E.idProduto AND E.Quantidade > 0 ",  con.conectar());
+                SqlCommand cmd = new SqlCommand("SELECT P.tipo, format(P.valordeCompra, 'c', 'pt-br') as valordeCompra, format(P.valordeVenda, 'c', 'pt-br') as valordeVenda, P.modelo FROM produtos P INNER JOIN estoqueProdutos E ON P.nome = @param AND  P.codProduto = E.idProduto AND E.Quantidade > 0 ", con.conectar());
                 cmd.Parameters.AddWithValue("@param", lsbProduto.Text);
 
                 dr = cmd.ExecuteReader();
@@ -334,7 +334,7 @@ namespace TCC.VISÃO
             if (controleVenda.tem)
             {
                 MessageBox.Show(mensagem, "Carrinho", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtTotal.Text = string.Format("{0:C}",0);
+                txtTotal.Text = string.Format("{0:C}", 0);
                 btnFinalizar.Enabled = false;
 
 
@@ -441,10 +441,10 @@ namespace TCC.VISÃO
         {
             lsbProduto.Enabled = true;
 
-            
+
             txtquantidade.Enabled = true;
 
-           
+
 
             btnAdicionar.Enabled = true;
         } //REATIVA CARRINHO
@@ -589,7 +589,7 @@ namespace TCC.VISÃO
 
                 }
 
-                
+
 
 
 
@@ -616,7 +616,7 @@ namespace TCC.VISÃO
             foreach (DataGridViewRow dr in lblteste.Rows)
             {
 
-                
+
                 string nome = Convert.ToString(dr.Cells["produtoPedido"].Value);
 
 
@@ -626,26 +626,26 @@ namespace TCC.VISÃO
 
 
 
-            string quantidadeDoProduto = controleVenda.verificaQuantidadeRestanteNoEstoque(nome);
-            qtdEstoque = float.Parse(quantidadeDoProduto);
+                string quantidadeDoProduto = controleVenda.verificaQuantidadeRestanteNoEstoque(nome);
+                qtdEstoque = float.Parse(quantidadeDoProduto);
 
 
-            if (controleVenda.tem)
-            {
+                if (controleVenda.tem)
+                {
 
 
-                novaQtd = qtdBaixada + qtdEstoque;
+                    novaQtd = qtdBaixada + qtdEstoque;
 
-                novaBaixa = novaQtd.ToString();
+                    novaBaixa = novaQtd.ToString();
 
-                tem = controleVenda.baixarEstoque(nome, novaBaixa);
-
-                  
-
+                    tem = controleVenda.baixarEstoque(nome, novaBaixa);
 
 
 
-            }
+
+
+
+                }
 
             }
         }
@@ -695,7 +695,7 @@ namespace TCC.VISÃO
 
         public void btnCancelar_Click(object sender, EventArgs e)
         {
-            
+
 
             if (lblteste.Rows.Count == 0)
             {
@@ -724,8 +724,8 @@ namespace TCC.VISÃO
                 #endregion
                 MessageBox.Show("Operação Cancelada!!", "OPERAÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 btnFinalizar.Enabled = false;
-                
-                
+
+
 
             }
 
@@ -735,7 +735,7 @@ namespace TCC.VISÃO
                 somaProdutosAdicionadosAoCarrinho();
                 desativaSegundaEtapa();
                 reativaCarrinho();
-               
+
                 lsbProduto.Focus();
             }
             else if (lblteste.Rows.Count != 0)
@@ -758,15 +758,15 @@ namespace TCC.VISÃO
             }
             else
             {
-                
+
                 retiraDoCarrinho();
                 listaCarrinho();
 
                 lsbProduto.Enabled = true;
-                
-               
+
+
                 txtquantidade.Enabled = true;
-                
+
 
                 btnCadastrar.Enabled = false;
                 btnAdicionar.Enabled = true;
@@ -782,7 +782,7 @@ namespace TCC.VISÃO
         {
             if (!verificaSeOMesmoProdutoJaFoiInserido())
             {
-                
+
                 adicionaAoCarrinho();
                 somaProdutosAdicionadosAoCarrinho();
                 lsbProduto.Text = null;
@@ -847,13 +847,13 @@ namespace TCC.VISÃO
         {
             btnCancelar.Enabled = true;
 
-             if (lblteste.Rows.Count == 0)
+            if (lblteste.Rows.Count == 0)
             {
                 MessageBox.Show("Primeiro adicione um produto!", "Venda", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 lsbProduto.Focus();
             }
 
-            else if (txtTotal.Text != "" && lblteste.Rows.Count != 0)
+            else if (lblteste.Rows.Count != 0 && txtDesconto.Enabled == false)
             {
                 desativaCarrinho();
                 if (MessageBox.Show("Adicionar a forma de Pagamento ?", "Venda", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
@@ -862,7 +862,7 @@ namespace TCC.VISÃO
                     ativaSegundaEtapa();
                     lblteste.Enabled = false;
                     lsbpgt.Focus();
-                    
+
                 }
                 else
                 {
@@ -870,7 +870,13 @@ namespace TCC.VISÃO
                     lsbProduto.Focus();
                 }
             }
-            
+
+            else if (lsbpgt.Text == "")
+            {
+                MessageBox.Show("Adicione a forma de Pagamento!", "Venda", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lsbpgt.Focus();
+            }
+
             else if (lsbpgt.Text != "")
             {
                 if (MessageBox.Show("Adicionar endereço de entrega ?", "Venda", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
@@ -887,11 +893,8 @@ namespace TCC.VISÃO
                 }
 
             }
-            else
-            {
-                MessageBox.Show("Adicione a forma de pagamento!!", "Venda", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
-            }
 
+            
         }
 
         private void lsbProduto_Leave(object sender, EventArgs e)
@@ -979,7 +982,7 @@ namespace TCC.VISÃO
                 // mostra o form...
                 //MessageBox.Show(Convert.ToString(currentRow.Cells[0].Value));
 
-               
+
                 deletaProdutoSelecionadoDoCarrinho();
                 txtTotal.Text = string.Format("{0:C}", 0);
                 somaProdutosAdicionadosAoCarrinho();

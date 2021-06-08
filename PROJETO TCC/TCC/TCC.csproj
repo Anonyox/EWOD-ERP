@@ -49,9 +49,13 @@
     <Compile Include="CONTROLS\produto-controledao\PRODUTOS\cadastroprodutoDaoComandos.cs" />
     <Compile Include="BANCO\Conexao.cs" />
     <Compile Include="CONTROLS\config-controledao\CONFIG SISTEMA\configsistemaDaoComandos.cs" />
+    <Compile Include="CONTROLS\relatorio-controledao\PRODUTOS\relatorioEstoqueDaoComandos.cs" />
+    <Compile Include="CONTROLS\relatorio-controledao\VENDAS\relatorioVendasDaoComandos.cs" />
     <Compile Include="CONTROLS\usuarios-controledao\USUARIO\loginDaoComandos.cs" />
     <Compile Include="CONTROLS\venda-controledao\VENDAS\vendaDaoComandos.cs" />
     <Compile Include="MODELS\produto-modelo\produtoControle.cs" />
+    <Compile Include="MODELS\relatorio-modelo\relatorioEstoqueControle.cs" />
+    <Compile Include="MODELS\relatorio-modelo\relatorioVendasControle.cs" />
     <Compile Include="MODELS\usuarios-modelo\USUARIO\Controle.cs" />
     <Compile Include="MODELS\config-modelo\CONFIG SISTEMA\ControleConfigSistema.cs" />
     <Compile Include="MODELS\venda-modelo\VENDAS\ControleVenda.cs" />
@@ -378,9 +382,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="CONTROLS\cliente-controledao\" />
-    <Folder Include="CONTROLS\relatorio-controledao\" />
     <Folder Include="MODELS\cliente-modelo\" />
-    <Folder Include="MODELS\relatorio-modelo\" />
     <Folder Include="VISIONS\cliente-visao\" />
   </ItemGroup>
   <ItemGroup>
