@@ -72,14 +72,14 @@ namespace TCC.VISÃO
 
                 int n = dtproduto.Rows.Add();
                 dtproduto.Rows[n].Cells[0].Value = Properties.Resources.editar_datagrid;
-                dtproduto.Rows[n].Cells[1].Value = item["nome"].ToString();
-                dtproduto.Rows[n].Cells[2].Value = item["fornecedor"].ToString();
-                dtproduto.Rows[n].Cells[3].Value = item["tipo"].ToString();
-                dtproduto.Rows[n].Cells[4].Value = item["modelo"].ToString();
-                dtproduto.Rows[n].Cells[5].Value = item["quantidade"].ToString();
-                dtproduto.Rows[n].Cells[6].Value = item["valordecompra"].ToString();
-                dtproduto.Rows[n].Cells[7].Value = item["valordevenda"].ToString();
-                dtproduto.Rows[n].Cells[8].Value = item["dataDeCadastro"].ToString();
+                dtproduto.Rows[n].Cells[2].Value = item["nome"].ToString();
+                dtproduto.Rows[n].Cells[3].Value = item["fornecedor"].ToString();
+                dtproduto.Rows[n].Cells[4].Value = item["tipo"].ToString();
+                dtproduto.Rows[n].Cells[5].Value = item["modelo"].ToString();
+                dtproduto.Rows[n].Cells[6].Value = item["quantidade"].ToString();
+                dtproduto.Rows[n].Cells[7].Value = item["valordecompra"].ToString();
+                dtproduto.Rows[n].Cells[8].Value = item["valordevenda"].ToString();
+                dtproduto.Rows[n].Cells[9].Value = item["dataDeCadastro"].ToString();
 
 
 
@@ -436,14 +436,14 @@ namespace TCC.VISÃO
             else if (dtproduto.SelectedRows.Count >= 0)
             {
 
-                txtnomeProduto.Text = dtproduto.SelectedRows[0].Cells[1].Value.ToString();
-                txtfornecedor.Text = dtproduto.SelectedRows[0].Cells[2].Value.ToString();
-                txttipo.Text = dtproduto.SelectedRows[0].Cells[3].Value.ToString();
-                txtmodeloProduto.Text = dtproduto.SelectedRows[0].Cells[4].Value.ToString();
-                txtquantidadeProduto.Text = dtproduto.SelectedRows[0].Cells[5].Value.ToString();
-                txtvalorCompra.Text = dtproduto.SelectedRows[0].Cells[6].Value.ToString();
-                txtvalorVenda.Text = dtproduto.SelectedRows[0].Cells[7].Value.ToString();
-                txtdata.Text = dtproduto.SelectedRows[0].Cells[8].Value.ToString();
+                txtnomeProduto.Text = dtproduto.SelectedRows[0].Cells[2].Value.ToString();
+                txtfornecedor.Text = dtproduto.SelectedRows[0].Cells[3].Value.ToString();
+                txttipo.Text = dtproduto.SelectedRows[0].Cells[4].Value.ToString();
+                txtmodeloProduto.Text = dtproduto.SelectedRows[0].Cells[5].Value.ToString();
+                txtquantidadeProduto.Text = dtproduto.SelectedRows[0].Cells[6].Value.ToString();
+                txtvalorCompra.Text = dtproduto.SelectedRows[0].Cells[7].Value.ToString();
+                txtvalorVenda.Text = dtproduto.SelectedRows[0].Cells[8].Value.ToString();
+                txtdata.Text = dtproduto.SelectedRows[0].Cells[9].Value.ToString();
 
 
             }
@@ -610,12 +610,20 @@ namespace TCC.VISÃO
         }
 
 
+        private void btnSair_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
+        private void btnMinimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
 
 
         #endregion
 
-       
+
     }
 
 }
