@@ -43,6 +43,7 @@ namespace TCC.VISÃO
 
         string nomeAnterior = "";
 
+        int validamsg = 0;
 
 
         #endregion
@@ -396,9 +397,21 @@ namespace TCC.VISÃO
 
 
         #region DESIGN
+
+        private void CadastroProduto_MouseMove(object sender, MouseEventArgs e)
+        {
+            if(validamsg == 0)
+            {
+                MessageBox.Show("Para adicionar um produto ao estoque, digite seu nome primeiro", "INFORMAÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            validamsg = 1;
+        }
+
+
+
         private void CadastroProduto_Load_1(object sender, EventArgs e)
         {
-            MessageBox.Show("Para adicionar um produto ao estoque, digite seu nome primeiro", "INFORMAÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            
 
 
             txtdata.ReadOnly = true;
@@ -640,9 +653,10 @@ namespace TCC.VISÃO
 
         }
 
+
         #endregion
 
-
+       
     }
 
 }
