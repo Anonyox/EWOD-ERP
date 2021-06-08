@@ -516,6 +516,7 @@ namespace TCC.VISÃO
         private void btnConfirmar_MouseEnter(object sender, EventArgs e)
         {
             lblconfirmar.Visible = true;
+            btnConfirmar.Size = new Size(68, 40);
         }
 
 
@@ -524,6 +525,7 @@ namespace TCC.VISÃO
         private void btnConfirmar_MouseLeave(object sender, EventArgs e)
         {
             lblconfirmar.Visible = false;
+            btnConfirmar.Size = new Size(64, 38);
         }
 
 
@@ -602,11 +604,13 @@ namespace TCC.VISÃO
         private void btnCancelar_MouseEnter(object sender, EventArgs e)
         {
             lblcancelar.Visible = true;
+            btnCancelar.Size = new Size(68, 40);
         }
 
         private void btnCancelar_MouseLeave(object sender, EventArgs e)
         {
             lblcancelar.Visible = false;
+            btnCancelar.Size = new Size(64, 38);
         }
 
 
@@ -620,6 +624,18 @@ namespace TCC.VISÃO
             this.WindowState = FormWindowState.Minimized;
         }
 
+        private void btnsalvarAlteracao_MouseEnter(object sender, EventArgs e)
+        {
+            lblsalvar.Visible = true;
+            btnsalvarAlteracao.Size = new Size(68, 40);
+        }
+
+        private void btnsalvarAlteracao_MouseLeave(object sender, EventArgs e)
+        {
+            lblsalvar.Visible = false;
+            btnsalvarAlteracao.Size = new Size(64, 38);
+
+        }
 
         #endregion
 

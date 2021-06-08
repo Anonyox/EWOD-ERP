@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroProduto));
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -40,8 +40,6 @@
             this.txtfornecedor = new System.Windows.Forms.TextBox();
             this.txtvalorVenda = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnexcluir = new System.Windows.Forms.Button();
-            this.btnalterar = new System.Windows.Forms.Button();
             this.btnsalvarAlteracao = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -57,7 +55,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.txttipo = new System.Windows.Forms.TextBox();
             this.dtproduto = new System.Windows.Forms.DataGridView();
-            this.lblcancelar = new System.Windows.Forms.Label();
             this.imgalterar = new System.Windows.Forms.DataGridViewImageColumn();
             this.imgexcluir = new System.Windows.Forms.DataGridViewImageColumn();
             this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,10 +65,12 @@
             this.valordeCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valordeVenda = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataCadastro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblcancelar = new System.Windows.Forms.Label();
             this.txtvalorCompra = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.btnSair = new System.Windows.Forms.PictureBox();
+            this.lblsalvar = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtproduto)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
@@ -89,7 +88,7 @@
             this.btnConfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfirmar.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirmar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.btnConfirmar.Location = new System.Drawing.Point(212, 389);
+            this.btnConfirmar.Location = new System.Drawing.Point(75, 389);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(64, 38);
             this.btnConfirmar.TabIndex = 157;
@@ -109,7 +108,7 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.Transparent;
-            this.btnCancelar.Location = new System.Drawing.Point(282, 389);
+            this.btnCancelar.Location = new System.Drawing.Point(151, 389);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(64, 38);
             this.btnCancelar.TabIndex = 156;
@@ -194,38 +193,6 @@
             this.label4.TabIndex = 92;
             this.label4.Text = "Tipo :";
             // 
-            // btnexcluir
-            // 
-            this.btnexcluir.BackColor = System.Drawing.Color.Transparent;
-            this.btnexcluir.BackgroundImage = global::TCC.Properties.Resources.icons8_lixeira_vazia_48;
-            this.btnexcluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnexcluir.Enabled = false;
-            this.btnexcluir.FlatAppearance.BorderSize = 0;
-            this.btnexcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnexcluir.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnexcluir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.btnexcluir.Location = new System.Drawing.Point(142, 385);
-            this.btnexcluir.Name = "btnexcluir";
-            this.btnexcluir.Size = new System.Drawing.Size(64, 38);
-            this.btnexcluir.TabIndex = 91;
-            this.btnexcluir.UseVisualStyleBackColor = false;
-            // 
-            // btnalterar
-            // 
-            this.btnalterar.BackColor = System.Drawing.Color.Transparent;
-            this.btnalterar.BackgroundImage = global::TCC.Properties.Resources.icons8_editar_propriedade_100;
-            this.btnalterar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnalterar.Enabled = false;
-            this.btnalterar.FlatAppearance.BorderSize = 0;
-            this.btnalterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnalterar.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnalterar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.btnalterar.Location = new System.Drawing.Point(2, 389);
-            this.btnalterar.Name = "btnalterar";
-            this.btnalterar.Size = new System.Drawing.Size(64, 34);
-            this.btnalterar.TabIndex = 90;
-            this.btnalterar.UseVisualStyleBackColor = false;
-            // 
             // btnsalvarAlteracao
             // 
             this.btnsalvarAlteracao.BackColor = System.Drawing.Color.Transparent;
@@ -236,12 +203,14 @@
             this.btnsalvarAlteracao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnsalvarAlteracao.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnsalvarAlteracao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.btnsalvarAlteracao.Location = new System.Drawing.Point(72, 385);
+            this.btnsalvarAlteracao.Location = new System.Drawing.Point(5, 389);
             this.btnsalvarAlteracao.Name = "btnsalvarAlteracao";
             this.btnsalvarAlteracao.Size = new System.Drawing.Size(64, 38);
             this.btnsalvarAlteracao.TabIndex = 89;
             this.btnsalvarAlteracao.UseVisualStyleBackColor = false;
             this.btnsalvarAlteracao.Click += new System.EventHandler(this.btnsalvarAlteracao_Click);
+            this.btnsalvarAlteracao.MouseEnter += new System.EventHandler(this.btnsalvarAlteracao_MouseEnter);
+            this.btnsalvarAlteracao.MouseLeave += new System.EventHandler(this.btnsalvarAlteracao_MouseLeave);
             // 
             // label7
             // 
@@ -324,7 +293,7 @@
             this.lblconfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblconfirmar.Font = new System.Drawing.Font("Comic Sans MS", 7F, System.Drawing.FontStyle.Bold);
             this.lblconfirmar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblconfirmar.Location = new System.Drawing.Point(221, 372);
+            this.lblconfirmar.Location = new System.Drawing.Point(84, 372);
             this.lblconfirmar.Name = "lblconfirmar";
             this.lblconfirmar.Size = new System.Drawing.Size(55, 14);
             this.lblconfirmar.TabIndex = 172;
@@ -390,14 +359,14 @@
             // 
             this.dtproduto.AllowUserToAddRows = false;
             this.dtproduto.BackgroundColor = System.Drawing.Color.Lavender;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Comic Sans MS", 9F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtproduto.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Comic Sans MS", 9F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtproduto.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dtproduto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtproduto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.imgalterar,
@@ -418,20 +387,6 @@
             this.dtproduto.Size = new System.Drawing.Size(861, 225);
             this.dtproduto.TabIndex = 178;
             this.dtproduto.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtproduto_CellMouseClick);
-            // 
-            // lblcancelar
-            // 
-            this.lblcancelar.AutoSize = true;
-            this.lblcancelar.BackColor = System.Drawing.Color.Transparent;
-            this.lblcancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblcancelar.Font = new System.Drawing.Font("Comic Sans MS", 7F, System.Drawing.FontStyle.Bold);
-            this.lblcancelar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblcancelar.Location = new System.Drawing.Point(290, 372);
-            this.lblcancelar.Name = "lblcancelar";
-            this.lblcancelar.Size = new System.Drawing.Size(49, 14);
-            this.lblcancelar.TabIndex = 179;
-            this.lblcancelar.Text = "Cancelar";
-            this.lblcancelar.Visible = false;
             // 
             // imgalterar
             // 
@@ -493,6 +448,20 @@
             this.DataCadastro.HeaderText = "DatadeCadastro";
             this.DataCadastro.Name = "DataCadastro";
             // 
+            // lblcancelar
+            // 
+            this.lblcancelar.AutoSize = true;
+            this.lblcancelar.BackColor = System.Drawing.Color.Transparent;
+            this.lblcancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblcancelar.Font = new System.Drawing.Font("Comic Sans MS", 7F, System.Drawing.FontStyle.Bold);
+            this.lblcancelar.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblcancelar.Location = new System.Drawing.Point(162, 372);
+            this.lblcancelar.Name = "lblcancelar";
+            this.lblcancelar.Size = new System.Drawing.Size(49, 14);
+            this.lblcancelar.TabIndex = 179;
+            this.lblcancelar.Text = "Cancelar";
+            this.lblcancelar.Visible = false;
+            // 
             // txtvalorCompra
             // 
             this.txtvalorCompra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -539,6 +508,20 @@
             this.btnSair.TabStop = false;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click_1);
             // 
+            // lblsalvar
+            // 
+            this.lblsalvar.AutoSize = true;
+            this.lblsalvar.BackColor = System.Drawing.Color.Transparent;
+            this.lblsalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblsalvar.Font = new System.Drawing.Font("Comic Sans MS", 7F, System.Drawing.FontStyle.Bold);
+            this.lblsalvar.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblsalvar.Location = new System.Drawing.Point(18, 372);
+            this.lblsalvar.Name = "lblsalvar";
+            this.lblsalvar.Size = new System.Drawing.Size(39, 14);
+            this.lblsalvar.TabIndex = 182;
+            this.lblsalvar.Text = "Salvar";
+            this.lblsalvar.Visible = false;
+            // 
             // CadastroProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -547,6 +530,7 @@
             this.BackgroundImage = global::TCC.Properties.Resources._1555492a6_11;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(863, 654);
+            this.Controls.Add(this.lblsalvar);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.txtvalorCompra);
             this.Controls.Add(this.lblcancelar);
@@ -570,10 +554,8 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtfornecedor);
-            this.Controls.Add(this.btnexcluir);
             this.Controls.Add(this.txtquantidadeProduto);
             this.Controls.Add(this.txtvalorVenda);
-            this.Controls.Add(this.btnalterar);
             this.Controls.Add(this.btnsalvarAlteracao);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -601,8 +583,6 @@
         private System.Windows.Forms.TextBox txtfornecedor;
         private System.Windows.Forms.TextBox txtvalorVenda;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnexcluir;
-        private System.Windows.Forms.Button btnalterar;
         private System.Windows.Forms.Button btnsalvarAlteracao;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.MaskedTextBox txtdata;
@@ -633,5 +613,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox btnMinimizar;
         private System.Windows.Forms.PictureBox btnSair;
+        private System.Windows.Forms.Label lblsalvar;
     }
 }
