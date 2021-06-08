@@ -192,14 +192,14 @@ namespace TCC.VISÃO
 
 
 
-                lblteste.Rows[n].Cells[0].Value = item["codOperacao"].ToString();
-                lblteste.Rows[n].Cells[1].Value = item["produtoPedido"].ToString();
-                lblteste.Rows[n].Cells[2].Value = item["tipoProduto"].ToString();
-                lblteste.Rows[n].Cells[3].Value = item["estiloModeloPedido"].ToString();
-                lblteste.Rows[n].Cells[4].Value = item["valordeCompraPedido"].ToString();
-                lblteste.Rows[n].Cells[5].Value = item["valordeVendaPedido"].ToString();
-                lblteste.Rows[n].Cells[6].Value = item["quantidade"].ToString();
-                lblteste.Rows[n].Cells[7].Value = item["valorTotal"].ToString();
+                lblteste.Rows[n].Cells[1].Value = item["codOperacao"].ToString();
+                lblteste.Rows[n].Cells[2].Value = item["produtoPedido"].ToString();
+                lblteste.Rows[n].Cells[3].Value = item["tipoProduto"].ToString();
+                lblteste.Rows[n].Cells[4].Value = item["estiloModeloPedido"].ToString();
+                lblteste.Rows[n].Cells[5].Value = item["valordeCompraPedido"].ToString();
+                lblteste.Rows[n].Cells[6].Value = item["valordeVendaPedido"].ToString();
+                lblteste.Rows[n].Cells[7].Value = item["quantidade"].ToString();
+                lblteste.Rows[n].Cells[8].Value = item["valorTotal"].ToString();
 
 
 

@@ -80,6 +80,7 @@
             this.produtosTableAdapter = new TCC.tccDataSetTableAdapters.produtosTableAdapter();
             this.tccDataSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnexcluir = new System.Windows.Forms.DataGridViewImageColumn();
             this.coddeOperacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.produtoPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipoProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -88,7 +89,6 @@
             this.valordeVendaPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantidadePedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valortotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnexcluir = new System.Windows.Forms.DataGridViewImageColumn();
             this.barra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSair)).BeginInit();
@@ -106,7 +106,7 @@
             this.barra.Controls.Add(this.btnMinimizar);
             this.barra.Controls.Add(this.btnSair);
             this.barra.Location = new System.Drawing.Point(0, 0);
-            this.barra.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.barra.Margin = new System.Windows.Forms.Padding(2);
             this.barra.Name = "barra";
             this.barra.Size = new System.Drawing.Size(867, 39);
             this.barra.TabIndex = 63;
@@ -223,7 +223,7 @@
             this.txtestiloModelo.Font = new System.Drawing.Font("Comic Sans MS", 12F);
             this.txtestiloModelo.FormattingEnabled = true;
             this.txtestiloModelo.Location = new System.Drawing.Point(733, 71);
-            this.txtestiloModelo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtestiloModelo.Margin = new System.Windows.Forms.Padding(2);
             this.txtestiloModelo.Name = "txtestiloModelo";
             this.txtestiloModelo.Size = new System.Drawing.Size(105, 31);
             this.txtestiloModelo.TabIndex = 6;
@@ -240,7 +240,7 @@
             "Cheque",
             "Boleto"});
             this.lsbpgt.Location = new System.Drawing.Point(138, 147);
-            this.lsbpgt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lsbpgt.Margin = new System.Windows.Forms.Padding(2);
             this.lsbpgt.Name = "lsbpgt";
             this.lsbpgt.Size = new System.Drawing.Size(105, 31);
             this.lsbpgt.TabIndex = 7;
@@ -251,7 +251,7 @@
             this.lsbProduto.Font = new System.Drawing.Font("Comic Sans MS", 12F);
             this.lsbProduto.FormattingEnabled = true;
             this.lsbProduto.Location = new System.Drawing.Point(83, 33);
-            this.lsbProduto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lsbProduto.Margin = new System.Windows.Forms.Padding(2);
             this.lsbProduto.Name = "lsbProduto";
             this.lsbProduto.Size = new System.Drawing.Size(207, 31);
             this.lsbProduto.TabIndex = 1;
@@ -304,7 +304,7 @@
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.panel3.Location = new System.Drawing.Point(-10, 323);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(895, 21);
             this.panel3.TabIndex = 148;
@@ -378,7 +378,7 @@
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.panel2.Location = new System.Drawing.Point(-28, 196);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(982, 21);
             this.panel2.TabIndex = 135;
@@ -387,7 +387,7 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.panel1.Location = new System.Drawing.Point(-10, 104);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(931, 21);
             this.panel1.TabIndex = 134;
@@ -626,6 +626,7 @@
             this.lblteste.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.lblteste.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.lblteste.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.btnexcluir,
             this.coddeOperacao,
             this.produtoPedido,
             this.tipoProduto,
@@ -633,8 +634,7 @@
             this.valordeCompraPedido,
             this.valordeVendaPedido,
             this.quantidadePedido,
-            this.valortotal,
-            this.btnexcluir});
+            this.valortotal});
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -680,6 +680,15 @@
             // 
             this.timer1.Interval = 5000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // btnexcluir
+            // 
+            this.btnexcluir.HeaderText = "";
+            this.btnexcluir.Image = global::TCC.Properties.Resources.icons8_lixeira_vazia_48_removebg_preview;
+            this.btnexcluir.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.btnexcluir.MinimumWidth = 6;
+            this.btnexcluir.Name = "btnexcluir";
+            this.btnexcluir.Width = 30;
             // 
             // coddeOperacao
             // 
@@ -751,15 +760,6 @@
             this.valortotal.Name = "valortotal";
             this.valortotal.Width = 110;
             // 
-            // btnexcluir
-            // 
-            this.btnexcluir.HeaderText = "";
-            this.btnexcluir.Image = global::TCC.Properties.Resources.icons8_lixeira_vazia_48_removebg_preview;
-            this.btnexcluir.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.btnexcluir.MinimumWidth = 6;
-            this.btnexcluir.Name = "btnexcluir";
-            this.btnexcluir.Width = 30;
-            // 
             // CadastroVendas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -769,7 +769,7 @@
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.barra);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CadastroVendas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CadastroVendas";
@@ -836,6 +836,7 @@
         public System.Windows.Forms.Button btnCancelar;
         public System.Windows.Forms.ComboBox lsbProduto;
         public System.Windows.Forms.DataGridView lblteste;
+        private System.Windows.Forms.DataGridViewImageColumn btnexcluir;
         private System.Windows.Forms.DataGridViewTextBoxColumn coddeOperacao;
         private System.Windows.Forms.DataGridViewTextBoxColumn produtoPedido;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipoProduto;
@@ -844,6 +845,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn valordeVendaPedido;
         private System.Windows.Forms.DataGridViewTextBoxColumn quantidadePedido;
         private System.Windows.Forms.DataGridViewTextBoxColumn valortotal;
-        private System.Windows.Forms.DataGridViewImageColumn btnexcluir;
     }
 }
