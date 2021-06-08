@@ -102,7 +102,7 @@ namespace TCC.VISÃO
             this.panel3.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.panel3.Controls.Add(this.btnMinimizar);
             this.panel3.Controls.Add(this.btnSair);
-            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Location = new System.Drawing.Point(-2, -10);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(865, 46);

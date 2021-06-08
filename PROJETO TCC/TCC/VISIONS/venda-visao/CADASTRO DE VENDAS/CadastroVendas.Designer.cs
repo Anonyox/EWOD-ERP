@@ -74,12 +74,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblteste = new System.Windows.Forms.DataGridView();
-            this.produtosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tccDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tccDataSet = new TCC.tccDataSet();
-            this.produtosTableAdapter = new TCC.tccDataSetTableAdapters.produtosTableAdapter();
-            this.tccDataSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.btnexcluir = new System.Windows.Forms.DataGridViewImageColumn();
             this.coddeOperacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.produtoPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -89,6 +83,12 @@
             this.valordeVendaPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantidadePedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valortotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.produtosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tccDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tccDataSet = new TCC.tccDataSet();
+            this.produtosTableAdapter = new TCC.tccDataSetTableAdapters.produtosTableAdapter();
+            this.tccDataSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.barra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSair)).BeginInit();
@@ -105,10 +105,10 @@
             this.barra.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.barra.Controls.Add(this.btnMinimizar);
             this.barra.Controls.Add(this.btnSair);
-            this.barra.Location = new System.Drawing.Point(0, 0);
+            this.barra.Location = new System.Drawing.Point(-2, -10);
             this.barra.Margin = new System.Windows.Forms.Padding(2);
             this.barra.Name = "barra";
-            this.barra.Size = new System.Drawing.Size(867, 39);
+            this.barra.Size = new System.Drawing.Size(865, 46);
             this.barra.TabIndex = 63;
             // 
             // btnMinimizar
@@ -116,7 +116,7 @@
             this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
-            this.btnMinimizar.Location = new System.Drawing.Point(802, 3);
+            this.btnMinimizar.Location = new System.Drawing.Point(800, 15);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(28, 28);
             this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -128,7 +128,7 @@
             this.btnSair.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSair.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSair.Image = ((System.Drawing.Image)(resources.GetObject("btnSair.Image")));
-            this.btnSair.Location = new System.Drawing.Point(836, 3);
+            this.btnSair.Location = new System.Drawing.Point(834, 15);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(28, 28);
             this.btnSair.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -652,35 +652,6 @@
             this.lblteste.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.lblteste_CellContentClick);
             this.lblteste.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.lblteste_CellMouseClick);
             // 
-            // produtosBindingSource
-            // 
-            this.produtosBindingSource.DataMember = "produtos";
-            this.produtosBindingSource.DataSource = this.tccDataSetBindingSource;
-            // 
-            // tccDataSetBindingSource
-            // 
-            this.tccDataSetBindingSource.DataSource = this.tccDataSet;
-            this.tccDataSetBindingSource.Position = 0;
-            // 
-            // tccDataSet
-            // 
-            this.tccDataSet.DataSetName = "tccDataSet";
-            this.tccDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // produtosTableAdapter
-            // 
-            this.produtosTableAdapter.ClearBeforeFill = true;
-            // 
-            // tccDataSetBindingSource1
-            // 
-            this.tccDataSetBindingSource1.DataSource = this.tccDataSet;
-            this.tccDataSetBindingSource1.Position = 0;
-            // 
-            // timer1
-            // 
-            this.timer1.Interval = 5000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // btnexcluir
             // 
             this.btnexcluir.HeaderText = "";
@@ -759,6 +730,35 @@
             this.valortotal.MinimumWidth = 6;
             this.valortotal.Name = "valortotal";
             this.valortotal.Width = 110;
+            // 
+            // produtosBindingSource
+            // 
+            this.produtosBindingSource.DataMember = "produtos";
+            this.produtosBindingSource.DataSource = this.tccDataSetBindingSource;
+            // 
+            // tccDataSetBindingSource
+            // 
+            this.tccDataSetBindingSource.DataSource = this.tccDataSet;
+            this.tccDataSetBindingSource.Position = 0;
+            // 
+            // tccDataSet
+            // 
+            this.tccDataSet.DataSetName = "tccDataSet";
+            this.tccDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // produtosTableAdapter
+            // 
+            this.produtosTableAdapter.ClearBeforeFill = true;
+            // 
+            // tccDataSetBindingSource1
+            // 
+            this.tccDataSetBindingSource1.DataSource = this.tccDataSet;
+            this.tccDataSetBindingSource1.Position = 0;
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 5000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // CadastroVendas
             // 

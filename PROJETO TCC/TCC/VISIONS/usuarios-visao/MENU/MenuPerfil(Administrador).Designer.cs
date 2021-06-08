@@ -70,10 +70,9 @@
             this.pcblogo.BackColor = System.Drawing.Color.Transparent;
             this.pcblogo.BackgroundImage = global::TCC.Properties.Resources.d6a55e0c15b8da392e5cec620a39e6e81;
             this.pcblogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pcblogo.Location = new System.Drawing.Point(1552, 913);
-            this.pcblogo.Margin = new System.Windows.Forms.Padding(4);
+            this.pcblogo.Location = new System.Drawing.Point(1164, 742);
             this.pcblogo.Name = "pcblogo";
-            this.pcblogo.Size = new System.Drawing.Size(785, 485);
+            this.pcblogo.Size = new System.Drawing.Size(589, 394);
             this.pcblogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcblogo.TabIndex = 20;
             this.pcblogo.TabStop = false;
@@ -88,10 +87,9 @@
             this.btncadastroProdutos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btncadastroProdutos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btncadastroProdutos.ForeColor = System.Drawing.Color.Black;
-            this.btncadastroProdutos.Location = new System.Drawing.Point(-3, 62);
-            this.btncadastroProdutos.Margin = new System.Windows.Forms.Padding(4);
+            this.btncadastroProdutos.Location = new System.Drawing.Point(-2, 50);
             this.btncadastroProdutos.Name = "btncadastroProdutos";
-            this.btncadastroProdutos.Size = new System.Drawing.Size(353, 156);
+            this.btncadastroProdutos.Size = new System.Drawing.Size(265, 127);
             this.btncadastroProdutos.TabIndex = 21;
             this.btncadastroProdutos.UseVisualStyleBackColor = false;
             this.btncadastroProdutos.Click += new System.EventHandler(this.btncadastroProdutos_Click);
@@ -107,10 +105,9 @@
             this.btncadastroCliente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btncadastroCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btncadastroCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btncadastroCliente.Location = new System.Drawing.Point(521, 62);
-            this.btncadastroCliente.Margin = new System.Windows.Forms.Padding(4);
+            this.btncadastroCliente.Location = new System.Drawing.Point(391, 50);
             this.btncadastroCliente.Name = "btncadastroCliente";
-            this.btncadastroCliente.Size = new System.Drawing.Size(353, 156);
+            this.btncadastroCliente.Size = new System.Drawing.Size(265, 127);
             this.btncadastroCliente.TabIndex = 22;
             this.btncadastroCliente.UseVisualStyleBackColor = false;
             this.btncadastroCliente.MouseEnter += new System.EventHandler(this.btncadastroCliente_MouseEnter);
@@ -125,10 +122,9 @@
             this.btncadastroUsuario.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btncadastroUsuario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btncadastroUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btncadastroUsuario.Location = new System.Drawing.Point(1015, 62);
-            this.btncadastroUsuario.Margin = new System.Windows.Forms.Padding(4);
+            this.btncadastroUsuario.Location = new System.Drawing.Point(761, 50);
             this.btncadastroUsuario.Name = "btncadastroUsuario";
-            this.btncadastroUsuario.Size = new System.Drawing.Size(353, 156);
+            this.btncadastroUsuario.Size = new System.Drawing.Size(265, 127);
             this.btncadastroUsuario.TabIndex = 23;
             this.btncadastroUsuario.UseVisualStyleBackColor = false;
             this.btncadastroUsuario.Click += new System.EventHandler(this.btncadastroUsuario_Click);
@@ -146,10 +142,9 @@
             this.btncadastroVenda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btncadastroVenda.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btncadastroVenda.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btncadastroVenda.Location = new System.Drawing.Point(-3, 293);
-            this.btncadastroVenda.Margin = new System.Windows.Forms.Padding(4);
+            this.btncadastroVenda.Location = new System.Drawing.Point(-2, 238);
             this.btncadastroVenda.Name = "btncadastroVenda";
-            this.btncadastroVenda.Size = new System.Drawing.Size(353, 156);
+            this.btncadastroVenda.Size = new System.Drawing.Size(265, 127);
             this.btncadastroVenda.TabIndex = 24;
             this.btncadastroVenda.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btncadastroVenda.UseVisualStyleBackColor = false;
@@ -166,10 +161,9 @@
             this.btnrelatorioVenda.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnrelatorioVenda.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnrelatorioVenda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnrelatorioVenda.Location = new System.Drawing.Point(521, 293);
-            this.btnrelatorioVenda.Margin = new System.Windows.Forms.Padding(4);
+            this.btnrelatorioVenda.Location = new System.Drawing.Point(391, 238);
             this.btnrelatorioVenda.Name = "btnrelatorioVenda";
-            this.btnrelatorioVenda.Size = new System.Drawing.Size(353, 156);
+            this.btnrelatorioVenda.Size = new System.Drawing.Size(265, 127);
             this.btnrelatorioVenda.TabIndex = 25;
             this.btnrelatorioVenda.UseVisualStyleBackColor = false;
             this.btnrelatorioVenda.Click += new System.EventHandler(this.btnrelatorioVenda_Click);
@@ -185,10 +179,9 @@
             this.btnrelatorioEstoque.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnrelatorioEstoque.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnrelatorioEstoque.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnrelatorioEstoque.Location = new System.Drawing.Point(1015, 293);
-            this.btnrelatorioEstoque.Margin = new System.Windows.Forms.Padding(4);
+            this.btnrelatorioEstoque.Location = new System.Drawing.Point(761, 238);
             this.btnrelatorioEstoque.Name = "btnrelatorioEstoque";
-            this.btnrelatorioEstoque.Size = new System.Drawing.Size(353, 156);
+            this.btnrelatorioEstoque.Size = new System.Drawing.Size(265, 127);
             this.btnrelatorioEstoque.TabIndex = 26;
             this.btnrelatorioEstoque.UseVisualStyleBackColor = false;
             this.btnrelatorioEstoque.Click += new System.EventHandler(this.btnrelatorioEstoque_Click);
@@ -204,10 +197,9 @@
             this.btnconfiguracoesUsuario.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnconfiguracoesUsuario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnconfiguracoesUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnconfiguracoesUsuario.Location = new System.Drawing.Point(-3, 507);
-            this.btnconfiguracoesUsuario.Margin = new System.Windows.Forms.Padding(4);
+            this.btnconfiguracoesUsuario.Location = new System.Drawing.Point(-2, 412);
             this.btnconfiguracoesUsuario.Name = "btnconfiguracoesUsuario";
-            this.btnconfiguracoesUsuario.Size = new System.Drawing.Size(353, 156);
+            this.btnconfiguracoesUsuario.Size = new System.Drawing.Size(265, 127);
             this.btnconfiguracoesUsuario.TabIndex = 27;
             this.btnconfiguracoesUsuario.UseVisualStyleBackColor = false;
             this.btnconfiguracoesUsuario.Click += new System.EventHandler(this.btnconfiguracoesUsuario_Click);
@@ -223,10 +215,9 @@
             this.btnconfiguracoesSistema.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnconfiguracoesSistema.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnconfiguracoesSistema.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnconfiguracoesSistema.Location = new System.Drawing.Point(521, 518);
-            this.btnconfiguracoesSistema.Margin = new System.Windows.Forms.Padding(4);
+            this.btnconfiguracoesSistema.Location = new System.Drawing.Point(391, 421);
             this.btnconfiguracoesSistema.Name = "btnconfiguracoesSistema";
-            this.btnconfiguracoesSistema.Size = new System.Drawing.Size(353, 135);
+            this.btnconfiguracoesSistema.Size = new System.Drawing.Size(265, 110);
             this.btnconfiguracoesSistema.TabIndex = 28;
             this.btnconfiguracoesSistema.UseVisualStyleBackColor = false;
             this.btnconfiguracoesSistema.Click += new System.EventHandler(this.btnconfiguracoesSistema_Click);
@@ -242,10 +233,9 @@
             this.btnlogout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnlogout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnlogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnlogout.Location = new System.Drawing.Point(1015, 518);
-            this.btnlogout.Margin = new System.Windows.Forms.Padding(4);
+            this.btnlogout.Location = new System.Drawing.Point(761, 421);
             this.btnlogout.Name = "btnlogout";
-            this.btnlogout.Size = new System.Drawing.Size(353, 156);
+            this.btnlogout.Size = new System.Drawing.Size(265, 127);
             this.btnlogout.TabIndex = 29;
             this.btnlogout.UseVisualStyleBackColor = false;
             this.btnlogout.Click += new System.EventHandler(this.btnsairDoSistema_Click);
@@ -259,10 +249,9 @@
             this.lblcadastroProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblcadastroProduto.Font = new System.Drawing.Font("Comic Sans MS", 11F);
             this.lblcadastroProduto.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblcadastroProduto.Location = new System.Drawing.Point(65, 250);
-            this.lblcadastroProduto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblcadastroProduto.Location = new System.Drawing.Point(49, 203);
             this.lblcadastroProduto.Name = "lblcadastroProduto";
-            this.lblcadastroProduto.Size = new System.Drawing.Size(200, 26);
+            this.lblcadastroProduto.Size = new System.Drawing.Size(159, 20);
             this.lblcadastroProduto.TabIndex = 30;
             this.lblcadastroProduto.Text = "Cadastro de Produtos";
             this.lblcadastroProduto.Visible = false;
@@ -274,10 +263,9 @@
             this.lblcadastroCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblcadastroCliente.Font = new System.Drawing.Font("Comic Sans MS", 11F);
             this.lblcadastroCliente.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblcadastroCliente.Location = new System.Drawing.Point(600, 250);
-            this.lblcadastroCliente.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblcadastroCliente.Location = new System.Drawing.Point(450, 203);
             this.lblcadastroCliente.Name = "lblcadastroCliente";
-            this.lblcadastroCliente.Size = new System.Drawing.Size(190, 26);
+            this.lblcadastroCliente.Size = new System.Drawing.Size(152, 20);
             this.lblcadastroCliente.TabIndex = 31;
             this.lblcadastroCliente.Text = "Cadastro de Clientes";
             this.lblcadastroCliente.Visible = false;
@@ -289,10 +277,9 @@
             this.lblcadastroUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblcadastroUsuario.Font = new System.Drawing.Font("Comic Sans MS", 11F);
             this.lblcadastroUsuario.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblcadastroUsuario.Location = new System.Drawing.Point(1095, 250);
-            this.lblcadastroUsuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblcadastroUsuario.Location = new System.Drawing.Point(821, 203);
             this.lblcadastroUsuario.Name = "lblcadastroUsuario";
-            this.lblcadastroUsuario.Size = new System.Drawing.Size(189, 26);
+            this.lblcadastroUsuario.Size = new System.Drawing.Size(150, 20);
             this.lblcadastroUsuario.TabIndex = 32;
             this.lblcadastroUsuario.Text = "Cadastro de Usuário";
             this.lblcadastroUsuario.Visible = false;
@@ -305,10 +292,9 @@
             this.lblrelatorioEstoque.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblrelatorioEstoque.Font = new System.Drawing.Font("Comic Sans MS", 11F);
             this.lblrelatorioEstoque.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblrelatorioEstoque.Location = new System.Drawing.Point(1848, 900);
-            this.lblrelatorioEstoque.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblrelatorioEstoque.Location = new System.Drawing.Point(1386, 731);
             this.lblrelatorioEstoque.Name = "lblrelatorioEstoque";
-            this.lblrelatorioEstoque.Size = new System.Drawing.Size(192, 26);
+            this.lblrelatorioEstoque.Size = new System.Drawing.Size(152, 20);
             this.lblrelatorioEstoque.TabIndex = 35;
             this.lblrelatorioEstoque.Text = "Relatório de Estoque";
             this.lblrelatorioEstoque.Visible = false;
@@ -320,10 +306,9 @@
             this.lblrelatorioVenda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblrelatorioVenda.Font = new System.Drawing.Font("Comic Sans MS", 11F);
             this.lblrelatorioVenda.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblrelatorioVenda.Location = new System.Drawing.Point(600, 476);
-            this.lblrelatorioVenda.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblrelatorioVenda.Location = new System.Drawing.Point(450, 387);
             this.lblrelatorioVenda.Name = "lblrelatorioVenda";
-            this.lblrelatorioVenda.Size = new System.Drawing.Size(185, 26);
+            this.lblrelatorioVenda.Size = new System.Drawing.Size(147, 20);
             this.lblrelatorioVenda.TabIndex = 34;
             this.lblrelatorioVenda.Text = "Relatório de Vendas";
             this.lblrelatorioVenda.Visible = false;
@@ -335,10 +320,9 @@
             this.lblcadastroVenda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblcadastroVenda.Font = new System.Drawing.Font("Comic Sans MS", 11F);
             this.lblcadastroVenda.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblcadastroVenda.Location = new System.Drawing.Point(81, 476);
-            this.lblcadastroVenda.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblcadastroVenda.Location = new System.Drawing.Point(61, 387);
             this.lblcadastroVenda.Name = "lblcadastroVenda";
-            this.lblcadastroVenda.Size = new System.Drawing.Size(185, 26);
+            this.lblcadastroVenda.Size = new System.Drawing.Size(147, 20);
             this.lblcadastroVenda.TabIndex = 33;
             this.lblcadastroVenda.Text = "Cadastro de Vendas";
             this.lblcadastroVenda.Visible = false;
@@ -350,10 +334,9 @@
             this.lbllogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbllogout.Font = new System.Drawing.Font("Comic Sans MS", 11F);
             this.lbllogout.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lbllogout.Location = new System.Drawing.Point(1167, 690);
-            this.lbllogout.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbllogout.Location = new System.Drawing.Point(875, 561);
             this.lbllogout.Name = "lbllogout";
-            this.lbllogout.Size = new System.Drawing.Size(48, 26);
+            this.lbllogout.Size = new System.Drawing.Size(38, 20);
             this.lbllogout.TabIndex = 38;
             this.lbllogout.Text = "Sair";
             this.lbllogout.Visible = false;
@@ -365,10 +348,9 @@
             this.lblconfigSistema.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblconfigSistema.Font = new System.Drawing.Font("Comic Sans MS", 11F);
             this.lblconfigSistema.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblconfigSistema.Location = new System.Drawing.Point(577, 690);
-            this.lblconfigSistema.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblconfigSistema.Location = new System.Drawing.Point(433, 561);
             this.lblconfigSistema.Name = "lblconfigSistema";
-            this.lblconfigSistema.Size = new System.Drawing.Size(237, 26);
+            this.lblconfigSistema.Size = new System.Drawing.Size(188, 20);
             this.lblconfigSistema.TabIndex = 37;
             this.lblconfigSistema.Text = "Configurações do Sistema";
             this.lblconfigSistema.Visible = false;
@@ -380,10 +362,9 @@
             this.lblconfigUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblconfigUsuario.Font = new System.Drawing.Font("Comic Sans MS", 11F);
             this.lblconfigUsuario.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblconfigUsuario.Location = new System.Drawing.Point(60, 690);
-            this.lblconfigUsuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblconfigUsuario.Location = new System.Drawing.Point(45, 561);
             this.lblconfigUsuario.Name = "lblconfigUsuario";
-            this.lblconfigUsuario.Size = new System.Drawing.Size(234, 26);
+            this.lblconfigUsuario.Size = new System.Drawing.Size(186, 20);
             this.lblconfigUsuario.TabIndex = 36;
             this.lblconfigUsuario.Text = "Configurações de Usuário";
             this.lblconfigUsuario.Visible = false;
@@ -396,10 +377,9 @@
             this.lblHora.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblHora.Font = new System.Drawing.Font("Comic Sans MS", 15F);
             this.lblHora.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.lblHora.Location = new System.Drawing.Point(688, 1046);
-            this.lblHora.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblHora.Location = new System.Drawing.Point(516, 850);
             this.lblHora.Name = "lblHora";
-            this.lblHora.Size = new System.Drawing.Size(88, 34);
+            this.lblHora.Size = new System.Drawing.Size(70, 28);
             this.lblHora.TabIndex = 39;
             this.lblHora.Text = "HORA";
             // 
@@ -416,10 +396,9 @@
             this.lblData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblData.Font = new System.Drawing.Font("Comic Sans MS", 15F);
             this.lblData.ForeColor = System.Drawing.Color.White;
-            this.lblData.Location = new System.Drawing.Point(483, 1046);
-            this.lblData.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblData.Location = new System.Drawing.Point(362, 850);
             this.lblData.Name = "lblData";
-            this.lblData.Size = new System.Drawing.Size(86, 34);
+            this.lblData.Size = new System.Drawing.Size(68, 28);
             this.lblData.TabIndex = 40;
             this.lblData.Text = "DATA";
             // 
@@ -427,20 +406,18 @@
             // 
             this.pn1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.pn1.BackColor = System.Drawing.Color.White;
-            this.pn1.Location = new System.Drawing.Point(476, 1086);
-            this.pn1.Margin = new System.Windows.Forms.Padding(4);
+            this.pn1.Location = new System.Drawing.Point(357, 882);
             this.pn1.Name = "pn1";
-            this.pn1.Size = new System.Drawing.Size(365, 610);
+            this.pn1.Size = new System.Drawing.Size(274, 496);
             this.pn1.TabIndex = 41;
             // 
             // pn2
             // 
             this.pn2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.pn2.BackColor = System.Drawing.Color.White;
-            this.pn2.Location = new System.Drawing.Point(685, 1020);
-            this.pn2.Margin = new System.Windows.Forms.Padding(4);
+            this.pn2.Location = new System.Drawing.Point(514, 829);
             this.pn2.Name = "pn2";
-            this.pn2.Size = new System.Drawing.Size(1, 670);
+            this.pn2.Size = new System.Drawing.Size(1, 544);
             this.pn2.TabIndex = 42;
             // 
             // btnMinimizar
@@ -448,10 +425,9 @@
             this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
-            this.btnMinimizar.Location = new System.Drawing.Point(1285, 14);
-            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMinimizar.Location = new System.Drawing.Point(964, 11);
             this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(37, 34);
+            this.btnMinimizar.Size = new System.Drawing.Size(28, 28);
             this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnMinimizar.TabIndex = 46;
             this.btnMinimizar.TabStop = false;
@@ -462,10 +438,9 @@
             this.btnSair.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSair.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSair.Image = ((System.Drawing.Image)(resources.GetObject("btnSair.Image")));
-            this.btnSair.Location = new System.Drawing.Point(1331, 14);
-            this.btnSair.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSair.Location = new System.Drawing.Point(998, 11);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(37, 34);
+            this.btnSair.Size = new System.Drawing.Size(28, 28);
             this.btnSair.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnSair.TabIndex = 47;
             this.btnSair.TabStop = false;
@@ -476,21 +451,21 @@
             this.panel1.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.panel1.Controls.Add(this.btnMinimizar);
             this.panel1.Controls.Add(this.btnSair);
-            this.panel1.Location = new System.Drawing.Point(-3, -12);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Location = new System.Drawing.Point(-2, -10);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1371, 57);
+            this.panel1.Size = new System.Drawing.Size(1028, 46);
             this.panel1.TabIndex = 48;
             // 
             // menuAdministrador
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(12)))), ((int)(((byte)(38)))));
             this.BackgroundImage = global::TCC.Properties.Resources.ÍCONE;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(1368, 869);
+            this.ClientSize = new System.Drawing.Size(1026, 706);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pn2);
             this.Controls.Add(this.pn1);
@@ -519,7 +494,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "menuAdministrador";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
