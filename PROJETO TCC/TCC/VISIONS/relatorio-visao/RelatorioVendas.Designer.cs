@@ -63,9 +63,10 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Orange;
-            this.label8.Location = new System.Drawing.Point(371, 41);
+            this.label8.Location = new System.Drawing.Point(495, 50);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(167, 21);
+            this.label8.Size = new System.Drawing.Size(209, 27);
             this.label8.TabIndex = 156;
             this.label8.Text = "RELATÓRIO VENDA ";
             // 
@@ -74,9 +75,10 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(209)))), ((int)(((byte)(178)))));
             this.panel1.Controls.Add(this.lblsaida);
             this.panel1.Controls.Add(this.lbl1);
-            this.panel1.Location = new System.Drawing.Point(38, 100);
+            this.panel1.Location = new System.Drawing.Point(51, 123);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(192, 81);
+            this.panel1.Size = new System.Drawing.Size(256, 100);
             this.panel1.TabIndex = 157;
             // 
             // lblsaida
@@ -85,9 +87,10 @@
             this.lblsaida.BackColor = System.Drawing.Color.Transparent;
             this.lblsaida.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblsaida.ForeColor = System.Drawing.Color.Black;
-            this.lblsaida.Location = new System.Drawing.Point(29, 30);
+            this.lblsaida.Location = new System.Drawing.Point(39, 37);
+            this.lblsaida.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblsaida.Name = "lblsaida";
-            this.lblsaida.Size = new System.Drawing.Size(129, 15);
+            this.lblsaida.Size = new System.Drawing.Size(160, 18);
             this.lblsaida.TabIndex = 3;
             this.lblsaida.Text = "QUANTIDADE SAÍDAS";
             // 
@@ -97,9 +100,10 @@
             this.lbl1.BackColor = System.Drawing.Color.Transparent;
             this.lbl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl1.ForeColor = System.Drawing.Color.Black;
-            this.lbl1.Location = new System.Drawing.Point(78, 45);
+            this.lbl1.Location = new System.Drawing.Point(104, 55);
+            this.lbl1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl1.Name = "lbl1";
-            this.lbl1.Size = new System.Drawing.Size(20, 18);
+            this.lbl1.Size = new System.Drawing.Size(25, 24);
             this.lbl1.TabIndex = 1;
             this.lbl1.Text = "N";
             // 
@@ -108,9 +112,10 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(209)))), ((int)(((byte)(178)))));
             this.panel2.Controls.Add(this.lbloperacao);
             this.panel2.Controls.Add(this.lbl2);
-            this.panel2.Location = new System.Drawing.Point(336, 100);
+            this.panel2.Location = new System.Drawing.Point(448, 123);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(202, 81);
+            this.panel2.Size = new System.Drawing.Size(269, 100);
             this.panel2.TabIndex = 158;
             // 
             // lbloperacao
@@ -119,9 +124,10 @@
             this.lbloperacao.BackColor = System.Drawing.Color.Transparent;
             this.lbloperacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbloperacao.ForeColor = System.Drawing.Color.Black;
-            this.lbloperacao.Location = new System.Drawing.Point(25, 30);
+            this.lbloperacao.Location = new System.Drawing.Point(33, 37);
+            this.lbloperacao.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbloperacao.Name = "lbloperacao";
-            this.lbloperacao.Size = new System.Drawing.Size(156, 15);
+            this.lbloperacao.Size = new System.Drawing.Size(196, 18);
             this.lbloperacao.TabIndex = 3;
             this.lbloperacao.Text = "OPERAÇÕES REALIZADAS";
             // 
@@ -131,9 +137,10 @@
             this.lbl2.BackColor = System.Drawing.Color.Transparent;
             this.lbl2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl2.ForeColor = System.Drawing.Color.Black;
-            this.lbl2.Location = new System.Drawing.Point(92, 45);
+            this.lbl2.Location = new System.Drawing.Point(123, 55);
+            this.lbl2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl2.Name = "lbl2";
-            this.lbl2.Size = new System.Drawing.Size(20, 18);
+            this.lbl2.Size = new System.Drawing.Size(25, 24);
             this.lbl2.TabIndex = 1;
             this.lbl2.Text = "N";
             // 
@@ -142,9 +149,10 @@
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(209)))), ((int)(((byte)(178)))));
             this.panel3.Controls.Add(this.lbltotal);
             this.panel3.Controls.Add(this.lbl3);
-            this.panel3.Location = new System.Drawing.Point(638, 100);
+            this.panel3.Location = new System.Drawing.Point(851, 123);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(192, 81);
+            this.panel3.Size = new System.Drawing.Size(256, 100);
             this.panel3.TabIndex = 159;
             // 
             // lbltotal
@@ -153,9 +161,10 @@
             this.lbltotal.BackColor = System.Drawing.Color.Transparent;
             this.lbltotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbltotal.ForeColor = System.Drawing.Color.Black;
-            this.lbltotal.Location = new System.Drawing.Point(40, 30);
+            this.lbltotal.Location = new System.Drawing.Point(53, 37);
+            this.lbltotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbltotal.Name = "lbltotal";
-            this.lbltotal.Size = new System.Drawing.Size(115, 15);
+            this.lbltotal.Size = new System.Drawing.Size(144, 18);
             this.lbltotal.TabIndex = 3;
             this.lbltotal.Text = "TOTAL DE VENDAS";
             // 
@@ -165,9 +174,10 @@
             this.lbl3.BackColor = System.Drawing.Color.Transparent;
             this.lbl3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl3.ForeColor = System.Drawing.Color.Black;
-            this.lbl3.Location = new System.Drawing.Point(89, 45);
+            this.lbl3.Location = new System.Drawing.Point(119, 55);
+            this.lbl3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl3.Name = "lbl3";
-            this.lbl3.Size = new System.Drawing.Size(20, 18);
+            this.lbl3.Size = new System.Drawing.Size(25, 24);
             this.lbl3.TabIndex = 1;
             this.lbl3.Text = "N";
             // 
@@ -183,9 +193,10 @@
             this.btn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn1.ForeColor = System.Drawing.Color.Transparent;
-            this.btn1.Location = new System.Drawing.Point(2, 267);
+            this.btn1.Location = new System.Drawing.Point(3, 329);
+            this.btn1.Margin = new System.Windows.Forms.Padding(4);
             this.btn1.Name = "btn1";
-            this.btn1.Size = new System.Drawing.Size(62, 35);
+            this.btn1.Size = new System.Drawing.Size(83, 43);
             this.btn1.TabIndex = 160;
             this.btn1.UseVisualStyleBackColor = false;
             // 
@@ -201,9 +212,10 @@
             this.btn2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn2.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn2.ForeColor = System.Drawing.Color.Transparent;
-            this.btn2.Location = new System.Drawing.Point(83, 267);
+            this.btn2.Location = new System.Drawing.Point(111, 329);
+            this.btn2.Margin = new System.Windows.Forms.Padding(4);
             this.btn2.Name = "btn2";
-            this.btn2.Size = new System.Drawing.Size(62, 35);
+            this.btn2.Size = new System.Drawing.Size(83, 43);
             this.btn2.TabIndex = 161;
             this.btn2.UseVisualStyleBackColor = false;
             // 
@@ -219,9 +231,10 @@
             this.btn3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn3.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn3.ForeColor = System.Drawing.Color.Transparent;
-            this.btn3.Location = new System.Drawing.Point(168, 267);
+            this.btn3.Location = new System.Drawing.Point(224, 329);
+            this.btn3.Margin = new System.Windows.Forms.Padding(4);
             this.btn3.Name = "btn3";
-            this.btn3.Size = new System.Drawing.Size(62, 35);
+            this.btn3.Size = new System.Drawing.Size(83, 43);
             this.btn3.TabIndex = 162;
             this.btn3.UseVisualStyleBackColor = false;
             // 
@@ -237,9 +250,10 @@
             this.btn4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn4.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn4.ForeColor = System.Drawing.Color.Transparent;
-            this.btn4.Location = new System.Drawing.Point(249, 267);
+            this.btn4.Location = new System.Drawing.Point(332, 329);
+            this.btn4.Margin = new System.Windows.Forms.Padding(4);
             this.btn4.Name = "btn4";
-            this.btn4.Size = new System.Drawing.Size(62, 35);
+            this.btn4.Size = new System.Drawing.Size(83, 43);
             this.btn4.TabIndex = 163;
             this.btn4.UseVisualStyleBackColor = false;
             // 
@@ -249,9 +263,9 @@
             this.barra.Controls.Add(this.btnMinimizar);
             this.barra.Controls.Add(this.btnSair);
             this.barra.Location = new System.Drawing.Point(0, 0);
-            this.barra.Margin = new System.Windows.Forms.Padding(2);
+            this.barra.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.barra.Name = "barra";
-            this.barra.Size = new System.Drawing.Size(867, 39);
+            this.barra.Size = new System.Drawing.Size(1156, 48);
             this.barra.TabIndex = 164;
             // 
             // btnMinimizar
@@ -259,9 +273,10 @@
             this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
-            this.btnMinimizar.Location = new System.Drawing.Point(802, 3);
+            this.btnMinimizar.Location = new System.Drawing.Point(1069, 4);
+            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(4);
             this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(28, 28);
+            this.btnMinimizar.Size = new System.Drawing.Size(37, 34);
             this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnMinimizar.TabIndex = 61;
             this.btnMinimizar.TabStop = false;
@@ -271,12 +286,14 @@
             this.btnSair.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSair.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSair.Image = ((System.Drawing.Image)(resources.GetObject("btnSair.Image")));
-            this.btnSair.Location = new System.Drawing.Point(836, 3);
+            this.btnSair.Location = new System.Drawing.Point(1115, 4);
+            this.btnSair.Margin = new System.Windows.Forms.Padding(4);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(28, 28);
+            this.btnSair.Size = new System.Drawing.Size(37, 34);
             this.btnSair.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnSair.TabIndex = 60;
             this.btnSair.TabStop = false;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
             // lblprecoTotal
             // 
@@ -284,18 +301,21 @@
             this.lblprecoTotal.BackColor = System.Drawing.Color.Transparent;
             this.lblprecoTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblprecoTotal.ForeColor = System.Drawing.Color.Orange;
-            this.lblprecoTotal.Location = new System.Drawing.Point(635, 287);
+            this.lblprecoTotal.Location = new System.Drawing.Point(847, 353);
+            this.lblprecoTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblprecoTotal.Name = "lblprecoTotal";
-            this.lblprecoTotal.Size = new System.Drawing.Size(158, 15);
+            this.lblprecoTotal.Size = new System.Drawing.Size(200, 18);
             this.lblprecoTotal.TabIndex = 4;
             this.lblprecoTotal.Text = "TOTAL PREÇO DE VENDA :";
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 308);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 379);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(867, 299);
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.Size = new System.Drawing.Size(1156, 368);
             this.dataGridView1.TabIndex = 165;
             // 
             // lbl4
@@ -304,20 +324,21 @@
             this.lbl4.BackColor = System.Drawing.Color.Transparent;
             this.lbl4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl4.ForeColor = System.Drawing.Color.Orange;
-            this.lbl4.Location = new System.Drawing.Point(704, 267);
+            this.lbl4.Location = new System.Drawing.Point(939, 329);
+            this.lbl4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl4.Name = "lbl4";
-            this.lbl4.Size = new System.Drawing.Size(20, 18);
+            this.lbl4.Size = new System.Drawing.Size(25, 24);
             this.lbl4.TabIndex = 4;
             this.lbl4.Text = "N";
             // 
             // RelatorioVendas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(12)))), ((int)(((byte)(38)))));
             this.BackgroundImage = global::TCC.Properties.Resources._1555492a6_111;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(866, 604);
+            this.ClientSize = new System.Drawing.Size(1155, 743);
             this.Controls.Add(this.lbl4);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.lblprecoTotal);
@@ -331,7 +352,9 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label8);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "RelatorioVendas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RelatorioVendas";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

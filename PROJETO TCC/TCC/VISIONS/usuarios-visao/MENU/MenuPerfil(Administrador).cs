@@ -25,7 +25,7 @@ namespace TCC.VISÃO
         String user = DadosGeral.nomeUser;
 
         public String perfil = verificaPerfill.perfil;
-        CadastroVendas cadastroVendas = new CadastroVendas();
+        
         #endregion
 
 
@@ -674,16 +674,7 @@ namespace TCC.VISÃO
         private void btnSair_Click(object sender, EventArgs e)
         {
             sairLog();
-            CadastroVendas cadastro = new CadastroVendas();
-            if (cadastro.btnCancelar.Enabled == true)
-            {
-                MessageBox.Show("Antes de sair, cancele a Operação!!", "OPERAÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                cadastro.lsbProduto.Focus();
-            }
-            else 
-            { 
-                Application.Exit();
-            }
+            Application.Exit();
         }
 
         private void btnMinimizar_Click(object sender, EventArgs e)
@@ -895,12 +886,24 @@ namespace TCC.VISÃO
         private void btnconfiguracoesSistema_Click(object sender, EventArgs e)
         {
             ConfigSistema configSistema = new ConfigSistema();
-            configSistema.Show();
+
+            if (Application.OpenForms.OfType<ConfigSistema>().Count() > 0)
+            {
+                Application.OpenForms.OfType<ConfigSistema>().First().Focus();
+            }
+            else
+            {
+
+                configSistema.Owner = this;
+                configSistema.Show();
+            }
+            
         }
 
         private void btncadastroVenda_Click(object sender, EventArgs e)
         {
-           
+            CadastroVendas cadastroVendas = new CadastroVendas();
+
             if (Application.OpenForms.OfType<CadastroVendas>().Count() > 0)
             {
                 Application.OpenForms.OfType<CadastroVendas>().First().Focus();
@@ -928,12 +931,43 @@ namespace TCC.VISÃO
             pn2.Location = new Point(125, 670);
 
         }
+
+
+
+
+
         #endregion
 
+        private void btnrelatorioVenda_Click(object sender, EventArgs e)
+        {
+            RelatorioVendas relatVendas = new RelatorioVendas();
 
+            if (Application.OpenForms.OfType<RelatorioVendas>().Count() > 0)
+            {
+                Application.OpenForms.OfType<RelatorioVendas>().First().Focus();
+            }
+            else
+            {
 
+                relatVendas.Owner = this;
+                relatVendas.Show();
+            }
+        }
 
+        private void btnrelatorioEstoque_Click(object sender, EventArgs e)
+        {
+            RelatorioEstoque relatEstoque = new RelatorioEstoque();
 
+            if (Application.OpenForms.OfType<RelatorioEstoque>().Count() > 0)
+            {
+                Application.OpenForms.OfType<RelatorioEstoque>().First().Focus();
+            }
+            else
+            {
 
+                relatEstoque.Owner = this;
+                relatEstoque.Show();
+            }
+        }
     }
 }

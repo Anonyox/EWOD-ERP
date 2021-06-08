@@ -334,6 +334,7 @@ namespace TCC.VISÃO
             if (controleVenda.tem)
             {
                 MessageBox.Show(mensagem, "Carrinho", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtTotal.Text = string.Format("{0:C}",0);
                 btnFinalizar.Enabled = false;
 
 
@@ -695,7 +696,7 @@ namespace TCC.VISÃO
             lsbProduto.Focus();
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
+        public void btnCancelar_Click(object sender, EventArgs e)
         {
             #region design
             lsbProduto.Enabled = false;
@@ -725,6 +726,8 @@ namespace TCC.VISÃO
             {
                 MessageBox.Show("Operação Cancelada!!", "OPERAÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 btnFinalizar.Enabled = false;
+                
+                
 
             }
 
@@ -743,11 +746,10 @@ namespace TCC.VISÃO
                 listaCarrinho();
 
                 lsbProduto.Enabled = true;
-                txttipo.Enabled = true;
-                txtvalordeCompra.Enabled = true;
-                txtvalorDeVenda.Enabled = true;
+                
+               
                 txtquantidade.Enabled = true;
-                txtestiloModelo.Enabled = true;
+                
 
                 btnCadastrar.Enabled = false;
                 btnAdicionar.Enabled = true;
