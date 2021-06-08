@@ -398,6 +398,9 @@ namespace TCC.VISÃO
         #region DESIGN
         private void CadastroProduto_Load_1(object sender, EventArgs e)
         {
+            MessageBox.Show("Para adicionar um produto ao estoque, digite seu nome primeiro", "INFORMAÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
             txtdata.ReadOnly = true;
             txtdata.Text = datadecadastro.ToString();
 
