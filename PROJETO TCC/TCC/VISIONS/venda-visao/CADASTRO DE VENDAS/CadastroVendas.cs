@@ -722,7 +722,7 @@ namespace TCC.VISÃO
             btnCancelar.Text = "";
             #endregion
 
-            if (String.IsNullOrEmpty((string)lblteste.Rows[0].Cells[0].Value))
+            if (lblteste.Rows.Count == 0)
             {
                 MessageBox.Show("Operação Cancelada!!", "OPERAÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 btnFinalizar.Enabled = false;
