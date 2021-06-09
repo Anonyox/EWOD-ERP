@@ -13,7 +13,6 @@ namespace TCC.CONTROLS.relatorio_controledao.PRODUTOS
         SqlDataReader dr;
         String entrada;
         String quantidade;
-        DataTable dtr = new DataTable();
         String despesas;
         #endregion
 
@@ -88,14 +87,17 @@ namespace TCC.CONTROLS.relatorio_controledao.PRODUTOS
 
                 cmd.Connection = con.conectar();
 
+                DataTable td = new DataTable();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 cmd.ExecuteNonQuery();
 
 
-                da.Fill(dtr);
+                da.Fill(td);
 
                 con.desconectar();
 
+
+                return td;
 
             }
             catch (SqlException)
@@ -105,7 +107,7 @@ namespace TCC.CONTROLS.relatorio_controledao.PRODUTOS
             }
 
 
-            return dtr;
+            
 
         }
 

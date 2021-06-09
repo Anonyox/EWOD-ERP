@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RelatorioEstoque));
             this.label8 = new System.Windows.Forms.Label();
             this.barra = new System.Windows.Forms.Panel();
@@ -47,8 +48,6 @@
             this.btn2 = new System.Windows.Forms.Button();
             this.btn1 = new System.Windows.Forms.Button();
             this.dtgestoque = new System.Windows.Forms.DataGridView();
-            this.lbl4 = new System.Windows.Forms.Label();
-            this.lblprecoTotal = new System.Windows.Forms.Label();
             this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,6 +56,9 @@
             this.valordeCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valordeVenda = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataDeCadastro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lbl4 = new System.Windows.Forms.Label();
+            this.lblprecoTotal = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.barra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSair)).BeginInit();
@@ -306,30 +308,6 @@
             this.dtgestoque.Size = new System.Drawing.Size(863, 312);
             this.dtgestoque.TabIndex = 173;
             // 
-            // lbl4
-            // 
-            this.lbl4.AutoSize = true;
-            this.lbl4.BackColor = System.Drawing.Color.Transparent;
-            this.lbl4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl4.ForeColor = System.Drawing.Color.White;
-            this.lbl4.Location = new System.Drawing.Point(683, 299);
-            this.lbl4.Name = "lbl4";
-            this.lbl4.Size = new System.Drawing.Size(20, 18);
-            this.lbl4.TabIndex = 174;
-            this.lbl4.Text = "N";
-            // 
-            // lblprecoTotal
-            // 
-            this.lblprecoTotal.AutoSize = true;
-            this.lblprecoTotal.BackColor = System.Drawing.Color.Transparent;
-            this.lblprecoTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblprecoTotal.ForeColor = System.Drawing.Color.White;
-            this.lblprecoTotal.Location = new System.Drawing.Point(595, 322);
-            this.lblprecoTotal.Name = "lblprecoTotal";
-            this.lblprecoTotal.Size = new System.Drawing.Size(231, 15);
-            this.lblprecoTotal.TabIndex = 175;
-            this.lblprecoTotal.Text = "TOTAL DESPESAS PREÇO DE COMPRA";
-            // 
             // nome
             // 
             this.nome.HeaderText = "Nome";
@@ -370,6 +348,35 @@
             // 
             this.dataDeCadastro.HeaderText = "DataDeCadastro";
             this.dataDeCadastro.Name = "dataDeCadastro";
+            // 
+            // lbl4
+            // 
+            this.lbl4.AutoSize = true;
+            this.lbl4.BackColor = System.Drawing.Color.Transparent;
+            this.lbl4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl4.ForeColor = System.Drawing.Color.White;
+            this.lbl4.Location = new System.Drawing.Point(683, 299);
+            this.lbl4.Name = "lbl4";
+            this.lbl4.Size = new System.Drawing.Size(20, 18);
+            this.lbl4.TabIndex = 174;
+            this.lbl4.Text = "N";
+            // 
+            // lblprecoTotal
+            // 
+            this.lblprecoTotal.AutoSize = true;
+            this.lblprecoTotal.BackColor = System.Drawing.Color.Transparent;
+            this.lblprecoTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblprecoTotal.ForeColor = System.Drawing.Color.White;
+            this.lblprecoTotal.Location = new System.Drawing.Point(595, 322);
+            this.lblprecoTotal.Name = "lblprecoTotal";
+            this.lblprecoTotal.Size = new System.Drawing.Size(231, 15);
+            this.lblprecoTotal.TabIndex = 175;
+            this.lblprecoTotal.Text = "TOTAL DESPESAS PREÇO DE COMPRA";
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 10000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // RelatorioEstoque
             // 
@@ -441,5 +448,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn valordeCompra;
         private System.Windows.Forms.DataGridViewTextBoxColumn valordeVenda;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataDeCadastro;
+        private System.Windows.Forms.Timer timer1;
     }
 }

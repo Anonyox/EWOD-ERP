@@ -124,11 +124,18 @@ namespace TCC.VISÃO
 
         private void RelatorioEstoque_Load(object sender, EventArgs e)
         {
+            timer1.Start();
             formataGrid();
             listarProduto();
             contarEntradas();
             contarProdutos();
             contarDispesas();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            listarProduto();
+            timer1.Start();
         }
     }
 }
