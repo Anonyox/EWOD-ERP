@@ -113,7 +113,7 @@ namespace TCC.CONTROLS.relatorio_controledao.PRODUTOS
 
         public String contarDespesas()
         {
-            cmd.CommandText = "SELECT FORMAT(SUM(valordeCompra), 'c', 'pt-br') FROM produtos";
+            cmd.CommandText = "SELECT FORMAT(SUM(produtos.valordeCompra * estoqueProdutos.Quantidade), 'c', 'pt-br') AS VALOR_TOTAL FROM produtos, estoqueProdutos";
 
             try
             {
