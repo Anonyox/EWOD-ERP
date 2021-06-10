@@ -46,7 +46,7 @@
             this.btn4 = new System.Windows.Forms.Button();
             this.btn3 = new System.Windows.Forms.Button();
             this.btn2 = new System.Windows.Forms.Button();
-            this.btn1 = new System.Windows.Forms.Button();
+            this.btnfiltroSemana = new System.Windows.Forms.Button();
             this.dtgestoque = new System.Windows.Forms.DataGridView();
             this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -230,7 +230,7 @@
             this.btn4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn4.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn4.ForeColor = System.Drawing.Color.Transparent;
-            this.btn4.Location = new System.Drawing.Point(245, 299);
+            this.btn4.Location = new System.Drawing.Point(250, 299);
             this.btn4.Name = "btn4";
             this.btn4.Size = new System.Drawing.Size(62, 35);
             this.btn4.TabIndex = 172;
@@ -248,7 +248,7 @@
             this.btn3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn3.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn3.ForeColor = System.Drawing.Color.Transparent;
-            this.btn3.Location = new System.Drawing.Point(164, 299);
+            this.btn3.Location = new System.Drawing.Point(169, 299);
             this.btn3.Name = "btn3";
             this.btn3.Size = new System.Drawing.Size(62, 35);
             this.btn3.TabIndex = 171;
@@ -266,32 +266,33 @@
             this.btn2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn2.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn2.ForeColor = System.Drawing.Color.Transparent;
-            this.btn2.Location = new System.Drawing.Point(79, 299);
+            this.btn2.Location = new System.Drawing.Point(84, 299);
             this.btn2.Name = "btn2";
             this.btn2.Size = new System.Drawing.Size(62, 35);
             this.btn2.TabIndex = 170;
             this.btn2.UseVisualStyleBackColor = false;
             // 
-            // btn1
+            // btnfiltroSemana
             // 
-            this.btn1.BackColor = System.Drawing.Color.Transparent;
-            this.btn1.BackgroundImage = global::TCC.Properties.Resources.icons8_cancelar_48;
-            this.btn1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn1.Enabled = false;
-            this.btn1.FlatAppearance.BorderSize = 0;
-            this.btn1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btn1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn1.ForeColor = System.Drawing.Color.Transparent;
-            this.btn1.Location = new System.Drawing.Point(-2, 299);
-            this.btn1.Name = "btn1";
-            this.btn1.Size = new System.Drawing.Size(62, 35);
-            this.btn1.TabIndex = 169;
-            this.btn1.UseVisualStyleBackColor = false;
+            this.btnfiltroSemana.BackColor = System.Drawing.Color.Transparent;
+            this.btnfiltroSemana.BackgroundImage = global::TCC.Properties.Resources.icons8_cancelar_48;
+            this.btnfiltroSemana.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnfiltroSemana.Enabled = false;
+            this.btnfiltroSemana.FlatAppearance.BorderSize = 0;
+            this.btnfiltroSemana.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnfiltroSemana.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnfiltroSemana.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnfiltroSemana.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnfiltroSemana.ForeColor = System.Drawing.Color.Transparent;
+            this.btnfiltroSemana.Location = new System.Drawing.Point(3, 299);
+            this.btnfiltroSemana.Name = "btnfiltroSemana";
+            this.btnfiltroSemana.Size = new System.Drawing.Size(62, 35);
+            this.btnfiltroSemana.TabIndex = 169;
+            this.btnfiltroSemana.UseVisualStyleBackColor = false;
             // 
             // dtgestoque
             // 
+            this.dtgestoque.AllowUserToAddRows = false;
             this.dtgestoque.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgestoque.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nome,
@@ -392,7 +393,7 @@
             this.Controls.Add(this.btn4);
             this.Controls.Add(this.btn3);
             this.Controls.Add(this.btn2);
-            this.Controls.Add(this.btn1);
+            this.Controls.Add(this.btnfiltroSemana);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -436,7 +437,7 @@
         public System.Windows.Forms.Button btn4;
         public System.Windows.Forms.Button btn3;
         public System.Windows.Forms.Button btn2;
-        public System.Windows.Forms.Button btn1;
+        public System.Windows.Forms.Button btnfiltroSemana;
         private System.Windows.Forms.DataGridView dtgestoque;
         private System.Windows.Forms.Label lbl4;
         private System.Windows.Forms.Label lblprecoTotal;
