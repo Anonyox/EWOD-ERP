@@ -9,11 +9,16 @@ namespace TCC.CONTROLS.relatorio_controledao.PRODUTOS
     {
         #region VARIÁVEIS E INSTÂNCIAS 
         SqlCommand cmd = new SqlCommand();
-        Conexao con = new Conexao();
+        SqlCommand cmd2 = new SqlCommand();
+        SqlCommand cmd3 = new SqlCommand();
         SqlDataReader dr;
+        Conexao con = new Conexao();
         String entrada;
         String quantidade;
         String despesas;
+        String opera;
+        String opera2;
+        String opera3;
         #endregion
 
         #region MÉTODOS DE FUNCIONALIDADE
@@ -135,6 +140,88 @@ namespace TCC.CONTROLS.relatorio_controledao.PRODUTOS
             return despesas;
 
         }
+
+        public String contarOperacao()
+        {
+            SqlDataReader drt;
+
+            cmd.CommandText = "SELECT COUNT (tipo) FROM logs WHERE tipo = 'Cadastrou Produto'  "; 
+
+            try
+            {
+                cmd.Connection = con.conectar();
+                drt = cmd.ExecuteReader();
+
+                while (drt.Read())
+                {
+                    opera = drt.GetValue(0).ToString();
+                }
+                con.desconectar();
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+            drt.Close();
+            return opera;
+            
+        }
+
+        public String contarOperacao2()
+        {
+            SqlDataReader dr2;
+            cmd2.CommandText = "SELECT COUNT(tipo) FROM logs WHERE tipo = 'Alterou Produto'";
+
+            try
+            {
+                cmd2.Connection = con.conectar();
+                dr2 = cmd2.ExecuteReader();
+                while (dr2.Read())
+                {
+                    opera2 = dr2.GetValue(0).ToString();
+                }
+                con.desconectar();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            dr2.Close();
+            return opera2;
+        }
+
+        public String contarOperacao3()
+        {
+            SqlDataReader dr3;
+            cmd3.CommandText = " SELECT COUNT(tipo) FROM logs WHERE tipo = 'Excluiu Produto'";
+
+            try
+            {
+                cmd3.Connection = con.conectar();
+                dr3 = cmd3.ExecuteReader();
+                while (dr3.Read())
+                {
+                    opera3 = dr3.GetValue(0).ToString();
+                }
+                con.desconectar();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            dr3.Close();
+            return opera3;
+        }
+
+        /*public String contarSaidas()
+        {
+            cmd.CommandText = ""
+        }*/
 
         #endregion
     }

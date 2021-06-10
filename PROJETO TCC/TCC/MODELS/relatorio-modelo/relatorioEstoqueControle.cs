@@ -11,9 +11,15 @@ namespace TCC.MODELS.relatorio_modelo
         String quantidade;
         DataTable dt = new DataTable();
         String despesas;
+        String opera;
+        String opera2;
+        String opera3;
+        public bool tem;
         public String contarEntradas()
         {
            nome = relDao.contarEntradas();
+
+            tem = true;
 
             return nome;
         }
@@ -22,12 +28,16 @@ namespace TCC.MODELS.relatorio_modelo
         {
             quantidade = relDao.contarProdutos();
 
+            tem = true;
+
             return quantidade;
         }
 
         public DataTable listarProdutos()
         {
             this.dt = relDao.listarProdutos();
+
+            tem = true;
 
             return dt;
         }
@@ -36,7 +46,37 @@ namespace TCC.MODELS.relatorio_modelo
         {
             despesas = relDao.contarDespesas();
 
+            tem = true;
+
             return despesas;
+        }
+
+        public String contarOperacao()
+        {
+            opera = relDao.contarOperacao();
+
+            tem = true;
+
+            return opera;
+        }
+
+        public String contarOperacao2()
+        {
+            opera2 = relDao.contarOperacao2();
+
+
+            tem = true;
+
+            return opera2;
+        }
+
+        public String contarOperacao3()
+        {
+            opera3 = relDao.contarOperacao3();
+
+            tem = true;
+
+            return opera3;
         }
 
     }

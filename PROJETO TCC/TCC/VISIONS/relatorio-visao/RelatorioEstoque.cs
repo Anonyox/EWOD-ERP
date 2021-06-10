@@ -14,6 +14,11 @@ namespace TCC.VISÃO
         relatorioEstoqueControle relCtr = new relatorioEstoqueControle();
         String quantidadeProduto;
         String dispesas;
+        int op1 = 0;
+        int op2 = 0;
+        int op3 = 0;
+        int tot = 0;
+
         #endregion
 
 
@@ -101,6 +106,26 @@ namespace TCC.VISÃO
             dispesas = relCtr.contarDespesas();
             lbl4.Text = dispesas;
         }
+
+        public void contarOperacao()
+        {
+            String opera = relCtr.contarOperacao();
+            String opera2 = relCtr.contarOperacao2();
+            String opera3 = relCtr.contarOperacao3();
+
+            if (relCtr.tem)
+            {
+                this.op1 = Convert.ToInt32(opera);
+                this.op2 = Convert.ToInt32(opera2);
+                this.op3 = Convert.ToInt32(opera3);
+
+                this.tot = (op1 + op2) + op3 ;
+
+            }
+
+            lbl5.Text = tot.ToString();
+
+        }
         #endregion
 
 
@@ -130,6 +155,7 @@ namespace TCC.VISÃO
             contarEntradas();
             contarProdutos();
             contarDispesas();
+            contarOperacao();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
