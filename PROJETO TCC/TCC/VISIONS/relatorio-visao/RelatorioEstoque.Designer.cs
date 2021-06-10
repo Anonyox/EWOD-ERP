@@ -35,14 +35,16 @@
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.btnSair = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lblsaida = new System.Windows.Forms.Label();
+            this.lbl1 = new System.Windows.Forms.Label();
             this.lbltotal = new System.Windows.Forms.Label();
             this.lbl3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lbloperacao = new System.Windows.Forms.Label();
             this.lbl2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblsaida = new System.Windows.Forms.Label();
-            this.lbl1 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbl5 = new System.Windows.Forms.Label();
             this.btn4 = new System.Windows.Forms.Button();
             this.btn3 = new System.Windows.Forms.Button();
             this.btn2 = new System.Windows.Forms.Button();
@@ -59,8 +61,7 @@
             this.lbl4 = new System.Windows.Forms.Label();
             this.lblprecoTotal = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.label1 = new System.Windows.Forms.Label();
-            this.lbl5 = new System.Windows.Forms.Label();
+            this.btnexportar = new System.Windows.Forms.Button();
             this.barra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSair)).BeginInit();
@@ -127,6 +128,30 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(192, 81);
             this.panel3.TabIndex = 168;
+            // 
+            // lblsaida
+            // 
+            this.lblsaida.AutoSize = true;
+            this.lblsaida.BackColor = System.Drawing.Color.Transparent;
+            this.lblsaida.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblsaida.ForeColor = System.Drawing.Color.Black;
+            this.lblsaida.Location = new System.Drawing.Point(20, 30);
+            this.lblsaida.Name = "lblsaida";
+            this.lblsaida.Size = new System.Drawing.Size(143, 15);
+            this.lblsaida.TabIndex = 3;
+            this.lblsaida.Text = "QUANTIDADE ENTRADA";
+            // 
+            // lbl1
+            // 
+            this.lbl1.AutoSize = true;
+            this.lbl1.BackColor = System.Drawing.Color.Transparent;
+            this.lbl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl1.ForeColor = System.Drawing.Color.Black;
+            this.lbl1.Location = new System.Drawing.Point(80, 45);
+            this.lbl1.Name = "lbl1";
+            this.lbl1.Size = new System.Drawing.Size(20, 18);
+            this.lbl1.TabIndex = 1;
+            this.lbl1.Text = "N";
             // 
             // lbltotal
             // 
@@ -196,29 +221,29 @@
             this.panel1.Size = new System.Drawing.Size(192, 81);
             this.panel1.TabIndex = 166;
             // 
-            // lblsaida
+            // label1
             // 
-            this.lblsaida.AutoSize = true;
-            this.lblsaida.BackColor = System.Drawing.Color.Transparent;
-            this.lblsaida.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblsaida.ForeColor = System.Drawing.Color.Black;
-            this.lblsaida.Location = new System.Drawing.Point(20, 30);
-            this.lblsaida.Name = "lblsaida";
-            this.lblsaida.Size = new System.Drawing.Size(143, 15);
-            this.lblsaida.TabIndex = 3;
-            this.lblsaida.Text = "QUANTIDADE ENTRADA";
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(12, 30);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(161, 15);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "QUANTIDADE OPERAÇÕES";
             // 
-            // lbl1
+            // lbl5
             // 
-            this.lbl1.AutoSize = true;
-            this.lbl1.BackColor = System.Drawing.Color.Transparent;
-            this.lbl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl1.ForeColor = System.Drawing.Color.Black;
-            this.lbl1.Location = new System.Drawing.Point(80, 45);
-            this.lbl1.Name = "lbl1";
-            this.lbl1.Size = new System.Drawing.Size(20, 18);
-            this.lbl1.TabIndex = 1;
-            this.lbl1.Text = "N";
+            this.lbl5.AutoSize = true;
+            this.lbl5.BackColor = System.Drawing.Color.Transparent;
+            this.lbl5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl5.ForeColor = System.Drawing.Color.Black;
+            this.lbl5.Location = new System.Drawing.Point(83, 45);
+            this.lbl5.Name = "lbl5";
+            this.lbl5.Size = new System.Drawing.Size(20, 18);
+            this.lbl5.TabIndex = 4;
+            this.lbl5.Text = "N";
             // 
             // btn4
             // 
@@ -381,29 +406,23 @@
             this.timer1.Interval = 10000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // label1
+            // btnexportar
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(12, 30);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(161, 15);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "QUANTIDADE OPERAÇÕES";
-            // 
-            // lbl5
-            // 
-            this.lbl5.AutoSize = true;
-            this.lbl5.BackColor = System.Drawing.Color.Transparent;
-            this.lbl5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl5.ForeColor = System.Drawing.Color.Black;
-            this.lbl5.Location = new System.Drawing.Point(83, 45);
-            this.lbl5.Name = "lbl5";
-            this.lbl5.Size = new System.Drawing.Size(20, 18);
-            this.lbl5.TabIndex = 4;
-            this.lbl5.Text = "N";
+            this.btnexportar.BackColor = System.Drawing.Color.Transparent;
+            this.btnexportar.BackgroundImage = global::TCC.Properties.Resources.icons8_cancelar_48;
+            this.btnexportar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnexportar.Enabled = false;
+            this.btnexportar.FlatAppearance.BorderSize = 0;
+            this.btnexportar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnexportar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnexportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnexportar.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnexportar.ForeColor = System.Drawing.Color.Transparent;
+            this.btnexportar.Location = new System.Drawing.Point(798, 622);
+            this.btnexportar.Name = "btnexportar";
+            this.btnexportar.Size = new System.Drawing.Size(62, 29);
+            this.btnexportar.TabIndex = 176;
+            this.btnexportar.UseVisualStyleBackColor = false;
             // 
             // RelatorioEstoque
             // 
@@ -413,6 +432,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(863, 654);
+            this.Controls.Add(this.btnexportar);
             this.Controls.Add(this.lbltotal);
             this.Controls.Add(this.lbl3);
             this.Controls.Add(this.lbl4);
@@ -480,5 +500,6 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbl5;
+        public System.Windows.Forms.Button btnexportar;
     }
 }

@@ -3,6 +3,7 @@ using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 using TCC.MODELS.relatorio_modelo;
+using Microsoft.Office.Interop.Excel;
 
 namespace TCC.VISÃO
 {
