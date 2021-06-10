@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RelatorioEstoque));
             this.label8 = new System.Windows.Forms.Label();
             this.barra = new System.Windows.Forms.Panel();
@@ -46,16 +47,25 @@
             this.btn3 = new System.Windows.Forms.Button();
             this.btn2 = new System.Windows.Forms.Button();
             this.btn1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dtgestoque = new System.Windows.Forms.DataGridView();
+            this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.modelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valordeCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valordeVenda = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataDeCadastro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lbl4 = new System.Windows.Forms.Label();
             this.lblprecoTotal = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.barra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSair)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgestoque)).BeginInit();
             this.SuspendLayout();
             // 
             // label8
@@ -280,22 +290,72 @@
             this.btn1.TabIndex = 169;
             this.btn1.UseVisualStyleBackColor = false;
             // 
-            // dataGridView1
+            // dtgestoque
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 340);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(867, 312);
-            this.dataGridView1.TabIndex = 173;
+            this.dtgestoque.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgestoque.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nome,
+            this.fornecedor,
+            this.tipo,
+            this.modelo,
+            this.quantidade,
+            this.valordeCompra,
+            this.valordeVenda,
+            this.dataDeCadastro});
+            this.dtgestoque.Location = new System.Drawing.Point(0, 340);
+            this.dtgestoque.Name = "dtgestoque";
+            this.dtgestoque.RowHeadersWidth = 51;
+            this.dtgestoque.Size = new System.Drawing.Size(863, 312);
+            this.dtgestoque.TabIndex = 173;
+            // 
+            // nome
+            // 
+            this.nome.HeaderText = "Nome";
+            this.nome.Name = "nome";
+            this.nome.Width = 116;
+            // 
+            // fornecedor
+            // 
+            this.fornecedor.HeaderText = "Fornecedor";
+            this.fornecedor.Name = "fornecedor";
+            // 
+            // tipo
+            // 
+            this.tipo.HeaderText = "Tipo";
+            this.tipo.Name = "tipo";
+            // 
+            // modelo
+            // 
+            this.modelo.HeaderText = "Modelo";
+            this.modelo.Name = "modelo";
+            // 
+            // quantidade
+            // 
+            this.quantidade.HeaderText = "Quantidade";
+            this.quantidade.Name = "quantidade";
+            // 
+            // valordeCompra
+            // 
+            this.valordeCompra.HeaderText = "ValorDeCompra";
+            this.valordeCompra.Name = "valordeCompra";
+            // 
+            // valordeVenda
+            // 
+            this.valordeVenda.HeaderText = "ValorDeVenda";
+            this.valordeVenda.Name = "valordeVenda";
+            // 
+            // dataDeCadastro
+            // 
+            this.dataDeCadastro.HeaderText = "DataDeCadastro";
+            this.dataDeCadastro.Name = "dataDeCadastro";
             // 
             // lbl4
             // 
             this.lbl4.AutoSize = true;
             this.lbl4.BackColor = System.Drawing.Color.Transparent;
             this.lbl4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl4.ForeColor = System.Drawing.Color.Orange;
-            this.lbl4.Location = new System.Drawing.Point(709, 299);
+            this.lbl4.ForeColor = System.Drawing.Color.White;
+            this.lbl4.Location = new System.Drawing.Point(683, 299);
             this.lbl4.Name = "lbl4";
             this.lbl4.Size = new System.Drawing.Size(20, 18);
             this.lbl4.TabIndex = 174;
@@ -306,12 +366,17 @@
             this.lblprecoTotal.AutoSize = true;
             this.lblprecoTotal.BackColor = System.Drawing.Color.Transparent;
             this.lblprecoTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblprecoTotal.ForeColor = System.Drawing.Color.Orange;
+            this.lblprecoTotal.ForeColor = System.Drawing.Color.White;
             this.lblprecoTotal.Location = new System.Drawing.Point(595, 322);
             this.lblprecoTotal.Name = "lblprecoTotal";
             this.lblprecoTotal.Size = new System.Drawing.Size(231, 15);
             this.lblprecoTotal.TabIndex = 175;
             this.lblprecoTotal.Text = "TOTAL DESPESAS PREÇO DE COMPRA";
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 10000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // RelatorioEstoque
             // 
@@ -323,7 +388,7 @@
             this.ClientSize = new System.Drawing.Size(863, 654);
             this.Controls.Add(this.lbl4);
             this.Controls.Add(this.lblprecoTotal);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dtgestoque);
             this.Controls.Add(this.btn4);
             this.Controls.Add(this.btn3);
             this.Controls.Add(this.btn2);
@@ -337,6 +402,7 @@
             this.Name = "RelatorioEstoque";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RelatorioEstoque";
+            this.Load += new System.EventHandler(this.RelatorioEstoque_Load);
             this.barra.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSair)).EndInit();
@@ -346,7 +412,7 @@
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgestoque)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -371,8 +437,17 @@
         public System.Windows.Forms.Button btn3;
         public System.Windows.Forms.Button btn2;
         public System.Windows.Forms.Button btn1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dtgestoque;
         private System.Windows.Forms.Label lbl4;
         private System.Windows.Forms.Label lblprecoTotal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fornecedor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn modelo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantidade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valordeCompra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valordeVenda;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataDeCadastro;
+        private System.Windows.Forms.Timer timer1;
     }
 }

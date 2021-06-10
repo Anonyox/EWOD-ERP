@@ -29,7 +29,7 @@ namespace TCC.CONTROLE
 
 
 
-        #region CONSTRUTOR
+        #region MÉTODOS DE FUNCIONALIDADE
         public DataTable listarProdutos()
         {
 
