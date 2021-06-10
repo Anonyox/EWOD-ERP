@@ -403,6 +403,16 @@ namespace TCC.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap exportar {
+            get {
+                object obj = ResourceManager.GetObject("exportar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ÍCONE {
             get {
                 object obj = ResourceManager.GetObject("ÍCONE", resourceCulture);
@@ -673,6 +683,16 @@ namespace TCC.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap processo {
+            get {
+                object obj = ResourceManager.GetObject("processo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap recyclingdrawer_empty_reciclaje_10798 {
             get {
                 object obj = ResourceManager.GetObject("recyclingdrawer_empty_reciclaje_10798", resourceCulture);
@@ -696,6 +716,26 @@ namespace TCC.Properties {
         internal static System.Drawing.Bitmap Seja_bem_vindo {
             get {
                 object obj = ResourceManager.GetObject("Seja-bem-vindo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sistema {
+            get {
+                object obj = ResourceManager.GetObject("sistema", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap troca {
+            get {
+                object obj = ResourceManager.GetObject("troca", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

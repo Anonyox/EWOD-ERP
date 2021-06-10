@@ -342,7 +342,7 @@ namespace TCC.VISÃO
 
             formataGrid();
             listaUsers();
-            MessageBox.Show("Para cadastrar um usuário, clique no botão adicionar", "Novo Usuário", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Para cadastrar um usuário, clique no botão adicionar!!", "Novo Usuário", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         } //LOAD DO FORM
         #endregion
@@ -448,6 +448,7 @@ namespace TCC.VISÃO
 
         private void btnlimpar_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Operação Cancelada!!", "OPERAÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Information);
             limpaCampos();
             txtuser.Enabled = false;
             txtsenha.Enabled = false;
@@ -640,6 +641,7 @@ namespace TCC.VISÃO
 
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Operação Iniciada!!", "OPERAÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Information);
             txtuser.Enabled = true;
             txtsenha.Enabled = true; ;
             txtconfSenha.Enabled = true;
@@ -663,12 +665,47 @@ namespace TCC.VISÃO
 
             txtuser.Focus();
         }
+
+
+
+
+
         #endregion
 
+        private void btnAdicionar_MouseEnter(object sender, EventArgs e)
+        {
+            lbladicionar.Visible = true;
+            btnAdicionar.Size = new Size(68, 35);
+        }
 
+        private void btnAdicionar_MouseLeave(object sender, EventArgs e)
+        {
+            lbladicionar.Visible = false;
+            btnAdicionar.Size = new Size(64, 32);
+        }
 
+        private void btnCadastrar_MouseEnter(object sender, EventArgs e)
+        {
+            lblcadastrar.Visible = true;
+            btnCadastrar.Size = new Size(68, 40);
+        }
 
+        private void btnCadastrar_MouseLeave(object sender, EventArgs e)
+        {
+            lblcadastrar.Visible = false;
+            btnCadastrar.Size = new Size(64, 38);
+        }
 
+        private void btnlimpar_MouseEnter(object sender, EventArgs e)
+        {
+            lblcancelar.Visible = true;
+            btnlimpar.Size = new Size(68, 40);
+        }
 
+        private void btnlimpar_MouseLeave(object sender, EventArgs e)
+        {
+            lblcancelar.Visible = false;
+            btnlimpar.Size = new Size(64, 38);
+        }
     }
 }

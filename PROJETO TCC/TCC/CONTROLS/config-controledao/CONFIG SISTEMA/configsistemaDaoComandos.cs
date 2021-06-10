@@ -49,14 +49,14 @@ namespace TCC.CONTROLE
             SqlCommand cmd = new SqlCommand();
 
             cmd.CommandText = "select  tipo, Convert (varchar(20),dataLog, 113) AS [dataLog] ,  usuario , perfil from logs Order By codLog DESC";
-            
+            cmd.Connection = con.conectar();
 
 
             try
             {
 
-                cmd.Connection = con.conectar();
 
+                DataTable td = new DataTable();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 cmd.ExecuteNonQuery();
 
@@ -65,11 +65,11 @@ namespace TCC.CONTROLE
 
 
 
-                da.Fill(dt);
+                da.Fill(td);
 
                 
                 
-                return dt;
+                return td;
 
 
 

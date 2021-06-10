@@ -33,7 +33,7 @@ namespace TCC.CONTROLE
         public String perfil;
         public String perfillog = verificaPerfill.perfil;
 
-        public string tipo = "Acesso ao sistema";
+        public string tipo = "Acessou o Sistema";
         public string tipo2 = "Alterou o Nome de Usuário";
         public string tipo3 = "Alterou o Email do Usuário";
         public string tipo4 = "Alterou a Senha do Usuário";

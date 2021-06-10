@@ -17,6 +17,7 @@ namespace TCC.VISÃO
         public CadastroProduto()
         {
             InitializeComponent();
+            timer1.Start();
             menuz.valida = 2;
             //listarProdutos();
 
@@ -103,27 +104,8 @@ namespace TCC.VISÃO
 
             this.tem = cadpro.verificarProduto(nomeProduto);
 
-            if (cadpro.tem && btnsalvarAlteracao.Enabled == false)
+            if (cadpro.tem)
             {
-
-
-                MessageBox.Show("Produto já existente !!", "CADASTRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-
-
-                if (MessageBox.Show("Deseja alterar dados do produto existente ?", "ALTERAÇÃO", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    preencherCampos();
-                    btnConfirmar.Enabled = false;
-                    nomeAnterior = txtnomeProduto.Text;
-                    btnsalvarAlteracao.Enabled = true;
-
-                }
-                else
-                {
-                    limparCampos();
-                    txtnomeProduto.Focus();
-                }
 
                 return true;
 
@@ -214,7 +196,7 @@ namespace TCC.VISÃO
         {
             txtnomeProduto.Text = "";
             txtfornecedor.Text = "";
-            txtdata.Text = "";
+           
             txtmodeloProduto.Text = "";
             txtvalorCompra.Text = "";
             txtvalorVenda.Text = "";
@@ -243,6 +225,7 @@ namespace TCC.VISÃO
 
         public void cadastrarProdutos()
         {
+            verificarProduto();
             string valordeCompraNovo = txtvalorCompra.Text;
             string valordeVendaNovo = txtvalorVenda.Text;
 
@@ -316,7 +299,7 @@ namespace TCC.VISÃO
             string valordeVendaNovo = txtvalorVenda.Text;
 
 
-            char[] MyChar = { 'R', '$' };
+            char[] MyChar = { 'R','$'};
             valordeCompraNovo = valordeCompraNovo.TrimStart(MyChar);
             valordeVendaNovo = valordeVendaNovo.TrimStart(MyChar);
 
@@ -376,6 +359,7 @@ namespace TCC.VISÃO
                 if (cadpro.tem)
                 {
                     MessageBox.Show(mensagem, "EXCLUSÃO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    listarProdutos();
                 }
                 else
                 {
@@ -387,6 +371,14 @@ namespace TCC.VISÃO
                 limparCampos();
                 txtnomeProduto.Focus();
             }
+        }
+
+        public bool validaCampos()
+        {
+            if (txttipo.Text == "" || txtmodeloProduto.Text == "" || txtvalorVenda.Text == "" || txtvalorCompra.Text == "" || txtquantidadeProduto.Text == "")
+                return false;
+            else
+                return true;
         }
 
         #endregion
@@ -402,7 +394,7 @@ namespace TCC.VISÃO
         {
             if(validamsg == 0)
             {
-                MessageBox.Show("Para adicionar um produto ao estoque, digite seu nome primeiro", "INFORMAÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Para adicionar um produto ao estoque, clique no botão adicionar!!", "INFORMAÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             validamsg = 1;
         }
@@ -443,7 +435,7 @@ namespace TCC.VISÃO
 
         private void dtproduto_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-                
+            txtnomeProduto.Text = "";
             if (e.ColumnIndex == this.imgexcluir.Index && e.RowIndex >= 0)
             {
                 excluirProduto();                
@@ -452,7 +444,7 @@ namespace TCC.VISÃO
             else if (dtproduto.SelectedRows.Count >= 0)
             {
 
-                txtnomeProduto.Text = dtproduto.SelectedRows[0].Cells[2].Value.ToString();
+                 txtnomeProduto.Text = dtproduto.SelectedRows[0].Cells[2].Value.ToString();
                 txtfornecedor.Text = dtproduto.SelectedRows[0].Cells[3].Value.ToString();
                 txttipo.Text = dtproduto.SelectedRows[0].Cells[4].Value.ToString();
                 txtmodeloProduto.Text = dtproduto.SelectedRows[0].Cells[5].Value.ToString();
@@ -460,6 +452,13 @@ namespace TCC.VISÃO
                 txtvalorCompra.Text = dtproduto.SelectedRows[0].Cells[7].Value.ToString();
                 txtvalorVenda.Text = dtproduto.SelectedRows[0].Cells[8].Value.ToString();
                 txtdata.Text = dtproduto.SelectedRows[0].Cells[9].Value.ToString();
+
+                btnsalvarAlteracao.Enabled = true;
+                btnConfirmar.Enabled = false;
+                txtnomeProduto.Enabled = false;
+               
+
+            
 
 
             }
@@ -474,9 +473,38 @@ namespace TCC.VISÃO
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            btnsalvarAlteracao.Enabled = false;
-            btnConfirmar.Enabled = true;
-            limparCampos();
+          
+            if (txtnomeProduto.Text != "" )
+            {
+                limparCampos();
+                txtnomeProduto.Enabled = true;
+                txtnomeProduto.Focus();
+
+                btnsalvarAlteracao.Enabled = false;
+            }
+            else
+            {
+                MessageBox.Show("Operação Cancelada!!", "OPERAÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btnsalvarAlteracao.Enabled = false;
+                btnAdicionar.Enabled = true;
+                btnConfirmar.Enabled = false;
+                btnCancelar.Enabled = false;
+
+                dtproduto.Enabled = false;
+
+                txtnomeProduto.Enabled = false;
+                txttipo.Enabled = false;
+                txtmodeloProduto.Enabled = false;
+                txtfornecedor.Enabled = false;
+                txtvalorCompra.Enabled = false;
+                txtvalorVenda.Enabled = false;
+                txtquantidadeProduto.Enabled = false;
+
+
+            }
+            
+           
+            
         }
 
 
@@ -549,7 +577,7 @@ namespace TCC.VISÃO
 
         private void txtnomeProduto_Leave(object sender, EventArgs e)
         {
-            preencherCampos();
+           
             verificarProduto();
             letraMaiscula(txtnomeProduto);
 
@@ -560,10 +588,25 @@ namespace TCC.VISÃO
 
         private void txtnomeProduto_TextChanged(object sender, EventArgs e)
         {
-
             txtdata.Text = datadecadastro.ToString();
 
-            btnConfirmar.Enabled = true;
+            
+            if (txtnomeProduto.Text == "")
+            {
+                btnConfirmar.Enabled = false;
+                limparCampos();
+            }
+            else if (btnConfirmar.Enabled == true)
+            {
+                preencherCampos();
+               
+            }
+            else
+            {
+                btnConfirmar.Enabled = true;
+            }
+          
+        
 
         }
 
@@ -572,16 +615,51 @@ namespace TCC.VISÃO
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            if(txtnomeProduto.Text == string.Empty)
+
+
+            if (!verificarProduto())
             {
-                MessageBox.Show("Digite o Produto que deseja Cadastrar!!", "CADASTRO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            
+            if(txtnomeProduto.Text == string.Empty )
+            {
+                MessageBox.Show("Digite o nome do Produto que deseja Cadastrar!!", "CADASTRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtnomeProduto.Focus();
+            }
+            else if (!validaCampos())
+            {
+                    MessageBox.Show("Digite os respectivos atributos do Produto!!", "CADASTRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtnomeProduto.Focus();
+            }
+                else
+                {
+                    cadastrarProdutos();
+                    limparCampos();
+                }
             }
             else
             {
-                cadastrarProdutos();
-                limparCampos();
+                MessageBox.Show("Produto já existente !!", "CADASTRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+
+
+                if (MessageBox.Show("Deseja alterar dados do produto existente ?", "ALTERAÇÃO", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    preencherCampos();
+                    txtnomeProduto.Enabled = false;
+                    btnConfirmar.Enabled = false;
+                    nomeAnterior = txtnomeProduto.Text;
+                    btnsalvarAlteracao.Enabled = true;
+
+                }
+                else
+                {
+                    limparCampos();
+                    txtnomeProduto.Focus();
+                }
             }
             
+
         }
 
 
@@ -613,8 +691,10 @@ namespace TCC.VISÃO
 
         private void btnsalvarAlteracao_Click(object sender, EventArgs e)
         {
+            
             salvarAlteracao();
             limparCampos();
+            txtnomeProduto.Enabled = true;
         }
 
         private void btnCancelar_MouseEnter(object sender, EventArgs e)
@@ -632,7 +712,14 @@ namespace TCC.VISÃO
 
         private void btnSair_Click_1(object sender, EventArgs e)
         {
-            this.Close();
+            if(btnCancelar.Enabled == true)
+            {
+                MessageBox.Show("Antes de sair, cancele a Operação!!", "OPERAÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                this.Close();
+            }
         }
 
         private void btnMinimizar_Click(object sender, EventArgs e)
@@ -654,9 +741,46 @@ namespace TCC.VISÃO
         }
 
 
+
         #endregion
 
-       
+        private void txtmodeloProduto_Leave_1(object sender, EventArgs e)
+        {
+            letraMaiscula(txtmodeloProduto);
+        }
+
+        private void btnAdicionar_MouseEnter(object sender, EventArgs e)
+        {
+            lbladicionar.Visible = true;
+            btnAdicionar.Size = new Size(68, 35);
+        }
+
+        private void btnAdicionar_MouseLeave(object sender, EventArgs e)
+        {
+            lbladicionar.Visible = false;
+            btnAdicionar.Size = new Size(64, 32);
+        }
+
+        private void btnAdicionar_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Operação Iniciada!!", "OPERAÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+           
+            dtproduto.Enabled = true;
+
+            btnCancelar.Enabled = true;
+            btnAdicionar.Enabled = false;
+          
+
+            txtnomeProduto.Enabled = true;
+            txttipo.Enabled = true;
+            txtmodeloProduto.Enabled = true;
+            txtfornecedor.Enabled = true;
+            txtvalorCompra.Enabled = true;
+            txtvalorVenda.Enabled = true;
+            txtquantidadeProduto.Enabled = true;
+
+            txtnomeProduto.Focus();
+        }
     }
 
 }

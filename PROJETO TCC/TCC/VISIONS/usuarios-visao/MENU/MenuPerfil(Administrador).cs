@@ -930,6 +930,8 @@ namespace TCC.VISÃO
             pn1.Location = new Point(-50, 705);
             pn2.Location = new Point(125, 670);
 
+            timer3.Start();
+
         }
 
 
@@ -968,6 +970,16 @@ namespace TCC.VISÃO
                 relatEstoque.Owner = this;
                 relatEstoque.Show();
             }
+        }
+
+        private void timer3_Tick(object sender, EventArgs e)
+        {
+
+            
+            MessageBox.Show("Sessão Finalizada, " + user, "Sessão", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            btnsairDoSistema_Click(sender, e);
+
+            timer3.Start();
         }
     }
 }

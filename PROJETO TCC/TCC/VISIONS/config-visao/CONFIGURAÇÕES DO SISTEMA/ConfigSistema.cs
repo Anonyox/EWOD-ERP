@@ -75,7 +75,7 @@ namespace TCC.VISÃO
 
         public void selLogsExclu()
         {
-            regExc = controleConfigSistema.selLogsCad();
+            regExc = controleConfigSistema.selLogsExclu();
             lblExcluUsuario.Text = regExc;
         } //LISTAGENS DE LOGS TOTAL DE EXCLUSÃO 
 

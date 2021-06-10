@@ -56,7 +56,7 @@ namespace TCC.MODELS.produto_modelo
         public String salvarAlteracao(string nomeAnterior, string nome, string fornecedor, string tipo, string modelo, float quantidade, float valordeCompra, float valordeVenda,
                      string datadeCadastro)
         {
-            this.mensagem = cadproduto.salvarAlteracao(nomeAnterior, nome, fornecedor, tipo, modelo, quantidade, valordeCompra, valordeVenda, datadeCadastro);
+            this.mensagem = cadproduto.salvarAlteracao(nome, fornecedor, tipo, modelo, quantidade, valordeCompra, valordeVenda, datadeCadastro);
 
             if (cadproduto.tem)
             {

@@ -1,6 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using TCC.VISÃO;
+using static TCC.login;
+using static TCC.VISÃO.CadastroVendas;
 
 namespace TCC.CONTROLE
 {
@@ -18,6 +22,10 @@ namespace TCC.CONTROLE
         public Boolean tem = false;
         Conexao con = new Conexao();
         SqlCommand cmd = new SqlCommand();
+        SqlCommand cmd2 = new SqlCommand();
+        String user = DadosGeral.nomeUser;
+
+        public string tipo = "Cadastrou Produto";
 
         public string quantidadeEstoque;
         #endregion
@@ -101,6 +109,8 @@ namespace TCC.CONTROLE
             cmd.Parameters.AddWithValue("@g", quantidade);
             cmd.Parameters.AddWithValue("@h", valorTotal);
 
+
+           
 
 
 
@@ -258,6 +268,50 @@ namespace TCC.CONTROLE
             return codOperacao;
 
         } //FAZ A BUSCA DO ÚLTIMO CÓDIGO DE OPERAÇÃO
+
+        public String procuraUltimoCodigoDaVendaEAdicionaUm()
+        {
+            Conexao con = new Conexao();
+            SqlCommand cmd = new SqlCommand();
+            String codOperacao = "";
+
+            cmd.CommandText = ("SELECT MAX(codVendaRealizada) FROM vendas");
+            con.conectar();
+            cmd.Connection = con.conectar();
+
+
+
+
+            try
+            {
+
+                SqlDataReader reg = cmd.ExecuteReader();
+
+                while (reg.Read())
+                {
+                    codOperacao = reg.GetValue(0).ToString();
+
+                    this.tem = true;
+
+                    con.desconectar();
+                    return codOperacao;
+
+                }
+
+
+
+                //dtEmail.DataSource = dt;
+
+
+
+            }
+            catch (SqlException)
+            {
+
+                this.tem = false;
+            }
+            return codOperacao;
+        }
 
         public String somaProdutosAdicionadosAoCarrinho(int codOperacaoSomaTotal)
         {
@@ -429,7 +483,7 @@ namespace TCC.CONTROLE
         public bool baixarEstoque (String nomeDoProduto, String baixaEstoque)
         {
 
-            cmd.CommandText = ("UPDATE produtos set quantidade = @baixaEstoque where nome = @nomeDoProduto");
+            cmd.CommandText = ("UPDATE estoqueProdutos set quantidade = @baixaEstoque from produtos where estoqueProdutos.idProduto = produtos.codProduto and produtos.nome = @nomeDoProduto");
             cmd.Parameters.AddWithValue("@nomeDoProduto", nomeDoProduto);
             cmd.Parameters.AddWithValue("@baixaEstoque", baixaEstoque);
             cmd.Connection = con.conectar();
@@ -466,6 +520,64 @@ namespace TCC.CONTROLE
 
             con.desconectar();
             return tem;
+        }
+
+        public String cadastrarVenda(String codVenda, String nome, String tipo, float valorVenda, int quantidade, String modelo, String metodoPgt, float desconto, float totalVenda, float valorTotal, String data)
+        {
+            cmd.CommandText = "insert into vendas values (@codVenda,@nome,@tipo,@valorVenda,@quantidade,@modelo,@metodoPgt,@desconto,@totalVenda,@valorTotal,@data)";
+            cmd.Parameters.AddWithValue("@codVenda", codVenda);
+            cmd.Parameters.AddWithValue("@nome", nome);
+            cmd.Parameters.AddWithValue("@tipo",tipo);
+            cmd.Parameters.AddWithValue("@valorVenda",valorVenda);
+            cmd.Parameters.AddWithValue("@quantidade",quantidade);
+            cmd.Parameters.AddWithValue("@modelo",modelo);
+            cmd.Parameters.AddWithValue("@metodoPgt",metodoPgt);
+            cmd.Parameters.AddWithValue("@desconto",desconto);
+            cmd.Parameters.AddWithValue("@totalVenda",totalVenda);
+            cmd.Parameters.AddWithValue("@valorTotal",valorTotal);
+            cmd.Parameters.AddWithValue("@data", data);
+            cmd.Connection = con.conectar();
+
+
+
+
+
+            try
+            {
+                
+                cmd.ExecuteNonQuery();
+
+                cmd.Parameters.RemoveAt("@codVenda");
+                cmd.Parameters.RemoveAt("@nome");
+                cmd.Parameters.RemoveAt("@tipo");
+                cmd.Parameters.RemoveAt("@valorVenda");
+                cmd.Parameters.RemoveAt("@quantidade");
+                cmd.Parameters.RemoveAt("@modelo");
+                cmd.Parameters.RemoveAt("@metodoPgt");
+                cmd.Parameters.RemoveAt("@desconto");
+                cmd.Parameters.RemoveAt("@totalVenda");
+                cmd.Parameters.RemoveAt("@valorTotal");
+                cmd.Parameters.RemoveAt("@data");
+
+
+
+
+
+                this.mensagem = ("Venda Cadastrada");
+
+                con.desconectar();
+
+
+                this.tem = true;
+
+                return mensagem;
+            }
+            catch (SqlException)
+            {
+                tem = false;
+                this.mensagem = ("Erro com banco de dados");
+            }
+            return mensagem;
         }
 
 

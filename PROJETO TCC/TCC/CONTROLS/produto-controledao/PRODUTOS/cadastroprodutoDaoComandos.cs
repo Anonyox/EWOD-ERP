@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TCC.VISÃO;
+using static TCC.login;
 
 namespace TCC.CONTROLE
 {
@@ -15,7 +16,12 @@ namespace TCC.CONTROLE
         #region VARIÁVEIS E INTÂNCIAS
         Conexao con = new Conexao();
         SqlCommand cmd = new SqlCommand();
+        SqlCommand cmd2 = new SqlCommand();
+        String user = DadosGeral.nomeUser;
+        public String perfillog = verificaPerfill.perfil;
         SqlDataReader dr;
+        string tipolog = "Cadastrou Produto";
+        string tipolog2 = "Alterou Produto";
         DataTable dtr = new DataTable();
         public bool tem = false;
         public string mensagem = ("");
@@ -35,15 +41,16 @@ namespace TCC.CONTROLE
 
                 cmd.Connection = con.conectar();
 
+                DataTable td = new DataTable();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 cmd.ExecuteNonQuery();
 
 
-                da.Fill(dtr);
+                da.Fill(td);
 
                 con.desconectar();
 
-                return dtr;
+                return td;
 
             }
             catch (SqlException)
@@ -107,12 +114,23 @@ namespace TCC.CONTROLE
             cmd.Parameters.AddWithValue("@f", valordeCompra);
             cmd.Parameters.AddWithValue("@g", valordeVenda);
             cmd.Parameters.AddWithValue("@h", dataDeCadastro);
+
+            cmd2.CommandText = "Insert into logs (tipo,dataLog,usuario,perfil) values (@tipo, @dataLog, @usuario, @perfil)";
+
+            cmd2.Parameters.AddWithValue("@tipo", tipolog);
+            cmd2.Parameters.AddWithValue("@datalog", dataDeCadastro);
+            cmd2.Parameters.AddWithValue("@usuario", user);
+            cmd2.Parameters.AddWithValue("@perfil", perfillog);
+
             //INSERT NA TABELA PRODUTOS
 
             try
             {
                 cmd.Connection = con.conectar();
                 cmd.ExecuteNonQuery();
+
+                cmd2.Connection = con.conectar();
+                cmd2.ExecuteNonQuery();
 
                 cmd.Parameters.RemoveAt("@a");
                 cmd.Parameters.RemoveAt("@b");
@@ -122,6 +140,11 @@ namespace TCC.CONTROLE
                 cmd.Parameters.RemoveAt("@f");
                 cmd.Parameters.RemoveAt("@g");
                 cmd.Parameters.RemoveAt("@h");
+
+                cmd2.Parameters.RemoveAt("@tipo");
+                cmd2.Parameters.RemoveAt("@datalog");
+                cmd2.Parameters.RemoveAt("@usuario");
+                cmd2.Parameters.RemoveAt("@perfil");
 
                 //ABRIR CONEXÃO DOS PRODUTOS
 
@@ -189,25 +212,35 @@ namespace TCC.CONTROLE
             con.desconectar();
         }
 
-        public String salvarAlteracao(string nomeAnterior, string nome, string fornecedor, string tipo, string modelo, float quantidade, float valordeCompra, float valordeVenda,
+        public String salvarAlteracao(string nome, string fornecedor, string tipo, string modelo, float quantidade, float valordeCompra, float valordeVenda,
             string dataDeCadastro)
         {
             SqlCommand cmd2 = new SqlCommand();
+            SqlCommand cmd3 = new SqlCommand();
             tem = false;
 
             //cmd.CommandText = "UPDATE produtos INNER JOIN estoqueProdutos ON produtos.codProduto = estoqueProdutos.idProduto SET produtos.nome = @a, produtos.fornecedor = @b, produtos.tipo = @c, produtos.modelo = @d,produtos.valordeCompra = @f, produtos.valordeVenda = @g, produtos.dataDeCadastro = @h + estoqueProduto.Quantidade = @e, estoqueProduto.datadeCadastro = @e WHERE nome = @nomeAnterior";
-            cmd.CommandText = "UPDATE produtos SET nome = @a, fornecedor = @b, tipo = @c, modelo = @d,valordeCompra = @f,valordeVenda = @g,dataDeCadastro = @h WHERE produtos.codProduto = estoqueProdutos.idProduto AND produtos.nome = @nomeAnterior" +
-                "UPDATE estoqueProdutos SET Quantidade = @e, datadeCadastro = produtos.dataDeCadastro FROM produtos P WHERE estoqueProdutos.idProduto = P.codProduto ";
+            cmd.CommandText = "UPDATE produtos SET fornecedor = @b, tipo = @c, modelo = @d, valordeCompra = @f,valordeVenda = @g,dataDeCadastro = @h from estoqueProdutos WHERE produtos.codProduto = estoqueProdutos.idProduto AND produtos.nome = @nomeAnterior";
+            cmd2.CommandText = "UPDATE estoqueProdutos SET Quantidade = @e, datadeCadastro = produtos.dataDeCadastro FROM produtos WHERE estoqueProdutos.idProduto = produtos.codProduto and produtos.nome = @a";
+            cmd3.CommandText = "Insert into logs (tipo,dataLog,usuario,perfil) values (@tipo, @dataLog, @usuario, @perfil)";
 
-            cmd.Parameters.AddWithValue("@a", nome);
             cmd.Parameters.AddWithValue("@b", fornecedor);
             cmd.Parameters.AddWithValue("@c", tipo);
             cmd.Parameters.AddWithValue("@d", modelo);
-            cmd.Parameters.AddWithValue("@e", quantidade);
             cmd.Parameters.AddWithValue("@f", valordeCompra);
             cmd.Parameters.AddWithValue("@g", valordeVenda);
             cmd.Parameters.AddWithValue("@h", dataDeCadastro);
-            cmd.Parameters.AddWithValue("@nomeAnterior", nomeAnterior);
+            cmd.Parameters.AddWithValue("@nomeAnterior", nome);
+
+            cmd2.Parameters.AddWithValue("@a", nome);
+            cmd2.Parameters.AddWithValue("@e", quantidade);
+
+         
+
+            cmd3.Parameters.AddWithValue("@tipo", tipolog2);
+            cmd3.Parameters.AddWithValue("@datalog", dataDeCadastro);
+            cmd3.Parameters.AddWithValue("@usuario", user);
+            cmd3.Parameters.AddWithValue("@perfil", perfillog);
 
 
 
@@ -219,7 +252,32 @@ namespace TCC.CONTROLE
             try
             {
                 cmd.Connection = con.conectar();
+                cmd2.Connection = con.conectar();
+                cmd3.Connection = con.conectar();
+
                 cmd.ExecuteNonQuery();
+                cmd2.ExecuteNonQuery();
+                cmd3.ExecuteNonQuery();
+
+
+
+                
+               
+                cmd.Parameters.RemoveAt("@b");
+                cmd.Parameters.RemoveAt("@c");
+                cmd.Parameters.RemoveAt("@d");
+                cmd.Parameters.RemoveAt("@f");
+                cmd.Parameters.RemoveAt("@g");
+                cmd.Parameters.RemoveAt("@h");
+                cmd.Parameters.RemoveAt("@nomeAnterior");
+
+                cmd2.Parameters.RemoveAt("@a");
+                cmd2.Parameters.RemoveAt("@e");
+
+                cmd3.Parameters.RemoveAt("@tipo");
+                cmd3.Parameters.RemoveAt("@datalog");
+                cmd3.Parameters.RemoveAt("@usuario");
+                cmd3.Parameters.RemoveAt("@perfil");
 
 
 
@@ -252,6 +310,7 @@ namespace TCC.CONTROLE
                 cmd.Connection = con.conectar();
                 cmd.ExecuteNonQuery();
 
+                cmd.Parameters.RemoveAt("@n");
                 con.desconectar();
 
                 this.mensagem = "PRODUTO RETIRADO COM SUCESSO!!";

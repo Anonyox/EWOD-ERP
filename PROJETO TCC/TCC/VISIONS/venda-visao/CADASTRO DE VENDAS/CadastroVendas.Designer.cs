@@ -38,6 +38,7 @@
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.btnSair = new System.Windows.Forms.PictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.txtnumero = new System.Windows.Forms.MaskedTextBox();
             this.lbllol = new System.Windows.Forms.Label();
             this.txtDesconto = new System.Windows.Forms.MaskedTextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -89,7 +90,10 @@
             this.produtosTableAdapter = new TCC.tccDataSetTableAdapters.produtosTableAdapter();
             this.tccDataSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.lblcancelar = new System.Windows.Forms.Label();
+            this.lblFinalizar = new System.Windows.Forms.Label();
+            this.lbladicionar = new System.Windows.Forms.Label();
+            this.lbladicionarcarrinho = new System.Windows.Forms.Label();
             this.barra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSair)).BeginInit();
@@ -118,7 +122,7 @@
             this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
             this.btnMinimizar.Location = new System.Drawing.Point(1067, 18);
-            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(4);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(37, 34);
             this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -131,7 +135,7 @@
             this.btnSair.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSair.Image = ((System.Drawing.Image)(resources.GetObject("btnSair.Image")));
             this.btnSair.Location = new System.Drawing.Point(1112, 18);
-            this.btnSair.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSair.Margin = new System.Windows.Forms.Padding(4);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(37, 34);
             this.btnSair.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -143,7 +147,11 @@
             // 
             this.panel6.BackgroundImage = global::TCC.Properties.Resources._1555492a6_11;
             this.panel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel6.Controls.Add(this.maskedTextBox1);
+            this.panel6.Controls.Add(this.lbladicionarcarrinho);
+            this.panel6.Controls.Add(this.lbladicionar);
+            this.panel6.Controls.Add(this.lblFinalizar);
+            this.panel6.Controls.Add(this.lblcancelar);
+            this.panel6.Controls.Add(this.txtnumero);
             this.panel6.Controls.Add(this.lbllol);
             this.panel6.Controls.Add(this.txtDesconto);
             this.panel6.Controls.Add(this.label8);
@@ -181,11 +189,22 @@
             this.panel6.Controls.Add(this.label1);
             this.panel6.Controls.Add(this.lblteste);
             this.panel6.Location = new System.Drawing.Point(1, 71);
-            this.panel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel6.Margin = new System.Windows.Forms.Padding(4);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(1155, 743);
             this.panel6.TabIndex = 64;
             this.panel6.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel6_MouseMove);
+            // 
+            // txtnumero
+            // 
+            this.txtnumero.Enabled = false;
+            this.txtnumero.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtnumero.Location = new System.Drawing.Point(803, 346);
+            this.txtnumero.Margin = new System.Windows.Forms.Padding(4);
+            this.txtnumero.Mask = "0000";
+            this.txtnumero.Name = "txtnumero";
+            this.txtnumero.Size = new System.Drawing.Size(65, 35);
+            this.txtnumero.TabIndex = 13;
             // 
             // lbllol
             // 
@@ -205,10 +224,10 @@
             this.txtDesconto.Enabled = false;
             this.txtDesconto.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDesconto.Location = new System.Drawing.Point(647, 182);
-            this.txtDesconto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDesconto.Margin = new System.Windows.Forms.Padding(4);
             this.txtDesconto.Name = "txtDesconto";
             this.txtDesconto.Size = new System.Drawing.Size(139, 35);
-            this.txtDesconto.TabIndex = 156;
+            this.txtDesconto.TabIndex = 8;
             this.txtDesconto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtDesconto.TextChanged += new System.EventHandler(this.txtDesconto_TextChanged);
             this.txtDesconto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDesconto_KeyPress);
@@ -278,10 +297,10 @@
             this.btnFinalizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFinalizar.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFinalizar.ForeColor = System.Drawing.Color.Transparent;
-            this.btnFinalizar.Location = new System.Drawing.Point(1053, 443);
-            this.btnFinalizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnFinalizar.Location = new System.Drawing.Point(120, 450);
+            this.btnFinalizar.Margin = new System.Windows.Forms.Padding(4);
             this.btnFinalizar.Name = "btnFinalizar";
-            this.btnFinalizar.Size = new System.Drawing.Size(65, 43);
+            this.btnFinalizar.Size = new System.Drawing.Size(85, 47);
             this.btnFinalizar.TabIndex = 150;
             this.btnFinalizar.UseVisualStyleBackColor = false;
             this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
@@ -300,10 +319,10 @@
             this.btnAdicionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdicionar.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdicionar.ForeColor = System.Drawing.Color.Transparent;
-            this.btnAdicionar.Location = new System.Drawing.Point(959, 443);
-            this.btnAdicionar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAdicionar.Location = new System.Drawing.Point(1031, 450);
+            this.btnAdicionar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdicionar.Name = "btnAdicionar";
-            this.btnAdicionar.Size = new System.Drawing.Size(65, 43);
+            this.btnAdicionar.Size = new System.Drawing.Size(85, 47);
             this.btnAdicionar.TabIndex = 149;
             this.btnAdicionar.UseVisualStyleBackColor = false;
             this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
@@ -325,10 +344,11 @@
             this.txtcidadeCliente.Enabled = false;
             this.txtcidadeCliente.Font = new System.Drawing.Font("Comic Sans MS", 12F);
             this.txtcidadeCliente.Location = new System.Drawing.Point(185, 346);
-            this.txtcidadeCliente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtcidadeCliente.Margin = new System.Windows.Forms.Padding(4);
             this.txtcidadeCliente.Name = "txtcidadeCliente";
             this.txtcidadeCliente.Size = new System.Drawing.Size(189, 35);
-            this.txtcidadeCliente.TabIndex = 13;
+            this.txtcidadeCliente.TabIndex = 11;
+            this.txtcidadeCliente.Leave += new System.EventHandler(this.txtcidadeCliente_Leave);
             // 
             // label15
             // 
@@ -349,10 +369,11 @@
             this.txtEndereco.Enabled = false;
             this.txtEndereco.Font = new System.Drawing.Font("Comic Sans MS", 12F);
             this.txtEndereco.Location = new System.Drawing.Point(803, 285);
-            this.txtEndereco.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEndereco.Margin = new System.Windows.Forms.Padding(4);
             this.txtEndereco.Name = "txtEndereco";
             this.txtEndereco.Size = new System.Drawing.Size(293, 35);
             this.txtEndereco.TabIndex = 12;
+            this.txtEndereco.Leave += new System.EventHandler(this.txtEndereco_Leave);
             // 
             // label14
             // 
@@ -373,10 +394,11 @@
             this.txtReferencia.Enabled = false;
             this.txtReferencia.Font = new System.Drawing.Font("Comic Sans MS", 12F);
             this.txtReferencia.Location = new System.Drawing.Point(187, 288);
-            this.txtReferencia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtReferencia.Margin = new System.Windows.Forms.Padding(4);
             this.txtReferencia.Name = "txtReferencia";
             this.txtReferencia.Size = new System.Drawing.Size(293, 35);
             this.txtReferencia.TabIndex = 10;
+            this.txtReferencia.Leave += new System.EventHandler(this.txtReferencia_Leave);
             // 
             // label12
             // 
@@ -420,13 +442,15 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.Transparent;
-            this.btnCancelar.Location = new System.Drawing.Point(85, 450);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancelar.Location = new System.Drawing.Point(213, 450);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(65, 43);
+            this.btnCancelar.Size = new System.Drawing.Size(85, 47);
             this.btnCancelar.TabIndex = 133;
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            this.btnCancelar.MouseEnter += new System.EventHandler(this.btnCancelar_MouseEnter);
+            this.btnCancelar.MouseLeave += new System.EventHandler(this.btnCancelar_MouseLeave);
             // 
             // btnCadastrar
             // 
@@ -439,13 +463,15 @@
             this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCadastrar.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.btnCadastrar.Location = new System.Drawing.Point(9, 452);
-            this.btnCadastrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCadastrar.Location = new System.Drawing.Point(27, 454);
+            this.btnCadastrar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(59, 38);
+            this.btnCadastrar.Size = new System.Drawing.Size(85, 39);
             this.btnCadastrar.TabIndex = 132;
             this.btnCadastrar.UseVisualStyleBackColor = false;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
+            this.btnCadastrar.MouseEnter += new System.EventHandler(this.btnCadastrar_MouseEnter);
+            this.btnCadastrar.MouseLeave += new System.EventHandler(this.btnCadastrar_MouseLeave);
             // 
             // txtquantidade
             // 
@@ -453,7 +479,7 @@
             this.txtquantidade.Enabled = false;
             this.txtquantidade.Font = new System.Drawing.Font("Comic Sans MS", 12F);
             this.txtquantidade.Location = new System.Drawing.Point(977, 44);
-            this.txtquantidade.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtquantidade.Margin = new System.Windows.Forms.Padding(4);
             this.txtquantidade.Name = "txtquantidade";
             this.txtquantidade.Size = new System.Drawing.Size(139, 35);
             this.txtquantidade.TabIndex = 5;
@@ -505,7 +531,7 @@
             this.txtTotal.Enabled = false;
             this.txtTotal.Font = new System.Drawing.Font("Comic Sans MS", 12F);
             this.txtTotal.Location = new System.Drawing.Point(977, 182);
-            this.txtTotal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTotal.Margin = new System.Windows.Forms.Padding(4);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(139, 35);
             this.txtTotal.TabIndex = 9;
@@ -529,7 +555,7 @@
             this.txtvalorDeVenda.Enabled = false;
             this.txtvalorDeVenda.Font = new System.Drawing.Font("Comic Sans MS", 12F);
             this.txtvalorDeVenda.Location = new System.Drawing.Point(647, 87);
-            this.txtvalorDeVenda.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtvalorDeVenda.Margin = new System.Windows.Forms.Padding(4);
             this.txtvalorDeVenda.Name = "txtvalorDeVenda";
             this.txtvalorDeVenda.Size = new System.Drawing.Size(139, 35);
             this.txtvalorDeVenda.TabIndex = 4;
@@ -554,7 +580,7 @@
             this.txtvalordeCompra.Enabled = false;
             this.txtvalordeCompra.Font = new System.Drawing.Font("Comic Sans MS", 12F);
             this.txtvalordeCompra.Location = new System.Drawing.Point(647, 44);
-            this.txtvalordeCompra.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtvalordeCompra.Margin = new System.Windows.Forms.Padding(4);
             this.txtvalordeCompra.Name = "txtvalordeCompra";
             this.txtvalordeCompra.Size = new System.Drawing.Size(139, 35);
             this.txtvalordeCompra.TabIndex = 3;
@@ -578,11 +604,11 @@
             this.txtData.Enabled = false;
             this.txtData.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtData.Location = new System.Drawing.Point(957, 346);
-            this.txtData.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtData.Margin = new System.Windows.Forms.Padding(4);
             this.txtData.Mask = "00/00/0000";
             this.txtData.Name = "txtData";
             this.txtData.Size = new System.Drawing.Size(139, 35);
-            this.txtData.TabIndex = 15;
+            this.txtData.TabIndex = 14;
             this.txtData.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label9
@@ -616,7 +642,7 @@
             this.txttipo.Enabled = false;
             this.txttipo.Font = new System.Drawing.Font("Comic Sans MS", 12F);
             this.txttipo.Location = new System.Drawing.Point(111, 86);
-            this.txttipo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txttipo.Margin = new System.Windows.Forms.Padding(4);
             this.txttipo.Name = "txttipo";
             this.txttipo.Size = new System.Drawing.Size(139, 35);
             this.txttipo.TabIndex = 2;
@@ -654,7 +680,7 @@
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Comic Sans MS", 9F);
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.lblteste.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
@@ -673,18 +699,17 @@
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.lblteste.DefaultCellStyle = dataGridViewCellStyle4;
             this.lblteste.Enabled = false;
             this.lblteste.Location = new System.Drawing.Point(-5, 512);
-            this.lblteste.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblteste.Margin = new System.Windows.Forms.Padding(4);
             this.lblteste.Name = "lblteste";
             this.lblteste.RowHeadersWidth = 51;
             this.lblteste.Size = new System.Drawing.Size(1156, 228);
             this.lblteste.TabIndex = 85;
-            this.lblteste.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.lblteste_CellContentClick);
             this.lblteste.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.lblteste_CellMouseClick);
             // 
             // btnexcluir
@@ -757,6 +782,7 @@
             this.quantidadePedido.MinimumWidth = 6;
             this.quantidadePedido.Name = "quantidadePedido";
             this.quantidadePedido.ReadOnly = true;
+            this.quantidadePedido.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.quantidadePedido.Width = 80;
             // 
             // valortotal
@@ -793,19 +819,66 @@
             // timer1
             // 
             this.timer1.Interval = 5000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // maskedTextBox1
+            // lblcancelar
             // 
-            this.maskedTextBox1.Enabled = false;
-            this.maskedTextBox1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBox1.Location = new System.Drawing.Point(803, 346);
-            this.maskedTextBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.maskedTextBox1.Mask = "0000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(65, 35);
-            this.maskedTextBox1.TabIndex = 158;
-            this.maskedTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.lblcancelar.AutoSize = true;
+            this.lblcancelar.BackColor = System.Drawing.Color.Transparent;
+            this.lblcancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblcancelar.Font = new System.Drawing.Font("Comic Sans MS", 7F, System.Drawing.FontStyle.Bold);
+            this.lblcancelar.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblcancelar.Location = new System.Drawing.Point(230, 430);
+            this.lblcancelar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblcancelar.Name = "lblcancelar";
+            this.lblcancelar.Size = new System.Drawing.Size(57, 16);
+            this.lblcancelar.TabIndex = 180;
+            this.lblcancelar.Text = "Cancelar";
+            this.lblcancelar.Visible = false;
+            // 
+            // lblFinalizar
+            // 
+            this.lblFinalizar.AutoSize = true;
+            this.lblFinalizar.BackColor = System.Drawing.Color.Transparent;
+            this.lblFinalizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblFinalizar.Font = new System.Drawing.Font("Comic Sans MS", 7F, System.Drawing.FontStyle.Bold);
+            this.lblFinalizar.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblFinalizar.Location = new System.Drawing.Point(130, 430);
+            this.lblFinalizar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFinalizar.Name = "lblFinalizar";
+            this.lblFinalizar.Size = new System.Drawing.Size(67, 16);
+            this.lblFinalizar.TabIndex = 181;
+            this.lblFinalizar.Text = "Cadastrar";
+            this.lblFinalizar.Visible = false;
+            // 
+            // lbladicionar
+            // 
+            this.lbladicionar.AutoSize = true;
+            this.lbladicionar.BackColor = System.Drawing.Color.Transparent;
+            this.lbladicionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbladicionar.Font = new System.Drawing.Font("Comic Sans MS", 7F, System.Drawing.FontStyle.Bold);
+            this.lbladicionar.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lbladicionar.Location = new System.Drawing.Point(40, 430);
+            this.lbladicionar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbladicionar.Name = "lbladicionar";
+            this.lbladicionar.Size = new System.Drawing.Size(61, 16);
+            this.lbladicionar.TabIndex = 187;
+            this.lbladicionar.Text = "Adicionar";
+            this.lbladicionar.Visible = false;
+            // 
+            // lbladicionarcarrinho
+            // 
+            this.lbladicionarcarrinho.AutoSize = true;
+            this.lbladicionarcarrinho.BackColor = System.Drawing.Color.Transparent;
+            this.lbladicionarcarrinho.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbladicionarcarrinho.Font = new System.Drawing.Font("Comic Sans MS", 7F, System.Drawing.FontStyle.Bold);
+            this.lbladicionarcarrinho.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lbladicionarcarrinho.Location = new System.Drawing.Point(1032, 430);
+            this.lbladicionarcarrinho.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbladicionarcarrinho.Name = "lbladicionarcarrinho";
+            this.lbladicionarcarrinho.Size = new System.Drawing.Size(68, 16);
+            this.lbladicionarcarrinho.TabIndex = 188;
+            this.lbladicionarcarrinho.Text = "+ Carrinho";
+            this.lbladicionarcarrinho.Visible = false;
             // 
             // CadastroVendas
             // 
@@ -883,6 +956,7 @@
         public System.Windows.Forms.Button btnCancelar;
         public System.Windows.Forms.ComboBox lsbProduto;
         public System.Windows.Forms.DataGridView lblteste;
+        private System.Windows.Forms.MaskedTextBox txtnumero;
         private System.Windows.Forms.DataGridViewImageColumn btnexcluir;
         private System.Windows.Forms.DataGridViewTextBoxColumn coddeOperacao;
         private System.Windows.Forms.DataGridViewTextBoxColumn produtoPedido;
@@ -892,6 +966,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn valordeVendaPedido;
         private System.Windows.Forms.DataGridViewTextBoxColumn quantidadePedido;
         private System.Windows.Forms.DataGridViewTextBoxColumn valortotal;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.Label lblcancelar;
+        private System.Windows.Forms.Label lblFinalizar;
+        private System.Windows.Forms.Label lbladicionar;
+        private System.Windows.Forms.Label lbladicionarcarrinho;
     }
 }
