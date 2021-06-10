@@ -28,9 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroUsuario));
             this.panel6 = new System.Windows.Forms.Panel();
+            this.lblcancelar = new System.Windows.Forms.Label();
+            this.lblcadastrar = new System.Windows.Forms.Label();
+            this.lbladicionar = new System.Windows.Forms.Label();
+            this.txtemail = new System.Windows.Forms.TextBox();
             this.txtconfSenha = new System.Windows.Forms.TextBox();
             this.txtsenha = new System.Windows.Forms.TextBox();
             this.txtuser = new System.Windows.Forms.TextBox();
@@ -82,10 +86,6 @@
             this.btnSair = new System.Windows.Forms.PictureBox();
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.txtemail = new System.Windows.Forms.TextBox();
-            this.lbladicionar = new System.Windows.Forms.Label();
-            this.lblcadastrar = new System.Windows.Forms.Label();
-            this.lblcancelar = new System.Windows.Forms.Label();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtUsers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSair)).BeginInit();
@@ -150,6 +150,63 @@
             this.panel6.Size = new System.Drawing.Size(1189, 922);
             this.panel6.TabIndex = 36;
             this.panel6.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel6_MouseDown);
+            // 
+            // lblcancelar
+            // 
+            this.lblcancelar.AutoSize = true;
+            this.lblcancelar.BackColor = System.Drawing.Color.Transparent;
+            this.lblcancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblcancelar.Font = new System.Drawing.Font("Comic Sans MS", 7F, System.Drawing.FontStyle.Bold);
+            this.lblcancelar.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblcancelar.Location = new System.Drawing.Point(230, 563);
+            this.lblcancelar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblcancelar.Name = "lblcancelar";
+            this.lblcancelar.Size = new System.Drawing.Size(57, 16);
+            this.lblcancelar.TabIndex = 185;
+            this.lblcancelar.Text = "Cancelar";
+            this.lblcancelar.Visible = false;
+            // 
+            // lblcadastrar
+            // 
+            this.lblcadastrar.AutoSize = true;
+            this.lblcadastrar.BackColor = System.Drawing.Color.Transparent;
+            this.lblcadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblcadastrar.Font = new System.Drawing.Font("Comic Sans MS", 7F, System.Drawing.FontStyle.Bold);
+            this.lblcadastrar.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblcadastrar.Location = new System.Drawing.Point(130, 563);
+            this.lblcadastrar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblcadastrar.Name = "lblcadastrar";
+            this.lblcadastrar.Size = new System.Drawing.Size(67, 16);
+            this.lblcadastrar.TabIndex = 184;
+            this.lblcadastrar.Text = "Cadastrar";
+            this.lblcadastrar.Visible = false;
+            // 
+            // lbladicionar
+            // 
+            this.lbladicionar.AutoSize = true;
+            this.lbladicionar.BackColor = System.Drawing.Color.Transparent;
+            this.lbladicionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbladicionar.Font = new System.Drawing.Font("Comic Sans MS", 7F, System.Drawing.FontStyle.Bold);
+            this.lbladicionar.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lbladicionar.Location = new System.Drawing.Point(42, 563);
+            this.lbladicionar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbladicionar.Name = "lbladicionar";
+            this.lbladicionar.Size = new System.Drawing.Size(61, 16);
+            this.lbladicionar.TabIndex = 183;
+            this.lbladicionar.Text = "Adicionar";
+            this.lbladicionar.Visible = false;
+            // 
+            // txtemail
+            // 
+            this.txtemail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtemail.Enabled = false;
+            this.txtemail.Font = new System.Drawing.Font("Comic Sans MS", 12F);
+            this.txtemail.Location = new System.Drawing.Point(875, 47);
+            this.txtemail.Margin = new System.Windows.Forms.Padding(4);
+            this.txtemail.Name = "txtemail";
+            this.txtemail.Size = new System.Drawing.Size(240, 35);
+            this.txtemail.TabIndex = 143;
+            this.txtemail.Leave += new System.EventHandler(this.txtemail_Leave);
             // 
             // txtconfSenha
             // 
@@ -218,15 +275,16 @@
             // 
             // dtUsers
             // 
+            this.dtUsers.AllowUserToAddRows = false;
             this.dtUsers.BackgroundColor = System.Drawing.Color.Lavender;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Comic Sans MS", 12F);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtUsers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Comic Sans MS", 12F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtUsers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dtUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtUsers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Usuario,
@@ -290,6 +348,7 @@
             this.btnlimpar.BackColor = System.Drawing.Color.Transparent;
             this.btnlimpar.BackgroundImage = global::TCC.Properties.Resources.icons8_cancelar_48;
             this.btnlimpar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnlimpar.Enabled = false;
             this.btnlimpar.FlatAppearance.BorderSize = 0;
             this.btnlimpar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnlimpar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
@@ -837,63 +896,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1153, 57);
             this.panel3.TabIndex = 54;
-            // 
-            // txtemail
-            // 
-            this.txtemail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtemail.Enabled = false;
-            this.txtemail.Font = new System.Drawing.Font("Comic Sans MS", 12F);
-            this.txtemail.Location = new System.Drawing.Point(875, 47);
-            this.txtemail.Margin = new System.Windows.Forms.Padding(4);
-            this.txtemail.Name = "txtemail";
-            this.txtemail.Size = new System.Drawing.Size(240, 35);
-            this.txtemail.TabIndex = 143;
-            this.txtemail.Leave += new System.EventHandler(this.txtemail_Leave);
-            // 
-            // lbladicionar
-            // 
-            this.lbladicionar.AutoSize = true;
-            this.lbladicionar.BackColor = System.Drawing.Color.Transparent;
-            this.lbladicionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lbladicionar.Font = new System.Drawing.Font("Comic Sans MS", 7F, System.Drawing.FontStyle.Bold);
-            this.lbladicionar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lbladicionar.Location = new System.Drawing.Point(42, 563);
-            this.lbladicionar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbladicionar.Name = "lbladicionar";
-            this.lbladicionar.Size = new System.Drawing.Size(61, 16);
-            this.lbladicionar.TabIndex = 183;
-            this.lbladicionar.Text = "Adicionar";
-            this.lbladicionar.Visible = false;
-            // 
-            // lblcadastrar
-            // 
-            this.lblcadastrar.AutoSize = true;
-            this.lblcadastrar.BackColor = System.Drawing.Color.Transparent;
-            this.lblcadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblcadastrar.Font = new System.Drawing.Font("Comic Sans MS", 7F, System.Drawing.FontStyle.Bold);
-            this.lblcadastrar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblcadastrar.Location = new System.Drawing.Point(130, 563);
-            this.lblcadastrar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblcadastrar.Name = "lblcadastrar";
-            this.lblcadastrar.Size = new System.Drawing.Size(67, 16);
-            this.lblcadastrar.TabIndex = 184;
-            this.lblcadastrar.Text = "Cadastrar";
-            this.lblcadastrar.Visible = false;
-            // 
-            // lblcancelar
-            // 
-            this.lblcancelar.AutoSize = true;
-            this.lblcancelar.BackColor = System.Drawing.Color.Transparent;
-            this.lblcancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblcancelar.Font = new System.Drawing.Font("Comic Sans MS", 7F, System.Drawing.FontStyle.Bold);
-            this.lblcancelar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblcancelar.Location = new System.Drawing.Point(230, 563);
-            this.lblcancelar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblcancelar.Name = "lblcancelar";
-            this.lblcancelar.Size = new System.Drawing.Size(57, 16);
-            this.lblcancelar.TabIndex = 185;
-            this.lblcancelar.Text = "Cancelar";
-            this.lblcancelar.Visible = false;
             // 
             // CadastroUsuario
             // 

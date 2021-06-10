@@ -72,7 +72,7 @@
             this.pcblogo.BackgroundImage = global::TCC.Properties.Resources.d6a55e0c15b8da392e5cec620a39e6e81;
             this.pcblogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pcblogo.Location = new System.Drawing.Point(1552, 913);
-            this.pcblogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcblogo.Margin = new System.Windows.Forms.Padding(4);
             this.pcblogo.Name = "pcblogo";
             this.pcblogo.Size = new System.Drawing.Size(785, 485);
             this.pcblogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -90,7 +90,7 @@
             this.btncadastroProdutos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btncadastroProdutos.ForeColor = System.Drawing.Color.Black;
             this.btncadastroProdutos.Location = new System.Drawing.Point(-3, 62);
-            this.btncadastroProdutos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btncadastroProdutos.Margin = new System.Windows.Forms.Padding(4);
             this.btncadastroProdutos.Name = "btncadastroProdutos";
             this.btncadastroProdutos.Size = new System.Drawing.Size(353, 156);
             this.btncadastroProdutos.TabIndex = 21;
@@ -109,7 +109,7 @@
             this.btncadastroCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btncadastroCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btncadastroCliente.Location = new System.Drawing.Point(521, 62);
-            this.btncadastroCliente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btncadastroCliente.Margin = new System.Windows.Forms.Padding(4);
             this.btncadastroCliente.Name = "btncadastroCliente";
             this.btncadastroCliente.Size = new System.Drawing.Size(353, 156);
             this.btncadastroCliente.TabIndex = 22;
@@ -127,7 +127,7 @@
             this.btncadastroUsuario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btncadastroUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btncadastroUsuario.Location = new System.Drawing.Point(1015, 62);
-            this.btncadastroUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btncadastroUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.btncadastroUsuario.Name = "btncadastroUsuario";
             this.btncadastroUsuario.Size = new System.Drawing.Size(353, 156);
             this.btncadastroUsuario.TabIndex = 23;
@@ -148,7 +148,7 @@
             this.btncadastroVenda.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btncadastroVenda.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btncadastroVenda.Location = new System.Drawing.Point(-3, 293);
-            this.btncadastroVenda.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btncadastroVenda.Margin = new System.Windows.Forms.Padding(4);
             this.btncadastroVenda.Name = "btncadastroVenda";
             this.btncadastroVenda.Size = new System.Drawing.Size(353, 156);
             this.btncadastroVenda.TabIndex = 24;
@@ -168,7 +168,7 @@
             this.btnrelatorioVenda.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnrelatorioVenda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnrelatorioVenda.Location = new System.Drawing.Point(521, 293);
-            this.btnrelatorioVenda.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnrelatorioVenda.Margin = new System.Windows.Forms.Padding(4);
             this.btnrelatorioVenda.Name = "btnrelatorioVenda";
             this.btnrelatorioVenda.Size = new System.Drawing.Size(353, 156);
             this.btnrelatorioVenda.TabIndex = 25;
@@ -187,7 +187,7 @@
             this.btnrelatorioEstoque.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnrelatorioEstoque.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnrelatorioEstoque.Location = new System.Drawing.Point(1015, 293);
-            this.btnrelatorioEstoque.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnrelatorioEstoque.Margin = new System.Windows.Forms.Padding(4);
             this.btnrelatorioEstoque.Name = "btnrelatorioEstoque";
             this.btnrelatorioEstoque.Size = new System.Drawing.Size(353, 156);
             this.btnrelatorioEstoque.TabIndex = 26;
@@ -206,7 +206,7 @@
             this.btnconfiguracoesUsuario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnconfiguracoesUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnconfiguracoesUsuario.Location = new System.Drawing.Point(-3, 507);
-            this.btnconfiguracoesUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnconfiguracoesUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.btnconfiguracoesUsuario.Name = "btnconfiguracoesUsuario";
             this.btnconfiguracoesUsuario.Size = new System.Drawing.Size(353, 156);
             this.btnconfiguracoesUsuario.TabIndex = 27;
@@ -225,7 +225,7 @@
             this.btnconfiguracoesSistema.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnconfiguracoesSistema.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnconfiguracoesSistema.Location = new System.Drawing.Point(521, 518);
-            this.btnconfiguracoesSistema.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnconfiguracoesSistema.Margin = new System.Windows.Forms.Padding(4);
             this.btnconfiguracoesSistema.Name = "btnconfiguracoesSistema";
             this.btnconfiguracoesSistema.Size = new System.Drawing.Size(353, 135);
             this.btnconfiguracoesSistema.TabIndex = 28;
@@ -244,7 +244,7 @@
             this.btnlogout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnlogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnlogout.Location = new System.Drawing.Point(1015, 518);
-            this.btnlogout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnlogout.Margin = new System.Windows.Forms.Padding(4);
             this.btnlogout.Name = "btnlogout";
             this.btnlogout.Size = new System.Drawing.Size(353, 156);
             this.btnlogout.TabIndex = 29;
@@ -429,7 +429,7 @@
             this.pn1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.pn1.BackColor = System.Drawing.Color.White;
             this.pn1.Location = new System.Drawing.Point(476, 1086);
-            this.pn1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pn1.Margin = new System.Windows.Forms.Padding(4);
             this.pn1.Name = "pn1";
             this.pn1.Size = new System.Drawing.Size(365, 610);
             this.pn1.TabIndex = 41;
@@ -439,7 +439,7 @@
             this.pn2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.pn2.BackColor = System.Drawing.Color.White;
             this.pn2.Location = new System.Drawing.Point(685, 1020);
-            this.pn2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pn2.Margin = new System.Windows.Forms.Padding(4);
             this.pn2.Name = "pn2";
             this.pn2.Size = new System.Drawing.Size(1, 670);
             this.pn2.TabIndex = 42;
@@ -450,7 +450,7 @@
             this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
             this.btnMinimizar.Location = new System.Drawing.Point(1285, 14);
-            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(4);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(37, 34);
             this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -464,7 +464,7 @@
             this.btnSair.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSair.Image = ((System.Drawing.Image)(resources.GetObject("btnSair.Image")));
             this.btnSair.Location = new System.Drawing.Point(1331, 14);
-            this.btnSair.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSair.Margin = new System.Windows.Forms.Padding(4);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(37, 34);
             this.btnSair.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -525,7 +525,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "menuAdministrador";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
