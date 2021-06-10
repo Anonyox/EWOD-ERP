@@ -112,21 +112,13 @@ namespace TCC.VISÃO
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtgLogs.DefaultCellStyle = dataGridViewCellStyle2;
-<<<<<<< HEAD
             this.dtgLogs.Location = new System.Drawing.Point(-3, 415);
             this.dtgLogs.Margin = new System.Windows.Forms.Padding(4);
-=======
-            this.dtgLogs.Location = new System.Drawing.Point(-2, 337);
->>>>>>> origin/pedro/SPRINT04
             this.dtgLogs.Name = "dtgLogs";
             this.dtgLogs.RowHeadersWidth = 51;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dtgLogs.RowsDefaultCellStyle = dataGridViewCellStyle3;
-<<<<<<< HEAD
             this.dtgLogs.Size = new System.Drawing.Size(1153, 308);
-=======
-            this.dtgLogs.Size = new System.Drawing.Size(865, 250);
->>>>>>> origin/pedro/SPRINT04
             this.dtgLogs.TabIndex = 0;
             // 
             // tipo

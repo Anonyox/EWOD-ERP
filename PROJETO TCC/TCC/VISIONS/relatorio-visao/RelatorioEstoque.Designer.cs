@@ -75,12 +75,8 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Orange;
-<<<<<<< HEAD
             this.label8.Location = new System.Drawing.Point(483, 50);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-=======
-            this.label8.Location = new System.Drawing.Point(347, 38);
->>>>>>> origin/pedro/SPRINT04
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(229, 27);
             this.label8.TabIndex = 157;
@@ -128,16 +124,10 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(209)))), ((int)(((byte)(178)))));
-<<<<<<< HEAD
             this.panel3.Controls.Add(this.lbltotal);
             this.panel3.Controls.Add(this.lbl3);
             this.panel3.Location = new System.Drawing.Point(845, 144);
             this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-=======
-            this.panel3.Controls.Add(this.lblsaida);
-            this.panel3.Controls.Add(this.lbl1);
-            this.panel3.Location = new System.Drawing.Point(12, 117);
->>>>>>> origin/pedro/SPRINT04
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(256, 100);
             this.panel3.TabIndex = 168;
@@ -147,18 +137,11 @@
             this.lbltotal.AutoSize = true;
             this.lbltotal.BackColor = System.Drawing.Color.Transparent;
             this.lbltotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-<<<<<<< HEAD
             this.lbltotal.ForeColor = System.Drawing.Color.Black;
             this.lbltotal.Location = new System.Drawing.Point(33, 37);
             this.lbltotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbltotal.Name = "lbltotal";
             this.lbltotal.Size = new System.Drawing.Size(184, 18);
-=======
-            this.lbltotal.ForeColor = System.Drawing.Color.White;
-            this.lbltotal.Location = new System.Drawing.Point(418, 322);
-            this.lbltotal.Name = "lbltotal";
-            this.lbltotal.Size = new System.Drawing.Size(150, 15);
->>>>>>> origin/pedro/SPRINT04
             this.lbltotal.TabIndex = 3;
             this.lbltotal.Text = "QUANTIDADE PRODUTO ";
             // 
@@ -167,14 +150,9 @@
             this.lbl3.AutoSize = true;
             this.lbl3.BackColor = System.Drawing.Color.Transparent;
             this.lbl3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-<<<<<<< HEAD
             this.lbl3.ForeColor = System.Drawing.Color.Black;
             this.lbl3.Location = new System.Drawing.Point(119, 55);
             this.lbl3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-=======
-            this.lbl3.ForeColor = System.Drawing.Color.White;
-            this.lbl3.Location = new System.Drawing.Point(477, 299);
->>>>>>> origin/pedro/SPRINT04
             this.lbl3.Name = "lbl3";
             this.lbl3.Size = new System.Drawing.Size(25, 24);
             this.lbl3.TabIndex = 1;
@@ -185,12 +163,8 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(209)))), ((int)(((byte)(178)))));
             this.panel2.Controls.Add(this.lbloperacao);
             this.panel2.Controls.Add(this.lbl2);
-<<<<<<< HEAD
             this.panel2.Location = new System.Drawing.Point(443, 144);
             this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-=======
-            this.panel2.Location = new System.Drawing.Point(649, 117);
->>>>>>> origin/pedro/SPRINT04
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(269, 100);
             this.panel2.TabIndex = 167;
@@ -224,16 +198,10 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(209)))), ((int)(((byte)(178)))));
-<<<<<<< HEAD
             this.panel1.Controls.Add(this.lblsaida);
             this.panel1.Controls.Add(this.lbl1);
             this.panel1.Location = new System.Drawing.Point(45, 144);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-=======
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.lbl5);
-            this.panel1.Location = new System.Drawing.Point(336, 117);
->>>>>>> origin/pedro/SPRINT04
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(256, 100);
             this.panel1.TabIndex = 166;
@@ -244,12 +212,8 @@
             this.lblsaida.BackColor = System.Drawing.Color.Transparent;
             this.lblsaida.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblsaida.ForeColor = System.Drawing.Color.Black;
-<<<<<<< HEAD
             this.lblsaida.Location = new System.Drawing.Point(24, 37);
             this.lblsaida.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-=======
-            this.lblsaida.Location = new System.Drawing.Point(20, 30);
->>>>>>> origin/pedro/SPRINT04
             this.lblsaida.Name = "lblsaida";
             this.lblsaida.Size = new System.Drawing.Size(178, 18);
             this.lblsaida.TabIndex = 3;
@@ -261,12 +225,8 @@
             this.lbl1.BackColor = System.Drawing.Color.Transparent;
             this.lbl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl1.ForeColor = System.Drawing.Color.Black;
-<<<<<<< HEAD
             this.lbl1.Location = new System.Drawing.Point(104, 55);
             this.lbl1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-=======
-            this.lbl1.Location = new System.Drawing.Point(80, 45);
->>>>>>> origin/pedro/SPRINT04
             this.lbl1.Name = "lbl1";
             this.lbl1.Size = new System.Drawing.Size(25, 24);
             this.lbl1.TabIndex = 1;
@@ -284,12 +244,8 @@
             this.btn4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn4.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn4.ForeColor = System.Drawing.Color.Transparent;
-<<<<<<< HEAD
             this.btn4.Location = new System.Drawing.Point(327, 368);
             this.btn4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-=======
-            this.btn4.Location = new System.Drawing.Point(250, 299);
->>>>>>> origin/pedro/SPRINT04
             this.btn4.Name = "btn4";
             this.btn4.Size = new System.Drawing.Size(83, 43);
             this.btn4.TabIndex = 172;
@@ -307,12 +263,8 @@
             this.btn3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn3.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn3.ForeColor = System.Drawing.Color.Transparent;
-<<<<<<< HEAD
             this.btn3.Location = new System.Drawing.Point(219, 368);
             this.btn3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-=======
-            this.btn3.Location = new System.Drawing.Point(169, 299);
->>>>>>> origin/pedro/SPRINT04
             this.btn3.Name = "btn3";
             this.btn3.Size = new System.Drawing.Size(83, 43);
             this.btn3.TabIndex = 171;
@@ -330,37 +282,13 @@
             this.btn2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn2.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn2.ForeColor = System.Drawing.Color.Transparent;
-<<<<<<< HEAD
             this.btn2.Location = new System.Drawing.Point(105, 368);
             this.btn2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-=======
-            this.btn2.Location = new System.Drawing.Point(84, 299);
->>>>>>> origin/pedro/SPRINT04
             this.btn2.Name = "btn2";
             this.btn2.Size = new System.Drawing.Size(83, 43);
             this.btn2.TabIndex = 170;
             this.btn2.UseVisualStyleBackColor = false;
             // 
-<<<<<<< HEAD
-            // btn1
-            // 
-            this.btn1.BackColor = System.Drawing.Color.Transparent;
-            this.btn1.BackgroundImage = global::TCC.Properties.Resources.icons8_cancelar_48;
-            this.btn1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn1.Enabled = false;
-            this.btn1.FlatAppearance.BorderSize = 0;
-            this.btn1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btn1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn1.ForeColor = System.Drawing.Color.Transparent;
-            this.btn1.Location = new System.Drawing.Point(-3, 368);
-            this.btn1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btn1.Name = "btn1";
-            this.btn1.Size = new System.Drawing.Size(83, 43);
-            this.btn1.TabIndex = 169;
-            this.btn1.UseVisualStyleBackColor = false;
-=======
             // btnfiltroSemana
             // 
             this.btnfiltroSemana.BackColor = System.Drawing.Color.Transparent;
@@ -378,7 +306,6 @@
             this.btnfiltroSemana.Size = new System.Drawing.Size(62, 35);
             this.btnfiltroSemana.TabIndex = 169;
             this.btnfiltroSemana.UseVisualStyleBackColor = false;
->>>>>>> origin/pedro/SPRINT04
             // 
             // dtgestoque
             // 
@@ -397,11 +324,7 @@
             this.dtgestoque.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtgestoque.Name = "dtgestoque";
             this.dtgestoque.RowHeadersWidth = 51;
-<<<<<<< HEAD
             this.dtgestoque.Size = new System.Drawing.Size(1151, 336);
-=======
-            this.dtgestoque.Size = new System.Drawing.Size(863, 276);
->>>>>>> origin/pedro/SPRINT04
             this.dtgestoque.TabIndex = 173;
             // 
             // nome
@@ -522,13 +445,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(12)))), ((int)(((byte)(38)))));
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(1151, 805);
-=======
-            this.ClientSize = new System.Drawing.Size(863, 654);
-            this.Controls.Add(this.lbltotal);
-            this.Controls.Add(this.lbl3);
->>>>>>> origin/pedro/SPRINT04
             this.Controls.Add(this.lbl4);
             this.Controls.Add(this.lblprecoTotal);
             this.Controls.Add(this.dtgestoque);

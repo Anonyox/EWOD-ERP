@@ -28,11 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-<<<<<<< HEAD
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-=======
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
->>>>>>> origin/pedro/SPRINT04
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroUsuario));
             this.panel6 = new System.Windows.Forms.Panel();
             this.lblcancelar = new System.Windows.Forms.Label();
@@ -161,16 +157,10 @@
             this.lblcancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblcancelar.Font = new System.Drawing.Font("Comic Sans MS", 7F, System.Drawing.FontStyle.Bold);
             this.lblcancelar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-<<<<<<< HEAD
             this.lblcancelar.Location = new System.Drawing.Point(230, 563);
             this.lblcancelar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblcancelar.Name = "lblcancelar";
             this.lblcancelar.Size = new System.Drawing.Size(57, 16);
-=======
-            this.lblcancelar.Location = new System.Drawing.Point(172, 457);
-            this.lblcancelar.Name = "lblcancelar";
-            this.lblcancelar.Size = new System.Drawing.Size(49, 14);
->>>>>>> origin/pedro/SPRINT04
             this.lblcancelar.TabIndex = 185;
             this.lblcancelar.Text = "Cancelar";
             this.lblcancelar.Visible = false;
@@ -182,16 +172,10 @@
             this.lblcadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblcadastrar.Font = new System.Drawing.Font("Comic Sans MS", 7F, System.Drawing.FontStyle.Bold);
             this.lblcadastrar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-<<<<<<< HEAD
             this.lblcadastrar.Location = new System.Drawing.Point(130, 563);
             this.lblcadastrar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblcadastrar.Name = "lblcadastrar";
             this.lblcadastrar.Size = new System.Drawing.Size(67, 16);
-=======
-            this.lblcadastrar.Location = new System.Drawing.Point(98, 457);
-            this.lblcadastrar.Name = "lblcadastrar";
-            this.lblcadastrar.Size = new System.Drawing.Size(57, 14);
->>>>>>> origin/pedro/SPRINT04
             this.lblcadastrar.TabIndex = 184;
             this.lblcadastrar.Text = "Cadastrar";
             this.lblcadastrar.Visible = false;
@@ -203,16 +187,10 @@
             this.lbladicionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbladicionar.Font = new System.Drawing.Font("Comic Sans MS", 7F, System.Drawing.FontStyle.Bold);
             this.lbladicionar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-<<<<<<< HEAD
             this.lbladicionar.Location = new System.Drawing.Point(42, 563);
             this.lbladicionar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbladicionar.Name = "lbladicionar";
             this.lbladicionar.Size = new System.Drawing.Size(61, 16);
-=======
-            this.lbladicionar.Location = new System.Drawing.Point(32, 457);
-            this.lbladicionar.Name = "lbladicionar";
-            this.lbladicionar.Size = new System.Drawing.Size(52, 14);
->>>>>>> origin/pedro/SPRINT04
             this.lbladicionar.TabIndex = 183;
             this.lbladicionar.Text = "Adicionar";
             this.lbladicionar.Visible = false;
@@ -222,16 +200,10 @@
             this.txtemail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtemail.Enabled = false;
             this.txtemail.Font = new System.Drawing.Font("Comic Sans MS", 12F);
-<<<<<<< HEAD
             this.txtemail.Location = new System.Drawing.Point(875, 47);
             this.txtemail.Margin = new System.Windows.Forms.Padding(4);
             this.txtemail.Name = "txtemail";
             this.txtemail.Size = new System.Drawing.Size(240, 35);
-=======
-            this.txtemail.Location = new System.Drawing.Point(656, 38);
-            this.txtemail.Name = "txtemail";
-            this.txtemail.Size = new System.Drawing.Size(180, 30);
->>>>>>> origin/pedro/SPRINT04
             this.txtemail.TabIndex = 143;
             this.txtemail.Leave += new System.EventHandler(this.txtemail_Leave);
             // 
@@ -300,7 +272,6 @@
             // 
             this.dtUsers.AllowUserToAddRows = false;
             this.dtUsers.BackgroundColor = System.Drawing.Color.Lavender;
-<<<<<<< HEAD
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Comic Sans MS", 12F);
@@ -309,16 +280,6 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dtUsers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-=======
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Comic Sans MS", 12F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtUsers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
->>>>>>> origin/pedro/SPRINT04
             this.dtUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtUsers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Usuario,
