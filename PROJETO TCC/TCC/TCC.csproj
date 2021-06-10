@@ -388,5 +388,17 @@
   <ItemGroup>
     <None Include="Resources\editar_datagrid.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\troca.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\processo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sistema.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exportar.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -129,6 +129,25 @@ namespace TCC.MODELO
             return this.codOperacao;
         } //FAZ A BUSCA DO ÚLTIMO CÓDIGO DE OPERAÇÃO
 
+        public String procuraUltimoCodigoDaVendaEAdicionaUm()
+        {
+            this.codOperacao = vendaDao.procuraUltimoCodigoDaVendaEAdicionaUm();
+            if (vendaDao.tem)
+            {
+
+                this.tem = true;
+                return this.codOperacao;
+            }
+            else
+            {
+                this.tem = false;
+            }
+
+
+
+            return this.codOperacao;
+        }
+
         public String somaProdutosAdicionadosAoCarrinho(int codOperacaoSomaTotal)
         {
             this.valtot = vendaDao.somaProdutosAdicionadosAoCarrinho(codOperacaoSomaTotal);
@@ -208,6 +227,28 @@ namespace TCC.MODELO
 
 
 
+        }
+
+        public String cadastrarVenda(String codVenda, String nome, String tipo, float valorVenda, int quantidade, String modelo, String metodoPgt, float desconto, float totalVenda, float valorTotal, String data)
+        {
+           
+
+            this.mensagem = vendaDao.cadastrarVenda(codVenda, nome,tipo,valorVenda,quantidade,modelo,metodoPgt,desconto,totalVenda,valorTotal,data);
+
+            if (vendaDao.tem)
+            {
+                this.mensagem = vendaDao.mensagem;
+                tem = true;
+
+
+            }
+            else
+            {
+                this.mensagem = "Erro com banco de dados";
+                tem = false;
+            }
+
+            return this.mensagem;
         }
     }
 }
