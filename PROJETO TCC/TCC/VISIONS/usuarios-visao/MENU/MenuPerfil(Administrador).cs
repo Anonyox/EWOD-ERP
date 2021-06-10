@@ -930,7 +930,7 @@ namespace TCC.VISÃO
             pn1.Location = new Point(-50, 705);
             pn2.Location = new Point(125, 670);
 
-            timer3.Start();
+           // timer3.Start();
 
         }
 

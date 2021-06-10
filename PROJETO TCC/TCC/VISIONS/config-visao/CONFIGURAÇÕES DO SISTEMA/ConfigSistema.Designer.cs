@@ -112,13 +112,21 @@ namespace TCC.VISÃO
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtgLogs.DefaultCellStyle = dataGridViewCellStyle2;
+<<<<<<< HEAD
             this.dtgLogs.Location = new System.Drawing.Point(-3, 415);
             this.dtgLogs.Margin = new System.Windows.Forms.Padding(4);
+=======
+            this.dtgLogs.Location = new System.Drawing.Point(-2, 337);
+>>>>>>> origin/pedro/SPRINT04
             this.dtgLogs.Name = "dtgLogs";
             this.dtgLogs.RowHeadersWidth = 51;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dtgLogs.RowsDefaultCellStyle = dataGridViewCellStyle3;
+<<<<<<< HEAD
             this.dtgLogs.Size = new System.Drawing.Size(1153, 308);
+=======
+            this.dtgLogs.Size = new System.Drawing.Size(865, 250);
+>>>>>>> origin/pedro/SPRINT04
             this.dtgLogs.TabIndex = 0;
             // 
             // tipo
@@ -158,10 +166,9 @@ namespace TCC.VISÃO
             this.lblLogCadastro.BackColor = System.Drawing.Color.Transparent;
             this.lblLogCadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLogCadastro.ForeColor = System.Drawing.Color.Black;
-            this.lblLogCadastro.Location = new System.Drawing.Point(20, 33);
-            this.lblLogCadastro.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblLogCadastro.Location = new System.Drawing.Point(15, 27);
             this.lblLogCadastro.Name = "lblLogCadastro";
-            this.lblLogCadastro.Size = new System.Drawing.Size(25, 24);
+            this.lblLogCadastro.Size = new System.Drawing.Size(20, 18);
             this.lblLogCadastro.TabIndex = 1;
             this.lblLogCadastro.Text = "N";
             this.lblLogCadastro.Click += new System.EventHandler(this.LogCadastro_Click);
@@ -172,10 +179,9 @@ namespace TCC.VISÃO
             this.lblExcluUsuario.BackColor = System.Drawing.Color.Transparent;
             this.lblExcluUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
             this.lblExcluUsuario.ForeColor = System.Drawing.Color.Black;
-            this.lblExcluUsuario.Location = new System.Drawing.Point(23, 37);
-            this.lblExcluUsuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblExcluUsuario.Location = new System.Drawing.Point(17, 30);
             this.lblExcluUsuario.Name = "lblExcluUsuario";
-            this.lblExcluUsuario.Size = new System.Drawing.Size(25, 24);
+            this.lblExcluUsuario.Size = new System.Drawing.Size(20, 18);
             this.lblExcluUsuario.TabIndex = 2;
             this.lblExcluUsuario.Text = "N";
             // 
@@ -185,10 +191,9 @@ namespace TCC.VISÃO
             this.lblEditUsuario.BackColor = System.Drawing.Color.Transparent;
             this.lblEditUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
             this.lblEditUsuario.ForeColor = System.Drawing.Color.Black;
-            this.lblEditUsuario.Location = new System.Drawing.Point(16, 39);
-            this.lblEditUsuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEditUsuario.Location = new System.Drawing.Point(12, 32);
             this.lblEditUsuario.Name = "lblEditUsuario";
-            this.lblEditUsuario.Size = new System.Drawing.Size(25, 24);
+            this.lblEditUsuario.Size = new System.Drawing.Size(20, 18);
             this.lblEditUsuario.TabIndex = 3;
             this.lblEditUsuario.Text = "N";
             this.lblEditUsuario.Click += new System.EventHandler(this.label2_Click_1);
@@ -199,10 +204,9 @@ namespace TCC.VISÃO
             this.lblTotLogs.BackColor = System.Drawing.Color.Transparent;
             this.lblTotLogs.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
             this.lblTotLogs.ForeColor = System.Drawing.Color.Black;
-            this.lblTotLogs.Location = new System.Drawing.Point(23, 39);
-            this.lblTotLogs.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTotLogs.Location = new System.Drawing.Point(17, 32);
             this.lblTotLogs.Name = "lblTotLogs";
-            this.lblTotLogs.Size = new System.Drawing.Size(25, 24);
+            this.lblTotLogs.Size = new System.Drawing.Size(20, 18);
             this.lblTotLogs.TabIndex = 4;
             this.lblTotLogs.Text = "N";
             // 
@@ -213,10 +217,9 @@ namespace TCC.VISÃO
             this.lblpreferenciaSistema.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblpreferenciaSistema.Font = new System.Drawing.Font("Comic Sans MS", 11F);
             this.lblpreferenciaSistema.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblpreferenciaSistema.Location = new System.Drawing.Point(748, 193);
-            this.lblpreferenciaSistema.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblpreferenciaSistema.Location = new System.Drawing.Point(561, 157);
             this.lblpreferenciaSistema.Name = "lblpreferenciaSistema";
-            this.lblpreferenciaSistema.Size = new System.Drawing.Size(225, 26);
+            this.lblpreferenciaSistema.Size = new System.Drawing.Size(178, 20);
             this.lblpreferenciaSistema.TabIndex = 31;
             this.lblpreferenciaSistema.Text = "Preferências do Sistema";
             this.lblpreferenciaSistema.Visible = false;
@@ -228,10 +231,9 @@ namespace TCC.VISÃO
             this.lblalterarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblalterarUsuario.Font = new System.Drawing.Font("Comic Sans MS", 11F);
             this.lblalterarUsuario.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblalterarUsuario.Location = new System.Drawing.Point(221, 193);
-            this.lblalterarUsuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblalterarUsuario.Location = new System.Drawing.Point(166, 157);
             this.lblalterarUsuario.Name = "lblalterarUsuario";
-            this.lblalterarUsuario.Size = new System.Drawing.Size(132, 26);
+            this.lblalterarUsuario.Size = new System.Drawing.Size(106, 20);
             this.lblalterarUsuario.TabIndex = 32;
             this.lblalterarUsuario.Text = "EditarUsuário";
             this.lblalterarUsuario.Visible = false;
@@ -246,10 +248,9 @@ namespace TCC.VISÃO
             this.btnalterarUsuario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnalterarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnalterarUsuario.ForeColor = System.Drawing.Color.Black;
-            this.btnalterarUsuario.Location = new System.Drawing.Point(173, 73);
-            this.btnalterarUsuario.Margin = new System.Windows.Forms.Padding(4);
+            this.btnalterarUsuario.Location = new System.Drawing.Point(130, 59);
             this.btnalterarUsuario.Name = "btnalterarUsuario";
-            this.btnalterarUsuario.Size = new System.Drawing.Size(248, 117);
+            this.btnalterarUsuario.Size = new System.Drawing.Size(186, 95);
             this.btnalterarUsuario.TabIndex = 23;
             this.btnalterarUsuario.UseVisualStyleBackColor = false;
             this.btnalterarUsuario.Click += new System.EventHandler(this.btnalterarUsuario_Click);
@@ -266,10 +267,9 @@ namespace TCC.VISÃO
             this.btnpreferenciaSistema.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnpreferenciaSistema.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnpreferenciaSistema.ForeColor = System.Drawing.Color.Black;
-            this.btnpreferenciaSistema.Location = new System.Drawing.Point(736, 73);
-            this.btnpreferenciaSistema.Margin = new System.Windows.Forms.Padding(4);
+            this.btnpreferenciaSistema.Location = new System.Drawing.Point(552, 59);
             this.btnpreferenciaSistema.Name = "btnpreferenciaSistema";
-            this.btnpreferenciaSistema.Size = new System.Drawing.Size(249, 117);
+            this.btnpreferenciaSistema.Size = new System.Drawing.Size(187, 95);
             this.btnpreferenciaSistema.TabIndex = 22;
             this.btnpreferenciaSistema.UseVisualStyleBackColor = false;
             this.btnpreferenciaSistema.MouseEnter += new System.EventHandler(this.btnpreferenciaSistema_MouseEnter);
@@ -280,10 +280,10 @@ namespace TCC.VISÃO
             this.panel3.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.panel3.Controls.Add(this.btnMinimizar);
             this.panel3.Controls.Add(this.btnSair);
-            this.panel3.Location = new System.Drawing.Point(-3, -12);
-            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel3.Location = new System.Drawing.Point(-2, -10);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1153, 57);
+            this.panel3.Size = new System.Drawing.Size(865, 46);
             this.panel3.TabIndex = 51;
             // 
             // btnMinimizar
@@ -291,10 +291,9 @@ namespace TCC.VISÃO
             this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
-            this.btnMinimizar.Location = new System.Drawing.Point(1068, 18);
-            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMinimizar.Location = new System.Drawing.Point(801, 15);
             this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(37, 34);
+            this.btnMinimizar.Size = new System.Drawing.Size(28, 28);
             this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnMinimizar.TabIndex = 48;
             this.btnMinimizar.TabStop = false;
@@ -305,10 +304,9 @@ namespace TCC.VISÃO
             this.btnSair.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSair.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSair.Image = ((System.Drawing.Image)(resources.GetObject("btnSair.Image")));
-            this.btnSair.Location = new System.Drawing.Point(1113, 18);
-            this.btnSair.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSair.Location = new System.Drawing.Point(835, 15);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(37, 34);
+            this.btnSair.Size = new System.Drawing.Size(28, 28);
             this.btnSair.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnSair.TabIndex = 49;
             this.btnSair.TabStop = false;
@@ -319,10 +317,9 @@ namespace TCC.VISÃO
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(209)))), ((int)(((byte)(178)))));
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.lblLogCadastro);
-            this.panel1.Location = new System.Drawing.Point(16, 230);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Location = new System.Drawing.Point(12, 187);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(256, 100);
+            this.panel1.Size = new System.Drawing.Size(192, 81);
             this.panel1.TabIndex = 52;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -332,10 +329,9 @@ namespace TCC.VISÃO
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(76, 37);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(57, 30);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(121, 18);
+            this.label5.Size = new System.Drawing.Size(97, 15);
             this.label5.TabIndex = 3;
             this.label5.Text = "Cadastros feitos ";
             // 
@@ -344,10 +340,9 @@ namespace TCC.VISÃO
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.lblExcluUsuario);
-            this.panel2.Location = new System.Drawing.Point(295, 230);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
+            this.panel2.Location = new System.Drawing.Point(221, 187);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(267, 100);
+            this.panel2.Size = new System.Drawing.Size(200, 81);
             this.panel2.TabIndex = 53;
             // 
             // label1
@@ -356,10 +351,9 @@ namespace TCC.VISÃO
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(73, 41);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(55, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(120, 18);
+            this.label1.Size = new System.Drawing.Size(98, 15);
             this.label1.TabIndex = 4;
             this.label1.Text = "Exclusões feitas ";
             // 
@@ -368,10 +362,9 @@ namespace TCC.VISÃO
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(209)))), ((int)(((byte)(178)))));
             this.panel4.Controls.Add(this.label2);
             this.panel4.Controls.Add(this.lblEditUsuario);
-            this.panel4.Location = new System.Drawing.Point(584, 230);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4);
+            this.panel4.Location = new System.Drawing.Point(438, 187);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(253, 100);
+            this.panel4.Size = new System.Drawing.Size(190, 81);
             this.panel4.TabIndex = 54;
             // 
             // label2
@@ -380,10 +373,9 @@ namespace TCC.VISÃO
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(89, 39);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(67, 32);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(117, 18);
+            this.label2.Size = new System.Drawing.Size(96, 15);
             this.label2.TabIndex = 5;
             this.label2.Text = "Alterações feitas";
             // 
@@ -392,10 +384,9 @@ namespace TCC.VISÃO
             this.panel5.BackColor = System.Drawing.Color.White;
             this.panel5.Controls.Add(this.label3);
             this.panel5.Controls.Add(this.lblTotLogs);
-            this.panel5.Location = new System.Drawing.Point(868, 230);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4);
+            this.panel5.Location = new System.Drawing.Point(651, 187);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(267, 100);
+            this.panel5.Size = new System.Drawing.Size(200, 81);
             this.panel5.TabIndex = 54;
             // 
             // label3
@@ -404,10 +395,9 @@ namespace TCC.VISÃO
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(79, 44);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(59, 36);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(121, 18);
+            this.label3.Size = new System.Drawing.Size(99, 15);
             this.label3.TabIndex = 5;
             this.label3.Text = "Operações feitas";
             // 
@@ -442,10 +432,9 @@ namespace TCC.VISÃO
             this.lblcadastros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblcadastros.Font = new System.Drawing.Font("Comic Sans MS", 7F, System.Drawing.FontStyle.Bold);
             this.lblcadastros.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblcadastros.Location = new System.Drawing.Point(15, 338);
-            this.lblcadastros.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblcadastros.Location = new System.Drawing.Point(11, 275);
             this.lblcadastros.Name = "lblcadastros";
-            this.lblcadastros.Size = new System.Drawing.Size(109, 16);
+            this.lblcadastros.Size = new System.Drawing.Size(93, 14);
             this.lblcadastros.TabIndex = 174;
             this.lblcadastros.Text = "Filtrar Cadastros";
             this.lblcadastros.Visible = false;
@@ -462,10 +451,9 @@ namespace TCC.VISÃO
             this.btnfiltrarCadastros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnfiltrarCadastros.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnfiltrarCadastros.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.btnfiltrarCadastros.Location = new System.Drawing.Point(27, 360);
-            this.btnfiltrarCadastros.Margin = new System.Windows.Forms.Padding(4);
+            this.btnfiltrarCadastros.Location = new System.Drawing.Point(20, 292);
             this.btnfiltrarCadastros.Name = "btnfiltrarCadastros";
-            this.btnfiltrarCadastros.Size = new System.Drawing.Size(85, 47);
+            this.btnfiltrarCadastros.Size = new System.Drawing.Size(64, 38);
             this.btnfiltrarCadastros.TabIndex = 173;
             this.btnfiltrarCadastros.UseVisualStyleBackColor = false;
             // 
@@ -476,10 +464,9 @@ namespace TCC.VISÃO
             this.lblexclu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblexclu.Font = new System.Drawing.Font("Comic Sans MS", 7F, System.Drawing.FontStyle.Bold);
             this.lblexclu.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblexclu.Location = new System.Drawing.Point(117, 340);
-            this.lblexclu.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblexclu.Location = new System.Drawing.Point(88, 276);
             this.lblexclu.Name = "lblexclu";
-            this.lblexclu.Size = new System.Drawing.Size(106, 16);
+            this.lblexclu.Size = new System.Drawing.Size(90, 14);
             this.lblexclu.TabIndex = 176;
             this.lblexclu.Text = "Filtrar Exclusões";
             this.lblexclu.Visible = false;
@@ -496,10 +483,9 @@ namespace TCC.VISÃO
             this.btnfiltrarExclusoes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnfiltrarExclusoes.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnfiltrarExclusoes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.btnfiltrarExclusoes.Location = new System.Drawing.Point(120, 355);
-            this.btnfiltrarExclusoes.Margin = new System.Windows.Forms.Padding(4);
+            this.btnfiltrarExclusoes.Location = new System.Drawing.Point(90, 288);
             this.btnfiltrarExclusoes.Name = "btnfiltrarExclusoes";
-            this.btnfiltrarExclusoes.Size = new System.Drawing.Size(85, 55);
+            this.btnfiltrarExclusoes.Size = new System.Drawing.Size(64, 45);
             this.btnfiltrarExclusoes.TabIndex = 175;
             this.btnfiltrarExclusoes.UseVisualStyleBackColor = false;
             // 
@@ -510,10 +496,9 @@ namespace TCC.VISÃO
             this.lblalteracoes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblalteracoes.Font = new System.Drawing.Font("Comic Sans MS", 7F, System.Drawing.FontStyle.Bold);
             this.lblalteracoes.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblalteracoes.Location = new System.Drawing.Point(205, 340);
-            this.lblalteracoes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblalteracoes.Location = new System.Drawing.Point(154, 276);
             this.lblalteracoes.Name = "lblalteracoes";
-            this.lblalteracoes.Size = new System.Drawing.Size(114, 16);
+            this.lblalteracoes.Size = new System.Drawing.Size(97, 14);
             this.lblalteracoes.TabIndex = 178;
             this.lblalteracoes.Text = "Filtrar Alterações";
             this.lblalteracoes.Visible = false;
@@ -530,10 +515,9 @@ namespace TCC.VISÃO
             this.btnfiltrarAlteracoes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnfiltrarAlteracoes.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnfiltrarAlteracoes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.btnfiltrarAlteracoes.Location = new System.Drawing.Point(213, 360);
-            this.btnfiltrarAlteracoes.Margin = new System.Windows.Forms.Padding(4);
+            this.btnfiltrarAlteracoes.Location = new System.Drawing.Point(160, 292);
             this.btnfiltrarAlteracoes.Name = "btnfiltrarAlteracoes";
-            this.btnfiltrarAlteracoes.Size = new System.Drawing.Size(85, 47);
+            this.btnfiltrarAlteracoes.Size = new System.Drawing.Size(64, 38);
             this.btnfiltrarAlteracoes.TabIndex = 177;
             this.btnfiltrarAlteracoes.UseVisualStyleBackColor = false;
             // 
@@ -544,10 +528,9 @@ namespace TCC.VISÃO
             this.lbloperacoes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbloperacoes.Font = new System.Drawing.Font("Comic Sans MS", 7F, System.Drawing.FontStyle.Bold);
             this.lbloperacoes.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lbloperacoes.Location = new System.Drawing.Point(1013, 338);
-            this.lbloperacoes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbloperacoes.Location = new System.Drawing.Point(760, 275);
             this.lbloperacoes.Name = "lbloperacoes";
-            this.lbloperacoes.Size = new System.Drawing.Size(126, 16);
+            this.lbloperacoes.Size = new System.Drawing.Size(106, 14);
             this.lbloperacoes.TabIndex = 180;
             this.lbloperacoes.Text = "Todas as Operações";
             this.lbloperacoes.Visible = false;
@@ -564,10 +547,9 @@ namespace TCC.VISÃO
             this.btntodasAsOperacoes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btntodasAsOperacoes.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btntodasAsOperacoes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.btntodasAsOperacoes.Location = new System.Drawing.Point(1031, 360);
-            this.btntodasAsOperacoes.Margin = new System.Windows.Forms.Padding(4);
+            this.btntodasAsOperacoes.Location = new System.Drawing.Point(773, 292);
             this.btntodasAsOperacoes.Name = "btntodasAsOperacoes";
-            this.btntodasAsOperacoes.Size = new System.Drawing.Size(85, 47);
+            this.btntodasAsOperacoes.Size = new System.Drawing.Size(64, 38);
             this.btntodasAsOperacoes.TabIndex = 179;
             this.btntodasAsOperacoes.UseVisualStyleBackColor = false;
             // 
@@ -581,10 +563,9 @@ namespace TCC.VISÃO
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(1035, 747);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Location = new System.Drawing.Point(776, 607);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(85, 47);
+            this.button1.Size = new System.Drawing.Size(64, 38);
             this.button1.TabIndex = 181;
             this.button1.UseVisualStyleBackColor = false;
             // 
@@ -595,22 +576,21 @@ namespace TCC.VISÃO
             this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label6.Font = new System.Drawing.Font("Comic Sans MS", 7F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label6.Location = new System.Drawing.Point(1035, 727);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(776, 591);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(90, 16);
+            this.label6.Size = new System.Drawing.Size(75, 14);
             this.label6.TabIndex = 183;
             this.label6.Text = "Exportar Logs";
             this.label6.Visible = false;
             // 
             // ConfigSistema
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(12)))), ((int)(((byte)(38)))));
             this.BackgroundImage = global::TCC.Properties.Resources._1555492a6_11;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(1151, 805);
+            this.ClientSize = new System.Drawing.Size(863, 654);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lbloperacoes);
@@ -632,7 +612,6 @@ namespace TCC.VISÃO
             this.Controls.Add(this.btnpreferenciaSistema);
             this.Controls.Add(this.dtgLogs);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ConfigSistema";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "N";
