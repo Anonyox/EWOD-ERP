@@ -79,5 +79,34 @@ namespace TCC.MODELS.relatorio_modelo
             return opera3;
         }
 
+        public DataTable filtrarSemana()
+        {
+            DataTable dtd = new DataTable();
+            dtd = relDao.filtrarSemana();
+
+            tem = true;
+            return dtd;
+        }
+
+        public DataTable filtrarMes()
+        {
+            DataTable dtdm = new DataTable();
+
+            dtdm = relDao.fitrarMes();
+
+            tem = true;
+
+            return dtdm;
+        }
+
+        public DataTable filtrarAno()
+        {
+            DataTable dta = new DataTable();
+            dta = relDao.filtrarAno();
+
+            tem = true;
+            return dta;
+        }
+
     }
 }

@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using TCC.MODELS.relatorio_modelo;
 using Microsoft.Office.Interop.Excel;
+using DataTable = System.Data.DataTable;
 
 namespace TCC.VISÃO
 {
@@ -127,6 +128,86 @@ namespace TCC.VISÃO
             lbl5.Text = tot.ToString();
 
         }
+        
+
+        public void filtrarSemana()
+        {
+            DataTable dtd = new DataTable();
+
+            dtd = relCtr.filtrarSemana();
+
+            dtgestoque.Rows.Clear();
+
+            foreach (DataRow item in dtd.Rows)
+            {
+                int n = dtgestoque.Rows.Add();
+
+                dtgestoque.Rows[n].Cells[0].Value = item["nome"].ToString();
+                dtgestoque.Rows[n].Cells[1].Value = item["fornecedor"].ToString();
+                dtgestoque.Rows[n].Cells[2].Value = item["tipo"].ToString();
+                dtgestoque.Rows[n].Cells[3].Value = item["modelo"].ToString();
+                dtgestoque.Rows[n].Cells[4].Value = item["quantidade"].ToString();
+                dtgestoque.Rows[n].Cells[5].Value = item["valordecompra"].ToString();
+                dtgestoque.Rows[n].Cells[6].Value = item["valordevenda"].ToString();
+                dtgestoque.Rows[n].Cells[7].Value = item["dataDeCadastro"].ToString();
+
+            }
+
+
+        }
+
+        public void filtrarMes()
+        {
+            DataTable dtdm = new DataTable();
+
+            dtdm = relCtr.filtrarMes();
+
+            dtgestoque.Rows.Clear();
+
+            foreach (DataRow item in dtdm. Rows)
+            {
+                int n = dtgestoque.Rows.Add();
+
+                dtgestoque.Rows[n].Cells[0].Value = item["nome"].ToString();
+                dtgestoque.Rows[n].Cells[1].Value = item["fornecedor"].ToString();
+                dtgestoque.Rows[n].Cells[2].Value = item["tipo"].ToString();
+                dtgestoque.Rows[n].Cells[3].Value = item["modelo"].ToString();
+                dtgestoque.Rows[n].Cells[4].Value = item["quantidade"].ToString();
+                dtgestoque.Rows[n].Cells[5].Value = item["valordecompra"].ToString();
+                dtgestoque.Rows[n].Cells[6].Value = item["valordevenda"].ToString();
+                dtgestoque.Rows[n].Cells[7].Value = item["dataDeCadastro"].ToString();
+
+            }
+
+
+
+        }
+
+
+        public void filtrarAno()
+        {
+            DataTable dtaa = new DataTable();
+
+            dtaa = relCtr.filtrarAno();
+
+            dtgestoque.Rows.Clear();
+
+            foreach (DataRow item in dtaa.Rows)
+            {
+                int n = dtgestoque.Rows.Add();
+
+                dtgestoque.Rows[n].Cells[0].Value = item["nome"].ToString();
+                dtgestoque.Rows[n].Cells[1].Value = item["fornecedor"].ToString();
+                dtgestoque.Rows[n].Cells[2].Value = item["tipo"].ToString();
+                dtgestoque.Rows[n].Cells[3].Value = item["modelo"].ToString();
+                dtgestoque.Rows[n].Cells[4].Value = item["quantidade"].ToString();
+                dtgestoque.Rows[n].Cells[5].Value = item["valordecompra"].ToString();
+                dtgestoque.Rows[n].Cells[6].Value = item["valordevenda"].ToString();
+                dtgestoque.Rows[n].Cells[7].Value = item["dataDeCadastro"].ToString();
+
+            }
+        }
+        
         #endregion
 
 
@@ -163,6 +244,61 @@ namespace TCC.VISÃO
         {
             listarProduto();
             timer1.Start();
+        }
+
+        private void btnfiltroSemana_Click(object sender, EventArgs e)
+        {
+            filtrarSemana();
+        }
+
+        private void btnfiltroSemana_MouseEnter(object sender, EventArgs e)
+        {
+            btnfiltroSemana.Size = new Size(68, 40);
+        }
+
+        private void btnfiltroSemana_MouseLeave_1(object sender, EventArgs e)
+        {
+            btnfiltroSemana.Size = new Size(62, 35);
+        }
+
+        private void btnfiltroMes_Click(object sender, EventArgs e)
+        {
+            filtrarMes();
+        }
+
+        private void btn3_Click(object sender, EventArgs e)
+        {
+            filtrarAno();
+        }
+
+        private void btnfiltroMes_MouseEnter(object sender, EventArgs e)
+        {
+            btnfiltroMes.Size = new Size(68, 40);
+        }
+
+        private void btnfiltroMes_MouseLeave(object sender, EventArgs e)
+        {
+            btnfiltroMes.Size = new Size(62, 35);
+        }
+
+        private void btn3_MouseEnter(object sender, EventArgs e)
+        {
+            btnfiltrarAno.Size = new Size(68, 40);
+        }
+
+        private void btnfiltrarAno_MouseLeave(object sender, EventArgs e)
+        {
+            btnfiltrarAno.Size = new Size(62, 35);
+        }
+
+        private void btnfiltrarPersonalizado_MouseEnter(object sender, EventArgs e)
+        {
+            btnfiltrarPersonalizado.Size = new Size(68, 40);
+        }
+
+        private void btnfiltrarPersonalizado_MouseLeave(object sender, EventArgs e)
+        {
+            btnfiltrarPersonalizado.Size = new Size(62, 35);
         }
     }
 }

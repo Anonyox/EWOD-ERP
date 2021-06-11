@@ -45,9 +45,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.lbl5 = new System.Windows.Forms.Label();
-            this.btn4 = new System.Windows.Forms.Button();
-            this.btn3 = new System.Windows.Forms.Button();
-            this.btn2 = new System.Windows.Forms.Button();
+            this.btnfiltrarPersonalizado = new System.Windows.Forms.Button();
+            this.btnfiltrarAno = new System.Windows.Forms.Button();
+            this.btnfiltroMes = new System.Windows.Forms.Button();
             this.btnfiltroSemana = new System.Windows.Forms.Button();
             this.dtgestoque = new System.Windows.Forms.DataGridView();
             this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -245,66 +245,70 @@
             this.lbl5.TabIndex = 4;
             this.lbl5.Text = "N";
             // 
-            // btn4
+            // btnfiltrarPersonalizado
             // 
-            this.btn4.BackColor = System.Drawing.Color.Transparent;
-            this.btn4.BackgroundImage = global::TCC.Properties.Resources.icons8_cancelar_48;
-            this.btn4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn4.Enabled = false;
-            this.btn4.FlatAppearance.BorderSize = 0;
-            this.btn4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btn4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btn4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn4.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn4.ForeColor = System.Drawing.Color.Transparent;
-            this.btn4.Location = new System.Drawing.Point(250, 299);
-            this.btn4.Name = "btn4";
-            this.btn4.Size = new System.Drawing.Size(62, 35);
-            this.btn4.TabIndex = 172;
-            this.btn4.UseVisualStyleBackColor = false;
+            this.btnfiltrarPersonalizado.BackColor = System.Drawing.Color.Transparent;
+            this.btnfiltrarPersonalizado.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnfiltrarPersonalizado.BackgroundImage")));
+            this.btnfiltrarPersonalizado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnfiltrarPersonalizado.FlatAppearance.BorderSize = 0;
+            this.btnfiltrarPersonalizado.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnfiltrarPersonalizado.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnfiltrarPersonalizado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnfiltrarPersonalizado.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnfiltrarPersonalizado.ForeColor = System.Drawing.Color.Transparent;
+            this.btnfiltrarPersonalizado.Location = new System.Drawing.Point(250, 299);
+            this.btnfiltrarPersonalizado.Name = "btnfiltrarPersonalizado";
+            this.btnfiltrarPersonalizado.Size = new System.Drawing.Size(62, 35);
+            this.btnfiltrarPersonalizado.TabIndex = 172;
+            this.btnfiltrarPersonalizado.UseVisualStyleBackColor = false;
+            this.btnfiltrarPersonalizado.MouseEnter += new System.EventHandler(this.btnfiltrarPersonalizado_MouseEnter);
+            this.btnfiltrarPersonalizado.MouseLeave += new System.EventHandler(this.btnfiltrarPersonalizado_MouseLeave);
             // 
-            // btn3
+            // btnfiltrarAno
             // 
-            this.btn3.BackColor = System.Drawing.Color.Transparent;
-            this.btn3.BackgroundImage = global::TCC.Properties.Resources.icons8_cancelar_48;
-            this.btn3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn3.Enabled = false;
-            this.btn3.FlatAppearance.BorderSize = 0;
-            this.btn3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btn3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btn3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn3.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn3.ForeColor = System.Drawing.Color.Transparent;
-            this.btn3.Location = new System.Drawing.Point(169, 299);
-            this.btn3.Name = "btn3";
-            this.btn3.Size = new System.Drawing.Size(62, 35);
-            this.btn3.TabIndex = 171;
-            this.btn3.UseVisualStyleBackColor = false;
+            this.btnfiltrarAno.BackColor = System.Drawing.Color.Transparent;
+            this.btnfiltrarAno.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnfiltrarAno.BackgroundImage")));
+            this.btnfiltrarAno.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnfiltrarAno.FlatAppearance.BorderSize = 0;
+            this.btnfiltrarAno.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnfiltrarAno.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnfiltrarAno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnfiltrarAno.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnfiltrarAno.ForeColor = System.Drawing.Color.Transparent;
+            this.btnfiltrarAno.Location = new System.Drawing.Point(169, 299);
+            this.btnfiltrarAno.Name = "btnfiltrarAno";
+            this.btnfiltrarAno.Size = new System.Drawing.Size(62, 35);
+            this.btnfiltrarAno.TabIndex = 171;
+            this.btnfiltrarAno.UseVisualStyleBackColor = false;
+            this.btnfiltrarAno.Click += new System.EventHandler(this.btn3_Click);
+            this.btnfiltrarAno.MouseEnter += new System.EventHandler(this.btn3_MouseEnter);
+            this.btnfiltrarAno.MouseLeave += new System.EventHandler(this.btnfiltrarAno_MouseLeave);
             // 
-            // btn2
+            // btnfiltroMes
             // 
-            this.btn2.BackColor = System.Drawing.Color.Transparent;
-            this.btn2.BackgroundImage = global::TCC.Properties.Resources.icons8_cancelar_48;
-            this.btn2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn2.Enabled = false;
-            this.btn2.FlatAppearance.BorderSize = 0;
-            this.btn2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btn2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btn2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn2.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn2.ForeColor = System.Drawing.Color.Transparent;
-            this.btn2.Location = new System.Drawing.Point(84, 299);
-            this.btn2.Name = "btn2";
-            this.btn2.Size = new System.Drawing.Size(62, 35);
-            this.btn2.TabIndex = 170;
-            this.btn2.UseVisualStyleBackColor = false;
+            this.btnfiltroMes.BackColor = System.Drawing.Color.Transparent;
+            this.btnfiltroMes.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnfiltroMes.BackgroundImage")));
+            this.btnfiltroMes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnfiltroMes.FlatAppearance.BorderSize = 0;
+            this.btnfiltroMes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnfiltroMes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnfiltroMes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnfiltroMes.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnfiltroMes.ForeColor = System.Drawing.Color.Transparent;
+            this.btnfiltroMes.Location = new System.Drawing.Point(84, 299);
+            this.btnfiltroMes.Name = "btnfiltroMes";
+            this.btnfiltroMes.Size = new System.Drawing.Size(62, 35);
+            this.btnfiltroMes.TabIndex = 170;
+            this.btnfiltroMes.UseVisualStyleBackColor = false;
+            this.btnfiltroMes.Click += new System.EventHandler(this.btnfiltroMes_Click);
+            this.btnfiltroMes.MouseEnter += new System.EventHandler(this.btnfiltroMes_MouseEnter);
+            this.btnfiltroMes.MouseLeave += new System.EventHandler(this.btnfiltroMes_MouseLeave);
             // 
             // btnfiltroSemana
             // 
             this.btnfiltroSemana.BackColor = System.Drawing.Color.Transparent;
-            this.btnfiltroSemana.BackgroundImage = global::TCC.Properties.Resources.icons8_cancelar_48;
+            this.btnfiltroSemana.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnfiltroSemana.BackgroundImage")));
             this.btnfiltroSemana.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnfiltroSemana.Enabled = false;
             this.btnfiltroSemana.FlatAppearance.BorderSize = 0;
             this.btnfiltroSemana.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnfiltroSemana.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
@@ -316,6 +320,9 @@
             this.btnfiltroSemana.Size = new System.Drawing.Size(62, 35);
             this.btnfiltroSemana.TabIndex = 169;
             this.btnfiltroSemana.UseVisualStyleBackColor = false;
+            this.btnfiltroSemana.Click += new System.EventHandler(this.btnfiltroSemana_Click);
+            this.btnfiltroSemana.MouseEnter += new System.EventHandler(this.btnfiltroSemana_MouseEnter);
+            this.btnfiltroSemana.MouseLeave += new System.EventHandler(this.btnfiltroSemana_MouseLeave_1);
             // 
             // dtgestoque
             // 
@@ -330,8 +337,10 @@
             this.valordeCompra,
             this.valordeVenda,
             this.dataDeCadastro});
+            this.dtgestoque.Enabled = false;
             this.dtgestoque.Location = new System.Drawing.Point(0, 340);
             this.dtgestoque.Name = "dtgestoque";
+            this.dtgestoque.ReadOnly = true;
             this.dtgestoque.RowHeadersWidth = 51;
             this.dtgestoque.Size = new System.Drawing.Size(863, 276);
             this.dtgestoque.TabIndex = 173;
@@ -340,42 +349,50 @@
             // 
             this.nome.HeaderText = "Nome";
             this.nome.Name = "nome";
+            this.nome.ReadOnly = true;
             this.nome.Width = 116;
             // 
             // fornecedor
             // 
             this.fornecedor.HeaderText = "Fornecedor";
             this.fornecedor.Name = "fornecedor";
+            this.fornecedor.ReadOnly = true;
             // 
             // tipo
             // 
             this.tipo.HeaderText = "Tipo";
             this.tipo.Name = "tipo";
+            this.tipo.ReadOnly = true;
             // 
             // modelo
             // 
             this.modelo.HeaderText = "Modelo";
             this.modelo.Name = "modelo";
+            this.modelo.ReadOnly = true;
             // 
             // quantidade
             // 
             this.quantidade.HeaderText = "Quantidade";
             this.quantidade.Name = "quantidade";
+            this.quantidade.ReadOnly = true;
             // 
             // valordeCompra
             // 
             this.valordeCompra.HeaderText = "ValorDeCompra";
             this.valordeCompra.Name = "valordeCompra";
+            this.valordeCompra.ReadOnly = true;
             // 
             // valordeVenda
             // 
             this.valordeVenda.HeaderText = "ValorDeVenda";
             this.valordeVenda.Name = "valordeVenda";
+            this.valordeVenda.ReadOnly = true;
             // 
             // dataDeCadastro
             // 
             this.dataDeCadastro.HeaderText = "DataDeCadastro";
             this.dataDeCadastro.Name = "dataDeCadastro";
+            this.dataDeCadastro.ReadOnly = true;
             // 
             // lbl4
             // 
@@ -438,9 +455,9 @@
             this.Controls.Add(this.lbl4);
             this.Controls.Add(this.lblprecoTotal);
             this.Controls.Add(this.dtgestoque);
-            this.Controls.Add(this.btn4);
-            this.Controls.Add(this.btn3);
-            this.Controls.Add(this.btn2);
+            this.Controls.Add(this.btnfiltrarPersonalizado);
+            this.Controls.Add(this.btnfiltrarAno);
+            this.Controls.Add(this.btnfiltroMes);
             this.Controls.Add(this.btnfiltroSemana);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -482,9 +499,9 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblsaida;
         private System.Windows.Forms.Label lbl1;
-        public System.Windows.Forms.Button btn4;
-        public System.Windows.Forms.Button btn3;
-        public System.Windows.Forms.Button btn2;
+        public System.Windows.Forms.Button btnfiltrarPersonalizado;
+        public System.Windows.Forms.Button btnfiltrarAno;
+        public System.Windows.Forms.Button btnfiltroMes;
         public System.Windows.Forms.Button btnfiltroSemana;
         private System.Windows.Forms.DataGridView dtgestoque;
         private System.Windows.Forms.Label lbl4;

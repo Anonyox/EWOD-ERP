@@ -223,6 +223,83 @@ namespace TCC.CONTROLS.relatorio_controledao.PRODUTOS
             cmd.CommandText = ""
         }*/
 
+        public DataTable filtrarSemana()
+        {
+            cmd.CommandText = "SELECT *, E.Quantidade FROM produtos P, estoqueProdutos E WHERE P.dataDeCadastro BETWEEN GETDATE() - 8 AND GETDATE() AND P.codProduto = E.idProduto ";
+
+            try
+            {
+                cmd.Connection = con.conectar();
+                DataTable dtd = new DataTable();
+                SqlDataAdapter dap = new SqlDataAdapter(cmd);
+                cmd.ExecuteNonQuery();
+
+                dap.Fill(dtd);
+
+                con.desconectar();
+
+                return dtd;
+                
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public DataTable fitrarMes()
+        {
+            cmd.CommandText = "SELECT *, E.Quantidade FROM produtos P, estoqueProdutos E WHERE P.dataDeCadastro BETWEEN GETDATE() - 32 AND GETDATE() AND P.codProduto = E.idProduto ORDER BY P.datadeCadastro DESC";
+
+            try
+            {
+                cmd.Connection = con.conectar();
+                DataTable dtdm = new DataTable();
+                SqlDataAdapter dam = new SqlDataAdapter(cmd);
+                cmd.ExecuteNonQuery();
+
+                dam.Fill(dtdm);
+                con.desconectar();
+
+                return dtdm;
+
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public DataTable filtrarAno()
+        {
+            cmd.CommandText = "SELECT *, E.Quantidade FROM produtos P, estoqueProdutos E WHERE P.dataDeCadastro BETWEEN GETDATE() - 367 AND GETDATE() AND P.codProduto = E.idProduto ORDER BY P.datadeCadastro DESC";
+
+            try
+            {
+                cmd.Connection = con.conectar();
+                DataTable dta = new DataTable();
+                SqlDataAdapter daa = new SqlDataAdapter(cmd);
+                cmd.ExecuteNonQuery();
+
+                daa.Fill(dta);
+                con.desconectar();
+
+                return dta;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            
+          
+
+
+        }
+
         #endregion
     }
 }
