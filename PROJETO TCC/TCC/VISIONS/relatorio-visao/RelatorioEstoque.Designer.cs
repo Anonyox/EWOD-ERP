@@ -261,6 +261,7 @@
             this.btnfiltrarPersonalizado.Size = new System.Drawing.Size(62, 35);
             this.btnfiltrarPersonalizado.TabIndex = 172;
             this.btnfiltrarPersonalizado.UseVisualStyleBackColor = false;
+            this.btnfiltrarPersonalizado.Click += new System.EventHandler(this.btnfiltrarPersonalizado_Click);
             this.btnfiltrarPersonalizado.MouseEnter += new System.EventHandler(this.btnfiltrarPersonalizado_MouseEnter);
             this.btnfiltrarPersonalizado.MouseLeave += new System.EventHandler(this.btnfiltrarPersonalizado_MouseLeave);
             // 
@@ -337,7 +338,6 @@
             this.valordeCompra,
             this.valordeVenda,
             this.dataDeCadastro});
-            this.dtgestoque.Enabled = false;
             this.dtgestoque.Location = new System.Drawing.Point(0, 340);
             this.dtgestoque.Name = "dtgestoque";
             this.dtgestoque.ReadOnly = true;
@@ -503,7 +503,6 @@
         public System.Windows.Forms.Button btnfiltrarAno;
         public System.Windows.Forms.Button btnfiltroMes;
         public System.Windows.Forms.Button btnfiltroSemana;
-        private System.Windows.Forms.DataGridView dtgestoque;
         private System.Windows.Forms.Label lbl4;
         private System.Windows.Forms.Label lblprecoTotal;
         private System.Windows.Forms.DataGridViewTextBoxColumn nome;
@@ -518,5 +517,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbl5;
         public System.Windows.Forms.Button btnexportar;
+        public System.Windows.Forms.DataGridView dtgestoque;
     }
 }

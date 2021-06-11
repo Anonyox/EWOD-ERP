@@ -5,6 +5,11 @@ using System.Windows.Forms;
 using TCC.MODELS.relatorio_modelo;
 using Microsoft.Office.Interop.Excel;
 using DataTable = System.Data.DataTable;
+using System.Collections.Generic;
+using TCC.VISIONS.relatorio_visao;
+using Application = System.Windows.Forms.Application;
+using System.Linq;
+using static TCC.VISIONS.relatorio_visao.FiltroRelatorioEstoque;
 
 namespace TCC.VISÃO
 {
@@ -103,10 +108,63 @@ namespace TCC.VISÃO
             dtgestoque.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
         }
 
-        public void contarDispesas()
+        public void dispesasGrid()
         {
-            dispesas = relCtr.contarDespesas();
-            lbl4.Text = dispesas;
+            String valorCompraTexto;
+            String quantidadeTexto;
+
+            float valorCompra;
+            float quantidade;
+
+            float total = 0;
+            String totalExibir;
+            char[] MyChar = { 'R', '$' };
+
+            List<ProdutoCompra> Produtos = new List<ProdutoCompra>();
+
+
+            foreach (DataGridViewRow dataGridViewRow in dtgestoque.Rows) // FOREACH PARA PERCORRER O SEU DATAGRID
+            {
+                Produtos.Add(
+                    new ProdutoCompra(dataGridViewRow.Cells["valordeCompra"].Value.ToString(),
+                                dataGridViewRow.Cells["quantidade"].Value.ToString()
+                                  )
+                             );
+
+            }
+
+            foreach (var p in Produtos) // FOREACH PARA PERCORRE A ESTRUTURA DE ARRAY PRODUTOCOMPRA AONDE ESTÁ ARMAZENADOS OS DADOS DO GRID PREENCHIDOS PELO FOREACH DE CIMA
+            {
+                valorCompraTexto = p.valorDCompra;
+                quantidadeTexto = p.quantidade;
+
+                string vtext = valorCompraTexto.TrimStart(MyChar);
+
+                valorCompra = float.Parse(vtext);
+                quantidade = float.Parse(quantidadeTexto);
+
+                total = total + (quantidade * valorCompra);
+
+
+            }
+
+
+            totalExibir = string.Format("{0:C}", total);
+            lbl4.Text = totalExibir.ToString();
+
+
+        }
+
+        public struct ProdutoCompra
+        {
+            public String valorDCompra, quantidade;
+
+
+            public ProdutoCompra(String _valorCompra, String _quantidade)
+            {
+                valorDCompra = _valorCompra;
+                quantidade = _quantidade;
+            }
         }
 
         public void contarOperacao()
@@ -207,7 +265,8 @@ namespace TCC.VISÃO
 
             }
         }
-        
+
+     
         #endregion
 
 
@@ -219,7 +278,11 @@ namespace TCC.VISÃO
 
         private void btnSair_Click(object sender, EventArgs e)
         {
-            this.Close();
+            foreach (Form child in this.OwnedForms) //FORMULÁRIOS FILHOS
+            {
+                child.Close();//FECHA FILHOS
+            }
+            this.Close(); ;
         }
 
         private void btnMinimizar_Click(object sender, EventArgs e)
@@ -231,24 +294,30 @@ namespace TCC.VISÃO
 
         private void RelatorioEstoque_Load(object sender, EventArgs e)
         {
-            timer1.Start();
+            //timer1.Start();
             formataGrid();
             listarProduto();
+            dispesasGrid();
             contarEntradas();
             contarProdutos();
-            contarDispesas();
             contarOperacao();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
-        {
+        {         
             listarProduto();
+            dispesasGrid();
+            contarEntradas();
+            contarProdutos();
+            contarOperacao();
             timer1.Start();
         }
 
         private void btnfiltroSemana_Click(object sender, EventArgs e)
         {
+
             filtrarSemana();
+            dispesasGrid();
         }
 
         private void btnfiltroSemana_MouseEnter(object sender, EventArgs e)
@@ -264,11 +333,13 @@ namespace TCC.VISÃO
         private void btnfiltroMes_Click(object sender, EventArgs e)
         {
             filtrarMes();
+            dispesasGrid();
         }
 
         private void btn3_Click(object sender, EventArgs e)
         {
             filtrarAno();
+            dispesasGrid();
         }
 
         private void btnfiltroMes_MouseEnter(object sender, EventArgs e)
@@ -299,6 +370,22 @@ namespace TCC.VISÃO
         private void btnfiltrarPersonalizado_MouseLeave(object sender, EventArgs e)
         {
             btnfiltrarPersonalizado.Size = new Size(62, 35);
+        }
+
+        private void btnfiltrarPersonalizado_Click(object sender, EventArgs e)
+        {
+            FiltroRelatorioEstoque filEstoque = new FiltroRelatorioEstoque();
+
+            if (Application.OpenForms.OfType<CadastroProduto>().Count() > 0)
+            {
+                Application.OpenForms.OfType<CadastroProduto>().First().Focus();
+            }
+            else
+            {
+
+                filEstoque.Owner = this;
+                filEstoque.Show();
+            }
         }
     }
 }

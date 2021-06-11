@@ -42,9 +42,9 @@ namespace TCC.MODELS.relatorio_modelo
             return dt;
         }
 
-        public String contarDespesas()
+        public String contarDespesas(string colunaCompra, string colunaQuantidade)
         {
-            despesas = relDao.contarDespesas();
+            despesas = relDao.contarDespesas(colunaCompra,colunaQuantidade);
 
             tem = true;
 
@@ -106,6 +106,16 @@ namespace TCC.MODELS.relatorio_modelo
 
             tem = true;
             return dta;
+        }
+
+        public DataTable filtrarData(string dataInicial,string dataFinal)
+        {
+            
+            DataTable dtdmf = new DataTable();
+
+            dtdmf = relDao.filtrarData(dataInicial, dataFinal);
+
+            return dtdmf;
         }
 
     }

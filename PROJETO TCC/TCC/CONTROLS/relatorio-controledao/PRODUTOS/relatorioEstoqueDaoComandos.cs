@@ -116,10 +116,11 @@ namespace TCC.CONTROLS.relatorio_controledao.PRODUTOS
 
         }
 
-        public String contarDespesas()
+        public String contarDespesas(string colunaCompra, string colunaQuantidade)
         {
-            cmd.CommandText = "SELECT FORMAT(SUM(produtos.valordeCompra * estoqueProdutos.Quantidade), 'c', 'pt-br') AS VALOR_TOTAL FROM produtos, estoqueProdutos";
-
+            cmd.CommandText = "SELECT FORMAT(SUM(@produtos.valordeCompra * @estoqueProdutos.Quantidade), 'c', 'pt-br') AS VALOR_TOTAL FROM produtos, estoqueProdutos";
+            cmd.Parameters.AddWithValue("@produtos.valordeCompra", colunaCompra);
+            cmd.Parameters.AddWithValue("@estoqueProdutos.Quantidade", colunaQuantidade);
             try
             {
                 cmd.Connection = con.conectar();
@@ -298,6 +299,37 @@ namespace TCC.CONTROLS.relatorio_controledao.PRODUTOS
           
 
 
+        }
+
+        public DataTable filtrarData(string dataInicial, string dataFinal)
+        {
+            cmd.CommandText = "SELECT * FROM produtos P, estoqueProdutos E WHERE P.datadeCadastro BETWEEN @datainicial AND @datafinal AND P.codProduto = E.idProduto ORDER BY P.datadeCadastro DESC";
+            cmd.Parameters.AddWithValue("@datainicial", dataInicial);
+            cmd.Parameters.AddWithValue("@datafinal", dataFinal);
+            try
+            {
+                cmd.Connection = con.conectar();
+                DataTable dtdmf = new DataTable();
+                SqlDataAdapter dtd = new SqlDataAdapter(cmd);
+                cmd.ExecuteNonQuery();
+
+                dtd.Fill(dtdmf);
+                con.desconectar();
+                cmd.Parameters.RemoveAt("@datainicial");
+                cmd.Parameters.RemoveAt("@datafinal");
+
+
+                return dtdmf;
+
+
+
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         #endregion
