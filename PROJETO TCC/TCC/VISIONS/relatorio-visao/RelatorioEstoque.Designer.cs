@@ -75,10 +75,9 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Orange;
-            this.label8.Location = new System.Drawing.Point(483, 50);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(347, 38);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(229, 27);
+            this.label8.Size = new System.Drawing.Size(181, 21);
             this.label8.TabIndex = 157;
             this.label8.Text = "RELATÓRIO ESTOQUE";
             // 
@@ -87,10 +86,10 @@
             this.barra.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.barra.Controls.Add(this.btnMinimizar);
             this.barra.Controls.Add(this.btnSair);
-            this.barra.Location = new System.Drawing.Point(-3, -12);
-            this.barra.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.barra.Location = new System.Drawing.Point(-2, -10);
+            this.barra.Margin = new System.Windows.Forms.Padding(2);
             this.barra.Name = "barra";
-            this.barra.Size = new System.Drawing.Size(1153, 57);
+            this.barra.Size = new System.Drawing.Size(865, 46);
             this.barra.TabIndex = 165;
             // 
             // btnMinimizar
@@ -98,10 +97,9 @@
             this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
-            this.btnMinimizar.Location = new System.Drawing.Point(1067, 18);
-            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMinimizar.Location = new System.Drawing.Point(800, 15);
             this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(37, 34);
+            this.btnMinimizar.Size = new System.Drawing.Size(28, 28);
             this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnMinimizar.TabIndex = 61;
             this.btnMinimizar.TabStop = false;
@@ -112,10 +110,9 @@
             this.btnSair.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSair.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSair.Image = ((System.Drawing.Image)(resources.GetObject("btnSair.Image")));
-            this.btnSair.Location = new System.Drawing.Point(1112, 18);
-            this.btnSair.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSair.Location = new System.Drawing.Point(834, 15);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(37, 34);
+            this.btnSair.Size = new System.Drawing.Size(28, 28);
             this.btnSair.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnSair.TabIndex = 60;
             this.btnSair.TabStop = false;
@@ -124,12 +121,11 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(209)))), ((int)(((byte)(178)))));
-            this.panel3.Controls.Add(this.lbltotal);
-            this.panel3.Controls.Add(this.lbl3);
-            this.panel3.Location = new System.Drawing.Point(845, 144);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Controls.Add(this.lblsaida);
+            this.panel3.Controls.Add(this.lbl1);
+            this.panel3.Location = new System.Drawing.Point(12, 117);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(256, 100);
+            this.panel3.Size = new System.Drawing.Size(192, 81);
             this.panel3.TabIndex = 168;
             // 
             // lbltotal
@@ -137,11 +133,10 @@
             this.lbltotal.AutoSize = true;
             this.lbltotal.BackColor = System.Drawing.Color.Transparent;
             this.lbltotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbltotal.ForeColor = System.Drawing.Color.Black;
-            this.lbltotal.Location = new System.Drawing.Point(33, 37);
-            this.lbltotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbltotal.ForeColor = System.Drawing.Color.White;
+            this.lbltotal.Location = new System.Drawing.Point(418, 322);
             this.lbltotal.Name = "lbltotal";
-            this.lbltotal.Size = new System.Drawing.Size(184, 18);
+            this.lbltotal.Size = new System.Drawing.Size(150, 15);
             this.lbltotal.TabIndex = 3;
             this.lbltotal.Text = "QUANTIDADE PRODUTO ";
             // 
@@ -150,11 +145,10 @@
             this.lbl3.AutoSize = true;
             this.lbl3.BackColor = System.Drawing.Color.Transparent;
             this.lbl3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl3.ForeColor = System.Drawing.Color.Black;
-            this.lbl3.Location = new System.Drawing.Point(119, 55);
-            this.lbl3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl3.ForeColor = System.Drawing.Color.White;
+            this.lbl3.Location = new System.Drawing.Point(477, 299);
             this.lbl3.Name = "lbl3";
-            this.lbl3.Size = new System.Drawing.Size(25, 24);
+            this.lbl3.Size = new System.Drawing.Size(20, 18);
             this.lbl3.TabIndex = 1;
             this.lbl3.Text = "N";
             // 
@@ -163,10 +157,9 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(209)))), ((int)(((byte)(178)))));
             this.panel2.Controls.Add(this.lbloperacao);
             this.panel2.Controls.Add(this.lbl2);
-            this.panel2.Location = new System.Drawing.Point(443, 144);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Location = new System.Drawing.Point(649, 117);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(269, 100);
+            this.panel2.Size = new System.Drawing.Size(202, 81);
             this.panel2.TabIndex = 167;
             // 
             // lbloperacao
@@ -175,10 +168,9 @@
             this.lbloperacao.BackColor = System.Drawing.Color.Transparent;
             this.lbloperacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbloperacao.ForeColor = System.Drawing.Color.Black;
-            this.lbloperacao.Location = new System.Drawing.Point(57, 37);
-            this.lbloperacao.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbloperacao.Location = new System.Drawing.Point(43, 30);
             this.lbloperacao.Name = "lbloperacao";
-            this.lbloperacao.Size = new System.Drawing.Size(150, 18);
+            this.lbloperacao.Size = new System.Drawing.Size(121, 15);
             this.lbloperacao.TabIndex = 3;
             this.lbloperacao.Text = "QUANTIDADE SAÍDA";
             // 
@@ -188,22 +180,20 @@
             this.lbl2.BackColor = System.Drawing.Color.Transparent;
             this.lbl2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl2.ForeColor = System.Drawing.Color.Black;
-            this.lbl2.Location = new System.Drawing.Point(123, 55);
-            this.lbl2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl2.Location = new System.Drawing.Point(92, 45);
             this.lbl2.Name = "lbl2";
-            this.lbl2.Size = new System.Drawing.Size(25, 24);
+            this.lbl2.Size = new System.Drawing.Size(20, 18);
             this.lbl2.TabIndex = 1;
             this.lbl2.Text = "N";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(209)))), ((int)(((byte)(178)))));
-            this.panel1.Controls.Add(this.lblsaida);
-            this.panel1.Controls.Add(this.lbl1);
-            this.panel1.Location = new System.Drawing.Point(45, 144);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.lbl5);
+            this.panel1.Location = new System.Drawing.Point(336, 117);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(256, 100);
+            this.panel1.Size = new System.Drawing.Size(192, 81);
             this.panel1.TabIndex = 166;
             // 
             // lblsaida
@@ -212,10 +202,9 @@
             this.lblsaida.BackColor = System.Drawing.Color.Transparent;
             this.lblsaida.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblsaida.ForeColor = System.Drawing.Color.Black;
-            this.lblsaida.Location = new System.Drawing.Point(24, 37);
-            this.lblsaida.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblsaida.Location = new System.Drawing.Point(20, 30);
             this.lblsaida.Name = "lblsaida";
-            this.lblsaida.Size = new System.Drawing.Size(178, 18);
+            this.lblsaida.Size = new System.Drawing.Size(143, 15);
             this.lblsaida.TabIndex = 3;
             this.lblsaida.Text = "QUANTIDADE ENTRADA";
             // 
@@ -225,10 +214,9 @@
             this.lbl1.BackColor = System.Drawing.Color.Transparent;
             this.lbl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl1.ForeColor = System.Drawing.Color.Black;
-            this.lbl1.Location = new System.Drawing.Point(104, 55);
-            this.lbl1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl1.Location = new System.Drawing.Point(80, 45);
             this.lbl1.Name = "lbl1";
-            this.lbl1.Size = new System.Drawing.Size(25, 24);
+            this.lbl1.Size = new System.Drawing.Size(20, 18);
             this.lbl1.TabIndex = 1;
             this.lbl1.Text = "N";
             // 
@@ -244,10 +232,9 @@
             this.btn4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn4.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn4.ForeColor = System.Drawing.Color.Transparent;
-            this.btn4.Location = new System.Drawing.Point(327, 368);
-            this.btn4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn4.Location = new System.Drawing.Point(250, 299);
             this.btn4.Name = "btn4";
-            this.btn4.Size = new System.Drawing.Size(83, 43);
+            this.btn4.Size = new System.Drawing.Size(62, 35);
             this.btn4.TabIndex = 172;
             this.btn4.UseVisualStyleBackColor = false;
             // 
@@ -263,10 +250,9 @@
             this.btn3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn3.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn3.ForeColor = System.Drawing.Color.Transparent;
-            this.btn3.Location = new System.Drawing.Point(219, 368);
-            this.btn3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn3.Location = new System.Drawing.Point(169, 299);
             this.btn3.Name = "btn3";
-            this.btn3.Size = new System.Drawing.Size(83, 43);
+            this.btn3.Size = new System.Drawing.Size(62, 35);
             this.btn3.TabIndex = 171;
             this.btn3.UseVisualStyleBackColor = false;
             // 
@@ -282,10 +268,9 @@
             this.btn2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn2.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn2.ForeColor = System.Drawing.Color.Transparent;
-            this.btn2.Location = new System.Drawing.Point(105, 368);
-            this.btn2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn2.Location = new System.Drawing.Point(84, 299);
             this.btn2.Name = "btn2";
-            this.btn2.Size = new System.Drawing.Size(83, 43);
+            this.btn2.Size = new System.Drawing.Size(62, 35);
             this.btn2.TabIndex = 170;
             this.btn2.UseVisualStyleBackColor = false;
             // 
@@ -320,68 +305,52 @@
             this.valordeCompra,
             this.valordeVenda,
             this.dataDeCadastro});
-            this.dtgestoque.Location = new System.Drawing.Point(0, 418);
-            this.dtgestoque.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtgestoque.Location = new System.Drawing.Point(0, 340);
             this.dtgestoque.Name = "dtgestoque";
             this.dtgestoque.RowHeadersWidth = 51;
-            this.dtgestoque.Size = new System.Drawing.Size(1151, 336);
+            this.dtgestoque.Size = new System.Drawing.Size(863, 276);
             this.dtgestoque.TabIndex = 173;
             // 
             // nome
             // 
             this.nome.HeaderText = "Nome";
-            this.nome.MinimumWidth = 6;
             this.nome.Name = "nome";
             this.nome.Width = 116;
             // 
             // fornecedor
             // 
             this.fornecedor.HeaderText = "Fornecedor";
-            this.fornecedor.MinimumWidth = 6;
             this.fornecedor.Name = "fornecedor";
-            this.fornecedor.Width = 125;
             // 
             // tipo
             // 
             this.tipo.HeaderText = "Tipo";
-            this.tipo.MinimumWidth = 6;
             this.tipo.Name = "tipo";
-            this.tipo.Width = 125;
             // 
             // modelo
             // 
             this.modelo.HeaderText = "Modelo";
-            this.modelo.MinimumWidth = 6;
             this.modelo.Name = "modelo";
-            this.modelo.Width = 125;
             // 
             // quantidade
             // 
             this.quantidade.HeaderText = "Quantidade";
-            this.quantidade.MinimumWidth = 6;
             this.quantidade.Name = "quantidade";
-            this.quantidade.Width = 125;
             // 
             // valordeCompra
             // 
             this.valordeCompra.HeaderText = "ValorDeCompra";
-            this.valordeCompra.MinimumWidth = 6;
             this.valordeCompra.Name = "valordeCompra";
-            this.valordeCompra.Width = 125;
             // 
             // valordeVenda
             // 
             this.valordeVenda.HeaderText = "ValorDeVenda";
-            this.valordeVenda.MinimumWidth = 6;
             this.valordeVenda.Name = "valordeVenda";
-            this.valordeVenda.Width = 125;
             // 
             // dataDeCadastro
             // 
             this.dataDeCadastro.HeaderText = "DataDeCadastro";
-            this.dataDeCadastro.MinimumWidth = 6;
             this.dataDeCadastro.Name = "dataDeCadastro";
-            this.dataDeCadastro.Width = 125;
             // 
             // lbl4
             // 
@@ -389,10 +358,9 @@
             this.lbl4.BackColor = System.Drawing.Color.Transparent;
             this.lbl4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl4.ForeColor = System.Drawing.Color.White;
-            this.lbl4.Location = new System.Drawing.Point(911, 368);
-            this.lbl4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl4.Location = new System.Drawing.Point(683, 299);
             this.lbl4.Name = "lbl4";
-            this.lbl4.Size = new System.Drawing.Size(25, 24);
+            this.lbl4.Size = new System.Drawing.Size(20, 18);
             this.lbl4.TabIndex = 174;
             this.lbl4.Text = "N";
             // 
@@ -402,10 +370,9 @@
             this.lblprecoTotal.BackColor = System.Drawing.Color.Transparent;
             this.lblprecoTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblprecoTotal.ForeColor = System.Drawing.Color.White;
-            this.lblprecoTotal.Location = new System.Drawing.Point(793, 396);
-            this.lblprecoTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblprecoTotal.Location = new System.Drawing.Point(595, 322);
             this.lblprecoTotal.Name = "lblprecoTotal";
-            this.lblprecoTotal.Size = new System.Drawing.Size(292, 18);
+            this.lblprecoTotal.Size = new System.Drawing.Size(231, 15);
             this.lblprecoTotal.TabIndex = 175;
             this.lblprecoTotal.Text = "TOTAL DESPESAS PREÇO DE COMPRA";
             // 
@@ -440,12 +407,14 @@
             // 
             // RelatorioEstoque
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(12)))), ((int)(((byte)(38)))));
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(1151, 805);
+            this.ClientSize = new System.Drawing.Size(863, 654);
+            this.Controls.Add(this.lbltotal);
+            this.Controls.Add(this.lbl3);
             this.Controls.Add(this.lbl4);
             this.Controls.Add(this.lblprecoTotal);
             this.Controls.Add(this.dtgestoque);
@@ -459,7 +428,6 @@
             this.Controls.Add(this.barra);
             this.Controls.Add(this.label8);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "RelatorioEstoque";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RelatorioEstoque";

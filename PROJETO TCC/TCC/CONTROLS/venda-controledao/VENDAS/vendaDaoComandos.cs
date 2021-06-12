@@ -522,7 +522,7 @@ namespace TCC.CONTROLE
             return tem;
         }
 
-        public String cadastrarVenda(String codVenda, String nome, String tipo, float valorVenda, int quantidade, String modelo, String metodoPgt, float desconto, float totalVenda, float valorTotal, String data)
+        public String cadastrarVenda(String codVenda, String nome, String tipo, float valorVenda, int quantidade, String modelo, String metodoPgt, string descontoo, float totalVenda, float valorTotal, String data)
         {
             cmd.CommandText = "insert into vendas values (@codVenda,@nome,@tipo,@valorVenda,@quantidade,@modelo,@metodoPgt,@desconto,@totalVenda,@valorTotal,@data)";
             cmd.Parameters.AddWithValue("@codVenda", codVenda);
@@ -532,7 +532,7 @@ namespace TCC.CONTROLE
             cmd.Parameters.AddWithValue("@quantidade",quantidade);
             cmd.Parameters.AddWithValue("@modelo",modelo);
             cmd.Parameters.AddWithValue("@metodoPgt",metodoPgt);
-            cmd.Parameters.AddWithValue("@desconto",desconto);
+            cmd.Parameters.AddWithValue("@desconto",descontoo);
             cmd.Parameters.AddWithValue("@totalVenda",totalVenda);
             cmd.Parameters.AddWithValue("@valorTotal",valorTotal);
             cmd.Parameters.AddWithValue("@data", data);

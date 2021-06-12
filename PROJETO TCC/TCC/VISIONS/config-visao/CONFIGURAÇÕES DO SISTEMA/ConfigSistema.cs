@@ -202,6 +202,15 @@ namespace TCC.VISÃO
         {
             listarLogs();
 
+            selLogsCad();
+
+            selLogsExclu();
+
+            selLogsAlt();
+
+            selTotLogs();
+
+
             timer1.Start();
         }
 
@@ -213,8 +222,72 @@ namespace TCC.VISÃO
 
 
 
+
         #endregion
 
+        private void btnfiltrarCadastros_MouseEnter(object sender, EventArgs e)
+        {
+            lblcadastros.Visible = true;
+            btnfiltrarCadastros.Size = new Size(70,40);
+        }
 
+        private void btnfiltrarCadastros_MouseLeave(object sender, EventArgs e)
+        {
+            lblcadastros.Visible = false;
+            btnfiltrarCadastros.Size = new Size(70,38);
+        }
+
+        private void btntodasAsOperacoes_Click(object sender, EventArgs e)
+        {
+            listarLogs();
+        }
+
+        private void btntodasAsOperacoes_MouseEnter(object sender, EventArgs e)
+        {
+            lbloperacoes.Visible = true;
+            btntodasAsOperacoes.Size = new Size(70, 40);
+        }
+
+        private void btntodasAsOperacoes_MouseLeave(object sender, EventArgs e)
+        {
+            lbloperacoes.Visible = false;
+            btntodasAsOperacoes.Size = new Size(70, 38);
+        }
+
+        private void btnfiltrarExclusoes_MouseEnter(object sender, EventArgs e)
+        {
+            lblexclu.Visible = true;
+            btnfiltrarExclusoes.Size = new Size(70,48 );
+        }
+
+        private void btnfiltrarExclusoes_MouseLeave(object sender, EventArgs e)
+        {
+            lblexclu.Visible = false;
+            btnfiltrarExclusoes.Size = new Size(70,45);
+        }
+
+        private void btnexportar_MouseEnter(object sender, EventArgs e)
+        {
+            lblexportar.Visible = true;
+            btnexportar.Size = new Size(70, 45);
+        }
+
+        private void btnexportar_MouseLeave(object sender, EventArgs e)
+        {
+            lblexportar.Visible = true;
+            btnexportar.Size = new Size(70, 38);
+        }
+
+        private void btnfiltrarAlteracoes_MouseEnter(object sender, EventArgs e)
+        {
+            lblalteracoes.Visible = true;
+            btnfiltrarAlteracoes.Size = new Size(70, 40);
+        }
+
+        private void btnfiltrarAlteracoes_MouseLeave(object sender, EventArgs e)
+        {
+            lblalteracoes.Visible = false;
+            btnfiltrarAlteracoes.Size = new Size(70, 38);
+        }
     }
 }

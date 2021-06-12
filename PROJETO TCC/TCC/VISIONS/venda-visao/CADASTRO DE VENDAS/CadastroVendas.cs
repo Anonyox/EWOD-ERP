@@ -546,7 +546,7 @@ namespace TCC.VISÃO
                     desconto = float.Parse(txtDesconto.Text);
                     float resultDesconto = float.Parse(valor);
 
-                    float desc = (desconto * resultDesconto) / 100;
+                    float desc = (desconto * resultDesconto) / 100;     
 
                     valorTotalComDesconto = resultDesconto - desc;
 
@@ -962,11 +962,11 @@ namespace TCC.VISÃO
 
                 float valorVenda = float.Parse(valorvenda);
                 int quantidade = Convert.ToInt32(qtd);
-                float desconto = float.Parse(descontoo);
+                
                 float totalFinal = float.Parse(totalVenda);
                 float valorTotal = float.Parse(valortotal);
 
-                String mensagem = controleVenda.cadastrarVenda(codOp, pv.nome, pv.tipo, valorVenda, quantidade, pv.modelo, metodoPgt, desconto, totalFinal, valorTotal, data);
+                String mensagem = controleVenda.cadastrarVenda(codOp, pv.nome, pv.tipo, valorVenda, quantidade, pv.modelo, metodoPgt, descontoo, totalFinal, valorTotal, data);
                 if (controleVenda.tem)
                 {
 
