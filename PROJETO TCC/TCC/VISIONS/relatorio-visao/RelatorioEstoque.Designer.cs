@@ -61,7 +61,8 @@
             this.lbl4 = new System.Windows.Forms.Label();
             this.lblprecoTotal = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.btnexportar = new System.Windows.Forms.Button();
+            this.btnexportarPdf = new System.Windows.Forms.Button();
+            this.btnexportarExcel = new System.Windows.Forms.Button();
             this.barra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSair)).BeginInit();
@@ -159,7 +160,7 @@
             this.lbltotal.BackColor = System.Drawing.Color.Transparent;
             this.lbltotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbltotal.ForeColor = System.Drawing.Color.White;
-            this.lbltotal.Location = new System.Drawing.Point(418, 322);
+            this.lbltotal.Location = new System.Drawing.Point(418, 296);
             this.lbltotal.Name = "lbltotal";
             this.lbltotal.Size = new System.Drawing.Size(150, 15);
             this.lbltotal.TabIndex = 3;
@@ -171,7 +172,7 @@
             this.lbl3.BackColor = System.Drawing.Color.Transparent;
             this.lbl3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl3.ForeColor = System.Drawing.Color.White;
-            this.lbl3.Location = new System.Drawing.Point(477, 299);
+            this.lbl3.Location = new System.Drawing.Point(477, 273);
             this.lbl3.Name = "lbl3";
             this.lbl3.Size = new System.Drawing.Size(20, 18);
             this.lbl3.TabIndex = 1;
@@ -256,7 +257,7 @@
             this.btnfiltrarPersonalizado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnfiltrarPersonalizado.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnfiltrarPersonalizado.ForeColor = System.Drawing.Color.Transparent;
-            this.btnfiltrarPersonalizado.Location = new System.Drawing.Point(250, 299);
+            this.btnfiltrarPersonalizado.Location = new System.Drawing.Point(250, 273);
             this.btnfiltrarPersonalizado.Name = "btnfiltrarPersonalizado";
             this.btnfiltrarPersonalizado.Size = new System.Drawing.Size(62, 35);
             this.btnfiltrarPersonalizado.TabIndex = 172;
@@ -276,7 +277,7 @@
             this.btnfiltrarAno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnfiltrarAno.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnfiltrarAno.ForeColor = System.Drawing.Color.Transparent;
-            this.btnfiltrarAno.Location = new System.Drawing.Point(169, 299);
+            this.btnfiltrarAno.Location = new System.Drawing.Point(169, 273);
             this.btnfiltrarAno.Name = "btnfiltrarAno";
             this.btnfiltrarAno.Size = new System.Drawing.Size(62, 35);
             this.btnfiltrarAno.TabIndex = 171;
@@ -296,7 +297,7 @@
             this.btnfiltroMes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnfiltroMes.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnfiltroMes.ForeColor = System.Drawing.Color.Transparent;
-            this.btnfiltroMes.Location = new System.Drawing.Point(84, 299);
+            this.btnfiltroMes.Location = new System.Drawing.Point(84, 273);
             this.btnfiltroMes.Name = "btnfiltroMes";
             this.btnfiltroMes.Size = new System.Drawing.Size(62, 35);
             this.btnfiltroMes.TabIndex = 170;
@@ -316,7 +317,7 @@
             this.btnfiltroSemana.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnfiltroSemana.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnfiltroSemana.ForeColor = System.Drawing.Color.Transparent;
-            this.btnfiltroSemana.Location = new System.Drawing.Point(3, 299);
+            this.btnfiltroSemana.Location = new System.Drawing.Point(3, 273);
             this.btnfiltroSemana.Name = "btnfiltroSemana";
             this.btnfiltroSemana.Size = new System.Drawing.Size(62, 35);
             this.btnfiltroSemana.TabIndex = 169;
@@ -338,11 +339,11 @@
             this.valordeCompra,
             this.valordeVenda,
             this.dataDeCadastro});
-            this.dtgestoque.Location = new System.Drawing.Point(0, 340);
+            this.dtgestoque.Location = new System.Drawing.Point(0, 314);
             this.dtgestoque.Name = "dtgestoque";
             this.dtgestoque.ReadOnly = true;
             this.dtgestoque.RowHeadersWidth = 51;
-            this.dtgestoque.Size = new System.Drawing.Size(863, 276);
+            this.dtgestoque.Size = new System.Drawing.Size(863, 265);
             this.dtgestoque.TabIndex = 173;
             // 
             // nome
@@ -400,7 +401,7 @@
             this.lbl4.BackColor = System.Drawing.Color.Transparent;
             this.lbl4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl4.ForeColor = System.Drawing.Color.White;
-            this.lbl4.Location = new System.Drawing.Point(683, 299);
+            this.lbl4.Location = new System.Drawing.Point(683, 273);
             this.lbl4.Name = "lbl4";
             this.lbl4.Size = new System.Drawing.Size(20, 18);
             this.lbl4.TabIndex = 174;
@@ -412,7 +413,7 @@
             this.lblprecoTotal.BackColor = System.Drawing.Color.Transparent;
             this.lblprecoTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblprecoTotal.ForeColor = System.Drawing.Color.White;
-            this.lblprecoTotal.Location = new System.Drawing.Point(595, 322);
+            this.lblprecoTotal.Location = new System.Drawing.Point(595, 296);
             this.lblprecoTotal.Name = "lblprecoTotal";
             this.lblprecoTotal.Size = new System.Drawing.Size(231, 15);
             this.lblprecoTotal.TabIndex = 175;
@@ -423,23 +424,43 @@
             this.timer1.Interval = 10000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // btnexportar
+            // btnexportarPdf
             // 
-            this.btnexportar.BackColor = System.Drawing.Color.Transparent;
-            this.btnexportar.BackgroundImage = global::TCC.Properties.Resources.icons8_cancelar_48;
-            this.btnexportar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnexportar.Enabled = false;
-            this.btnexportar.FlatAppearance.BorderSize = 0;
-            this.btnexportar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnexportar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnexportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnexportar.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnexportar.ForeColor = System.Drawing.Color.Transparent;
-            this.btnexportar.Location = new System.Drawing.Point(798, 622);
-            this.btnexportar.Name = "btnexportar";
-            this.btnexportar.Size = new System.Drawing.Size(62, 29);
-            this.btnexportar.TabIndex = 176;
-            this.btnexportar.UseVisualStyleBackColor = false;
+            this.btnexportarPdf.BackColor = System.Drawing.Color.Transparent;
+            this.btnexportarPdf.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnexportarPdf.BackgroundImage")));
+            this.btnexportarPdf.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnexportarPdf.FlatAppearance.BorderSize = 0;
+            this.btnexportarPdf.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnexportarPdf.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnexportarPdf.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnexportarPdf.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnexportarPdf.ForeColor = System.Drawing.Color.Transparent;
+            this.btnexportarPdf.Location = new System.Drawing.Point(779, 585);
+            this.btnexportarPdf.Name = "btnexportarPdf";
+            this.btnexportarPdf.Size = new System.Drawing.Size(81, 40);
+            this.btnexportarPdf.TabIndex = 176;
+            this.btnexportarPdf.UseVisualStyleBackColor = false;
+            this.btnexportarPdf.MouseEnter += new System.EventHandler(this.btnexportarPdf_MouseEnter);
+            this.btnexportarPdf.MouseLeave += new System.EventHandler(this.btnexportarPdf_MouseLeave);
+            // 
+            // btnexportarExcel
+            // 
+            this.btnexportarExcel.BackColor = System.Drawing.Color.Transparent;
+            this.btnexportarExcel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnexportarExcel.BackgroundImage")));
+            this.btnexportarExcel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnexportarExcel.FlatAppearance.BorderSize = 0;
+            this.btnexportarExcel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnexportarExcel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnexportarExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnexportarExcel.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnexportarExcel.ForeColor = System.Drawing.Color.Transparent;
+            this.btnexportarExcel.Location = new System.Drawing.Point(686, 585);
+            this.btnexportarExcel.Name = "btnexportarExcel";
+            this.btnexportarExcel.Size = new System.Drawing.Size(74, 40);
+            this.btnexportarExcel.TabIndex = 177;
+            this.btnexportarExcel.UseVisualStyleBackColor = false;
+            this.btnexportarExcel.MouseEnter += new System.EventHandler(this.btnexportarExcel_MouseEnter);
+            this.btnexportarExcel.MouseLeave += new System.EventHandler(this.btnexportarExcel_MouseLeave);
             // 
             // RelatorioEstoque
             // 
@@ -449,7 +470,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(863, 654);
-            this.Controls.Add(this.btnexportar);
+            this.Controls.Add(this.btnexportarExcel);
+            this.Controls.Add(this.btnexportarPdf);
             this.Controls.Add(this.lbltotal);
             this.Controls.Add(this.lbl3);
             this.Controls.Add(this.lbl4);
@@ -516,7 +538,8 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbl5;
-        public System.Windows.Forms.Button btnexportar;
+        public System.Windows.Forms.Button btnexportarPdf;
         public System.Windows.Forms.DataGridView dtgestoque;
+        public System.Windows.Forms.Button btnexportarExcel;
     }
 }

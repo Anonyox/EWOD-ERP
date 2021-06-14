@@ -266,7 +266,7 @@ namespace TCC.VISÃO
             }
         }
 
-     
+
         #endregion
 
 
@@ -275,22 +275,6 @@ namespace TCC.VISÃO
 
 
         #region DESIGN 
-
-        private void btnSair_Click(object sender, EventArgs e)
-        {
-            foreach (Form child in this.OwnedForms) //FORMULÁRIOS FILHOS
-            {
-                child.Close();//FECHA FILHOS
-            }
-            this.Close(); ;
-        }
-
-        private void btnMinimizar_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        #endregion
 
         private void RelatorioEstoque_Load(object sender, EventArgs e)
         {
@@ -304,13 +288,30 @@ namespace TCC.VISÃO
         }
 
         private void timer1_Tick(object sender, EventArgs e)
-        {         
+        {
             listarProduto();
             dispesasGrid();
             contarEntradas();
             contarProdutos();
             contarOperacao();
             timer1.Start();
+        }
+
+
+
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            foreach (Form child in this.OwnedForms) //FORMULÁRIOS FILHOS
+            {
+                child.Close();//FECHA FILHOS
+            }
+            this.Close(); ;
+        }
+
+        private void btnMinimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
 
         private void btnfiltroSemana_Click(object sender, EventArgs e)
@@ -387,5 +388,32 @@ namespace TCC.VISÃO
                 filEstoque.Show();
             }
         }
+
+        private void btnexportarExcel_MouseLeave(object sender, EventArgs e)
+        {
+            btnexportarExcel.Size = new Size(74, 40);
+        }
+
+        private void btnexportarExcel_MouseEnter(object sender, EventArgs e)
+        {
+            btnexportarExcel.Size = new Size(77, 47);
+        }
+
+        private void btnexportarPdf_MouseLeave(object sender, EventArgs e)
+        {
+            btnexportarPdf.Size = new Size(74, 40);
+        }
+
+        private void btnexportarPdf_MouseEnter(object sender, EventArgs e)
+        {
+            btnexportarPdf.Size = new Size(77, 47);
+        }
+
+
+
+        #endregion
+
+       
+       
     }
 }
