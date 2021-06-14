@@ -14,14 +14,56 @@ namespace TCC.VISIONS.relatorio_visao
 {
     public partial class FiltroRelatorioEstoque : Form
     {
-        public FiltroRelatorioEstoque()
-        {
-            InitializeComponent();
-        }
+
+
+
+
+
+
+        #region VARIÁVEIS E INSTÂNCIAS
+
+
 
         relatorioEstoqueControle relCtr = new relatorioEstoqueControle();
 
         RelatorioEstoque relEst = new RelatorioEstoque();
+
+
+
+
+
+
+
+        #endregion
+
+
+
+
+
+
+
+
+
+
+        #region CONSTRUTOR
+        public FiltroRelatorioEstoque()
+        {
+            InitializeComponent();
+        }
+        #endregion
+
+
+
+
+
+
+
+
+
+
+
+
+        #region MÉTODOS DE FUNCIONALIDADES
 
         public static class passarData
         {
@@ -56,7 +98,19 @@ namespace TCC.VISIONS.relatorio_visao
 
         }
 
+        #endregion
 
+
+
+
+
+
+
+
+
+
+
+        #region DESIGN
         private void btnSair_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -69,5 +123,18 @@ namespace TCC.VISIONS.relatorio_visao
 
             filtrarData();
         }
+
+        #endregion
+
+
+
+
+
+
+
+
+
+
+
     }
 }
