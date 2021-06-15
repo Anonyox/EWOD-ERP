@@ -51,32 +51,7 @@ namespace TCC.VISÃO
 
 
 
-        public void filtrarData()
-        {
-            //string dataInicial = txtdataInicial.Text;
-            //string dataFinal = txtdataFinal.Text;
-            DataTable dtmf = new DataTable();
-
-            dtmf = relCtr.filtrarData(txtdataInicial.Text,txtdataFinal.Text);
-
-            dtgestoque.Rows.Clear();
-
-            foreach (DataRow item in dtmf.Rows)
-            {
-                int n = dtgestoque.Rows.Add();
-
-                dtgestoque.Rows[n].Cells[0].Value = item["nome"].ToString();
-                dtgestoque.Rows[n].Cells[1].Value = item["fornecedor"].ToString();
-                dtgestoque.Rows[n].Cells[2].Value = item["tipo"].ToString();
-                dtgestoque.Rows[n].Cells[3].Value = item["modelo"].ToString();
-                dtgestoque.Rows[n].Cells[4].Value = item["quantidade"].ToString();
-                dtgestoque.Rows[n].Cells[5].Value = item["valordecompra"].ToString();
-                dtgestoque.Rows[n].Cells[6].Value = item["valordevenda"].ToString();
-                dtgestoque.Rows[n].Cells[7].Value = item["dataDeCadastro"].ToString();
-
-            }
-
-        }
+       
 
 
 
@@ -441,13 +416,6 @@ namespace TCC.VISÃO
         {
             btnexportarPdf.Size = new Size(77, 47);
         }
-
-
-        private void btnfiltrar_Click(object sender, EventArgs e)
-        {
-            filtrarData();
-        }
-
 
         #endregion
 

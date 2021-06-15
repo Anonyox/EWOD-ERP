@@ -63,9 +63,6 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.btnexportarPdf = new System.Windows.Forms.Button();
             this.btnexportarExcel = new System.Windows.Forms.Button();
-            this.txtdataInicial = new System.Windows.Forms.MaskedTextBox();
-            this.txtdataFinal = new System.Windows.Forms.MaskedTextBox();
-            this.btnfiltrar = new System.Windows.Forms.Button();
             this.barra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSair)).BeginInit();
@@ -466,44 +463,6 @@
             this.btnexportarExcel.MouseEnter += new System.EventHandler(this.btnexportarExcel_MouseEnter);
             this.btnexportarExcel.MouseLeave += new System.EventHandler(this.btnexportarExcel_MouseLeave);
             // 
-            // txtdataInicial
-            // 
-            this.txtdataInicial.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtdataInicial.Location = new System.Drawing.Point(382, 225);
-            this.txtdataInicial.Mask = "00/00/0000";
-            this.txtdataInicial.Name = "txtdataInicial";
-            this.txtdataInicial.Size = new System.Drawing.Size(127, 30);
-            this.txtdataInicial.TabIndex = 178;
-            this.txtdataInicial.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtdataFinal
-            // 
-            this.txtdataFinal.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtdataFinal.Location = new System.Drawing.Point(382, 261);
-            this.txtdataFinal.Mask = "00/00/0000";
-            this.txtdataFinal.Name = "txtdataFinal";
-            this.txtdataFinal.Size = new System.Drawing.Size(127, 30);
-            this.txtdataFinal.TabIndex = 179;
-            this.txtdataFinal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // btnfiltrar
-            // 
-            this.btnfiltrar.BackColor = System.Drawing.Color.Transparent;
-            this.btnfiltrar.BackgroundImage = global::TCC.Properties.Resources.icons8_cancelar_48;
-            this.btnfiltrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnfiltrar.FlatAppearance.BorderSize = 0;
-            this.btnfiltrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnfiltrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnfiltrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnfiltrar.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnfiltrar.ForeColor = System.Drawing.Color.Transparent;
-            this.btnfiltrar.Location = new System.Drawing.Point(552, 91);
-            this.btnfiltrar.Name = "btnfiltrar";
-            this.btnfiltrar.Size = new System.Drawing.Size(68, 36);
-            this.btnfiltrar.TabIndex = 180;
-            this.btnfiltrar.UseVisualStyleBackColor = false;
-            this.btnfiltrar.Click += new System.EventHandler(this.btnfiltrar_Click);
-            // 
             // RelatorioEstoque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -512,9 +471,6 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(863, 654);
-            this.Controls.Add(this.btnfiltrar);
-            this.Controls.Add(this.txtdataFinal);
-            this.Controls.Add(this.txtdataInicial);
             this.Controls.Add(this.btnexportarExcel);
             this.Controls.Add(this.btnexportarPdf);
             this.Controls.Add(this.lbltotal);
@@ -586,8 +542,5 @@
         public System.Windows.Forms.Button btnexportarPdf;
         public System.Windows.Forms.DataGridView dtgestoque;
         public System.Windows.Forms.Button btnexportarExcel;
-        private System.Windows.Forms.MaskedTextBox txtdataInicial;
-        private System.Windows.Forms.MaskedTextBox txtdataFinal;
-        public System.Windows.Forms.Button btnfiltrar;
     }
 }
