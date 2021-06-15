@@ -21,6 +21,11 @@ namespace TCC.CONTROLS.relatorio_controledao.PRODUTOS
         String opera3;
         #endregion
 
+
+
+
+
+
         #region MÉTODOS DE FUNCIONALIDADE
 
         public String contarEntradas()
@@ -50,10 +55,14 @@ namespace TCC.CONTROLS.relatorio_controledao.PRODUTOS
             
         }
 
+
+
         /*public String contarSaidas()
         {
             cmd.CommandText = "";
         }*/
+
+
 
         public String contarProdutos()
         {
@@ -81,6 +90,8 @@ namespace TCC.CONTROLS.relatorio_controledao.PRODUTOS
             dr.Close();
             return quantidade;
         }
+
+
 
         public DataTable listarProdutos()
         {
@@ -116,6 +127,8 @@ namespace TCC.CONTROLS.relatorio_controledao.PRODUTOS
 
         }
 
+
+
         public String contarDespesas(string colunaCompra, string colunaQuantidade)
         {
             cmd.CommandText = "SELECT FORMAT(SUM(@produtos.valordeCompra * @estoqueProdutos.Quantidade), 'c', 'pt-br') AS VALOR_TOTAL FROM produtos, estoqueProdutos";
@@ -141,6 +154,8 @@ namespace TCC.CONTROLS.relatorio_controledao.PRODUTOS
             return despesas;
 
         }
+
+
 
         public String contarOperacao()
         {
@@ -171,6 +186,8 @@ namespace TCC.CONTROLS.relatorio_controledao.PRODUTOS
             
         }
 
+
+
         public String contarOperacao2()
         {
             SqlDataReader dr2;
@@ -194,6 +211,8 @@ namespace TCC.CONTROLS.relatorio_controledao.PRODUTOS
             dr2.Close();
             return opera2;
         }
+
+
 
         public String contarOperacao3()
         {
@@ -219,10 +238,14 @@ namespace TCC.CONTROLS.relatorio_controledao.PRODUTOS
             return opera3;
         }
 
+
+
         /*public String contarSaidas()
         {
             cmd.CommandText = ""
         }*/
+
+
 
         public DataTable filtrarSemana()
         {
@@ -249,6 +272,8 @@ namespace TCC.CONTROLS.relatorio_controledao.PRODUTOS
             }
         }
 
+
+
         public DataTable fitrarMes()
         {
             cmd.CommandText = "SELECT *, E.Quantidade FROM produtos P, estoqueProdutos E WHERE P.dataDeCadastro BETWEEN GETDATE() - 32 AND GETDATE() AND P.codProduto = E.idProduto ORDER BY P.datadeCadastro DESC";
@@ -273,6 +298,8 @@ namespace TCC.CONTROLS.relatorio_controledao.PRODUTOS
                 throw;
             }
         }
+
+
 
         public DataTable filtrarAno()
         {
@@ -300,6 +327,8 @@ namespace TCC.CONTROLS.relatorio_controledao.PRODUTOS
 
 
         }
+
+
 
         public DataTable filtrarData(string dataInicial, string dataFinal)
         {
@@ -332,6 +361,12 @@ namespace TCC.CONTROLS.relatorio_controledao.PRODUTOS
             }
         }
 
+
         #endregion
+
+
+
+
+
     }
 }

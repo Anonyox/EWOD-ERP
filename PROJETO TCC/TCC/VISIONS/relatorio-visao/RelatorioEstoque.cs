@@ -17,6 +17,8 @@ namespace TCC.VISÃO
     {
         #region VARIÁVEIS E INSTÂNCIAS
 
+
+        Microsoft.Office.Interop.Excel.Application XcelApp = new Microsoft.Office.Interop.Excel.Application();
         String contaEntrada;
         relatorioEstoqueControle relCtr = new relatorioEstoqueControle();
         String quantidadeProduto;
@@ -46,6 +48,37 @@ namespace TCC.VISÃO
 
 
         #region MÉTODOS DE FUNCIONALIDADES
+
+
+
+        public void filtrarData()
+        {
+            //string dataInicial = txtdataInicial.Text;
+            //string dataFinal = txtdataFinal.Text;
+            DataTable dtmf = new DataTable();
+
+            dtmf = relCtr.filtrarData(txtdataInicial.Text,txtdataFinal.Text);
+
+            dtgestoque.Rows.Clear();
+
+            foreach (DataRow item in dtmf.Rows)
+            {
+                int n = dtgestoque.Rows.Add();
+
+                dtgestoque.Rows[n].Cells[0].Value = item["nome"].ToString();
+                dtgestoque.Rows[n].Cells[1].Value = item["fornecedor"].ToString();
+                dtgestoque.Rows[n].Cells[2].Value = item["tipo"].ToString();
+                dtgestoque.Rows[n].Cells[3].Value = item["modelo"].ToString();
+                dtgestoque.Rows[n].Cells[4].Value = item["quantidade"].ToString();
+                dtgestoque.Rows[n].Cells[5].Value = item["valordecompra"].ToString();
+                dtgestoque.Rows[n].Cells[6].Value = item["valordevenda"].ToString();
+                dtgestoque.Rows[n].Cells[7].Value = item["dataDeCadastro"].ToString();
+
+            }
+
+        }
+
+
 
         public void contarEntradas()
         {
@@ -410,10 +443,46 @@ namespace TCC.VISÃO
         }
 
 
+        private void btnfiltrar_Click(object sender, EventArgs e)
+        {
+            filtrarData();
+        }
+
 
         #endregion
 
-       
-       
+
+
+        private void btnexportarExcel_Click(object sender, EventArgs e)
+        {
+            if (dtgestoque.Rows.Count > 0)
+            {
+                try
+                {
+                    XcelApp.Application.Workbooks.Add(Type.Missing);
+                    for (int i = 1; i < dtgestoque.Columns.Count + 1; i++)
+                    {
+                        XcelApp.Cells[1, i] = dtgestoque.Columns[i - 1].HeaderText;
+                    }
+                    //
+                    for (int i = 0; i < dtgestoque.Rows.Count - 1; i++)
+                    {
+                        for (int j = 0; j < dtgestoque.Columns.Count; j++)
+                        {
+                            XcelApp.Cells[i + 2, j + 1] = dtgestoque.Rows[i].Cells[j].Value.ToString();
+                        }
+                    }
+                    //
+                    XcelApp.Columns.AutoFit();
+                    //
+                    XcelApp.Visible = true;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro : " + ex.Message);
+                    XcelApp.Quit();
+                }
+            }
+        }
     }
 }
