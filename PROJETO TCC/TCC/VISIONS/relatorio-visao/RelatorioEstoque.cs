@@ -17,7 +17,7 @@ namespace TCC.VISÃO
     {
         #region VARIÁVEIS E INSTÂNCIAS
 
-
+        Worksheet wsheet;
         Microsoft.Office.Interop.Excel.Application XcelApp = new Microsoft.Office.Interop.Excel.Application();
         String contaEntrada;
         relatorioEstoqueControle relCtr = new relatorioEstoqueControle();
@@ -423,13 +423,37 @@ namespace TCC.VISÃO
 
         private void btnexportarExcel_Click(object sender, EventArgs e)
         {
+
             if (dtgestoque.Rows.Count > 0)
             {
                 try
                 {
+                    //rg =  XcelApp.Range[XcelApp.Cells[1, "A"], XcelApp.Cells[1, "B"]];
+                    //rg2 = wsheet.Range[wsheet.Cells[1, "C"], wsheet.Cells[1, "D"]]; 
+                    //rg3 = wsheet.Range[wsheet.Cells[1, "E"], wsheet.Cells[1, "F"]]; 
+                    //rg4 = wsheet.Range[wsheet.Cells[1, "G"], wsheet.Cells[1, "H"]];
                     XcelApp.Application.Workbooks.Add(Type.Missing);
                     for (int i = 1; i < dtgestoque.Columns.Count + 1; i++)
                     {
+                        Range columnNome = XcelApp.Cells[1, "A"];
+                        Range columnFornecedor = XcelApp.Cells[1, "B"];
+                        Range columnTipo = XcelApp.Cells[1, "C"];
+                        Range columnModelo = XcelApp.Cells[1, "D"];
+                        Range columnQuantidade = XcelApp.Cells[1, "E"];
+                        Range columnValordeCompra = XcelApp.Cells[1, "F"];
+                        Range columnValordeVenda = XcelApp.Cells[1, "G"];
+                        Range columnDatadeCadastro = XcelApp.Cells[1, "H"];
+
+                        columnNome.Interior.Color = Color.FromArgb(0, 209, 178);
+                        columnFornecedor.Interior.Color = Color.FromArgb(0, 209, 178);
+                        columnTipo.Interior.Color = Color.FromArgb(0, 209, 178);
+                        columnModelo.Interior.Color = Color.FromArgb(0, 209, 178);
+                        columnQuantidade.Interior.Color = Color.FromArgb(0, 209, 178);
+                        columnValordeCompra.Interior.Color = Color.FromArgb(0, 209, 178);
+                        columnValordeVenda.Interior.Color = Color.FromArgb(0, 209, 178);
+                        columnDatadeCadastro.Interior.Color = Color.FromArgb(0, 209, 178);
+                        
+                       
                         XcelApp.Cells[1, i] = dtgestoque.Columns[i - 1].HeaderText;
                     }
                     //
