@@ -15,6 +15,7 @@ namespace TCC.VISÃO
 {
     public partial class RelatorioEstoque : Form
     {
+
         #region VARIÁVEIS E INSTÂNCIAS
 
         Worksheet wsheet;
@@ -41,7 +42,6 @@ namespace TCC.VISÃO
             InitializeComponent();
         }
         #endregion
-
 
 
 
@@ -417,9 +417,6 @@ namespace TCC.VISÃO
             btnexportarPdf.Size = new Size(77, 47);
         }
 
-        #endregion
-
-
 
         private void btnexportarExcel_Click(object sender, EventArgs e)
         {
@@ -435,15 +432,17 @@ namespace TCC.VISÃO
                     XcelApp.Application.Workbooks.Add(Type.Missing);
                     for (int i = 1; i < dtgestoque.Columns.Count + 1; i++)
                     {
-                        Range columnNome = XcelApp.Cells[1, "A"];
-                        Range columnFornecedor = XcelApp.Cells[1, "B"];
-                        Range columnTipo = XcelApp.Cells[1, "C"];
-                        Range columnModelo = XcelApp.Cells[1, "D"];
-                        Range columnQuantidade = XcelApp.Cells[1, "E"];
-                        Range columnValordeCompra = XcelApp.Cells[1, "F"];
-                        Range columnValordeVenda = XcelApp.Cells[1, "G"];
-                        Range columnDatadeCadastro = XcelApp.Cells[1, "H"];
+                        Range columnNome = XcelApp.Cells[1, "D"];
+                        Range columnFornecedor = XcelApp.Cells[1, "E"];
+                        Range columnTipo = XcelApp.Cells[1, "F"];
+                        Range columnModelo = XcelApp.Cells[1, "G"];
+                        Range columnQuantidade = XcelApp.Cells[1, "H"];
+                        Range columnValordeCompra = XcelApp.Cells[1, "I"];
+                        Range columnValordeVenda = XcelApp.Cells[1, "J"];
+                        Range columnDatadeCadastro = XcelApp.Cells[1, "K"];
 
+                       
+                        
                         columnNome.Interior.Color = Color.FromArgb(0, 209, 178);
                         columnFornecedor.Interior.Color = Color.FromArgb(0, 209, 178);
                         columnTipo.Interior.Color = Color.FromArgb(0, 209, 178);
@@ -452,16 +451,16 @@ namespace TCC.VISÃO
                         columnValordeCompra.Interior.Color = Color.FromArgb(0, 209, 178);
                         columnValordeVenda.Interior.Color = Color.FromArgb(0, 209, 178);
                         columnDatadeCadastro.Interior.Color = Color.FromArgb(0, 209, 178);
-                        
-                       
-                        XcelApp.Cells[1, i] = dtgestoque.Columns[i - 1].HeaderText;
+
+
+                        XcelApp.Cells[1, i + 3] = dtgestoque.Columns[i - 1].HeaderText;
                     }
                     //
                     for (int i = 0; i < dtgestoque.Rows.Count - 1; i++)
                     {
                         for (int j = 0; j < dtgestoque.Columns.Count; j++)
                         {
-                            XcelApp.Cells[i + 2, j + 1] = dtgestoque.Rows[i].Cells[j].Value.ToString();
+                            XcelApp.Cells[i + 2, j + 4] = dtgestoque.Rows[i].Cells[j].Value.ToString();
                         }
                     }
                     //
@@ -476,5 +475,12 @@ namespace TCC.VISÃO
                 }
             }
         }
+
+
+        #endregion
+
+
+
+
     }
 }

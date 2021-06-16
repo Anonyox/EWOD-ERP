@@ -63,6 +63,8 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.btnexportarPdf = new System.Windows.Forms.Button();
             this.btnexportarExcel = new System.Windows.Forms.Button();
+            this.lbl6 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.barra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSair)).BeginInit();
@@ -160,7 +162,7 @@
             this.lbltotal.BackColor = System.Drawing.Color.Transparent;
             this.lbltotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbltotal.ForeColor = System.Drawing.Color.White;
-            this.lbltotal.Location = new System.Drawing.Point(470, 296);
+            this.lbltotal.Location = new System.Drawing.Point(333, 296);
             this.lbltotal.Name = "lbltotal";
             this.lbltotal.Size = new System.Drawing.Size(150, 15);
             this.lbltotal.TabIndex = 3;
@@ -172,7 +174,7 @@
             this.lbl3.BackColor = System.Drawing.Color.Transparent;
             this.lbl3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl3.ForeColor = System.Drawing.Color.White;
-            this.lbl3.Location = new System.Drawing.Point(529, 273);
+            this.lbl3.Location = new System.Drawing.Point(392, 273);
             this.lbl3.Name = "lbl3";
             this.lbl3.Size = new System.Drawing.Size(20, 18);
             this.lbl3.TabIndex = 1;
@@ -463,6 +465,30 @@
             this.btnexportarExcel.MouseEnter += new System.EventHandler(this.btnexportarExcel_MouseEnter);
             this.btnexportarExcel.MouseLeave += new System.EventHandler(this.btnexportarExcel_MouseLeave);
             // 
+            // lbl6
+            // 
+            this.lbl6.AutoSize = true;
+            this.lbl6.BackColor = System.Drawing.Color.Transparent;
+            this.lbl6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl6.ForeColor = System.Drawing.Color.White;
+            this.lbl6.Location = new System.Drawing.Point(389, 222);
+            this.lbl6.Name = "lbl6";
+            this.lbl6.Size = new System.Drawing.Size(20, 18);
+            this.lbl6.TabIndex = 178;
+            this.lbl6.Text = "N";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(320, 245);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(194, 15);
+            this.label3.TabIndex = 179;
+            this.label3.Text = "TOTAL DESPESAS (SEM FILTRO)";
+            // 
             // RelatorioEstoque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -471,6 +497,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(863, 654);
+            this.Controls.Add(this.lbl6);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnexportarExcel);
             this.Controls.Add(this.btnexportarPdf);
             this.Controls.Add(this.lbltotal);
@@ -542,5 +570,7 @@
         public System.Windows.Forms.Button btnexportarPdf;
         public System.Windows.Forms.DataGridView dtgestoque;
         public System.Windows.Forms.Button btnexportarExcel;
+        private System.Windows.Forms.Label lbl6;
+        private System.Windows.Forms.Label label3;
     }
 }
