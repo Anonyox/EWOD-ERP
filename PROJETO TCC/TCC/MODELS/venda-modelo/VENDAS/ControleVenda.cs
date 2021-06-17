@@ -207,9 +207,9 @@ namespace TCC.MODELO
             return mensagem;
         }
 
-        public bool baixarEstoque(String nomedoProduto, String baixarEstoque)
+        public bool baixarEstoque(String nomedoProduto, String baixarEstoque, String qtdBaixada)
         {
-            this.tem = vendaDao.baixarEstoque(nomedoProduto, baixarEstoque);
+            this.tem = vendaDao.baixarEstoque(nomedoProduto, baixarEstoque, qtdBaixada);
 
             if (vendaDao.tem)
             {

@@ -30,9 +30,9 @@ namespace TCC.VISÃO
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConfigSistema));
             this.dtgLogs = new System.Windows.Forms.DataGridView();
             this.tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,8 +71,11 @@ namespace TCC.VISÃO
             this.btnfiltrarAlteracoes = new System.Windows.Forms.Button();
             this.lbloperacoes = new System.Windows.Forms.Label();
             this.btntodasAsOperacoes = new System.Windows.Forms.Button();
-            this.btnexportar = new System.Windows.Forms.Button();
             this.lblexportar = new System.Windows.Forms.Label();
+            this.btnbaixas = new System.Windows.Forms.Button();
+            this.lblbaixas = new System.Windows.Forms.Label();
+            this.btnexportarExcel = new System.Windows.Forms.Button();
+            this.btnexportar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgLogs)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
@@ -90,34 +93,34 @@ namespace TCC.VISÃO
             // 
             this.dtgLogs.AllowUserToAddRows = false;
             this.dtgLogs.BackgroundColor = System.Drawing.Color.Lavender;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Comic Sans MS", 11.25F);
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgLogs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Comic Sans MS", 11.25F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgLogs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dtgLogs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgLogs.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.tipo,
             this.dataLog,
             this.usuario,
             this.perfil});
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgLogs.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgLogs.DefaultCellStyle = dataGridViewCellStyle5;
             this.dtgLogs.Location = new System.Drawing.Point(-3, 412);
             this.dtgLogs.Margin = new System.Windows.Forms.Padding(5);
             this.dtgLogs.Name = "dtgLogs";
             this.dtgLogs.RowHeadersWidth = 51;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dtgLogs.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dtgLogs.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dtgLogs.Size = new System.Drawing.Size(1150, 310);
             this.dtgLogs.TabIndex = 0;
             // 
@@ -413,7 +416,7 @@ namespace TCC.VISÃO
             // 
             // timer1
             // 
-            this.timer1.Interval = 10000;
+            this.timer1.Interval = 50000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // tccDataSet
@@ -467,6 +470,7 @@ namespace TCC.VISÃO
             this.btnfiltrarCadastros.Size = new System.Drawing.Size(85, 47);
             this.btnfiltrarCadastros.TabIndex = 173;
             this.btnfiltrarCadastros.UseVisualStyleBackColor = false;
+            this.btnfiltrarCadastros.Click += new System.EventHandler(this.btnfiltrarCadastros_Click);
             this.btnfiltrarCadastros.MouseEnter += new System.EventHandler(this.btnfiltrarCadastros_MouseEnter);
             this.btnfiltrarCadastros.MouseLeave += new System.EventHandler(this.btnfiltrarCadastros_MouseLeave);
             // 
@@ -502,6 +506,7 @@ namespace TCC.VISÃO
             this.btnfiltrarExclusoes.Size = new System.Drawing.Size(85, 53);
             this.btnfiltrarExclusoes.TabIndex = 175;
             this.btnfiltrarExclusoes.UseVisualStyleBackColor = false;
+            this.btnfiltrarExclusoes.Click += new System.EventHandler(this.btnfiltrarExclusoes_Click);
             this.btnfiltrarExclusoes.MouseEnter += new System.EventHandler(this.btnfiltrarExclusoes_MouseEnter);
             this.btnfiltrarExclusoes.MouseLeave += new System.EventHandler(this.btnfiltrarExclusoes_MouseLeave);
             // 
@@ -537,6 +542,7 @@ namespace TCC.VISÃO
             this.btnfiltrarAlteracoes.Size = new System.Drawing.Size(85, 47);
             this.btnfiltrarAlteracoes.TabIndex = 177;
             this.btnfiltrarAlteracoes.UseVisualStyleBackColor = false;
+            this.btnfiltrarAlteracoes.Click += new System.EventHandler(this.btnfiltrarAlteracoes_Click);
             this.btnfiltrarAlteracoes.MouseEnter += new System.EventHandler(this.btnfiltrarAlteracoes_MouseEnter);
             this.btnfiltrarAlteracoes.MouseLeave += new System.EventHandler(this.btnfiltrarAlteracoes_MouseLeave);
             // 
@@ -576,25 +582,6 @@ namespace TCC.VISÃO
             this.btntodasAsOperacoes.MouseEnter += new System.EventHandler(this.btntodasAsOperacoes_MouseEnter);
             this.btntodasAsOperacoes.MouseLeave += new System.EventHandler(this.btntodasAsOperacoes_MouseLeave);
             // 
-            // btnexportar
-            // 
-            this.btnexportar.BackColor = System.Drawing.Color.Transparent;
-            this.btnexportar.BackgroundImage = global::TCC.Properties.Resources.exportar;
-            this.btnexportar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnexportar.FlatAppearance.BorderSize = 0;
-            this.btnexportar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnexportar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnexportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnexportar.ForeColor = System.Drawing.Color.Black;
-            this.btnexportar.Location = new System.Drawing.Point(1035, 750);
-            this.btnexportar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnexportar.Name = "btnexportar";
-            this.btnexportar.Size = new System.Drawing.Size(85, 47);
-            this.btnexportar.TabIndex = 181;
-            this.btnexportar.UseVisualStyleBackColor = false;
-            this.btnexportar.MouseEnter += new System.EventHandler(this.btnexportar_MouseEnter);
-            this.btnexportar.MouseLeave += new System.EventHandler(this.btnexportar_MouseLeave);
-            // 
             // lblexportar
             // 
             this.lblexportar.AutoSize = true;
@@ -610,6 +597,83 @@ namespace TCC.VISÃO
             this.lblexportar.Text = "Exportar Logs";
             this.lblexportar.Visible = false;
             // 
+            // btnbaixas
+            // 
+            this.btnbaixas.BackColor = System.Drawing.Color.Transparent;
+            this.btnbaixas.BackgroundImage = global::TCC.Properties.Resources.dropbox_icon_icons_com_72004__1_;
+            this.btnbaixas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnbaixas.FlatAppearance.BorderSize = 0;
+            this.btnbaixas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnbaixas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnbaixas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnbaixas.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnbaixas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.btnbaixas.Location = new System.Drawing.Point(306, 360);
+            this.btnbaixas.Margin = new System.Windows.Forms.Padding(4);
+            this.btnbaixas.Name = "btnbaixas";
+            this.btnbaixas.Size = new System.Drawing.Size(85, 47);
+            this.btnbaixas.TabIndex = 184;
+            this.btnbaixas.UseVisualStyleBackColor = false;
+            this.btnbaixas.Click += new System.EventHandler(this.btnbaixas_Click);
+            this.btnbaixas.MouseEnter += new System.EventHandler(this.btnbaixas_MouseEnter);
+            this.btnbaixas.MouseLeave += new System.EventHandler(this.btnbaixas_MouseLeave);
+            // 
+            // lblbaixas
+            // 
+            this.lblbaixas.AutoSize = true;
+            this.lblbaixas.BackColor = System.Drawing.Color.Transparent;
+            this.lblbaixas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblbaixas.Font = new System.Drawing.Font("Comic Sans MS", 7F, System.Drawing.FontStyle.Bold);
+            this.lblbaixas.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblbaixas.Location = new System.Drawing.Point(303, 340);
+            this.lblbaixas.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblbaixas.Name = "lblbaixas";
+            this.lblbaixas.Size = new System.Drawing.Size(89, 16);
+            this.lblbaixas.TabIndex = 185;
+            this.lblbaixas.Text = "Filtrar Baixas";
+            this.lblbaixas.Visible = false;
+            // 
+            // btnexportarExcel
+            // 
+            this.btnexportarExcel.BackColor = System.Drawing.Color.Transparent;
+            this.btnexportarExcel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnexportarExcel.BackgroundImage")));
+            this.btnexportarExcel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnexportarExcel.FlatAppearance.BorderSize = 0;
+            this.btnexportarExcel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnexportarExcel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnexportarExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnexportarExcel.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnexportarExcel.ForeColor = System.Drawing.Color.Transparent;
+            this.btnexportarExcel.Location = new System.Drawing.Point(928, 750);
+            this.btnexportarExcel.Margin = new System.Windows.Forms.Padding(4);
+            this.btnexportarExcel.Name = "btnexportarExcel";
+            this.btnexportarExcel.Size = new System.Drawing.Size(99, 49);
+            this.btnexportarExcel.TabIndex = 186;
+            this.btnexportarExcel.UseVisualStyleBackColor = false;
+            this.btnexportarExcel.Click += new System.EventHandler(this.btnexportarExcel_Click);
+            this.btnexportarExcel.MouseEnter += new System.EventHandler(this.btnexportarExcel_MouseEnter);
+            this.btnexportarExcel.MouseLeave += new System.EventHandler(this.btnexportarExcel_MouseLeave);
+            // 
+            // btnexportar
+            // 
+            this.btnexportar.BackColor = System.Drawing.Color.Transparent;
+            this.btnexportar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnexportar.BackgroundImage")));
+            this.btnexportar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnexportar.FlatAppearance.BorderSize = 0;
+            this.btnexportar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnexportar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnexportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnexportar.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnexportar.ForeColor = System.Drawing.Color.Transparent;
+            this.btnexportar.Location = new System.Drawing.Point(1035, 750);
+            this.btnexportar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnexportar.Name = "btnexportar";
+            this.btnexportar.Size = new System.Drawing.Size(108, 49);
+            this.btnexportar.TabIndex = 187;
+            this.btnexportar.UseVisualStyleBackColor = false;
+            this.btnexportar.MouseEnter += new System.EventHandler(this.btnexportar_MouseEnter);
+            this.btnexportar.MouseLeave += new System.EventHandler(this.btnexportar_MouseLeave);
+            // 
             // ConfigSistema
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -618,8 +682,11 @@ namespace TCC.VISÃO
             this.BackgroundImage = global::TCC.Properties.Resources._1555492a6_11;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1151, 805);
-            this.Controls.Add(this.lblexportar);
             this.Controls.Add(this.btnexportar);
+            this.Controls.Add(this.btnexportarExcel);
+            this.Controls.Add(this.lblbaixas);
+            this.Controls.Add(this.btnbaixas);
+            this.Controls.Add(this.lblexportar);
             this.Controls.Add(this.lbloperacoes);
             this.Controls.Add(this.btntodasAsOperacoes);
             this.Controls.Add(this.lblalteracoes);
@@ -699,11 +766,14 @@ namespace TCC.VISÃO
         private System.Windows.Forms.Button btnfiltrarAlteracoes;
         private System.Windows.Forms.Label lbloperacoes;
         private System.Windows.Forms.Button btntodasAsOperacoes;
-        private System.Windows.Forms.Button btnexportar;
         private System.Windows.Forms.Label lblexportar;
+        private System.Windows.Forms.Button btnbaixas;
+        private System.Windows.Forms.Label lblbaixas;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataLog;
         private System.Windows.Forms.DataGridViewTextBoxColumn usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn perfil;
+        public System.Windows.Forms.Button btnexportarExcel;
+        public System.Windows.Forms.Button btnexportar;
     }
 }

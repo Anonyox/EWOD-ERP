@@ -627,9 +627,10 @@ namespace TCC.VISÃO
                     novaQuantidade = qtdrestante - quantidadeBaixa;
 
                     string baixarEstoque;
+                    string qtdBaixa = quantidadeBaixa.ToString();
                     baixarEstoque = novaQuantidade.ToString();
 
-                    tem = controleVenda.baixarEstoque(pb.nome, baixarEstoque);
+                    tem = controleVenda.baixarEstoque(pb.nome, baixarEstoque,qtdBaixa);
 
                 }
                 else
@@ -744,7 +745,7 @@ namespace TCC.VISÃO
                              );
             }
 
-            StreamWriter sw = new StreamWriter("E:\\temp\\CUPOMNAOFISCAL.txt");
+            StreamWriter sw = new StreamWriter("C:\\temp\\CUPOMNAOFISCAL.txt");
             sw.WriteLine("-----------------------------------------------");
             sw.WriteLine("                   " + data);
             sw.WriteLine("             |ERICKÃO MULTIMARCAS|               ");

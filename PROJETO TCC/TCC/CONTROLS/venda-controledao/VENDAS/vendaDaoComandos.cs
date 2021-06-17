@@ -24,8 +24,12 @@ namespace TCC.CONTROLE
         SqlCommand cmd = new SqlCommand();
         SqlCommand cmd2 = new SqlCommand();
         String user = DadosGeral.nomeUser;
+        public String perfillog = verificaPerfill.perfil;
 
-        public string tipo = "Cadastrou Produto";
+        public string tipo1 = "Baixou Produto";
+        public string tipo2 = "Cadastrou Venda";
+        string dataLog = DateTime.Now.ToString();
+
 
         public string quantidadeEstoque;
         #endregion
@@ -480,21 +484,43 @@ namespace TCC.CONTROLE
             return mensagem;
         }
 
-        public bool baixarEstoque (String nomeDoProduto, String baixaEstoque)
+        public bool baixarEstoque (String nomeDoProduto, String baixaEstoque, String qtdBaixada)
         {
 
             cmd.CommandText = ("UPDATE estoqueProdutos set quantidade = @baixaEstoque from produtos where estoqueProdutos.idProduto = produtos.codProduto and produtos.nome = @nomeDoProduto");
+            cmd2.CommandText = "Insert into logs (tipo,dataLog,usuario,perfil,qtdprodutoBaixado,produtoBaixado) values (@tipo, @dataLog, @usuario, @perfil, @baixar, @prod)";
             cmd.Parameters.AddWithValue("@nomeDoProduto", nomeDoProduto);
             cmd.Parameters.AddWithValue("@baixaEstoque", baixaEstoque);
             cmd.Connection = con.conectar();
+
+           
+
+            cmd2.Parameters.AddWithValue("@tipo", tipo1);
+            cmd2.Parameters.AddWithValue("@datalog", dataLog);
+            cmd2.Parameters.AddWithValue("@usuario", user);
+            cmd2.Parameters.AddWithValue("@perfil", perfillog);
+            cmd2.Parameters.AddWithValue("@baixar", qtdBaixada);
+            cmd2.Parameters.AddWithValue("@prod", nomeDoProduto);
 
 
 
             try
             {
+                cmd.Connection = con.conectar();
                 cmd.ExecuteNonQuery();
+                cmd2.Connection = con.conectar();
+                cmd2.ExecuteNonQuery();
+                
                 cmd.Parameters.RemoveAt("@nomeDoProduto");
                 cmd.Parameters.RemoveAt("@baixaEstoque");
+
+                cmd2.Parameters.RemoveAt("@tipo");
+                cmd2.Parameters.RemoveAt("@datalog");
+                cmd2.Parameters.RemoveAt("@usuario");
+                cmd2.Parameters.RemoveAt("@perfil");
+                cmd2.Parameters.RemoveAt("@baixar");
+                cmd2.Parameters.RemoveAt("@prod");
+
                 this.tem = true;
                 return this.tem;
 
@@ -525,6 +551,7 @@ namespace TCC.CONTROLE
         public String cadastrarVenda(String codVenda, String nome, String tipo, float valorVenda, int quantidade, String modelo, String metodoPgt, string descontoo, float totalVenda, float valorTotal, String data)
         {
             cmd.CommandText = "insert into vendas values (@codVenda,@nome,@tipo,@valorVenda,@quantidade,@modelo,@metodoPgt,@desconto,@totalVenda,@valorTotal,@data)";
+            cmd2.CommandText = "Insert into logs (tipo,dataLog,usuario,perfil) values (@tipo, @dataLog, @usuario, @perfil)";
             cmd.Parameters.AddWithValue("@codVenda", codVenda);
             cmd.Parameters.AddWithValue("@nome", nome);
             cmd.Parameters.AddWithValue("@tipo",tipo);
@@ -536,7 +563,15 @@ namespace TCC.CONTROLE
             cmd.Parameters.AddWithValue("@totalVenda",totalVenda);
             cmd.Parameters.AddWithValue("@valorTotal",valorTotal);
             cmd.Parameters.AddWithValue("@data", data);
-            cmd.Connection = con.conectar();
+
+            cmd2.Parameters.AddWithValue("@tipo", tipo2);
+            cmd2.Parameters.AddWithValue("@datalog", dataLog);
+            cmd2.Parameters.AddWithValue("@usuario", user);
+            cmd2.Parameters.AddWithValue("@perfil", perfillog);
+
+           
+
+
 
 
 
@@ -544,8 +579,10 @@ namespace TCC.CONTROLE
 
             try
             {
-                
+                cmd.Connection = con.conectar();
+                cmd2.Connection = con.conectar();
                 cmd.ExecuteNonQuery();
+                cmd2.ExecuteNonQuery();
 
                 cmd.Parameters.RemoveAt("@codVenda");
                 cmd.Parameters.RemoveAt("@nome");
@@ -558,6 +595,11 @@ namespace TCC.CONTROLE
                 cmd.Parameters.RemoveAt("@totalVenda");
                 cmd.Parameters.RemoveAt("@valorTotal");
                 cmd.Parameters.RemoveAt("@data");
+
+                cmd2.Parameters.RemoveAt("@tipo");
+                cmd2.Parameters.RemoveAt("@datalog");
+                cmd2.Parameters.RemoveAt("@usuario");
+                cmd2.Parameters.RemoveAt("@perfil");
 
 
 
