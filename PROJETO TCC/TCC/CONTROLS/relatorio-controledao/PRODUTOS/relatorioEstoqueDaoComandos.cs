@@ -249,7 +249,7 @@ namespace TCC.CONTROLS.relatorio_controledao.PRODUTOS
 
         public DataTable filtrarSemana()
         {
-            cmd.CommandText = "SELECT *, E.Quantidade FROM produtos P, estoqueProdutos E WHERE P.dataDeCadastro BETWEEN GETDATE() - 8 AND GETDATE() AND P.codProduto = E.idProduto ";
+            cmd.CommandText = "SELECT P.nome, P.fornecedor,P.tipo, P.modelo, format (P.valordeCompra, 'c', 'pt-br') as valordeCompra, format (P.valordeVenda, 'c', 'pt-br') as valordeVenda, FORMAT (P.dataDeCadastro, 'dd/MM/yyyy ') as dataDeCadastro, E.Quantidade FROM produtos P, estoqueProdutos E WHERE P.dataDeCadastro BETWEEN GETDATE() - 8 AND GETDATE() AND P.codProduto = E.idProduto ";
 
             try
             {
@@ -276,7 +276,7 @@ namespace TCC.CONTROLS.relatorio_controledao.PRODUTOS
 
         public DataTable fitrarMes()
         {
-            cmd.CommandText = "SELECT *, E.Quantidade FROM produtos P, estoqueProdutos E WHERE P.dataDeCadastro BETWEEN GETDATE() - 32 AND GETDATE() AND P.codProduto = E.idProduto ORDER BY P.datadeCadastro DESC";
+            cmd.CommandText = "SELECT P.nome, P.fornecedor,P.tipo, P.modelo, format (P.valordeCompra, 'c', 'pt-br') as valordeCompra, format (P.valordeVenda, 'c', 'pt-br') as valordeVenda, FORMAT (P.dataDeCadastro, 'dd/MM/yyyy ') as dataDeCadastro, E.Quantidade FROM produtos P, estoqueProdutos E WHERE P.dataDeCadastro BETWEEN GETDATE() - 32 AND GETDATE() AND P.codProduto = E.idProduto ORDER BY P.datadeCadastro DESC";
 
             try
             {
@@ -303,7 +303,7 @@ namespace TCC.CONTROLS.relatorio_controledao.PRODUTOS
 
         public DataTable filtrarAno()
         {
-            cmd.CommandText = "SELECT *, E.Quantidade FROM produtos P, estoqueProdutos E WHERE P.dataDeCadastro BETWEEN GETDATE() - 367 AND GETDATE() AND P.codProduto = E.idProduto ORDER BY P.datadeCadastro DESC";
+            cmd.CommandText = "SELECT P.nome, P.fornecedor,P.tipo, P.modelo, format (P.valordeCompra, 'c', 'pt-br') as valordeCompra, format (P.valordeVenda, 'c', 'pt-br') as valordeVenda, FORMAT (P.dataDeCadastro, 'dd/MM/yyyy ') as dataDeCadastro, E.Quantidade FROM produtos P, estoqueProdutos E WHERE P.dataDeCadastro BETWEEN GETDATE() - 367 AND GETDATE() AND P.codProduto = E.idProduto ORDER BY P.datadeCadastro DESC";
 
             try
             {
