@@ -211,9 +211,12 @@ namespace TCC.VISÃO
             qtdprodutoBaixado.HeaderText = "Quantidade Baixada";
 
 
-            dtgLogs.Columns.Insert(4, produtobaixado);
-            dtgLogs.Columns.Insert(5, qtdprodutoBaixado);
-
+            if (!dtgLogs.Columns.Contains(produtobaixado) && !dtgLogs.Columns.Contains(qtdprodutoBaixado))
+            {
+                dtgLogs.Columns.Insert(4, produtobaixado);
+                dtgLogs.Columns.Insert(5, qtdprodutoBaixado);
+            }
+          
             foreach (DataRow item in dt.Rows)
             {
 
@@ -225,6 +228,72 @@ namespace TCC.VISÃO
                 dtgLogs.Rows[n].Cells[3].Value = item["perfil"].ToString();
                 dtgLogs.Rows[n].Cells[4].Value = item["produtobaixado"].ToString();
                 dtgLogs.Rows[n].Cells[5].Value = item["qtdprodutoBaixado"].ToString();
+
+
+
+
+
+
+
+
+            }
+        } //LISTAGEM DE LOGS
+
+        public void listarLogsAcess()
+        {
+            System.Data.DataTable dt = controleConfigSistema.listarLogsAcess();
+
+            dtgLogs.Rows.Clear();
+
+            if (dtgLogs.Columns.Contains(produtobaixado) && dtgLogs.Columns.Contains(qtdprodutoBaixado))
+            {
+                dtgLogs.Columns.Remove(produtobaixado);
+                dtgLogs.Columns.Remove(qtdprodutoBaixado);
+
+            }
+
+            foreach (DataRow item in dt.Rows)
+            {
+
+                int n = dtgLogs.Rows.Add();
+
+                dtgLogs.Rows[n].Cells[0].Value = item["Tipo"].ToString();
+                dtgLogs.Rows[n].Cells[1].Value = item["dataLog"].ToString();
+                dtgLogs.Rows[n].Cells[2].Value = item["usuario"].ToString();
+                dtgLogs.Rows[n].Cells[3].Value = item["perfil"].ToString();
+
+
+
+
+
+
+
+
+            }
+        } //LISTAGEM DE LOGS
+
+        public void listarLogsPorUser()
+        {
+            System.Data.DataTable dt = controleConfigSistema.listarLogsPorUser(txtuser.Text);
+
+            dtgLogs.Rows.Clear();
+
+            if (dtgLogs.Columns.Contains(produtobaixado) && dtgLogs.Columns.Contains(qtdprodutoBaixado))
+            {
+                dtgLogs.Columns.Remove(produtobaixado);
+                dtgLogs.Columns.Remove(qtdprodutoBaixado);
+
+            }
+
+            foreach (DataRow item in dt.Rows)
+            {
+
+                int n = dtgLogs.Rows.Add();
+
+                dtgLogs.Rows[n].Cells[0].Value = item["Tipo"].ToString();
+                dtgLogs.Rows[n].Cells[1].Value = item["dataLog"].ToString();
+                dtgLogs.Rows[n].Cells[2].Value = item["usuario"].ToString();
+                dtgLogs.Rows[n].Cells[3].Value = item["perfil"].ToString();
 
 
 
@@ -765,6 +834,47 @@ namespace TCC.VISÃO
             }
             }
 
+        }
+
+        private void btnacessos_MouseEnter(object sender, EventArgs e)
+        {
+
+            lblacessos.Visible = true;
+            btnacessos.Size = new Size(70, 40);
+        }
+
+        private void btnacessos_MouseLeave(object sender, EventArgs e)
+        {
+            lblacessos.Visible = false;
+            btnacessos.Size = new Size(70, 38);
+        }
+
+        private void btnacessos_Click(object sender, EventArgs e)
+        {
+            listarLogsAcess();
+        }
+
+        private void btnbuscar_Click(object sender, EventArgs e)
+        {
+            listarLogsPorUser();
+        }
+
+        private void txtuser_TextChanged(object sender, EventArgs e)
+        {
+            if(txtuser.Text == "")
+            {
+                listarLogs();
+            }
+        }
+
+        private void btnbuscar_MouseEnter(object sender, EventArgs e)
+        {
+            btnbuscar.Size = new Size(37, 30);
+        }
+
+        private void btnbuscar_MouseLeave(object sender, EventArgs e)
+        {
+            btnbuscar.Size = new Size(37, 28);
         }
     }
 }

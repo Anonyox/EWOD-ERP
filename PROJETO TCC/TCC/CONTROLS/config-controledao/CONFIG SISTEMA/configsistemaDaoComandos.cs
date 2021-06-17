@@ -285,6 +285,104 @@ namespace TCC.CONTROLE
             }
         } //LISTAGEM DE LOGS
 
+        public DataTable listarLogsAcess()
+           
+        {
+
+
+            SqlCommand cmd = new SqlCommand();
+
+            cmd.CommandText = "select  tipo, Convert (varchar(20),dataLog, 113) AS [dataLog] ,  usuario , perfil, produtoBaixado , qtdprodutoBaixado from logs where tipo like 'Ace%' or tipo like 'Saiu%'  Order By codLog DESC";
+            cmd.Connection = con.conectar();
+
+
+            try
+            {
+
+
+                DataTable td = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                cmd.ExecuteNonQuery();
+
+
+
+
+
+
+                da.Fill(td);
+
+
+
+                return td;
+
+
+
+
+
+
+
+
+                //dtEmail.DataSource = dt;
+
+
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        } //LISTAGEM DE LOGS
+
+        public DataTable listarLogsPorUser(String user)
+        {
+
+
+            SqlCommand cmd = new SqlCommand();
+
+            cmd.CommandText = "select  tipo, Convert (varchar(20),dataLog, 113) AS [dataLog] ,  usuario , perfil, produtoBaixado , qtdprodutoBaixado from logs where usuario = @user Order By codLog DESC";
+            cmd.Parameters.AddWithValue("@user", user);
+            cmd.Connection = con.conectar();
+
+
+            try
+            {
+
+
+                DataTable td = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                cmd.ExecuteNonQuery();
+
+
+
+
+
+
+                da.Fill(td);
+
+
+
+                return td;
+
+
+
+
+
+
+
+
+                //dtEmail.DataSource = dt;
+
+
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        } //LISTAGEM DE LOGS
+
 
 
 

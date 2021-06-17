@@ -76,6 +76,22 @@ namespace TCC.MODELO
             return dtr;
         } //LISTAGEM DE LOGS
 
+        public DataTable listarLogsAcess()
+        {
+            this.dtr = configSistema.listarLogsAcess();
+
+            return dtr;
+        } //LISTAGEM DE LOGS
+
+        public DataTable listarLogsPorUser(String user)
+        {
+            this.dtr = configSistema.listarLogsPorUser(user);
+
+            return dtr;
+        } //LISTAGEM DE LOGS
+
+
+
         public string selLogsCad()
         {
             this.regCad = configSistema.selLogsCad();

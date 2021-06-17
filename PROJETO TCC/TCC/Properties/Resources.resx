@@ -169,8 +169,8 @@
   <data name="adicionar-ao-carrinho" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\adicionar-ao-carrinho.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconfinder-settings-4341324_120534 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconfinder-settings-4341324_120534 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="blue_chart_Statistics_12518" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\blue_chart_Statistics_12518.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-lixeira-vazia-961" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-lixeira-vazia-961.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -190,6 +190,9 @@
   <data name="blue_insert_append_12490" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\blue_insert_append_12490.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="iconfinder-settings-4341324_120534 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconfinder-settings-4341324_120534 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons8-editar-propriedade-100" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-editar-propriedade-100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -205,9 +208,6 @@
   <data name="Seja-bem-vindo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Seja-bem-vindo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="blue_chart_Statistics_12518" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\blue_chart_Statistics_12518.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="male-user-add_25347" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\male-user-add_25347.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -216,6 +216,9 @@
   </data>
   <data name="blue_key_locked_12546" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\blue_key_locked_12546.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="exportar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\exportar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ÍCONE" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ÍCONE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -319,7 +322,7 @@
   <data name="blue__12447" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\blue__12447.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="exportar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\exportar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="direito-de-acesso" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\direito-de-acesso.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
