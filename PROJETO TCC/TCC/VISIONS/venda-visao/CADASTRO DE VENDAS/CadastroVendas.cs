@@ -675,7 +675,7 @@ namespace TCC.VISÃO
                              );
             }
 
-            StreamWriter sw = new StreamWriter("c:\\temp\\CUPOMNAOFISCAL.txt");
+            StreamWriter sw = new StreamWriter("C:\\temp\\CUPOMNAOFISCAL.txt");
             sw.WriteLine("-----------------------------------------------");
             sw.WriteLine("                   " + data);
             sw.WriteLine("             |ERICKÃO MULTIMARCAS|               ");
@@ -744,7 +744,7 @@ namespace TCC.VISÃO
                              );
             }
 
-            StreamWriter sw = new StreamWriter("c:\\temp\\CUPOMNAOFISCAL.txt");
+            StreamWriter sw = new StreamWriter("E:\\temp\\CUPOMNAOFISCAL.txt");
             sw.WriteLine("-----------------------------------------------");
             sw.WriteLine("                   " + data);
             sw.WriteLine("             |ERICKÃO MULTIMARCAS|               ");

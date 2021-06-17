@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -63,6 +66,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="VISIONS\relatorio-visao\FiltroRelatorioEstoque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VISIONS\relatorio-visao\FiltroRelatorioEstoque.Designer.cs">
+      <DependentUpon>FiltroRelatorioEstoque.cs</DependentUpon>
     </Compile>
     <Compile Include="warning\VCEP.cs" />
     <Compile Include="warning\VCPF.cs" />
@@ -137,6 +146,9 @@
     </Compile>
     <EmbeddedResource Include="VISIONS\produto-visao\CADASTRO DE PRODUTOS\CadastroProdutos.resx">
       <DependentUpon>CadastroProdutos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VISIONS\relatorio-visao\FiltroRelatorioEstoque.resx">
+      <DependentUpon>FiltroRelatorioEstoque.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VISIONS\relatorio-visao\RelatorioEstoque.resx">
       <DependentUpon>RelatorioEstoque.cs</DependentUpon>

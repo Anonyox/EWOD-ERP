@@ -35,17 +35,19 @@
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.btnSair = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lblsaida = new System.Windows.Forms.Label();
+            this.lbl1 = new System.Windows.Forms.Label();
             this.lbltotal = new System.Windows.Forms.Label();
             this.lbl3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lbloperacao = new System.Windows.Forms.Label();
             this.lbl2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblsaida = new System.Windows.Forms.Label();
-            this.lbl1 = new System.Windows.Forms.Label();
-            this.btn4 = new System.Windows.Forms.Button();
-            this.btn3 = new System.Windows.Forms.Button();
-            this.btn2 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbl5 = new System.Windows.Forms.Label();
+            this.btnfiltrarPersonalizado = new System.Windows.Forms.Button();
+            this.btnfiltrarAno = new System.Windows.Forms.Button();
+            this.btnfiltroMes = new System.Windows.Forms.Button();
             this.btnfiltroSemana = new System.Windows.Forms.Button();
             this.dtgestoque = new System.Windows.Forms.DataGridView();
             this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,8 +61,10 @@
             this.lbl4 = new System.Windows.Forms.Label();
             this.lblprecoTotal = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.label1 = new System.Windows.Forms.Label();
-            this.lbl5 = new System.Windows.Forms.Label();
+            this.btnexportarPdf = new System.Windows.Forms.Button();
+            this.btnexportarExcel = new System.Windows.Forms.Button();
+            this.lbl6 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.barra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSair)).BeginInit();
@@ -128,13 +132,37 @@
             this.panel3.Size = new System.Drawing.Size(192, 81);
             this.panel3.TabIndex = 168;
             // 
+            // lblsaida
+            // 
+            this.lblsaida.AutoSize = true;
+            this.lblsaida.BackColor = System.Drawing.Color.Transparent;
+            this.lblsaida.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblsaida.ForeColor = System.Drawing.Color.Black;
+            this.lblsaida.Location = new System.Drawing.Point(20, 30);
+            this.lblsaida.Name = "lblsaida";
+            this.lblsaida.Size = new System.Drawing.Size(143, 15);
+            this.lblsaida.TabIndex = 3;
+            this.lblsaida.Text = "QUANTIDADE ENTRADA";
+            // 
+            // lbl1
+            // 
+            this.lbl1.AutoSize = true;
+            this.lbl1.BackColor = System.Drawing.Color.Transparent;
+            this.lbl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl1.ForeColor = System.Drawing.Color.Black;
+            this.lbl1.Location = new System.Drawing.Point(80, 45);
+            this.lbl1.Name = "lbl1";
+            this.lbl1.Size = new System.Drawing.Size(20, 18);
+            this.lbl1.TabIndex = 1;
+            this.lbl1.Text = "N";
+            // 
             // lbltotal
             // 
             this.lbltotal.AutoSize = true;
             this.lbltotal.BackColor = System.Drawing.Color.Transparent;
             this.lbltotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbltotal.ForeColor = System.Drawing.Color.White;
-            this.lbltotal.Location = new System.Drawing.Point(418, 322);
+            this.lbltotal.Location = new System.Drawing.Point(333, 296);
             this.lbltotal.Name = "lbltotal";
             this.lbltotal.Size = new System.Drawing.Size(150, 15);
             this.lbltotal.TabIndex = 3;
@@ -146,7 +174,7 @@
             this.lbl3.BackColor = System.Drawing.Color.Transparent;
             this.lbl3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl3.ForeColor = System.Drawing.Color.White;
-            this.lbl3.Location = new System.Drawing.Point(477, 299);
+            this.lbl3.Location = new System.Drawing.Point(392, 273);
             this.lbl3.Name = "lbl3";
             this.lbl3.Size = new System.Drawing.Size(20, 18);
             this.lbl3.TabIndex = 1;
@@ -196,191 +224,6 @@
             this.panel1.Size = new System.Drawing.Size(192, 81);
             this.panel1.TabIndex = 166;
             // 
-            // lblsaida
-            // 
-            this.lblsaida.AutoSize = true;
-            this.lblsaida.BackColor = System.Drawing.Color.Transparent;
-            this.lblsaida.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblsaida.ForeColor = System.Drawing.Color.Black;
-            this.lblsaida.Location = new System.Drawing.Point(20, 30);
-            this.lblsaida.Name = "lblsaida";
-            this.lblsaida.Size = new System.Drawing.Size(143, 15);
-            this.lblsaida.TabIndex = 3;
-            this.lblsaida.Text = "QUANTIDADE ENTRADA";
-            // 
-            // lbl1
-            // 
-            this.lbl1.AutoSize = true;
-            this.lbl1.BackColor = System.Drawing.Color.Transparent;
-            this.lbl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl1.ForeColor = System.Drawing.Color.Black;
-            this.lbl1.Location = new System.Drawing.Point(80, 45);
-            this.lbl1.Name = "lbl1";
-            this.lbl1.Size = new System.Drawing.Size(20, 18);
-            this.lbl1.TabIndex = 1;
-            this.lbl1.Text = "N";
-            // 
-            // btn4
-            // 
-            this.btn4.BackColor = System.Drawing.Color.Transparent;
-            this.btn4.BackgroundImage = global::TCC.Properties.Resources.icons8_cancelar_48;
-            this.btn4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn4.Enabled = false;
-            this.btn4.FlatAppearance.BorderSize = 0;
-            this.btn4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btn4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btn4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn4.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn4.ForeColor = System.Drawing.Color.Transparent;
-            this.btn4.Location = new System.Drawing.Point(250, 299);
-            this.btn4.Name = "btn4";
-            this.btn4.Size = new System.Drawing.Size(62, 35);
-            this.btn4.TabIndex = 172;
-            this.btn4.UseVisualStyleBackColor = false;
-            // 
-            // btn3
-            // 
-            this.btn3.BackColor = System.Drawing.Color.Transparent;
-            this.btn3.BackgroundImage = global::TCC.Properties.Resources.icons8_cancelar_48;
-            this.btn3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn3.Enabled = false;
-            this.btn3.FlatAppearance.BorderSize = 0;
-            this.btn3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btn3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btn3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn3.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn3.ForeColor = System.Drawing.Color.Transparent;
-            this.btn3.Location = new System.Drawing.Point(169, 299);
-            this.btn3.Name = "btn3";
-            this.btn3.Size = new System.Drawing.Size(62, 35);
-            this.btn3.TabIndex = 171;
-            this.btn3.UseVisualStyleBackColor = false;
-            // 
-            // btn2
-            // 
-            this.btn2.BackColor = System.Drawing.Color.Transparent;
-            this.btn2.BackgroundImage = global::TCC.Properties.Resources.icons8_cancelar_48;
-            this.btn2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn2.Enabled = false;
-            this.btn2.FlatAppearance.BorderSize = 0;
-            this.btn2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btn2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btn2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn2.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn2.ForeColor = System.Drawing.Color.Transparent;
-            this.btn2.Location = new System.Drawing.Point(84, 299);
-            this.btn2.Name = "btn2";
-            this.btn2.Size = new System.Drawing.Size(62, 35);
-            this.btn2.TabIndex = 170;
-            this.btn2.UseVisualStyleBackColor = false;
-            // 
-            // btnfiltroSemana
-            // 
-            this.btnfiltroSemana.BackColor = System.Drawing.Color.Transparent;
-            this.btnfiltroSemana.BackgroundImage = global::TCC.Properties.Resources.icons8_cancelar_48;
-            this.btnfiltroSemana.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnfiltroSemana.Enabled = false;
-            this.btnfiltroSemana.FlatAppearance.BorderSize = 0;
-            this.btnfiltroSemana.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnfiltroSemana.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnfiltroSemana.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnfiltroSemana.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnfiltroSemana.ForeColor = System.Drawing.Color.Transparent;
-            this.btnfiltroSemana.Location = new System.Drawing.Point(3, 299);
-            this.btnfiltroSemana.Name = "btnfiltroSemana";
-            this.btnfiltroSemana.Size = new System.Drawing.Size(62, 35);
-            this.btnfiltroSemana.TabIndex = 169;
-            this.btnfiltroSemana.UseVisualStyleBackColor = false;
-            // 
-            // dtgestoque
-            // 
-            this.dtgestoque.AllowUserToAddRows = false;
-            this.dtgestoque.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgestoque.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nome,
-            this.fornecedor,
-            this.tipo,
-            this.modelo,
-            this.quantidade,
-            this.valordeCompra,
-            this.valordeVenda,
-            this.dataDeCadastro});
-            this.dtgestoque.Location = new System.Drawing.Point(0, 340);
-            this.dtgestoque.Name = "dtgestoque";
-            this.dtgestoque.RowHeadersWidth = 51;
-            this.dtgestoque.Size = new System.Drawing.Size(863, 276);
-            this.dtgestoque.TabIndex = 173;
-            // 
-            // nome
-            // 
-            this.nome.HeaderText = "Nome";
-            this.nome.Name = "nome";
-            this.nome.Width = 116;
-            // 
-            // fornecedor
-            // 
-            this.fornecedor.HeaderText = "Fornecedor";
-            this.fornecedor.Name = "fornecedor";
-            // 
-            // tipo
-            // 
-            this.tipo.HeaderText = "Tipo";
-            this.tipo.Name = "tipo";
-            // 
-            // modelo
-            // 
-            this.modelo.HeaderText = "Modelo";
-            this.modelo.Name = "modelo";
-            // 
-            // quantidade
-            // 
-            this.quantidade.HeaderText = "Quantidade";
-            this.quantidade.Name = "quantidade";
-            // 
-            // valordeCompra
-            // 
-            this.valordeCompra.HeaderText = "ValorDeCompra";
-            this.valordeCompra.Name = "valordeCompra";
-            // 
-            // valordeVenda
-            // 
-            this.valordeVenda.HeaderText = "ValorDeVenda";
-            this.valordeVenda.Name = "valordeVenda";
-            // 
-            // dataDeCadastro
-            // 
-            this.dataDeCadastro.HeaderText = "DataDeCadastro";
-            this.dataDeCadastro.Name = "dataDeCadastro";
-            // 
-            // lbl4
-            // 
-            this.lbl4.AutoSize = true;
-            this.lbl4.BackColor = System.Drawing.Color.Transparent;
-            this.lbl4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl4.ForeColor = System.Drawing.Color.White;
-            this.lbl4.Location = new System.Drawing.Point(683, 299);
-            this.lbl4.Name = "lbl4";
-            this.lbl4.Size = new System.Drawing.Size(20, 18);
-            this.lbl4.TabIndex = 174;
-            this.lbl4.Text = "N";
-            // 
-            // lblprecoTotal
-            // 
-            this.lblprecoTotal.AutoSize = true;
-            this.lblprecoTotal.BackColor = System.Drawing.Color.Transparent;
-            this.lblprecoTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblprecoTotal.ForeColor = System.Drawing.Color.White;
-            this.lblprecoTotal.Location = new System.Drawing.Point(595, 322);
-            this.lblprecoTotal.Name = "lblprecoTotal";
-            this.lblprecoTotal.Size = new System.Drawing.Size(231, 15);
-            this.lblprecoTotal.TabIndex = 175;
-            this.lblprecoTotal.Text = "TOTAL DESPESAS PREÇO DE COMPRA";
-            // 
-            // timer1
-            // 
-            this.timer1.Interval = 10000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -405,6 +248,247 @@
             this.lbl5.TabIndex = 4;
             this.lbl5.Text = "N";
             // 
+            // btnfiltrarPersonalizado
+            // 
+            this.btnfiltrarPersonalizado.BackColor = System.Drawing.Color.Transparent;
+            this.btnfiltrarPersonalizado.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnfiltrarPersonalizado.BackgroundImage")));
+            this.btnfiltrarPersonalizado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnfiltrarPersonalizado.FlatAppearance.BorderSize = 0;
+            this.btnfiltrarPersonalizado.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnfiltrarPersonalizado.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnfiltrarPersonalizado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnfiltrarPersonalizado.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnfiltrarPersonalizado.ForeColor = System.Drawing.Color.Transparent;
+            this.btnfiltrarPersonalizado.Location = new System.Drawing.Point(250, 273);
+            this.btnfiltrarPersonalizado.Name = "btnfiltrarPersonalizado";
+            this.btnfiltrarPersonalizado.Size = new System.Drawing.Size(62, 35);
+            this.btnfiltrarPersonalizado.TabIndex = 172;
+            this.btnfiltrarPersonalizado.UseVisualStyleBackColor = false;
+            this.btnfiltrarPersonalizado.Click += new System.EventHandler(this.btnfiltrarPersonalizado_Click);
+            this.btnfiltrarPersonalizado.MouseEnter += new System.EventHandler(this.btnfiltrarPersonalizado_MouseEnter);
+            this.btnfiltrarPersonalizado.MouseLeave += new System.EventHandler(this.btnfiltrarPersonalizado_MouseLeave);
+            // 
+            // btnfiltrarAno
+            // 
+            this.btnfiltrarAno.BackColor = System.Drawing.Color.Transparent;
+            this.btnfiltrarAno.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnfiltrarAno.BackgroundImage")));
+            this.btnfiltrarAno.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnfiltrarAno.FlatAppearance.BorderSize = 0;
+            this.btnfiltrarAno.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnfiltrarAno.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnfiltrarAno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnfiltrarAno.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnfiltrarAno.ForeColor = System.Drawing.Color.Transparent;
+            this.btnfiltrarAno.Location = new System.Drawing.Point(169, 273);
+            this.btnfiltrarAno.Name = "btnfiltrarAno";
+            this.btnfiltrarAno.Size = new System.Drawing.Size(62, 35);
+            this.btnfiltrarAno.TabIndex = 171;
+            this.btnfiltrarAno.UseVisualStyleBackColor = false;
+            this.btnfiltrarAno.Click += new System.EventHandler(this.btn3_Click);
+            this.btnfiltrarAno.MouseEnter += new System.EventHandler(this.btn3_MouseEnter);
+            this.btnfiltrarAno.MouseLeave += new System.EventHandler(this.btnfiltrarAno_MouseLeave);
+            // 
+            // btnfiltroMes
+            // 
+            this.btnfiltroMes.BackColor = System.Drawing.Color.Transparent;
+            this.btnfiltroMes.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnfiltroMes.BackgroundImage")));
+            this.btnfiltroMes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnfiltroMes.FlatAppearance.BorderSize = 0;
+            this.btnfiltroMes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnfiltroMes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnfiltroMes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnfiltroMes.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnfiltroMes.ForeColor = System.Drawing.Color.Transparent;
+            this.btnfiltroMes.Location = new System.Drawing.Point(84, 273);
+            this.btnfiltroMes.Name = "btnfiltroMes";
+            this.btnfiltroMes.Size = new System.Drawing.Size(62, 35);
+            this.btnfiltroMes.TabIndex = 170;
+            this.btnfiltroMes.UseVisualStyleBackColor = false;
+            this.btnfiltroMes.Click += new System.EventHandler(this.btnfiltroMes_Click);
+            this.btnfiltroMes.MouseEnter += new System.EventHandler(this.btnfiltroMes_MouseEnter);
+            this.btnfiltroMes.MouseLeave += new System.EventHandler(this.btnfiltroMes_MouseLeave);
+            // 
+            // btnfiltroSemana
+            // 
+            this.btnfiltroSemana.BackColor = System.Drawing.Color.Transparent;
+            this.btnfiltroSemana.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnfiltroSemana.BackgroundImage")));
+            this.btnfiltroSemana.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnfiltroSemana.FlatAppearance.BorderSize = 0;
+            this.btnfiltroSemana.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnfiltroSemana.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnfiltroSemana.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnfiltroSemana.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnfiltroSemana.ForeColor = System.Drawing.Color.Transparent;
+            this.btnfiltroSemana.Location = new System.Drawing.Point(3, 273);
+            this.btnfiltroSemana.Name = "btnfiltroSemana";
+            this.btnfiltroSemana.Size = new System.Drawing.Size(62, 35);
+            this.btnfiltroSemana.TabIndex = 169;
+            this.btnfiltroSemana.UseVisualStyleBackColor = false;
+            this.btnfiltroSemana.Click += new System.EventHandler(this.btnfiltroSemana_Click);
+            this.btnfiltroSemana.MouseEnter += new System.EventHandler(this.btnfiltroSemana_MouseEnter);
+            this.btnfiltroSemana.MouseLeave += new System.EventHandler(this.btnfiltroSemana_MouseLeave_1);
+            // 
+            // dtgestoque
+            // 
+            this.dtgestoque.AllowUserToAddRows = false;
+            this.dtgestoque.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgestoque.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nome,
+            this.fornecedor,
+            this.tipo,
+            this.modelo,
+            this.quantidade,
+            this.valordeCompra,
+            this.valordeVenda,
+            this.dataDeCadastro});
+            this.dtgestoque.Location = new System.Drawing.Point(0, 314);
+            this.dtgestoque.Name = "dtgestoque";
+            this.dtgestoque.ReadOnly = true;
+            this.dtgestoque.RowHeadersWidth = 51;
+            this.dtgestoque.Size = new System.Drawing.Size(863, 265);
+            this.dtgestoque.TabIndex = 173;
+            // 
+            // nome
+            // 
+            this.nome.HeaderText = "Nome";
+            this.nome.Name = "nome";
+            this.nome.ReadOnly = true;
+            this.nome.Width = 116;
+            // 
+            // fornecedor
+            // 
+            this.fornecedor.HeaderText = "Fornecedor";
+            this.fornecedor.Name = "fornecedor";
+            this.fornecedor.ReadOnly = true;
+            // 
+            // tipo
+            // 
+            this.tipo.HeaderText = "Tipo";
+            this.tipo.Name = "tipo";
+            this.tipo.ReadOnly = true;
+            // 
+            // modelo
+            // 
+            this.modelo.HeaderText = "Modelo";
+            this.modelo.Name = "modelo";
+            this.modelo.ReadOnly = true;
+            // 
+            // quantidade
+            // 
+            this.quantidade.HeaderText = "Quantidade";
+            this.quantidade.Name = "quantidade";
+            this.quantidade.ReadOnly = true;
+            // 
+            // valordeCompra
+            // 
+            this.valordeCompra.HeaderText = "ValorDeCompra";
+            this.valordeCompra.Name = "valordeCompra";
+            this.valordeCompra.ReadOnly = true;
+            // 
+            // valordeVenda
+            // 
+            this.valordeVenda.HeaderText = "ValorDeVenda";
+            this.valordeVenda.Name = "valordeVenda";
+            this.valordeVenda.ReadOnly = true;
+            // 
+            // dataDeCadastro
+            // 
+            this.dataDeCadastro.HeaderText = "DataDeCadastro";
+            this.dataDeCadastro.Name = "dataDeCadastro";
+            this.dataDeCadastro.ReadOnly = true;
+            // 
+            // lbl4
+            // 
+            this.lbl4.AutoSize = true;
+            this.lbl4.BackColor = System.Drawing.Color.Transparent;
+            this.lbl4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl4.ForeColor = System.Drawing.Color.White;
+            this.lbl4.Location = new System.Drawing.Point(715, 273);
+            this.lbl4.Name = "lbl4";
+            this.lbl4.Size = new System.Drawing.Size(20, 18);
+            this.lbl4.TabIndex = 174;
+            this.lbl4.Text = "N";
+            // 
+            // lblprecoTotal
+            // 
+            this.lblprecoTotal.AutoSize = true;
+            this.lblprecoTotal.BackColor = System.Drawing.Color.Transparent;
+            this.lblprecoTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblprecoTotal.ForeColor = System.Drawing.Color.White;
+            this.lblprecoTotal.Location = new System.Drawing.Point(646, 296);
+            this.lblprecoTotal.Name = "lblprecoTotal";
+            this.lblprecoTotal.Size = new System.Drawing.Size(203, 15);
+            this.lblprecoTotal.TabIndex = 175;
+            this.lblprecoTotal.Text = "TOTAL DESPESAS (COM FILTROS)";
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 10000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // btnexportarPdf
+            // 
+            this.btnexportarPdf.BackColor = System.Drawing.Color.Transparent;
+            this.btnexportarPdf.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnexportarPdf.BackgroundImage")));
+            this.btnexportarPdf.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnexportarPdf.FlatAppearance.BorderSize = 0;
+            this.btnexportarPdf.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnexportarPdf.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnexportarPdf.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnexportarPdf.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnexportarPdf.ForeColor = System.Drawing.Color.Transparent;
+            this.btnexportarPdf.Location = new System.Drawing.Point(779, 585);
+            this.btnexportarPdf.Name = "btnexportarPdf";
+            this.btnexportarPdf.Size = new System.Drawing.Size(81, 40);
+            this.btnexportarPdf.TabIndex = 176;
+            this.btnexportarPdf.UseVisualStyleBackColor = false;
+            this.btnexportarPdf.MouseEnter += new System.EventHandler(this.btnexportarPdf_MouseEnter);
+            this.btnexportarPdf.MouseLeave += new System.EventHandler(this.btnexportarPdf_MouseLeave);
+            // 
+            // btnexportarExcel
+            // 
+            this.btnexportarExcel.BackColor = System.Drawing.Color.Transparent;
+            this.btnexportarExcel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnexportarExcel.BackgroundImage")));
+            this.btnexportarExcel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnexportarExcel.FlatAppearance.BorderSize = 0;
+            this.btnexportarExcel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnexportarExcel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnexportarExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnexportarExcel.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnexportarExcel.ForeColor = System.Drawing.Color.Transparent;
+            this.btnexportarExcel.Location = new System.Drawing.Point(686, 585);
+            this.btnexportarExcel.Name = "btnexportarExcel";
+            this.btnexportarExcel.Size = new System.Drawing.Size(74, 40);
+            this.btnexportarExcel.TabIndex = 177;
+            this.btnexportarExcel.UseVisualStyleBackColor = false;
+            this.btnexportarExcel.Click += new System.EventHandler(this.btnexportarExcel_Click);
+            this.btnexportarExcel.MouseEnter += new System.EventHandler(this.btnexportarExcel_MouseEnter);
+            this.btnexportarExcel.MouseLeave += new System.EventHandler(this.btnexportarExcel_MouseLeave);
+            // 
+            // lbl6
+            // 
+            this.lbl6.AutoSize = true;
+            this.lbl6.BackColor = System.Drawing.Color.Transparent;
+            this.lbl6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl6.ForeColor = System.Drawing.Color.White;
+            this.lbl6.Location = new System.Drawing.Point(389, 222);
+            this.lbl6.Name = "lbl6";
+            this.lbl6.Size = new System.Drawing.Size(20, 18);
+            this.lbl6.TabIndex = 178;
+            this.lbl6.Text = "N";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(320, 245);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(194, 15);
+            this.label3.TabIndex = 179;
+            this.label3.Text = "TOTAL DESPESAS (SEM FILTRO)";
+            // 
             // RelatorioEstoque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -413,14 +497,18 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(863, 654);
+            this.Controls.Add(this.lbl6);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.btnexportarExcel);
+            this.Controls.Add(this.btnexportarPdf);
             this.Controls.Add(this.lbltotal);
             this.Controls.Add(this.lbl3);
             this.Controls.Add(this.lbl4);
             this.Controls.Add(this.lblprecoTotal);
             this.Controls.Add(this.dtgestoque);
-            this.Controls.Add(this.btn4);
-            this.Controls.Add(this.btn3);
-            this.Controls.Add(this.btn2);
+            this.Controls.Add(this.btnfiltrarPersonalizado);
+            this.Controls.Add(this.btnfiltrarAno);
+            this.Controls.Add(this.btnfiltroMes);
             this.Controls.Add(this.btnfiltroSemana);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -462,11 +550,10 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblsaida;
         private System.Windows.Forms.Label lbl1;
-        public System.Windows.Forms.Button btn4;
-        public System.Windows.Forms.Button btn3;
-        public System.Windows.Forms.Button btn2;
+        public System.Windows.Forms.Button btnfiltrarPersonalizado;
+        public System.Windows.Forms.Button btnfiltrarAno;
+        public System.Windows.Forms.Button btnfiltroMes;
         public System.Windows.Forms.Button btnfiltroSemana;
-        private System.Windows.Forms.DataGridView dtgestoque;
         private System.Windows.Forms.Label lbl4;
         private System.Windows.Forms.Label lblprecoTotal;
         private System.Windows.Forms.DataGridViewTextBoxColumn nome;
@@ -480,5 +567,10 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbl5;
+        public System.Windows.Forms.Button btnexportarPdf;
+        public System.Windows.Forms.DataGridView dtgestoque;
+        public System.Windows.Forms.Button btnexportarExcel;
+        private System.Windows.Forms.Label lbl6;
+        private System.Windows.Forms.Label label3;
     }
 }
