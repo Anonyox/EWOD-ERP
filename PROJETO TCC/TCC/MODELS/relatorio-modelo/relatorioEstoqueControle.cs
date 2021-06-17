@@ -14,6 +14,7 @@ namespace TCC.MODELS.relatorio_modelo
         String opera;
         String opera2;
         String opera3;
+        String opera4;
         public bool tem;
         public String contarEntradas()
         {
@@ -116,6 +117,13 @@ namespace TCC.MODELS.relatorio_modelo
             dtdmf = relDao.filtrarData(dataInicial, dataFinal);
 
             return dtdmf;
+        }
+
+        public String contarBaixas()
+        {
+            opera4 = relDao.contarBaixas();
+
+            return opera4;
         }
 
     }

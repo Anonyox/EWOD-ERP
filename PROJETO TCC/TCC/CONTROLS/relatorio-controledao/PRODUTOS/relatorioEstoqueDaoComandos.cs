@@ -19,6 +19,7 @@ namespace TCC.CONTROLS.relatorio_controledao.PRODUTOS
         String opera;
         String opera2;
         String opera3;
+        String opera4;
         #endregion
 
 
@@ -361,6 +362,33 @@ namespace TCC.CONTROLS.relatorio_controledao.PRODUTOS
             }
         }
 
+        public String contarBaixas()
+        {
+            SqlDataReader drr;
+
+            cmd.CommandText = "SELECT COUNT (tipo) FROM logs WHERE tipo = 'Baixou Produto'  ";
+
+            try
+            {
+                cmd.Connection = con.conectar();
+                drr = cmd.ExecuteReader();
+
+                while (drr.Read())
+                {
+                    opera4 = drr.GetValue(0).ToString();
+                }
+                con.desconectar();
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+            drr.Close();
+            return opera4;
+        }
 
         #endregion
 

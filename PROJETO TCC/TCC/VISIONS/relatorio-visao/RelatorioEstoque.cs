@@ -21,12 +21,14 @@ namespace TCC.VISÃO
         Worksheet wsheet;
         Microsoft.Office.Interop.Excel.Application XcelApp = new Microsoft.Office.Interop.Excel.Application();
         String contaEntrada;
+        String contarBaixa;
         relatorioEstoqueControle relCtr = new relatorioEstoqueControle();
         String quantidadeProduto;
         String dispesas;
         int op1 = 0;
         int op2 = 0;
         int op3 = 0;
+        int op4 = 0;
         int tot = 0;
 
         #endregion
@@ -53,7 +55,11 @@ namespace TCC.VISÃO
 
        
 
-
+        public void contarBaixas()
+        {
+            contarBaixa = relCtr.contarBaixas();
+            lbl2.Text = contarBaixa;
+        }
 
         public void contarEntradas()
         {
@@ -186,8 +192,9 @@ namespace TCC.VISÃO
                 this.op1 = Convert.ToInt32(opera);
                 this.op2 = Convert.ToInt32(opera2);
                 this.op3 = Convert.ToInt32(opera3);
+                this.op4 = Convert.ToInt32(contarBaixa);
 
-                this.tot = (op1 + op2) + op3 ;
+                this.tot = (op1 + op2) + (op3 + op4) ;
 
             }
 
@@ -290,6 +297,7 @@ namespace TCC.VISÃO
             formataGrid();
             listarProduto();
             dispesasGrid();
+            contarBaixas();
             contarEntradas();
             contarProdutos();
             contarOperacao();
@@ -299,6 +307,7 @@ namespace TCC.VISÃO
         {
             listarProduto();
             dispesasGrid();
+            contarBaixas();
             contarEntradas();
             contarProdutos();
             contarOperacao();
