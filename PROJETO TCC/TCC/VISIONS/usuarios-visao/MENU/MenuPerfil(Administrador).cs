@@ -975,11 +975,12 @@ namespace TCC.VISÃO
         private void timer3_Tick(object sender, EventArgs e)
         {
 
-            
+            timer3.Stop();
             MessageBox.Show("Sessão Finalizada, " + user, "Sessão", MessageBoxButtons.OK, MessageBoxIcon.Information);
             btnsairDoSistema_Click(sender, e);
+            
 
-            timer3.Start();
+           
         }
     }
 }

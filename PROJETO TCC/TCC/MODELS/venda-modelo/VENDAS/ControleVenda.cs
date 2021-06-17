@@ -20,7 +20,7 @@ namespace TCC.MODELO
         public DataTable dtr = new DataTable();
         public string mensagem;
 
-        string desconto;
+       
 
         string valtot;
 
@@ -207,9 +207,9 @@ namespace TCC.MODELO
             return mensagem;
         }
 
-        public bool baixarEstoque(String nomedoProduto, String baixarEstoque)
+        public bool baixarEstoque(String nomedoProduto, String baixarEstoque, String qtdBaixada)
         {
-            this.tem = vendaDao.baixarEstoque(nomedoProduto, baixarEstoque);
+            this.tem = vendaDao.baixarEstoque(nomedoProduto, baixarEstoque, qtdBaixada);
 
             if (vendaDao.tem)
             {
@@ -229,11 +229,11 @@ namespace TCC.MODELO
 
         }
 
-        public String cadastrarVenda(String codVenda, String nome, String tipo, float valorVenda, int quantidade, String modelo, String metodoPgt, float desconto, float totalVenda, float valorTotal, String data)
+        public String cadastrarVenda(String codVenda, String nome, String tipo, float valorVenda, int quantidade, String modelo, String metodoPgt, string descontoo, float totalVenda, float valorTotal, String data)
         {
            
 
-            this.mensagem = vendaDao.cadastrarVenda(codVenda, nome,tipo,valorVenda,quantidade,modelo,metodoPgt,desconto,totalVenda,valorTotal,data);
+            this.mensagem = vendaDao.cadastrarVenda(codVenda, nome,tipo,valorVenda,quantidade,modelo,metodoPgt,descontoo,totalVenda,valorTotal,data);
 
             if (vendaDao.tem)
             {

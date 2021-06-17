@@ -3,13 +3,13 @@ using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 using TCC.MODELS.relatorio_modelo;
-using Microsoft.Office.Interop.Excel;
 using DataTable = System.Data.DataTable;
 using System.Collections.Generic;
 using TCC.VISIONS.relatorio_visao;
 using Application = System.Windows.Forms.Application;
 using System.Linq;
 using static TCC.VISIONS.relatorio_visao.FiltroRelatorioEstoque;
+using Microsoft.Office.Interop.Excel;
 
 namespace TCC.VISÃO
 {
@@ -456,7 +456,7 @@ namespace TCC.VISÃO
                         XcelApp.Cells[1, i + 3] = dtgestoque.Columns[i - 1].HeaderText;
                     }
                     //
-                    for (int i = 0; i < dtgestoque.Rows.Count - 1; i++)
+                    for (int i = 0; i < dtgestoque.Rows.Count; i++)
                     {
                         for (int j = 0; j < dtgestoque.Columns.Count; j++)
                         {

@@ -546,7 +546,7 @@ namespace TCC.VISÃO
                     desconto = float.Parse(txtDesconto.Text);
                     float resultDesconto = float.Parse(valor);
 
-                    float desc = (desconto * resultDesconto) / 100;
+                    float desc = (desconto * resultDesconto) / 100;     
 
                     valorTotalComDesconto = resultDesconto - desc;
 
@@ -627,9 +627,10 @@ namespace TCC.VISÃO
                     novaQuantidade = qtdrestante - quantidadeBaixa;
 
                     string baixarEstoque;
+                    string qtdBaixa = quantidadeBaixa.ToString();
                     baixarEstoque = novaQuantidade.ToString();
 
-                    tem = controleVenda.baixarEstoque(pb.nome, baixarEstoque);
+                    tem = controleVenda.baixarEstoque(pb.nome, baixarEstoque,qtdBaixa);
 
                 }
                 else
@@ -744,7 +745,7 @@ namespace TCC.VISÃO
                              );
             }
 
-            StreamWriter sw = new StreamWriter("E:\\temp\\CUPOMNAOFISCAL.txt");
+            StreamWriter sw = new StreamWriter("C:\\temp\\CUPOMNAOFISCAL.txt");
             sw.WriteLine("-----------------------------------------------");
             sw.WriteLine("                   " + data);
             sw.WriteLine("             |ERICKÃO MULTIMARCAS|               ");
@@ -962,11 +963,11 @@ namespace TCC.VISÃO
 
                 float valorVenda = float.Parse(valorvenda);
                 int quantidade = Convert.ToInt32(qtd);
-                float desconto = float.Parse(descontoo);
+                
                 float totalFinal = float.Parse(totalVenda);
                 float valorTotal = float.Parse(valortotal);
 
-                String mensagem = controleVenda.cadastrarVenda(codOp, pv.nome, pv.tipo, valorVenda, quantidade, pv.modelo, metodoPgt, desconto, totalFinal, valorTotal, data);
+                String mensagem = controleVenda.cadastrarVenda(codOp, pv.nome, pv.tipo, valorVenda, quantidade, pv.modelo, metodoPgt, descontoo, totalFinal, valorTotal, data);
                 if (controleVenda.tem)
                 {
 

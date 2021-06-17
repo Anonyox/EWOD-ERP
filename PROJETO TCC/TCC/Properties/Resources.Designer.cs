@@ -313,6 +313,16 @@ namespace TCC.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap direito_de_acesso {
+            get {
+                object obj = ResourceManager.GetObject("direito-de-acesso", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap DocumentEdit_40924 {
             get {
                 object obj = ResourceManager.GetObject("DocumentEdit_40924", resourceCulture);

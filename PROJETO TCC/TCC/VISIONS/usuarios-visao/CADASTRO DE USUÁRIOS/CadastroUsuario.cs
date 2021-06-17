@@ -470,6 +470,9 @@ namespace TCC.VISÃO
             txtdepart.Enabled = false;
             rdbmasculino.Enabled = false;
             rdbfeminino.Enabled = false;
+
+            btnlimpar.Enabled = false;
+            btnAdicionar.Enabled = true;
         }
 
         private void txtUser_Leave(object sender, EventArgs e)
@@ -662,6 +665,9 @@ namespace TCC.VISÃO
             txtdepart.Enabled = true;
             rdbmasculino.Enabled = true;
             rdbfeminino.Enabled = true;
+
+            btnAdicionar.Enabled = false;
+            btnlimpar.Enabled = true;
 
             txtuser.Focus();
         }

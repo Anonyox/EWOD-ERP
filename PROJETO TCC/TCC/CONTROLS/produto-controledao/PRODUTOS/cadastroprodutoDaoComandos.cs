@@ -22,6 +22,9 @@ namespace TCC.CONTROLE
         SqlDataReader dr;
         string tipolog = "Cadastrou Produto";
         string tipolog2 = "Alterou Produto";
+        string tipolog3 = "Excluiu Produto";
+        string dataLog = DateTime.Now.ToString();
+        
         DataTable dtr = new DataTable();
         public bool tem = false;
         public string mensagem = ("");
@@ -118,7 +121,7 @@ namespace TCC.CONTROLE
             cmd2.CommandText = "Insert into logs (tipo,dataLog,usuario,perfil) values (@tipo, @dataLog, @usuario, @perfil)";
 
             cmd2.Parameters.AddWithValue("@tipo", tipolog);
-            cmd2.Parameters.AddWithValue("@datalog", dataDeCadastro);
+            cmd2.Parameters.AddWithValue("@datalog", dataLog);
             cmd2.Parameters.AddWithValue("@usuario", user);
             cmd2.Parameters.AddWithValue("@perfil", perfillog);
 
@@ -162,13 +165,6 @@ namespace TCC.CONTROLE
             con.desconectar();
         }
 
-        /*public String alterarProduto(string nome, string fornecedor, string tipo, string modelo, string quantidade, string valordeCompra, string valordeVenda)
-        {
-            tem = false;
-
-            cmd.CommandText = "update produtos set @coluna = @valor where codProduto = @codproduto";
-            cmd.Parameters.AddWithValue("@coluna", coluna);
-        }*/
 
         public bool verificarProduto(String nomeProduto)
         {
@@ -238,7 +234,7 @@ namespace TCC.CONTROLE
          
 
             cmd3.Parameters.AddWithValue("@tipo", tipolog2);
-            cmd3.Parameters.AddWithValue("@datalog", dataDeCadastro);
+            cmd3.Parameters.AddWithValue("@datalog", dataLog);
             cmd3.Parameters.AddWithValue("@usuario", user);
             cmd3.Parameters.AddWithValue("@perfil", perfillog);
 
@@ -303,14 +299,30 @@ namespace TCC.CONTROLE
         public String excluirProduto(string nome)
         {
             cmd.CommandText = "DELETE FROM produtos WHERE nome = @n";
+            cmd2.CommandText = "Insert into logs (tipo,dataLog,usuario,perfil) values (@tipo, @dataLog, @usuario, @perfil)";
+
             cmd.Parameters.AddWithValue("@n", nome);
+
+            cmd2.Parameters.AddWithValue("@tipo", tipolog3);
+            cmd2.Parameters.AddWithValue("@datalog", dataLog);
+            cmd2.Parameters.AddWithValue("@usuario", user);
+            cmd2.Parameters.AddWithValue("@perfil", perfillog);
+
 
             try
             {
                 cmd.Connection = con.conectar();
                 cmd.ExecuteNonQuery();
+                cmd2.Connection = con.conectar();
+                cmd2.ExecuteNonQuery();
 
                 cmd.Parameters.RemoveAt("@n");
+
+                cmd2.Parameters.RemoveAt("@tipo");
+                cmd2.Parameters.RemoveAt("@datalog");
+                cmd2.Parameters.RemoveAt("@usuario");
+                cmd2.Parameters.RemoveAt("@perfil");
+
                 con.desconectar();
 
                 this.mensagem = "PRODUTO RETIRADO COM SUCESSO!!";

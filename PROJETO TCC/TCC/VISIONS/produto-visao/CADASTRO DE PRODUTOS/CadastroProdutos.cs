@@ -56,6 +56,16 @@ namespace TCC.VISÃO
 
         #region MÉTODOS DE FUNCIONALIDADES
 
+
+        public void permitirApenasNumeros(object sender, KeyPressEventArgs e)
+        {
+            //Se a tecla digitada não for número e nem backspace
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 08)
+            {
+                //Atribui True no Handled para cancelar o evento
+                e.Handled = true;
+            }
+        } //PERMITIR APENAS NUMEROS
         public void listarProdutos()
         {
             DataTable dtr = new DataTable();
@@ -780,6 +790,42 @@ namespace TCC.VISÃO
             txtquantidadeProduto.Enabled = true;
 
             txtnomeProduto.Focus();
+        }
+
+        private void txtvalorVenda_Leave(object sender, EventArgs e)
+        {
+            if(txtvalorVenda.Text != "")
+            {
+                float venda = float.Parse(txtvalorVenda.Text);
+                txtvalorVenda.Text = string.Format("{0:C}", venda);
+            }
+         
+        }
+
+        private void txtvalorCompra_Leave(object sender, EventArgs e)
+        {
+            if(txtvalorCompra.Text != "")
+            {
+                float compra = float.Parse(txtvalorCompra.Text);
+                txtvalorCompra.Text = string.Format("{0:C}", compra);
+            }
+        
+        
+        }
+
+        private void txtvalorCompra_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            permitirApenasNumeros(sender, e);
+        }
+
+        private void txtvalorVenda_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            permitirApenasNumeros(sender, e);
+        }
+
+        private void txtquantidadeProduto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            permitirApenasNumeros(sender, e);
         }
     }
 
