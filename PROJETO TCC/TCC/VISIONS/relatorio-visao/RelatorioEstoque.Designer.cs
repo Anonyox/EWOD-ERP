@@ -65,6 +65,7 @@
             this.btnexportarExcel = new System.Windows.Forms.Button();
             this.lbl6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.pnfiltro = new System.Windows.Forms.Panel();
             this.barra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSair)).BeginInit();
@@ -79,10 +80,9 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Orange;
-            this.label8.Location = new System.Drawing.Point(463, 47);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(347, 38);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(229, 27);
+            this.label8.Size = new System.Drawing.Size(181, 21);
             this.label8.TabIndex = 157;
             this.label8.Text = "RELATÓRIO ESTOQUE";
             // 
@@ -91,10 +91,10 @@
             this.barra.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.barra.Controls.Add(this.btnMinimizar);
             this.barra.Controls.Add(this.btnSair);
-            this.barra.Location = new System.Drawing.Point(-3, -12);
-            this.barra.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.barra.Location = new System.Drawing.Point(-2, -10);
+            this.barra.Margin = new System.Windows.Forms.Padding(2);
             this.barra.Name = "barra";
-            this.barra.Size = new System.Drawing.Size(1153, 57);
+            this.barra.Size = new System.Drawing.Size(865, 46);
             this.barra.TabIndex = 165;
             // 
             // btnMinimizar
@@ -102,10 +102,9 @@
             this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
-            this.btnMinimizar.Location = new System.Drawing.Point(1067, 18);
-            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMinimizar.Location = new System.Drawing.Point(800, 15);
             this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(37, 34);
+            this.btnMinimizar.Size = new System.Drawing.Size(28, 28);
             this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnMinimizar.TabIndex = 61;
             this.btnMinimizar.TabStop = false;
@@ -116,10 +115,9 @@
             this.btnSair.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSair.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSair.Image = ((System.Drawing.Image)(resources.GetObject("btnSair.Image")));
-            this.btnSair.Location = new System.Drawing.Point(1112, 18);
-            this.btnSair.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSair.Location = new System.Drawing.Point(834, 15);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(37, 34);
+            this.btnSair.Size = new System.Drawing.Size(28, 28);
             this.btnSair.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnSair.TabIndex = 60;
             this.btnSair.TabStop = false;
@@ -130,10 +128,9 @@
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(209)))), ((int)(((byte)(178)))));
             this.panel3.Controls.Add(this.lblsaida);
             this.panel3.Controls.Add(this.lbl1);
-            this.panel3.Location = new System.Drawing.Point(16, 144);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Location = new System.Drawing.Point(12, 117);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(256, 100);
+            this.panel3.Size = new System.Drawing.Size(192, 81);
             this.panel3.TabIndex = 168;
             // 
             // lblsaida
@@ -142,10 +139,9 @@
             this.lblsaida.BackColor = System.Drawing.Color.Transparent;
             this.lblsaida.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblsaida.ForeColor = System.Drawing.Color.Black;
-            this.lblsaida.Location = new System.Drawing.Point(27, 37);
-            this.lblsaida.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblsaida.Location = new System.Drawing.Point(20, 30);
             this.lblsaida.Name = "lblsaida";
-            this.lblsaida.Size = new System.Drawing.Size(178, 18);
+            this.lblsaida.Size = new System.Drawing.Size(143, 15);
             this.lblsaida.TabIndex = 3;
             this.lblsaida.Text = "QUANTIDADE ENTRADA";
             // 
@@ -155,10 +151,9 @@
             this.lbl1.BackColor = System.Drawing.Color.Transparent;
             this.lbl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl1.ForeColor = System.Drawing.Color.Black;
-            this.lbl1.Location = new System.Drawing.Point(107, 55);
-            this.lbl1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl1.Location = new System.Drawing.Point(80, 45);
             this.lbl1.Name = "lbl1";
-            this.lbl1.Size = new System.Drawing.Size(25, 24);
+            this.lbl1.Size = new System.Drawing.Size(20, 18);
             this.lbl1.TabIndex = 1;
             this.lbl1.Text = "N";
             // 
@@ -168,10 +163,9 @@
             this.lbltotal.BackColor = System.Drawing.Color.Transparent;
             this.lbltotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbltotal.ForeColor = System.Drawing.Color.White;
-            this.lbltotal.Location = new System.Drawing.Point(444, 364);
-            this.lbltotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbltotal.Location = new System.Drawing.Point(333, 296);
             this.lbltotal.Name = "lbltotal";
-            this.lbltotal.Size = new System.Drawing.Size(188, 18);
+            this.lbltotal.Size = new System.Drawing.Size(150, 15);
             this.lbltotal.TabIndex = 3;
             this.lbltotal.Text = "QUANTIDADE PRODUTO ";
             // 
@@ -181,10 +175,9 @@
             this.lbl3.BackColor = System.Drawing.Color.Transparent;
             this.lbl3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl3.ForeColor = System.Drawing.Color.White;
-            this.lbl3.Location = new System.Drawing.Point(523, 336);
-            this.lbl3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl3.Location = new System.Drawing.Point(392, 273);
             this.lbl3.Name = "lbl3";
-            this.lbl3.Size = new System.Drawing.Size(25, 24);
+            this.lbl3.Size = new System.Drawing.Size(20, 18);
             this.lbl3.TabIndex = 1;
             this.lbl3.Text = "N";
             // 
@@ -193,10 +186,9 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(209)))), ((int)(((byte)(178)))));
             this.panel2.Controls.Add(this.lbloperacao);
             this.panel2.Controls.Add(this.lbl2);
-            this.panel2.Location = new System.Drawing.Point(865, 144);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Location = new System.Drawing.Point(649, 117);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(269, 100);
+            this.panel2.Size = new System.Drawing.Size(202, 81);
             this.panel2.TabIndex = 167;
             // 
             // lbloperacao
@@ -205,10 +197,9 @@
             this.lbloperacao.BackColor = System.Drawing.Color.Transparent;
             this.lbloperacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbloperacao.ForeColor = System.Drawing.Color.Black;
-            this.lbloperacao.Location = new System.Drawing.Point(57, 37);
-            this.lbloperacao.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbloperacao.Location = new System.Drawing.Point(43, 30);
             this.lbloperacao.Name = "lbloperacao";
-            this.lbloperacao.Size = new System.Drawing.Size(150, 18);
+            this.lbloperacao.Size = new System.Drawing.Size(121, 15);
             this.lbloperacao.TabIndex = 3;
             this.lbloperacao.Text = "QUANTIDADE SAÍDA";
             // 
@@ -218,10 +209,9 @@
             this.lbl2.BackColor = System.Drawing.Color.Transparent;
             this.lbl2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl2.ForeColor = System.Drawing.Color.Black;
-            this.lbl2.Location = new System.Drawing.Point(123, 55);
-            this.lbl2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl2.Location = new System.Drawing.Point(92, 45);
             this.lbl2.Name = "lbl2";
-            this.lbl2.Size = new System.Drawing.Size(25, 24);
+            this.lbl2.Size = new System.Drawing.Size(20, 18);
             this.lbl2.TabIndex = 1;
             this.lbl2.Text = "N";
             // 
@@ -230,10 +220,9 @@
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.lbl5);
-            this.panel1.Location = new System.Drawing.Point(448, 144);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Location = new System.Drawing.Point(336, 117);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(256, 100);
+            this.panel1.Size = new System.Drawing.Size(192, 81);
             this.panel1.TabIndex = 166;
             // 
             // label1
@@ -242,10 +231,9 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(16, 37);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(12, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(203, 18);
+            this.label1.Size = new System.Drawing.Size(161, 15);
             this.label1.TabIndex = 5;
             this.label1.Text = "QUANTIDADE OPERAÇÕES";
             // 
@@ -255,10 +243,9 @@
             this.lbl5.BackColor = System.Drawing.Color.Transparent;
             this.lbl5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl5.ForeColor = System.Drawing.Color.Black;
-            this.lbl5.Location = new System.Drawing.Point(111, 55);
-            this.lbl5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl5.Location = new System.Drawing.Point(83, 45);
             this.lbl5.Name = "lbl5";
-            this.lbl5.Size = new System.Drawing.Size(25, 24);
+            this.lbl5.Size = new System.Drawing.Size(20, 18);
             this.lbl5.TabIndex = 4;
             this.lbl5.Text = "N";
             // 
@@ -273,10 +260,9 @@
             this.btnfiltrarPersonalizado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnfiltrarPersonalizado.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnfiltrarPersonalizado.ForeColor = System.Drawing.Color.Transparent;
-            this.btnfiltrarPersonalizado.Location = new System.Drawing.Point(333, 336);
-            this.btnfiltrarPersonalizado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnfiltrarPersonalizado.Location = new System.Drawing.Point(250, 273);
             this.btnfiltrarPersonalizado.Name = "btnfiltrarPersonalizado";
-            this.btnfiltrarPersonalizado.Size = new System.Drawing.Size(83, 43);
+            this.btnfiltrarPersonalizado.Size = new System.Drawing.Size(62, 35);
             this.btnfiltrarPersonalizado.TabIndex = 172;
             this.btnfiltrarPersonalizado.UseVisualStyleBackColor = false;
             this.btnfiltrarPersonalizado.Click += new System.EventHandler(this.btnfiltrarPersonalizado_Click);
@@ -294,10 +280,9 @@
             this.btnfiltrarAno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnfiltrarAno.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnfiltrarAno.ForeColor = System.Drawing.Color.Transparent;
-            this.btnfiltrarAno.Location = new System.Drawing.Point(225, 336);
-            this.btnfiltrarAno.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnfiltrarAno.Location = new System.Drawing.Point(169, 273);
             this.btnfiltrarAno.Name = "btnfiltrarAno";
-            this.btnfiltrarAno.Size = new System.Drawing.Size(83, 43);
+            this.btnfiltrarAno.Size = new System.Drawing.Size(62, 35);
             this.btnfiltrarAno.TabIndex = 171;
             this.btnfiltrarAno.UseVisualStyleBackColor = false;
             this.btnfiltrarAno.Click += new System.EventHandler(this.btn3_Click);
@@ -315,10 +300,9 @@
             this.btnfiltroMes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnfiltroMes.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnfiltroMes.ForeColor = System.Drawing.Color.Transparent;
-            this.btnfiltroMes.Location = new System.Drawing.Point(112, 336);
-            this.btnfiltroMes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnfiltroMes.Location = new System.Drawing.Point(84, 273);
             this.btnfiltroMes.Name = "btnfiltroMes";
-            this.btnfiltroMes.Size = new System.Drawing.Size(83, 43);
+            this.btnfiltroMes.Size = new System.Drawing.Size(62, 35);
             this.btnfiltroMes.TabIndex = 170;
             this.btnfiltroMes.UseVisualStyleBackColor = false;
             this.btnfiltroMes.Click += new System.EventHandler(this.btnfiltroMes_Click);
@@ -336,10 +320,9 @@
             this.btnfiltroSemana.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnfiltroSemana.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnfiltroSemana.ForeColor = System.Drawing.Color.Transparent;
-            this.btnfiltroSemana.Location = new System.Drawing.Point(4, 336);
-            this.btnfiltroSemana.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnfiltroSemana.Location = new System.Drawing.Point(3, 273);
             this.btnfiltroSemana.Name = "btnfiltroSemana";
-            this.btnfiltroSemana.Size = new System.Drawing.Size(83, 43);
+            this.btnfiltroSemana.Size = new System.Drawing.Size(62, 35);
             this.btnfiltroSemana.TabIndex = 169;
             this.btnfiltroSemana.UseVisualStyleBackColor = false;
             this.btnfiltroSemana.Click += new System.EventHandler(this.btnfiltroSemana_Click);
@@ -359,12 +342,11 @@
             this.valordeCompra,
             this.valordeVenda,
             this.dataDeCadastro});
-            this.dtgestoque.Location = new System.Drawing.Point(0, 386);
-            this.dtgestoque.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtgestoque.Location = new System.Drawing.Point(0, 314);
             this.dtgestoque.Name = "dtgestoque";
             this.dtgestoque.ReadOnly = true;
             this.dtgestoque.RowHeadersWidth = 51;
-            this.dtgestoque.Size = new System.Drawing.Size(1151, 326);
+            this.dtgestoque.Size = new System.Drawing.Size(863, 265);
             this.dtgestoque.TabIndex = 173;
             // 
             // nome
@@ -437,10 +419,9 @@
             this.lbl4.BackColor = System.Drawing.Color.Transparent;
             this.lbl4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl4.ForeColor = System.Drawing.Color.White;
-            this.lbl4.Location = new System.Drawing.Point(953, 336);
-            this.lbl4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl4.Location = new System.Drawing.Point(717, 273);
             this.lbl4.Name = "lbl4";
-            this.lbl4.Size = new System.Drawing.Size(25, 24);
+            this.lbl4.Size = new System.Drawing.Size(20, 18);
             this.lbl4.TabIndex = 174;
             this.lbl4.Text = "N";
             // 
@@ -450,10 +431,9 @@
             this.lblprecoTotal.BackColor = System.Drawing.Color.Transparent;
             this.lblprecoTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblprecoTotal.ForeColor = System.Drawing.Color.White;
-            this.lblprecoTotal.Location = new System.Drawing.Point(861, 364);
-            this.lblprecoTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblprecoTotal.Location = new System.Drawing.Point(648, 296);
             this.lblprecoTotal.Name = "lblprecoTotal";
-            this.lblprecoTotal.Size = new System.Drawing.Size(255, 18);
+            this.lblprecoTotal.Size = new System.Drawing.Size(203, 15);
             this.lblprecoTotal.TabIndex = 175;
             this.lblprecoTotal.Text = "TOTAL DESPESAS (COM FILTROS)";
             // 
@@ -473,10 +453,9 @@
             this.btnexportarPdf.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnexportarPdf.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnexportarPdf.ForeColor = System.Drawing.Color.Transparent;
-            this.btnexportarPdf.Location = new System.Drawing.Point(1039, 720);
-            this.btnexportarPdf.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnexportarPdf.Location = new System.Drawing.Point(779, 585);
             this.btnexportarPdf.Name = "btnexportarPdf";
-            this.btnexportarPdf.Size = new System.Drawing.Size(108, 49);
+            this.btnexportarPdf.Size = new System.Drawing.Size(81, 40);
             this.btnexportarPdf.TabIndex = 176;
             this.btnexportarPdf.UseVisualStyleBackColor = false;
             this.btnexportarPdf.MouseEnter += new System.EventHandler(this.btnexportarPdf_MouseEnter);
@@ -493,10 +472,9 @@
             this.btnexportarExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnexportarExcel.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnexportarExcel.ForeColor = System.Drawing.Color.Transparent;
-            this.btnexportarExcel.Location = new System.Drawing.Point(915, 720);
-            this.btnexportarExcel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnexportarExcel.Location = new System.Drawing.Point(686, 585);
             this.btnexportarExcel.Name = "btnexportarExcel";
-            this.btnexportarExcel.Size = new System.Drawing.Size(99, 49);
+            this.btnexportarExcel.Size = new System.Drawing.Size(74, 40);
             this.btnexportarExcel.TabIndex = 177;
             this.btnexportarExcel.UseVisualStyleBackColor = false;
             this.btnexportarExcel.Click += new System.EventHandler(this.btnexportarExcel_Click);
@@ -509,10 +487,9 @@
             this.lbl6.BackColor = System.Drawing.Color.Transparent;
             this.lbl6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl6.ForeColor = System.Drawing.Color.White;
-            this.lbl6.Location = new System.Drawing.Point(519, 273);
-            this.lbl6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl6.Location = new System.Drawing.Point(221, 610);
             this.lbl6.Name = "lbl6";
-            this.lbl6.Size = new System.Drawing.Size(25, 24);
+            this.lbl6.Size = new System.Drawing.Size(20, 18);
             this.lbl6.TabIndex = 178;
             this.lbl6.Text = "N";
             // 
@@ -522,21 +499,31 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(427, 302);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(9, 610);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(242, 18);
+            this.label3.Size = new System.Drawing.Size(194, 15);
             this.label3.TabIndex = 179;
             this.label3.Text = "TOTAL DESPESAS (SEM FILTRO)";
             // 
+            // pnfiltro
+            // 
+            this.pnfiltro.BackColor = System.Drawing.Color.Transparent;
+            this.pnfiltro.Enabled = false;
+            this.pnfiltro.Location = new System.Drawing.Point(857, 177);
+            this.pnfiltro.Name = "pnfiltro";
+            this.pnfiltro.Size = new System.Drawing.Size(20, 21);
+            this.pnfiltro.TabIndex = 180;
+            this.pnfiltro.Visible = false;
+            // 
             // RelatorioEstoque
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(12)))), ((int)(((byte)(38)))));
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(1151, 805);
+            this.ClientSize = new System.Drawing.Size(863, 654);
+            this.Controls.Add(this.pnfiltro);
             this.Controls.Add(this.lbl6);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnexportarExcel);
@@ -556,7 +543,6 @@
             this.Controls.Add(this.barra);
             this.Controls.Add(this.label8);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "RelatorioEstoque";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RelatorioEstoque";
@@ -609,9 +595,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbl5;
         public System.Windows.Forms.Button btnexportarPdf;
-        public System.Windows.Forms.DataGridView dtgestoque;
         public System.Windows.Forms.Button btnexportarExcel;
         private System.Windows.Forms.Label lbl6;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel pnfiltro;
+        public System.Windows.Forms.DataGridView dtgestoque;
     }
 }

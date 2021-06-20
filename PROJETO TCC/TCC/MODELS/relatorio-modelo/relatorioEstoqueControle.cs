@@ -126,5 +126,14 @@ namespace TCC.MODELS.relatorio_modelo
             return opera4;
         }
 
+        public String contarTotal(string total)
+        {
+            total = relDao.contarTotal(total);
+
+            tem = true;
+
+            return total;
+        }
+
     }
 }

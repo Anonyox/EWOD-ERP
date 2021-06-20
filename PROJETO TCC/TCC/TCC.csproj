@@ -434,5 +434,8 @@
   <ItemGroup>
     <None Include="Resources\direito-de-acesso.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-botão-de-opção-marcado-481.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

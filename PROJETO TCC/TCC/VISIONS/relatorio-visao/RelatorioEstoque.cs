@@ -30,6 +30,7 @@ namespace TCC.VISÃO
         int op3 = 0;
         int op4 = 0;
         int tot = 0;
+        String total;
 
         #endregion
 
@@ -71,6 +72,12 @@ namespace TCC.VISÃO
         {
             quantidadeProduto = relCtr.contarProdutos();
             lbl3.Text = quantidadeProduto;
+        }
+
+        public void contarTotal()
+        {
+            total = relCtr.contarTotal(total);
+            lbl6.Text = total;
         }
 
 
@@ -295,16 +302,21 @@ namespace TCC.VISÃO
         {
             //timer1.Start();
             formataGrid();
-            listarProduto();
+            if(pnfiltro.Enabled == false)
+            {
+                listarProduto();
+            }           
             dispesasGrid();
             contarBaixas();
             contarEntradas();
             contarProdutos();
             contarOperacao();
+            contarTotal();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            pnfiltro.Enabled = false;
             listarProduto();
             dispesasGrid();
             contarBaixas();
@@ -400,7 +412,7 @@ namespace TCC.VISÃO
             }
             else
             {
-
+                pnfiltro.Enabled = true;
                 filEstoque.Owner = this;
                 filEstoque.Show();
             }

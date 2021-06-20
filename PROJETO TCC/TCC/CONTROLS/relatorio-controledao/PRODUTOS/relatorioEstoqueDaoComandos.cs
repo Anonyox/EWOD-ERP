@@ -156,6 +156,33 @@ namespace TCC.CONTROLS.relatorio_controledao.PRODUTOS
 
         }
 
+        public String contarTotal(string total)
+        {
+            SqlDataReader drt;
+            cmd.CommandText = "SELECT FORMAT(SUM(produtos.valordeCompra * estoqueProdutos.Quantidade), 'c', 'pt-br') AS VALOR_TOTAL FROM produtos, estoqueProdutos";
+
+            try
+            {
+                
+                cmd.Connection = con.conectar();
+                drt = cmd.ExecuteReader();
+
+                while (drt.Read())
+                {
+                    total = drt.GetValue(0).ToString();
+                }
+                con.desconectar();
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            drt.Close();
+            return total;
+        }
+
 
 
         public String contarOperacao()

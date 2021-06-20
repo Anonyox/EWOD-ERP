@@ -34,9 +34,9 @@ namespace TCC.VISIONS.relatorio_visao
             this.label9 = new System.Windows.Forms.Label();
             this.txtdataFinal = new System.Windows.Forms.MaskedTextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnfiltrar = new System.Windows.Forms.Button();
             this.barra = new System.Windows.Forms.Panel();
             this.btnSair = new System.Windows.Forms.PictureBox();
+            this.btnfiltrar = new System.Windows.Forms.Button();
             this.barra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnSair)).BeginInit();
             this.SuspendLayout();
@@ -72,6 +72,7 @@ namespace TCC.VISIONS.relatorio_visao
             this.txtdataFinal.Size = new System.Drawing.Size(127, 30);
             this.txtdataFinal.TabIndex = 121;
             this.txtdataFinal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtdataFinal.Leave += new System.EventHandler(this.txtdataFinal_Leave);
             // 
             // label1
             // 
@@ -84,24 +85,6 @@ namespace TCC.VISIONS.relatorio_visao
             this.label1.Size = new System.Drawing.Size(98, 21);
             this.label1.TabIndex = 122;
             this.label1.Text = "Data Final :";
-            // 
-            // btnfiltrar
-            // 
-            this.btnfiltrar.BackColor = System.Drawing.Color.Transparent;
-            this.btnfiltrar.BackgroundImage = global::TCC.Properties.Resources.icons8_cancelar_48;
-            this.btnfiltrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnfiltrar.FlatAppearance.BorderSize = 0;
-            this.btnfiltrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnfiltrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnfiltrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnfiltrar.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnfiltrar.ForeColor = System.Drawing.Color.Transparent;
-            this.btnfiltrar.Location = new System.Drawing.Point(141, 142);
-            this.btnfiltrar.Name = "btnfiltrar";
-            this.btnfiltrar.Size = new System.Drawing.Size(68, 36);
-            this.btnfiltrar.TabIndex = 177;
-            this.btnfiltrar.UseVisualStyleBackColor = false;
-            this.btnfiltrar.Click += new System.EventHandler(this.btnfiltrar_Click);
             // 
             // barra
             // 
@@ -125,6 +108,26 @@ namespace TCC.VISIONS.relatorio_visao
             this.btnSair.TabIndex = 60;
             this.btnSair.TabStop = false;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
+            // 
+            // btnfiltrar
+            // 
+            this.btnfiltrar.BackColor = System.Drawing.Color.Transparent;
+            this.btnfiltrar.BackgroundImage = global::TCC.Properties.Resources.icons8_botão_de_opção_marcado_481;
+            this.btnfiltrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnfiltrar.FlatAppearance.BorderSize = 0;
+            this.btnfiltrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnfiltrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnfiltrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnfiltrar.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnfiltrar.ForeColor = System.Drawing.Color.Transparent;
+            this.btnfiltrar.Location = new System.Drawing.Point(141, 142);
+            this.btnfiltrar.Name = "btnfiltrar";
+            this.btnfiltrar.Size = new System.Drawing.Size(68, 36);
+            this.btnfiltrar.TabIndex = 177;
+            this.btnfiltrar.UseVisualStyleBackColor = false;
+            this.btnfiltrar.Click += new System.EventHandler(this.btnfiltrar_Click);
+            this.btnfiltrar.MouseEnter += new System.EventHandler(this.btnfiltrar_MouseEnter);
+            this.btnfiltrar.MouseLeave += new System.EventHandler(this.btnfiltrar_MouseLeave);
             // 
             // FiltroRelatorioEstoque
             // 

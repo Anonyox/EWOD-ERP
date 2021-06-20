@@ -118,23 +118,46 @@ namespace TCC.VISIONS.relatorio_visao
 
         private void btnfiltrar_Click(object sender, EventArgs e)
         {
-            passarData.dataInicial = txtdataInicial.Text;
-            passarData.dataFinal = txtdataFinal.Text;
+            if (textBox1.Text != string.Empty || textBox2.Text != string.Empty)
+            {
+                passarData.dataInicial = txtdataInicial.Text;
+                passarData.dataFinal = txtdataFinal.Text;
 
-            filtrarData();
+                filtrarData();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("PREENCHA TODOS OS CAMPOS", "PREENCHER", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
+
+
+
+
+
+
+
+
+
+
 
         #endregion
 
+        private void btnfiltrar_MouseEnter(object sender, EventArgs e)
+        {
+            btnfiltrar.Size = new Size(68, 40);
+        }
 
+        private void btnfiltrar_MouseLeave(object sender, EventArgs e)
+        {
+            btnfiltrar.Size = new Size(68, 36);
+        }
 
-
-
-
-
-
-
-
-
+        private void txtdataFinal_Leave(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
