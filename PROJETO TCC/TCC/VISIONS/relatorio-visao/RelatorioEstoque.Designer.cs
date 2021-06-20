@@ -66,6 +66,13 @@
             this.lbl6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.pnfiltro = new System.Windows.Forms.Panel();
+            this.pnvar = new System.Windows.Forms.Panel();
+            this.btnfecharPanel = new System.Windows.Forms.PictureBox();
+            this.btnfiltrar = new System.Windows.Forms.Button();
+            this.txtdataFinal = new System.Windows.Forms.MaskedTextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtdataInicial = new System.Windows.Forms.MaskedTextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.barra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSair)).BeginInit();
@@ -73,6 +80,9 @@
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgestoque)).BeginInit();
+            this.pnfiltro.SuspendLayout();
+            this.pnvar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnfecharPanel)).BeginInit();
             this.SuspendLayout();
             // 
             // label8
@@ -163,7 +173,7 @@
             this.lbltotal.BackColor = System.Drawing.Color.Transparent;
             this.lbltotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbltotal.ForeColor = System.Drawing.Color.White;
-            this.lbltotal.Location = new System.Drawing.Point(333, 296);
+            this.lbltotal.Location = new System.Drawing.Point(318, 293);
             this.lbltotal.Name = "lbltotal";
             this.lbltotal.Size = new System.Drawing.Size(150, 15);
             this.lbltotal.TabIndex = 3;
@@ -175,7 +185,7 @@
             this.lbl3.BackColor = System.Drawing.Color.Transparent;
             this.lbl3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl3.ForeColor = System.Drawing.Color.White;
-            this.lbl3.Location = new System.Drawing.Point(392, 273);
+            this.lbl3.Location = new System.Drawing.Point(474, 291);
             this.lbl3.Name = "lbl3";
             this.lbl3.Size = new System.Drawing.Size(20, 18);
             this.lbl3.TabIndex = 1;
@@ -419,7 +429,7 @@
             this.lbl4.BackColor = System.Drawing.Color.Transparent;
             this.lbl4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl4.ForeColor = System.Drawing.Color.White;
-            this.lbl4.Location = new System.Drawing.Point(717, 273);
+            this.lbl4.Location = new System.Drawing.Point(744, 289);
             this.lbl4.Name = "lbl4";
             this.lbl4.Size = new System.Drawing.Size(20, 18);
             this.lbl4.TabIndex = 174;
@@ -431,7 +441,7 @@
             this.lblprecoTotal.BackColor = System.Drawing.Color.Transparent;
             this.lblprecoTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblprecoTotal.ForeColor = System.Drawing.Color.White;
-            this.lblprecoTotal.Location = new System.Drawing.Point(648, 296);
+            this.lblprecoTotal.Location = new System.Drawing.Point(535, 291);
             this.lblprecoTotal.Name = "lblprecoTotal";
             this.lblprecoTotal.Size = new System.Drawing.Size(203, 15);
             this.lblprecoTotal.TabIndex = 175;
@@ -439,7 +449,7 @@
             // 
             // timer1
             // 
-            this.timer1.Interval = 10000;
+            this.timer1.Interval = 50000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // btnexportarPdf
@@ -507,13 +517,110 @@
             // 
             // pnfiltro
             // 
-            this.pnfiltro.BackColor = System.Drawing.Color.Transparent;
-            this.pnfiltro.Enabled = false;
-            this.pnfiltro.Location = new System.Drawing.Point(857, 177);
+            this.pnfiltro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(12)))), ((int)(((byte)(38)))));
+            this.pnfiltro.Controls.Add(this.btnfiltrar);
+            this.pnfiltro.Controls.Add(this.txtdataInicial);
+            this.pnfiltro.Controls.Add(this.pnvar);
+            this.pnfiltro.Controls.Add(this.txtdataFinal);
+            this.pnfiltro.Controls.Add(this.label2);
+            this.pnfiltro.Controls.Add(this.label9);
+            this.pnfiltro.Location = new System.Drawing.Point(844, 41);
             this.pnfiltro.Name = "pnfiltro";
-            this.pnfiltro.Size = new System.Drawing.Size(20, 21);
+            this.pnfiltro.Size = new System.Drawing.Size(372, 229);
             this.pnfiltro.TabIndex = 180;
             this.pnfiltro.Visible = false;
+            // 
+            // pnvar
+            // 
+            this.pnvar.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.pnvar.Controls.Add(this.btnfecharPanel);
+            this.pnvar.Location = new System.Drawing.Point(2, 2);
+            this.pnvar.Margin = new System.Windows.Forms.Padding(2);
+            this.pnvar.Name = "pnvar";
+            this.pnvar.Size = new System.Drawing.Size(369, 36);
+            this.pnvar.TabIndex = 184;
+            this.pnvar.Visible = false;
+            // 
+            // btnfecharPanel
+            // 
+            this.btnfecharPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnfecharPanel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnfecharPanel.Image = ((System.Drawing.Image)(resources.GetObject("btnfecharPanel.Image")));
+            this.btnfecharPanel.Location = new System.Drawing.Point(338, 5);
+            this.btnfecharPanel.Name = "btnfecharPanel";
+            this.btnfecharPanel.Size = new System.Drawing.Size(28, 28);
+            this.btnfecharPanel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnfecharPanel.TabIndex = 60;
+            this.btnfecharPanel.TabStop = false;
+            this.btnfecharPanel.Visible = false;
+            this.btnfecharPanel.Click += new System.EventHandler(this.btnfecharPanel_Click);
+            // 
+            // btnfiltrar
+            // 
+            this.btnfiltrar.BackColor = System.Drawing.Color.Transparent;
+            this.btnfiltrar.BackgroundImage = global::TCC.Properties.Resources.icons8_botão_de_opção_marcado_481;
+            this.btnfiltrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnfiltrar.FlatAppearance.BorderSize = 0;
+            this.btnfiltrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnfiltrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnfiltrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnfiltrar.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnfiltrar.ForeColor = System.Drawing.Color.Transparent;
+            this.btnfiltrar.Location = new System.Drawing.Point(152, 158);
+            this.btnfiltrar.Name = "btnfiltrar";
+            this.btnfiltrar.Size = new System.Drawing.Size(68, 36);
+            this.btnfiltrar.TabIndex = 183;
+            this.btnfiltrar.UseVisualStyleBackColor = false;
+            this.btnfiltrar.Visible = false;
+            this.btnfiltrar.Click += new System.EventHandler(this.btnfiltrar_Click);
+            // 
+            // txtdataFinal
+            // 
+            this.txtdataFinal.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtdataFinal.Location = new System.Drawing.Point(185, 111);
+            this.txtdataFinal.Mask = "00/00/0000";
+            this.txtdataFinal.Name = "txtdataFinal";
+            this.txtdataFinal.Size = new System.Drawing.Size(127, 30);
+            this.txtdataFinal.TabIndex = 181;
+            this.txtdataFinal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtdataFinal.Visible = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(81, 111);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(98, 21);
+            this.label2.TabIndex = 182;
+            this.label2.Text = "Data Final :";
+            this.label2.Visible = false;
+            // 
+            // txtdataInicial
+            // 
+            this.txtdataInicial.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtdataInicial.Location = new System.Drawing.Point(185, 67);
+            this.txtdataInicial.Mask = "00/00/0000";
+            this.txtdataInicial.Name = "txtdataInicial";
+            this.txtdataInicial.Size = new System.Drawing.Size(127, 30);
+            this.txtdataInicial.TabIndex = 179;
+            this.txtdataInicial.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtdataInicial.Visible = false;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(70, 71);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(109, 21);
+            this.label9.TabIndex = 180;
+            this.label9.Text = "Data Inicial :";
+            this.label9.Visible = false;
             // 
             // RelatorioEstoque
             // 
@@ -557,6 +664,10 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgestoque)).EndInit();
+            this.pnfiltro.ResumeLayout(false);
+            this.pnfiltro.PerformLayout();
+            this.pnvar.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnfecharPanel)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -600,5 +711,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel pnfiltro;
         public System.Windows.Forms.DataGridView dtgestoque;
+        private System.Windows.Forms.Panel pnvar;
+        private System.Windows.Forms.PictureBox btnfecharPanel;
+        public System.Windows.Forms.Button btnfiltrar;
+        private System.Windows.Forms.MaskedTextBox txtdataFinal;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.MaskedTextBox txtdataInicial;
+        private System.Windows.Forms.Label label9;
     }
 }

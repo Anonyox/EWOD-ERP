@@ -5,10 +5,6 @@ using System.Windows.Forms;
 using TCC.MODELS.relatorio_modelo;
 using DataTable = System.Data.DataTable;
 using System.Collections.Generic;
-using TCC.VISIONS.relatorio_visao;
-using Application = System.Windows.Forms.Application;
-using System.Linq;
-using static TCC.VISIONS.relatorio_visao.FiltroRelatorioEstoque;
 using Microsoft.Office.Interop.Excel;
 
 namespace TCC.VISÃO
@@ -53,8 +49,33 @@ namespace TCC.VISÃO
         #region MÉTODOS DE FUNCIONALIDADES
 
 
+        public void filtrarData()
+        {
+            string dataInicial = txtdataInicial.Text;
+            string dataFinal = txtdataFinal.Text;
+            DataTable dtmf = new DataTable();
 
-       
+            dtmf = relCtr.filtrarData(dataInicial, dataFinal);
+
+          dtgestoque.Rows.Clear();
+
+            foreach (DataRow item in dtmf.Rows)
+            {
+                int n = dtgestoque.Rows.Add();
+
+                dtgestoque.Rows[n].Cells[0].Value = item["nome"].ToString();
+                dtgestoque.Rows[n].Cells[1].Value = item["fornecedor"].ToString();
+                dtgestoque.Rows[n].Cells[2].Value = item["tipo"].ToString();
+                dtgestoque.Rows[n].Cells[3].Value = item["modelo"].ToString();
+                dtgestoque.Rows[n].Cells[4].Value = item["quantidade"].ToString();
+                dtgestoque.Rows[n].Cells[5].Value = item["valordecompra"].ToString();
+                dtgestoque.Rows[n].Cells[6].Value = item["valordevenda"].ToString();
+                dtgestoque.Rows[n].Cells[7].Value = item["dataDeCadastro"].ToString();
+
+            }
+
+        }
+
 
         public void contarBaixas()
         {
@@ -300,12 +321,12 @@ namespace TCC.VISÃO
 
         private void RelatorioEstoque_Load(object sender, EventArgs e)
         {
-            //timer1.Start();
+            timer1.Start();
             formataGrid();
-            if(pnfiltro.Enabled == false)
+            if(pnfiltro.Visible == false)
             {
                 listarProduto();
-            }           
+            }         
             dispesasGrid();
             contarBaixas();
             contarEntradas();
@@ -316,7 +337,6 @@ namespace TCC.VISÃO
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            pnfiltro.Enabled = false;
             listarProduto();
             dispesasGrid();
             contarBaixas();
@@ -404,18 +424,15 @@ namespace TCC.VISÃO
 
         private void btnfiltrarPersonalizado_Click(object sender, EventArgs e)
         {
-            FiltroRelatorioEstoque filEstoque = new FiltroRelatorioEstoque();
-
-            if (Application.OpenForms.OfType<CadastroProduto>().Count() > 0)
-            {
-                Application.OpenForms.OfType<CadastroProduto>().First().Focus();
-            }
-            else
-            {
-                pnfiltro.Enabled = true;
-                filEstoque.Owner = this;
-                filEstoque.Show();
-            }
+            pnfiltro.Location = new System.Drawing.Point(250, 92);
+            pnfiltro.Visible = true;
+            txtdataInicial.Visible = true;
+            txtdataFinal.Visible = true;
+            label9.Visible = true;
+            label2.Visible = true;
+            pnvar.Visible = true;
+            btnfecharPanel.Visible = true;
+            btnfiltrar.Visible = true;
         }
 
         private void btnexportarExcel_MouseLeave(object sender, EventArgs e)
@@ -498,10 +515,29 @@ namespace TCC.VISÃO
         }
 
 
+
+
+
         #endregion
 
+        private void btnfiltrar_Click(object sender, EventArgs e)
+        {
+            if(txtdataInicial.Text != string.Empty || txtdataFinal.Text !=string.Empty || txtdataInicial.Text == "  /  /    " || txtdataFinal.Text == "  /  /    ")
+            {
+                filtrarData();
+            }
+            else
+            {
+                MessageBox.Show("PREENCHA TODOS OS CAMPOS", "PREENCHER", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            txtdataInicial.Text = string.Empty;
+            txtdataFinal.Text = string.Empty;
+            pnfiltro.Visible = false;
+        }
 
-
-
+        private void btnfecharPanel_Click(object sender, EventArgs e)
+        {
+            pnfiltro.Visible = false;
+        }
     }
 }

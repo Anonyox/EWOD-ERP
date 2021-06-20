@@ -202,7 +202,6 @@ C:\Users\Pedro\Source\Repos\EWOD-ERP\PROJETO TCC\TCC\obj\Debug\TCC.pdb
 C:\Users\Pedro\Source\Repos\EWOD-ERP\PROJETO TCC\TCC\obj\Debug\TCC.VISÃO.CadastroProduto.resources
 C:\Users\Pedro\source\repos\EWOD-ERP\PROJETO TCC\TCC\obj\Debug\TCC.VISÃO.RelatorioEstoque.resources
 C:\Users\Pedro\source\repos\EWOD-ERP\PROJETO TCC\TCC\obj\Debug\TCC.VISÃO.RelatorioVendas.resources
-C:\Users\Pedro\source\repos\EWOD-ERP\PROJETO TCC\TCC\obj\Debug\TCC.VISIONS.relatorio_visao.FiltroRelatorioEstoque.resources
 C:\Users\LukasPC\Source\Repos\EWOD-ERP\PROJETO TCC\TCC\bin\Debug\TCC.exe.config
 C:\Users\LukasPC\Source\Repos\EWOD-ERP\PROJETO TCC\TCC\bin\Debug\TCC.exe
 C:\Users\LukasPC\Source\Repos\EWOD-ERP\PROJETO TCC\TCC\bin\Debug\TCC.pdb

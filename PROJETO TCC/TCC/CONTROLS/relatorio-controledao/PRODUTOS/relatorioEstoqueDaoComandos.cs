@@ -360,7 +360,7 @@ namespace TCC.CONTROLS.relatorio_controledao.PRODUTOS
 
         public DataTable filtrarData(string dataInicial, string dataFinal)
         {
-            cmd.CommandText = "SELECT * FROM produtos P, estoqueProdutos E WHERE (P.datadeCadastro BETWEEN @datainicial AND @datafinal) AND P.codProduto = E.idProduto ORDER BY P.datadeCadastro DESC";
+            cmd.CommandText = "SELECT P.nome, P.fornecedor,P.tipo, P.modelo, format (P.valordeCompra, 'c', 'pt-br') as valordeCompra, format (P.valordeVenda, 'c', 'pt-br') as valordeVenda, FORMAT (P.dataDeCadastro, 'dd/MM/yyyy ') as dataDeCadastro, E.Quantidade  FROM produtos P, estoqueProdutos E WHERE (P.datadeCadastro BETWEEN @datainicial AND @datafinal) AND P.codProduto = E.idProduto ORDER BY P.datadeCadastro DESC";
             cmd.Parameters.AddWithValue("@datainicial", dataInicial);
             cmd.Parameters.AddWithValue("@datafinal", dataFinal);
             try
