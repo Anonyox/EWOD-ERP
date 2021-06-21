@@ -66,12 +66,12 @@
             this.lbl6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.pnfiltro = new System.Windows.Forms.Panel();
+            this.btnfiltrar = new System.Windows.Forms.Button();
+            this.txtdataInicial = new System.Windows.Forms.MaskedTextBox();
             this.pnvar = new System.Windows.Forms.Panel();
             this.btnfecharPanel = new System.Windows.Forms.PictureBox();
-            this.btnfiltrar = new System.Windows.Forms.Button();
             this.txtdataFinal = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtdataInicial = new System.Windows.Forms.MaskedTextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.barra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
@@ -106,6 +106,7 @@
             this.barra.Name = "barra";
             this.barra.Size = new System.Drawing.Size(865, 46);
             this.barra.TabIndex = 165;
+            this.barra.MouseDown += new System.Windows.Forms.MouseEventHandler(this.barra_MouseDown);
             // 
             // btnMinimizar
             // 
@@ -530,6 +531,36 @@
             this.pnfiltro.TabIndex = 180;
             this.pnfiltro.Visible = false;
             // 
+            // btnfiltrar
+            // 
+            this.btnfiltrar.BackColor = System.Drawing.Color.Transparent;
+            this.btnfiltrar.BackgroundImage = global::TCC.Properties.Resources.icons8_botão_de_opção_marcado_481;
+            this.btnfiltrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnfiltrar.FlatAppearance.BorderSize = 0;
+            this.btnfiltrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnfiltrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnfiltrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnfiltrar.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnfiltrar.ForeColor = System.Drawing.Color.Transparent;
+            this.btnfiltrar.Location = new System.Drawing.Point(152, 158);
+            this.btnfiltrar.Name = "btnfiltrar";
+            this.btnfiltrar.Size = new System.Drawing.Size(68, 36);
+            this.btnfiltrar.TabIndex = 183;
+            this.btnfiltrar.UseVisualStyleBackColor = false;
+            this.btnfiltrar.Visible = false;
+            this.btnfiltrar.Click += new System.EventHandler(this.btnfiltrar_Click);
+            // 
+            // txtdataInicial
+            // 
+            this.txtdataInicial.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtdataInicial.Location = new System.Drawing.Point(185, 67);
+            this.txtdataInicial.Mask = "00/00/0000";
+            this.txtdataInicial.Name = "txtdataInicial";
+            this.txtdataInicial.Size = new System.Drawing.Size(127, 30);
+            this.txtdataInicial.TabIndex = 179;
+            this.txtdataInicial.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtdataInicial.Visible = false;
+            // 
             // pnvar
             // 
             this.pnvar.BackColor = System.Drawing.SystemColors.MenuHighlight;
@@ -555,25 +586,6 @@
             this.btnfecharPanel.Visible = false;
             this.btnfecharPanel.Click += new System.EventHandler(this.btnfecharPanel_Click);
             // 
-            // btnfiltrar
-            // 
-            this.btnfiltrar.BackColor = System.Drawing.Color.Transparent;
-            this.btnfiltrar.BackgroundImage = global::TCC.Properties.Resources.icons8_botão_de_opção_marcado_481;
-            this.btnfiltrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnfiltrar.FlatAppearance.BorderSize = 0;
-            this.btnfiltrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnfiltrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnfiltrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnfiltrar.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnfiltrar.ForeColor = System.Drawing.Color.Transparent;
-            this.btnfiltrar.Location = new System.Drawing.Point(152, 158);
-            this.btnfiltrar.Name = "btnfiltrar";
-            this.btnfiltrar.Size = new System.Drawing.Size(68, 36);
-            this.btnfiltrar.TabIndex = 183;
-            this.btnfiltrar.UseVisualStyleBackColor = false;
-            this.btnfiltrar.Visible = false;
-            this.btnfiltrar.Click += new System.EventHandler(this.btnfiltrar_Click);
-            // 
             // txtdataFinal
             // 
             this.txtdataFinal.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -597,17 +609,6 @@
             this.label2.TabIndex = 182;
             this.label2.Text = "Data Final :";
             this.label2.Visible = false;
-            // 
-            // txtdataInicial
-            // 
-            this.txtdataInicial.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtdataInicial.Location = new System.Drawing.Point(185, 67);
-            this.txtdataInicial.Mask = "00/00/0000";
-            this.txtdataInicial.Name = "txtdataInicial";
-            this.txtdataInicial.Size = new System.Drawing.Size(127, 30);
-            this.txtdataInicial.TabIndex = 179;
-            this.txtdataInicial.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtdataInicial.Visible = false;
             // 
             // label9
             // 

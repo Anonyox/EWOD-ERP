@@ -232,10 +232,6 @@ namespace TCC.VISÃO
 
 
         #region DESIGN
-        private void btnSair_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -243,10 +239,24 @@ namespace TCC.VISÃO
 
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
-        private void ConfigUsuario_MouseDown(object sender, MouseEventArgs e)
+
+        private void panel3_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+
+        private void ConfigUsuario_MouseDown(object sender, MouseEventArgs e)
+        {
+            
         }
 
         private void btnalterarUsuario_MouseEnter(object sender, EventArgs e)
@@ -569,12 +579,13 @@ namespace TCC.VISÃO
             chb1.Location = new Point(360, 404);
         }
 
+
+
+
+
+
         #endregion
 
-
-
-
-
-
+        
     }
 }
