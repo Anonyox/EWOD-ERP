@@ -85,12 +85,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="VISIONS\relatorio-visao\FiltroRelatorioEstoque.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="VISIONS\relatorio-visao\FiltroRelatorioEstoque.Designer.cs">
-      <DependentUpon>FiltroRelatorioEstoque.cs</DependentUpon>
-    </Compile>
     <Compile Include="warning\VCEP.cs" />
     <Compile Include="warning\VCPF.cs" />
     <Compile Include="warning\VEMAIL.cs" />
@@ -164,9 +158,6 @@
     </Compile>
     <EmbeddedResource Include="VISIONS\produto-visao\CADASTRO DE PRODUTOS\CadastroProdutos.resx">
       <DependentUpon>CadastroProdutos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VISIONS\relatorio-visao\FiltroRelatorioEstoque.resx">
-      <DependentUpon>FiltroRelatorioEstoque.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VISIONS\relatorio-visao\RelatorioEstoque.resx">
       <DependentUpon>RelatorioEstoque.cs</DependentUpon>

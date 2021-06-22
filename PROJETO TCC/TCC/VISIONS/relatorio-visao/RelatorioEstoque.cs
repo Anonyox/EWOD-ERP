@@ -543,7 +543,7 @@ namespace TCC.VISÃO
 
         }
 
-        private void btnfecharPanel_Click(object sender, EventArgs e)
+        private void btnfecharPanel_Click_1(object sender, EventArgs e)
         {
             pnfiltro.Visible = false;
         }
@@ -560,5 +560,7 @@ namespace TCC.VISÃO
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+
+       
     }
 }
