@@ -14,10 +14,11 @@ namespace TCC.MODELS.relatorio_modelo
         String opera;
         String opera2;
         String opera3;
+        String opera4;
         public bool tem;
         public String contarEntradas()
         {
-           nome = relDao.contarEntradas();
+            nome = relDao.contarEntradas();
 
             tem = true;
 
@@ -44,7 +45,7 @@ namespace TCC.MODELS.relatorio_modelo
 
         public String contarDespesas(string colunaCompra, string colunaQuantidade)
         {
-            despesas = relDao.contarDespesas(colunaCompra,colunaQuantidade);
+            despesas = relDao.contarDespesas(colunaCompra, colunaQuantidade);
 
             tem = true;
 
@@ -108,14 +109,30 @@ namespace TCC.MODELS.relatorio_modelo
             return dta;
         }
 
-        public DataTable filtrarData(string dataInicial,string dataFinal)
+        public DataTable filtrarData(string dataInicial, string dataFinal)
         {
-            
+
             DataTable dtdmf = new DataTable();
 
             dtdmf = relDao.filtrarData(dataInicial, dataFinal);
 
             return dtdmf;
+        }
+
+        public String contarBaixas()
+        {
+            opera4 = relDao.contarBaixas();
+
+            return opera4;
+        }
+
+        public String contarTotal(string total)
+        {
+            total = relDao.contarTotal(total);
+
+            tem = true;
+
+            return total;
         }
 
     }

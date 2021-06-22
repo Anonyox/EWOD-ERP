@@ -5,11 +5,8 @@ using System.Windows.Forms;
 using TCC.MODELS.relatorio_modelo;
 using DataTable = System.Data.DataTable;
 using System.Collections.Generic;
-using TCC.VISIONS.relatorio_visao;
-using Application = System.Windows.Forms.Application;
-using System.Linq;
-using static TCC.VISIONS.relatorio_visao.FiltroRelatorioEstoque;
 using Microsoft.Office.Interop.Excel;
+using System.Runtime.InteropServices;
 
 namespace TCC.VISÃO
 {
@@ -21,6 +18,7 @@ namespace TCC.VISÃO
         Worksheet wsheet;
         Microsoft.Office.Interop.Excel.Application XcelApp = new Microsoft.Office.Interop.Excel.Application();
         String contaEntrada;
+        String contarBaixa;
         relatorioEstoqueControle relCtr = new relatorioEstoqueControle();
         String quantidadeProduto;
         String dispesas;
@@ -28,7 +26,9 @@ namespace TCC.VISÃO
         int op1 = 0;
         int op2 = 0;
         int op3 = 0;
+        int op4 = 0;
         int tot = 0;
+        String total;
 
         #endregion
 
@@ -51,10 +51,39 @@ namespace TCC.VISÃO
         #region MÉTODOS DE FUNCIONALIDADES
 
 
+        public void filtrarData()
+        {
+            string dataInicial = txtdataInicial.Text;
+            string dataFinal = txtdataFinal.Text;
+            DataTable dtmf = new DataTable();
 
-       
+            dtmf = relCtr.filtrarData(dataInicial, dataFinal);
+
+            dtgestoque.Rows.Clear();
+
+            foreach (DataRow item in dtmf.Rows)
+            {
+                int n = dtgestoque.Rows.Add();
+
+                dtgestoque.Rows[n].Cells[0].Value = item["nome"].ToString();
+                dtgestoque.Rows[n].Cells[1].Value = item["fornecedor"].ToString();
+                dtgestoque.Rows[n].Cells[2].Value = item["tipo"].ToString();
+                dtgestoque.Rows[n].Cells[3].Value = item["modelo"].ToString();
+                dtgestoque.Rows[n].Cells[4].Value = item["quantidade"].ToString();
+                dtgestoque.Rows[n].Cells[5].Value = item["valordecompra"].ToString();
+                dtgestoque.Rows[n].Cells[6].Value = item["valordevenda"].ToString();
+                dtgestoque.Rows[n].Cells[7].Value = item["dataDeCadastro"].ToString();
+
+            }
+
+        }
 
 
+        public void contarBaixas()
+        {
+            contarBaixa = relCtr.contarBaixas();
+            lbl2.Text = contarBaixa;
+        }
 
         public void contarEntradas()
         {
@@ -66,6 +95,12 @@ namespace TCC.VISÃO
         {
             quantidadeProduto = relCtr.contarProdutos();
             lbl3.Text = quantidadeProduto;
+        }
+
+        public void contarTotal()
+        {
+            total = relCtr.contarTotal(total);
+            lbl6.Text = total;
         }
 
 
@@ -187,15 +222,16 @@ namespace TCC.VISÃO
                 this.op1 = Convert.ToInt32(opera);
                 this.op2 = Convert.ToInt32(opera2);
                 this.op3 = Convert.ToInt32(opera3);
+                this.op4 = Convert.ToInt32(contarBaixa);
 
-                this.tot = (op1 + op2) + op3 ;
+                this.tot = (op1 + op2) + (op3 + op4);
 
             }
 
             lbl5.Text = tot.ToString();
 
         }
-        
+
 
         public void filtrarSemana()
         {
@@ -231,7 +267,7 @@ namespace TCC.VISÃO
 
             dtgestoque.Rows.Clear();
 
-            foreach (DataRow item in dtdm. Rows)
+            foreach (DataRow item in dtdm.Rows)
             {
                 int n = dtgestoque.Rows.Add();
 
@@ -287,19 +323,25 @@ namespace TCC.VISÃO
 
         private void RelatorioEstoque_Load(object sender, EventArgs e)
         {
-            //timer1.Start();
+            timer1.Start();
             formataGrid();
-            listarProduto();
+            if (pnfiltro.Visible == false)
+            {
+                listarProduto();
+            }
             dispesasGrid();
+            contarBaixas();
             contarEntradas();
             contarProdutos();
             contarOperacao();
+            contarTotal();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             listarProduto();
             dispesasGrid();
+            contarBaixas();
             contarEntradas();
             contarProdutos();
             contarOperacao();
@@ -384,18 +426,15 @@ namespace TCC.VISÃO
 
         private void btnfiltrarPersonalizado_Click(object sender, EventArgs e)
         {
-            FiltroRelatorioEstoque filEstoque = new FiltroRelatorioEstoque();
-
-            if (Application.OpenForms.OfType<CadastroProduto>().Count() > 0)
-            {
-                Application.OpenForms.OfType<CadastroProduto>().First().Focus();
-            }
-            else
-            {
-
-                filEstoque.Owner = this;
-                filEstoque.Show();
-            }
+            pnfiltro.Location = new System.Drawing.Point(250, 92);
+            pnfiltro.Visible = true;
+            txtdataInicial.Visible = true;
+            txtdataFinal.Visible = true;
+            label9.Visible = true;
+            label2.Visible = true;
+            pnvar.Visible = true;
+            btnfecharPanel.Visible = true;
+            btnfiltrar.Visible = true;
         }
 
         private void btnexportarExcel_MouseLeave(object sender, EventArgs e)
@@ -442,8 +481,8 @@ namespace TCC.VISÃO
                         Range columnValordeVenda = XcelApp.Cells[1, "J"];
                         Range columnDatadeCadastro = XcelApp.Cells[1, "K"];
 
-                       
-                        
+
+
                         columnNome.Interior.Color = Color.FromArgb(0, 209, 178);
                         columnFornecedor.Interior.Color = Color.FromArgb(0, 209, 178);
                         columnTipo.Interior.Color = Color.FromArgb(0, 209, 178);
@@ -478,10 +517,48 @@ namespace TCC.VISÃO
         }
 
 
+
+
+
         #endregion
 
+        private void btnfiltrar_Click(object sender, EventArgs e)
+        {
+            txtdataInicial.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            txtdataFinal.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            if (txtdataInicial.Text != string.Empty || txtdataFinal.Text != string.Empty || txtdataInicial.Text == "  /  /    " || txtdataFinal.Text == "  /  /    ")
+            {
+                txtdataInicial.TextMaskFormat = MaskFormat.IncludePromptAndLiterals;
+                txtdataFinal.TextMaskFormat = MaskFormat.IncludePromptAndLiterals;
+                filtrarData();
+
+                txtdataInicial.Text = string.Empty;
+                txtdataFinal.Text = string.Empty;
+                pnfiltro.Visible = false;
+            }
+            else
+            {
+                MessageBox.Show("PREENCHA TODOS OS CAMPOS", "PREENCHER", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void btnfecharPanel_Click(object sender, EventArgs e)
+        {
+            pnfiltro.Visible = false;
+        }
+
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
 
-
+        private void barra_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
     }
 }
