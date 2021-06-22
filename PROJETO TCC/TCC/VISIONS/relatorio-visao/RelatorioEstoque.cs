@@ -24,6 +24,7 @@ namespace TCC.VISÃO
         relatorioEstoqueControle relCtr = new relatorioEstoqueControle();
         String quantidadeProduto;
         String dispesas;
+
         int op1 = 0;
         int op2 = 0;
         int op3 = 0;
