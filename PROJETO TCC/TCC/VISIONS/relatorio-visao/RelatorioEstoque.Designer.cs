@@ -90,7 +90,12 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Orange;
+<<<<<<< HEAD
             this.label8.Location = new System.Drawing.Point(347, 38);
+=======
+            this.label8.Location = new System.Drawing.Point(481, 47);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+>>>>>>> origin/lucas/SPRINT04
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(181, 21);
             this.label8.TabIndex = 157;
@@ -113,7 +118,12 @@
             this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
+<<<<<<< HEAD
             this.btnMinimizar.Location = new System.Drawing.Point(800, 15);
+=======
+            this.btnMinimizar.Location = new System.Drawing.Point(1067, 18);
+            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> origin/lucas/SPRINT04
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(28, 28);
             this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -126,7 +136,12 @@
             this.btnSair.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSair.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSair.Image = ((System.Drawing.Image)(resources.GetObject("btnSair.Image")));
+<<<<<<< HEAD
             this.btnSair.Location = new System.Drawing.Point(834, 15);
+=======
+            this.btnSair.Location = new System.Drawing.Point(1112, 18);
+            this.btnSair.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> origin/lucas/SPRINT04
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(28, 28);
             this.btnSair.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -139,7 +154,12 @@
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(209)))), ((int)(((byte)(178)))));
             this.panel3.Controls.Add(this.lblsaida);
             this.panel3.Controls.Add(this.lbl1);
+<<<<<<< HEAD
             this.panel3.Location = new System.Drawing.Point(12, 117);
+=======
+            this.panel3.Location = new System.Drawing.Point(16, 144);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> origin/lucas/SPRINT04
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(192, 81);
             this.panel3.TabIndex = 168;
@@ -197,9 +217,16 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(209)))), ((int)(((byte)(178)))));
             this.panel2.Controls.Add(this.lbloperacao);
             this.panel2.Controls.Add(this.lbl2);
+<<<<<<< HEAD
             this.panel2.Location = new System.Drawing.Point(649, 117);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(202, 81);
+=======
+            this.panel2.Location = new System.Drawing.Point(882, 144);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(256, 100);
+>>>>>>> origin/lucas/SPRINT04
             this.panel2.TabIndex = 167;
             // 
             // lbloperacao
@@ -231,7 +258,12 @@
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.lbl5);
+<<<<<<< HEAD
             this.panel1.Location = new System.Drawing.Point(336, 117);
+=======
+            this.panel1.Location = new System.Drawing.Point(467, 144);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> origin/lucas/SPRINT04
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(192, 81);
             this.panel1.TabIndex = 166;
@@ -271,7 +303,12 @@
             this.btnfiltrarPersonalizado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnfiltrarPersonalizado.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnfiltrarPersonalizado.ForeColor = System.Drawing.Color.Transparent;
+<<<<<<< HEAD
             this.btnfiltrarPersonalizado.Location = new System.Drawing.Point(250, 273);
+=======
+            this.btnfiltrarPersonalizado.Location = new System.Drawing.Point(333, 336);
+            this.btnfiltrarPersonalizado.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> origin/lucas/SPRINT04
             this.btnfiltrarPersonalizado.Name = "btnfiltrarPersonalizado";
             this.btnfiltrarPersonalizado.Size = new System.Drawing.Size(62, 35);
             this.btnfiltrarPersonalizado.TabIndex = 172;
@@ -291,7 +328,12 @@
             this.btnfiltrarAno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnfiltrarAno.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnfiltrarAno.ForeColor = System.Drawing.Color.Transparent;
+<<<<<<< HEAD
             this.btnfiltrarAno.Location = new System.Drawing.Point(169, 273);
+=======
+            this.btnfiltrarAno.Location = new System.Drawing.Point(225, 336);
+            this.btnfiltrarAno.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> origin/lucas/SPRINT04
             this.btnfiltrarAno.Name = "btnfiltrarAno";
             this.btnfiltrarAno.Size = new System.Drawing.Size(62, 35);
             this.btnfiltrarAno.TabIndex = 171;
@@ -311,7 +353,12 @@
             this.btnfiltroMes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnfiltroMes.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnfiltroMes.ForeColor = System.Drawing.Color.Transparent;
+<<<<<<< HEAD
             this.btnfiltroMes.Location = new System.Drawing.Point(84, 273);
+=======
+            this.btnfiltroMes.Location = new System.Drawing.Point(112, 336);
+            this.btnfiltroMes.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> origin/lucas/SPRINT04
             this.btnfiltroMes.Name = "btnfiltroMes";
             this.btnfiltroMes.Size = new System.Drawing.Size(62, 35);
             this.btnfiltroMes.TabIndex = 170;
@@ -331,7 +378,12 @@
             this.btnfiltroSemana.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnfiltroSemana.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnfiltroSemana.ForeColor = System.Drawing.Color.Transparent;
+<<<<<<< HEAD
             this.btnfiltroSemana.Location = new System.Drawing.Point(3, 273);
+=======
+            this.btnfiltroSemana.Location = new System.Drawing.Point(4, 336);
+            this.btnfiltroSemana.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> origin/lucas/SPRINT04
             this.btnfiltroSemana.Name = "btnfiltroSemana";
             this.btnfiltroSemana.Size = new System.Drawing.Size(62, 35);
             this.btnfiltroSemana.TabIndex = 169;
@@ -343,6 +395,7 @@
             // dtgestoque
             // 
             this.dtgestoque.AllowUserToAddRows = false;
+            this.dtgestoque.BackgroundColor = System.Drawing.Color.Lavender;
             this.dtgestoque.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgestoque.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nome,
@@ -353,7 +406,12 @@
             this.valordeCompra,
             this.valordeVenda,
             this.dataDeCadastro});
+<<<<<<< HEAD
             this.dtgestoque.Location = new System.Drawing.Point(0, 314);
+=======
+            this.dtgestoque.Location = new System.Drawing.Point(0, 386);
+            this.dtgestoque.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> origin/lucas/SPRINT04
             this.dtgestoque.Name = "dtgestoque";
             this.dtgestoque.ReadOnly = true;
             this.dtgestoque.RowHeadersWidth = 51;
@@ -464,7 +522,12 @@
             this.btnexportarPdf.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnexportarPdf.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnexportarPdf.ForeColor = System.Drawing.Color.Transparent;
+<<<<<<< HEAD
             this.btnexportarPdf.Location = new System.Drawing.Point(779, 585);
+=======
+            this.btnexportarPdf.Location = new System.Drawing.Point(1039, 720);
+            this.btnexportarPdf.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> origin/lucas/SPRINT04
             this.btnexportarPdf.Name = "btnexportarPdf";
             this.btnexportarPdf.Size = new System.Drawing.Size(81, 40);
             this.btnexportarPdf.TabIndex = 176;
@@ -483,7 +546,12 @@
             this.btnexportarExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnexportarExcel.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnexportarExcel.ForeColor = System.Drawing.Color.Transparent;
+<<<<<<< HEAD
             this.btnexportarExcel.Location = new System.Drawing.Point(686, 585);
+=======
+            this.btnexportarExcel.Location = new System.Drawing.Point(915, 720);
+            this.btnexportarExcel.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> origin/lucas/SPRINT04
             this.btnexportarExcel.Name = "btnexportarExcel";
             this.btnexportarExcel.Size = new System.Drawing.Size(74, 40);
             this.btnexportarExcel.TabIndex = 177;
@@ -651,6 +719,10 @@
             this.Controls.Add(this.barra);
             this.Controls.Add(this.label8);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+<<<<<<< HEAD
+=======
+            this.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> origin/lucas/SPRINT04
             this.Name = "RelatorioEstoque";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RelatorioEstoque";

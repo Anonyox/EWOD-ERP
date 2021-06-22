@@ -426,7 +426,17 @@
     <None Include="Resources\direito-de-acesso.png" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <None Include="Resources\icons8-botão-de-opção-marcado-481.png" />
+=======
+    <None Include="Resources\estorno.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\estorno %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\estorno %281%291.png" />
+>>>>>>> origin/lucas/SPRINT04
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

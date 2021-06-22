@@ -124,6 +124,12 @@
   <data name="direito-de-acesso" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\direito-de-acesso.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+<<<<<<< HEAD
+=======
+  <data name="estorno (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\estorno (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+>>>>>>> origin/lucas/SPRINT04
   <data name="kimi-no-na-wa-clear-sky-cloud-sky-wallpaper-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\kimi-no-na-wa-clear-sky-cloud-sky-wallpaper-preview.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -259,6 +265,9 @@
   <data name="blue_user_client_person_12581" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\blue_user_client_person_12581.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="estorno" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\estorno.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons8-salvar-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-salvar-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -325,7 +334,12 @@
   <data name="blue__12447" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\blue__12447.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+<<<<<<< HEAD
   <data name="icons8-botão-de-opção-marcado-481" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-botão-de-opção-marcado-481.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+=======
+  <data name="estorno (1)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\estorno (1)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+>>>>>>> origin/lucas/SPRINT04
   </data>
 </root>
