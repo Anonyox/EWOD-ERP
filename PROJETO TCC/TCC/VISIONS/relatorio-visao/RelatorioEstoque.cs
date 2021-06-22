@@ -523,17 +523,23 @@ namespace TCC.VISÃO
 
         private void btnfiltrar_Click(object sender, EventArgs e)
         {
-            if(txtdataInicial.Text != string.Empty || txtdataFinal.Text !=string.Empty || txtdataInicial.Text == "  /  /    " || txtdataFinal.Text == "  /  /    ")
+            txtdataInicial.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            txtdataFinal.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            if (txtdataInicial.Text != string.Empty || txtdataFinal.Text !=string.Empty || txtdataInicial.Text == "  /  /    " || txtdataFinal.Text == "  /  /    ")
             {
+                txtdataInicial.TextMaskFormat = MaskFormat.IncludePromptAndLiterals;
+                txtdataFinal.TextMaskFormat = MaskFormat.IncludePromptAndLiterals;
                 filtrarData();
+
+                txtdataInicial.Text = string.Empty;
+                txtdataFinal.Text = string.Empty;
+                pnfiltro.Visible = false;
             }
             else
             {
                 MessageBox.Show("PREENCHA TODOS OS CAMPOS", "PREENCHER", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            txtdataInicial.Text = string.Empty;
-            txtdataFinal.Text = string.Empty;
-            pnfiltro.Visible = false;
+            
         }
 
         private void btnfecharPanel_Click(object sender, EventArgs e)

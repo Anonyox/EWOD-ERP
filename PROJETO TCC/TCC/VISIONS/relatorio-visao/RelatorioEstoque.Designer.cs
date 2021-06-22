@@ -525,7 +525,7 @@
             this.pnfiltro.Controls.Add(this.txtdataFinal);
             this.pnfiltro.Controls.Add(this.label2);
             this.pnfiltro.Controls.Add(this.label9);
-            this.pnfiltro.Location = new System.Drawing.Point(844, 41);
+            this.pnfiltro.Location = new System.Drawing.Point(636, 57);
             this.pnfiltro.Name = "pnfiltro";
             this.pnfiltro.Size = new System.Drawing.Size(372, 229);
             this.pnfiltro.TabIndex = 180;
