@@ -37,5 +37,112 @@ namespace TCC.MODELS.relatorio_modelo
 
             return dt;
         }
+
+        public DataTable listarProdutosRelacionadosAVendaTotal()
+        {
+            this.dt = relDao.listarProdutosRelacionadosAVendaTotal();
+
+            tem = true;
+
+            return dt;
+        }
+
+        public String contarOperacao()
+        {
+            opera = relDao.contarOperacao();
+
+            tem = true;
+
+            return opera;
+        }
+
+        public String contarVendas()
+        {
+            opera = relDao.contarVendas();
+
+            tem = true;
+
+            return opera;
+        }
+
+        public String contarTotal(string total)
+        {
+            total = relDao.contarTotal(total);
+
+            tem = true;
+
+            return total;
+        }
+
+        public DataTable filtrarSemana()
+        {
+            DataTable dtd = new DataTable();
+            dtd = relDao.filtrarSemana();
+
+            tem = true;
+            return dtd;
+        }
+
+        public DataTable filtrarMes()
+        {
+            DataTable dtdm = new DataTable();
+
+            dtdm = relDao.fitrarMes();
+
+            tem = true;
+
+            return dtdm;
+        }
+
+        public DataTable filtrarAno()
+        {
+            DataTable dta = new DataTable();
+            dta = relDao.filtrarAno();
+
+            tem = true;
+            return dta;
+        }
+
+        public DataTable filtrarSemanaItens()
+        {
+            DataTable dtd = new DataTable();
+            dtd = relDao.filtrarSemanaItens();
+
+            tem = true;
+            return dtd;
+        }
+
+        public DataTable filtrarMesItens()
+        {
+            DataTable dtdm = new DataTable();
+
+            dtdm = relDao.fitrarMesItens();
+
+            tem = true;
+
+            return dtdm;
+        }
+
+        public DataTable filtrarAnoItens()
+        {
+            DataTable dta = new DataTable();
+            dta = relDao.filtrarAnoItens();
+
+            tem = true;
+            return dta;
+        }
+
+        public DataTable filtrarData(string dataInicial, string dataFinal)
+        {
+
+            DataTable dtdmf = new DataTable();
+
+            dtdmf = relDao.filtrarData(dataInicial, dataFinal);
+
+            return dtdmf;
+        }
+
+
+
     }
 }

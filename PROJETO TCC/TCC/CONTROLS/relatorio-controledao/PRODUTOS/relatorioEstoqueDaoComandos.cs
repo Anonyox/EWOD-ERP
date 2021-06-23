@@ -96,7 +96,7 @@ namespace TCC.CONTROLS.relatorio_controledao.PRODUTOS
 
         public DataTable listarProdutos()
         {
-            cmd.CommandText = "SELECT P.nome, P.fornecedor,P.tipo, P.modelo, format (P.valordeCompra, 'c', 'pt-br') as valordeCompra, format (P.valordeVenda, 'c', 'pt-br') as valordeVenda, FORMAT (P.dataDeCadastro, 'dd/MM/yyyy ') as dataDeCadastro, E.idProdutoEstoque, E.Quantidade, E.datadeCadastro FROM produtos P INNER JOIN estoqueProdutos E ON E.idProduto = P.codProduto ";
+            cmd.CommandText = "SELECT P.nome, P.fornecedor,P.tipo, P.modelo, format (P.valordeCompra, 'c', 'pt-br') as valordeCompra, format (P.valordeVenda, 'c', 'pt-br') as valordeVenda, FORMAT (P.dataDeCadastro, 'dd/MM/yyyy ') as dataDeCadastro, E.idProdutoEstoque, E.Quantidade, E.datadeCadastro FROM produtos P INNER JOIN estoqueProdutos E ON E.idProduto = P.codProduto order by P.dataDeCadastro";
 
 
             try
@@ -277,7 +277,7 @@ namespace TCC.CONTROLS.relatorio_controledao.PRODUTOS
 
         public DataTable filtrarSemana()
         {
-            cmd.CommandText = "SELECT P.nome, P.fornecedor,P.tipo, P.modelo, format (P.valordeCompra, 'c', 'pt-br') as valordeCompra, format (P.valordeVenda, 'c', 'pt-br') as valordeVenda, FORMAT (P.dataDeCadastro, 'dd/MM/yyyy ') as dataDeCadastro, E.Quantidade FROM produtos P, estoqueProdutos E WHERE P.dataDeCadastro BETWEEN GETDATE() - 8 AND GETDATE() AND P.codProduto = E.idProduto ";
+            cmd.CommandText = "SELECT P.nome, P.fornecedor,P.tipo, P.modelo, format (P.valordeCompra, 'c', 'pt-br') as valordeCompra, format (P.valordeVenda, 'c', 'pt-br') as valordeVenda, FORMAT (P.dataDeCadastro, 'dd/MM/yyyy ') as dataDeCadastro, E.Quantidade FROM produtos P, estoqueProdutos E WHERE P.dataDeCadastro BETWEEN GETDATE() - 8 AND GETDATE() AND P.codProduto = E.idProduto ORDER BY P.dataDeCadastro ";
 
             try
             {
@@ -304,7 +304,7 @@ namespace TCC.CONTROLS.relatorio_controledao.PRODUTOS
 
         public DataTable fitrarMes()
         {
-            cmd.CommandText = "SELECT P.nome, P.fornecedor,P.tipo, P.modelo, format (P.valordeCompra, 'c', 'pt-br') as valordeCompra, format (P.valordeVenda, 'c', 'pt-br') as valordeVenda, FORMAT (P.dataDeCadastro, 'dd/MM/yyyy ') as dataDeCadastro, E.Quantidade FROM produtos P, estoqueProdutos E WHERE P.dataDeCadastro BETWEEN GETDATE() - 32 AND GETDATE() AND P.codProduto = E.idProduto ORDER BY P.datadeCadastro DESC";
+            cmd.CommandText = "SELECT P.nome, P.fornecedor,P.tipo, P.modelo, format (P.valordeCompra, 'c', 'pt-br') as valordeCompra, format (P.valordeVenda, 'c', 'pt-br') as valordeVenda, FORMAT (P.dataDeCadastro, 'dd/MM/yyyy ') as dataDeCadastro, E.Quantidade FROM produtos P, estoqueProdutos E WHERE P.dataDeCadastro BETWEEN GETDATE() - 32 AND GETDATE() AND P.codProduto = E.idProduto ORDER BY P.datadeCadastro";
 
             try
             {
@@ -331,7 +331,7 @@ namespace TCC.CONTROLS.relatorio_controledao.PRODUTOS
 
         public DataTable filtrarAno()
         {
-            cmd.CommandText = "SELECT P.nome, P.fornecedor,P.tipo, P.modelo, format (P.valordeCompra, 'c', 'pt-br') as valordeCompra, format (P.valordeVenda, 'c', 'pt-br') as valordeVenda, FORMAT (P.dataDeCadastro, 'dd/MM/yyyy ') as dataDeCadastro, E.Quantidade FROM produtos P, estoqueProdutos E WHERE P.dataDeCadastro BETWEEN GETDATE() - 367 AND GETDATE() AND P.codProduto = E.idProduto ORDER BY P.datadeCadastro DESC";
+            cmd.CommandText = "SELECT P.nome, P.fornecedor,P.tipo, P.modelo, format (P.valordeCompra, 'c', 'pt-br') as valordeCompra, format (P.valordeVenda, 'c', 'pt-br') as valordeVenda, FORMAT (P.dataDeCadastro, 'dd/MM/yyyy ') as dataDeCadastro, E.Quantidade FROM produtos P, estoqueProdutos E WHERE P.dataDeCadastro BETWEEN GETDATE() - 367 AND GETDATE() AND P.codProduto = E.idProduto ORDER BY P.datadeCadastro";
 
             try
             {
@@ -360,7 +360,7 @@ namespace TCC.CONTROLS.relatorio_controledao.PRODUTOS
 
         public DataTable filtrarData(string dataInicial, string dataFinal)
         {
-            cmd.CommandText = "SELECT P.nome, P.fornecedor,P.tipo, P.modelo, format (P.valordeCompra, 'c', 'pt-br') as valordeCompra, format (P.valordeVenda, 'c', 'pt-br') as valordeVenda, FORMAT (P.dataDeCadastro, 'dd/MM/yyyy ') as dataDeCadastro, E.Quantidade  FROM produtos P, estoqueProdutos E WHERE (P.datadeCadastro BETWEEN @datainicial AND @datafinal) AND P.codProduto = E.idProduto ORDER BY P.datadeCadastro DESC";
+            cmd.CommandText = "SELECT P.nome, P.fornecedor,P.tipo, P.modelo, format (P.valordeCompra, 'c', 'pt-br') as valordeCompra, format (P.valordeVenda, 'c', 'pt-br') as valordeVenda, FORMAT (P.dataDeCadastro, 'dd/MM/yyyy ') as dataDeCadastro, E.Quantidade  FROM produtos P, estoqueProdutos E WHERE (P.datadeCadastro BETWEEN @datainicial AND @datafinal) AND P.codProduto = E.idProduto ORDER BY P.datadeCadastro";
             cmd.Parameters.AddWithValue("@datainicial", dataInicial);
             cmd.Parameters.AddWithValue("@datafinal", dataFinal);
             try
