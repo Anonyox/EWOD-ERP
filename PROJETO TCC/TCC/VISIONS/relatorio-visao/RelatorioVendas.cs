@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using TCC.MODELS.relatorio_modelo;
 
@@ -19,11 +20,16 @@ namespace TCC.VISÃO
         Microsoft.Office.Interop.Excel.Application XcelApp = new Microsoft.Office.Interop.Excel.Application();
         int rg = 1;
         int op1 = 0;
+        int op2 = 0;
         int tott = 0;
+
+        bool tem = false;
 
         String total;
 
         string codVenda = "";
+
+        string quantidadeEstoque = "";
 
         relatorioVendasControle relCtr = new relatorioVendasControle();
         #endregion
@@ -45,10 +51,13 @@ namespace TCC.VISÃO
 
         #region MÉTODOS DE FUNCIONALIDADES
 
-        public void contarEntradas()
-        {
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
 
-        }
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
+      
 
         public void contarTotal()
         {
@@ -355,6 +364,84 @@ namespace TCC.VISÃO
 
         }
 
+        public void estornar()
+        {
+           
+            List<ProdutoVendido> Produtos = new List<ProdutoVendido>();
+
+            foreach (DataGridViewRow dataGridViewRow in dtgitens.Rows)
+            {
+                Produtos.Add(
+                    new ProdutoVendido(dataGridViewRow.Cells["codIten"].Value.ToString(),
+                                  dataGridViewRow.Cells["prod"].Value.ToString(),
+                                    dataGridViewRow.Cells["quantidade"].Value.ToString()
+
+
+                                  )
+                             );
+            }
+
+            foreach (var pv in Produtos)
+            {
+                String qtdnova;
+                int qtdnovaestoque;
+
+                string qtdfinal;
+
+                string quantidade = relCtr.verificaQuantidadeRestanteNoEstoque(pv.nome);
+                if (relCtr.tem)
+                {
+                    this.quantidadeEstoque = quantidade;
+                  
+
+                }
+                else
+                {
+                    this.quantidadeEstoque = "0";
+
+                }
+
+                int qtdd = Convert.ToInt32(quantidadeEstoque); 
+                int qtddd = Convert.ToInt32(pv.qtd);
+                qtdnovaestoque = qtdd + qtddd;
+
+                qtdfinal = qtdnovaestoque.ToString();
+
+                 tem = relCtr.estornar(pv.cod,pv.nome,qtdfinal);
+               
+
+            }
+
+            if (this.tem = true)
+            {
+                MessageBox.Show("VENDA ESTORNADA", "Adicionando", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                listarVendas();
+                contarOperacao();
+                contarTotal();
+                contarVendas();
+                totalFiltrado();
+                listarProdutosRelacionadosAVendaTotal();
+            }
+           
+
+        }
+
+  
+
+        public struct ProdutoVendido
+        {
+            public String cod, nome, qtd;
+
+
+            public ProdutoVendido(String _cod, String _nome, String _qtd)
+            {
+                cod = _cod;
+                nome = _nome;
+                qtd = _qtd;
+               
+            }
+        }
+
 
         public void formataGrid()
         {
@@ -394,17 +481,18 @@ namespace TCC.VISÃO
         public void contarOperacao()
         {
             String opera = relCtr.contarOperacao();
+            String opera2 = relCtr.contarOperacao2();
           
           
 
             if (relCtr.tem)
             {
                 this.op1 = Convert.ToInt32(opera);
+                this.op2 = Convert.ToInt32(opera2);
 
 
 
-
-                this.tott = op1;
+                this.tott = op1 + op2;
 
             }
 
@@ -623,12 +711,26 @@ namespace TCC.VISÃO
 
         private void dtgvendas_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-
+           
 
             if (e.ColumnIndex == this.extornar.Index && e.RowIndex >= 0)
             {
 
-            }
+                if (MessageBox.Show("DESEJA ESTORNAR VENDA?", "OPERAÇÃO", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+
+                
+                this.codVenda = dtgvendas.CurrentRow.Cells[1].Value.ToString();
+
+                listarProdutosRelacionadosAVenda();
+
+                estornar();
+
+                }
+
+
+
+        }
 
             else if (e.ColumnIndex != this.extornar.Index && e.RowIndex >= 0)
             {
@@ -799,6 +901,12 @@ namespace TCC.VISÃO
 
             }
 
+        }
+
+        private void barra_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }

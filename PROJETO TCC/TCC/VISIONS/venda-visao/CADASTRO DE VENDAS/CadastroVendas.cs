@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using TCC.CONTROLE;
 using TCC.MODELO;
@@ -53,6 +54,12 @@ namespace TCC.VISÃO
 
         #region MÉTODOS DE FUNCIONALIDADES
 
+
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
         private void CadastroVendas_Load(object sender, EventArgs e)
         {
             txtTotal.Text = string.Format("{0:C}", 0);
@@ -1399,6 +1406,13 @@ namespace TCC.VISÃO
         {
             lblcancelar.Visible = false;
             btnCancelar.Size = new Size(64, 38);
+        }
+
+        private void barra_MouseDown(object sender, MouseEventArgs e)
+        {
+
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }

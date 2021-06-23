@@ -69,10 +69,10 @@
             this.btnfiltrar = new System.Windows.Forms.Button();
             this.txtdataInicial = new System.Windows.Forms.MaskedTextBox();
             this.pnvar = new System.Windows.Forms.Panel();
+            this.btnfecharPanel = new System.Windows.Forms.PictureBox();
             this.txtdataFinal = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.btnfecharPanel = new System.Windows.Forms.PictureBox();
             this.barra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSair)).BeginInit();
@@ -403,7 +403,7 @@
             // 
             // valordeCompra
             // 
-            this.valordeCompra.HeaderText = "ValorDeCompra";
+            this.valordeCompra.HeaderText = "Valor de Compra";
             this.valordeCompra.MinimumWidth = 6;
             this.valordeCompra.Name = "valordeCompra";
             this.valordeCompra.ReadOnly = true;
@@ -411,7 +411,7 @@
             // 
             // valordeVenda
             // 
-            this.valordeVenda.HeaderText = "ValorDeVenda";
+            this.valordeVenda.HeaderText = "Valor de Venda";
             this.valordeVenda.MinimumWidth = 6;
             this.valordeVenda.Name = "valordeVenda";
             this.valordeVenda.ReadOnly = true;
@@ -419,7 +419,7 @@
             // 
             // dataDeCadastro
             // 
-            this.dataDeCadastro.HeaderText = "DataDeCadastro";
+            this.dataDeCadastro.HeaderText = "Data de Cadastro";
             this.dataDeCadastro.MinimumWidth = 6;
             this.dataDeCadastro.Name = "dataDeCadastro";
             this.dataDeCadastro.ReadOnly = true;
@@ -573,6 +573,19 @@
             this.pnvar.TabIndex = 184;
             this.pnvar.Visible = false;
             // 
+            // btnfecharPanel
+            // 
+            this.btnfecharPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnfecharPanel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnfecharPanel.Image = ((System.Drawing.Image)(resources.GetObject("btnfecharPanel.Image")));
+            this.btnfecharPanel.Location = new System.Drawing.Point(338, 5);
+            this.btnfecharPanel.Name = "btnfecharPanel";
+            this.btnfecharPanel.Size = new System.Drawing.Size(28, 28);
+            this.btnfecharPanel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnfecharPanel.TabIndex = 61;
+            this.btnfecharPanel.TabStop = false;
+            this.btnfecharPanel.Click += new System.EventHandler(this.btnfecharPanel_Click);
+            // 
             // txtdataFinal
             // 
             this.txtdataFinal.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -610,19 +623,6 @@
             this.label9.Text = "Data Inicial :";
             this.label9.Visible = false;
             // 
-            // btnfecharPanel
-            // 
-            this.btnfecharPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnfecharPanel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnfecharPanel.Image = ((System.Drawing.Image)(resources.GetObject("btnfecharPanel.Image")));
-            this.btnfecharPanel.Location = new System.Drawing.Point(338, 5);
-            this.btnfecharPanel.Name = "btnfecharPanel";
-            this.btnfecharPanel.Size = new System.Drawing.Size(28, 28);
-            this.btnfecharPanel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnfecharPanel.TabIndex = 61;
-            this.btnfecharPanel.TabStop = false;
-            this.btnfecharPanel.Click += new System.EventHandler(this.btnfecharPanel_Click);
-            // 
             // RelatorioEstoque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -651,6 +651,7 @@
             this.Controls.Add(this.barra);
             this.Controls.Add(this.label8);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "RelatorioEstoque";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RelatorioEstoque";
@@ -695,14 +696,6 @@
         public System.Windows.Forms.Button btnfiltroSemana;
         private System.Windows.Forms.Label lbl4;
         private System.Windows.Forms.Label lblprecoTotal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fornecedor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tipo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn modelo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn quantidade;
-        private System.Windows.Forms.DataGridViewTextBoxColumn valordeCompra;
-        private System.Windows.Forms.DataGridViewTextBoxColumn valordeVenda;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataDeCadastro;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbl5;
@@ -719,5 +712,13 @@
         private System.Windows.Forms.MaskedTextBox txtdataInicial;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.PictureBox btnfecharPanel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fornecedor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn modelo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantidade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valordeCompra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valordeVenda;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataDeCadastro;
     }
 }

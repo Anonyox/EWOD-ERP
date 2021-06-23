@@ -108,6 +108,7 @@ namespace TCC.VISÃO
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(865, 46);
             this.panel3.TabIndex = 53;
+            this.panel3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseDown);
             // 
             // btnMinimizar
             // 
@@ -277,7 +278,7 @@ namespace TCC.VISÃO
             this.txtbairroUsuario.Location = new System.Drawing.Point(674, 201);
             this.txtbairroUsuario.Name = "txtbairroUsuario";
             this.txtbairroUsuario.Size = new System.Drawing.Size(179, 30);
-            this.txtbairroUsuario.TabIndex = 140;
+            this.txtbairroUsuario.TabIndex = 9;
             // 
             // txtCidade
             // 
@@ -285,7 +286,7 @@ namespace TCC.VISÃO
             this.txtCidade.Location = new System.Drawing.Point(147, 343);
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(243, 30);
-            this.txtCidade.TabIndex = 143;
+            this.txtCidade.TabIndex = 1438;
             // 
             // txtcomplementoUsuario
             // 
@@ -293,7 +294,7 @@ namespace TCC.VISÃO
             this.txtcomplementoUsuario.Location = new System.Drawing.Point(674, 246);
             this.txtcomplementoUsuario.Name = "txtcomplementoUsuario";
             this.txtcomplementoUsuario.Size = new System.Drawing.Size(143, 30);
-            this.txtcomplementoUsuario.TabIndex = 144;
+            this.txtcomplementoUsuario.TabIndex = 10;
             // 
             // txtenderecoUsuario
             // 
@@ -301,7 +302,7 @@ namespace TCC.VISÃO
             this.txtenderecoUsuario.Location = new System.Drawing.Point(146, 201);
             this.txtenderecoUsuario.Name = "txtenderecoUsuario";
             this.txtenderecoUsuario.Size = new System.Drawing.Size(243, 30);
-            this.txtenderecoUsuario.TabIndex = 145;
+            this.txtenderecoUsuario.TabIndex = 5;
             // 
             // txtsenhaAdm
             // 
@@ -310,7 +311,7 @@ namespace TCC.VISÃO
             this.txtsenhaAdm.Name = "txtsenhaAdm";
             this.txtsenhaAdm.PasswordChar = '*';
             this.txtsenhaAdm.Size = new System.Drawing.Size(164, 30);
-            this.txtsenhaAdm.TabIndex = 147;
+            this.txtsenhaAdm.TabIndex = 13;
             // 
             // lblnomeUsuario
             // 
@@ -546,7 +547,7 @@ namespace TCC.VISÃO
             this.cbperfilUsuario.Location = new System.Drawing.Point(674, 78);
             this.cbperfilUsuario.Name = "cbperfilUsuario";
             this.cbperfilUsuario.Size = new System.Drawing.Size(140, 31);
-            this.cbperfilUsuario.TabIndex = 159;
+            this.cbperfilUsuario.TabIndex = 3;
             // 
             // cbdepartamentoUsuario
             // 
@@ -560,7 +561,7 @@ namespace TCC.VISÃO
             this.cbdepartamentoUsuario.Location = new System.Drawing.Point(146, 129);
             this.cbdepartamentoUsuario.Name = "cbdepartamentoUsuario";
             this.cbdepartamentoUsuario.Size = new System.Drawing.Size(181, 31);
-            this.cbdepartamentoUsuario.TabIndex = 160;
+            this.cbdepartamentoUsuario.TabIndex = 2;
             // 
             // cbestadoUsuario
             // 
@@ -569,7 +570,7 @@ namespace TCC.VISÃO
             this.cbestadoUsuario.Location = new System.Drawing.Point(147, 298);
             this.cbestadoUsuario.Name = "cbestadoUsuario";
             this.cbestadoUsuario.Size = new System.Drawing.Size(154, 31);
-            this.cbestadoUsuario.TabIndex = 161;
+            this.cbestadoUsuario.TabIndex = 7;
             // 
             // loginsTableAdapter
             // 
@@ -581,7 +582,7 @@ namespace TCC.VISÃO
             this.txtnomeUsuario.Location = new System.Drawing.Point(147, 76);
             this.txtnomeUsuario.Name = "txtnomeUsuario";
             this.txtnomeUsuario.Size = new System.Drawing.Size(181, 30);
-            this.txtnomeUsuario.TabIndex = 162;
+            this.txtnomeUsuario.TabIndex = 1;
             this.txtnomeUsuario.TextChanged += new System.EventHandler(this.txtnomeUsuario_TextChanged_1);
             this.txtnomeUsuario.Leave += new System.EventHandler(this.txtnomeUsuario_Leave_1);
             // 
@@ -592,7 +593,7 @@ namespace TCC.VISÃO
             this.txttelefoneUsuario.Mask = "(00)00000-0000";
             this.txttelefoneUsuario.Name = "txttelefoneUsuario";
             this.txttelefoneUsuario.Size = new System.Drawing.Size(143, 30);
-            this.txttelefoneUsuario.TabIndex = 163;
+            this.txttelefoneUsuario.TabIndex = 11;
             // 
             // txtcepUsuario
             // 
@@ -601,7 +602,7 @@ namespace TCC.VISÃO
             this.txtcepUsuario.Mask = "00000-000";
             this.txtcepUsuario.Name = "txtcepUsuario";
             this.txtcepUsuario.Size = new System.Drawing.Size(103, 30);
-            this.txtcepUsuario.TabIndex = 164;
+            this.txtcepUsuario.TabIndex = 12;
             // 
             // txtnumeroUsuario
             // 
@@ -609,7 +610,7 @@ namespace TCC.VISÃO
             this.txtnumeroUsuario.Location = new System.Drawing.Point(146, 246);
             this.txtnumeroUsuario.Name = "txtnumeroUsuario";
             this.txtnumeroUsuario.Size = new System.Drawing.Size(155, 30);
-            this.txtnumeroUsuario.TabIndex = 167;
+            this.txtnumeroUsuario.TabIndex = 6;
             // 
             // lblnumeroUsuario
             // 
@@ -644,7 +645,7 @@ namespace TCC.VISÃO
             this.txtcpfUsuario.Mask = "000,000,000-00";
             this.txtcpfUsuario.Name = "txtcpfUsuario";
             this.txtcpfUsuario.Size = new System.Drawing.Size(140, 30);
-            this.txtcpfUsuario.TabIndex = 170;
+            this.txtcpfUsuario.TabIndex = 4;
             // 
             // lblconfirmar
             // 
@@ -764,6 +765,7 @@ namespace TCC.VISÃO
             this.Controls.Add(this.lblDepartamento);
             this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EditarUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditarUsuario";

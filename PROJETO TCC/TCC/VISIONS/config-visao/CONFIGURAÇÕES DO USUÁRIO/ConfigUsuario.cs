@@ -569,12 +569,17 @@ namespace TCC.VISÃO
             chb1.Location = new Point(360, 404);
         }
 
+
+
+
+
+
         #endregion
 
-
-
-
-
-
+        private void panel3_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
     }
 }

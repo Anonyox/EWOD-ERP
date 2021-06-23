@@ -2,6 +2,7 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using TCC.CONTROLE;
 
@@ -46,6 +47,11 @@ namespace TCC.VISÃO
 
         #region MÉTODOS DE FUNCIONALIDADES
 
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
         private void EditarUsuario_Load(object sender, EventArgs e)
         {
@@ -321,7 +327,7 @@ namespace TCC.VISÃO
         private void formataGrid()
         {
 
-            
+
             dtgeditarUsuario.BorderStyle = BorderStyle.None;  //DTEMAIL NOME DA VARIÁVEL
             //dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
             dtgeditarUsuario.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
@@ -333,7 +339,7 @@ namespace TCC.VISÃO
             dtgeditarUsuario.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dtgeditarUsuario.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(0, 209, 178);     //FromArgb(20, 25, 72);
             dtgeditarUsuario.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
-           
+
         }
 
 
@@ -496,11 +502,16 @@ namespace TCC.VISÃO
             btnexcluir.Size = new Size(49, 35);
         }
 
+
+
+
+
+        private void panel3_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
         #endregion
-
-
-
-
 
 
     }

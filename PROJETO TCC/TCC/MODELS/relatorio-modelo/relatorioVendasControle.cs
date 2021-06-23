@@ -18,7 +18,11 @@ namespace TCC.MODELS.relatorio_modelo
         String opera;
         String opera2;
         String opera3;
-        public bool tem;
+
+        public string mensagem;
+
+        string quantidadeEstoque;
+        public bool tem = false;
 
         public DataTable listarVendas()
         {
@@ -50,6 +54,15 @@ namespace TCC.MODELS.relatorio_modelo
         public String contarOperacao()
         {
             opera = relDao.contarOperacao();
+
+            tem = true;
+
+            return opera;
+        }
+
+        public String contarOperacao2()
+        {
+            opera = relDao.contarOperacao2();
 
             tem = true;
 
@@ -140,6 +153,45 @@ namespace TCC.MODELS.relatorio_modelo
             dtdmf = relDao.filtrarData(dataInicial, dataFinal);
 
             return dtdmf;
+        }
+
+        public String verificaQuantidadeRestanteNoEstoque(String nomeProduto)
+        {
+            this.quantidadeEstoque = relDao.verificaQuantidadeRestanteNoEstoque(nomeProduto);
+            if (relDao.tem)
+            {
+
+                this.tem = true;
+
+            }
+            else
+            {
+                this.tem = false;
+            }
+
+
+            return this.quantidadeEstoque;
+        }
+
+        public bool estornar(String cod, String nome, String qtd)
+        {
+
+             tem = relDao.estornar(cod, nome, qtd);
+            if (relDao.tem)
+            {
+
+                this.tem = true;
+
+            }
+            else
+            {
+                this.tem = false;
+            }
+
+            return tem;
+            
+
+           
         }
 
 

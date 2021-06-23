@@ -322,10 +322,11 @@
             this.panel3.Controls.Add(this.btnSair);
             this.panel3.Controls.Add(this.btnMinimizar);
             this.panel3.Location = new System.Drawing.Point(-2, -10);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(865, 46);
             this.panel3.TabIndex = 76;
+            this.panel3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseDown);
             // 
             // ConfigUsuario
             // 
@@ -355,11 +356,11 @@
             this.Controls.Add(this.btnalterarUsuario);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ConfigUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ConfigUsuario";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ConfigUsuario_FormClosed);
-            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ConfigUsuario_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.btnSair)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcblogo)).EndInit();

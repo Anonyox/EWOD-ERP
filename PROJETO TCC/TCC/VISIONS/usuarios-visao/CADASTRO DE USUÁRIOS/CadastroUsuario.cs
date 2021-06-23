@@ -713,5 +713,11 @@ namespace TCC.VISÃO
             lblcancelar.Visible = false;
             btnlimpar.Size = new Size(64, 38);
         }
+
+        private void panel3_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
     }
 }

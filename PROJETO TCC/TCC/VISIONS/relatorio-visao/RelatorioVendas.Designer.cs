@@ -217,6 +217,7 @@
             this.barra.Name = "barra";
             this.barra.Size = new System.Drawing.Size(865, 46);
             this.barra.TabIndex = 164;
+            this.barra.MouseDown += new System.Windows.Forms.MouseEventHandler(this.barra_MouseDown);
             // 
             // btnMinimizar
             // 
@@ -463,7 +464,7 @@
             // 
             this.pnitens.Controls.Add(this.panel5);
             this.pnitens.Controls.Add(this.dtgitens);
-            this.pnitens.Location = new System.Drawing.Point(51, 630);
+            this.pnitens.Location = new System.Drawing.Point(41, 602);
             this.pnitens.Margin = new System.Windows.Forms.Padding(2);
             this.pnitens.Name = "pnitens";
             this.pnitens.Size = new System.Drawing.Size(709, 261);
@@ -706,6 +707,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label8);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "RelatorioVendas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RelatorioVendas";

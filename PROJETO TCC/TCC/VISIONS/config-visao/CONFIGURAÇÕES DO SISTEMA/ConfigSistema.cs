@@ -4,6 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
+using System.Linq;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using TCC.MODELO;
 
@@ -61,6 +63,11 @@ namespace TCC.VISÃO
 
         #region MÉTODOS DE FUNCIONALIDADES
 
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
         public void listarLogs()
         {
             System.Data.DataTable dt = controleConfigSistema.listarLogs();
@@ -487,7 +494,20 @@ namespace TCC.VISÃO
         private void btnalterarUsuario_Click(object sender, EventArgs e)
         {
             EditarUsuario editUser = new EditarUsuario();
-            editUser.Show();
+           
+
+        
+
+            if (System.Windows.Forms.Application.OpenForms.OfType<EditarUsuario>().Count() > 0)
+            {
+                System.Windows.Forms.Application.OpenForms.OfType<EditarUsuario>().First().Focus();
+            }
+            else
+            {
+
+                editUser.Owner = this;
+                editUser.Show();
+            }
         }
 
         private void btnSair_Click(object sender, EventArgs e)
@@ -875,6 +895,12 @@ namespace TCC.VISÃO
         private void btnbuscar_MouseLeave(object sender, EventArgs e)
         {
             btnbuscar.Size = new Size(37, 28);
+        }
+
+        private void panel3_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }

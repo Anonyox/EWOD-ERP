@@ -3,6 +3,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Globalization;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using TCC.CONTROLE;
 using TCC.MODELS.produto_modelo;
@@ -56,6 +57,11 @@ namespace TCC.VISÃO
 
         #region MÉTODOS DE FUNCIONALIDADES
 
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
         public void permitirApenasNumeros(object sender, KeyPressEventArgs e)
         {
@@ -645,6 +651,21 @@ namespace TCC.VISÃO
                 {
                     cadastrarProdutos();
                     limparCampos();
+                    btnCancelar.Enabled = false;
+                    btnConfirmar.Enabled = false;
+                    btnsalvarAlteracao.Enabled = false;
+                    btnAdicionar.Enabled = true;
+
+                    dtproduto.Enabled = false;
+
+                    txtnomeProduto.Enabled = false;
+                    txttipo.Enabled = false;
+                    txtmodeloProduto.Enabled = false;
+                    txtfornecedor.Enabled = false;
+
+                    txtvalorCompra.Enabled = false;
+                    txtvalorVenda.Enabled = false;
+                    txtquantidadeProduto.Enabled = false;
                 }
             }
             else
@@ -826,6 +847,12 @@ namespace TCC.VISÃO
         private void txtquantidadeProduto_KeyPress(object sender, KeyPressEventArgs e)
         {
             permitirApenasNumeros(sender, e);
+        }
+
+        private void panel3_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 

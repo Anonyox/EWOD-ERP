@@ -25,7 +25,7 @@ namespace TCC.VISÃO
         String user = DadosGeral.nomeUser;
 
         public String perfil = verificaPerfill.perfil;
-        
+
         #endregion
 
 
@@ -830,11 +830,7 @@ namespace TCC.VISÃO
 
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
-        private void menuAdministrador_MouseDown(object sender, MouseEventArgs e)
-        {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }
+
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -897,7 +893,7 @@ namespace TCC.VISÃO
                 configSistema.Owner = this;
                 configSistema.Show();
             }
-            
+
         }
 
         private void btncadastroVenda_Click(object sender, EventArgs e)
@@ -930,15 +926,10 @@ namespace TCC.VISÃO
             pn1.Location = new Point(-50, 705);
             pn2.Location = new Point(125, 670);
 
-           // timer3.Start();
+            // timer3.Start();
 
         }
 
-
-
-
-
-        #endregion
 
         private void btnrelatorioVenda_Click(object sender, EventArgs e)
         {
@@ -978,9 +969,24 @@ namespace TCC.VISÃO
             timer3.Stop();
             MessageBox.Show("Sessão Finalizada, " + user, "Sessão", MessageBoxButtons.OK, MessageBoxIcon.Information);
             btnsairDoSistema_Click(sender, e);
-            
 
-           
+
+
         }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+
+        #endregion
+
+
+
+
+
+
     }
 }

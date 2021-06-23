@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroUsuario));
             this.panel6 = new System.Windows.Forms.Panel();
             this.lblcancelar = new System.Windows.Forms.Label();
@@ -148,7 +148,6 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(892, 749);
             this.panel6.TabIndex = 36;
-            this.panel6.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel6_MouseDown);
             // 
             // lblcancelar
             // 
@@ -259,7 +258,7 @@
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.panel4.Location = new System.Drawing.Point(-19, 435);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(931, 21);
             this.panel4.TabIndex = 138;
@@ -268,14 +267,14 @@
             // 
             this.dtUsers.AllowUserToAddRows = false;
             this.dtUsers.BackgroundColor = System.Drawing.Color.Lavender;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Comic Sans MS", 12F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtUsers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Comic Sans MS", 12F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtUsers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dtUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtUsers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Usuario,
@@ -328,7 +327,7 @@
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.panel2.Location = new System.Drawing.Point(-37, 328);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(931, 21);
             this.panel2.TabIndex = 136;
@@ -358,7 +357,7 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.panel1.Location = new System.Drawing.Point(-10, 162);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(931, 21);
             this.panel1.TabIndex = 135;
@@ -845,10 +844,11 @@
             this.panel3.Controls.Add(this.btnMinimizar);
             this.panel3.Controls.Add(this.btnSair);
             this.panel3.Location = new System.Drawing.Point(-2, -10);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(865, 46);
             this.panel3.TabIndex = 54;
+            this.panel3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseDown);
             // 
             // CadastroUsuario
             // 
