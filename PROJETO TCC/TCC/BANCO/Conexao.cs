@@ -35,7 +35,7 @@ namespace TCC.CONTROLE
 
 
             //CONEXÃO EXTERNA COM RADMIN VPN                       //PORTA
-            //con.ConnectionString = @"Data Source= tcp: 26.186.226.18,9022;Initial Catalog=tcc;User ID=etec;Password=123456;connection timeout = 1";
+            con.ConnectionString = @"Data Source= tcp: 26.186.226.18,9022;Initial Catalog=lfbd;User ID=etec;Password=123456;connection timeout = 1";
 
 
 
@@ -45,9 +45,9 @@ namespace TCC.CONTROLE
 
 
             //CONEXÃO EXTERNA UTILIZANDO IP FIXO                     //PORTA
-            con3.ConnectionString = @"Data Source= tcp: 177.125.224.77,1433;Initial Catalog=lfbd;User ID=SA;Password=lionforce@147;connection timeout = 1";
+            //con3.ConnectionString = @"Data Source= tcp: 177.125.224.77,1433;Initial Catalog=lfbd;User ID=SA;Password=lionforce@147;connection timeout = 1";
 
-            con4.ConnectionString = @"Data Source= DESKTOP-GQFE158\SQLEXPRESS;Initial Catalog=lfbd;Integrated Security = true;connection timeout = 1";
+           // con4.ConnectionString = @"Data Source= DESKTOP-GQFE158\SQLEXPRESS;Initial Catalog=lfbd;Integrated Security = true;connection timeout = 1";
 
             #endregion
         }
