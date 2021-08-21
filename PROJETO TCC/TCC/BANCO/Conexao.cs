@@ -45,9 +45,9 @@ namespace TCC.CONTROLE
 
 
             //CONEXÃO EXTERNA UTILIZANDO IP FIXO                     //PORTA
-            con3.ConnectionString = @"Data Source= tcp: 177.125.224.77,1433;Initial Catalog=lfbd;User ID=SA;Password=lionforce@147;connection timeout = 1";
+            //con3.ConnectionString = @"Data Source= tcp: 177.125.224.77,1433;Initial Catalog=lfbd;User ID=SA;Password=lionforce@147;connection timeout = 1";
 
-            con4.ConnectionString = @"Data Source= DESKTOP-GQFE158\SQLEXPRESS;Initial Catalog=lfbd;Integrated Security = true;connection timeout = 1";
+            con4.ConnectionString = @"Data Source= DESKTOP-4NSQJ1G\SQLEXPRESS;Initial Catalog=lfbd;Integrated Security = true;connection timeout = 1";
 
             #endregion
         }
