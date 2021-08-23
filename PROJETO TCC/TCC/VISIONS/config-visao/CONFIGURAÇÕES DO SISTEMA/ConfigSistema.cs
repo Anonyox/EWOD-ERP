@@ -493,21 +493,21 @@ namespace TCC.VISÃO
 
         private void btnalterarUsuario_Click(object sender, EventArgs e)
         {
-            EditarUsuario editUser = new EditarUsuario();
+            //EditarUsuario editUser = new EditarUsuario();
            
 
         
 
-            if (System.Windows.Forms.Application.OpenForms.OfType<EditarUsuario>().Count() > 0)
-            {
-                System.Windows.Forms.Application.OpenForms.OfType<EditarUsuario>().First().Focus();
-            }
-            else
-            {
+            //if (System.Windows.Forms.Application.OpenForms.OfType<EditarUsuario>().Count() > 0)
+            //{
+               // System.Windows.Forms.Application.OpenForms.OfType<EditarUsuario>().First().Focus();
+            //}
+           // else
+            //{
 
-                editUser.Owner = this;
-                editUser.Show();
-            }
+                //editUser.Owner = this;
+               // editUser.Show();
+           // }
         }
 
         private void btnSair_Click(object sender, EventArgs e)
