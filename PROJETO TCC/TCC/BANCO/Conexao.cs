@@ -33,7 +33,7 @@ namespace TCC.CONTROLE
         {
             #region STRINGS DE CONEXÃO
 
-            con.ConnectionString = @"Data Source= LUKAS-PC;Initial Catalog=lfbd;Integrated Security = true;connection timeout = 1";
+            con.ConnectionString = @"Data Source= DESKTOP-4NSQJ1G\VIVIHMODAS;Initial Catalog=lfbd;Integrated Security = true;connection timeout = 1";
 
             #endregion
         }
