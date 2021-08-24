@@ -651,9 +651,6 @@ namespace TCC.VISÃO
 
 
         }
-
-
-
         public void geraCupomSemEndereco()
         {
             List<Produto> Produtos = new List<Produto>();
@@ -686,7 +683,7 @@ namespace TCC.VISÃO
             StreamWriter sw = new StreamWriter("C:\\temp\\CUPOMNAOFISCAL.txt");
             sw.WriteLine("-----------------------------------------------");
             sw.WriteLine("                   " + data);
-            sw.WriteLine("             |ERICKÃO MULTIMARCAS|               ");
+            sw.WriteLine("               |   VIVIH MODAS  |               ");
             sw.WriteLine("-----------------------------------------------");
             sw.WriteLine("               |CUPOM NÃO FISCAL|               ");
             sw.WriteLine("-----------------------------------------------");
@@ -711,7 +708,7 @@ namespace TCC.VISÃO
             sw.WriteLine("              **RETIRADA NO LOCAL**                ");
             sw.WriteLine("-----------------------------------------------");
             sw.WriteLine("");
-            sw.WriteLine("          **VEM PRA ERICKÃO MULTIMARCAS**            ");
+            sw.WriteLine("          **     VOLTE SEMPRE  **            ");
             sw.WriteLine("");
             sw.WriteLine("-----------------------------------------------");
             sw.Close();
@@ -755,7 +752,7 @@ namespace TCC.VISÃO
             StreamWriter sw = new StreamWriter("C:\\temp\\CUPOMNAOFISCAL.txt");
             sw.WriteLine("-----------------------------------------------");
             sw.WriteLine("                   " + data);
-            sw.WriteLine("             |ERICKÃO MULTIMARCAS|               ");
+            sw.WriteLine("               |   VIVIH MODAS  |               ");
             sw.WriteLine("-----------------------------------------------");
             sw.WriteLine("               |CUPOM NÃO FISCAL|               ");
             sw.WriteLine("-----------------------------------------------");
@@ -783,7 +780,7 @@ namespace TCC.VISÃO
             sw.WriteLine("|REFERÊNCIA| :" + referencia);
             sw.WriteLine("-----------------------------------------------");
             sw.WriteLine("");
-            sw.WriteLine("          **VEM PRA ERICKÃO MULTIMARCAS**            ");
+            sw.WriteLine("          **     VOLTE SEMPRE  **            ");
             sw.WriteLine("");
             sw.WriteLine("-----------------------------------------------");
             sw.Close();
