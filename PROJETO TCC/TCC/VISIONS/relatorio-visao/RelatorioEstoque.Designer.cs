@@ -504,6 +504,7 @@
             this.lbl6.Size = new System.Drawing.Size(20, 18);
             this.lbl6.TabIndex = 178;
             this.lbl6.Text = "N";
+            this.lbl6.Visible = false;
             // 
             // label3
             // 
@@ -516,6 +517,7 @@
             this.label3.Size = new System.Drawing.Size(194, 15);
             this.label3.TabIndex = 179;
             this.label3.Text = "TOTAL DESPESAS (SEM FILTRO)";
+            this.label3.Visible = false;
             // 
             // pnfiltro
             // 
